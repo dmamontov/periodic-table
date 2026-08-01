@@ -89,3 +89,7 @@ Multi-stage build: `node:22-alpine` builds the production bundle, the final imag
 ## Data & attribution
 
 Element reference properties, GHS pictograms, and sample photos are aggregated from public sources (PubChem, Wikipedia, periodic-table.tech, and others) via the scripts in `scripts/`; NFPA 704 ratings and the collection's gamma spectra are the author's own measurements and verification. The data is intended for educational and personal-project use.
+
+## License
+
+The code in this repository is licensed under the [MIT License](LICENSE). Third-party reference data and images (see [Data & attribution](#data--attribution)) may be subject to their original sources' own terms.
