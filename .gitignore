@@ -31,8 +31,7 @@ lerna-debug.log*
 .claude/settings.local.json
 
 # Editor / IDE
-.vscode/*
-!.vscode/extensions.json
+.vscode
 .idea
 *.iml
 *.ipr
