@@ -1,0 +1,1870 @@
+[
+  {
+    "number": 1,
+    "symbol": "H",
+    "mass": "1,01",
+    "group": 1,
+    "oldGroup": "I A",
+    "color": "#8cc63f",
+    "row": 1,
+    "col": 1,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "gas",
+      "container": "dischargeAmpoule"
+    }
+  },
+  {
+    "number": 2,
+    "symbol": "He",
+    "mass": "4",
+    "group": 18,
+    "oldGroup": "VIII A",
+    "color": "#fa9d99",
+    "row": 1,
+    "col": 18,
+    "periodEnd": true,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "gas",
+      "container": "dischargeAmpoule"
+    }
+  },
+  {
+    "number": 3,
+    "symbol": "Li",
+    "mass": "6,94",
+    "group": 1,
+    "oldGroup": "I A",
+    "color": "#f95354",
+    "row": 2,
+    "col": 1,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "metal",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 4,
+    "symbol": "Be",
+    "mass": "9,01",
+    "group": 2,
+    "oldGroup": "II A",
+    "color": "#ff9933",
+    "row": 2,
+    "col": 2,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 5,
+    "symbol": "B",
+    "mass": "10,81",
+    "group": 13,
+    "oldGroup": "III A",
+    "color": "#00a23b",
+    "row": 2,
+    "col": 13,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 6,
+    "symbol": "C",
+    "mass": "12,01",
+    "group": 14,
+    "oldGroup": "IV A",
+    "color": "#8cc63f",
+    "row": 2,
+    "col": 14,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 7,
+    "symbol": "N",
+    "mass": "14,01",
+    "group": 15,
+    "oldGroup": "V A",
+    "color": "#8cc63f",
+    "row": 2,
+    "col": 15,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "gas",
+      "container": "dischargeAmpoule"
+    }
+  },
+  {
+    "number": 8,
+    "symbol": "O",
+    "mass": "15,99",
+    "group": 16,
+    "oldGroup": "VI A",
+    "color": "#8cc63f",
+    "row": 2,
+    "col": 16,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "995",
+      "sampleState": "gas",
+      "container": "dischargeAmpoule"
+    }
+  },
+  {
+    "number": 9,
+    "symbol": "F",
+    "mass": "18,99",
+    "group": 17,
+    "oldGroup": "VII A",
+    "color": "#ffcc00",
+    "row": 2,
+    "col": 17,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "7598",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 10,
+    "symbol": "Ne",
+    "mass": "20,18",
+    "group": 18,
+    "oldGroup": "VIII A",
+    "color": "#fa9d99",
+    "row": 2,
+    "col": 18,
+    "periodEnd": true,
+    "inCollection": true,
+    "collection": {
+      "purity": "99994",
+      "sampleState": "gas",
+      "container": "dischargeAmpoule"
+    }
+  },
+  {
+    "number": 11,
+    "symbol": "Na",
+    "mass": "22,99",
+    "group": 1,
+    "oldGroup": "I A",
+    "color": "#f95354",
+    "row": 3,
+    "col": 1,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "metal",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 12,
+    "symbol": "Mg",
+    "mass": "24,3",
+    "group": 2,
+    "oldGroup": "II A",
+    "color": "#ff9933",
+    "row": 3,
+    "col": 2,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 13,
+    "symbol": "Al",
+    "mass": "26,98",
+    "group": 13,
+    "oldGroup": "III A",
+    "color": "#6b90ca",
+    "row": 3,
+    "col": 13,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 14,
+    "symbol": "Si",
+    "mass": "28,08",
+    "group": 14,
+    "oldGroup": "IV A",
+    "color": "#00a23b",
+    "row": 3,
+    "col": 14,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "6N",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 15,
+    "symbol": "P",
+    "mass": "30,97",
+    "group": 15,
+    "oldGroup": "V A",
+    "color": "#8cc63f",
+    "row": 3,
+    "col": 15,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "987",
+      "sampleState": "pressedPowder",
+      "container": "acrylicBox"
+    }
+  },
+  {
+    "number": 16,
+    "symbol": "S",
+    "mass": "32,06",
+    "group": 16,
+    "oldGroup": "VI A",
+    "color": "#8cc63f",
+    "row": 3,
+    "col": 16,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "pressedPowder",
+      "container": "acrylicBox"
+    }
+  },
+  {
+    "number": 17,
+    "symbol": "Cl",
+    "mass": "35,45",
+    "group": 17,
+    "oldGroup": "VII A",
+    "color": "#ffcc00",
+    "row": 3,
+    "col": 17,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "99",
+      "sampleState": "liquefiedGas",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 18,
+    "symbol": "Ar",
+    "mass": "39,95",
+    "group": 18,
+    "oldGroup": "VIII A",
+    "color": "#fa9d99",
+    "row": 3,
+    "col": 18,
+    "periodEnd": true,
+    "inCollection": true,
+    "collection": {
+      "purity": "99998",
+      "sampleState": "gas",
+      "container": "dischargeAmpoule"
+    }
+  },
+  {
+    "number": 19,
+    "symbol": "K",
+    "mass": "39,1",
+    "group": 1,
+    "oldGroup": "I A",
+    "color": "#f95354",
+    "row": 4,
+    "col": 1,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "metal",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 20,
+    "symbol": "Ca",
+    "mass": "40,08",
+    "group": 2,
+    "oldGroup": "II A",
+    "color": "#ff9933",
+    "row": 4,
+    "col": 2,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "granules",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 21,
+    "symbol": "Sc",
+    "mass": "44,96",
+    "group": 3,
+    "oldGroup": "III B",
+    "color": "#99afcb",
+    "row": 4,
+    "col": 3,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9995",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 22,
+    "symbol": "Ti",
+    "mass": "47,87",
+    "group": 4,
+    "oldGroup": "IV B",
+    "color": "#99afcb",
+    "row": 4,
+    "col": 4,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "995",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 23,
+    "symbol": "V",
+    "mass": "50,94",
+    "group": 5,
+    "oldGroup": "V B",
+    "color": "#99afcb",
+    "row": 4,
+    "col": 5,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 24,
+    "symbol": "Cr",
+    "mass": "51,99",
+    "group": 6,
+    "oldGroup": "VI B",
+    "color": "#99afcb",
+    "row": 4,
+    "col": 6,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "997",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 25,
+    "symbol": "Mn",
+    "mass": "54,94",
+    "group": 7,
+    "oldGroup": "VII B",
+    "color": "#99afcb",
+    "row": 4,
+    "col": 7,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "997",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 26,
+    "symbol": "Fe",
+    "mass": "55,85",
+    "group": 8,
+    "oldGroup": "VIII B",
+    "color": "#99afcb",
+    "row": 4,
+    "col": 8,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 27,
+    "symbol": "Co",
+    "mass": "58,93",
+    "group": 9,
+    "oldGroup": "VIII B",
+    "color": "#99afcb",
+    "row": 4,
+    "col": 9,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9996",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 28,
+    "symbol": "Ni",
+    "mass": "58,69",
+    "group": 10,
+    "oldGroup": "VIII B",
+    "color": "#99afcb",
+    "row": 4,
+    "col": 10,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "996",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 29,
+    "symbol": "Cu",
+    "mass": "63,55",
+    "group": 11,
+    "oldGroup": "I B",
+    "color": "#99afcb",
+    "row": 4,
+    "col": 11,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9995",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 30,
+    "symbol": "Zn",
+    "mass": "65,38",
+    "group": 12,
+    "oldGroup": "II B",
+    "color": "#99afcb",
+    "row": 4,
+    "col": 12,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 31,
+    "symbol": "Ga",
+    "mass": "69,72",
+    "group": 13,
+    "oldGroup": "III A",
+    "color": "#6b90ca",
+    "row": 4,
+    "col": 13,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "metal",
+      "container": "acrylicBox"
+    }
+  },
+  {
+    "number": 32,
+    "symbol": "Ge",
+    "mass": "72,63",
+    "group": 14,
+    "oldGroup": "IV A",
+    "color": "#00a23b",
+    "row": 4,
+    "col": 14,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "5N",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 33,
+    "symbol": "As",
+    "mass": "74,92",
+    "group": 15,
+    "oldGroup": "V A",
+    "color": "#00a23b",
+    "row": 4,
+    "col": 15,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "powder",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 34,
+    "symbol": "Se",
+    "mass": "78,97",
+    "group": 16,
+    "oldGroup": "VI A",
+    "color": "#8cc63f",
+    "row": 4,
+    "col": 16,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "~999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 35,
+    "symbol": "Br",
+    "mass": "79,9",
+    "group": 17,
+    "oldGroup": "VII A",
+    "color": "#ffcc00",
+    "row": 4,
+    "col": 17,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "99",
+      "sampleState": "liquid",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 36,
+    "symbol": "Kr",
+    "mass": "83,8",
+    "group": 18,
+    "oldGroup": "VIII A",
+    "color": "#fa9d99",
+    "row": 4,
+    "col": 18,
+    "periodEnd": true,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "gas",
+      "container": "dischargeAmpoule"
+    }
+  },
+  {
+    "number": 37,
+    "symbol": "Rb",
+    "mass": "85,47",
+    "group": 1,
+    "oldGroup": "I A",
+    "color": "#f95354",
+    "row": 5,
+    "col": 1,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "metal",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 38,
+    "symbol": "Sr",
+    "mass": "87,62",
+    "group": 2,
+    "oldGroup": "II A",
+    "color": "#ff9933",
+    "row": 5,
+    "col": 2,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "metal",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 39,
+    "symbol": "Y",
+    "mass": "88,91",
+    "group": 3,
+    "oldGroup": "III B",
+    "color": "#99afcb",
+    "row": 5,
+    "col": 3,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 40,
+    "symbol": "Zr",
+    "mass": "91,22",
+    "group": 4,
+    "oldGroup": "IV B",
+    "color": "#99afcb",
+    "row": 5,
+    "col": 4,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "992",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 41,
+    "symbol": "Nb",
+    "mass": "92,91",
+    "group": 5,
+    "oldGroup": "VI B",
+    "color": "#99afcb",
+    "row": 5,
+    "col": 5,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9995",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 42,
+    "symbol": "Mo",
+    "mass": "95,95",
+    "group": 6,
+    "oldGroup": "VI B",
+    "color": "#99afcb",
+    "row": 5,
+    "col": 6,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9995",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 43,
+    "symbol": "Tc",
+    "mass": "(97)",
+    "group": 7,
+    "oldGroup": "VII B",
+    "color": "#99afcb",
+    "row": 5,
+    "col": 7,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 44,
+    "symbol": "Ru",
+    "mass": "101,07",
+    "group": 8,
+    "oldGroup": "VIII B",
+    "color": "#99afcb",
+    "row": 5,
+    "col": 8,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9998",
+      "sampleState": "bead",
+      "container": "acrylicBox"
+    }
+  },
+  {
+    "number": 45,
+    "symbol": "Rh",
+    "mass": "102,91",
+    "group": 9,
+    "oldGroup": "VIII B",
+    "color": "#99afcb",
+    "row": 5,
+    "col": 9,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9995",
+      "sampleState": "bead",
+      "container": "acrylicBox"
+    }
+  },
+  {
+    "number": 46,
+    "symbol": "Pd",
+    "mass": "106,42",
+    "group": 10,
+    "oldGroup": "VIII B",
+    "color": "#99afcb",
+    "row": 5,
+    "col": 10,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9995",
+      "sampleState": "plate",
+      "container": null
+    }
+  },
+  {
+    "number": 47,
+    "symbol": "Ag",
+    "mass": "107,87",
+    "group": 11,
+    "oldGroup": "I B",
+    "color": "#99afcb",
+    "row": 5,
+    "col": 11,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 48,
+    "symbol": "Cd",
+    "mass": "112,41",
+    "group": 12,
+    "oldGroup": "II B",
+    "color": "#99afcb",
+    "row": 5,
+    "col": 12,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "99995",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 49,
+    "symbol": "In",
+    "mass": "114,82",
+    "group": 13,
+    "oldGroup": "III A",
+    "color": "#6b90ca",
+    "row": 5,
+    "col": 13,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "99995",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 50,
+    "symbol": "Sn",
+    "mass": "118,71",
+    "group": 14,
+    "oldGroup": "IV A",
+    "color": "#6b90ca",
+    "row": 5,
+    "col": 14,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 51,
+    "symbol": "Sb",
+    "mass": "121,76",
+    "group": 15,
+    "oldGroup": "V A",
+    "color": "#00a23b",
+    "row": 5,
+    "col": 15,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 52,
+    "symbol": "Te",
+    "mass": "127,6",
+    "group": 16,
+    "oldGroup": "VI A",
+    "color": "#00a23b",
+    "row": 5,
+    "col": 16,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 53,
+    "symbol": "I",
+    "mass": "126,9",
+    "group": 17,
+    "oldGroup": "VII A",
+    "color": "#ffcc00",
+    "row": 5,
+    "col": 17,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "granules",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 54,
+    "symbol": "Xe",
+    "mass": "131,29",
+    "group": 18,
+    "oldGroup": "VIII A",
+    "color": "#fa9d99",
+    "row": 5,
+    "col": 18,
+    "periodEnd": true,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "gas",
+      "container": "dischargeAmpoule"
+    }
+  },
+  {
+    "number": 55,
+    "symbol": "Cs",
+    "mass": "132,91",
+    "group": 1,
+    "oldGroup": "I A",
+    "color": "#f95354",
+    "row": 6,
+    "col": 1,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "metal",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 56,
+    "symbol": "Ba",
+    "mass": "137,33",
+    "group": 2,
+    "oldGroup": "II A",
+    "color": "#ff9933",
+    "row": 6,
+    "col": 2,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "metal",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 57,
+    "symbol": "La",
+    "mass": "138,91",
+    "group": null,
+    "oldGroup": "lanthanides",
+    "color": "#64c0da",
+    "row": 8,
+    "col": 4,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "metal",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 58,
+    "symbol": "Ce",
+    "mass": "140,12",
+    "group": null,
+    "oldGroup": "lanthanides",
+    "color": "#64c0da",
+    "row": 8,
+    "col": 5,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "metal",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 59,
+    "symbol": "Pr",
+    "mass": "140,91",
+    "group": null,
+    "oldGroup": "lanthanides",
+    "color": "#64c0da",
+    "row": 8,
+    "col": 6,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "metal",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 60,
+    "symbol": "Nd",
+    "mass": "144,24",
+    "group": null,
+    "oldGroup": "lanthanides",
+    "color": "#64c0da",
+    "row": 8,
+    "col": 7,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "metal",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 61,
+    "symbol": "Pm",
+    "mass": "(145)",
+    "group": null,
+    "oldGroup": "lanthanides",
+    "color": "#64c0da",
+    "row": 8,
+    "col": 8,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 62,
+    "symbol": "Sm",
+    "mass": "150,36",
+    "group": null,
+    "oldGroup": "lanthanides",
+    "color": "#64c0da",
+    "row": 8,
+    "col": 9,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9995",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 63,
+    "symbol": "Eu",
+    "mass": "151,96",
+    "group": null,
+    "oldGroup": "lanthanides",
+    "color": "#64c0da",
+    "row": 8,
+    "col": 10,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "metal",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 64,
+    "symbol": "Gd",
+    "mass": "157,25",
+    "group": null,
+    "oldGroup": "lanthanides",
+    "color": "#64c0da",
+    "row": 8,
+    "col": 11,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 65,
+    "symbol": "Tb",
+    "mass": "158,93",
+    "group": null,
+    "oldGroup": "lanthanides",
+    "color": "#64c0da",
+    "row": 8,
+    "col": 12,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9995",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 66,
+    "symbol": "Dy",
+    "mass": "162,5",
+    "group": null,
+    "oldGroup": "lanthanides",
+    "color": "#64c0da",
+    "row": 8,
+    "col": 13,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 67,
+    "symbol": "Ho",
+    "mass": "164,93",
+    "group": null,
+    "oldGroup": "lanthanides",
+    "color": "#64c0da",
+    "row": 8,
+    "col": 14,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 68,
+    "symbol": "Er",
+    "mass": "167,26",
+    "group": null,
+    "oldGroup": "lanthanides",
+    "color": "#64c0da",
+    "row": 8,
+    "col": 15,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 69,
+    "symbol": "Tm",
+    "mass": "168,93",
+    "group": null,
+    "oldGroup": "lanthanides",
+    "color": "#64c0da",
+    "row": 8,
+    "col": 16,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 70,
+    "symbol": "Yb",
+    "mass": "173,05",
+    "group": null,
+    "oldGroup": "lanthanides",
+    "color": "#64c0da",
+    "row": 8,
+    "col": 17,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 71,
+    "symbol": "Lu",
+    "mass": "174,97",
+    "group": null,
+    "oldGroup": "lanthanides",
+    "color": "#64c0da",
+    "row": 8,
+    "col": 18,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9995",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 72,
+    "symbol": "Hf",
+    "mass": "178,49",
+    "group": 4,
+    "oldGroup": "IV B",
+    "color": "#99afcb",
+    "row": 6,
+    "col": 4,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 73,
+    "symbol": "Ta",
+    "mass": "180,95",
+    "group": 5,
+    "oldGroup": "V B",
+    "color": "#99afcb",
+    "row": 6,
+    "col": 5,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9995",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 74,
+    "symbol": "W",
+    "mass": "183,84",
+    "group": 6,
+    "oldGroup": "VI B",
+    "color": "#99afcb",
+    "row": 6,
+    "col": 6,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9995",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 75,
+    "symbol": "Re",
+    "mass": "186,21",
+    "group": 7,
+    "oldGroup": "VII B",
+    "color": "#99afcb",
+    "row": 6,
+    "col": 7,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 76,
+    "symbol": "Os",
+    "mass": "190,23",
+    "group": 8,
+    "oldGroup": "VIII B",
+    "color": "#99afcb",
+    "row": 6,
+    "col": 8,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9995",
+      "sampleState": "bead",
+      "container": "acrylicBox"
+    }
+  },
+  {
+    "number": 77,
+    "symbol": "Ir",
+    "mass": "192,22",
+    "group": 9,
+    "oldGroup": "VIII B",
+    "color": "#99afcb",
+    "row": 6,
+    "col": 9,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9998",
+      "sampleState": "powder",
+      "container": "substrate"
+    }
+  },
+  {
+    "number": 78,
+    "symbol": "Pt",
+    "mass": "195,08",
+    "group": 10,
+    "oldGroup": "VIII B",
+    "color": "#99afcb",
+    "row": 6,
+    "col": 10,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9995",
+      "sampleState": "plate",
+      "container": null
+    }
+  },
+  {
+    "number": 79,
+    "symbol": "Au",
+    "mass": "196,97",
+    "group": 11,
+    "oldGroup": "I B",
+    "color": "#99afcb",
+    "row": 6,
+    "col": 11,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "plate",
+      "container": null
+    }
+  },
+  {
+    "number": 80,
+    "symbol": "Hg",
+    "mass": "200,59",
+    "group": 12,
+    "oldGroup": "II B",
+    "color": "#99afcb",
+    "row": 6,
+    "col": 12,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999995",
+      "sampleState": "metal",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 81,
+    "symbol": "Tl",
+    "mass": "204,38",
+    "group": 13,
+    "oldGroup": "III A",
+    "color": "#6b90ca",
+    "row": 6,
+    "col": 13,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "~999",
+      "sampleState": "metal",
+      "container": "ampoule"
+    }
+  },
+  {
+    "number": 82,
+    "symbol": "Pb",
+    "mass": "207,2",
+    "group": 14,
+    "oldGroup": "IV A",
+    "color": "#6b90ca",
+    "row": 6,
+    "col": 14,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 83,
+    "symbol": "Bi",
+    "mass": "208,98",
+    "group": 15,
+    "oldGroup": "V A",
+    "color": "#6b90ca",
+    "row": 6,
+    "col": 15,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "9999",
+      "sampleState": "cubicIngot",
+      "container": null
+    }
+  },
+  {
+    "number": 84,
+    "symbol": "Po",
+    "mass": "(209)",
+    "group": 16,
+    "oldGroup": "VI A",
+    "color": "#6b90ca",
+    "row": 6,
+    "col": 16,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 85,
+    "symbol": "At",
+    "mass": "(210)",
+    "group": 17,
+    "oldGroup": "VII A",
+    "color": "#ffcc00",
+    "row": 6,
+    "col": 17,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 86,
+    "symbol": "Rn",
+    "mass": "(222)",
+    "group": 18,
+    "oldGroup": "VIII A",
+    "color": "#fa9d99",
+    "row": 6,
+    "col": 18,
+    "periodEnd": true,
+    "inCollection": true,
+    "collection": {
+      "sampleState": "rn86",
+      "container": "ampoule",
+      "isotope": "222",
+      "sourceType": "secondary",
+      "decayParent": {
+        "symbol": "Ra",
+        "isotope": "226"
+      }
+    }
+  },
+  {
+    "number": 87,
+    "symbol": "Fr",
+    "mass": "(223)",
+    "group": 1,
+    "oldGroup": "I A",
+    "color": "#f95354",
+    "row": 7,
+    "col": 1,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 88,
+    "symbol": "Ra",
+    "mass": "(226)",
+    "group": 2,
+    "oldGroup": "II A",
+    "color": "#ff9933",
+    "row": 7,
+    "col": 2,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "sampleState": "ra88",
+      "container": "ampoule",
+      "isotope": "226",
+      "sourceType": "primary",
+      "spectrum": "ra-88-spd"
+    }
+  },
+  {
+    "number": 89,
+    "symbol": "Ac",
+    "mass": "(227)",
+    "group": null,
+    "oldGroup": "actinides",
+    "color": "#00aec2",
+    "row": 9,
+    "col": 4,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 90,
+    "symbol": "Th",
+    "mass": "232,04",
+    "group": null,
+    "oldGroup": "actinides",
+    "color": "#00aec2",
+    "row": 9,
+    "col": 5,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "~2%",
+      "sampleState": "th90",
+      "container": "ampoule",
+      "isotope": "232",
+      "sourceType": "primary",
+      "spectrum": "th-90-wt20"
+    }
+  },
+  {
+    "number": 91,
+    "symbol": "Pa",
+    "mass": "231,04",
+    "group": null,
+    "oldGroup": "actinides",
+    "color": "#00aec2",
+    "row": 9,
+    "col": 6,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 92,
+    "symbol": "U",
+    "mass": "238,03",
+    "group": null,
+    "oldGroup": "actinides",
+    "color": "#00aec2",
+    "row": 9,
+    "col": 7,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "purity": "~2%",
+      "sampleState": "u92",
+      "container": "ampoule",
+      "isotope": "238",
+      "sourceType": "primary",
+      "spectrum": "u-92-glass"
+    }
+  },
+  {
+    "number": 93,
+    "symbol": "Np",
+    "mass": "(237)",
+    "group": null,
+    "oldGroup": "actinides",
+    "color": "#00aec2",
+    "row": 9,
+    "col": 8,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 94,
+    "symbol": "Pu",
+    "mass": "(244)",
+    "group": null,
+    "oldGroup": "actinides",
+    "color": "#00aec2",
+    "row": 9,
+    "col": 9,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "sampleState": "pu94",
+      "container": "acrylicBox",
+      "isotope": "239",
+      "sourceType": "primary",
+      "spectrum": "pu-94-rid6m"
+    }
+  },
+  {
+    "number": 95,
+    "symbol": "Am",
+    "mass": "(243)",
+    "group": null,
+    "oldGroup": "actinides",
+    "color": "#00aec2",
+    "row": 9,
+    "col": 10,
+    "periodEnd": false,
+    "inCollection": true,
+    "collection": {
+      "sampleState": "am95",
+      "container": "acrylicCoinCapsule",
+      "isotope": "241",
+      "sourceType": "primary",
+      "spectrum": "am-95-his07"
+    }
+  },
+  {
+    "number": 96,
+    "symbol": "Cm",
+    "mass": "(247)",
+    "group": null,
+    "oldGroup": "actinides",
+    "color": "#00aec2",
+    "row": 9,
+    "col": 11,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 97,
+    "symbol": "Bk",
+    "mass": "(247)",
+    "group": null,
+    "oldGroup": "actinides",
+    "color": "#00aec2",
+    "row": 9,
+    "col": 12,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 98,
+    "symbol": "Cf",
+    "mass": "(251)",
+    "group": null,
+    "oldGroup": "actinides",
+    "color": "#00aec2",
+    "row": 9,
+    "col": 13,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 99,
+    "symbol": "Es",
+    "mass": "(252)",
+    "group": null,
+    "oldGroup": "actinides",
+    "color": "#00aec2",
+    "row": 9,
+    "col": 14,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 100,
+    "symbol": "Fm",
+    "mass": "(257)",
+    "group": null,
+    "oldGroup": "actinides",
+    "color": "#00aec2",
+    "row": 9,
+    "col": 15,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 101,
+    "symbol": "Md",
+    "mass": "(258)",
+    "group": null,
+    "oldGroup": "actinides",
+    "color": "#00aec2",
+    "row": 9,
+    "col": 16,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 102,
+    "symbol": "No",
+    "mass": "(259)",
+    "group": null,
+    "oldGroup": "actinides",
+    "color": "#00aec2",
+    "row": 9,
+    "col": 17,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 103,
+    "symbol": "Lr",
+    "mass": "(262)",
+    "group": null,
+    "oldGroup": "actinides",
+    "color": "#00aec2",
+    "row": 9,
+    "col": 18,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 104,
+    "symbol": "Rf",
+    "mass": "(267)",
+    "group": 4,
+    "oldGroup": "IV B",
+    "color": "#99afcb",
+    "row": 7,
+    "col": 4,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 105,
+    "symbol": "Db",
+    "mass": "(270)",
+    "group": 5,
+    "oldGroup": "V B",
+    "color": "#99afcb",
+    "row": 7,
+    "col": 5,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 106,
+    "symbol": "Sg",
+    "mass": "(269)",
+    "group": 6,
+    "oldGroup": "VI B",
+    "color": "#99afcb",
+    "row": 7,
+    "col": 6,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 107,
+    "symbol": "Bh",
+    "mass": "(270)",
+    "group": 7,
+    "oldGroup": "VII B",
+    "color": "#99afcb",
+    "row": 7,
+    "col": 7,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 108,
+    "symbol": "Hs",
+    "mass": "(270)",
+    "group": 8,
+    "oldGroup": "VIII B",
+    "color": "#99afcb",
+    "row": 7,
+    "col": 8,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 109,
+    "symbol": "Mt",
+    "mass": "(278)",
+    "group": 9,
+    "oldGroup": "VIII B",
+    "color": "#99afcb",
+    "row": 7,
+    "col": 9,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 110,
+    "symbol": "Ds",
+    "mass": "(281)",
+    "group": 10,
+    "oldGroup": "VIII B",
+    "color": "#99afcb",
+    "row": 7,
+    "col": 10,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 111,
+    "symbol": "Rg",
+    "mass": "(281)",
+    "group": 11,
+    "oldGroup": "I B",
+    "color": "#99afcb",
+    "row": 7,
+    "col": 11,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 112,
+    "symbol": "Cn",
+    "mass": "(285)",
+    "group": 12,
+    "oldGroup": "II B",
+    "color": "#99afcb",
+    "row": 7,
+    "col": 12,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 113,
+    "symbol": "Nh",
+    "mass": "(286)",
+    "group": 13,
+    "oldGroup": "III A",
+    "color": "#6b90ca",
+    "row": 7,
+    "col": 13,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 114,
+    "symbol": "Fl",
+    "mass": "(289)",
+    "group": 14,
+    "oldGroup": "IV A",
+    "color": "#6b90ca",
+    "row": 7,
+    "col": 14,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 115,
+    "symbol": "Mc",
+    "mass": "(289)",
+    "group": 15,
+    "oldGroup": "V A",
+    "color": "#6b90ca",
+    "row": 7,
+    "col": 15,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 116,
+    "symbol": "Lv",
+    "mass": "(293)",
+    "group": 16,
+    "oldGroup": "VI A",
+    "color": "#6b90ca",
+    "row": 7,
+    "col": 16,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 117,
+    "symbol": "Ts",
+    "mass": "(293)",
+    "group": 17,
+    "oldGroup": "VII A",
+    "color": "#ffcc00",
+    "row": 7,
+    "col": 17,
+    "periodEnd": false,
+    "inCollection": false
+  },
+  {
+    "number": 118,
+    "symbol": "Og",
+    "mass": "(294)",
+    "group": 18,
+    "oldGroup": "VIII A",
+    "color": "#fa9d99",
+    "row": 7,
+    "col": 18,
+    "periodEnd": true,
+    "inCollection": false
+  }
+]

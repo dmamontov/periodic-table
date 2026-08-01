@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  periodic-table:
+    build:
+      context: .
+      network: host
+    image: smarthome-periodic-table
+    container_name: periodic-table
+    restart: always
+    ports:
+      - 3003:3000

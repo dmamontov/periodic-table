@@ -1,0 +1,158 @@
+export interface OverviewCommon {
+  latinName?: string | null
+  englishName?: string | null
+  elementOpenedYear?: string | null
+  casNumber?: string | null
+  elementOpener?: string | null
+  countryOpener?: string | null
+  elementShell?: string | null
+  elementE?: string | null
+  elementP?: string | null
+  elementN?: string | null
+  hasImage?: boolean
+  hasSpectre?: boolean
+  elementConfiguration?: string | null
+  elementPrice?: string | null
+  elementRadioactivity?: boolean
+}
+
+export interface PropertiesCommon {
+  elementMasse?: string | null
+  elementDensity?: string | null
+  elementMeltingPoint?: string | null
+  elementBoilingPoint?: string | null
+  elValence?: string | null
+  elementGroup?: string | null
+  elementBlock?: string | null
+  aggregationState?: number | null
+}
+
+export interface ThermoPro {
+  fusionHeat?: string | null
+  specificHeat?: string | null
+  thermalExpansion?: string | null
+  vaporizationHeat?: string | null
+}
+
+export interface AtomicCommon {
+  oxidationState?: string | null
+  ionCharge?: string | null
+  ionizationPotential?: string | null
+  atomicRadius?: string | null
+  covalentRadius?: string | null
+  vanDerWaalsRadius?: string | null
+}
+
+export interface ElectromagneticCommon {
+  es_electro?: string | null
+  es_etype?: string | null
+  es_mtype?: string | null
+  es_omvospr?: string | null
+  es_umvospr?: string | null
+  es_mmvospr?: string | null
+  es_udel?: string | null
+  es_temp?: string | null
+}
+
+export interface GridPro {
+  gridStructureNum?: string | null
+  gridParams?: string | null
+  ratio?: string | null
+  debyeTemperature?: string | null
+  space1?: string | null
+  space2?: string | null
+}
+
+export interface AdditionalPro {
+  elementColor?: string | null
+  numberCID?: string | null
+  numberRTEC?: string | null
+  brinellHardness?: string | null
+  mohsHardness?: string | null
+  vickersHardness?: string | null
+  bulkModulus?: string | null
+  youngModulus?: string | null
+  liquidDensity?: string | null
+  molarValue?: string | null
+  poissonRatio?: string | null
+  shearModulus?: string | null
+  soundSpeed?: string | null
+  refractiveIndex?: string | null
+  thermalConductivity?: string | null
+}
+
+export interface ReactivityCommon {
+  electronegativity?: string | null
+  atomElectronEnergy?: string | null
+}
+
+export interface NucleusPro {
+  halfLife?: string | null
+  lifetime?: string | null
+  neutronCrossSection?: string | null
+  nfpaCube?: string | null
+}
+
+export interface PrevalenceCommon {
+  prevalence1?: string | null
+  prevalence2?: string | null
+  prevalence3?: string | null
+  prevalence4?: string | null
+  prevalence5?: string | null
+  prevalence6?: string | null
+}
+
+export interface ElementDetail {
+  number: number
+  symbol: string
+  name: string
+  OverviewCommon?: OverviewCommon
+  PropertiesCommon?: PropertiesCommon
+  ThermoPro?: ThermoPro
+  AtomicCommon?: AtomicCommon
+  ElectromagneticCommon?: ElectromagneticCommon
+  GridPro?: GridPro
+  AdditionalPro?: AdditionalPro
+  ReactivityCommon?: ReactivityCommon
+  NucleusPro?: NucleusPro
+  PrevalenceCommon?: PrevalenceCommon
+}
+
+export type SectionId =
+  | 'overview'
+  | 'description'
+  | 'collection'
+  | 'properties'
+  | 'thermodynamic'
+  | 'atomic'
+  | 'electromagnetic'
+  | 'grid'
+  | 'additional'
+  | 'reactivity'
+  | 'nuclear'
+  | 'nfpa'
+  | 'ghs'
+  | 'prevalence'
+  | 'applications'
+
+export interface DetailProp {
+  label: string
+  value: string
+  html?: boolean
+  href?: string | null
+  imageUrl?: string | null
+  colorHex?: string | null
+  colorFinish?: 'metallic' | 'glossy' | 'subtle' | 'matte'
+  collectionSpectrumId?: string | null
+  kind?: 'miniTable'
+  empty?: boolean
+}
+
+export interface DetailSection {
+  id: SectionId
+  sectionKey?: string
+  title: string
+  color: string
+  items: DetailProp[]
+  gridStructureNum?: number | null
+}

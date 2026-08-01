@@ -1,0 +1,49 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+dist-ssr
+dev-dist
+
+# Version control
+.git
+.gitignore
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Vite
+*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor / IDE
+.idea
+.vscode
+.vs/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Misc
+coverage
+tmp
+.claude
+*.md
+!README.md

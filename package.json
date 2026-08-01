@@ -1,0 +1,46 @@
+{
+  "name": "periodic-table",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc -b",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "check": "npm run typecheck && npm run lint",
+    "data:details": "node scripts/fetch-element-details.mjs",
+    "data:details:optimize": "node scripts/optimize-details.mjs",
+    "data:images": "node scripts/fetch-element-images.mjs",
+    "data:spectra": "node scripts/fetch-element-spectra.mjs",
+    "data:grids": "node scripts/fetch-grid-structures.mjs",
+    "data:nfpa:apply": "node scripts/apply-nfpa-ratings.mjs",
+    "data:nfpa:validate": "node scripts/build-nfpa-ratings.mjs",
+    "data:ghs": "node scripts/build-ghs-ratings.mjs",
+    "data:youtube": "node scripts/fetch-thoisoi-youtube.mjs",
+    "data:spectrum:convert": "node scripts/convert-radiacode-spectrum.mjs"
+  },
+  "dependencies": {
+    "@fontsource/pt-sans": "5.2.8",
+    "vue": "3.5.38",
+    "vue-router": "4.6.4",
+    "workbox-window": "7.4.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.4",
+    "@types/node": "24.13.2",
+    "@vitejs/plugin-vue": "6.0.7",
+    "@vue/tsconfig": "0.9.1",
+    "eslint": "9.39.4",
+    "eslint-plugin-vue": "10.9.2",
+    "globals": "17.7.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.62.0",
+    "unplugin-fonts": "2.0.0",
+    "vite": "8.0.16",
+    "vite-plugin-pwa": "1.3.0",
+    "vue-tsc": "3.3.5"
+  }
+}
