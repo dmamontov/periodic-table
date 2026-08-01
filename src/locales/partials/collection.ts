@@ -87,8 +87,8 @@ const collectionEn: CollectionLocaleStrings = {
     'th-90-wt20': 'Th-232 (WT-20).xml',
     'ra-88-spd': 'Ra-226 (SPD).xml',
     'am-95-his07': 'Am-241 (HIS-07).xml',
-    'u-92-glass': 'U-238 (Бисер из ураносодержащего стекла).xml',
-    'pu-94-rid6m': 'Pu-239 (РИД-6М).xml',
+    'u-92-glass': 'U-238 (Uranium glass beads).xml',
+    'pu-94-rid6m': 'Pu-239 (RID-6M).xml',
   },
   spectrumMinutes: 'min',
 }
@@ -129,8 +129,8 @@ const collectionZh: CollectionLocaleStrings = {
     'th-90-wt20': 'Th-232 (WT-20).xml',
     'ra-88-spd': 'Ra-226 (SPD).xml',
     'am-95-his07': 'Am-241 (HIS-07).xml',
-    'u-92-glass': 'U-238 (Бисер из ураносодержащего стекла).xml',
-    'pu-94-rid6m': 'Pu-239 (РИД-6М).xml',
+    'u-92-glass': 'U-238（含铀玻璃珠）.xml',
+    'pu-94-rid6m': 'Pu-239 (RID-6M).xml',
   },
   spectrumMinutes: '分钟',
 }

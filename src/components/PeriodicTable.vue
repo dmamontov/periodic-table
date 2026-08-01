@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, defineAsyncComponent, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import type { Element } from '../types/element'
 import {
@@ -22,8 +22,9 @@ import ElementCell from './ElementCell.vue'
 import EmptyCell from './EmptyCell.vue'
 import TableFilters from './TableFilters.vue'
 import HeatmapSelector from './HeatmapSelector.vue'
-import ElementSidebar from './ElementSidebar.vue'
 import { useLocale } from '../locales'
+
+const ElementSidebar = defineAsyncComponent(() => import('./ElementSidebar.vue'))
 
 const route = useRoute()
 const router = useRouter()

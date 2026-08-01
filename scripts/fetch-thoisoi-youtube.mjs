@@ -6,7 +6,7 @@
  *
  * Output: src/data/thoisoi-youtube.json
  */
-import { readFileSync, writeFileSync } from 'node:fs'
+import { writeFileSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 

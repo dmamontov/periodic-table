@@ -26,5 +26,9 @@ export const router = createRouter({
       path: '/el/:symbol',
       redirect: (to) => ({ path: `/element/${String(to.params.symbol ?? '')}` }),
     },
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/',
+    },
   ],
 })
