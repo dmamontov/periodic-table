@@ -16,20 +16,20 @@ const flyoutStyle = ref<{ top: string; left: string; width: string }>({
 })
 
 const VIEWPORT_MARGIN = 12
-const FLYOUT_WIDTH = 280
 
 const isCollectionActive = computed(() => route.name === 'collection')
 
+/** Spans the whole header controls row: from the main menu button's left edge to the search button's right edge. */
 function updateFlyoutPosition() {
-  const rect = rootEl.value?.getBoundingClientRect()
-  if (!rect) return
+  const controlsRect = rootEl.value?.parentElement?.getBoundingClientRect()
+  if (!controlsRect) return
 
-  const width = Math.min(FLYOUT_WIDTH, window.innerWidth - VIEWPORT_MARGIN * 2)
+  const width = Math.min(controlsRect.width, window.innerWidth - VIEWPORT_MARGIN * 2)
   const maxLeft = window.innerWidth - VIEWPORT_MARGIN - width
-  const left = Math.min(Math.max(rect.left, VIEWPORT_MARGIN), Math.max(maxLeft, VIEWPORT_MARGIN))
+  const left = Math.min(Math.max(controlsRect.left, VIEWPORT_MARGIN), Math.max(maxLeft, VIEWPORT_MARGIN))
 
   flyoutStyle.value = {
-    top: `${rect.bottom + 6}px`,
+    top: `${controlsRect.bottom + 6}px`,
     left: `${left}px`,
     width: `${width}px`,
   }
