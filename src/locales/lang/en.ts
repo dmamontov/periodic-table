@@ -373,6 +373,10 @@ const messages: LocaleMessages = {
     "116": "Livermorium",
     "117": "Tennessine",
     "118": "Oganesson"
+  },
+  "seo": {
+    "description": "Interactive periodic table with an element collection",
+    "elementDescription": "%name% (%symbol%) — chemical element #%number% in the periodic table. Atomic mass, electron configuration, physical and chemical properties."
   }
 }
 

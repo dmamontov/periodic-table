@@ -257,4 +257,8 @@ export interface LocaleMessages {
   >
   legend: Record<LegendKey, string>
   elements: Record<string, string>
+  seo: {
+    description: string
+    elementDescription: string
+  }
 }

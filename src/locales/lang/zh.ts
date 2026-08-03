@@ -373,6 +373,10 @@ const messages: LocaleMessages = {
     "116": "𫟷",
     "117": "鿬",
     "118": "鿫"
+  },
+  "seo": {
+    "description": "带元素收藏的互动元素周期表",
+    "elementDescription": "%name%（%symbol%）— 元素周期表中的第%number%号化学元素。原子质量、电子构型及物理化学性质。"
   }
 }
 

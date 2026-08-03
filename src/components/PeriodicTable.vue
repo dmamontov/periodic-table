@@ -18,6 +18,7 @@ import {
   getHeatmapIntensity,
   type HeatmapId,
 } from '../utils/heatmapData'
+import { useSeo } from '../composables/useSeo'
 import ElementCell from './ElementCell.vue'
 import EmptyCell from './EmptyCell.vue'
 import TableFilters from './TableFilters.vue'
@@ -59,6 +60,12 @@ watch(
   },
   { immediate: true },
 )
+
+const selectedElementRouteSymbol = computed(() =>
+  selectedElement.value ? getElementRouteSymbol(selectedElement.value.symbol) : undefined,
+)
+
+useSeo(selectedElement, selectedElementRouteSymbol, messages)
 
 const heatmapIntensityByNumber = computed(() => {
   const id = selectedHeatmap.value

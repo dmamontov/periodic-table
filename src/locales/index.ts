@@ -78,7 +78,6 @@ function createLocale() {
     (value) => {
       persistLocale(value)
       document.documentElement.lang = value === 'zh' ? 'zh-CN' : value
-      document.title = localeMessages[value].title
     },
     { immediate: true },
   )
