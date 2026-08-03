@@ -17,6 +17,7 @@ const messages: LocaleMessages = {
   },
   "collectionPanel": {
     "sectionTitle": "数据一览",
+    "spectraSectionTitle": "能谱",
     "close": "关闭",
     "statCollected": "已收集元素",
     "statRadioactive": "放射性样品",

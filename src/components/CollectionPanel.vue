@@ -3,9 +3,12 @@ import { computed, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useLocale } from '../locales'
 import { computeCollectionStats } from '../utils/collectionStats'
+import { elements, getElementRouteSymbol } from '../data'
+import CollectionGammaSpectrum from './CollectionGammaSpectrum.vue'
 
 const COLLECTED_COLOR = '#c9a227'
 const RADIOACTIVE_COLOR = 'var(--color-error)'
+const SPECTRA_COLOR = '#c9a227'
 
 const route = useRoute()
 const router = useRouter()
@@ -14,6 +17,13 @@ const { messages, tLegend, collectionName } = useLocale()
 const isOpen = computed(() => route.name === 'collection')
 const stats = computeCollectionStats()
 const sectionCollapsed = ref(false)
+const spectraCollapsed = ref(false)
+
+const spectrumElements = elements.flatMap((el) => {
+  const spectrumId = el.collection?.spectrum
+  if (!spectrumId) return []
+  return [{ symbol: el.symbol, routeSymbol: getElementRouteSymbol(el.symbol), color: el.color, spectrumId }]
+})
 
 function percentOf(part: number, total: number): number {
   return total === 0 ? 0 : Math.round((part / total) * 100)
@@ -21,6 +31,10 @@ function percentOf(part: number, total: number): number {
 
 function close() {
   void router.push({ name: 'home' })
+}
+
+function openElement(symbol: string) {
+  void router.push({ name: 'element', params: { symbol } })
 }
 </script>
 
@@ -161,6 +175,46 @@ function close() {
                   </span>
                   <span class="collection-panel__row-value"><span :style="{ color: cat.color }">{{ cat.collected }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-mid">{{ cat.collectible }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-total">{{ cat.total }}</span></span>
                 </div>
+              </div>
+            </div>
+          </section>
+
+          <section
+            v-if="spectrumElements.length"
+            class="collection-panel__section"
+            :class="{ 'collection-panel__section--collapsed': spectraCollapsed }"
+          >
+            <button
+              type="button"
+              class="collection-panel__section-title"
+              :style="{ borderColor: SPECTRA_COLOR }"
+              :aria-expanded="!spectraCollapsed"
+              @click="spectraCollapsed = !spectraCollapsed"
+            >
+              <span>{{ messages.collectionPanel.spectraSectionTitle }}</span>
+              <span class="collection-panel__section-chevron" aria-hidden="true" />
+            </button>
+
+            <div v-show="!spectraCollapsed" class="collection-panel__spectra-list">
+              <div
+                v-for="item in spectrumElements"
+                :key="item.symbol"
+                class="collection-panel__spectrum-card"
+              >
+                <button
+                  type="button"
+                  class="collection-panel__spectrum-header"
+                  @click="openElement(item.routeSymbol)"
+                >
+                  <span
+                    class="collection-panel__spectrum-swatch"
+                    :style="{ backgroundColor: item.color }"
+                  />
+                  <span class="collection-panel__spectrum-symbol">{{ item.symbol }}</span>
+                  <span class="collection-panel__spectrum-name">{{ messages.elements[item.symbol] }}</span>
+                  <span class="collection-panel__spectrum-arrow" aria-hidden="true" />
+                </button>
+                <CollectionGammaSpectrum :spectrum-id="item.spectrumId" :accent-color="item.color" />
               </div>
             </div>
           </section>
@@ -394,6 +448,69 @@ function close() {
 }
 
 .collection-panel__section--collapsed .collection-panel__section-chevron {
+  transform: rotate(-45deg);
+}
+
+.collection-panel__spectra-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.collection-panel__spectrum-card {
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--color-bg-muted);
+}
+
+.collection-panel__spectrum-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.collection-panel__spectrum-swatch {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.collection-panel__spectrum-symbol {
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.collection-panel__spectrum-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  transition: color 0.15s ease;
+}
+
+.collection-panel__spectrum-header:hover .collection-panel__spectrum-name {
+  color: var(--color-text);
+}
+
+.collection-panel__spectrum-arrow {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid var(--color-text-tertiary);
+  border-bottom: 2px solid var(--color-text-tertiary);
   transform: rotate(-45deg);
 }
 

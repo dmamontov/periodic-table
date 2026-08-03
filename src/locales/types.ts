@@ -39,6 +39,7 @@ export interface LocaleMessages {
   }
   collectionPanel: {
     sectionTitle: string
+    spectraSectionTitle: string
     close: string
     statCollected: string
     statRadioactive: string
