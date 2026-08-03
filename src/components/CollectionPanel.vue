@@ -15,21 +15,8 @@ const isOpen = computed(() => route.name === 'collection')
 const stats = computeCollectionStats()
 const categoryCollapsed = ref(false)
 
-const collectedPercent = computed(() =>
-  Math.round((stats.collectedCount / stats.totalElements) * 100),
-)
-const collectiblePercent = computed(() =>
-  Math.round((stats.collectibleElements / stats.totalElements) * 100),
-)
-const radioactivePercent = computed(() =>
-  Math.round((stats.radioactiveCollectedCount / stats.radioactiveTotalCount) * 100),
-)
-const radioactiveCollectiblePercent = computed(() =>
-  Math.round((stats.radioactiveCollectibleCount / stats.radioactiveTotalCount) * 100),
-)
-
-function categoryPercent(collected: number, total: number): number {
-  return total === 0 ? 0 : Math.round((collected / total) * 100)
+function percentOf(part: number, total: number): number {
+  return total === 0 ? 0 : Math.round((part / total) * 100)
 }
 
 function close() {
@@ -81,48 +68,60 @@ function close() {
         <div class="collection-panel__content">
           <p class="collection-panel__note">{{ messages.collectionPanel.collectibleNote }}</p>
 
-          <div class="collection-panel__highlights">
-            <div class="collection-panel__highlights-row">
-              <span class="collection-panel__highlights-label">{{
-                messages.collectionPanel.statCollected
-              }}</span>
-              <span class="collection-panel__highlights-track">
+          <div class="collection-panel__stat-rows">
+            <div class="collection-panel__row">
+              <span class="collection-panel__row-label">{{ messages.collectionPanel.statCollected }}</span>
+              <span class="collection-panel__row-track">
                 <span
-                  class="collection-panel__highlights-fill"
-                  :style="{ width: collectedPercent + '%', backgroundColor: COLLECTED_COLOR }"
+                  class="collection-panel__row-fill"
+                  :style="{
+                    width: percentOf(stats.elementCounts.collected, stats.elementCounts.total) + '%',
+                    backgroundColor: COLLECTED_COLOR,
+                  }"
                 />
                 <span
-                  class="collection-panel__highlights-unavailable"
-                  :style="{ left: collectiblePercent + '%' }"
+                  class="collection-panel__row-unavailable"
+                  :style="{
+                    left: percentOf(stats.elementCounts.collectible, stats.elementCounts.total) + '%',
+                  }"
                 />
               </span>
-              <span class="collection-panel__highlights-value"><span :style="{ color: COLLECTED_COLOR }">{{ stats.collectedCount }}</span><span class="collection-panel__highlights-value-sep">/</span><span class="collection-panel__highlights-value-mid">{{
-                  stats.collectibleElements
-                }}</span><span class="collection-panel__highlights-value-sep">/</span><span class="collection-panel__highlights-value-total">{{
-                  stats.totalElements
+              <span class="collection-panel__row-value"><span :style="{ color: COLLECTED_COLOR }">{{ stats.elementCounts.collected }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-mid">{{
+                  stats.elementCounts.collectible
+                }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-total">{{
+                  stats.elementCounts.total
                 }}</span></span>
             </div>
 
-            <div class="collection-panel__highlights-row">
-              <span class="collection-panel__highlights-label">{{
+            <div class="collection-panel__row">
+              <span class="collection-panel__row-label">{{
                 messages.collectionPanel.statRadioactive
               }}</span>
-              <span class="collection-panel__highlights-track">
+              <span class="collection-panel__row-track">
                 <span
-                  class="collection-panel__highlights-fill"
-                  :style="{ width: radioactivePercent + '%', backgroundColor: RADIOACTIVE_COLOR }"
+                  class="collection-panel__row-fill"
+                  :style="{
+                    width:
+                      percentOf(stats.radioactiveCounts.collected, stats.radioactiveCounts.total) +
+                      '%',
+                    backgroundColor: RADIOACTIVE_COLOR,
+                  }"
                 />
                 <span
-                  class="collection-panel__highlights-unavailable"
-                  :style="{ left: radioactiveCollectiblePercent + '%' }"
+                  class="collection-panel__row-unavailable"
+                  :style="{
+                    left:
+                      percentOf(stats.radioactiveCounts.collectible, stats.radioactiveCounts.total) +
+                      '%',
+                  }"
                 />
               </span>
-              <span class="collection-panel__highlights-value"><span :style="{ color: RADIOACTIVE_COLOR }">{{
-                  stats.radioactiveCollectedCount
-                }}</span><span class="collection-panel__highlights-value-sep">/</span><span class="collection-panel__highlights-value-mid">{{
-                  stats.radioactiveCollectibleCount
-                }}</span><span class="collection-panel__highlights-value-sep">/</span><span class="collection-panel__highlights-value-total">{{
-                  stats.radioactiveTotalCount
+              <span class="collection-panel__row-value"><span :style="{ color: RADIOACTIVE_COLOR }">{{
+                  stats.radioactiveCounts.collected
+                }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-mid">{{
+                  stats.radioactiveCounts.collectible
+                }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-total">{{
+                  stats.radioactiveCounts.total
                 }}</span></span>
             </div>
           </div>
@@ -142,27 +141,23 @@ function close() {
               <span class="collection-panel__section-chevron" aria-hidden="true" />
             </button>
 
-            <div v-show="!categoryCollapsed" class="collection-panel__breakdown">
-              <div
-                v-for="cat in stats.categoryCounts"
-                :key="cat.id"
-                class="collection-panel__breakdown-row"
-              >
-                <span class="collection-panel__breakdown-label">{{ tLegend(cat.id) }}</span>
-                <span class="collection-panel__breakdown-track">
+            <div v-show="!categoryCollapsed" class="collection-panel__category-rows">
+              <div v-for="cat in stats.categoryCounts" :key="cat.id" class="collection-panel__row">
+                <span class="collection-panel__row-label">{{ tLegend(cat.id) }}</span>
+                <span class="collection-panel__row-track">
                   <span
-                    class="collection-panel__breakdown-fill"
+                    class="collection-panel__row-fill"
                     :style="{
-                      width: categoryPercent(cat.collected, cat.total) + '%',
+                      width: percentOf(cat.collected, cat.total) + '%',
                       backgroundColor: cat.color,
                     }"
                   />
                   <span
-                    class="collection-panel__breakdown-unavailable"
-                    :style="{ left: categoryPercent(cat.collectible, cat.total) + '%' }"
+                    class="collection-panel__row-unavailable"
+                    :style="{ left: percentOf(cat.collectible, cat.total) + '%' }"
                   />
                 </span>
-                <span class="collection-panel__breakdown-value"><span :style="{ color: cat.color }">{{ cat.collected }}</span><span class="collection-panel__breakdown-value-sep">/</span><span class="collection-panel__breakdown-value-mid">{{ cat.collectible }}</span><span class="collection-panel__breakdown-value-sep">/</span><span class="collection-panel__breakdown-value-total">{{ cat.total }}</span></span>
+                <span class="collection-panel__row-value"><span :style="{ color: cat.color }">{{ cat.collected }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-mid">{{ cat.collectible }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-total">{{ cat.total }}</span></span>
               </div>
             </div>
           </section>
@@ -283,20 +278,24 @@ function close() {
   gap: 8px;
 }
 
-.collection-panel__highlights {
+.collection-panel__stat-rows,
+.collection-panel__category-rows {
   display: grid;
   grid-template-columns: minmax(120px, auto) 1fr auto;
   align-items: center;
   row-gap: 10px;
   column-gap: 10px;
+}
+
+.collection-panel__stat-rows {
   margin: 16px 0 24px;
 }
 
-.collection-panel__highlights-row {
+.collection-panel__row {
   display: contents;
 }
 
-.collection-panel__highlights-label {
+.collection-panel__row-label {
   font-size: 13px;
   color: var(--color-text-secondary);
   white-space: nowrap;
@@ -304,7 +303,7 @@ function close() {
   text-overflow: ellipsis;
 }
 
-.collection-panel__highlights-track {
+.collection-panel__row-track {
   position: relative;
   height: 5px;
   border-radius: 999px;
@@ -312,13 +311,13 @@ function close() {
   overflow: hidden;
 }
 
-.collection-panel__highlights-fill {
+.collection-panel__row-fill {
   position: absolute;
   inset: 0;
   border-radius: 999px;
 }
 
-.collection-panel__highlights-unavailable {
+.collection-panel__row-unavailable {
   position: absolute;
   top: 0;
   right: 0;
@@ -333,22 +332,22 @@ function close() {
   opacity: 0.55;
 }
 
-.collection-panel__highlights-value {
+.collection-panel__row-value {
   font-size: 13px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
 
-.collection-panel__highlights-value-sep {
+.collection-panel__row-value-sep {
   color: var(--color-text-tertiary);
   opacity: 0.7;
 }
 
-.collection-panel__highlights-value-mid {
+.collection-panel__row-value-mid {
   color: var(--color-text-secondary);
 }
 
-.collection-panel__highlights-value-total {
+.collection-panel__row-value-total {
   color: var(--color-text-tertiary);
 }
 
@@ -399,74 +398,6 @@ function close() {
   transform: rotate(-45deg);
 }
 
-.collection-panel__breakdown {
-  display: grid;
-  grid-template-columns: minmax(120px, auto) 1fr auto;
-  align-items: center;
-  row-gap: 10px;
-  column-gap: 10px;
-}
-
-.collection-panel__breakdown-row {
-  display: contents;
-}
-
-.collection-panel__breakdown-label {
-  font-size: 13px;
-  color: var(--color-text-secondary);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.collection-panel__breakdown-value {
-  font-size: 13px;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-}
-
-.collection-panel__breakdown-value-sep {
-  color: var(--color-text-tertiary);
-  opacity: 0.7;
-}
-
-.collection-panel__breakdown-value-mid {
-  color: var(--color-text-secondary);
-}
-
-.collection-panel__breakdown-value-total {
-  color: var(--color-text-tertiary);
-}
-
-.collection-panel__breakdown-track {
-  position: relative;
-  height: 5px;
-  border-radius: 999px;
-  background: var(--color-heatmap-fade);
-  overflow: hidden;
-}
-
-.collection-panel__breakdown-fill {
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-}
-
-.collection-panel__breakdown-unavailable {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background: repeating-linear-gradient(
-    135deg,
-    var(--color-text-tertiary) 0,
-    var(--color-text-tertiary) 2px,
-    transparent 2px,
-    transparent 4px
-  );
-  opacity: 0.55;
-}
-
 @media (max-width: 900px) {
   .collection-panel {
     width: 100vw;
@@ -480,12 +411,8 @@ function close() {
     padding: 8px 16px 24px;
   }
 
-  .collection-panel__highlights {
-    grid-template-columns: minmax(90px, auto) 1fr auto;
-    column-gap: 8px;
-  }
-
-  .collection-panel__breakdown {
+  .collection-panel__stat-rows,
+  .collection-panel__category-rows {
     grid-template-columns: minmax(90px, auto) 1fr auto;
     column-gap: 8px;
   }
