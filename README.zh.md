@@ -10,8 +10,9 @@
 
 <table>
 <tr>
-<td><img src="docs/screenshots/demo-zh.jpg" width="400" alt="元素周期表"></td>
-<td><img src="docs/screenshots/demo-zh-element.jpg" width="400" alt="元素卡片"></td>
+<td><img src="docs/screenshots/demo-zh.jpg" width="270" alt="元素周期表"></td>
+<td><img src="docs/screenshots/demo-zh-element.jpg" width="270" alt="元素卡片"></td>
+<td><img src="docs/screenshots/demo-zh-collection.jpg" width="270" alt="收藏侧边栏"></td>
 </tr>
 </table>
 
