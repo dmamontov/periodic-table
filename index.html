@@ -5,18 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#ffffff" />
-    <script>
-      (function () {
-        try {
-          var stored = localStorage.getItem('periodic-table-theme')
-          var dark =
-            stored === 'dark' ||
-            ((stored === 'auto' || !stored) &&
-              window.matchMedia('(prefers-color-scheme: dark)').matches)
-          if (dark) document.documentElement.dataset.theme = 'dark'
-        } catch (e) {}
-      })()
-    </script>
+    <script src="/theme-init.js"></script>
     <meta name="description" content="Интерактивная периодическая таблица с коллекцией элементов" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://periodic.mamontov.tech/" />
@@ -47,16 +36,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Элементы" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <script>
-      (function () {
-        try {
-          var standalone =
-            window.matchMedia('(display-mode: standalone)').matches ||
-            window.navigator.standalone
-          if (standalone) document.documentElement.classList.add('pwa-standalone')
-        } catch (e) {}
-      })()
-    </script>
+    <script src="/pwa-standalone-init.js"></script>
     <title>Мамонтов — коллекция элементов</title>
   </head>
   <body>
