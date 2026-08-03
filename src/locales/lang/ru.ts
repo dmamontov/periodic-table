@@ -181,7 +181,7 @@ const messages: LocaleMessages = {
       "lifetime": "Период существования элемента:",
       "neutronCrossSection": "Ядерное эффективное сечение, Барн:",
       "color": "Цвет:",
-      "collectionSampleState": "Состояние образца:",
+      "collectionSampleState": "Образец:",
       "collectionContainer": "Контейнер:",
       "collectionIsotope": "Изотоп:",
       "collectionSourceType": "Происхождение:",

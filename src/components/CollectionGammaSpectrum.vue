@@ -18,7 +18,13 @@ const spectrum = ref<CollectionSpectrumData | null>(null)
 watch(
   () => props.spectrumId,
   async (id) => {
-    spectrum.value = await getCollectionSpectrum(id)
+    try {
+      spectrum.value = await getCollectionSpectrum(id)
+    } catch {
+      // A chunk fetch can be aborted mid-flight (fast navigation, HMR reload);
+      // leave the chart unrendered rather than surface an unhandled rejection.
+      spectrum.value = null
+    }
   },
   { immediate: true },
 )

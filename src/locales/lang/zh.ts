@@ -181,7 +181,7 @@ const messages: LocaleMessages = {
       "lifetime": "存在周期：",
       "neutronCrossSection": "中子截面：",
       "color": "颜色：",
-      "collectionSampleState": "样品状态：",
+      "collectionSampleState": "样品：",
       "collectionContainer": "容器：",
       "collectionIsotope": "同位素：",
       "collectionSourceType": "来源：",

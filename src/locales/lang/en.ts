@@ -181,7 +181,7 @@ const messages: LocaleMessages = {
       "lifetime": "Lifetime:",
       "neutronCrossSection": "Neutron cross section:",
       "color": "Color:",
-      "collectionSampleState": "Sample state:",
+      "collectionSampleState": "Sample:",
       "collectionContainer": "Container:",
       "collectionIsotope": "Isotope:",
       "collectionSourceType": "Origin:",
