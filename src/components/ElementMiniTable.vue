@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { actinides, lanthanides, mainElements } from '../data/elementMiniTable'
+import { actinides, lanthanides, mainElements } from '../data'
 import { useLocale } from '../locales'
 
 const { selectedNumber } = defineProps<{
