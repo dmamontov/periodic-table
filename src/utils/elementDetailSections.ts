@@ -81,18 +81,7 @@ const COUNTRY_FLAGS: Record<string, string> = {
   CH: '🇨🇭',
   AT: '🇦🇹',
   DK: '🇩🇰',
-  NO: '🇳🇴',
   FI: '🇫🇮',
-  NL: '🇳🇱',
-  BE: '🇧🇪',
-  PL: '🇵🇱',
-  CZ: '🇨🇿',
-  HU: '🇭🇺',
-  JP: '🇯🇵',
-  CN: '🇨🇳',
-  IN: '🇮🇳',
-  AU: '🇦🇺',
-  CA: '🇨🇦',
   MX: '🇲🇽',
   RO: '🇷🇴',
   PE: '🇵🇪',
@@ -107,9 +96,8 @@ function containsHtml(value: string): boolean {
   return HTML_TAG.test(value)
 }
 
-function fmt(value: string | number | boolean | null | undefined): string {
+function fmt(value: string | number | null | undefined): string {
   if (value === null || value === undefined || value === '') return EMPTY
-  if (typeof value === 'boolean') return value ? 'yes' : 'no'
   return String(value)
 }
 
@@ -684,14 +672,6 @@ export function isSectionEmpty(section: DetailSection, context: SectionEmptyCont
   }
 }
 
-export function parseElectronShell(shell: string | null | undefined): number[] {
-  if (!shell) return []
-  return shell.split('-').map((part) => {
-    const match = /\d+/.exec(part)
-    return match ? Number(match[0]) : 0
-  })
-}
-
 export interface OxidationCell {
   label: string
   variant: 'empty' | 'zero' | 'negative' | 'positive'
@@ -732,7 +712,7 @@ export function parseOxidationStates(raw: string | null | undefined): OxidationS
     { label: a, variant: negativeCellVariant(a) },
     { label: r !== '-' ? `-${r}` : r, variant: negativeCellVariant(r) },
     { label: i !== '-' ? `-${i}` : i, variant: negativeCellVariant(i) },
-    { label: l !== '-' ? `-${l}` : s, variant: negativeCellVariant(l) },
+    { label: l !== '-' ? `-${l}` : l, variant: negativeCellVariant(l) },
     { label: s !== '-' ? `-${s}` : s, variant: negativeCellVariant(s) },
     { label: c !== '-' ? `-${c}` : c, variant: negativeCellVariant(c) },
   ]
@@ -746,16 +726,4 @@ export function parseOxidationStates(raw: string | null | undefined): OxidationS
   })
 
   return { negative, positive }
-}
-
-export function parseNfpaCube(raw: string | null | undefined): [string, string, string, string] | null {
-  if (!raw) return null
-  const parts = raw.split(',').map((s) => s.trim())
-  if (parts.length < 4) return null
-  const a = parts[0]
-  const b = parts[1]
-  const c = parts[2]
-  const d = parts[3]
-  if (a === undefined || b === undefined || c === undefined || d === undefined) return null
-  return [a, b, c, d]
 }

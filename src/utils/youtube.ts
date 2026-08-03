@@ -1,14 +1,18 @@
 import type { Locale } from '../locales/types'
 import type { ElementDetail } from '../types/elementDetail'
-import ru from '../locales/lang/ru'
-import en from '../locales/lang/en'
-import zh from '../locales/lang/zh'
+import { localeMessages } from '../locales'
 import detailsFile from '../data/details.json'
 import { getSymbolByNumber } from '../data'
 
-const localeMessages = { ru, en, zh }
-
 const thoisoiVideos = detailsFile.youtube as Record<string, string>
+
+/** First non-empty string, e.g. a fetched name over a blank field before falling back to a lookup table. */
+function firstNonEmpty(...values: (string | null | undefined)[]): string {
+  for (const value of values) {
+    if (value) return value
+  }
+  return ''
+}
 
 function youtubeSearch(query: string): string {
   return `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`
@@ -23,11 +27,7 @@ function searchQuery(number: number, locale: Locale, detail: ElementDetail | nul
     const name = (symbol && localeMessages.zh.elements[symbol]) ?? ''
     return `${name} 元素 周期表`
   }
-  const name =
-    detail?.OverviewCommon?.englishName ??
-    detail?.name ??
-    (symbol && localeMessages.en.elements[symbol]) ??
-    ''
+  const name = firstNonEmpty(detail?.OverviewCommon?.englishName, symbol && localeMessages.en.elements[symbol])
   return `${name} periodic table`
 }
 

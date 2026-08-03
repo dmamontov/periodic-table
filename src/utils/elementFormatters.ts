@@ -38,7 +38,7 @@ const GLOSSY_COLOR_INDICES = new Set([12, 14, 15, 20])
 const SUBTLE_COLOR_INDICES = new Set([0, 21, 22])
 const MATTE_COLOR_INDICES = new Set([16])
 
-const colorIndexByNumber = detailsFile.colorIndex as Record<string, number>
+const colorIndexBySymbol = detailsFile.colorIndex as Record<string, number>
 
 export function formatOpener(
   raw: string | null | undefined,
@@ -67,17 +67,9 @@ export function formatIonChargeHtml(
   return `${symbol}<sup>${charge}</sup>`
 }
 
-export function getElementColorHex(index: string | null | undefined): string | null {
-  if (index === null || index === undefined || index === '') return null
-  const i = Number(index)
-  if (Number.isNaN(i) || i < 0 || i >= ELEMENT_SAMPLE_COLORS.length) return null
-  const color = ELEMENT_SAMPLE_COLORS[i]
-  return color ?? null
-}
-
 export function getElementSampleColorHex(atomicNumber: number): string | null {
   const symbol = getSymbolByNumber(atomicNumber)
-  const index = symbol ? colorIndexByNumber[symbol] : undefined
+  const index = symbol ? colorIndexBySymbol[symbol] : undefined
   if (index === undefined || index < 0 || index >= ELEMENT_SAMPLE_COLORS.length) return null
   const color = ELEMENT_SAMPLE_COLORS[index]
   return color ?? null
@@ -85,7 +77,7 @@ export function getElementSampleColorHex(atomicNumber: number): string | null {
 
 export function getElementSampleColorFinish(atomicNumber: number): ElementSampleColorFinish {
   const symbol = getSymbolByNumber(atomicNumber)
-  const index = symbol ? colorIndexByNumber[symbol] : undefined
+  const index = symbol ? colorIndexBySymbol[symbol] : undefined
   if (index === undefined) return 'metallic'
   if (MATTE_COLOR_INDICES.has(index)) return 'matte'
   if (SUBTLE_COLOR_INDICES.has(index)) return 'subtle'
