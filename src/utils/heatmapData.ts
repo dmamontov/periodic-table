@@ -1,7 +1,7 @@
 import type { Locale, LocaleMessages } from '../locales/types'
 import detailsFile from '../data/details.json'
 import { elements, storedElementDetails, type StoredElementDetail } from '../data'
-import { type DecayModeKey } from '../locales/partials/decay'
+import { type DecayModeKey } from '../locales/dictionaries'
 import { formatDecayType } from './elementIsotopes'
 
 export type HeatmapId =

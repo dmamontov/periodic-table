@@ -1,8 +1,5 @@
 import type { LocaleMessages } from '../types'
-import { openersRu } from '../partials/openers.ru'
-import { nfpaLabels } from '../partials/nfpa'
-import { ghsLabels } from '../partials/ghs'
-import { countriesRu } from '../partials/countries'
+import { openersRu, nfpaLabels, ghsLabels, countriesRu } from '../dictionaries'
 
 const messages: LocaleMessages = {
   "siteHeading": {

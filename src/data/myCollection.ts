@@ -13,7 +13,7 @@ import type { LocalizedLabel } from '../utils/localizedLabel'
  *    left out entirely. Every field but the symbol is optional.
  * 3. If the standard sampleState/container/sourceType values aren't enough
  *    to describe a sample — either add your own "code: label" pair to
- *    src/locales/partials/collection.ts, or just put the ready-made text
+ *    src/locales/dictionaries.ts, or just put the ready-made text
  *    straight into description (see the radioactive elements below for an
  *    example) — that's simpler and doesn't require touching the dictionaries at all.
  */

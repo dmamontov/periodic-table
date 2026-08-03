@@ -1,5 +1,5 @@
 import type { Locale } from '../locales/types'
-import { decayLabels, type DecayModeKey } from '../locales/partials/decay'
+import { decayLabels, type DecayModeKey } from '../locales/dictionaries'
 import detailsFile from '../data/details.json'
 import { formatElementSymbol } from './elementFormatters'
 

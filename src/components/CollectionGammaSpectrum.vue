@@ -8,7 +8,7 @@ import {
   type CollectionSpectrumData,
 } from '../data'
 import { useLocale } from '../locales'
-import { spectrumMinutesLabel } from '../locales/partials/collection'
+import { spectrumMinutesLabel } from '../locales/dictionaries'
 import { resolveLocalizedLabel } from '../utils/localizedLabel'
 
 const props = defineProps<{
