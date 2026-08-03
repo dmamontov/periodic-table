@@ -1,6 +1,6 @@
 {
   "elements": {
-    "1": {
+    "H": {
       "OverviewCommon": {
         "latinName": "Hydrogenium",
         "englishName": "Hydrogen",
@@ -83,7 +83,7 @@
         "space2": "194"
       }
     },
-    "2": {
+    "He": {
       "OverviewCommon": {
         "latinName": "Helium",
         "englishName": "Helium",
@@ -161,7 +161,7 @@
         "space2": "225"
       }
     },
-    "3": {
+    "Li": {
       "OverviewCommon": {
         "latinName": "Lithium",
         "englishName": "Lithium",
@@ -252,7 +252,7 @@
         "space2": "229"
       }
     },
-    "4": {
+    "Be": {
       "OverviewCommon": {
         "latinName": "Beryllium",
         "englishName": "Beryllium",
@@ -346,7 +346,7 @@
         "space2": "194"
       }
     },
-    "5": {
+    "B": {
       "OverviewCommon": {
         "latinName": "Borum",
         "englishName": "Boron",
@@ -435,7 +435,7 @@
         "space2": "166"
       }
     },
-    "6": {
+    "C": {
       "OverviewCommon": {
         "latinName": "Сarbonium (Carboneum)",
         "englishName": "Carbon",
@@ -523,7 +523,7 @@
         "space2": "194"
       }
     },
-    "7": {
+    "N": {
       "OverviewCommon": {
         "latinName": "Nitrogenium",
         "englishName": "Nitrogen",
@@ -604,7 +604,7 @@
         "space2": "194"
       }
     },
-    "8": {
+    "O": {
       "OverviewCommon": {
         "latinName": "Oxygenium",
         "englishName": "Oxygen",
@@ -686,7 +686,7 @@
         "space2": "12"
       }
     },
-    "9": {
+    "F": {
       "OverviewCommon": {
         "latinName": "Fluorum",
         "englishName": "Fluorine",
@@ -761,7 +761,7 @@
         "space2": "15"
       }
     },
-    "10": {
+    "Ne": {
       "OverviewCommon": {
         "latinName": "Neon",
         "englishName": "Neon",
@@ -840,7 +840,7 @@
         "space2": "225"
       }
     },
-    "11": {
+    "Na": {
       "OverviewCommon": {
         "latinName": "Natrium",
         "englishName": "Sodium",
@@ -931,7 +931,7 @@
         "space2": "229"
       }
     },
-    "12": {
+    "Mg": {
       "OverviewCommon": {
         "latinName": "Magnesium",
         "englishName": "Magnesium",
@@ -1023,7 +1023,7 @@
         "space2": "194"
       }
     },
-    "13": {
+    "Al": {
       "OverviewCommon": {
         "latinName": "Aluminium",
         "englishName": "Aluminum",
@@ -1117,7 +1117,7 @@
         "space2": "225"
       }
     },
-    "14": {
+    "Si": {
       "OverviewCommon": {
         "latinName": "Silicium",
         "englishName": "Silicon",
@@ -1205,7 +1205,7 @@
         "space2": "227"
       }
     },
-    "15": {
+    "P": {
       "OverviewCommon": {
         "latinName": "Phosphorus",
         "englishName": "Phosphorus",
@@ -1289,7 +1289,7 @@
         "space2": "2"
       }
     },
-    "16": {
+    "S": {
       "OverviewCommon": {
         "latinName": "Sulphuris",
         "englishName": "Sulfur",
@@ -1374,7 +1374,7 @@
         "space2": "70"
       }
     },
-    "17": {
+    "Cl": {
       "OverviewCommon": {
         "latinName": "Сhlorum",
         "englishName": "Chlorine",
@@ -1459,7 +1459,7 @@
         "space2": "64"
       }
     },
-    "18": {
+    "Ar": {
       "OverviewCommon": {
         "latinName": "Argon",
         "englishName": "Argon",
@@ -1537,7 +1537,7 @@
         "space2": "225"
       }
     },
-    "19": {
+    "K": {
       "OverviewCommon": {
         "latinName": "Kalium",
         "englishName": "Potassium",
@@ -1626,7 +1626,7 @@
         "space2": "229"
       }
     },
-    "20": {
+    "Ca": {
       "OverviewCommon": {
         "latinName": "Сalcium",
         "englishName": "Calcium",
@@ -1717,7 +1717,7 @@
         "space2": "225"
       }
     },
-    "21": {
+    "Sc": {
       "OverviewCommon": {
         "latinName": "Scandium",
         "englishName": "Scandium",
@@ -1807,7 +1807,7 @@
         "space2": "194"
       }
     },
-    "22": {
+    "Ti": {
       "OverviewCommon": {
         "latinName": "Titanium",
         "englishName": "Titanium",
@@ -1901,7 +1901,7 @@
         "space2": "194"
       }
     },
-    "23": {
+    "V": {
       "OverviewCommon": {
         "latinName": "Vanadium",
         "englishName": "Vanadium",
@@ -1993,7 +1993,7 @@
         "space2": "229"
       }
     },
-    "24": {
+    "Cr": {
       "OverviewCommon": {
         "latinName": "Chromium",
         "englishName": "Chromium",
@@ -2086,7 +2086,7 @@
         "space2": "229"
       }
     },
-    "25": {
+    "Mn": {
       "OverviewCommon": {
         "latinName": "Manganum",
         "englishName": "Manganese",
@@ -2175,7 +2175,7 @@
         "space2": "217"
       }
     },
-    "26": {
+    "Fe": {
       "OverviewCommon": {
         "latinName": "Ferrum",
         "englishName": "Iron",
@@ -2264,7 +2264,7 @@
         "space2": "229"
       }
     },
-    "27": {
+    "Co": {
       "OverviewCommon": {
         "latinName": "Cobaltum",
         "englishName": "Cobalt",
@@ -2355,7 +2355,7 @@
         "space2": "194"
       }
     },
-    "28": {
+    "Ni": {
       "OverviewCommon": {
         "latinName": "Niccolum",
         "englishName": "Nickel",
@@ -2445,7 +2445,7 @@
         "space2": "225"
       }
     },
-    "29": {
+    "Cu": {
       "OverviewCommon": {
         "latinName": "Cuprum",
         "englishName": "Copper",
@@ -2537,7 +2537,7 @@
         "space2": "225"
       }
     },
-    "30": {
+    "Zn": {
       "OverviewCommon": {
         "latinName": "Zincum",
         "englishName": "Zinc",
@@ -2632,7 +2632,7 @@
         "space2": "194"
       }
     },
-    "31": {
+    "Ga": {
       "OverviewCommon": {
         "latinName": "Gallium",
         "englishName": "Gallium",
@@ -2722,7 +2722,7 @@
         "space2": "64"
       }
     },
-    "32": {
+    "Ge": {
       "OverviewCommon": {
         "latinName": "Germanium",
         "englishName": "Germanium",
@@ -2812,7 +2812,7 @@
         "space2": "225"
       }
     },
-    "33": {
+    "As": {
       "OverviewCommon": {
         "latinName": "Arsenicum",
         "englishName": "Arsenic",
@@ -2902,7 +2902,7 @@
         "space2": "166"
       }
     },
-    "34": {
+    "Se": {
       "OverviewCommon": {
         "latinName": "Selenium",
         "englishName": "Selenium",
@@ -2994,7 +2994,7 @@
         "space2": "14"
       }
     },
-    "35": {
+    "Br": {
       "OverviewCommon": {
         "latinName": "Bromum",
         "englishName": "Bromine",
@@ -3078,7 +3078,7 @@
         "space2": "64"
       }
     },
-    "36": {
+    "Kr": {
       "OverviewCommon": {
         "latinName": "Krypton",
         "englishName": "Krypton",
@@ -3156,7 +3156,7 @@
         "space2": "225"
       }
     },
-    "37": {
+    "Rb": {
       "OverviewCommon": {
         "latinName": "Rubidium",
         "englishName": "Rubidium",
@@ -3244,7 +3244,7 @@
         "space2": "229"
       }
     },
-    "38": {
+    "Sr": {
       "OverviewCommon": {
         "latinName": "Strontium",
         "englishName": "Strontium",
@@ -3331,7 +3331,7 @@
         "space2": "225"
       }
     },
-    "39": {
+    "Y": {
       "OverviewCommon": {
         "latinName": "Yttrium",
         "englishName": "Yttrium",
@@ -3423,7 +3423,7 @@
         "space2": "194"
       }
     },
-    "40": {
+    "Zr": {
       "OverviewCommon": {
         "latinName": "Zirconium",
         "englishName": "Zirconium",
@@ -3517,7 +3517,7 @@
         "space2": "194"
       }
     },
-    "41": {
+    "Nb": {
       "OverviewCommon": {
         "latinName": "Niobium",
         "englishName": "Niobium",
@@ -3609,7 +3609,7 @@
         "space2": "229"
       }
     },
-    "42": {
+    "Mo": {
       "OverviewCommon": {
         "latinName": "Molybdaenum",
         "englishName": "Molybdenum",
@@ -3703,7 +3703,7 @@
         "space2": "229"
       }
     },
-    "43": {
+    "Tc": {
       "OverviewCommon": {
         "latinName": "Technetium",
         "englishName": "Technetium",
@@ -3778,7 +3778,7 @@
         "space2": "194"
       }
     },
-    "44": {
+    "Ru": {
       "OverviewCommon": {
         "latinName": "Ruthenium",
         "englishName": "Ruthenium",
@@ -3871,7 +3871,7 @@
         "space2": "194"
       }
     },
-    "45": {
+    "Rh": {
       "OverviewCommon": {
         "latinName": "Rhodium",
         "englishName": "Rhodium",
@@ -3962,7 +3962,7 @@
         "space2": "225"
       }
     },
-    "46": {
+    "Pd": {
       "OverviewCommon": {
         "latinName": "Palladium",
         "englishName": "Palladium",
@@ -4053,7 +4053,7 @@
         "space2": "225"
       }
     },
-    "47": {
+    "Ag": {
       "OverviewCommon": {
         "latinName": "Argentum",
         "englishName": "Silver",
@@ -4145,7 +4145,7 @@
         "space2": "225"
       }
     },
-    "48": {
+    "Cd": {
       "OverviewCommon": {
         "latinName": "Cadmium",
         "englishName": "Cadmium",
@@ -4239,7 +4239,7 @@
         "space2": "194"
       }
     },
-    "49": {
+    "In": {
       "OverviewCommon": {
         "latinName": "Indium",
         "englishName": "Indium",
@@ -4330,7 +4330,7 @@
         "space2": "139"
       }
     },
-    "50": {
+    "Sn": {
       "OverviewCommon": {
         "latinName": "Stannum",
         "englishName": "Tin",
@@ -4423,7 +4423,7 @@
         "space2": "141"
       }
     },
-    "51": {
+    "Sb": {
       "OverviewCommon": {
         "latinName": "Stibium",
         "englishName": "Antimony",
@@ -4515,7 +4515,7 @@
         "space2": "166"
       }
     },
-    "52": {
+    "Te": {
       "OverviewCommon": {
         "latinName": "Tellurium",
         "englishName": "Tellurium",
@@ -4604,7 +4604,7 @@
         "space2": "152"
       }
     },
-    "53": {
+    "I": {
       "OverviewCommon": {
         "latinName": "Iodium",
         "englishName": "Iodine",
@@ -4686,7 +4686,7 @@
         "space2": "64"
       }
     },
-    "54": {
+    "Xe": {
       "OverviewCommon": {
         "latinName": "Xenon",
         "englishName": "Xenon",
@@ -4763,7 +4763,7 @@
         "space2": "225"
       }
     },
-    "55": {
+    "Cs": {
       "OverviewCommon": {
         "latinName": "Caesium",
         "englishName": "Caesium",
@@ -4851,7 +4851,7 @@
         "space2": "229"
       }
     },
-    "56": {
+    "Ba": {
       "OverviewCommon": {
         "latinName": "Barium",
         "englishName": "Barium",
@@ -4940,7 +4940,7 @@
         "space2": "229"
       }
     },
-    "57": {
+    "La": {
       "OverviewCommon": {
         "latinName": "Lanthanum",
         "englishName": "Lanthanum",
@@ -5033,7 +5033,7 @@
         "space2": "194"
       }
     },
-    "58": {
+    "Ce": {
       "OverviewCommon": {
         "latinName": "Cerium",
         "englishName": "Cerium",
@@ -5123,7 +5123,7 @@
         "space2": "194"
       }
     },
-    "59": {
+    "Pr": {
       "OverviewCommon": {
         "latinName": "Praseodymium",
         "englishName": "Praseodymium",
@@ -5212,7 +5212,7 @@
         "space2": "194"
       }
     },
-    "60": {
+    "Nd": {
       "OverviewCommon": {
         "latinName": "Neodymium",
         "englishName": "Neodymium",
@@ -5303,7 +5303,7 @@
         "space2": "194"
       }
     },
-    "61": {
+    "Pm": {
       "OverviewCommon": {
         "latinName": "Promethium",
         "englishName": "Promethium",
@@ -5373,7 +5373,7 @@
         "ratio": "3.19"
       }
     },
-    "62": {
+    "Sm": {
       "OverviewCommon": {
         "latinName": "Samarium",
         "englishName": "Samarium",
@@ -5465,7 +5465,7 @@
         "space2": "166"
       }
     },
-    "63": {
+    "Eu": {
       "OverviewCommon": {
         "latinName": "Europium",
         "englishName": "Europium",
@@ -5551,7 +5551,7 @@
         "space2": "229"
       }
     },
-    "64": {
+    "Gd": {
       "OverviewCommon": {
         "latinName": "Gadolinium",
         "englishName": "Gadolinium",
@@ -5638,7 +5638,7 @@
         "space2": "194"
       }
     },
-    "65": {
+    "Tb": {
       "OverviewCommon": {
         "latinName": "Terbium",
         "englishName": "Terbium",
@@ -5727,7 +5727,7 @@
         "space2": "194"
       }
     },
-    "66": {
+    "Dy": {
       "OverviewCommon": {
         "latinName": "Dysprosium",
         "englishName": "Dysprosium",
@@ -5817,7 +5817,7 @@
         "space2": "194"
       }
     },
-    "67": {
+    "Ho": {
       "OverviewCommon": {
         "latinName": "Holmium",
         "englishName": "Holmium",
@@ -5906,7 +5906,7 @@
         "space2": "194"
       }
     },
-    "68": {
+    "Er": {
       "OverviewCommon": {
         "latinName": "Erbium",
         "englishName": "Erbium",
@@ -5996,7 +5996,7 @@
         "space2": "194"
       }
     },
-    "69": {
+    "Tm": {
       "OverviewCommon": {
         "latinName": "Thulium",
         "englishName": "Thulium",
@@ -6084,7 +6084,7 @@
         "space2": "194"
       }
     },
-    "70": {
+    "Yb": {
       "OverviewCommon": {
         "latinName": "Ytterbium",
         "englishName": "Ytterbium",
@@ -6171,7 +6171,7 @@
         "space2": "225"
       }
     },
-    "71": {
+    "Lu": {
       "OverviewCommon": {
         "latinName": "Lutetium",
         "englishName": "Lutetium",
@@ -6258,7 +6258,7 @@
         "space2": "194"
       }
     },
-    "72": {
+    "Hf": {
       "OverviewCommon": {
         "latinName": "Hafnium",
         "englishName": "Hafnium",
@@ -6349,7 +6349,7 @@
         "space2": "194"
       }
     },
-    "73": {
+    "Ta": {
       "OverviewCommon": {
         "latinName": "Tantalum",
         "englishName": "Tantalum",
@@ -6440,7 +6440,7 @@
         "space2": "229"
       }
     },
-    "74": {
+    "W": {
       "OverviewCommon": {
         "latinName": "Wolframium",
         "englishName": "Tungsten",
@@ -6533,7 +6533,7 @@
         "space2": "229"
       }
     },
-    "75": {
+    "Re": {
       "OverviewCommon": {
         "latinName": "Rhenium",
         "englishName": "Rhenium",
@@ -6624,7 +6624,7 @@
         "space2": "194"
       }
     },
-    "76": {
+    "Os": {
       "OverviewCommon": {
         "latinName": "Osmium",
         "englishName": "Osmium",
@@ -6714,7 +6714,7 @@
         "space2": "194"
       }
     },
-    "77": {
+    "Ir": {
       "OverviewCommon": {
         "latinName": "Iridium",
         "englishName": "Iridium",
@@ -6804,7 +6804,7 @@
         "space2": "225"
       }
     },
-    "78": {
+    "Pt": {
       "OverviewCommon": {
         "latinName": "Platinum",
         "englishName": "Platinum",
@@ -6894,7 +6894,7 @@
         "space2": "225"
       }
     },
-    "79": {
+    "Au": {
       "OverviewCommon": {
         "latinName": "Aurum",
         "englishName": "Gold",
@@ -6986,7 +6986,7 @@
         "space2": "225"
       }
     },
-    "80": {
+    "Hg": {
       "OverviewCommon": {
         "latinName": "Hydrargyrum",
         "englishName": "Mercury",
@@ -7074,7 +7074,7 @@
         "space2": "166"
       }
     },
-    "81": {
+    "Tl": {
       "OverviewCommon": {
         "latinName": "Thallium",
         "englishName": "Thallium",
@@ -7167,7 +7167,7 @@
         "space2": "194"
       }
     },
-    "82": {
+    "Pb": {
       "OverviewCommon": {
         "latinName": "Plumbum",
         "englishName": "Lead",
@@ -7258,7 +7258,7 @@
         "space2": "225"
       }
     },
-    "83": {
+    "Bi": {
       "OverviewCommon": {
         "latinName": "Bisemutum (Bismuthum, Bismutum)",
         "englishName": "Bismuth",
@@ -7349,7 +7349,7 @@
         "space2": "12"
       }
     },
-    "84": {
+    "Po": {
       "OverviewCommon": {
         "latinName": "Polonium",
         "englishName": "Polonium",
@@ -7418,7 +7418,7 @@
         "space2": "221"
       }
     },
-    "85": {
+    "At": {
       "OverviewCommon": {
         "latinName": "Astatum",
         "englishName": "Astatine",
@@ -7477,7 +7477,7 @@
         "debyeTemperature": "195"
       }
     },
-    "86": {
+    "Rn": {
       "OverviewCommon": {
         "latinName": "Radon",
         "englishName": "Radon",
@@ -7538,7 +7538,7 @@
         "gridStructureNum": "4"
       }
     },
-    "87": {
+    "Fr": {
       "OverviewCommon": {
         "latinName": "Francium",
         "englishName": "Francium",
@@ -7593,7 +7593,7 @@
         "gridStructureNum": "3"
       }
     },
-    "88": {
+    "Ra": {
       "OverviewCommon": {
         "latinName": "Radium",
         "englishName": "Radium",
@@ -7664,7 +7664,7 @@
         "space2": "229"
       }
     },
-    "89": {
+    "Ac": {
       "OverviewCommon": {
         "latinName": "Actinium",
         "englishName": "Actinium",
@@ -7728,7 +7728,7 @@
         "space2": "225"
       }
     },
-    "90": {
+    "Th": {
       "OverviewCommon": {
         "latinName": "Thorium",
         "englishName": "Thorium",
@@ -7817,7 +7817,7 @@
         "space2": "225"
       }
     },
-    "91": {
+    "Pa": {
       "OverviewCommon": {
         "latinName": "Protactinium",
         "englishName": "Protactinium",
@@ -7892,7 +7892,7 @@
         "space2": "139"
       }
     },
-    "92": {
+    "U": {
       "OverviewCommon": {
         "latinName": "Uranium",
         "englishName": "Uranium",
@@ -7982,7 +7982,7 @@
         "space2": "63"
       }
     },
-    "93": {
+    "Np": {
       "OverviewCommon": {
         "latinName": "Neptunium",
         "englishName": "Neptunium",
@@ -8048,7 +8048,7 @@
         "space2": "62"
       }
     },
-    "94": {
+    "Pu": {
       "OverviewCommon": {
         "latinName": "Plutonium",
         "englishName": "Plutonium",
@@ -8125,7 +8125,7 @@
         "space2": "11"
       }
     },
-    "95": {
+    "Am": {
       "OverviewCommon": {
         "latinName": "Americium",
         "englishName": "Americium",
@@ -8194,7 +8194,7 @@
         "space2": "194"
       }
     },
-    "96": {
+    "Cm": {
       "OverviewCommon": {
         "latinName": "Curium",
         "englishName": "Curium",
@@ -8256,7 +8256,7 @@
         "space2": "194"
       }
     },
-    "97": {
+    "Bk": {
       "OverviewCommon": {
         "latinName": "Berkelium",
         "englishName": "Berkelium",
@@ -8316,7 +8316,7 @@
         "space2": "194"
       }
     },
-    "98": {
+    "Cf": {
       "OverviewCommon": {
         "latinName": "Californium",
         "englishName": "Californium",
@@ -8374,7 +8374,7 @@
         "space2": "194"
       }
     },
-    "99": {
+    "Es": {
       "OverviewCommon": {
         "latinName": "Einsteinium",
         "englishName": "Einsteinium",
@@ -8425,7 +8425,7 @@
         "gridStructureNum": "4"
       }
     },
-    "100": {
+    "Fm": {
       "OverviewCommon": {
         "latinName": "Fermium",
         "englishName": "Fermium",
@@ -8476,7 +8476,7 @@
         "gridStructureNum": "4"
       }
     },
-    "101": {
+    "Md": {
       "OverviewCommon": {
         "latinName": "Mendelevium",
         "englishName": "Mendelevium",
@@ -8527,7 +8527,7 @@
         "gridStructureNum": "4"
       }
     },
-    "102": {
+    "No": {
       "OverviewCommon": {
         "latinName": "Nobelium",
         "englishName": "Nobelium",
@@ -8578,7 +8578,7 @@
         "gridStructureNum": "4"
       }
     },
-    "103": {
+    "Lr": {
       "OverviewCommon": {
         "latinName": "Lawrencium",
         "englishName": "Lawrencium",
@@ -8627,7 +8627,7 @@
         "gridStructureNum": "2"
       }
     },
-    "104": {
+    "Rf": {
       "OverviewCommon": {
         "latinName": "Rutherfordium",
         "englishName": "Rutherfordium",
@@ -8672,7 +8672,7 @@
         "gridStructureNum": "2"
       }
     },
-    "105": {
+    "Db": {
       "OverviewCommon": {
         "latinName": "Dubnium",
         "englishName": "Dubnium",
@@ -8717,7 +8717,7 @@
         "gridStructureNum": "3"
       }
     },
-    "106": {
+    "Sg": {
       "OverviewCommon": {
         "latinName": "Seaborgium",
         "englishName": "Seaborgium",
@@ -8761,7 +8761,7 @@
         "gridStructureNum": "3"
       }
     },
-    "107": {
+    "Bh": {
       "OverviewCommon": {
         "latinName": "Bohrium",
         "englishName": "Bohrium",
@@ -8805,7 +8805,7 @@
         "gridStructureNum": "2"
       }
     },
-    "108": {
+    "Hs": {
       "OverviewCommon": {
         "latinName": "Hassium",
         "englishName": "Hassium",
@@ -8849,7 +8849,7 @@
         "gridStructureNum": "2"
       }
     },
-    "109": {
+    "Mt": {
       "OverviewCommon": {
         "latinName": "Meitnerium",
         "englishName": "Meitnerium",
@@ -8893,7 +8893,7 @@
         "gridStructureNum": "4"
       }
     },
-    "110": {
+    "Ds": {
       "OverviewCommon": {
         "latinName": "Darmstadtium",
         "englishName": "Darmstadtium",
@@ -8937,7 +8937,7 @@
         "gridStructureNum": "3"
       }
     },
-    "111": {
+    "Rg": {
       "OverviewCommon": {
         "latinName": "Roentgenium",
         "englishName": "Roentgenium",
@@ -8983,7 +8983,7 @@
         "gridStructureNum": "3"
       }
     },
-    "112": {
+    "Cn": {
       "OverviewCommon": {
         "latinName": "Copernecium",
         "englishName": "Copernicium",
@@ -9027,7 +9027,7 @@
         "gridStructureNum": "3"
       }
     },
-    "113": {
+    "Nh": {
       "OverviewCommon": {
         "latinName": "Nihonium",
         "englishName": "Nihonium",
@@ -9073,7 +9073,7 @@
         "gridStructureNum": "2"
       }
     },
-    "114": {
+    "Fl": {
       "OverviewCommon": {
         "latinName": "Flerovium",
         "englishName": "Flerovium",
@@ -9117,7 +9117,7 @@
         "gridStructureNum": "2"
       }
     },
-    "115": {
+    "Mc": {
       "OverviewCommon": {
         "latinName": "Moscovium",
         "englishName": "Moscovium",
@@ -9161,7 +9161,7 @@
       "PrevalenceCommon": {},
       "GridPro": {}
     },
-    "116": {
+    "Lv": {
       "OverviewCommon": {
         "latinName": "Livermorium",
         "englishName": "Livermorium",
@@ -9205,7 +9205,7 @@
       "PrevalenceCommon": {},
       "GridPro": {}
     },
-    "117": {
+    "Ts": {
       "OverviewCommon": {
         "latinName": "Tennessine",
         "englishName": "Tennessine",
@@ -9249,7 +9249,7 @@
       "PrevalenceCommon": {},
       "GridPro": {}
     },
-    "118": {
+    "Og": {
       "OverviewCommon": {
         "latinName": "Oganneson",
         "englishName": "Oganesson",
@@ -9300,590 +9300,590 @@
     }
   },
   "colorIndex": {
-    "1": 0,
-    "2": 0,
-    "3": 1,
-    "4": 3,
-    "5": 16,
-    "6": 16,
-    "7": 0,
-    "8": 0,
-    "9": 21,
-    "10": 0,
-    "11": 1,
-    "12": 4,
-    "13": 1,
-    "14": 5,
-    "15": 20,
-    "16": 12,
-    "17": 22,
-    "18": 0,
-    "19": 1,
-    "20": 9,
-    "21": 1,
-    "22": 1,
-    "23": 8,
-    "24": 1,
-    "25": 1,
-    "26": 5,
-    "27": 5,
-    "28": 5,
-    "29": 10,
-    "30": 8,
-    "31": 8,
-    "32": 7,
-    "33": 7,
-    "34": 5,
-    "35": 14,
-    "36": 0,
-    "37": 1,
-    "38": 9,
-    "39": 1,
-    "40": 1,
-    "41": 8,
-    "42": 5,
-    "43": 1,
-    "44": 1,
-    "45": 1,
-    "46": 1,
-    "47": 1,
-    "48": 8,
-    "49": 1,
-    "50": 1,
-    "51": 7,
-    "52": 7,
-    "53": 15,
-    "54": 0,
-    "55": 2,
-    "56": 9,
-    "57": 1,
-    "58": 1,
-    "59": 7,
-    "60": 1,
-    "61": 1,
-    "62": 1,
-    "63": 9,
-    "64": 1,
-    "65": 1,
-    "66": 1,
-    "67": 1,
-    "68": 1,
-    "69": 5,
-    "70": 9,
-    "71": 1,
-    "72": 6,
-    "73": 8,
-    "74": 6,
-    "75": 6,
-    "76": 8,
-    "77": 1,
-    "78": 1,
-    "79": 11,
-    "80": 18,
-    "81": 1,
-    "82": 19,
-    "83": 17,
-    "84": 1,
-    "85": 1,
-    "86": 0,
-    "87": 2,
-    "88": 1,
-    "89": 1,
-    "90": 1,
-    "91": 1,
-    "92": 5,
-    "93": 1,
-    "94": 1,
-    "95": 1,
-    "96": 1,
-    "97": 1,
-    "98": 1,
-    "99": 1,
-    "100": 1,
-    "101": 1,
-    "102": 1,
-    "103": 1,
-    "104": 1,
-    "105": 1,
-    "106": 1,
-    "107": 1,
-    "108": 1,
-    "109": 1,
-    "110": 1,
-    "111": 1,
-    "112": 18,
-    "113": 1,
-    "114": 1,
-    "115": 1,
-    "116": 1,
-    "117": 22,
-    "118": 0
+    "H": 0,
+    "He": 0,
+    "Li": 1,
+    "Be": 3,
+    "B": 16,
+    "C": 16,
+    "N": 0,
+    "O": 0,
+    "F": 21,
+    "Ne": 0,
+    "Na": 1,
+    "Mg": 4,
+    "Al": 1,
+    "Si": 5,
+    "P": 20,
+    "S": 12,
+    "Cl": 22,
+    "Ar": 0,
+    "K": 1,
+    "Ca": 9,
+    "Sc": 1,
+    "Ti": 1,
+    "V": 8,
+    "Cr": 1,
+    "Mn": 1,
+    "Fe": 5,
+    "Co": 5,
+    "Ni": 5,
+    "Cu": 10,
+    "Zn": 8,
+    "Ga": 8,
+    "Ge": 7,
+    "As": 7,
+    "Se": 5,
+    "Br": 14,
+    "Kr": 0,
+    "Rb": 1,
+    "Sr": 9,
+    "Y": 1,
+    "Zr": 1,
+    "Nb": 8,
+    "Mo": 5,
+    "Tc": 1,
+    "Ru": 1,
+    "Rh": 1,
+    "Pd": 1,
+    "Ag": 1,
+    "Cd": 8,
+    "In": 1,
+    "Sn": 1,
+    "Sb": 7,
+    "Te": 7,
+    "I": 15,
+    "Xe": 0,
+    "Cs": 2,
+    "Ba": 9,
+    "La": 1,
+    "Ce": 1,
+    "Pr": 7,
+    "Nd": 1,
+    "Pm": 1,
+    "Sm": 1,
+    "Eu": 9,
+    "Gd": 1,
+    "Tb": 1,
+    "Dy": 1,
+    "Ho": 1,
+    "Er": 1,
+    "Tm": 5,
+    "Yb": 9,
+    "Lu": 1,
+    "Hf": 6,
+    "Ta": 8,
+    "W": 6,
+    "Re": 6,
+    "Os": 8,
+    "Ir": 1,
+    "Pt": 1,
+    "Au": 11,
+    "Hg": 18,
+    "Tl": 1,
+    "Pb": 19,
+    "Bi": 17,
+    "Po": 1,
+    "At": 1,
+    "Rn": 0,
+    "Fr": 2,
+    "Ra": 1,
+    "Ac": 1,
+    "Th": 1,
+    "Pa": 1,
+    "U": 5,
+    "Np": 1,
+    "Pu": 1,
+    "Am": 1,
+    "Cm": 1,
+    "Bk": 1,
+    "Cf": 1,
+    "Es": 1,
+    "Fm": 1,
+    "Md": 1,
+    "No": 1,
+    "Lr": 1,
+    "Rf": 1,
+    "Db": 1,
+    "Sg": 1,
+    "Bh": 1,
+    "Hs": 1,
+    "Mt": 1,
+    "Ds": 1,
+    "Rg": 1,
+    "Cn": 18,
+    "Nh": 1,
+    "Fl": 1,
+    "Mc": 1,
+    "Lv": 1,
+    "Ts": 22,
+    "Og": 0
   },
   "ghs": {
-    "1": [
+    "H": [
       "flammable",
       "compressedGas"
     ],
-    "2": [
+    "He": [
       "compressedGas"
     ],
-    "3": [
+    "Li": [
       "flammable",
       "corrosive",
       "healthHazard"
     ],
-    "4": [
+    "Be": [
       "healthHazard"
     ],
-    "7": [
+    "N": [
       "compressedGas"
     ],
-    "8": [
+    "O": [
       "oxidizer",
       "compressedGas"
     ],
-    "9": [
-      "oxidizer",
-      "compressedGas",
-      "corrosive",
-      "acuteToxicity"
-    ],
-    "10": [
-      "compressedGas"
-    ],
-    "11": [
-      "flammable",
-      "corrosive",
-      "healthHazard"
-    ],
-    "15": [
-      "flammable",
-      "acuteToxicity"
-    ],
-    "16": [
-      "irritant"
-    ],
-    "17": [
+    "F": [
       "oxidizer",
       "compressedGas",
       "corrosive",
       "acuteToxicity"
     ],
-    "18": [
+    "Ne": [
       "compressedGas"
     ],
-    "19": [
+    "Na": [
       "flammable",
       "corrosive",
       "healthHazard"
     ],
-    "20": [
+    "P": [
+      "flammable",
+      "acuteToxicity"
+    ],
+    "S": [
+      "irritant"
+    ],
+    "Cl": [
+      "oxidizer",
+      "compressedGas",
+      "corrosive",
+      "acuteToxicity"
+    ],
+    "Ar": [
+      "compressedGas"
+    ],
+    "K": [
+      "flammable",
+      "corrosive",
+      "healthHazard"
+    ],
+    "Ca": [
       "flammable",
       "healthHazard"
     ],
-    "21": [
+    "Sc": [
       "irritant"
     ],
-    "22": [
+    "Ti": [
       "irritant"
     ],
-    "23": [
+    "V": [
       "irritant"
     ],
-    "24": [
+    "Cr": [
       "irritant"
     ],
-    "25": [
+    "Mn": [
       "irritant"
     ],
-    "26": [
+    "Fe": [
       "irritant"
     ],
-    "27": [
+    "Co": [
       "healthHazard",
       "irritant"
     ],
-    "28": [
+    "Ni": [
       "flammable",
       "healthHazard",
       "irritant"
     ],
-    "29": [
+    "Cu": [
       "irritant"
     ],
-    "30": [
+    "Zn": [
       "flammable",
       "irritant"
     ],
-    "31": [
+    "Ga": [
       "irritant"
     ],
-    "32": [
+    "Ge": [
       "irritant"
     ],
-    "33": [
+    "As": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "34": [
+    "Se": [
       "irritant"
     ],
-    "35": [
+    "Br": [
       "oxidizer",
       "corrosive",
       "acuteToxicity"
     ],
-    "36": [
+    "Kr": [
       "compressedGas"
     ],
-    "37": [
+    "Rb": [
       "flammable",
       "corrosive",
       "irritant"
     ],
-    "38": [
+    "Sr": [
       "flammable",
       "healthHazard"
     ],
-    "39": [
+    "Y": [
       "irritant"
     ],
-    "40": [
+    "Zr": [
       "irritant"
     ],
-    "41": [
+    "Nb": [
       "irritant"
     ],
-    "42": [
+    "Mo": [
       "flammable",
       "irritant"
     ],
-    "43": [
+    "Tc": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "44": [
+    "Ru": [
       "irritant"
     ],
-    "45": [
+    "Rh": [
       "irritant"
     ],
-    "48": [
+    "Cd": [
       "healthHazard",
       "irritant",
       "environment"
     ],
-    "49": [
+    "In": [
       "irritant"
     ],
-    "50": [
+    "Sn": [
       "flammable",
       "irritant"
     ],
-    "51": [
+    "Sb": [
       "irritant"
     ],
-    "52": [
+    "Te": [
       "irritant"
     ],
-    "53": [
+    "I": [
       "corrosive",
       "irritant"
     ],
-    "54": [
+    "Xe": [
       "compressedGas"
     ],
-    "55": [
+    "Cs": [
       "flammable",
       "corrosive",
       "healthHazard"
     ],
-    "56": [
+    "Ba": [
       "flammable",
       "irritant"
     ],
-    "57": [
+    "La": [
       "irritant"
     ],
-    "58": [
+    "Ce": [
       "flammable",
       "irritant"
     ],
-    "59": [
+    "Pr": [
       "irritant"
     ],
-    "60": [
+    "Nd": [
       "irritant"
     ],
-    "61": [
+    "Pm": [
       "flammable",
       "acuteToxicity",
       "healthHazard"
     ],
-    "62": [
+    "Sm": [
       "irritant"
     ],
-    "63": [
+    "Eu": [
       "irritant"
     ],
-    "64": [
+    "Gd": [
       "irritant"
     ],
-    "65": [
+    "Tb": [
       "irritant"
     ],
-    "66": [
+    "Dy": [
       "irritant"
     ],
-    "67": [
+    "Ho": [
       "irritant"
     ],
-    "68": [
+    "Er": [
       "irritant"
     ],
-    "69": [
+    "Tm": [
       "irritant"
     ],
-    "70": [
+    "Yb": [
       "irritant"
     ],
-    "71": [
+    "Lu": [
       "irritant"
     ],
-    "72": [
+    "Hf": [
       "irritant"
     ],
-    "73": [
+    "Ta": [
       "irritant"
     ],
-    "74": [
+    "W": [
       "irritant"
     ],
-    "75": [
+    "Re": [
       "irritant"
     ],
-    "76": [
+    "Os": [
       "flammable",
       "healthHazard"
     ],
-    "77": [
+    "Ir": [
       "irritant"
     ],
-    "80": [
+    "Hg": [
       "acuteToxicity",
       "healthHazard",
       "environment"
     ],
-    "81": [
+    "Tl": [
       "acuteToxicity",
       "healthHazard",
       "irritant"
     ],
-    "82": [
+    "Pb": [
       "healthHazard",
       "irritant",
       "environment"
     ],
-    "83": [
+    "Bi": [
       "irritant"
     ],
-    "84": [
+    "Po": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "85": [
+    "At": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "86": [
+    "Rn": [
       "compressedGas",
       "acuteToxicity",
       "healthHazard"
     ],
-    "87": [
+    "Fr": [
       "flammable",
       "corrosive",
       "acuteToxicity",
       "healthHazard"
     ],
-    "88": [
+    "Ra": [
       "flammable",
       "acuteToxicity",
       "healthHazard"
     ],
-    "89": [
+    "Ac": [
       "flammable",
       "acuteToxicity",
       "healthHazard"
     ],
-    "90": [
+    "Th": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "91": [
+    "Pa": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "92": [
+    "U": [
       "acuteToxicity",
       "healthHazard",
       "environment"
     ],
-    "93": [
+    "Np": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "94": [
+    "Pu": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "95": [
+    "Am": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "96": [
+    "Cm": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "97": [
+    "Bk": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "98": [
+    "Cf": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "99": [
+    "Es": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "100": [
+    "Fm": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "101": [
+    "Md": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "102": [
+    "No": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "103": [
+    "Lr": [
       "flammable",
       "acuteToxicity",
       "healthHazard"
     ],
-    "104": [
+    "Rf": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "105": [
+    "Db": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "106": [
+    "Sg": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "107": [
+    "Bh": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "108": [
+    "Hs": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "109": [
+    "Mt": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "110": [
+    "Ds": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "111": [
+    "Rg": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "112": [
+    "Cn": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "113": [
+    "Nh": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "114": [
+    "Fl": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "115": [
+    "Mc": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "116": [
+    "Lv": [
       "acuteToxicity",
       "healthHazard"
     ],
-    "117": [
+    "Ts": [
       "corrosive",
       "acuteToxicity",
       "healthHazard"
     ],
-    "118": [
+    "Og": [
       "compressedGas",
       "healthHazard"
     ]
   },
   "radiacodeIsotope": {
-    "43": {
+    "Tc": {
       "isotope": "⁹⁹ᵐTc",
       "slug": "tc-99m"
     },
-    "61": {
+    "Pm": {
       "isotope": "¹⁴⁷Pm",
       "slug": "pm-147"
     },
-    "83": {
+    "Bi": {
       "isotope": "²¹⁴Bi",
       "slug": "bi-214"
     },
-    "84": {
+    "Po": {
       "isotope": "²¹⁰Po",
       "slug": "po-210"
     },
-    "86": {
+    "Rn": {
       "isotope": "²²²Rn",
       "slug": "rn-222"
     },
-    "88": {
+    "Ra": {
       "isotope": "²²⁶Ra",
       "slug": "ra-226"
     },
-    "89": {
+    "Ac": {
       "isotope": "²²⁸Ac",
       "slug": "ac-228"
     },
-    "90": {
+    "Th": {
       "isotope": "²³²Th",
       "slug": "th-232"
     },
-    "91": {
+    "Pa": {
       "isotope": "²³⁴ᵐPa",
       "slug": "pa-234m"
     },
-    "92": {
+    "U": {
       "isotope": "U (natural)",
       "slug": "uranium-nat"
     },
-    "95": {
+    "Am": {
       "isotope": "²⁴¹Am",
       "slug": "am-241"
     }
   },
   "isotopes": {
-    "1": {
+    "H": {
       "decay": "stable",
       "isotopes": [
         {
@@ -9896,7 +9896,7 @@
         }
       ]
     },
-    "2": {
+    "He": {
       "decay": "stable",
       "isotopes": [
         {
@@ -9909,7 +9909,7 @@
         }
       ]
     },
-    "3": {
+    "Li": {
       "decay": "stable",
       "isotopes": [
         {
@@ -9922,7 +9922,7 @@
         }
       ]
     },
-    "4": {
+    "Be": {
       "decay": "stable",
       "isotopes": [
         {
@@ -9931,7 +9931,7 @@
         }
       ]
     },
-    "5": {
+    "B": {
       "decay": "stable",
       "isotopes": [
         {
@@ -9944,7 +9944,7 @@
         }
       ]
     },
-    "6": {
+    "C": {
       "decay": "stable",
       "isotopes": [
         {
@@ -9957,7 +9957,7 @@
         }
       ]
     },
-    "7": {
+    "N": {
       "decay": "stable",
       "isotopes": [
         {
@@ -9970,7 +9970,7 @@
         }
       ]
     },
-    "8": {
+    "O": {
       "decay": "stable",
       "isotopes": [
         {
@@ -9987,7 +9987,7 @@
         }
       ]
     },
-    "9": {
+    "F": {
       "decay": "stable",
       "isotopes": [
         {
@@ -9996,7 +9996,7 @@
         }
       ]
     },
-    "10": {
+    "Ne": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10013,7 +10013,7 @@
         }
       ]
     },
-    "11": {
+    "Na": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10022,7 +10022,7 @@
         }
       ]
     },
-    "12": {
+    "Mg": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10039,7 +10039,7 @@
         }
       ]
     },
-    "13": {
+    "Al": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10048,7 +10048,7 @@
         }
       ]
     },
-    "14": {
+    "Si": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10065,7 +10065,7 @@
         }
       ]
     },
-    "15": {
+    "P": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10074,7 +10074,7 @@
         }
       ]
     },
-    "16": {
+    "S": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10091,7 +10091,7 @@
         }
       ]
     },
-    "17": {
+    "Cl": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10104,7 +10104,7 @@
         }
       ]
     },
-    "18": {
+    "Ar": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10121,7 +10121,7 @@
         }
       ]
     },
-    "19": {
+    "K": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10138,7 +10138,7 @@
         }
       ]
     },
-    "20": {
+    "Ca": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10155,7 +10155,7 @@
         }
       ]
     },
-    "21": {
+    "Sc": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10164,7 +10164,7 @@
         }
       ]
     },
-    "22": {
+    "Ti": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10181,7 +10181,7 @@
         }
       ]
     },
-    "23": {
+    "V": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10194,7 +10194,7 @@
         }
       ]
     },
-    "24": {
+    "Cr": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10211,7 +10211,7 @@
         }
       ]
     },
-    "25": {
+    "Mn": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10220,7 +10220,7 @@
         }
       ]
     },
-    "26": {
+    "Fe": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10237,7 +10237,7 @@
         }
       ]
     },
-    "27": {
+    "Co": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10246,7 +10246,7 @@
         }
       ]
     },
-    "28": {
+    "Ni": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10263,7 +10263,7 @@
         }
       ]
     },
-    "29": {
+    "Cu": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10276,7 +10276,7 @@
         }
       ]
     },
-    "30": {
+    "Zn": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10293,7 +10293,7 @@
         }
       ]
     },
-    "31": {
+    "Ga": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10306,7 +10306,7 @@
         }
       ]
     },
-    "32": {
+    "Ge": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10323,7 +10323,7 @@
         }
       ]
     },
-    "33": {
+    "As": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10332,7 +10332,7 @@
         }
       ]
     },
-    "34": {
+    "Se": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10349,7 +10349,7 @@
         }
       ]
     },
-    "35": {
+    "Br": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10362,7 +10362,7 @@
         }
       ]
     },
-    "36": {
+    "Kr": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10379,7 +10379,7 @@
         }
       ]
     },
-    "37": {
+    "Rb": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10392,7 +10392,7 @@
         }
       ]
     },
-    "38": {
+    "Sr": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10409,7 +10409,7 @@
         }
       ]
     },
-    "39": {
+    "Y": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10418,7 +10418,7 @@
         }
       ]
     },
-    "40": {
+    "Zr": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10435,7 +10435,7 @@
         }
       ]
     },
-    "41": {
+    "Nb": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10444,7 +10444,7 @@
         }
       ]
     },
-    "42": {
+    "Mo": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10461,7 +10461,7 @@
         }
       ]
     },
-    "43": {
+    "Tc": {
       "decay": "betaMinus",
       "isotopes": [
         {
@@ -10475,7 +10475,7 @@
         }
       ]
     },
-    "44": {
+    "Ru": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10492,7 +10492,7 @@
         }
       ]
     },
-    "45": {
+    "Rh": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10501,7 +10501,7 @@
         }
       ]
     },
-    "46": {
+    "Pd": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10518,7 +10518,7 @@
         }
       ]
     },
-    "47": {
+    "Ag": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10531,7 +10531,7 @@
         }
       ]
     },
-    "48": {
+    "Cd": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10548,7 +10548,7 @@
         }
       ]
     },
-    "49": {
+    "In": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10561,7 +10561,7 @@
         }
       ]
     },
-    "50": {
+    "Sn": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10578,7 +10578,7 @@
         }
       ]
     },
-    "51": {
+    "Sb": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10591,7 +10591,7 @@
         }
       ]
     },
-    "52": {
+    "Te": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10608,7 +10608,7 @@
         }
       ]
     },
-    "53": {
+    "I": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10617,7 +10617,7 @@
         }
       ]
     },
-    "54": {
+    "Xe": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10634,7 +10634,7 @@
         }
       ]
     },
-    "55": {
+    "Cs": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10643,7 +10643,7 @@
         }
       ]
     },
-    "56": {
+    "Ba": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10660,7 +10660,7 @@
         }
       ]
     },
-    "57": {
+    "La": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10673,7 +10673,7 @@
         }
       ]
     },
-    "58": {
+    "Ce": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10690,7 +10690,7 @@
         }
       ]
     },
-    "59": {
+    "Pr": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10699,7 +10699,7 @@
         }
       ]
     },
-    "60": {
+    "Nd": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10716,7 +10716,7 @@
         }
       ]
     },
-    "61": {
+    "Pm": {
       "decay": "betaMinus",
       "isotopes": [
         {
@@ -10727,7 +10727,7 @@
         }
       ]
     },
-    "62": {
+    "Sm": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10744,7 +10744,7 @@
         }
       ]
     },
-    "63": {
+    "Eu": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10757,7 +10757,7 @@
         }
       ]
     },
-    "64": {
+    "Gd": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10774,7 +10774,7 @@
         }
       ]
     },
-    "65": {
+    "Tb": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10783,7 +10783,7 @@
         }
       ]
     },
-    "66": {
+    "Dy": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10800,7 +10800,7 @@
         }
       ]
     },
-    "67": {
+    "Ho": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10809,7 +10809,7 @@
         }
       ]
     },
-    "68": {
+    "Er": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10826,7 +10826,7 @@
         }
       ]
     },
-    "69": {
+    "Tm": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10835,7 +10835,7 @@
         }
       ]
     },
-    "70": {
+    "Yb": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10852,7 +10852,7 @@
         }
       ]
     },
-    "71": {
+    "Lu": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10865,7 +10865,7 @@
         }
       ]
     },
-    "72": {
+    "Hf": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10882,7 +10882,7 @@
         }
       ]
     },
-    "73": {
+    "Ta": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10895,7 +10895,7 @@
         }
       ]
     },
-    "74": {
+    "W": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10912,7 +10912,7 @@
         }
       ]
     },
-    "75": {
+    "Re": {
       "decay": "betaMinus",
       "isotopes": [
         {
@@ -10920,7 +10920,7 @@
         }
       ]
     },
-    "76": {
+    "Os": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10937,7 +10937,7 @@
         }
       ]
     },
-    "77": {
+    "Ir": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10950,7 +10950,7 @@
         }
       ]
     },
-    "78": {
+    "Pt": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -10971,7 +10971,7 @@
         }
       ]
     },
-    "79": {
+    "Au": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10980,7 +10980,7 @@
         }
       ]
     },
-    "80": {
+    "Hg": {
       "decay": "stable",
       "isotopes": [
         {
@@ -10997,7 +10997,7 @@
         }
       ]
     },
-    "81": {
+    "Tl": {
       "decay": "stable",
       "isotopes": [
         {
@@ -11010,7 +11010,7 @@
         }
       ]
     },
-    "82": {
+    "Pb": {
       "decay": "stable",
       "isotopes": [
         {
@@ -11027,7 +11027,7 @@
         }
       ]
     },
-    "83": {
+    "Bi": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11036,7 +11036,7 @@
         }
       ]
     },
-    "84": {
+    "Po": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11044,7 +11044,7 @@
         }
       ]
     },
-    "85": {
+    "At": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11052,7 +11052,7 @@
         }
       ]
     },
-    "86": {
+    "Rn": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11060,7 +11060,7 @@
         }
       ]
     },
-    "87": {
+    "Fr": {
       "decay": "betaMinus",
       "isotopes": [
         {
@@ -11068,7 +11068,7 @@
         }
       ]
     },
-    "88": {
+    "Ra": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11076,7 +11076,7 @@
         }
       ]
     },
-    "89": {
+    "Ac": {
       "decay": "betaMinus",
       "isotopes": [
         {
@@ -11084,7 +11084,7 @@
         }
       ]
     },
-    "90": {
+    "Th": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11092,7 +11092,7 @@
         }
       ]
     },
-    "91": {
+    "Pa": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11100,7 +11100,7 @@
         }
       ]
     },
-    "92": {
+    "U": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11117,7 +11117,7 @@
         }
       ]
     },
-    "93": {
+    "Np": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11125,7 +11125,7 @@
         }
       ]
     },
-    "94": {
+    "Pu": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11133,7 +11133,7 @@
         }
       ]
     },
-    "95": {
+    "Am": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11141,7 +11141,7 @@
         }
       ]
     },
-    "96": {
+    "Cm": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11149,7 +11149,7 @@
         }
       ]
     },
-    "97": {
+    "Bk": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11157,7 +11157,7 @@
         }
       ]
     },
-    "98": {
+    "Cf": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11165,7 +11165,7 @@
         }
       ]
     },
-    "99": {
+    "Es": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11173,7 +11173,7 @@
         }
       ]
     },
-    "100": {
+    "Fm": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11181,7 +11181,7 @@
         }
       ]
     },
-    "101": {
+    "Md": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11189,7 +11189,7 @@
         }
       ]
     },
-    "102": {
+    "No": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11197,7 +11197,7 @@
         }
       ]
     },
-    "103": {
+    "Lr": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11205,7 +11205,7 @@
         }
       ]
     },
-    "104": {
+    "Rf": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11213,7 +11213,7 @@
         }
       ]
     },
-    "105": {
+    "Db": {
       "decay": "spontaneousFission",
       "isotopes": [
         {
@@ -11221,7 +11221,7 @@
         }
       ]
     },
-    "106": {
+    "Sg": {
       "decay": "spontaneousFission",
       "isotopes": [
         {
@@ -11229,7 +11229,7 @@
         }
       ]
     },
-    "107": {
+    "Bh": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11237,7 +11237,7 @@
         }
       ]
     },
-    "108": {
+    "Hs": {
       "decay": "spontaneousFission",
       "isotopes": [
         {
@@ -11245,7 +11245,7 @@
         }
       ]
     },
-    "109": {
+    "Mt": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11253,7 +11253,7 @@
         }
       ]
     },
-    "110": {
+    "Ds": {
       "decay": "spontaneousFission",
       "isotopes": [
         {
@@ -11261,7 +11261,7 @@
         }
       ]
     },
-    "111": {
+    "Rg": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11269,7 +11269,7 @@
         }
       ]
     },
-    "112": {
+    "Cn": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11277,7 +11277,7 @@
         }
       ]
     },
-    "113": {
+    "Nh": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11285,7 +11285,7 @@
         }
       ]
     },
-    "114": {
+    "Fl": {
       "decay": "spontaneousFission",
       "isotopes": [
         {
@@ -11293,7 +11293,7 @@
         }
       ]
     },
-    "115": {
+    "Mc": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11301,7 +11301,7 @@
         }
       ]
     },
-    "116": {
+    "Lv": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11309,7 +11309,7 @@
         }
       ]
     },
-    "117": {
+    "Ts": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11317,7 +11317,7 @@
         }
       ]
     },
-    "118": {
+    "Og": {
       "decay": "alpha",
       "isotopes": [
         {
@@ -11327,96 +11327,96 @@
     }
   },
   "youtube": {
-    "1": "https://www.youtube.com/watch?v=oRxaGQe0zj8",
-    "2": "https://www.youtube.com/watch?v=TngesFm8xiQ",
-    "3": "https://www.youtube.com/watch?v=ZTTb-GomRmc",
-    "4": "https://www.youtube.com/watch?v=z2JJ_YccUXQ",
-    "5": "https://www.youtube.com/watch?v=YRWWf3Obsdg",
-    "6": "https://www.youtube.com/watch?v=q-Oyp936Big",
-    "7": "https://www.youtube.com/watch?v=Pmz3hi9Bm0Q",
-    "8": "https://www.youtube.com/watch?v=xrnupfHJJ-o",
-    "10": "https://www.youtube.com/watch?v=CjXagBB9y9U",
-    "11": "https://www.youtube.com/watch?v=fFuA8XC8tIM",
-    "12": "https://www.youtube.com/watch?v=56VXdYNb0MA",
-    "13": "https://www.youtube.com/watch?v=BOv3Etp72_I",
-    "14": "https://www.youtube.com/watch?v=uHHMTQqziAA",
-    "15": "https://www.youtube.com/watch?v=zsG1SWUeFE0",
-    "16": "https://www.youtube.com/watch?v=fkzmef2_RxY",
-    "17": "https://www.youtube.com/watch?v=Oygj_Z_TR44",
-    "18": "https://www.youtube.com/watch?v=aFNVjWVOwSM",
-    "19": "https://www.youtube.com/watch?v=oEKSJBX-hKA",
-    "20": "https://www.youtube.com/watch?v=q4LSaB-EYsg",
-    "21": "https://www.youtube.com/watch?v=GzEuy18eljQ",
-    "22": "https://www.youtube.com/watch?v=-wVfhEdWaDk",
-    "23": "https://www.youtube.com/watch?v=M2HCDbVO5Ak",
-    "24": "https://www.youtube.com/watch?v=ODFNQIn39JI",
-    "25": "https://www.youtube.com/watch?v=zYvUl5JBzBI",
-    "26": "https://www.youtube.com/watch?v=wC83O_SYVKc",
-    "27": "https://www.youtube.com/watch?v=vrl2ZylxQfU",
-    "28": "https://www.youtube.com/watch?v=c4PkwpQFRwQ",
-    "29": "https://www.youtube.com/watch?v=nqzK-trc4Jg",
-    "30": "https://www.youtube.com/watch?v=McEmVMSY44Y",
-    "31": "https://www.youtube.com/watch?v=LkI1lihNeH0",
-    "32": "https://www.youtube.com/watch?v=jI1eTv5zdzg",
-    "34": "https://www.youtube.com/watch?v=RBimQgOpjZQ",
-    "35": "https://www.youtube.com/watch?v=bHKNPTiMf1Y",
-    "36": "https://www.youtube.com/watch?v=0QwmgHKaiUQ",
-    "37": "https://www.youtube.com/watch?v=V1-LcbGSsmw",
-    "38": "https://www.youtube.com/watch?v=vSJw0Ds2CV0",
-    "39": "https://www.youtube.com/watch?v=mQ4lyy0QhCM",
-    "40": "https://www.youtube.com/watch?v=_6rAywpEka0",
-    "41": "https://www.youtube.com/watch?v=n0N3VeNX6n4",
-    "42": "https://www.youtube.com/watch?v=eH7yKgetw08",
-    "43": "https://www.youtube.com/watch?v=2UbPY7VHLWs",
-    "44": "https://www.youtube.com/watch?v=Ha13RFROO44",
-    "45": "https://www.youtube.com/watch?v=aTCYhuD9vfM",
-    "46": "https://www.youtube.com/watch?v=zDRGZ53Mhp4",
-    "47": "https://www.youtube.com/watch?v=GEdjIYBqMNU",
-    "48": "https://www.youtube.com/watch?v=PjWz0ROaBeg",
-    "49": "https://www.youtube.com/watch?v=O8kbUMP5-m4",
-    "50": "https://www.youtube.com/watch?v=QJhFyaMJcSM",
-    "51": "https://www.youtube.com/watch?v=5ECFECcqaKM",
-    "52": "https://www.youtube.com/watch?v=OEU9QVxMmOo",
-    "53": "https://www.youtube.com/watch?v=U-sijD3MGSM",
-    "54": "https://www.youtube.com/watch?v=rOyE8yg-xvg",
-    "55": "https://www.youtube.com/watch?v=1gh5JJDvdiQ",
-    "56": "https://www.youtube.com/watch?v=R4Vzn9fmBLI",
-    "57": "https://www.youtube.com/watch?v=woTgDruJWkI",
-    "58": "https://www.youtube.com/watch?v=2_-PT3ipxG8",
-    "59": "https://www.youtube.com/watch?v=9qk3KEkEtcc",
-    "60": "https://www.youtube.com/watch?v=W-j4sSmrvcs",
-    "62": "https://www.youtube.com/watch?v=kAFN1KWIh6A",
-    "63": "https://www.youtube.com/watch?v=gAXR2nM410Q",
-    "64": "https://www.youtube.com/watch?v=mQWWeDY2k3w",
-    "65": "https://www.youtube.com/watch?v=TKS7eJdRvgw",
-    "66": "https://www.youtube.com/watch?v=PZS8FZyIFrA",
-    "67": "https://www.youtube.com/watch?v=xf6lhjW21gU",
-    "68": "https://www.youtube.com/watch?v=5W-rkW71zOI",
-    "69": "https://www.youtube.com/watch?v=xId4EOIX1DE",
-    "70": "https://www.youtube.com/watch?v=0Yi4eOOPVaA",
-    "71": "https://www.youtube.com/watch?v=VXx_vSxkdxg",
-    "72": "https://www.youtube.com/watch?v=j2R1EZu2DKE",
-    "73": "https://www.youtube.com/watch?v=eXrywAs6nEE",
-    "74": "https://www.youtube.com/watch?v=MxHQCvnOqEk",
-    "75": "https://www.youtube.com/watch?v=3x8VM08eUy8",
-    "76": "https://www.youtube.com/watch?v=gTrhMFygoTs",
-    "77": "https://www.youtube.com/watch?v=PR6XD-afjYI",
-    "78": "https://www.youtube.com/watch?v=JYH5rg3X5z0",
-    "79": "https://www.youtube.com/watch?v=td06TollW2Q",
-    "80": "https://www.youtube.com/watch?v=MbJRT6XLvBE",
-    "81": "https://www.youtube.com/watch?v=eME64iXQeMM",
-    "82": "https://www.youtube.com/watch?v=iMBU6I99sB8",
-    "83": "https://www.youtube.com/watch?v=s-39JB3qr5I",
-    "84": "https://www.youtube.com/watch?v=qaOos4Kruf0",
-    "86": "https://www.youtube.com/watch?v=ZiEmhMkOXsk",
-    "88": "https://www.youtube.com/watch?v=l1i0vYO4lvg",
-    "90": "https://www.youtube.com/watch?v=MPCSDylhs30",
-    "92": "https://www.youtube.com/watch?v=F0g06xHAQ6o",
-    "94": "https://www.youtube.com/watch?v=9K5KvwYrJsA",
-    "95": "https://www.youtube.com/watch?v=XQcoKrtjfwc",
-    "98": "https://www.youtube.com/watch?v=P0cFU47hD0s",
-    "108": "https://www.youtube.com/watch?v=URrKWQHfAoE",
-    "112": "https://www.youtube.com/watch?v=D3-WOnG5eRM",
-    "113": "https://www.youtube.com/watch?v=_fveV0EDygQ"
+    "H": "https://www.youtube.com/watch?v=oRxaGQe0zj8",
+    "He": "https://www.youtube.com/watch?v=TngesFm8xiQ",
+    "Li": "https://www.youtube.com/watch?v=ZTTb-GomRmc",
+    "Be": "https://www.youtube.com/watch?v=z2JJ_YccUXQ",
+    "B": "https://www.youtube.com/watch?v=YRWWf3Obsdg",
+    "C": "https://www.youtube.com/watch?v=q-Oyp936Big",
+    "N": "https://www.youtube.com/watch?v=Pmz3hi9Bm0Q",
+    "O": "https://www.youtube.com/watch?v=xrnupfHJJ-o",
+    "Ne": "https://www.youtube.com/watch?v=CjXagBB9y9U",
+    "Na": "https://www.youtube.com/watch?v=fFuA8XC8tIM",
+    "Mg": "https://www.youtube.com/watch?v=56VXdYNb0MA",
+    "Al": "https://www.youtube.com/watch?v=BOv3Etp72_I",
+    "Si": "https://www.youtube.com/watch?v=uHHMTQqziAA",
+    "P": "https://www.youtube.com/watch?v=zsG1SWUeFE0",
+    "S": "https://www.youtube.com/watch?v=fkzmef2_RxY",
+    "Cl": "https://www.youtube.com/watch?v=Oygj_Z_TR44",
+    "Ar": "https://www.youtube.com/watch?v=aFNVjWVOwSM",
+    "K": "https://www.youtube.com/watch?v=oEKSJBX-hKA",
+    "Ca": "https://www.youtube.com/watch?v=q4LSaB-EYsg",
+    "Sc": "https://www.youtube.com/watch?v=GzEuy18eljQ",
+    "Ti": "https://www.youtube.com/watch?v=-wVfhEdWaDk",
+    "V": "https://www.youtube.com/watch?v=M2HCDbVO5Ak",
+    "Cr": "https://www.youtube.com/watch?v=ODFNQIn39JI",
+    "Mn": "https://www.youtube.com/watch?v=zYvUl5JBzBI",
+    "Fe": "https://www.youtube.com/watch?v=wC83O_SYVKc",
+    "Co": "https://www.youtube.com/watch?v=vrl2ZylxQfU",
+    "Ni": "https://www.youtube.com/watch?v=c4PkwpQFRwQ",
+    "Cu": "https://www.youtube.com/watch?v=nqzK-trc4Jg",
+    "Zn": "https://www.youtube.com/watch?v=McEmVMSY44Y",
+    "Ga": "https://www.youtube.com/watch?v=LkI1lihNeH0",
+    "Ge": "https://www.youtube.com/watch?v=jI1eTv5zdzg",
+    "Se": "https://www.youtube.com/watch?v=RBimQgOpjZQ",
+    "Br": "https://www.youtube.com/watch?v=bHKNPTiMf1Y",
+    "Kr": "https://www.youtube.com/watch?v=0QwmgHKaiUQ",
+    "Rb": "https://www.youtube.com/watch?v=V1-LcbGSsmw",
+    "Sr": "https://www.youtube.com/watch?v=vSJw0Ds2CV0",
+    "Y": "https://www.youtube.com/watch?v=mQ4lyy0QhCM",
+    "Zr": "https://www.youtube.com/watch?v=_6rAywpEka0",
+    "Nb": "https://www.youtube.com/watch?v=n0N3VeNX6n4",
+    "Mo": "https://www.youtube.com/watch?v=eH7yKgetw08",
+    "Tc": "https://www.youtube.com/watch?v=2UbPY7VHLWs",
+    "Ru": "https://www.youtube.com/watch?v=Ha13RFROO44",
+    "Rh": "https://www.youtube.com/watch?v=aTCYhuD9vfM",
+    "Pd": "https://www.youtube.com/watch?v=zDRGZ53Mhp4",
+    "Ag": "https://www.youtube.com/watch?v=GEdjIYBqMNU",
+    "Cd": "https://www.youtube.com/watch?v=PjWz0ROaBeg",
+    "In": "https://www.youtube.com/watch?v=O8kbUMP5-m4",
+    "Sn": "https://www.youtube.com/watch?v=QJhFyaMJcSM",
+    "Sb": "https://www.youtube.com/watch?v=5ECFECcqaKM",
+    "Te": "https://www.youtube.com/watch?v=OEU9QVxMmOo",
+    "I": "https://www.youtube.com/watch?v=U-sijD3MGSM",
+    "Xe": "https://www.youtube.com/watch?v=rOyE8yg-xvg",
+    "Cs": "https://www.youtube.com/watch?v=1gh5JJDvdiQ",
+    "Ba": "https://www.youtube.com/watch?v=R4Vzn9fmBLI",
+    "La": "https://www.youtube.com/watch?v=woTgDruJWkI",
+    "Ce": "https://www.youtube.com/watch?v=2_-PT3ipxG8",
+    "Pr": "https://www.youtube.com/watch?v=9qk3KEkEtcc",
+    "Nd": "https://www.youtube.com/watch?v=W-j4sSmrvcs",
+    "Sm": "https://www.youtube.com/watch?v=kAFN1KWIh6A",
+    "Eu": "https://www.youtube.com/watch?v=gAXR2nM410Q",
+    "Gd": "https://www.youtube.com/watch?v=mQWWeDY2k3w",
+    "Tb": "https://www.youtube.com/watch?v=TKS7eJdRvgw",
+    "Dy": "https://www.youtube.com/watch?v=PZS8FZyIFrA",
+    "Ho": "https://www.youtube.com/watch?v=xf6lhjW21gU",
+    "Er": "https://www.youtube.com/watch?v=5W-rkW71zOI",
+    "Tm": "https://www.youtube.com/watch?v=xId4EOIX1DE",
+    "Yb": "https://www.youtube.com/watch?v=0Yi4eOOPVaA",
+    "Lu": "https://www.youtube.com/watch?v=VXx_vSxkdxg",
+    "Hf": "https://www.youtube.com/watch?v=j2R1EZu2DKE",
+    "Ta": "https://www.youtube.com/watch?v=eXrywAs6nEE",
+    "W": "https://www.youtube.com/watch?v=MxHQCvnOqEk",
+    "Re": "https://www.youtube.com/watch?v=3x8VM08eUy8",
+    "Os": "https://www.youtube.com/watch?v=gTrhMFygoTs",
+    "Ir": "https://www.youtube.com/watch?v=PR6XD-afjYI",
+    "Pt": "https://www.youtube.com/watch?v=JYH5rg3X5z0",
+    "Au": "https://www.youtube.com/watch?v=td06TollW2Q",
+    "Hg": "https://www.youtube.com/watch?v=MbJRT6XLvBE",
+    "Tl": "https://www.youtube.com/watch?v=eME64iXQeMM",
+    "Pb": "https://www.youtube.com/watch?v=iMBU6I99sB8",
+    "Bi": "https://www.youtube.com/watch?v=s-39JB3qr5I",
+    "Po": "https://www.youtube.com/watch?v=qaOos4Kruf0",
+    "Rn": "https://www.youtube.com/watch?v=ZiEmhMkOXsk",
+    "Ra": "https://www.youtube.com/watch?v=l1i0vYO4lvg",
+    "Th": "https://www.youtube.com/watch?v=MPCSDylhs30",
+    "U": "https://www.youtube.com/watch?v=F0g06xHAQ6o",
+    "Pu": "https://www.youtube.com/watch?v=9K5KvwYrJsA",
+    "Am": "https://www.youtube.com/watch?v=XQcoKrtjfwc",
+    "Cf": "https://www.youtube.com/watch?v=P0cFU47hD0s",
+    "Hs": "https://www.youtube.com/watch?v=URrKWQHfAoE",
+    "Cn": "https://www.youtube.com/watch?v=D3-WOnG5eRM",
+    "Nh": "https://www.youtube.com/watch?v=_fveV0EDygQ"
   }
 }

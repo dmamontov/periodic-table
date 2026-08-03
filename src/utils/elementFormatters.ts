@@ -1,7 +1,7 @@
 import type { Locale } from '../locales/types'
 import { localeMessages } from '../locales'
 import detailsFile from '../data/details.json'
-import { getElementGhsPictograms } from '../data'
+import { getElementGhsPictograms, getSymbolByNumber } from '../data'
 import type { GhsDisplayItem } from '../types/ghs'
 
 /** Realistic pure-substance colors (an extended palette, not Jmol/CPK). */
@@ -76,14 +76,16 @@ export function getElementColorHex(index: string | null | undefined): string | n
 }
 
 export function getElementSampleColorHex(atomicNumber: number): string | null {
-  const index = colorIndexByNumber[String(atomicNumber)]
+  const symbol = getSymbolByNumber(atomicNumber)
+  const index = symbol ? colorIndexByNumber[symbol] : undefined
   if (index === undefined || index < 0 || index >= ELEMENT_SAMPLE_COLORS.length) return null
   const color = ELEMENT_SAMPLE_COLORS[index]
   return color ?? null
 }
 
 export function getElementSampleColorFinish(atomicNumber: number): ElementSampleColorFinish {
-  const index = colorIndexByNumber[String(atomicNumber)]
+  const symbol = getSymbolByNumber(atomicNumber)
+  const index = symbol ? colorIndexByNumber[symbol] : undefined
   if (index === undefined) return 'metallic'
   if (MATTE_COLOR_INDICES.has(index)) return 'matte'
   if (SUBTLE_COLOR_INDICES.has(index)) return 'subtle'

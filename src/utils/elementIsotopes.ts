@@ -1,6 +1,7 @@
 import type { Locale, DecayModeKey } from '../locales/types'
 import { localeMessages } from '../locales'
 import detailsFile from '../data/details.json'
+import { getSymbolByNumber } from '../data'
 import { formatElementSymbol } from './elementFormatters'
 
 export interface ElementIsotopeEntry {
@@ -49,8 +50,8 @@ export function formatIsotopeHtml(
   return `<sup class="collection-isotope-mass">${String(mass)}</sup>${sym}`
 }
 
-export function formatMainIsotopesHtml(symbol: string, number: number): string {
-  const record = isotopeData[String(number)]
+export function formatMainIsotopesHtml(symbol: string): string {
+  const record = isotopeData[symbol]
   if (!record?.isotopes?.length) return ''
 
   return record.isotopes
@@ -62,7 +63,8 @@ export function formatMainIsotopesHtml(symbol: string, number: number): string {
 }
 
 export function formatDecayType(number: number, locale: Locale): string {
-  const key = isotopeData[String(number)]?.decay
+  const symbol = getSymbolByNumber(number)
+  const key = symbol ? isotopeData[symbol]?.decay : undefined
   if (!key) return ''
   return localeMessages[locale].decay[key] ?? localeMessages.ru.decay[key] ?? ''
 }

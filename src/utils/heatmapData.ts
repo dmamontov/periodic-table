@@ -1,6 +1,7 @@
 import type { Locale, LocaleMessages, DecayModeKey } from '../locales/types'
+import { localeMessages } from '../locales'
 import detailsFile from '../data/details.json'
-import { elements, storedElementDetails, type StoredElementDetail } from '../data'
+import { elements, storedElementDetails, getSymbolByNumber, type StoredElementDetail } from '../data'
 import { formatDecayType } from './elementIsotopes'
 
 export type HeatmapId =
@@ -102,14 +103,14 @@ const DECAY_CELL_LABEL: Record<DecayModeKey, string> = {
 }
 
 function getDecayModeScore(number: number): number | null {
-  const mode = isotopeData[String(number)]?.decay
+  const symbol = getSymbolByNumber(number)
+  const mode = symbol ? isotopeData[symbol]?.decay : undefined
   return mode ? DECAY_MODE_SCORE[mode] ?? null : null
 }
 
 function formatDecayModeLabel(mode: DecayModeKey, locale: string): string {
-  const sampleNumber = Object.entries(isotopeData).find(([, record]) => record.decay === mode)?.[0]
-  if (!sampleNumber) return mode
-  return formatDecayType(Number(sampleNumber), locale as Locale)
+  const loc = locale as Locale
+  return localeMessages[loc].decay[mode] ?? localeMessages.ru.decay[mode] ?? mode
 }
 
 export function parseDetailNumeric(raw: string | null | undefined): number | null {
@@ -260,7 +261,7 @@ function buildDataset(id: HeatmapId): HeatmapDataset {
   let withData = 0
 
   for (const element of elements) {
-    const detail = elementDetails[String(element.number)] ?? null
+    const detail = elementDetails[element.symbol] ?? null
     const value = extractHeatmapValue(id, element.number, detail, element.mass)
     values.set(element.number, value)
 
@@ -500,7 +501,8 @@ export function formatHeatmapElementValue(
   }
 
   if (id === 'decayMode') {
-    const mode = isotopeData[String(number)]?.decay
+    const symbol = getSymbolByNumber(number)
+    const mode = symbol ? isotopeData[symbol]?.decay : undefined
     if (!mode) return null
     if (mode === 'stable') return messages.heatmap.stable
     return formatDecayType(number, locale as Locale)
@@ -548,7 +550,8 @@ export function formatHeatmapCellDisplay(
   const def = HEATMAP_DEFINITIONS.find((item) => item.id === id)
   if (!def?.unitKey || id === 'halfLife' || id === 'lifetime' || id === 'rarity' || id === 'earthAbundance' || id === 'meteoriteAbundance') {
     if (id === 'decayMode') {
-      const mode = isotopeData[String(number)]?.decay
+      const symbol = getSymbolByNumber(number)
+      const mode = symbol ? isotopeData[symbol]?.decay : undefined
       if (!mode) return '—'
       if (mode === 'stable') return messages.heatmap.stable
       return DECAY_CELL_LABEL[mode] ?? formatted

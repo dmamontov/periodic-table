@@ -20,7 +20,7 @@ export function useSeo(
     const symbol = routeSymbol.value
     const siteTitleText = resolveLocalizedLabel(siteTitle, locale.value)
 
-    const elementName = el ? (m.elements[String(el.number)] ?? '') : ''
+    const elementName = el ? (m.elements[el.symbol] ?? '') : ''
     const title = el ? `${elementName} (${el.symbol}) — ${siteTitleText}` : siteTitleText
     const description = el
       ? m.seo.elementDescription
