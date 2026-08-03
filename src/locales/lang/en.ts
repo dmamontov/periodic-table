@@ -28,7 +28,7 @@ const messages: LocaleMessages = {
     "statCollected": "Elements collected",
     "statRadioactive": "Radioactive samples",
     "byCategory": "By category",
-    "collectibleNote": "Each number is collected / realistically collectible / total elements. Only elements up to einsteinium (Es, #99) can physically be collected — anything heavier exists for mere seconds."
+    "collectibleNote": "Each number: collected / realistically collectible / total elements."
   },
   "theme": "Theme",
   "themeLight": "Light theme",

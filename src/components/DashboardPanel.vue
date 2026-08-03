@@ -91,7 +91,7 @@ function close() {
                 />
                 <span class="dashboard-highlights__unavailable" :style="{ left: collectiblePercent + '%' }" />
               </span>
-              <span class="dashboard-highlights__value">{{ stats.collectedCount }}/{{ stats.collectibleElements }}/{{ stats.totalElements }}</span>
+              <span class="dashboard-highlights__value"><span :style="{ color: COLLECTED_COLOR }">{{ stats.collectedCount }}</span><span class="dashboard-highlights__value-sep">/</span><span class="dashboard-highlights__value-mid">{{ stats.collectibleElements }}</span><span class="dashboard-highlights__value-sep">/</span><span class="dashboard-highlights__value-total">{{ stats.totalElements }}</span></span>
             </div>
 
             <div class="dashboard-highlights__row">
@@ -106,9 +106,7 @@ function close() {
                   :style="{ left: radioactiveCollectiblePercent + '%' }"
                 />
               </span>
-              <span class="dashboard-highlights__value">{{ stats.radioactiveCollectedCount }}/{{ stats.radioactiveCollectibleCount }}/{{
-                  stats.radioactiveTotalCount
-                }}</span>
+              <span class="dashboard-highlights__value"><span :style="{ color: RADIOACTIVE_COLOR }">{{ stats.radioactiveCollectedCount }}</span><span class="dashboard-highlights__value-sep">/</span><span class="dashboard-highlights__value-mid">{{ stats.radioactiveCollectibleCount }}</span><span class="dashboard-highlights__value-sep">/</span><span class="dashboard-highlights__value-total">{{ stats.radioactiveTotalCount }}</span></span>
             </div>
           </div>
 
@@ -143,7 +141,7 @@ function close() {
                     :style="{ left: categoryPercent(cat.collectible, cat.total) + '%' }"
                   />
                 </span>
-                <span class="dashboard-breakdown__value">{{ cat.collected }}/{{ cat.collectible }}/{{ cat.total }}</span>
+                <span class="dashboard-breakdown__value"><span :style="{ color: cat.color }">{{ cat.collected }}</span><span class="dashboard-breakdown__value-sep">/</span><span class="dashboard-breakdown__value-mid">{{ cat.collectible }}</span><span class="dashboard-breakdown__value-sep">/</span><span class="dashboard-breakdown__value-total">{{ cat.total }}</span></span>
               </div>
             </div>
           </section>
@@ -318,7 +316,19 @@ function close() {
   font-size: 13px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  color: var(--color-text);
+}
+
+.dashboard-highlights__value-sep {
+  color: var(--color-text-tertiary);
+  opacity: 0.7;
+}
+
+.dashboard-highlights__value-mid {
+  color: var(--color-text-secondary);
+}
+
+.dashboard-highlights__value-total {
+  color: var(--color-text-tertiary);
 }
 
 .dashboard-panel__section {
@@ -392,7 +402,19 @@ function close() {
   font-size: 13px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  color: var(--color-text);
+}
+
+.dashboard-breakdown__value-sep {
+  color: var(--color-text-tertiary);
+  opacity: 0.7;
+}
+
+.dashboard-breakdown__value-mid {
+  color: var(--color-text-secondary);
+}
+
+.dashboard-breakdown__value-total {
+  color: var(--color-text-tertiary);
 }
 
 .dashboard-breakdown__track {
