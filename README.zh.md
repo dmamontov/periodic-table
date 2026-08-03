@@ -55,17 +55,13 @@ Fork 了本项目、想记录自己的元素收藏？需要修改的内容全部
 | `pnpm lint` / `pnpm lint:fix` | 代码检查（ESLint） |
 | `pnpm check` | `typecheck` + `lint` |
 
-### 数据更新
+### 脚本
 
-一小套脚本（`scripts/*.mjs`）用于维护应用自身的参考数据 —— 需手动运行，不属于常规构建流程：
+`scripts/` 目录下只有两个独立工具，只有第一个会自动运行：
 
 | 命令 | 用途 |
 |---|---|
-| `pnpm data:details:optimize` | 优化/压缩 `details.json` |
-| `pnpm data:nfpa:apply` | NFPA 评级 → `details.json` |
-| `pnpm data:nfpa:validate` | 校验 `scripts/data/nfpa-element-ratings.json` |
-| `pnpm data:ghs` | GHS 象形图 → `src/data/element-ghs.json` |
-| `pnpm data:youtube` | Thoisoi 视频链接 → `src/data/thoisoi-youtube.json` |
+| `pnpm build` | 在类型检查和打包之前，还会通过 `scripts/build-sitemap.mjs` 从 `src/data/elements.json` 重新生成 `public/sitemap.xml` |
 | `pnpm data:spectrum:convert` | 将 RadiaCode 的 XML 能谱转换为收藏用的 JSON |
 
 ## 项目结构
@@ -81,7 +77,7 @@ src/
 ├── types/           # 元素数据类型
 ├── utils/           # 格式化、热力图、同位素、GHS/NFPA
 └── views/           # 应用页面
-scripts/             # 离线数据更新管线
+scripts/             # 生成站点地图、转换 RadiaCode 能谱
 ```
 
 ## Docker
@@ -95,7 +91,7 @@ docker run -p 3000:3000 periodic-table
 
 ## 数据与来源
 
-元素参考属性、GHS 象形图与样品照片，通过 `scripts/` 中的脚本从公开来源（PubChem、维基百科、periodic-table.tech 等）聚合而来；NFPA 704 评级与收藏的伽马能谱则为作者本人的实测与校验数据。这些数据仅用于教育与个人项目用途。
+元素参考属性、GHS 象形图与样品照片，是从公开来源（PubChem、维基百科、periodic-table.tech 等）聚合而来的；NFPA 704 评级与收藏的伽马能谱则为作者本人的实测与校验数据。这些数据仅用于教育与个人项目用途。
 
 ## 许可证
 

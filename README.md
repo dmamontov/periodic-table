@@ -55,17 +55,13 @@ Gamma spectra (the `spectrum`/`spectrumFilename` fields) are optional — only s
 | `pnpm lint` / `pnpm lint:fix` | Lint (ESLint) |
 | `pnpm check` | `typecheck` + `lint` |
 
-### Data updates
+### Scripts
 
-A small pipeline of scripts (`scripts/*.mjs`) maintains the app's own reference data — run manually, not part of the regular build:
+`scripts/` only holds two standalone tools, neither run automatically except the first:
 
 | Command | Purpose |
 |---|---|
-| `pnpm data:details:optimize` | Optimize/minify `details.json` |
-| `pnpm data:nfpa:apply` | NFPA ratings → `details.json` |
-| `pnpm data:nfpa:validate` | Validate `scripts/data/nfpa-element-ratings.json` |
-| `pnpm data:ghs` | GHS pictograms → `src/data/element-ghs.json` |
-| `pnpm data:youtube` | Thoisoi video links → `src/data/thoisoi-youtube.json` |
+| `pnpm build` | Also regenerates `public/sitemap.xml` from `src/data/elements.json` (via `scripts/build-sitemap.mjs`) before the type check and bundle |
 | `pnpm data:spectrum:convert` | Convert a RadiaCode XML spectrum → JSON for the collection |
 
 ## Project structure
@@ -81,7 +77,7 @@ src/
 ├── types/           # element data types
 ├── utils/           # formatting, heatmaps, isotopes, GHS/NFPA
 └── views/           # app screens
-scripts/             # offline data-update pipeline
+scripts/             # sitemap generation, RadiaCode spectrum conversion
 ```
 
 ## Docker
@@ -95,7 +91,7 @@ Multi-stage build: `node:22-alpine` builds the production bundle, the final imag
 
 ## Data & attribution
 
-Element reference properties, GHS pictograms, and sample photos are aggregated from public sources (PubChem, Wikipedia, periodic-table.tech, and others) via the scripts in `scripts/`; NFPA 704 ratings and the collection's gamma spectra are the author's own measurements and verification. The data is intended for educational and personal-project use.
+Element reference properties, GHS pictograms, and sample photos were aggregated from public sources (PubChem, Wikipedia, periodic-table.tech, and others); NFPA 704 ratings and the collection's gamma spectra are the author's own measurements and verification. The data is intended for educational and personal-project use.
 
 ## License
 
