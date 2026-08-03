@@ -1,3 +1,5 @@
+import type { LocalizedLabel } from '../utils/localizedLabel'
+
 export interface ElementCollectionDecayParent {
   /** Символ родительского элемента, напр. "Ra" */
   symbol: string
@@ -8,8 +10,13 @@ export interface ElementCollectionDecayParent {
 }
 
 export interface ElementCollection {
-  /** Состояние или форма материала внутри (газ, бисер, электроды…) */
+  /** Состояние или форма материала внутри (газ, бисер, электроды…); ключ из sampleStateLabels */
   sampleState?: string | null
+  /**
+   * Готовое описание образца, если его не свести к обычному sampleState
+   * (напр. «Стрелки часов со светосоставом»). Перекрывает sampleState.
+   */
+  description?: LocalizedLabel | null
   /** Ёмкость или оформление (ампула, коробка…); пусто — образец без отдельного контейнера */
   container?: string | null
   /** Массовое число изотопа, напр. "226" → ²²⁶Ra */
@@ -22,8 +29,10 @@ export interface ElementCollection {
   decayParent?: ElementCollectionDecayParent | null
   /** Первичный / Вторичный — для радиоактивных образцов в коллекции */
   sourceType?: string | null
-  /** ID γ-спектра из spectra/, напр. "th-90-wt20" */
+  /** ID γ-спектра из data/spectra/, напр. "th-90-wt20" */
   spectrum?: string | null
+  /** Имя файла для скачивания XML со спектром */
+  spectrumFilename?: LocalizedLabel | null
 }
 
 export interface Element {

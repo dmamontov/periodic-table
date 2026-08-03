@@ -1,24 +1,31 @@
-import { collectionLabels } from '../locales/partials/collection'
+import { containerLabels, sampleStateLabels, sourceTypeLabels } from '../locales/partials/collection'
+import { resolveLocalizedLabel } from './localizedLabel'
 import type { Locale } from '../locales/types'
+import type { ElementCollection } from '../types/element'
 
-type CollectionDictGroup = 'sampleStates' | 'containers' | 'sourceTypes' | 'samples'
+const DICTS = {
+  sampleStates: sampleStateLabels,
+  containers: containerLabels,
+  sourceTypes: sourceTypeLabels,
+}
 
 export function resolveCollectionLabel(
   locale: Locale,
-  group: CollectionDictGroup,
+  group: keyof typeof DICTS,
   key: string | null | undefined,
 ): string {
   if (!key) return ''
-  const dict = collectionLabels[locale][group]
-  return dict[key] ?? collectionLabels.ru[group][key] ?? key
+  const label = DICTS[group][key]
+  return label ? resolveLocalizedLabel(label, locale) : key
 }
 
-export function resolveCollectionSampleState(locale: Locale, key: string | null | undefined): string {
-  if (!key) return ''
-  if (key in collectionLabels[locale].samples) {
-    return resolveCollectionLabel(locale, 'samples', key)
-  }
-  return resolveCollectionLabel(locale, 'sampleStates', key)
+export function resolveCollectionSampleState(
+  locale: Locale,
+  entry: ElementCollection | null | undefined,
+): string {
+  if (!entry) return ''
+  if (entry.description) return resolveLocalizedLabel(entry.description, locale)
+  return resolveCollectionLabel(locale, 'sampleStates', entry.sampleState)
 }
 
 /** 999 → 99,9%; 6N → 99,9999%; ~999 → ~99,9%; значения с % возвращаются как есть */

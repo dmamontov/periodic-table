@@ -6,6 +6,10 @@ export { storedElementDetails } from './elementDetails'
 import elementRadiacodeIsotopes from './element-radiacode-isotope.json'
 import elementGhs from './element-ghs.json'
 import type { GhsPictogramId } from '../types/ghs'
+import { myElements } from './myCollection'
+import type { LocalizedLabel } from '../utils/localizedLabel'
+
+type RawElement = Omit<Element, 'category' | 'inCollection' | 'collection'>
 
 export type CategoryId =
   | 'alkali'
@@ -79,14 +83,24 @@ export function getElementCategory(
   return 'transition'
 }
 
-export const elements: Element[] = (rawElements as Element[]).map((el) => {
+export const elements: Element[] = (rawElements as RawElement[]).map((el) => {
   const category = getElementCategory(el.number, el.oldGroup, el.row)
+  const collection = myElements[el.symbol] ?? null
   return {
     ...el,
     category,
     color: getCategoryColor(category),
+    inCollection: collection !== null,
+    collection,
   }
 })
+
+/** spectrumId → имя файла для скачивания, собрано из myCollection.ts */
+export const collectionSpectrumFilenames: Record<string, LocalizedLabel> = Object.fromEntries(
+  Object.values(myElements)
+    .filter((entry) => entry.spectrum && entry.spectrumFilename)
+    .map((entry) => [entry.spectrum!, entry.spectrumFilename!]),
+)
 
 export const mainElements = elements.filter((el) => el.row <= 7)
 export const fBlockElements = elements.filter((el) => el.row >= 8)

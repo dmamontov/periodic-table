@@ -31,6 +31,17 @@ pnpm dev
 
 The app will be available at `http://localhost:5173`.
 
+## Make it your own collection
+
+Forked this to track your own elements? Everything you need to change lives in **one file**: [`src/data/myCollection.ts`](src/data/myCollection.ts). No need to touch `elements.json` or the locale files.
+
+- `collectionName` / `siteTitle` / `siteUrl` — rename the collection and point it at your own domain.
+- `myElements` — a `symbol → details` map. Add a key to mark an element as yours; `{}` alone is enough ("I have it, no details yet"). Fill in `sampleState`, `container`, `purity`, `isotope`, `sourceType`, `decayParent`, `spectrum` as you go — all optional.
+- If the built-in `sampleState`/`container`/`sourceType` vocabulary (in [`src/locales/partials/collection.ts`](src/locales/partials/collection.ts)) doesn't cover your sample, either add a new entry there, or skip it entirely and put ready-made text straight into an element's `description` field — see the radioactive elements in `myCollection.ts` for an example.
+- Every text field accepts either a plain string (shown in all three UI languages) or `{ ru, en, zh }` if you want it translated.
+
+Gamma spectra (the `spectrum`/`spectrumFilename` fields) are optional — only set them if you actually have measurement files to drop into `src/data/spectra/`.
+
 ## Scripts
 
 | Command | Purpose |

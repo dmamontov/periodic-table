@@ -2,11 +2,14 @@
 import { computed, ref, watch } from 'vue'
 import {
   channelToEnergy,
+  collectionSpectrumFilenames,
   getCollectionSpectrum,
   getCollectionSpectrumXmlHref,
   type CollectionSpectrumData,
 } from '../data'
 import { useLocale } from '../locales'
+import { spectrumMinutesLabel } from '../locales/partials/collection'
+import { resolveLocalizedLabel } from '../utils/localizedLabel'
 
 const props = defineProps<{
   spectrumId: string
@@ -29,10 +32,10 @@ watch(
   { immediate: true },
 )
 
-const { tSidebar, messages } = useLocale()
+const { tSidebar, locale } = useLocale()
 const xmlDownload = computed(() => {
   const href = getCollectionSpectrumXmlHref(props.spectrumId)
-  const filename = messages.value.collection.spectrumFiles[props.spectrumId]
+  const filename = resolveLocalizedLabel(collectionSpectrumFilenames[props.spectrumId], locale.value)
   if (!href || !filename) return null
   return { href, filename }
 })
@@ -143,7 +146,7 @@ const caption = computed(() => {
   const data = spectrum.value
   if (!data) return ''
   const minutes = Math.round(data.measurementTimeSec / 60)
-  return `${data.device} · ${minutes} ${messages.value.collection.spectrumMinutes}`
+  return `${data.device} · ${minutes} ${resolveLocalizedLabel(spectrumMinutesLabel, locale.value)}`
 })
 </script>
 

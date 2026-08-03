@@ -3,10 +3,8 @@ import { openersRu } from '../partials/openers.ru'
 import { nfpaLabels } from '../partials/nfpa'
 import { ghsLabels } from '../partials/ghs'
 import { countriesRu } from '../partials/countries'
-import { collectionLabels } from '../partials/collection'
 
 const messages: LocaleMessages = {
-  "title": "Мамонтов — коллекция элементов",
   "siteHeading": {
     "line1": "Периодическая система химических элементов",
     "line2": "Д. И. Менделеева"
@@ -22,7 +20,6 @@ const messages: LocaleMessages = {
     "collection": "Коллекция"
   },
   "collectionPanel": {
-    "title": "Коллекция Мамонтова",
     "subtitle": "В цифрах",
     "close": "Закрыть",
     "statCollected": "Собрано элементов",
@@ -79,10 +76,6 @@ const messages: LocaleMessages = {
       "seconds": "с"
     }
   },
-  "collection": {
-    "mamontov": "Коллекция Мамонтова",
-    ...collectionLabels.ru
-  },
   "sidebar": {
     "close": "Закрыть",
     "wikipedia": "Википедия",
@@ -100,7 +93,6 @@ const messages: LocaleMessages = {
     "sections": {
       "overview": "Общие сведения",
       "description": "Описание",
-      "collection": "Коллекция Мамонтова",
       "properties": "Свойства",
       "thermodynamic": "Термодинамические свойства",
       "atomic": "Атомные свойства",

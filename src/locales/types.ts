@@ -13,7 +13,6 @@ export type LegendKey =
   | 'actinides'
 
 export interface LocaleMessages {
-  title: string
   siteHeading: {
     line1: string
     line2: string
@@ -29,7 +28,6 @@ export interface LocaleMessages {
     collection: string
   }
   collectionPanel: {
-    title: string
     subtitle: string
     close: string
     statCollected: string
@@ -86,15 +84,6 @@ export interface LocaleMessages {
       seconds: string
     }
   }
-  collection: {
-    mamontov: string
-    sampleStates: Record<string, string>
-    containers: Record<string, string>
-    sourceTypes: Record<string, string>
-    samples: Record<string, string>
-    spectrumFiles: Record<string, string>
-    spectrumMinutes: string
-  }
   sidebar: {
     close: string
     wikipedia: string
@@ -112,7 +101,6 @@ export interface LocaleMessages {
     sections: {
       overview: string
       description: string
-      collection: string
       properties: string
       thermodynamic: string
       atomic: string
