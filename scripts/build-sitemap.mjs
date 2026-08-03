@@ -8,7 +8,15 @@ import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const SITE_URL = 'https://periodic.mamontov.tech'
+
+function readSiteUrl() {
+  const source = readFileSync(resolve(__dirname, '../src/data/myCollection.ts'), 'utf8')
+  const match = source.match(/export const siteUrl = '([^']+)'/)
+  if (!match) throw new Error("Couldn't find siteUrl in src/data/myCollection.ts")
+  return match[1]
+}
+
+const SITE_URL = readSiteUrl()
 
 const elements = JSON.parse(
   readFileSync(resolve(__dirname, '../src/data/elements.json'), 'utf8'),
