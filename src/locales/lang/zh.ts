@@ -16,11 +16,10 @@ const messages: LocaleMessages = {
     "collection": "收藏"
   },
   "collectionPanel": {
-    "subtitle": "数据一览",
+    "sectionTitle": "数据一览",
     "close": "关闭",
     "statCollected": "已收集元素",
     "statRadioactive": "放射性样品",
-    "byCategory": "按类别",
     "collectibleNote": "每组数字为：已收集 / 实际可收集 / 元素总数。"
   },
   "theme": "主题",

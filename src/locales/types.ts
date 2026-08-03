@@ -38,11 +38,10 @@ export interface LocaleMessages {
     collection: string
   }
   collectionPanel: {
-    subtitle: string
+    sectionTitle: string
     close: string
     statCollected: string
     statRadioactive: string
-    byCategory: string
     collectibleNote: string
   }
   theme: string

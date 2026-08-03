@@ -13,7 +13,7 @@ const { messages, tLegend, collectionName } = useLocale()
 
 const isOpen = computed(() => route.name === 'collection')
 const stats = computeCollectionStats()
-const categoryCollapsed = ref(false)
+const sectionCollapsed = ref(false)
 
 function percentOf(part: number, total: number): number {
   return total === 0 ? 0 : Math.round((part / total) * 100)
@@ -45,7 +45,6 @@ function close() {
         <header class="collection-panel__header">
           <div class="collection-panel__heading">
             <h2 class="collection-panel__title">{{ collectionName }}</h2>
-            <p class="collection-panel__subtitle">{{ messages.collectionPanel.subtitle }}</p>
           </div>
           <button
             type="button"
@@ -66,98 +65,102 @@ function close() {
         </header>
 
         <div class="collection-panel__content">
-          <p class="collection-panel__note">{{ messages.collectionPanel.collectibleNote }}</p>
-
-          <div class="collection-panel__stat-rows">
-            <div class="collection-panel__row">
-              <span class="collection-panel__row-label">{{ messages.collectionPanel.statCollected }}</span>
-              <span class="collection-panel__row-track">
-                <span
-                  class="collection-panel__row-fill"
-                  :style="{
-                    width: percentOf(stats.elementCounts.collected, stats.elementCounts.total) + '%',
-                    backgroundColor: COLLECTED_COLOR,
-                  }"
-                />
-                <span
-                  class="collection-panel__row-unavailable"
-                  :style="{
-                    left: percentOf(stats.elementCounts.collectible, stats.elementCounts.total) + '%',
-                  }"
-                />
-              </span>
-              <span class="collection-panel__row-value"><span :style="{ color: COLLECTED_COLOR }">{{ stats.elementCounts.collected }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-mid">{{
-                  stats.elementCounts.collectible
-                }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-total">{{
-                  stats.elementCounts.total
-                }}</span></span>
-            </div>
-
-            <div class="collection-panel__row">
-              <span class="collection-panel__row-label">{{
-                messages.collectionPanel.statRadioactive
-              }}</span>
-              <span class="collection-panel__row-track">
-                <span
-                  class="collection-panel__row-fill"
-                  :style="{
-                    width:
-                      percentOf(stats.radioactiveCounts.collected, stats.radioactiveCounts.total) +
-                      '%',
-                    backgroundColor: RADIOACTIVE_COLOR,
-                  }"
-                />
-                <span
-                  class="collection-panel__row-unavailable"
-                  :style="{
-                    left:
-                      percentOf(stats.radioactiveCounts.collectible, stats.radioactiveCounts.total) +
-                      '%',
-                  }"
-                />
-              </span>
-              <span class="collection-panel__row-value"><span :style="{ color: RADIOACTIVE_COLOR }">{{
-                  stats.radioactiveCounts.collected
-                }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-mid">{{
-                  stats.radioactiveCounts.collectible
-                }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-total">{{
-                  stats.radioactiveCounts.total
-                }}</span></span>
-            </div>
-          </div>
-
           <section
             class="collection-panel__section"
-            :class="{ 'collection-panel__section--collapsed': categoryCollapsed }"
+            :class="{ 'collection-panel__section--collapsed': sectionCollapsed }"
           >
             <button
               type="button"
               class="collection-panel__section-title"
               :style="{ borderColor: COLLECTED_COLOR }"
-              :aria-expanded="!categoryCollapsed"
-              @click="categoryCollapsed = !categoryCollapsed"
+              :aria-expanded="!sectionCollapsed"
+              @click="sectionCollapsed = !sectionCollapsed"
             >
-              <span>{{ messages.collectionPanel.byCategory }}</span>
+              <span>{{ messages.collectionPanel.sectionTitle }}</span>
               <span class="collection-panel__section-chevron" aria-hidden="true" />
             </button>
 
-            <div v-show="!categoryCollapsed" class="collection-panel__category-rows">
-              <div v-for="cat in stats.categoryCounts" :key="cat.id" class="collection-panel__row">
-                <span class="collection-panel__row-label">{{ tLegend(cat.id) }}</span>
-                <span class="collection-panel__row-track">
-                  <span
-                    class="collection-panel__row-fill"
-                    :style="{
-                      width: percentOf(cat.collected, cat.total) + '%',
-                      backgroundColor: cat.color,
-                    }"
-                  />
-                  <span
-                    class="collection-panel__row-unavailable"
-                    :style="{ left: percentOf(cat.collectible, cat.total) + '%' }"
-                  />
-                </span>
-                <span class="collection-panel__row-value"><span :style="{ color: cat.color }">{{ cat.collected }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-mid">{{ cat.collectible }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-total">{{ cat.total }}</span></span>
+            <div v-show="!sectionCollapsed">
+              <p class="collection-panel__note">{{ messages.collectionPanel.collectibleNote }}</p>
+
+              <div class="collection-panel__stat-rows">
+                <div class="collection-panel__row">
+                  <span class="collection-panel__row-label">{{ messages.collectionPanel.statCollected }}</span>
+                  <span class="collection-panel__row-track">
+                    <span
+                      class="collection-panel__row-fill"
+                      :style="{
+                        width: percentOf(stats.elementCounts.collected, stats.elementCounts.total) + '%',
+                        backgroundColor: COLLECTED_COLOR,
+                      }"
+                    />
+                    <span
+                      class="collection-panel__row-unavailable"
+                      :style="{
+                        left: percentOf(stats.elementCounts.collectible, stats.elementCounts.total) + '%',
+                      }"
+                    />
+                  </span>
+                  <span class="collection-panel__row-value"><span :style="{ color: COLLECTED_COLOR }">{{ stats.elementCounts.collected }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-mid">{{
+                      stats.elementCounts.collectible
+                    }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-total">{{
+                      stats.elementCounts.total
+                    }}</span></span>
+                </div>
+
+                <div class="collection-panel__row">
+                  <span class="collection-panel__row-label">{{
+                    messages.collectionPanel.statRadioactive
+                  }}</span>
+                  <span class="collection-panel__row-track">
+                    <span
+                      class="collection-panel__row-fill"
+                      :style="{
+                        width:
+                          percentOf(stats.radioactiveCounts.collected, stats.radioactiveCounts.total) +
+                          '%',
+                        backgroundColor: RADIOACTIVE_COLOR,
+                      }"
+                    />
+                    <span
+                      class="collection-panel__row-unavailable"
+                      :style="{
+                        left:
+                          percentOf(stats.radioactiveCounts.collectible, stats.radioactiveCounts.total) +
+                          '%',
+                      }"
+                    />
+                  </span>
+                  <span class="collection-panel__row-value"><span :style="{ color: RADIOACTIVE_COLOR }">{{
+                      stats.radioactiveCounts.collected
+                    }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-mid">{{
+                      stats.radioactiveCounts.collectible
+                    }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-total">{{
+                      stats.radioactiveCounts.total
+                    }}</span></span>
+                </div>
+              </div>
+
+              <hr class="collection-panel__divider" />
+
+              <div class="collection-panel__category-rows">
+                <div v-for="cat in stats.categoryCounts" :key="cat.id" class="collection-panel__row">
+                  <span class="collection-panel__row-label">{{ tLegend(cat.id) }}</span>
+                  <span class="collection-panel__row-track">
+                    <span
+                      class="collection-panel__row-fill"
+                      :style="{
+                        width: percentOf(cat.collected, cat.total) + '%',
+                        backgroundColor: cat.color,
+                      }"
+                    />
+                    <span
+                      class="collection-panel__row-unavailable"
+                      :style="{ left: percentOf(cat.collectible, cat.total) + '%' }"
+                    />
+                  </span>
+                  <span class="collection-panel__row-value"><span :style="{ color: cat.color }">{{ cat.collected }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-mid">{{ cat.collectible }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-total">{{ cat.total }}</span></span>
+                </div>
               </div>
             </div>
           </section>
@@ -232,15 +235,8 @@ function close() {
   color: var(--color-text);
 }
 
-.collection-panel__subtitle {
-  margin: 4px 0 0;
-  font-size: 13px;
-  color: var(--color-text-secondary);
-  font-style: italic;
-}
-
 .collection-panel__note {
-  margin: 12px 0 0;
+  margin: 0 0 16px;
   font-size: 12px;
   line-height: 1.4;
   color: var(--color-text-tertiary);
@@ -287,8 +283,11 @@ function close() {
   column-gap: 10px;
 }
 
-.collection-panel__stat-rows {
-  margin: 16px 0 24px;
+.collection-panel__divider {
+  height: 1px;
+  margin: 20px 0;
+  border: none;
+  background: var(--color-border);
 }
 
 .collection-panel__row {
