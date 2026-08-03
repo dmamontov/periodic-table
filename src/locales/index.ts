@@ -23,6 +23,26 @@ export const localeOptions: { value: Locale; label: string }[] = [
   { value: 'zh', label: '中文' },
 ]
 
+export function getElementApplications(number: number, locale: Locale): string {
+  const key = String(number)
+  return (
+    localeMessages[locale].applications[key] ??
+    localeMessages.en.applications[key] ??
+    localeMessages.ru.applications[key] ??
+    ''
+  )
+}
+
+export function getElementDescription(number: number, locale: Locale): string {
+  const key = String(number)
+  return (
+    localeMessages[locale].descriptions[key] ??
+    localeMessages.en.descriptions[key] ??
+    localeMessages.ru.descriptions[key] ??
+    ''
+  )
+}
+
 const LEGEND_KEY_BY_ID: Record<string, LegendKey> = {
   alkali: 'alkali',
   'alkaline-earth': 'alkalineEarth',

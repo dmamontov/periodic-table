@@ -1,5 +1,5 @@
-import type { Locale } from '../locales/types'
-import { decayLabels, type DecayModeKey } from '../locales/dictionaries'
+import type { Locale, DecayModeKey } from '../locales/types'
+import { localeMessages } from '../locales'
 import detailsFile from '../data/details.json'
 import { formatElementSymbol } from './elementFormatters'
 
@@ -64,5 +64,5 @@ export function formatMainIsotopesHtml(symbol: string, number: number): string {
 export function formatDecayType(number: number, locale: Locale): string {
   const key = isotopeData[String(number)]?.decay
   if (!key) return ''
-  return decayLabels[locale][key] ?? decayLabels.ru[key] ?? ''
+  return localeMessages[locale].decay[key] ?? localeMessages.ru.decay[key] ?? ''
 }

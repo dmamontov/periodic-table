@@ -12,6 +12,16 @@ export type LegendKey =
   | 'lanthanides'
   | 'actinides'
 
+export type DecayModeKey =
+  | 'stable'
+  | 'alpha'
+  | 'betaMinus'
+  | 'betaPlus'
+  | 'electronCapture'
+  | 'spontaneousFission'
+  | 'alphaBeta'
+  | 'isomeric'
+
 export interface LocaleMessages {
   siteHeading: {
     line1: string
@@ -261,6 +271,9 @@ export interface LocaleMessages {
     | 'environment',
     string
   >
+  decay: Record<DecayModeKey, string>
+  applications: Record<string, string>
+  descriptions: Record<string, string>
   legend: Record<LegendKey, string>
   elements: Record<string, string>
   seo: {
