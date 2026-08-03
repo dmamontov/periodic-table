@@ -4,6 +4,12 @@
 
 基于 Vue 3 + TypeScript 打造的交互式元素周期表：每个元素卡片包含数十项参考属性，以及本项目的核心特色 —— 一份真实的个人 **马蒙托夫元素收藏**，包含样品照片、纯度、同位素组成，以及用 RadiaCode 剂量仪测得的伽马能谱。
 
+## 演示
+
+在线体验：**[periodic.mamontov.tech](https://periodic.mamontov.tech)**
+
+![截图](docs/screenshots/demo-zh.jpg)
+
 ## 功能特性
 
 - **完整元素周期表** —— 全部 118 个元素，包括 f 区（镧系/锕系），适配桌面与移动端的响应式布局
