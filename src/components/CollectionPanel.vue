@@ -212,7 +212,6 @@ function openElement(symbol: string) {
                   />
                   <span class="collection-panel__spectrum-symbol">{{ item.symbol }}</span>
                   <span class="collection-panel__spectrum-name">{{ messages.elements[item.symbol] }}</span>
-                  <span class="collection-panel__spectrum-arrow" aria-hidden="true" />
                 </button>
                 <CollectionGammaSpectrum :spectrum-id="item.spectrumId" :accent-color="item.color" />
               </div>
@@ -408,6 +407,10 @@ function openElement(symbol: string) {
   padding-top: 4px;
 }
 
+.collection-panel__section + .collection-panel__section {
+  margin-top: 8px;
+}
+
 .collection-panel__section-title {
   display: flex;
   align-items: center;
@@ -503,15 +506,6 @@ function openElement(symbol: string) {
 
 .collection-panel__spectrum-header:hover .collection-panel__spectrum-name {
   color: var(--color-text);
-}
-
-.collection-panel__spectrum-arrow {
-  flex-shrink: 0;
-  width: 6px;
-  height: 6px;
-  border-right: 2px solid var(--color-text-tertiary);
-  border-bottom: 2px solid var(--color-text-tertiary);
-  transform: rotate(-45deg);
 }
 
 @media (max-width: 900px) {
