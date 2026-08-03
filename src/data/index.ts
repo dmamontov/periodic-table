@@ -95,7 +95,7 @@ export const elements: Element[] = (rawElements as RawElement[]).map((el) => {
   }
 })
 
-/** spectrumId → имя файла для скачивания, собрано из myCollection.ts */
+/** spectrumId → download filename, assembled from myCollection.ts */
 export const collectionSpectrumFilenames: Record<string, LocalizedLabel> = Object.fromEntries(
   Object.values(myElements)
     .filter((entry) => entry.spectrum && entry.spectrumFilename)

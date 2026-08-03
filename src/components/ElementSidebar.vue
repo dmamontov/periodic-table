@@ -1262,7 +1262,7 @@ function toggleSection(sectionKey: string): void {
   pointer-events: none;
 }
 
-/* Полированный металл: цилиндр + верхний блик, без диагональной полосы */
+/* Polished metal: cylinder + top highlight, no diagonal streak */
 .element-sidebar__color-swatch--metallic {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.8),
@@ -1300,7 +1300,7 @@ function toggleSection(sectionKey: string): void {
     );
 }
 
-/* Глянец (сера, бром, йод): мягкая выпуклость */
+/* Glossy (sulfur, bromine, iodine): soft convex sheen */
 .element-sidebar__color-swatch--glossy {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.55),
@@ -1323,7 +1323,7 @@ function toggleSection(sectionKey: string): void {
   );
 }
 
-/* Газы: лёгкий верхний отблеск */
+/* Gases: subtle top glint */
 .element-sidebar__color-swatch--subtle {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
@@ -1340,7 +1340,7 @@ function toggleSection(sectionKey: string): void {
   display: none;
 }
 
-/* Матовая поверхность */
+/* Matte surface */
 .element-sidebar__color-swatch--matte {
   box-shadow: inset 0 -1px 3px rgba(0, 0, 0, 0.22);
 }

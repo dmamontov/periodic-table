@@ -4,9 +4,9 @@ import elementColorIndex from '../data/element-color-index.json'
 import { getElementGhsPictograms } from '../data'
 import type { GhsDisplayItem } from '../types/ghs'
 
-/** Реалистичные цвета чистого вещества (расширенная палитра, не Jmol/CPK). */
+/** Realistic pure-substance colors (an extended palette, not Jmol/CPK). */
 export const ELEMENT_SAMPLE_COLORS = [
-  '#E8E8E8', // 0  colorless (газы)
+  '#E8E8E8', // 0  colorless (gases)
   '#C6C6C6', // 1  silvery white
   '#D4B060', // 2  pale gold (Cs, Fr)
   '#B5B5A8', // 3  white-gray (Be)
@@ -19,7 +19,7 @@ export const ELEMENT_SAMPLE_COLORS = [
   '#B87333', // 10 copper
   '#FFD123', // 11 gold
   '#FFF030', // 12 sulfur yellow
-  '#F0E8B0', // 13 pale halogen yellow (резерв)
+  '#F0E8B0', // 13 pale halogen yellow (spare)
   '#A62929', // 14 bromine red-brown
   '#940094', // 15 iodine purple
   '#1A1A1A', // 16 black (B, C)
@@ -27,13 +27,13 @@ export const ELEMENT_SAMPLE_COLORS = [
   '#B8B8C8', // 18 mercury liquid
   '#5C5C62', // 19 metallic gray (Pb)
   '#8C2A2A', // 20 red phosphorus
-  '#F5F0D8', // 21 fluorine (бледно-жёлтый газ)
-  '#E8E2B0', // 22 chlorine (бледно-жёлтый, едва зеленоватый)
+  '#F5F0D8', // 21 fluorine (pale yellow gas)
+  '#E8E2B0', // 22 chlorine (pale yellow, faintly greenish)
 ] as const
 
 export type ElementSampleColorFinish = 'metallic' | 'glossy' | 'subtle' | 'matte'
 
-/** Индексы палитры с матовой / глянцевой / лёгкой фактурой (остальные — металл). */
+/** Palette indices with a matte / glossy / subtle finish (the rest are metallic). */
 const GLOSSY_COLOR_INDICES = new Set([12, 14, 15, 20])
 const SUBTLE_COLOR_INDICES = new Set([0, 21, 22])
 const MATTE_COLOR_INDICES = new Set([16])
