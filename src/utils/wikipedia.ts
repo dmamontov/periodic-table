@@ -1,11 +1,7 @@
 import type { Locale } from '../locales/types'
 import type { ElementDetail } from '../types/elementDetail'
-import ru from '../locales/lang/ru'
-import en from '../locales/lang/en'
-import zh from '../locales/lang/zh'
+import { localeMessages } from '../locales'
 import { getSymbolByNumber } from '../data'
-
-const localeMessages = { ru, en, zh }
 
 const WIKI_HOST: Record<Locale, string> = {
   ru: 'ru.wikipedia.org',
@@ -13,10 +9,18 @@ const WIKI_HOST: Record<Locale, string> = {
   zh: 'zh.wikipedia.org',
 }
 
+/** First non-empty string, e.g. a fetched name over a blank field before falling back to a lookup table. */
+function firstNonEmpty(...values: (string | null | undefined)[]): string {
+  for (const value of values) {
+    if (value) return value
+  }
+  return ''
+}
+
 function wikiTitle(number: number, locale: Locale, detail: ElementDetail | null): string {
   const symbol = detail?.symbol ?? getSymbolByNumber(number)
   if (locale === 'en') {
-    return detail?.OverviewCommon?.englishName ?? detail?.name ?? (symbol && localeMessages.en.elements[symbol]) ?? ''
+    return firstNonEmpty(detail?.OverviewCommon?.englishName, symbol && localeMessages.en.elements[symbol])
   }
   return (symbol && localeMessages[locale].elements[symbol]) ?? ''
 }
@@ -27,5 +31,5 @@ export function getWikipediaUrl(
   detail: ElementDetail | null,
 ): string {
   const title = wikiTitle(number, locale, detail).trim().replace(/ /g, '_')
-  return `https://${WIKI_HOST[locale]}/wiki/${encodeURIComponent(title.replace(/ /g, '_'))}`
+  return `https://${WIKI_HOST[locale]}/wiki/${encodeURIComponent(title)}`
 }

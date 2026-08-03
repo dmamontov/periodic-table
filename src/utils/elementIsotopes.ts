@@ -16,30 +16,6 @@ export interface ElementIsotopeRecord {
 
 const isotopeData = detailsFile.isotopes as Record<string, ElementIsotopeRecord>
 
-const ISOTOPE_MASS_SUPERSCRIPT: Record<string, string> = {
-  '0': '⁰',
-  '1': '¹',
-  '2': '²',
-  '3': '³',
-  '4': '⁴',
-  '5': '⁵',
-  '6': '⁶',
-  '7': '⁷',
-  '8': '⁸',
-  '9': '⁹',
-  m: 'ᵐ',
-}
-
-/** Mass number / metastable marker as Unicode superscript (e.g. 210 → ²¹⁰, 99m → ⁹⁹ᵐ). */
-export function toIsotopeMassSuperscript(mass: string | number): string {
-  return String(mass).replace(/[0-9m]/g, (ch) => ISOTOPE_MASS_SUPERSCRIPT[ch] ?? ch)
-}
-
-/** Plain isotope notation: ²¹⁰Bi */
-export function formatIsotopeNotation(symbol: string, mass: string | number): string {
-  return `${toIsotopeMassSuperscript(mass)}${formatElementSymbol(symbol)}`
-}
-
 /** HTML isotope notation with mass superscript before symbol. */
 export function formatIsotopeHtml(
   symbol: string,

@@ -339,10 +339,6 @@ export function intensityToBrightness(intensity: number): number {
   return BRIGHTNESS_MIN + intensity * (BRIGHTNESS_MAX - BRIGHTNESS_MIN)
 }
 
-export function getHeatmapRawValue(id: HeatmapId, number: number): number | null {
-  return heatmapDatasets[id].values.get(number) ?? null
-}
-
 export function formatHeatmapValue(value: number, locale: string): string {
   const abs = Math.abs(value)
   if (abs >= 10000 || (abs > 0 && abs < 0.001)) {
@@ -548,7 +544,7 @@ export function formatHeatmapCellDisplay(
   if (!formatted) return '—'
 
   const def = HEATMAP_DEFINITIONS.find((item) => item.id === id)
-  if (!def?.unitKey || id === 'halfLife' || id === 'lifetime' || id === 'rarity' || id === 'earthAbundance' || id === 'meteoriteAbundance') {
+  if (!def?.unitKey) {
     if (id === 'decayMode') {
       const symbol = getSymbolByNumber(number)
       const mode = symbol ? isotopeData[symbol]?.decay : undefined
