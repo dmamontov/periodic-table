@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useLocale } from '../locales'
 import { computeCollectionStats } from '../utils/collectionStats'
@@ -13,6 +13,7 @@ const { messages, tLegend } = useLocale()
 
 const isOpen = computed(() => route.name === 'dashboard')
 const stats = computeCollectionStats()
+const categoryCollapsed = ref(false)
 
 const collectedPercent = computed(() =>
   Math.round((stats.collectedCount / stats.totalElements) * 100),
@@ -46,7 +47,6 @@ function close() {
       class="dashboard-panel"
       :class="{ 'dashboard-panel--open': isOpen }"
       :aria-hidden="!isOpen"
-      :style="{ '--accent': COLLECTED_COLOR }"
     >
       <div v-if="isOpen" class="dashboard-panel__shell">
         <header class="dashboard-panel__header">
@@ -73,39 +73,48 @@ function close() {
         </header>
 
         <div class="dashboard-panel__content">
-          <div class="dashboard-stats">
-            <div class="dashboard-stat">
-              <span class="dashboard-stat__label" :style="{ backgroundColor: COLLECTED_COLOR }">
-                {{ messages.dashboard.statCollected }}
-              </span>
-              <span class="dashboard-stat__value">{{ stats.collectedCount }}<span class="dashboard-stat__value-total">/{{ stats.totalElements }}</span></span>
-              <span class="dashboard-stat__bar">
+          <div class="dashboard-highlights">
+            <div class="dashboard-highlights__row">
+              <span class="dashboard-highlights__dot" :style="{ backgroundColor: COLLECTED_COLOR }" />
+              <span class="dashboard-highlights__label">{{ messages.dashboard.statCollected }}</span>
+              <span class="dashboard-highlights__track">
                 <span
-                  class="dashboard-stat__bar-fill"
+                  class="dashboard-highlights__fill"
                   :style="{ width: collectedPercent + '%', backgroundColor: COLLECTED_COLOR }"
                 />
               </span>
+              <span class="dashboard-highlights__value" :style="{ color: COLLECTED_COLOR }">{{ stats.collectedCount }}<span class="dashboard-highlights__value-total">/{{ stats.totalElements }}</span></span>
             </div>
 
-            <div class="dashboard-stat">
-              <span class="dashboard-stat__label" :style="{ backgroundColor: RADIOACTIVE_COLOR }">
-                {{ messages.dashboard.statRadioactive }}
-              </span>
-              <span class="dashboard-stat__value">{{ stats.radioactiveCollectedCount }}<span class="dashboard-stat__value-total">/{{ stats.radioactiveTotalCount }}</span></span>
-              <span class="dashboard-stat__bar">
+            <div class="dashboard-highlights__row">
+              <span class="dashboard-highlights__dot" :style="{ backgroundColor: RADIOACTIVE_COLOR }" />
+              <span class="dashboard-highlights__label">{{ messages.dashboard.statRadioactive }}</span>
+              <span class="dashboard-highlights__track">
                 <span
-                  class="dashboard-stat__bar-fill"
+                  class="dashboard-highlights__fill"
                   :style="{ width: radioactivePercent + '%', backgroundColor: RADIOACTIVE_COLOR }"
                 />
               </span>
+              <span class="dashboard-highlights__value" :style="{ color: RADIOACTIVE_COLOR }">{{ stats.radioactiveCollectedCount }}<span class="dashboard-highlights__value-total">/{{ stats.radioactiveTotalCount }}</span></span>
             </div>
           </div>
 
-          <section class="dashboard-panel__section">
-            <h3 class="dashboard-panel__section-title" :style="{ borderColor: COLLECTED_COLOR }">
-              {{ messages.dashboard.byCategory }}
-            </h3>
-            <div class="dashboard-breakdown">
+          <section
+            class="dashboard-panel__section"
+            :class="{ 'dashboard-panel__section--collapsed': categoryCollapsed }"
+          >
+            <button
+              type="button"
+              class="dashboard-panel__section-title"
+              :style="{ borderColor: COLLECTED_COLOR }"
+              :aria-expanded="!categoryCollapsed"
+              @click="categoryCollapsed = !categoryCollapsed"
+            >
+              <span>{{ messages.dashboard.byCategory }}</span>
+              <span class="dashboard-panel__section-chevron" aria-hidden="true" />
+            </button>
+
+            <div v-show="!categoryCollapsed" class="dashboard-breakdown">
               <div v-for="cat in stats.categoryCounts" :key="cat.id" class="dashboard-breakdown__row">
                 <div class="dashboard-breakdown__row-top">
                   <span class="dashboard-breakdown__swatch" :style="{ backgroundColor: cat.color }" />
@@ -163,7 +172,6 @@ function close() {
   box-sizing: border-box;
   background: var(--color-bg);
   border-left: 1px solid var(--color-border);
-  border-top: 3px solid var(--accent, #ccc);
   box-shadow: -4px 0 24px var(--color-shadow-md);
   transform: translateX(100%);
   transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
@@ -186,7 +194,7 @@ function close() {
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
-  padding: 18px 24px 4px;
+  padding: 20px 24px 4px;
 }
 
 .dashboard-panel__title {
@@ -235,61 +243,60 @@ function close() {
   gap: 8px;
 }
 
-.dashboard-stats {
-  display: flex;
-  gap: 16px;
-  margin: 16px 0 28px;
-  text-align: center;
-}
-
-.dashboard-stat {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+.dashboard-highlights {
+  display: grid;
+  grid-template-columns: 8px minmax(120px, auto) 1fr auto;
   align-items: center;
-  gap: 8px;
+  row-gap: 10px;
+  column-gap: 10px;
+  margin: 16px 0 24px;
 }
 
-.dashboard-stat__label {
-  display: inline-block;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
-  line-height: 1.2;
+.dashboard-highlights__row {
+  display: contents;
 }
 
-.dashboard-stat__value {
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 1.1;
-  color: var(--color-text);
-  font-variant-numeric: tabular-nums;
+.dashboard-highlights__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  flex-shrink: 0;
 }
 
-.dashboard-stat__value-total {
-  font-size: 16px;
-  font-weight: 700;
+.dashboard-highlights__label {
+  font-size: 13px;
   color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.dashboard-stat__bar {
-  display: block;
-  width: 100%;
-  max-width: 140px;
-  height: 4px;
+.dashboard-highlights__track {
+  position: relative;
+  height: 5px;
   border-radius: 999px;
   background: var(--color-heatmap-fade);
   overflow: hidden;
 }
 
-.dashboard-stat__bar-fill {
-  display: block;
-  height: 100%;
+.dashboard-highlights__fill {
+  position: absolute;
+  inset: 0;
   border-radius: 999px;
+}
+
+.dashboard-highlights__value {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.dashboard-highlights__value-total {
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.7;
 }
 
 .dashboard-panel__section {
@@ -297,30 +304,59 @@ function close() {
 }
 
 .dashboard-panel__section-title {
-  margin: 0 0 4px;
-  padding-left: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  margin: 0 0 12px;
+  padding: 0 0 0 12px;
+  border: none;
   border-left: 4px solid;
+  background: none;
   font-size: 14px;
   font-weight: 700;
-  line-height: 1.3;
   color: var(--color-text);
+  line-height: 1.3;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.dashboard-panel__section-title:hover {
+  color: var(--color-text-secondary);
+}
+
+.dashboard-panel__section--collapsed .dashboard-panel__section-title {
+  margin-bottom: 0;
+}
+
+.dashboard-panel__section-chevron {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  margin-right: 6px;
+  border-right: 2px solid var(--color-text-secondary);
+  border-bottom: 2px solid var(--color-text-secondary);
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.dashboard-panel__section--collapsed .dashboard-panel__section-chevron {
+  transform: rotate(-45deg);
 }
 
 .dashboard-breakdown {
   display: flex;
   flex-direction: column;
-}
-
-.dashboard-breakdown__row {
-  padding: 11px 0;
-  border-bottom: 1px solid var(--color-border-light);
+  gap: 12px;
 }
 
 .dashboard-breakdown__row-top {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 }
 
 .dashboard-breakdown__swatch {
@@ -375,13 +411,9 @@ function close() {
     padding: 8px 16px 24px;
   }
 
-  .dashboard-stats {
-    gap: 8px;
-    margin: 14px 0 24px;
-  }
-
-  .dashboard-stat__value {
-    font-size: 26px;
+  .dashboard-highlights {
+    grid-template-columns: 8px minmax(90px, auto) 1fr auto;
+    column-gap: 8px;
   }
 }
 </style>
