@@ -57,22 +57,16 @@ Gamma spectra (the `spectrum`/`spectrumFilename` fields) are optional — only s
 
 ### Data updates
 
-A separate pipeline of scripts (`scripts/*.mjs`) fetches and rebuilds reference data from external sources — run manually, not part of the regular build:
+A small pipeline of scripts (`scripts/*.mjs`) maintains the app's own reference data — run manually, not part of the regular build:
 
 | Command | Purpose |
 |---|---|
-| `pnpm data:details` | Element properties → `src/data/details.json` |
 | `pnpm data:details:optimize` | Optimize/minify `details.json` |
-| `pnpm data:images` | Element photos → `src/assets/element-images/` |
-| `pnpm data:spectra` | Element emission spectra → `src/assets/element-spectra/` |
-| `pnpm data:grids` | Crystal lattice illustrations → `src/assets/grid-structures/` |
 | `pnpm data:nfpa:apply` | NFPA ratings → `details.json` |
 | `pnpm data:nfpa:validate` | Validate `scripts/data/nfpa-element-ratings.json` |
 | `pnpm data:ghs` | GHS pictograms → `src/data/element-ghs.json` |
 | `pnpm data:youtube` | Thoisoi video links → `src/data/thoisoi-youtube.json` |
 | `pnpm data:spectrum:convert` | Convert a RadiaCode XML spectrum → JSON for the collection |
-
-Some scripts call an external API and require a `VITE_PT_API_TOKEN` token in `.env.local` (see the comment in `scripts/fetch-element-details.mjs`).
 
 ## Project structure
 
