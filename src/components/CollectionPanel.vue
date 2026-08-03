@@ -176,6 +176,8 @@ function openElement(symbol: string) {
                   <span class="collection-panel__row-value"><span :style="{ color: cat.color }">{{ cat.collected }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-mid">{{ cat.collectible }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-total">{{ cat.total }}</span></span>
                 </div>
               </div>
+
+              <hr class="collection-panel__divider" />
             </div>
           </section>
 
