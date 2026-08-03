@@ -116,11 +116,8 @@ function close() {
 
             <div v-show="!categoryCollapsed" class="dashboard-breakdown">
               <div v-for="cat in stats.categoryCounts" :key="cat.id" class="dashboard-breakdown__row">
-                <div class="dashboard-breakdown__row-top">
-                  <span class="dashboard-breakdown__swatch" :style="{ backgroundColor: cat.color }" />
-                  <span class="dashboard-breakdown__label">{{ tLegend(cat.id) }}</span>
-                  <span class="dashboard-breakdown__value">{{ cat.collected }}/{{ cat.total }}</span>
-                </div>
+                <span class="dashboard-breakdown__swatch" :style="{ backgroundColor: cat.color }" />
+                <span class="dashboard-breakdown__label">{{ tLegend(cat.id) }}</span>
                 <span class="dashboard-breakdown__track">
                   <span
                     class="dashboard-breakdown__fill"
@@ -130,6 +127,7 @@ function close() {
                     }"
                   />
                 </span>
+                <span class="dashboard-breakdown__value">{{ cat.collected }}/{{ cat.total }}</span>
               </div>
             </div>
           </section>
@@ -347,28 +345,24 @@ function close() {
 }
 
 .dashboard-breakdown {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 9px minmax(120px, auto) 1fr auto;
+  align-items: center;
+  row-gap: 10px;
+  column-gap: 10px;
 }
 
-.dashboard-breakdown__row-top {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 6px;
+.dashboard-breakdown__row {
+  display: contents;
 }
 
 .dashboard-breakdown__swatch {
-  flex-shrink: 0;
   width: 9px;
   height: 9px;
   border-radius: 3px;
 }
 
 .dashboard-breakdown__label {
-  flex: 1 1 auto;
-  min-width: 0;
   font-size: 13px;
   color: var(--color-text-secondary);
   white-space: nowrap;
@@ -377,7 +371,6 @@ function close() {
 }
 
 .dashboard-breakdown__value {
-  flex-shrink: 0;
   font-size: 13px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
@@ -385,7 +378,7 @@ function close() {
 }
 
 .dashboard-breakdown__track {
-  display: block;
+  position: relative;
   height: 5px;
   border-radius: 999px;
   background: var(--color-heatmap-fade);
@@ -393,8 +386,8 @@ function close() {
 }
 
 .dashboard-breakdown__fill {
-  display: block;
-  height: 100%;
+  position: absolute;
+  inset: 0;
   border-radius: 999px;
 }
 
@@ -413,6 +406,11 @@ function close() {
 
   .dashboard-highlights {
     grid-template-columns: 8px minmax(90px, auto) 1fr auto;
+    column-gap: 8px;
+  }
+
+  .dashboard-breakdown {
+    grid-template-columns: 9px minmax(90px, auto) 1fr auto;
     column-gap: 8px;
   }
 }
