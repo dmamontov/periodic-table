@@ -103,7 +103,3 @@ export function useTheme() {
   if (!theme) throw new Error('useTheme must be used within theme provider')
   return theme
 }
-
-export function initThemeFromStorage(): void {
-  applyTheme(resolveTheme(detectThemePreference()))
-}
