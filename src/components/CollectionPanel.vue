@@ -457,13 +457,12 @@ function openElement(symbol: string) {
 .collection-panel__spectra-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 12px;
+  gap: 0 16px;
 }
 
 .collection-panel__spectrum-card {
-  padding: 10px;
-  border-radius: 10px;
-  background: var(--color-bg-muted);
+  padding: 11px 0;
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 .collection-panel__spectrum-header {
@@ -471,7 +470,7 @@ function openElement(symbol: string) {
   align-items: center;
   gap: 8px;
   width: 100%;
-  margin: 0;
+  margin: 0 0 8px;
   padding: 0;
   border: none;
   background: none;
