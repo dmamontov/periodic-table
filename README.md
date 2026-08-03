@@ -4,6 +4,12 @@
 
 An interactive periodic table built with Vue 3 + TypeScript: element cards packed with dozens of reference properties, and — the standout feature — a personal physical **Mamontov element collection** with sample photos, purity, isotopic composition, and gamma spectra recorded with a RadiaCode dosimeter.
 
+## Demo
+
+Live site: **[periodic.mamontov.tech](https://periodic.mamontov.tech)**
+
+![Screenshot](docs/screenshots/demo-en.jpg)
+
 ## Features
 
 - **Full periodic table** — all 118 elements, including the f-block (lanthanides/actinides), with a responsive layout for desktop and mobile
