@@ -12,6 +12,11 @@ const messages: LocaleMessages = {
     "line2": "D. I. Mendeleev"
   },
   "language": "Language",
+  "search": {
+    "label": "Search element",
+    "placeholder": "Name, symbol or number",
+    "noResults": "No matches"
+  },
   "theme": "Theme",
   "themeLight": "Light theme",
   "themeDark": "Dark theme",

@@ -19,6 +19,11 @@ export interface LocaleMessages {
     line2: string
   }
   language: string
+  search: {
+    label: string
+    placeholder: string
+    noResults: string
+  }
   theme: string
   themeLight: string
   themeDark: string

@@ -12,6 +12,11 @@ const messages: LocaleMessages = {
     "line2": "德·伊·门捷列夫"
   },
   "language": "语言",
+  "search": {
+    "label": "搜索元素",
+    "placeholder": "名称、符号或序号",
+    "noResults": "未找到"
+  },
   "theme": "主题",
   "themeLight": "浅色主题",
   "themeDark": "深色主题",

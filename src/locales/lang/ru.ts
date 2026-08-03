@@ -12,6 +12,11 @@ const messages: LocaleMessages = {
     "line2": "Д. И. Менделеева"
   },
   "language": "Язык",
+  "search": {
+    "label": "Поиск элемента",
+    "placeholder": "Название, символ или номер",
+    "noResults": "Ничего не найдено"
+  },
   "theme": "Тема",
   "themeLight": "Светлая тема",
   "themeDark": "Тёмная тема",

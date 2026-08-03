@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ElementSearch from './ElementSearch.vue'
 import LanguageSwitcher from './LanguageSwitcher.vue'
 import OrnamentDivider from './OrnamentDivider.vue'
 import ThemeSwitcher from './ThemeSwitcher.vue'
@@ -13,6 +14,7 @@ const { messages } = useLocale()
       <div class="app-header__controls">
         <ThemeSwitcher />
         <LanguageSwitcher />
+        <ElementSearch />
       </div>
       <h1 class="app-header__title">
         <span class="app-header__title-line app-header__title-line--primary">
