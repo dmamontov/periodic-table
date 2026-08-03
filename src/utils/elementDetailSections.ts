@@ -1,7 +1,14 @@
 import type { LocaleMessages } from '../locales/types'
 import type { Locale } from '../locales/types'
 import type { Element, ElementCollectionDecayParent } from '../types/element'
-import type { DetailProp, DetailSection, ElementDetail, GridPro } from '../types/elementDetail'
+import type {
+  AggregationState,
+  DetailProp,
+  DetailSection,
+  ElementDetail,
+  GridPro,
+  MagneticType,
+} from '../types/elementDetail'
 import { getElementPeriod } from '../data'
 import {
   getElementRadiacodeIsotope,
@@ -217,20 +224,19 @@ function blockLabel(
 }
 
 function aggregationLabel(
-  state: number | null | undefined,
+  state: AggregationState | null | undefined,
   messages: LocaleMessages,
 ): string {
-  if (state === null || state === undefined) return EMPTY
-  const map = messages.sidebar.aggregationState
-  return map[String(state) as keyof typeof map] ?? EMPTY
+  if (!state) return EMPTY
+  return messages.sidebar.aggregationState[state] ?? EMPTY
 }
 
 function magneticLabel(
-  type: string | null | undefined,
+  type: MagneticType | null | undefined,
   messages: LocaleMessages,
 ): string {
   if (!type) return EMPTY
-  return messages.sidebar.magneticType[type as keyof typeof messages.sidebar.magneticType] ?? type
+  return messages.sidebar.magneticType[type] ?? type
 }
 
 function formatSingleCountry(

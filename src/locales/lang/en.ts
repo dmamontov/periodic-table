@@ -193,16 +193,17 @@ const messages: LocaleMessages = {
       "wPerMK": "(W/m·K)"
     },
     "aggregationState": {
-      "0": "Gas",
-      "1": "Solid",
-      "2": "Liquid",
-      "3": "Unknown"
+      "gas": "Gas",
+      "solid": "Solid",
+      "liquid": "Liquid",
+      "unknown": "Unknown"
     },
     "magneticType": {
-      "0": "—",
-      "1": "Diamagnetic",
-      "2": "Paramagnetic",
-      "3": "Ferromagnetic"
+      "none": "—",
+      "diamagnetic": "Diamagnetic",
+      "paramagnetic": "Paramagnetic",
+      "antiferromagnetic": "Antiferromagnetic",
+      "ferromagnetic": "Ferromagnetic"
     },
     "blocks": {
       "s": "s-block",

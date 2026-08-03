@@ -16,6 +16,8 @@ export interface OverviewCommon {
   elementRadioactivity?: boolean
 }
 
+export type AggregationState = 'gas' | 'solid' | 'liquid' | 'unknown'
+
 export interface PropertiesCommon {
   elementMasse?: string | null
   elementDensity?: string | null
@@ -24,7 +26,7 @@ export interface PropertiesCommon {
   elValence?: string | null
   elementGroup?: string | null
   elementBlock?: string | null
-  aggregationState?: number | null
+  aggregationState?: AggregationState | null
 }
 
 export interface ThermoPro {
@@ -43,10 +45,12 @@ export interface AtomicCommon {
   vanDerWaalsRadius?: string | null
 }
 
+export type MagneticType = 'none' | 'diamagnetic' | 'paramagnetic' | 'antiferromagnetic' | 'ferromagnetic'
+
 export interface ElectromagneticCommon {
   es_electro?: string | null
   es_etype?: string | null
-  es_mtype?: string | null
+  es_mtype?: MagneticType | null
   es_omvospr?: string | null
   es_umvospr?: string | null
   es_mmvospr?: string | null
