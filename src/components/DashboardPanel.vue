@@ -33,7 +33,7 @@ function categoryPercent(collected: number, total: number): number {
 }
 
 function close() {
-  void router.push({ name: 'home', query: route.query })
+  void router.push({ name: 'home' })
 }
 </script>
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, defineAsyncComponent, ref, watch } from 'vue'
-import { useRoute, useRouter, type LocationQuery, type LocationQueryRaw } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import type { Element } from '../types/element'
 import {
   allCategories,
@@ -32,45 +32,56 @@ const route = useRoute()
 const router = useRouter()
 const { locale, messages } = useLocale()
 
-const VALID_CATEGORY_QUERY_VALUES = new Set<string>([
-  'collection',
-  ...allCategories.map((c) => c.id),
-])
-const VALID_HEATMAP_QUERY_VALUES = new Set<string>(HEATMAP_DEFINITIONS.map((d) => d.id))
+const CATEGORY_STORAGE_KEY = 'periodic-table-category'
+const HEATMAP_STORAGE_KEY = 'periodic-table-heatmap'
 
-function readQueryValue(query: LocationQuery, key: string): string | undefined {
-  const raw = query[key]
-  const value = Array.isArray(raw) ? raw[0] : raw
-  return value ?? undefined
+const VALID_CATEGORY_VALUES = new Set<string>(['collection', ...allCategories.map((c) => c.id)])
+const VALID_HEATMAP_VALUES = new Set<string>(HEATMAP_DEFINITIONS.map((d) => d.id))
+
+function readStoredCategory(): string {
+  try {
+    const stored = sessionStorage.getItem(CATEGORY_STORAGE_KEY)
+    if (stored && VALID_CATEGORY_VALUES.has(stored)) return stored
+  } catch {
+    // sessionStorage may be unavailable (private mode, blocked storage)
+  }
+  return 'all'
 }
 
-function readCategoryFromQuery(query: LocationQuery): string {
-  const value = readQueryValue(query, 'category')
-  return value && VALID_CATEGORY_QUERY_VALUES.has(value) ? value : 'all'
+function readStoredHeatmap(): HeatmapId | null {
+  try {
+    const stored = sessionStorage.getItem(HEATMAP_STORAGE_KEY)
+    if (stored && VALID_HEATMAP_VALUES.has(stored)) return stored as HeatmapId
+  } catch {
+    // sessionStorage may be unavailable
+  }
+  return null
 }
 
-function readHeatmapFromQuery(query: LocationQuery): HeatmapId | null {
-  const value = readQueryValue(query, 'heatmap')
-  return value && VALID_HEATMAP_QUERY_VALUES.has(value) ? (value as HeatmapId) : null
+function persistCategory(value: string): void {
+  try {
+    if (value === 'all') sessionStorage.removeItem(CATEGORY_STORAGE_KEY)
+    else sessionStorage.setItem(CATEGORY_STORAGE_KEY, value)
+  } catch {
+    // ignore write failures
+  }
 }
 
-const selectedCategory = ref(readCategoryFromQuery(route.query))
+function persistHeatmap(value: HeatmapId | null): void {
+  try {
+    if (!value) sessionStorage.removeItem(HEATMAP_STORAGE_KEY)
+    else sessionStorage.setItem(HEATMAP_STORAGE_KEY, value)
+  } catch {
+    // ignore write failures
+  }
+}
+
+const selectedCategory = ref(readStoredCategory())
 const selectedElement = ref<Element | null>(null)
-const selectedHeatmap = ref<HeatmapId | null>(readHeatmapFromQuery(route.query))
+const selectedHeatmap = ref<HeatmapId | null>(readStoredHeatmap())
 
-watch(
-  [selectedCategory, selectedHeatmap],
-  ([category, heatmap]) => {
-    const nextQuery: LocationQueryRaw = { ...route.query }
-    if (category === 'all') delete nextQuery.category
-    else nextQuery.category = category
-    if (!heatmap) delete nextQuery.heatmap
-    else nextQuery.heatmap = heatmap
-
-    void router.replace({ query: nextQuery })
-  },
-  { immediate: true },
-)
+watch(selectedCategory, persistCategory)
+watch(selectedHeatmap, persistHeatmap)
 
 watch(
   () => route.params.symbol,
@@ -82,14 +93,14 @@ watch(
 
     const element = getElementBySymbol(symbol)
     if (!element) {
-      void router.replace({ name: 'home', query: route.query })
+      void router.replace({ name: 'home' })
       selectedElement.value = null
       return
     }
 
     const routeSymbol = getElementRouteSymbol(element.symbol)
     if (symbol !== routeSymbol) {
-      void router.replace({ name: 'element', params: { symbol: routeSymbol }, query: route.query })
+      void router.replace({ name: 'element', params: { symbol: routeSymbol } })
       return
     }
 
@@ -194,19 +205,15 @@ const isFBlockGroupLabelHighlighted = computed(() => {
 
 function onSelectElement(element: Element, toggle = true) {
   if (toggle && selectedElement.value?.number === element.number) {
-    void router.push({ name: 'home', query: route.query })
+    void router.push({ name: 'home' })
     return
   }
 
-  void router.push({
-    name: 'element',
-    params: { symbol: getElementRouteSymbol(element.symbol) },
-    query: route.query,
-  })
+  void router.push({ name: 'element', params: { symbol: getElementRouteSymbol(element.symbol) } })
 }
 
 function closeSidebar() {
-  void router.push({ name: 'home', query: route.query })
+  void router.push({ name: 'home' })
 }
 
 function heatmapHint(number: number): string | undefined {

@@ -50,7 +50,7 @@ function toggle() {
 }
 
 function navigate(name: 'collection') {
-  void router.push({ name, query: route.query })
+  void router.push({ name })
   close()
 }
 
