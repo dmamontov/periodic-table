@@ -19,9 +19,9 @@ const messages: LocaleMessages = {
   },
   "menu": {
     "label": "Menu",
-    "dashboard": "Collection"
+    "collection": "Collection"
   },
-  "dashboard": {
+  "collectionPanel": {
     "title": "Mamontov Collection",
     "subtitle": "In numbers",
     "close": "Close",

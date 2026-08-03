@@ -26,9 +26,9 @@ export interface LocaleMessages {
   }
   menu: {
     label: string
-    dashboard: string
+    collection: string
   }
-  dashboard: {
+  collectionPanel: {
     title: string
     subtitle: string
     close: string

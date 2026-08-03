@@ -39,31 +39,31 @@ function close() {
 
 <template>
   <Teleport to="body">
-    <Transition name="dashboard-backdrop">
+    <Transition name="collection-panel-backdrop">
       <button
         v-if="isOpen"
         type="button"
-        class="dashboard-panel__backdrop"
-        :aria-label="messages.dashboard.close"
+        class="collection-panel__backdrop"
+        :aria-label="messages.collectionPanel.close"
         @click="close"
       />
     </Transition>
 
     <aside
-      class="dashboard-panel"
-      :class="{ 'dashboard-panel--open': isOpen }"
+      class="collection-panel"
+      :class="{ 'collection-panel--open': isOpen }"
       :aria-hidden="!isOpen"
     >
-      <div v-if="isOpen" class="dashboard-panel__shell">
-        <header class="dashboard-panel__header">
-          <div class="dashboard-panel__heading">
-            <h2 class="dashboard-panel__title">{{ messages.dashboard.title }}</h2>
-            <p class="dashboard-panel__subtitle">{{ messages.dashboard.subtitle }}</p>
+      <div v-if="isOpen" class="collection-panel__shell">
+        <header class="collection-panel__header">
+          <div class="collection-panel__heading">
+            <h2 class="collection-panel__title">{{ messages.collectionPanel.title }}</h2>
+            <p class="collection-panel__subtitle">{{ messages.collectionPanel.subtitle }}</p>
           </div>
           <button
             type="button"
-            class="dashboard-panel__close"
-            :aria-label="messages.dashboard.close"
+            class="collection-panel__close"
+            :aria-label="messages.collectionPanel.close"
             @click="close"
           >
             <svg viewBox="0 0 16 16" aria-hidden="true">
@@ -78,70 +78,91 @@ function close() {
           </button>
         </header>
 
-        <div class="dashboard-panel__content">
-          <p class="dashboard-panel__note">{{ messages.dashboard.collectibleNote }}</p>
+        <div class="collection-panel__content">
+          <p class="collection-panel__note">{{ messages.collectionPanel.collectibleNote }}</p>
 
-          <div class="dashboard-highlights">
-            <div class="dashboard-highlights__row">
-              <span class="dashboard-highlights__label">{{ messages.dashboard.statCollected }}</span>
-              <span class="dashboard-highlights__track">
+          <div class="collection-panel__highlights">
+            <div class="collection-panel__highlights-row">
+              <span class="collection-panel__highlights-label">{{
+                messages.collectionPanel.statCollected
+              }}</span>
+              <span class="collection-panel__highlights-track">
                 <span
-                  class="dashboard-highlights__fill"
+                  class="collection-panel__highlights-fill"
                   :style="{ width: collectedPercent + '%', backgroundColor: COLLECTED_COLOR }"
                 />
-                <span class="dashboard-highlights__unavailable" :style="{ left: collectiblePercent + '%' }" />
+                <span
+                  class="collection-panel__highlights-unavailable"
+                  :style="{ left: collectiblePercent + '%' }"
+                />
               </span>
-              <span class="dashboard-highlights__value"><span :style="{ color: COLLECTED_COLOR }">{{ stats.collectedCount }}</span><span class="dashboard-highlights__value-sep">/</span><span class="dashboard-highlights__value-mid">{{ stats.collectibleElements }}</span><span class="dashboard-highlights__value-sep">/</span><span class="dashboard-highlights__value-total">{{ stats.totalElements }}</span></span>
+              <span class="collection-panel__highlights-value"><span :style="{ color: COLLECTED_COLOR }">{{ stats.collectedCount }}</span><span class="collection-panel__highlights-value-sep">/</span><span class="collection-panel__highlights-value-mid">{{
+                  stats.collectibleElements
+                }}</span><span class="collection-panel__highlights-value-sep">/</span><span class="collection-panel__highlights-value-total">{{
+                  stats.totalElements
+                }}</span></span>
             </div>
 
-            <div class="dashboard-highlights__row">
-              <span class="dashboard-highlights__label">{{ messages.dashboard.statRadioactive }}</span>
-              <span class="dashboard-highlights__track">
+            <div class="collection-panel__highlights-row">
+              <span class="collection-panel__highlights-label">{{
+                messages.collectionPanel.statRadioactive
+              }}</span>
+              <span class="collection-panel__highlights-track">
                 <span
-                  class="dashboard-highlights__fill"
+                  class="collection-panel__highlights-fill"
                   :style="{ width: radioactivePercent + '%', backgroundColor: RADIOACTIVE_COLOR }"
                 />
                 <span
-                  class="dashboard-highlights__unavailable"
+                  class="collection-panel__highlights-unavailable"
                   :style="{ left: radioactiveCollectiblePercent + '%' }"
                 />
               </span>
-              <span class="dashboard-highlights__value"><span :style="{ color: RADIOACTIVE_COLOR }">{{ stats.radioactiveCollectedCount }}</span><span class="dashboard-highlights__value-sep">/</span><span class="dashboard-highlights__value-mid">{{ stats.radioactiveCollectibleCount }}</span><span class="dashboard-highlights__value-sep">/</span><span class="dashboard-highlights__value-total">{{ stats.radioactiveTotalCount }}</span></span>
+              <span class="collection-panel__highlights-value"><span :style="{ color: RADIOACTIVE_COLOR }">{{
+                  stats.radioactiveCollectedCount
+                }}</span><span class="collection-panel__highlights-value-sep">/</span><span class="collection-panel__highlights-value-mid">{{
+                  stats.radioactiveCollectibleCount
+                }}</span><span class="collection-panel__highlights-value-sep">/</span><span class="collection-panel__highlights-value-total">{{
+                  stats.radioactiveTotalCount
+                }}</span></span>
             </div>
           </div>
 
           <section
-            class="dashboard-panel__section"
-            :class="{ 'dashboard-panel__section--collapsed': categoryCollapsed }"
+            class="collection-panel__section"
+            :class="{ 'collection-panel__section--collapsed': categoryCollapsed }"
           >
             <button
               type="button"
-              class="dashboard-panel__section-title"
+              class="collection-panel__section-title"
               :style="{ borderColor: COLLECTED_COLOR }"
               :aria-expanded="!categoryCollapsed"
               @click="categoryCollapsed = !categoryCollapsed"
             >
-              <span>{{ messages.dashboard.byCategory }}</span>
-              <span class="dashboard-panel__section-chevron" aria-hidden="true" />
+              <span>{{ messages.collectionPanel.byCategory }}</span>
+              <span class="collection-panel__section-chevron" aria-hidden="true" />
             </button>
 
-            <div v-show="!categoryCollapsed" class="dashboard-breakdown">
-              <div v-for="cat in stats.categoryCounts" :key="cat.id" class="dashboard-breakdown__row">
-                <span class="dashboard-breakdown__label">{{ tLegend(cat.id) }}</span>
-                <span class="dashboard-breakdown__track">
+            <div v-show="!categoryCollapsed" class="collection-panel__breakdown">
+              <div
+                v-for="cat in stats.categoryCounts"
+                :key="cat.id"
+                class="collection-panel__breakdown-row"
+              >
+                <span class="collection-panel__breakdown-label">{{ tLegend(cat.id) }}</span>
+                <span class="collection-panel__breakdown-track">
                   <span
-                    class="dashboard-breakdown__fill"
+                    class="collection-panel__breakdown-fill"
                     :style="{
                       width: categoryPercent(cat.collected, cat.total) + '%',
                       backgroundColor: cat.color,
                     }"
                   />
                   <span
-                    class="dashboard-breakdown__unavailable"
+                    class="collection-panel__breakdown-unavailable"
                     :style="{ left: categoryPercent(cat.collectible, cat.total) + '%' }"
                   />
                 </span>
-                <span class="dashboard-breakdown__value"><span :style="{ color: cat.color }">{{ cat.collected }}</span><span class="dashboard-breakdown__value-sep">/</span><span class="dashboard-breakdown__value-mid">{{ cat.collectible }}</span><span class="dashboard-breakdown__value-sep">/</span><span class="dashboard-breakdown__value-total">{{ cat.total }}</span></span>
+                <span class="collection-panel__breakdown-value"><span :style="{ color: cat.color }">{{ cat.collected }}</span><span class="collection-panel__breakdown-value-sep">/</span><span class="collection-panel__breakdown-value-mid">{{ cat.collectible }}</span><span class="collection-panel__breakdown-value-sep">/</span><span class="collection-panel__breakdown-value-total">{{ cat.total }}</span></span>
               </div>
             </div>
           </section>
@@ -152,7 +173,7 @@ function close() {
 </template>
 
 <style scoped>
-.dashboard-panel__backdrop {
+.collection-panel__backdrop {
   position: fixed;
   inset: 0;
   z-index: 200;
@@ -161,17 +182,17 @@ function close() {
   cursor: pointer;
 }
 
-.dashboard-backdrop-enter-active,
-.dashboard-backdrop-leave-active {
+.collection-panel-backdrop-enter-active,
+.collection-panel-backdrop-leave-active {
   transition: opacity 0.25s ease;
 }
 
-.dashboard-backdrop-enter-from,
-.dashboard-backdrop-leave-to {
+.collection-panel-backdrop-enter-from,
+.collection-panel-backdrop-leave-to {
   opacity: 0;
 }
 
-.dashboard-panel {
+.collection-panel {
   position: fixed;
   top: 0;
   right: 0;
@@ -190,18 +211,18 @@ function close() {
   overflow: hidden;
 }
 
-.dashboard-panel--open {
+.collection-panel--open {
   transform: translateX(0);
 }
 
-.dashboard-panel__shell {
+.collection-panel__shell {
   display: flex;
   flex-direction: column;
   height: 100%;
   overflow-y: auto;
 }
 
-.dashboard-panel__header {
+.collection-panel__header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -209,28 +230,28 @@ function close() {
   padding: 20px 24px 4px;
 }
 
-.dashboard-panel__title {
+.collection-panel__title {
   margin: 0;
   font-size: 20px;
   font-weight: 700;
   color: var(--color-text);
 }
 
-.dashboard-panel__subtitle {
+.collection-panel__subtitle {
   margin: 4px 0 0;
   font-size: 13px;
   color: var(--color-text-secondary);
   font-style: italic;
 }
 
-.dashboard-panel__note {
+.collection-panel__note {
   margin: 12px 0 0;
   font-size: 12px;
   line-height: 1.4;
   color: var(--color-text-tertiary);
 }
 
-.dashboard-panel__close {
+.collection-panel__close {
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
@@ -245,24 +266,24 @@ function close() {
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-.dashboard-panel__close:hover {
+.collection-panel__close:hover {
   background: var(--color-bg-elevated);
   color: var(--color-text);
 }
 
-.dashboard-panel__close svg {
+.collection-panel__close svg {
   width: 15px;
   height: 15px;
 }
 
-.dashboard-panel__content {
+.collection-panel__content {
   padding: 8px 24px 32px;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.dashboard-highlights {
+.collection-panel__highlights {
   display: grid;
   grid-template-columns: minmax(120px, auto) 1fr auto;
   align-items: center;
@@ -271,11 +292,11 @@ function close() {
   margin: 16px 0 24px;
 }
 
-.dashboard-highlights__row {
+.collection-panel__highlights-row {
   display: contents;
 }
 
-.dashboard-highlights__label {
+.collection-panel__highlights-label {
   font-size: 13px;
   color: var(--color-text-secondary);
   white-space: nowrap;
@@ -283,7 +304,7 @@ function close() {
   text-overflow: ellipsis;
 }
 
-.dashboard-highlights__track {
+.collection-panel__highlights-track {
   position: relative;
   height: 5px;
   border-radius: 999px;
@@ -291,13 +312,13 @@ function close() {
   overflow: hidden;
 }
 
-.dashboard-highlights__fill {
+.collection-panel__highlights-fill {
   position: absolute;
   inset: 0;
   border-radius: 999px;
 }
 
-.dashboard-highlights__unavailable {
+.collection-panel__highlights-unavailable {
   position: absolute;
   top: 0;
   right: 0;
@@ -312,30 +333,30 @@ function close() {
   opacity: 0.55;
 }
 
-.dashboard-highlights__value {
+.collection-panel__highlights-value {
   font-size: 13px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
 
-.dashboard-highlights__value-sep {
+.collection-panel__highlights-value-sep {
   color: var(--color-text-tertiary);
   opacity: 0.7;
 }
 
-.dashboard-highlights__value-mid {
+.collection-panel__highlights-value-mid {
   color: var(--color-text-secondary);
 }
 
-.dashboard-highlights__value-total {
+.collection-panel__highlights-value-total {
   color: var(--color-text-tertiary);
 }
 
-.dashboard-panel__section {
+.collection-panel__section {
   padding-top: 4px;
 }
 
-.dashboard-panel__section-title {
+.collection-panel__section-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -355,15 +376,15 @@ function close() {
   transition: color 0.15s ease;
 }
 
-.dashboard-panel__section-title:hover {
+.collection-panel__section-title:hover {
   color: var(--color-text-secondary);
 }
 
-.dashboard-panel__section--collapsed .dashboard-panel__section-title {
+.collection-panel__section--collapsed .collection-panel__section-title {
   margin-bottom: 0;
 }
 
-.dashboard-panel__section-chevron {
+.collection-panel__section-chevron {
   flex-shrink: 0;
   width: 7px;
   height: 7px;
@@ -374,11 +395,11 @@ function close() {
   transition: transform 0.2s ease;
 }
 
-.dashboard-panel__section--collapsed .dashboard-panel__section-chevron {
+.collection-panel__section--collapsed .collection-panel__section-chevron {
   transform: rotate(-45deg);
 }
 
-.dashboard-breakdown {
+.collection-panel__breakdown {
   display: grid;
   grid-template-columns: minmax(120px, auto) 1fr auto;
   align-items: center;
@@ -386,11 +407,11 @@ function close() {
   column-gap: 10px;
 }
 
-.dashboard-breakdown__row {
+.collection-panel__breakdown-row {
   display: contents;
 }
 
-.dashboard-breakdown__label {
+.collection-panel__breakdown-label {
   font-size: 13px;
   color: var(--color-text-secondary);
   white-space: nowrap;
@@ -398,26 +419,26 @@ function close() {
   text-overflow: ellipsis;
 }
 
-.dashboard-breakdown__value {
+.collection-panel__breakdown-value {
   font-size: 13px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
 
-.dashboard-breakdown__value-sep {
+.collection-panel__breakdown-value-sep {
   color: var(--color-text-tertiary);
   opacity: 0.7;
 }
 
-.dashboard-breakdown__value-mid {
+.collection-panel__breakdown-value-mid {
   color: var(--color-text-secondary);
 }
 
-.dashboard-breakdown__value-total {
+.collection-panel__breakdown-value-total {
   color: var(--color-text-tertiary);
 }
 
-.dashboard-breakdown__track {
+.collection-panel__breakdown-track {
   position: relative;
   height: 5px;
   border-radius: 999px;
@@ -425,13 +446,13 @@ function close() {
   overflow: hidden;
 }
 
-.dashboard-breakdown__fill {
+.collection-panel__breakdown-fill {
   position: absolute;
   inset: 0;
   border-radius: 999px;
 }
 
-.dashboard-breakdown__unavailable {
+.collection-panel__breakdown-unavailable {
   position: absolute;
   top: 0;
   right: 0;
@@ -447,24 +468,24 @@ function close() {
 }
 
 @media (max-width: 900px) {
-  .dashboard-panel {
+  .collection-panel {
     width: 100vw;
   }
 
-  .dashboard-panel__header {
+  .collection-panel__header {
     padding: 16px 16px 4px;
   }
 
-  .dashboard-panel__content {
+  .collection-panel__content {
     padding: 8px 16px 24px;
   }
 
-  .dashboard-highlights {
+  .collection-panel__highlights {
     grid-template-columns: minmax(90px, auto) 1fr auto;
     column-gap: 8px;
   }
 
-  .dashboard-breakdown {
+  .collection-panel__breakdown {
     grid-template-columns: minmax(90px, auto) 1fr auto;
     column-gap: 8px;
   }

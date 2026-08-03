@@ -19,9 +19,9 @@ const messages: LocaleMessages = {
   },
   "menu": {
     "label": "菜单",
-    "dashboard": "收藏"
+    "collection": "收藏"
   },
-  "dashboard": {
+  "collectionPanel": {
     "title": "马蒙托夫收藏",
     "subtitle": "数据一览",
     "close": "关闭",

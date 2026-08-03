@@ -116,7 +116,7 @@ onBeforeUnmount(() => {
               stroke-linecap="round"
             />
           </svg>
-          {{ messages.menu.dashboard }}
+          {{ messages.menu.collection }}
         </button>
       </nav>
     </Transition>
