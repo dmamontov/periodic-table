@@ -452,13 +452,13 @@ function openElement(symbol: string) {
 }
 
 .collection-panel__spectra-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
 }
 
 .collection-panel__spectrum-card {
-  padding: 12px;
+  padding: 10px;
   border-radius: 10px;
   background: var(--color-bg-muted);
 }
