@@ -240,8 +240,7 @@ function close() {
 
 .dashboard-highlights {
   display: grid;
-  grid-template-columns: minmax(120px, auto) 160px auto;
-  justify-content: start;
+  grid-template-columns: minmax(120px, auto) 1fr auto;
   align-items: center;
   row-gap: 10px;
   column-gap: 10px;
@@ -279,7 +278,6 @@ function close() {
   font-weight: 700;
   line-height: 1;
   font-variant-numeric: tabular-nums;
-  text-align: right;
 }
 
 .dashboard-highlights__value-total {
@@ -390,7 +388,7 @@ function close() {
   }
 
   .dashboard-highlights {
-    grid-template-columns: minmax(90px, auto) 110px auto;
+    grid-template-columns: minmax(90px, auto) 1fr auto;
     column-gap: 8px;
   }
 
