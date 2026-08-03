@@ -16,11 +16,10 @@ const messages: LocaleMessages = {
     "collection": "Коллекция"
   },
   "collectionPanel": {
-    "subtitle": "В цифрах",
+    "sectionTitle": "В цифрах",
     "close": "Закрыть",
     "statCollected": "Собрано элементов",
     "statRadioactive": "Радиоактивных образцов",
-    "byCategory": "По категориям",
     "collectibleNote": "Каждое число: собрано / реально можно собрать / всего элементов."
   },
   "theme": "Тема",
