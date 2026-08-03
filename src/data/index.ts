@@ -1,8 +1,7 @@
 import type { Element } from '../types/element'
 import type { ElementDetail } from '../types/elementDetail'
 import rawElements from './elements.json'
-import rawDetails from './details.json'
-import elementLookups from './element-lookups.json'
+import detailsFile from './details.json'
 import type { GhsPictogramId } from '../types/ghs'
 import { myElements } from './myCollection'
 import type { LocalizedLabel } from '../utils/localizedLabel'
@@ -12,7 +11,7 @@ type RawElement = Omit<Element, 'category' | 'inCollection' | 'collection'>
 /** On-disk shape: number/symbol/name live in elements.json or OverviewCommon. */
 export type StoredElementDetail = Omit<ElementDetail, 'number' | 'symbol' | 'name'>
 
-export const storedElementDetails = rawDetails as Record<string, StoredElementDetail>
+export const storedElementDetails = detailsFile.elements as Record<string, StoredElementDetail>
 
 export type CategoryId =
   | 'alkali'
@@ -360,7 +359,7 @@ export interface RadiacodeIsotopeRef {
 }
 
 export function getElementRadiacodeIsotope(number: number): RadiacodeIsotopeRef | null {
-  const entry = (elementLookups.radiacodeIsotope as Record<string, RadiacodeIsotopeRef>)[String(number)]
+  const entry = (detailsFile.radiacodeIsotope as Record<string, RadiacodeIsotopeRef>)[String(number)]
   return entry ?? null
 }
 
@@ -369,7 +368,7 @@ export function getRadiacodeIsotopeUrl(slug: string): string {
 }
 
 export function getElementGhsPictograms(number: number): GhsPictogramId[] {
-  const list = (elementLookups.ghs as Record<string, GhsPictogramId[]>)[String(number)]
+  const list = (detailsFile.ghs as Record<string, GhsPictogramId[]>)[String(number)]
   return list ?? []
 }
 
