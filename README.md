@@ -91,7 +91,7 @@ Multi-stage build: `node:22-alpine` builds the production bundle, the final imag
 
 ## Data & attribution
 
-Element reference properties, GHS pictograms, and sample photos were aggregated from public sources (PubChem, Wikipedia, periodic-table.tech, and others); NFPA 704 ratings and the collection's gamma spectra are the author's own measurements and verification. The data is intended for educational and personal-project use.
+Element reference properties, GHS pictograms, sample photos, and NFPA 704 ratings were aggregated from public sources (PubChem, Wikipedia, and others); the collection's gamma spectra are the author's own measurements. The data is intended for educational and personal-project use.
 
 ## License
 
