@@ -32,7 +32,8 @@ function updateFlyoutPosition() {
 
   const width = Math.min(FLYOUT_WIDTH, window.innerWidth - VIEWPORT_MARGIN * 2)
   const maxLeft = window.innerWidth - VIEWPORT_MARGIN - width
-  const left = Math.min(Math.max(rect.left, VIEWPORT_MARGIN), Math.max(maxLeft, VIEWPORT_MARGIN))
+  const idealLeft = rect.right - width
+  const left = Math.min(Math.max(idealLeft, VIEWPORT_MARGIN), Math.max(maxLeft, VIEWPORT_MARGIN))
 
   flyoutStyle.value = {
     top: `${rect.bottom + 6}px`,

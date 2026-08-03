@@ -16,7 +16,7 @@ const flyoutStyle = ref<{ top: string; left: string; width: string }>({
 })
 
 const VIEWPORT_MARGIN = 12
-const FLYOUT_WIDTH = 180
+const FLYOUT_WIDTH = 280
 
 const isDashboardActive = computed(() => route.name === 'dashboard')
 
@@ -175,13 +175,14 @@ onBeforeUnmount(() => {
   border-radius: 6px;
   background: var(--color-bg-elevated);
   box-shadow: 0 8px 24px var(--color-shadow-lg);
+  overflow: hidden;
 }
 
 .main-menu__item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 10px;
+  gap: 8px;
+  padding: 6px 8px;
   border: none;
   border-radius: 5px;
   background: transparent;
