@@ -13,8 +13,8 @@ const { messages } = useLocale()
   <header class="app-header">
     <div class="app-header__inner">
       <div class="app-header__controls">
-        <ThemeSwitcher />
         <MainMenu />
+        <ThemeSwitcher />
         <LanguageSwitcher />
         <ElementSearch />
       </div>

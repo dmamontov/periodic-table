@@ -26,7 +26,6 @@ export interface LocaleMessages {
   }
   menu: {
     label: string
-    table: string
     dashboard: string
   }
   dashboard: {
@@ -35,10 +34,7 @@ export interface LocaleMessages {
     close: string
     statCollected: string
     statRadioactive: string
-    statSpectra: string
-    statPurest: string
-    statFullest: string
-    statEmptiest: string
+    byCategory: string
   }
   theme: string
   themeLight: string

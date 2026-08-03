@@ -18,7 +18,6 @@ const flyoutStyle = ref<{ top: string; left: string; width: string }>({
 const VIEWPORT_MARGIN = 12
 const FLYOUT_WIDTH = 180
 
-const isTableActive = computed(() => route.name !== 'dashboard')
 const isDashboardActive = computed(() => route.name === 'dashboard')
 
 function updateFlyoutPosition() {
@@ -50,7 +49,7 @@ function toggle() {
   else open()
 }
 
-function navigate(name: 'home' | 'dashboard') {
+function navigate(name: 'dashboard') {
   void router.push({ name })
   close()
 }
@@ -102,20 +101,6 @@ onBeforeUnmount(() => {
 
     <Transition name="main-menu-fade">
       <nav v-if="isOpen" class="main-menu__flyout" :style="flyoutStyle" :aria-label="messages.menu.label">
-        <button
-          type="button"
-          class="main-menu__item"
-          :class="{ 'main-menu__item--active': isTableActive }"
-          @click="navigate('home')"
-        >
-          <svg class="main-menu__item-icon" viewBox="0 0 16 16" aria-hidden="true">
-            <rect x="1.5" y="1.5" width="5.5" height="5.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.3" />
-            <rect x="9" y="1.5" width="5.5" height="5.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.3" />
-            <rect x="1.5" y="9" width="5.5" height="5.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.3" />
-            <rect x="9" y="9" width="5.5" height="5.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.3" />
-          </svg>
-          {{ messages.menu.table }}
-        </button>
         <button
           type="button"
           class="main-menu__item"

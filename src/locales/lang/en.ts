@@ -19,7 +19,6 @@ const messages: LocaleMessages = {
   },
   "menu": {
     "label": "Menu",
-    "table": "Table",
     "dashboard": "Collection"
   },
   "dashboard": {
@@ -28,10 +27,7 @@ const messages: LocaleMessages = {
     "close": "Close",
     "statCollected": "Elements collected",
     "statRadioactive": "Radioactive samples",
-    "statSpectra": "With a gamma spectrum",
-    "statPurest": "Purest sample",
-    "statFullest": "Fully collected",
-    "statEmptiest": "Least complete"
+    "byCategory": "By category"
   },
   "theme": "Theme",
   "themeLight": "Light theme",

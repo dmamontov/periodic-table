@@ -19,7 +19,6 @@ const messages: LocaleMessages = {
   },
   "menu": {
     "label": "菜单",
-    "table": "元素周期表",
     "dashboard": "收藏"
   },
   "dashboard": {
@@ -28,10 +27,7 @@ const messages: LocaleMessages = {
     "close": "关闭",
     "statCollected": "已收集元素",
     "statRadioactive": "放射性样品",
-    "statSpectra": "含伽马能谱",
-    "statPurest": "纯度最高的样品",
-    "statFullest": "已全部收集",
-    "statEmptiest": "收集最少"
+    "byCategory": "按类别"
   },
   "theme": "主题",
   "themeLight": "浅色主题",

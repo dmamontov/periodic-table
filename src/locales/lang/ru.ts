@@ -19,7 +19,6 @@ const messages: LocaleMessages = {
   },
   "menu": {
     "label": "Меню",
-    "table": "Таблица",
     "dashboard": "Коллекция"
   },
   "dashboard": {
@@ -28,10 +27,7 @@ const messages: LocaleMessages = {
     "close": "Закрыть",
     "statCollected": "Собрано элементов",
     "statRadioactive": "Радиоактивных образцов",
-    "statSpectra": "С гамма-спектром",
-    "statPurest": "Самый чистый образец",
-    "statFullest": "Собрана полностью",
-    "statEmptiest": "Меньше всего собрано"
+    "byCategory": "По категориям"
   },
   "theme": "Тема",
   "themeLight": "Светлая тема",

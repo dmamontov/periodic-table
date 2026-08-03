@@ -3,12 +3,10 @@ import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useLocale } from '../locales'
 import { computeCollectionStats } from '../utils/collectionStats'
-import { formatCollectionPurity } from '../utils/collectionLabels'
-import { formatElementSymbol } from '../utils/elementFormatters'
 
 const route = useRoute()
 const router = useRouter()
-const { locale, messages, tElement, tLegend } = useLocale()
+const { messages, tLegend } = useLocale()
 
 const isOpen = computed(() => route.name === 'dashboard')
 const stats = computeCollectionStats()
@@ -16,16 +14,13 @@ const stats = computeCollectionStats()
 const collectedPercent = computed(() =>
   Math.round((stats.collectedCount / stats.totalElements) * 100),
 )
-
-const purestPurityDisplay = computed(() => {
-  if (!stats.purestSample) return ''
-  const formatted = formatCollectionPurity(stats.purestSample.purityRaw)
-  return locale.value === 'ru' ? formatted : formatted.replace(',', '.')
-})
-
-const purestName = computed(() =>
-  stats.purestSample ? tElement(stats.purestSample.number) : '',
+const radioactivePercent = computed(() =>
+  Math.round((stats.radioactiveCollectedCount / stats.radioactiveTotalCount) * 100),
 )
+
+function categoryPercent(collected: number, total: number): number {
+  return total === 0 ? 0 : Math.round((collected / total) * 100)
+}
 
 function close() {
   void router.push({ name: 'home' })
@@ -84,51 +79,37 @@ function close() {
             </div>
 
             <div class="dashboard-stat">
-              <span class="dashboard-stat__value">{{ stats.radioactiveCollectedCount }}</span>
+              <span class="dashboard-stat__value">{{ stats.radioactiveCollectedCount }}<span class="dashboard-stat__value-total">/{{ stats.radioactiveTotalCount }}</span></span>
               <span class="dashboard-stat__label">{{ messages.dashboard.statRadioactive }}</span>
-            </div>
-
-            <div class="dashboard-stat">
-              <span class="dashboard-stat__value">{{ stats.spectraCount }}</span>
-              <span class="dashboard-stat__label">{{ messages.dashboard.statSpectra }}</span>
-            </div>
-
-            <div v-if="stats.purestSample" class="dashboard-stat">
-              <span class="dashboard-stat__value">{{ purestPurityDisplay }}</span>
-              <span class="dashboard-stat__label">{{ messages.dashboard.statPurest }}</span>
-              <span class="dashboard-stat__extra">
-                <span
-                  class="dashboard-stat__dot"
-                  :style="{ backgroundColor: stats.purestSample.color }"
-                />
-                {{ purestName }} ({{ formatElementSymbol(stats.purestSample.symbol) }})
-              </span>
-            </div>
-
-            <div v-if="stats.fullestCategory" class="dashboard-stat">
-              <span class="dashboard-stat__value">{{ stats.fullestCategory.collected }}<span class="dashboard-stat__value-total">/{{ stats.fullestCategory.total }}</span></span>
-              <span class="dashboard-stat__label">{{ messages.dashboard.statFullest }}</span>
-              <span class="dashboard-stat__extra">
-                <span
-                  class="dashboard-stat__dot"
-                  :style="{ backgroundColor: stats.fullestCategory.color }"
-                />
-                {{ tLegend(stats.fullestCategory.id) }}
-              </span>
-            </div>
-
-            <div v-if="stats.emptiestCategory" class="dashboard-stat">
-              <span class="dashboard-stat__value">{{ stats.emptiestCategory.collected }}<span class="dashboard-stat__value-total">/{{ stats.emptiestCategory.total }}</span></span>
-              <span class="dashboard-stat__label">{{ messages.dashboard.statEmptiest }}</span>
-              <span class="dashboard-stat__extra">
-                <span
-                  class="dashboard-stat__dot"
-                  :style="{ backgroundColor: stats.emptiestCategory.color }"
-                />
-                {{ tLegend(stats.emptiestCategory.id) }}
+              <span class="dashboard-stat__bar">
+                <span class="dashboard-stat__bar-fill" :style="{ width: radioactivePercent + '%' }" />
               </span>
             </div>
           </div>
+
+          <section class="dashboard-panel__section">
+            <h3 class="dashboard-panel__section-title">{{ messages.dashboard.byCategory }}</h3>
+            <div class="dashboard-breakdown">
+              <div
+                v-for="cat in stats.categoryCounts"
+                :key="cat.id"
+                class="dashboard-breakdown__row"
+              >
+                <span class="dashboard-breakdown__swatch" :style="{ backgroundColor: cat.color }" />
+                <span class="dashboard-breakdown__label">{{ tLegend(cat.id) }}</span>
+                <span class="dashboard-breakdown__track">
+                  <span
+                    class="dashboard-breakdown__fill"
+                    :style="{
+                      width: categoryPercent(cat.collected, cat.total) + '%',
+                      backgroundColor: cat.color,
+                    }"
+                  />
+                </span>
+                <span class="dashboard-breakdown__value">{{ cat.collected }}/{{ cat.total }}</span>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </aside>
@@ -290,23 +271,66 @@ function close() {
   background: var(--color-link);
 }
 
-.dashboard-stat__extra {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 2px;
-  font-size: 12px;
+.dashboard-panel__section-title {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--color-text-secondary);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
-.dashboard-stat__dot {
-  flex-shrink: 0;
-  width: 8px;
-  height: 8px;
+.dashboard-breakdown {
+  display: grid;
+  grid-template-columns: 9px minmax(90px, auto) 1fr auto;
+  align-items: center;
+  row-gap: 8px;
+  column-gap: 8px;
+  padding: 14px 16px;
+  border: 1px solid var(--color-chart-border);
+  border-radius: 8px;
+  background: var(--color-chart-bg);
+}
+
+.dashboard-breakdown__row {
+  display: contents;
+}
+
+.dashboard-breakdown__swatch {
+  width: 9px;
+  height: 9px;
   border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.dashboard-breakdown__label {
+  font-size: 12.5px;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dashboard-breakdown__track {
+  position: relative;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-heatmap-fade);
+  overflow: hidden;
+}
+
+.dashboard-breakdown__fill {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+}
+
+.dashboard-breakdown__value {
+  min-width: 2.4em;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-tertiary);
+  text-align: right;
 }
 
 @media (max-width: 900px) {
@@ -321,6 +345,10 @@ function close() {
   .dashboard-panel__content {
     padding: 12px 16px 24px;
     gap: 20px;
+  }
+
+  .dashboard-breakdown {
+    grid-template-columns: 9px minmax(70px, auto) 1fr auto;
   }
 }
 </style>
