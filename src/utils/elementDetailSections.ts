@@ -24,7 +24,7 @@ import {
 import { getPubChemUrl } from './pubchem'
 import { formatDecayType, formatIsotopeHtml, formatMainIsotopesHtml } from './elementIsotopes'
 import { formatNucleusDurationDisplay } from './heatmapData'
-import { getElementApplications, getElementDescription } from '../locales/dictionaries'
+import { getElementApplications, getElementDescription } from '../locales'
 import { collectionName } from '../data/myCollection'
 import { resolveLocalizedLabel } from './localizedLabel'
 

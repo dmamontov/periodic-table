@@ -1,4 +1,4 @@
-import { containerLabels, sampleStateLabels, sourceTypeLabels } from '../locales/dictionaries'
+import { containerLabels, sampleStateLabels, sourceTypeLabels } from '../locales/collection'
 import { resolveLocalizedLabel } from './localizedLabel'
 import type { Locale } from '../locales/types'
 import type { ElementCollection } from '../types/element'
