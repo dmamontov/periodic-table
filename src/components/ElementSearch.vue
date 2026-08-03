@@ -15,26 +15,26 @@ const query = ref('')
 const activeIndex = ref(0)
 const rootEl = ref<HTMLElement | null>(null)
 const inputEl = ref<HTMLInputElement | null>(null)
-const panelStyle = ref<{ top: string; left: string; width: string }>({
+const flyoutStyle = ref<{ top: string; left: string; width: string }>({
   top: '0px',
   left: '0px',
-  width: '260px',
+  width: '280px',
 })
 
 const results = computed(() => searchElements(query.value, elements, messages.value))
 
 const VIEWPORT_MARGIN = 12
-const PANEL_WIDTH = 260
+const FLYOUT_WIDTH = 280
 
-function updatePanelPosition() {
+function updateFlyoutPosition() {
   const rect = rootEl.value?.getBoundingClientRect()
   if (!rect) return
 
-  const width = Math.min(PANEL_WIDTH, window.innerWidth - VIEWPORT_MARGIN * 2)
+  const width = Math.min(FLYOUT_WIDTH, window.innerWidth - VIEWPORT_MARGIN * 2)
   const maxLeft = window.innerWidth - VIEWPORT_MARGIN - width
   const left = Math.min(Math.max(rect.left, VIEWPORT_MARGIN), Math.max(maxLeft, VIEWPORT_MARGIN))
 
-  panelStyle.value = {
+  flyoutStyle.value = {
     top: `${rect.bottom + 6}px`,
     left: `${left}px`,
     width: `${width}px`,
@@ -45,7 +45,7 @@ function open() {
   isOpen.value = true
   void nextTick(() => {
     inputEl.value?.focus()
-    updatePanelPosition()
+    updateFlyoutPosition()
   })
 }
 
@@ -66,7 +66,6 @@ function selectElement(element: Element) {
 }
 
 function onQueryInput() {
-  updatePanelPosition()
   activeIndex.value = 0
 }
 
@@ -115,7 +114,7 @@ function onGlobalKeydown(event: KeyboardEvent) {
 }
 
 function onWindowResize() {
-  if (isOpen.value) updatePanelPosition()
+  if (isOpen.value) updateFlyoutPosition()
 }
 
 onMounted(() => {
@@ -146,48 +145,48 @@ onBeforeUnmount(() => {
       </svg>
     </button>
 
-    <input
-      v-show="isOpen"
-      ref="inputEl"
-      v-model="query"
-      type="text"
-      class="element-search__input"
-      role="combobox"
-      aria-autocomplete="list"
-      aria-controls="element-search-listbox"
-      :aria-expanded="isOpen && results.length > 0"
-      :placeholder="messages.search.placeholder"
-      @input="onQueryInput"
-      @keydown="onKeydown"
-      @focus="open"
-    />
-
     <Transition name="element-search-fade">
-      <div
-        v-if="isOpen && query"
-        id="element-search-listbox"
-        class="element-search__panel"
-        role="listbox"
-        :style="panelStyle"
-      >
-        <button
-          v-for="(element, index) in results"
-          :key="element.number"
-          type="button"
-          role="option"
-          class="element-search__result"
-          :class="{ 'element-search__result--active': index === activeIndex }"
-          :aria-selected="index === activeIndex"
-          @click="selectElement(element)"
-          @mouseenter="activeIndex = index"
-        >
-          <span class="element-search__swatch" :style="{ backgroundColor: element.color }" />
-          <span class="element-search__symbol">{{ formatElementSymbol(element.symbol) }}</span>
-          <span class="element-search__name">{{ messages.elements[String(element.number)] }}</span>
-          <span class="element-search__number">{{ element.number }}</span>
-        </button>
+      <div v-if="isOpen" class="element-search__flyout" :style="flyoutStyle">
+        <div class="element-search__input-row">
+          <svg class="element-search__input-icon" viewBox="0 0 16 16" aria-hidden="true">
+            <circle cx="6.75" cy="6.75" r="4.25" fill="none" stroke="currentColor" stroke-width="1.5" />
+            <path d="M10 10l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          <input
+            ref="inputEl"
+            v-model="query"
+            type="text"
+            class="element-search__input"
+            role="combobox"
+            aria-autocomplete="list"
+            aria-controls="element-search-listbox"
+            :aria-expanded="results.length > 0"
+            :placeholder="messages.search.placeholder"
+            @input="onQueryInput"
+            @keydown="onKeydown"
+          />
+        </div>
 
-        <p v-if="results.length === 0" class="element-search__empty">{{ messages.search.noResults }}</p>
+        <div v-if="query" id="element-search-listbox" class="element-search__panel" role="listbox">
+          <button
+            v-for="(element, index) in results"
+            :key="element.number"
+            type="button"
+            role="option"
+            class="element-search__result"
+            :class="{ 'element-search__result--active': index === activeIndex }"
+            :aria-selected="index === activeIndex"
+            @click="selectElement(element)"
+            @mouseenter="activeIndex = index"
+          >
+            <span class="element-search__swatch" :style="{ backgroundColor: element.color }" />
+            <span class="element-search__symbol">{{ formatElementSymbol(element.symbol) }}</span>
+            <span class="element-search__name">{{ messages.elements[String(element.number)] }}</span>
+            <span class="element-search__number">{{ element.number }}</span>
+          </button>
+
+          <p v-if="results.length === 0" class="element-search__empty">{{ messages.search.noResults }}</p>
+        </div>
       </div>
     </Transition>
   </div>
@@ -234,20 +233,41 @@ onBeforeUnmount(() => {
   display: block;
 }
 
+.element-search__flyout {
+  position: fixed;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-bg-elevated);
+  box-shadow: 0 8px 24px var(--color-shadow-lg);
+  overflow: hidden;
+}
+
+.element-search__input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 10px;
+  flex-shrink: 0;
+}
+
+.element-search__input-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
 .element-search__input {
-  width: 0;
+  flex: 1 1 auto;
   min-width: 0;
   border: none;
   background: transparent;
   color: var(--color-text);
   font-family: var(--font-body);
-  font-size: var(--pill-switcher-font-size);
-  transition: width 0.2s ease, padding 0.2s ease;
-}
-
-.element-search--open .element-search__input {
-  width: 190px;
-  padding: 0 6px 0 4px;
+  font-size: 14px;
 }
 
 .element-search__input:focus {
@@ -259,15 +279,10 @@ onBeforeUnmount(() => {
 }
 
 .element-search__panel {
-  position: fixed;
-  max-height: 320px;
+  max-height: 300px;
   overflow-y: auto;
   padding: 4px;
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  background: var(--color-bg-elevated);
-  box-shadow: 0 8px 24px var(--color-shadow-lg);
-  z-index: 50;
+  border-top: 1px solid var(--color-border-subtle);
 }
 
 .element-search__result {
@@ -340,10 +355,6 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 900px) {
-  .element-search--open .element-search__input {
-    width: 130px;
-  }
-
   .element-search__icon {
     width: 13px;
     height: 13px;
