@@ -27,7 +27,8 @@ const messages: LocaleMessages = {
     "close": "关闭",
     "statCollected": "已收集元素",
     "statRadioactive": "放射性样品",
-    "byCategory": "按类别"
+    "byCategory": "按类别",
+    "collectibleNote": "每组数字为：已收集 / 实际可收集 / 元素总数。物理上只能收集到锿（Es，99号）为止的元素——更重的元素存在时间仅以秒计。"
   },
   "theme": "主题",
   "themeLight": "浅色主题",

@@ -18,8 +18,14 @@ const categoryCollapsed = ref(false)
 const collectedPercent = computed(() =>
   Math.round((stats.collectedCount / stats.totalElements) * 100),
 )
+const collectiblePercent = computed(() =>
+  Math.round((stats.collectibleElements / stats.totalElements) * 100),
+)
 const radioactivePercent = computed(() =>
   Math.round((stats.radioactiveCollectedCount / stats.radioactiveTotalCount) * 100),
+)
+const radioactiveCollectiblePercent = computed(() =>
+  Math.round((stats.radioactiveCollectibleCount / stats.radioactiveTotalCount) * 100),
 )
 
 function categoryPercent(collected: number, total: number): number {
@@ -73,6 +79,8 @@ function close() {
         </header>
 
         <div class="dashboard-panel__content">
+          <p class="dashboard-panel__note">{{ messages.dashboard.collectibleNote }}</p>
+
           <div class="dashboard-highlights">
             <div class="dashboard-highlights__row">
               <span class="dashboard-highlights__label">{{ messages.dashboard.statCollected }}</span>
@@ -81,8 +89,9 @@ function close() {
                   class="dashboard-highlights__fill"
                   :style="{ width: collectedPercent + '%', backgroundColor: COLLECTED_COLOR }"
                 />
+                <span class="dashboard-highlights__unavailable" :style="{ left: collectiblePercent + '%' }" />
               </span>
-              <span class="dashboard-highlights__value">{{ stats.collectedCount }}/{{ stats.totalElements }}</span>
+              <span class="dashboard-highlights__value">{{ stats.collectedCount }}/{{ stats.collectibleElements }}/{{ stats.totalElements }}</span>
             </div>
 
             <div class="dashboard-highlights__row">
@@ -92,8 +101,14 @@ function close() {
                   class="dashboard-highlights__fill"
                   :style="{ width: radioactivePercent + '%', backgroundColor: RADIOACTIVE_COLOR }"
                 />
+                <span
+                  class="dashboard-highlights__unavailable"
+                  :style="{ left: radioactiveCollectiblePercent + '%' }"
+                />
               </span>
-              <span class="dashboard-highlights__value">{{ stats.radioactiveCollectedCount }}/{{ stats.radioactiveTotalCount }}</span>
+              <span class="dashboard-highlights__value">{{ stats.radioactiveCollectedCount }}/{{ stats.radioactiveCollectibleCount }}/{{
+                  stats.radioactiveTotalCount
+                }}</span>
             </div>
           </div>
 
@@ -123,8 +138,12 @@ function close() {
                       backgroundColor: cat.color,
                     }"
                   />
+                  <span
+                    class="dashboard-breakdown__unavailable"
+                    :style="{ left: categoryPercent(cat.collectible, cat.total) + '%' }"
+                  />
                 </span>
-                <span class="dashboard-breakdown__value">{{ cat.collected }}/{{ cat.total }}</span>
+                <span class="dashboard-breakdown__value">{{ cat.collected }}/{{ cat.collectible }}/{{ cat.total }}</span>
               </div>
             </div>
           </section>
@@ -206,6 +225,13 @@ function close() {
   font-style: italic;
 }
 
+.dashboard-panel__note {
+  margin: 12px 0 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--color-text-tertiary);
+}
+
 .dashboard-panel__close {
   flex-shrink: 0;
   display: inline-flex;
@@ -271,6 +297,21 @@ function close() {
   position: absolute;
   inset: 0;
   border-radius: 999px;
+}
+
+.dashboard-highlights__unavailable {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--color-text-tertiary) 0,
+    var(--color-text-tertiary) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  opacity: 0.55;
 }
 
 .dashboard-highlights__value {
@@ -366,6 +407,21 @@ function close() {
   position: absolute;
   inset: 0;
   border-radius: 999px;
+}
+
+.dashboard-breakdown__unavailable {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--color-text-tertiary) 0,
+    var(--color-text-tertiary) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  opacity: 0.55;
 }
 
 @media (max-width: 900px) {

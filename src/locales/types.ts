@@ -35,6 +35,7 @@ export interface LocaleMessages {
     statCollected: string
     statRadioactive: string
     byCategory: string
+    collectibleNote: string
   }
   theme: string
   themeLight: string
