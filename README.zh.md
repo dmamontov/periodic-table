@@ -8,7 +8,12 @@
 
 在线体验：**[periodic.mamontov.tech](https://periodic.mamontov.tech)**
 
-![截图](docs/screenshots/demo-zh.jpg)
+<table>
+<tr>
+<td><img src="docs/screenshots/demo-zh.jpg" width="400" alt="元素周期表"></td>
+<td><img src="docs/screenshots/demo-zh-element.jpg" width="400" alt="元素卡片"></td>
+</tr>
+</table>
 
 ## 功能特性
 
