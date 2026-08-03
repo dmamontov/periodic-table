@@ -57,22 +57,16 @@ pnpm dev
 
 ### Обновление данных
 
-Отдельный набор скриптов (`scripts/*.mjs`) забирает и пересобирает справочные данные из внешних источников — запускается вручную, не входит в обычную сборку:
+Небольшой набор скриптов (`scripts/*.mjs`) поддерживает собственные справочные данные приложения — запускается вручную, не входит в обычную сборку:
 
 | Команда | Назначение |
 |---|---|
-| `pnpm data:details` | Свойства элементов → `src/data/details.json` |
 | `pnpm data:details:optimize` | Оптимизация/минификация `details.json` |
-| `pnpm data:images` | Фото элементов → `src/assets/element-images/` |
-| `pnpm data:spectra` | Спектры испускания элементов → `src/assets/element-spectra/` |
-| `pnpm data:grids` | Иллюстрации кристаллической решётки → `src/assets/grid-structures/` |
 | `pnpm data:nfpa:apply` | Рейтинги NFPA → `details.json` |
 | `pnpm data:nfpa:validate` | Валидация `scripts/data/nfpa-element-ratings.json` |
 | `pnpm data:ghs` | Пиктограммы GHS → `src/data/element-ghs.json` |
 | `pnpm data:youtube` | Ссылки на видео Thoisoi → `src/data/thoisoi-youtube.json` |
 | `pnpm data:spectrum:convert` | Конвертация XML-спектра RadiaCode → JSON для коллекции |
-
-Некоторые скрипты обращаются к внешнему API и требуют токен `VITE_PT_API_TOKEN` в `.env.local` (см. комментарий в `scripts/fetch-element-details.mjs`).
 
 ## Структура проекта
 

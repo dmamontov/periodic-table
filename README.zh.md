@@ -57,22 +57,16 @@ Fork 了本项目、想记录自己的元素收藏？需要修改的内容全部
 
 ### 数据更新
 
-一套独立的脚本管线（`scripts/*.mjs`）从外部数据源抓取并重建参考数据 —— 需手动运行，不属于常规构建流程：
+一小套脚本（`scripts/*.mjs`）用于维护应用自身的参考数据 —— 需手动运行，不属于常规构建流程：
 
 | 命令 | 用途 |
 |---|---|
-| `pnpm data:details` | 元素属性 → `src/data/details.json` |
 | `pnpm data:details:optimize` | 优化/压缩 `details.json` |
-| `pnpm data:images` | 元素照片 → `src/assets/element-images/` |
-| `pnpm data:spectra` | 元素发射光谱 → `src/assets/element-spectra/` |
-| `pnpm data:grids` | 晶体结构插图 → `src/assets/grid-structures/` |
 | `pnpm data:nfpa:apply` | NFPA 评级 → `details.json` |
 | `pnpm data:nfpa:validate` | 校验 `scripts/data/nfpa-element-ratings.json` |
 | `pnpm data:ghs` | GHS 象形图 → `src/data/element-ghs.json` |
 | `pnpm data:youtube` | Thoisoi 视频链接 → `src/data/thoisoi-youtube.json` |
 | `pnpm data:spectrum:convert` | 将 RadiaCode 的 XML 能谱转换为收藏用的 JSON |
-
-部分脚本会调用外部 API，需要在 `.env.local` 中配置 `VITE_PT_API_TOKEN`（详见 `scripts/fetch-element-details.mjs` 中的注释）。
 
 ## 项目结构
 
