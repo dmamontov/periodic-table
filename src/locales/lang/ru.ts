@@ -17,6 +17,7 @@ const messages: LocaleMessages = {
   },
   "collectionPanel": {
     "sectionTitle": "В цифрах",
+    "spectraSectionTitle": "Спектры",
     "close": "Закрыть",
     "statCollected": "Собрано элементов",
     "statRadioactive": "Радиоактивных образцов",

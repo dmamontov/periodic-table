@@ -17,6 +17,7 @@ const messages: LocaleMessages = {
   },
   "collectionPanel": {
     "sectionTitle": "In numbers",
+    "spectraSectionTitle": "Spectra",
     "close": "Close",
     "statCollected": "Elements collected",
     "statRadioactive": "Radioactive samples",
