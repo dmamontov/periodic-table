@@ -17,6 +17,22 @@ const messages: LocaleMessages = {
     "placeholder": "Название, символ или номер",
     "noResults": "Ничего не найдено"
   },
+  "menu": {
+    "label": "Меню",
+    "table": "Таблица",
+    "dashboard": "Дэшборд"
+  },
+  "dashboard": {
+    "title": "Дэшборд коллекции",
+    "subtitle": "Коллекция Мамонтова в цифрах",
+    "close": "Закрыть",
+    "statCollected": "Собрано элементов",
+    "statRadioactive": "Радиоактивных образцов",
+    "statSpectra": "С гамма-спектром",
+    "statCategories": "Категорий представлено",
+    "byCategory": "По категориям",
+    "byState": "По форме образца"
+  },
   "theme": "Тема",
   "themeLight": "Светлая тема",
   "themeDark": "Тёмная тема",

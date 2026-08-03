@@ -17,6 +17,22 @@ const messages: LocaleMessages = {
     "placeholder": "名称、符号或序号",
     "noResults": "未找到"
   },
+  "menu": {
+    "label": "菜单",
+    "table": "元素周期表",
+    "dashboard": "仪表盘"
+  },
+  "dashboard": {
+    "title": "收藏仪表盘",
+    "subtitle": "马蒙托夫收藏数据一览",
+    "close": "关闭",
+    "statCollected": "已收集元素",
+    "statRadioactive": "放射性样品",
+    "statSpectra": "含伽马能谱",
+    "statCategories": "涉及类别",
+    "byCategory": "按类别",
+    "byState": "按样品形态"
+  },
   "theme": "主题",
   "themeLight": "浅色主题",
   "themeDark": "深色主题",

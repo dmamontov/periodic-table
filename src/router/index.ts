@@ -19,6 +19,11 @@ export const router = createRouter({
       component: HomeView,
     },
     {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: HomeView,
+    },
+    {
       path: '/el',
       redirect: '/',
     },

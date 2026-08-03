@@ -24,6 +24,22 @@ export interface LocaleMessages {
     placeholder: string
     noResults: string
   }
+  menu: {
+    label: string
+    table: string
+    dashboard: string
+  }
+  dashboard: {
+    title: string
+    subtitle: string
+    close: string
+    statCollected: string
+    statRadioactive: string
+    statSpectra: string
+    statCategories: string
+    byCategory: string
+    byState: string
+  }
   theme: string
   themeLight: string
   themeDark: string

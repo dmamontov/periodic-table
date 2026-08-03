@@ -17,6 +17,22 @@ const messages: LocaleMessages = {
     "placeholder": "Name, symbol or number",
     "noResults": "No matches"
   },
+  "menu": {
+    "label": "Menu",
+    "table": "Table",
+    "dashboard": "Dashboard"
+  },
+  "dashboard": {
+    "title": "Collection Dashboard",
+    "subtitle": "The Mamontov collection in numbers",
+    "close": "Close",
+    "statCollected": "Elements collected",
+    "statRadioactive": "Radioactive samples",
+    "statSpectra": "With a gamma spectrum",
+    "statCategories": "Categories represented",
+    "byCategory": "By category",
+    "byState": "By sample form"
+  },
   "theme": "Theme",
   "themeLight": "Light theme",
   "themeDark": "Dark theme",
