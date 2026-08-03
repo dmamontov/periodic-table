@@ -5,7 +5,7 @@ import { useLocale } from '../locales'
 import { computeCollectionStats } from '../utils/collectionStats'
 
 const COLLECTED_COLOR = '#c9a227'
-const RADIOACTIVE_COLOR = '#d14a0f'
+const RADIOACTIVE_COLOR = 'var(--color-error)'
 
 const route = useRoute()
 const router = useRouter()
@@ -75,7 +75,6 @@ function close() {
         <div class="dashboard-panel__content">
           <div class="dashboard-highlights">
             <div class="dashboard-highlights__row">
-              <span class="dashboard-highlights__dot" :style="{ backgroundColor: COLLECTED_COLOR }" />
               <span class="dashboard-highlights__label">{{ messages.dashboard.statCollected }}</span>
               <span class="dashboard-highlights__track">
                 <span
@@ -87,7 +86,6 @@ function close() {
             </div>
 
             <div class="dashboard-highlights__row">
-              <span class="dashboard-highlights__dot" :style="{ backgroundColor: RADIOACTIVE_COLOR }" />
               <span class="dashboard-highlights__label">{{ messages.dashboard.statRadioactive }}</span>
               <span class="dashboard-highlights__track">
                 <span
@@ -116,7 +114,6 @@ function close() {
 
             <div v-show="!categoryCollapsed" class="dashboard-breakdown">
               <div v-for="cat in stats.categoryCounts" :key="cat.id" class="dashboard-breakdown__row">
-                <span class="dashboard-breakdown__swatch" :style="{ backgroundColor: cat.color }" />
                 <span class="dashboard-breakdown__label">{{ tLegend(cat.id) }}</span>
                 <span class="dashboard-breakdown__track">
                   <span
@@ -243,7 +240,8 @@ function close() {
 
 .dashboard-highlights {
   display: grid;
-  grid-template-columns: 8px minmax(120px, auto) 1fr auto;
+  grid-template-columns: minmax(120px, auto) 160px auto;
+  justify-content: start;
   align-items: center;
   row-gap: 10px;
   column-gap: 10px;
@@ -252,13 +250,6 @@ function close() {
 
 .dashboard-highlights__row {
   display: contents;
-}
-
-.dashboard-highlights__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 3px;
-  flex-shrink: 0;
 }
 
 .dashboard-highlights__label {
@@ -346,7 +337,7 @@ function close() {
 
 .dashboard-breakdown {
   display: grid;
-  grid-template-columns: 9px minmax(120px, auto) 1fr auto;
+  grid-template-columns: minmax(120px, auto) 1fr auto;
   align-items: center;
   row-gap: 10px;
   column-gap: 10px;
@@ -354,12 +345,6 @@ function close() {
 
 .dashboard-breakdown__row {
   display: contents;
-}
-
-.dashboard-breakdown__swatch {
-  width: 9px;
-  height: 9px;
-  border-radius: 3px;
 }
 
 .dashboard-breakdown__label {
@@ -405,12 +390,12 @@ function close() {
   }
 
   .dashboard-highlights {
-    grid-template-columns: 8px minmax(90px, auto) 1fr auto;
+    grid-template-columns: minmax(90px, auto) 110px auto;
     column-gap: 8px;
   }
 
   .dashboard-breakdown {
-    grid-template-columns: 9px minmax(90px, auto) 1fr auto;
+    grid-template-columns: minmax(90px, auto) 1fr auto;
     column-gap: 8px;
   }
 }
