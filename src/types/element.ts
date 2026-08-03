@@ -1,37 +1,37 @@
 import type { LocalizedLabel } from '../utils/localizedLabel'
 
 export interface ElementCollectionDecayParent {
-  /** Символ родительского элемента, напр. "Ra" */
+  /** Parent element's symbol, e.g. "Ra" */
   symbol: string
-  /** Массовое число изотопа родителя, напр. "226" */
+  /** Parent isotope's mass number, e.g. "226" */
   isotope: string
-  /** Форма родителя в том же образце, напр. «Порошок» */
+  /** Parent's form in the same sample, e.g. "Powder" */
   sampleState?: string | null
 }
 
 export interface ElementCollection {
-  /** Состояние или форма материала внутри (газ, бисер, электроды…); ключ из sampleStateLabels */
+  /** State or form of the material (gas, beads, electrodes…); a key into sampleStateLabels */
   sampleState?: string | null
   /**
-   * Готовое описание образца, если его не свести к обычному sampleState
-   * (напр. «Стрелки часов со светосоставом»). Перекрывает sampleState.
+   * Ready-made description of the sample when it doesn't reduce to a plain
+   * sampleState (e.g. "Clock hands with self-luminous paint"). Overrides sampleState.
    */
   description?: LocalizedLabel | null
-  /** Ёмкость или оформление (ампула, коробка…); пусто — образец без отдельного контейнера */
+  /** Vessel or packaging (ampoule, box…); empty — sample has no separate container */
   container?: string | null
-  /** Массовое число изотопа, напр. "226" → ²²⁶Ra */
+  /** Isotope mass number, e.g. "226" → ²²⁶Ra */
   isotope?: string | null
   purity?: string | null
   /**
-   * Родитель в цепочке распада: элемент не хранится отдельно, а постоянно
-   * образуется в образце (напр. ²²²Rn от ²²⁶Ra в запаянной ампуле).
+   * Parent in the decay chain: the element isn't stored on its own, but is
+   * continuously produced inside the sample (e.g. ²²²Rn from ²²⁶Ra in a sealed ampoule).
    */
   decayParent?: ElementCollectionDecayParent | null
-  /** Первичный / Вторичный — для радиоактивных образцов в коллекции */
+  /** Primary / secondary — for radioactive samples in the collection */
   sourceType?: string | null
-  /** ID γ-спектра из data/spectra/, напр. "th-90-wt20" */
+  /** γ-spectrum ID from data/spectra/, e.g. "th-90-wt20" */
   spectrum?: string | null
-  /** Имя файла для скачивания XML со спектром */
+  /** Download filename for the spectrum's XML */
   spectrumFilename?: LocalizedLabel | null
 }
 

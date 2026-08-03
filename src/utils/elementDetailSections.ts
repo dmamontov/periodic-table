@@ -708,7 +708,7 @@ function positiveCellVariant(value: string): OxidationCell['variant'] {
   return 'positive'
 }
 
-/** Разбор как на periodic-table.tech: 6 отрицательных + 9 положительных */
+/** Laid out like on periodic-table.tech: 6 negative + 9 positive slots */
 export function parseOxidationStates(raw: string | null | undefined): OxidationStateRows | null {
   if (!raw) return null
   const parts = raw.split(',').map((s) => s.trim())

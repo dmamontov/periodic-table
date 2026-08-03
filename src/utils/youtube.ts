@@ -30,8 +30,8 @@ function searchQuery(number: number, locale: Locale, detail: ElementDetail | nul
 }
 
 /**
- * YouTube: для RU — прямая ссылка с thoisoi.ru, иначе поиск.
- * Для EN/ZH — всегда поиск на YouTube.
+ * YouTube: for RU, a direct link from thoisoi.ru when available, otherwise a search.
+ * For EN/ZH it's always a YouTube search.
  */
 export function getYouTubeUrl(
   number: number,

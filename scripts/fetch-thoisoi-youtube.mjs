@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Собирает прямые ссылки на YouTube с https://thoisoi.ru/
- * и дополняет проверенными роликами русского канала Thoisoi,
- * которых ещё нет на сайте.
+ * Collects direct YouTube links from https://thoisoi.ru/
+ * and supplements them with verified videos from the Russian Thoisoi
+ * channel that aren't on the site yet.
  *
  * Output: src/data/thoisoi-youtube.json
  */
@@ -13,14 +13,14 @@ import { fileURLToPath } from 'node:url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const outPath = resolve(__dirname, '../src/data/thoisoi-youtube.json')
 
-/** Проверенные videoId русского канала Thoisoi (название содержит элемент). */
+/** Verified video IDs from the Russian Thoisoi channel (title contains the element name). */
 const SUPPLEMENT = {
-  1: 'oRxaGQe0zj8', // Водород — Самый ЛЕГКИЙ Газ во Вселенной!
-  6: 'q-Oyp936Big', // Углерод — Самый СТРАННЫЙ химический Элемент!
-  43: '2UbPY7VHLWs', // Технеций — Первый ИСКУССТВЕННЫЙ Металл на Земле!
-  80: 'MbJRT6XLvBE', // Ртуть — Самый ПОДВИЖНЫЙ Металл на Земле!
-  95: 'XQcoKrtjfwc', // Америций — Металл, От Которого НИКУДА НЕ ДЕТЬСЯ!
-  98: 'P0cFU47hD0s', // Калифорний
+  1: 'oRxaGQe0zj8', // Hydrogen — the LIGHTEST Gas in the Universe!
+  6: 'q-Oyp936Big', // Carbon — the STRANGEST Chemical Element!
+  43: '2UbPY7VHLWs', // Technetium — the First ARTIFICIAL Metal on Earth!
+  80: 'MbJRT6XLvBE', // Mercury — the Most MOBILE Metal on Earth!
+  95: 'XQcoKrtjfwc', // Americium — the Metal You CAN'T ESCAPE!
+  98: 'P0cFU47hD0s',
 }
 
 const RU_NAMES = {

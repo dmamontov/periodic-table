@@ -2,37 +2,37 @@ import type { ElementCollection } from '../types/element'
 import type { LocalizedLabel } from '../utils/localizedLabel'
 
 /**
- * ЭТО ГЛАВНЫЙ ФАЙЛ ДЛЯ СВОЕЙ КОЛЛЕКЦИИ.
- * Форкнули репозиторий и хотите завести собственную коллекцию элементов?
- * Правьте только этот файл — остальной код трогать не нужно.
+ * THIS IS THE MAIN FILE FOR YOUR OWN COLLECTION.
+ * Forked the repo and want to track your own element collection?
+ * Edit only this file — nothing else needs to change.
  *
- * 1. collectionName / siteTitle / siteUrl — название и адрес вашего сайта.
- * 2. myElements — какие элементы у вас есть и что о них известно.
- *    Ключ — химический символ. Пустой объект `{}` уже означает "он у меня
- *    есть", остальные поля можно заполнять постепенно или не заполнять
- *    вовсе. Все поля, кроме символа, необязательны.
- * 3. Если для описания образца не хватает стандартных значений
- *    sampleState/container/sourceType — либо допишите свою пару
- *    "код: подпись" в src/locales/partials/collection.ts, либо просто
- *    впишите готовый текст в description (см. пример радиоактивных
- *    элементов ниже) — это проще и не требует правки словарей вообще.
+ * 1. collectionName / siteTitle / siteUrl — your site's name and address.
+ * 2. myElements — which elements you have and what's known about them.
+ *    The key is the chemical symbol. An empty object `{}` already means
+ *    "I have it"; the rest of the fields can be filled in gradually or
+ *    left out entirely. Every field but the symbol is optional.
+ * 3. If the standard sampleState/container/sourceType values aren't enough
+ *    to describe a sample — either add your own "code: label" pair to
+ *    src/locales/partials/collection.ts, or just put the ready-made text
+ *    straight into description (see the radioactive elements below for an
+ *    example) — that's simpler and doesn't require touching the dictionaries at all.
  */
 
-/** Название коллекции — используется в панели, в детальной карточке и в фильтре категорий. */
+/** Collection name — used in the panel, the element detail card, and the category filter. */
 export const collectionName: LocalizedLabel = {
   ru: 'Коллекция Мамонтова',
   en: 'Mamontov Collection',
   zh: '马蒙托夫收藏',
 }
 
-/** Заголовок сайта (вкладка браузера, SEO). */
+/** Site title (browser tab, SEO). */
 export const siteTitle: LocalizedLabel = {
   ru: 'Мамонтов — коллекция элементов',
   en: 'Mamontov — Element Collection',
   zh: '马蒙托夫 — 元素收藏',
 }
 
-/** Адрес сайта — используется для canonical/OpenGraph-ссылок. */
+/** Site address — used for canonical/OpenGraph links. */
 export const siteUrl = 'https://periodic.mamontov.tech'
 
 export const myElements: Record<string, ElementCollection> = {

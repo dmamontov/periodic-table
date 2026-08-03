@@ -28,7 +28,7 @@ export function resolveCollectionSampleState(
   return resolveCollectionLabel(locale, 'sampleStates', entry.sampleState)
 }
 
-/** 999 → 99,9%; 6N → 99,9999%; ~999 → ~99,9%; значения с % возвращаются как есть */
+/** 999 → 99,9%; 6N → 99,9999%; ~999 → ~99,9%; values that already contain % are returned as-is */
 function formatPurityRaw(raw: string): string | null {
   const nMatch = raw.match(/^(\d+)N$/i)
   if (nMatch) {
