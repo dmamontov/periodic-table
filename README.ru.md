@@ -8,7 +8,12 @@
 
 Сайт: **[periodic.mamontov.tech](https://periodic.mamontov.tech)**
 
-![Скриншот](docs/screenshots/demo-ru.jpg)
+<table>
+<tr>
+<td><img src="docs/screenshots/demo-ru.jpg" width="400" alt="Периодическая таблица"></td>
+<td><img src="docs/screenshots/demo-ru-element.jpg" width="400" alt="Карточка элемента"></td>
+</tr>
+</table>
 
 ## Возможности
 

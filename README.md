@@ -8,7 +8,12 @@ An interactive periodic table built with Vue 3 + TypeScript: element cards packe
 
 Live site: **[periodic.mamontov.tech](https://periodic.mamontov.tech)**
 
-![Screenshot](docs/screenshots/demo-en.jpg)
+<table>
+<tr>
+<td><img src="docs/screenshots/demo-en.jpg" width="400" alt="Periodic table"></td>
+<td><img src="docs/screenshots/demo-en-element.jpg" width="400" alt="Element card"></td>
+</tr>
+</table>
 
 ## Features
 
