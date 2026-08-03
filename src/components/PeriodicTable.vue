@@ -203,8 +203,8 @@ const isFBlockGroupLabelHighlighted = computed(() => {
   )
 })
 
-function onSelectElement(element: Element, toggle = true) {
-  if (toggle && selectedElement.value?.number === element.number) {
+function onSelectElement(element: Element) {
+  if (selectedElement.value?.number === element.number) {
     void router.push({ name: 'home' })
     return
   }

@@ -189,6 +189,7 @@ watch(
     containerRef.value?.scrollTo(0, 0)
     await nextTick(() => setupHeaderObserver())
   },
+  { immediate: true },
 )
 
 onBeforeUnmount(() => {
@@ -230,6 +231,7 @@ watch(
       applyDefaultCollapsedSections()
     }
   },
+  { immediate: true },
 )
 
 function isSectionCollapsed(sectionKey: string): boolean {

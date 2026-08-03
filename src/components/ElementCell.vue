@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { Element } from '../types/element'
-import { getCellBorderRadius, isElementRadioactive, isElementWeaklyRadioactive } from '../data'
+import { getCellBorderRadius, getElementPeriod, isElementRadioactive, isElementWeaklyRadioactive } from '../data'
 import { intensityToBrightness } from '../utils/heatmapData'
 import { useLocale } from '../locales'
 import { formatElementSymbol } from '../utils/elementFormatters'
@@ -52,10 +52,7 @@ const showPeriodLabel = computed(() => {
   return props.element.col === 1
 })
 
-const periodNumber = computed(() => {
-  if (props.singleRow) return props.element.row === 8 ? 6 : 7
-  return props.element.row
-})
+const periodNumber = computed(() => getElementPeriod(props.element))
 
 const elementName = computed(() => {
   void locale.value
