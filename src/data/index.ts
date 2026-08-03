@@ -202,6 +202,10 @@ const elementMetaByNumber = new Map(
   elements.map((el) => [el.number, el]),
 )
 
+export function getSymbolByNumber(number: number): string | null {
+  return elementMetaByNumber.get(number)?.symbol ?? null
+}
+
 const elementDetails = storedElementDetails
 
 const imageModules = import.meta.glob('../assets/element-images/*.jpg', {
@@ -257,19 +261,21 @@ export function isElementRadioactive(number: number): boolean {
 }
 
 export function getElementDetail(number: number): ElementDetail | null {
-  const raw = elementDetails[String(number)]
-  if (!raw) return null
   const meta = elementMetaByNumber.get(number)
+  if (!meta) return null
+  const raw = elementDetails[meta.symbol]
+  if (!raw) return null
   return {
     ...raw,
     number,
-    symbol: meta?.symbol ?? '',
+    symbol: meta.symbol,
     name: raw.OverviewCommon?.englishName ?? '',
   }
 }
 
 export function hasElementImage(number: number): boolean {
-  return elementDetails[String(number)]?.OverviewCommon?.hasImage === true
+  const symbol = getSymbolByNumber(number)
+  return symbol ? elementDetails[symbol]?.OverviewCommon?.hasImage === true : false
 }
 
 export function getElementImageUrl(number: number): string | null {
@@ -278,7 +284,8 @@ export function getElementImageUrl(number: number): string | null {
 }
 
 export function hasElementSpectrum(number: number): boolean {
-  return elementDetails[String(number)]?.OverviewCommon?.hasSpectre === true
+  const symbol = getSymbolByNumber(number)
+  return symbol ? elementDetails[symbol]?.OverviewCommon?.hasSpectre === true : false
 }
 
 export function getElementSpectrumUrl(number: number): string | null {
@@ -359,7 +366,9 @@ export interface RadiacodeIsotopeRef {
 }
 
 export function getElementRadiacodeIsotope(number: number): RadiacodeIsotopeRef | null {
-  const entry = (detailsFile.radiacodeIsotope as Record<string, RadiacodeIsotopeRef>)[String(number)]
+  const symbol = getSymbolByNumber(number)
+  if (!symbol) return null
+  const entry = (detailsFile.radiacodeIsotope as Record<string, RadiacodeIsotopeRef>)[symbol]
   return entry ?? null
 }
 
@@ -368,7 +377,9 @@ export function getRadiacodeIsotopeUrl(slug: string): string {
 }
 
 export function getElementGhsPictograms(number: number): GhsPictogramId[] {
-  const list = (detailsFile.ghs as Record<string, GhsPictogramId[]>)[String(number)]
+  const symbol = getSymbolByNumber(number)
+  if (!symbol) return []
+  const list = (detailsFile.ghs as Record<string, GhsPictogramId[]>)[symbol]
   return list ?? []
 }
 

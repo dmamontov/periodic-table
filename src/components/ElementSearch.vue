@@ -182,7 +182,7 @@ onBeforeUnmount(() => {
           >
             <span class="element-search__swatch" :style="{ backgroundColor: element.color }" />
             <span class="element-search__symbol">{{ formatElementSymbol(element.symbol) }}</span>
-            <span class="element-search__name">{{ messages.elements[String(element.number)] }}</span>
+            <span class="element-search__name">{{ messages.elements[element.symbol] }}</span>
             <span class="element-search__number">{{ element.number }}</span>
           </button>
 

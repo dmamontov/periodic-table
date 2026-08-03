@@ -11,6 +11,7 @@ import en from './lang/en'
 import zh from './lang/zh'
 import type { LegendKey, Locale, LocaleMessages } from './types'
 import { collectionName as collectionNameConfig } from '../data/myCollection'
+import { getSymbolByNumber } from '../data'
 import { resolveLocalizedLabel } from '../utils/localizedLabel'
 
 const STORAGE_KEY = 'periodic-table-locale'
@@ -24,7 +25,8 @@ export const localeOptions: { value: Locale; label: string }[] = [
 ]
 
 export function getElementApplications(number: number, locale: Locale): string {
-  const key = String(number)
+  const key = getSymbolByNumber(number)
+  if (!key) return ''
   return (
     localeMessages[locale].applications[key] ??
     localeMessages.en.applications[key] ??
@@ -34,7 +36,8 @@ export function getElementApplications(number: number, locale: Locale): string {
 }
 
 export function getElementDescription(number: number, locale: Locale): string {
-  const key = String(number)
+  const key = getSymbolByNumber(number)
+  if (!key) return ''
   return (
     localeMessages[locale].descriptions[key] ??
     localeMessages.en.descriptions[key] ??
@@ -124,7 +127,8 @@ function createLocale() {
   }
 
   function tElement(number: number) {
-    return messages.value.elements[String(number)] ?? ''
+    const symbol = getSymbolByNumber(number)
+    return (symbol && messages.value.elements[symbol]) ?? ''
   }
 
   function formatMass(mass: string) {

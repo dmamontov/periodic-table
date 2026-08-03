@@ -4,6 +4,7 @@ import ru from '../locales/lang/ru'
 import en from '../locales/lang/en'
 import zh from '../locales/lang/zh'
 import detailsFile from '../data/details.json'
+import { getSymbolByNumber } from '../data'
 
 const localeMessages = { ru, en, zh }
 
@@ -14,17 +15,18 @@ function youtubeSearch(query: string): string {
 }
 
 function searchQuery(number: number, locale: Locale, detail: ElementDetail | null): string {
+  const symbol = detail?.symbol ?? getSymbolByNumber(number)
   if (locale === 'ru') {
-    return localeMessages.ru.elements[String(number)] ?? ''
+    return (symbol && localeMessages.ru.elements[symbol]) ?? ''
   }
   if (locale === 'zh') {
-    const name = localeMessages.zh.elements[String(number)] ?? ''
+    const name = (symbol && localeMessages.zh.elements[symbol]) ?? ''
     return `${name} 元素 周期表`
   }
   const name =
     detail?.OverviewCommon?.englishName ??
     detail?.name ??
-    localeMessages.en.elements[String(number)] ??
+    (symbol && localeMessages.en.elements[symbol]) ??
     ''
   return `${name} periodic table`
 }
@@ -39,7 +41,8 @@ export function getYouTubeUrl(
   detail: ElementDetail | null,
 ): string {
   if (locale === 'ru') {
-    const direct = thoisoiVideos[String(number)]?.trim()
+    const symbol = detail?.symbol ?? getSymbolByNumber(number)
+    const direct = symbol ? thoisoiVideos[symbol]?.trim() : undefined
     if (direct) return direct
   }
   return youtubeSearch(searchQuery(number, locale, detail))

@@ -582,7 +582,7 @@ export function buildElementSections(
         ),
         prop(
           s.props.mainIsotopes,
-          formatMainIsotopesHtml(element.symbol, detail.number),
+          formatMainIsotopesHtml(element.symbol),
           true,
         ),
         prop(s.props.decayType, formatDecayType(detail.number, locale)),

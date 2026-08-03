@@ -15,7 +15,7 @@ export function searchElements(
 
   for (const element of elements) {
     const symbol = element.symbol.toLowerCase()
-    const name = (messages.elements[String(element.number)] ?? '').toLowerCase()
+    const name = (messages.elements[element.symbol] ?? '').toLowerCase()
     const number = String(element.number)
 
     let rank = -1
