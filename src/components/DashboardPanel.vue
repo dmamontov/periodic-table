@@ -82,7 +82,7 @@ function close() {
                   :style="{ width: collectedPercent + '%', backgroundColor: COLLECTED_COLOR }"
                 />
               </span>
-              <span class="dashboard-highlights__value" :style="{ color: COLLECTED_COLOR }">{{ stats.collectedCount }}<span class="dashboard-highlights__value-total">/{{ stats.totalElements }}</span></span>
+              <span class="dashboard-highlights__value">{{ stats.collectedCount }}/{{ stats.totalElements }}</span>
             </div>
 
             <div class="dashboard-highlights__row">
@@ -93,7 +93,7 @@ function close() {
                   :style="{ width: radioactivePercent + '%', backgroundColor: RADIOACTIVE_COLOR }"
                 />
               </span>
-              <span class="dashboard-highlights__value" :style="{ color: RADIOACTIVE_COLOR }">{{ stats.radioactiveCollectedCount }}<span class="dashboard-highlights__value-total">/{{ stats.radioactiveTotalCount }}</span></span>
+              <span class="dashboard-highlights__value">{{ stats.radioactiveCollectedCount }}/{{ stats.radioactiveTotalCount }}</span>
             </div>
           </div>
 
@@ -274,16 +274,10 @@ function close() {
 }
 
 .dashboard-highlights__value {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 700;
-  line-height: 1;
   font-variant-numeric: tabular-nums;
-}
-
-.dashboard-highlights__value-total {
-  font-size: 12px;
-  font-weight: 700;
-  opacity: 0.7;
+  color: var(--color-text);
 }
 
 .dashboard-panel__section {
