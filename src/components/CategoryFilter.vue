@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { allCategories, type CategoryId } from '../data'
 import { useLocale } from '../locales'
 
@@ -33,7 +32,7 @@ function cat(id: CategoryId): CategoryItem {
   return { kind: 'category', id, color: categoryColor[id] }
 }
 
-const columns = computed<ColumnCell[][]>(() => [
+const columns: ColumnCell[][] = [
   [
     { kind: 'category', id: 'all', color: ALL_COLOR },
     { kind: 'collection', color: COLLECTION_COLOR },
@@ -52,7 +51,7 @@ const columns = computed<ColumnCell[][]>(() => [
     cat('lanthanides'),
     cat('actinides'),
   ],
-])
+]
 
 function categoryLabel(id: string) {
   return id === 'all' ? tCategories('all') : tLegend(id)
