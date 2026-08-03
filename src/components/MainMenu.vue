@@ -169,8 +169,6 @@ onBeforeUnmount(() => {
   z-index: 50;
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding: 4px;
   border: 1px solid var(--color-border);
   border-radius: 6px;
   background: var(--color-bg-elevated);
@@ -182,13 +180,14 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 8px;
+  height: 28px;
+  padding: 0 var(--pill-switcher-padding-x);
   border: none;
   border-radius: 5px;
   background: transparent;
   color: var(--color-text-secondary);
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: var(--pill-switcher-font-size);
   text-align: left;
   cursor: pointer;
   transition: background-color 0.15s ease, color 0.15s ease;
@@ -205,8 +204,8 @@ onBeforeUnmount(() => {
 }
 
 .main-menu__item-icon {
-  width: 14px;
-  height: 14px;
+  width: var(--pill-switcher-icon-size);
+  height: var(--pill-switcher-icon-size);
   flex-shrink: 0;
   color: inherit;
 }
