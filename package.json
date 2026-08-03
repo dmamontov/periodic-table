@@ -12,11 +12,6 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "check": "npm run typecheck && npm run lint",
-    "data:details:optimize": "node scripts/optimize-details.mjs",
-    "data:nfpa:apply": "node scripts/apply-nfpa-ratings.mjs",
-    "data:nfpa:validate": "node scripts/build-nfpa-ratings.mjs",
-    "data:ghs": "node scripts/build-ghs-ratings.mjs",
-    "data:youtube": "node scripts/fetch-thoisoi-youtube.mjs",
     "data:spectrum:convert": "node scripts/convert-radiacode-spectrum.mjs"
   },
   "dependencies": {
