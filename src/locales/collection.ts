@@ -26,10 +26,3 @@ export const containerLabels: Record<string, LocalizedLabel> = {
   acrylicCoinCapsule: { ru: 'Акриловая капсула', en: 'Acrylic capsule', zh: '亚克力胶囊' },
   substrate: { ru: 'Подложка', en: 'Substrate', zh: '基底' },
 }
-
-export const sourceTypeLabels: Record<string, LocalizedLabel> = {
-  primary: { ru: 'Прямой источник', en: 'Direct source', zh: '直接来源' },
-  secondary: { ru: 'Продукт распада', en: 'Decay product', zh: '衰变产物' },
-}
-
-export const spectrumMinutesLabel: LocalizedLabel = { ru: 'мин', en: 'min', zh: '分钟' }

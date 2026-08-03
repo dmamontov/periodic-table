@@ -8,7 +8,6 @@ import {
   type CollectionSpectrumData,
 } from '../data'
 import { useLocale } from '../locales'
-import { spectrumMinutesLabel } from '../locales/collection'
 import { resolveLocalizedLabel } from '../utils/localizedLabel'
 
 const props = defineProps<{
@@ -146,7 +145,7 @@ const caption = computed(() => {
   const data = spectrum.value
   if (!data) return ''
   const minutes = Math.round(data.measurementTimeSec / 60)
-  return `${data.device} · ${minutes} ${resolveLocalizedLabel(spectrumMinutesLabel, locale.value)}`
+  return `${data.device} · ${minutes} ${tSidebar('spectrumMinutes')}`
 })
 </script>
 

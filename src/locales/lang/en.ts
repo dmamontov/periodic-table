@@ -267,7 +267,12 @@ const messages: LocaleMessages = {
     "weakRadioactiveBadge": "Weakly radioactive",
     "collectionBadge": "In collection",
     "collectionSpectrumDownload": "Download",
-    "miniTableAria": "Mini periodic table with the selected element highlighted"
+    "miniTableAria": "Mini periodic table with the selected element highlighted",
+    "sourceTypes": {
+      "primary": "Direct source",
+      "secondary": "Decay product"
+    },
+    "spectrumMinutes": "min"
   },
   "openers": {
     "0": "Henry Cavendish",
