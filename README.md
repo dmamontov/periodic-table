@@ -1,3 +1,5 @@
+**English** | [Русский](README.ru.md) | [中文](README.zh.md)
+
 # Periodic Table of Elements
 
 An interactive periodic table built with Vue 3 + TypeScript: element cards packed with dozens of reference properties, and — the standout feature — a personal physical **Mamontov element collection** with sample photos, purity, isotopic composition, and gamma spectra recorded with a RadiaCode dosimeter.
