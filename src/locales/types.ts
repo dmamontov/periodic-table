@@ -251,6 +251,8 @@ export interface LocaleMessages {
     collectionBadge: string
     collectionSpectrumDownload: string
     miniTableAria: string
+    sourceTypes: Record<'primary' | 'secondary', string>
+    spectrumMinutes: string
   }
   openers: Record<string, string>
   nfpa: {

@@ -39,7 +39,7 @@ Fork 了本项目、想记录自己的元素收藏？需要修改的内容全部
 
 - `collectionName` / `siteTitle` / `siteUrl` —— 重命名收藏名称，并换成你自己的域名。
 - `myElements` —— 一个"元素符号 → 详情"的映射表。只要加上一个键就代表这个元素归你所有；空对象 `{}` 已经足够（"我有这个元素，细节以后再补"）。`sampleState`、`container`、`purity`、`isotope`、`sourceType`、`decayParent`、`spectrum` 都是可选字段，可以慢慢填。
-- 如果内置的 `sampleState`/`container`/`sourceType` 词汇表（在 [`src/locales/collection.ts`](src/locales/collection.ts) 中）不够用，你可以在那里添加新条目，也可以完全跳过词汇表，直接把现成的文字写进该元素的 `description` 字段 —— `myCollection.ts` 里的放射性元素就是这么做的，可以参考。
+- 如果内置的 `sampleState`/`container` 词汇表（在 [`src/locales/collection.ts`](src/locales/collection.ts) 中）不够用，你可以在那里添加新条目，也可以完全跳过词汇表，直接把现成的文字写进该元素的 `description` 字段 —— `myCollection.ts` 里的放射性元素就是这么做的，可以参考。`sourceType` 固定取值为 `'primary'` 或 `'secondary'`。
 - 任何文本字段既可以写成一个普通字符串（在三种界面语言下都显示同一内容），也可以写成 `{ ru, en, zh }` 对象来分别翻译。
 
 伽马能谱（`spectrum`/`spectrumFilename` 字段）是可选的 —— 只有当你确实有测量文件要放进 `src/data/spectra/` 时才需要填写。

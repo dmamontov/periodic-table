@@ -13,6 +13,7 @@ import {
 import {
   resolveCollectionLabel,
   resolveCollectionSampleState,
+  resolveSourceType,
   formatCollectionPurity,
 } from './collectionLabels'
 import {
@@ -430,7 +431,7 @@ export function buildElementSections(
       collectionItems.push(
         prop(
           s.props.collectionSourceType,
-          fmt(resolveCollectionLabel(locale, 'sourceTypes', element.collection?.sourceType)),
+          fmt(resolveSourceType(locale, element.collection?.sourceType)),
         ),
       )
     }

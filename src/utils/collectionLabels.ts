@@ -1,12 +1,12 @@
-import { containerLabels, sampleStateLabels, sourceTypeLabels } from '../locales/collection'
+import { containerLabels, sampleStateLabels } from '../locales/collection'
 import { resolveLocalizedLabel } from './localizedLabel'
+import { localeMessages } from '../locales'
 import type { Locale } from '../locales/types'
 import type { ElementCollection } from '../types/element'
 
 const DICTS = {
   sampleStates: sampleStateLabels,
   containers: containerLabels,
-  sourceTypes: sourceTypeLabels,
 }
 
 export function resolveCollectionLabel(
@@ -17,6 +17,11 @@ export function resolveCollectionLabel(
   if (!key) return ''
   const label = DICTS[group][key]
   return label ? resolveLocalizedLabel(label, locale) : key
+}
+
+export function resolveSourceType(locale: Locale, key: string | null | undefined): string {
+  if (!key) return ''
+  return localeMessages[locale].sidebar.sourceTypes[key as 'primary' | 'secondary'] ?? key
 }
 
 export function resolveCollectionSampleState(

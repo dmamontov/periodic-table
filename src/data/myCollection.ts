@@ -11,11 +11,12 @@ import type { LocalizedLabel } from '../utils/localizedLabel'
  *    The key is the chemical symbol. An empty object `{}` already means
  *    "I have it"; the rest of the fields can be filled in gradually or
  *    left out entirely. Every field but the symbol is optional.
- * 3. If the standard sampleState/container/sourceType values aren't enough
- *    to describe a sample — either add your own "code: label" pair to
+ * 3. If the standard sampleState/container values aren't enough to describe
+ *    a sample — either add your own "code: label" pair to
  *    src/locales/collection.ts, or just put the ready-made text
  *    straight into description (see the radioactive elements below for an
  *    example) — that's simpler and doesn't require touching the dictionaries at all.
+ *    sourceType only ever takes 'primary' or 'secondary' (see ElementCollection).
  */
 
 /** Collection name — used in the panel, the element detail card, and the category filter. */
