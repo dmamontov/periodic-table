@@ -193,16 +193,17 @@ const messages: LocaleMessages = {
       "wPerMK": "(Вт/мК)"
     },
     "aggregationState": {
-      "0": "Газ",
-      "1": "Твёрдое",
-      "2": "Жидкость",
-      "3": "Неизвестно"
+      "gas": "Газ",
+      "solid": "Твёрдое",
+      "liquid": "Жидкость",
+      "unknown": "Неизвестно"
     },
     "magneticType": {
-      "0": "—",
-      "1": "Диамагнетик",
-      "2": "Парамагнетик",
-      "3": "Ферромагнетик"
+      "none": "—",
+      "diamagnetic": "Диамагнетик",
+      "paramagnetic": "Парамагнетик",
+      "antiferromagnetic": "Антиферромагнетик",
+      "ferromagnetic": "Ферромагнетик"
     },
     "blocks": {
       "s": "s - блок",

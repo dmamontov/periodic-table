@@ -193,16 +193,17 @@ const messages: LocaleMessages = {
       "wPerMK": "(瓦/米·K)"
     },
     "aggregationState": {
-      "0": "气态",
-      "1": "固态",
-      "2": "液态",
-      "3": "未知"
+      "gas": "气态",
+      "solid": "固态",
+      "liquid": "液态",
+      "unknown": "未知"
     },
     "magneticType": {
-      "0": "—",
-      "1": "抗磁性",
-      "2": "顺磁性",
-      "3": "铁磁性"
+      "none": "—",
+      "diamagnetic": "抗磁性",
+      "paramagnetic": "顺磁性",
+      "antiferromagnetic": "反铁磁性",
+      "ferromagnetic": "铁磁性"
     },
     "blocks": {
       "s": "s区",

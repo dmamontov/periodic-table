@@ -214,8 +214,8 @@ export interface LocaleMessages {
       mPerS: string
       wPerMK: string
     }
-    aggregationState: Record<'0' | '1' | '2' | '3', string>
-    magneticType: Record<'0' | '1' | '2' | '3', string>
+    aggregationState: Record<'gas' | 'solid' | 'liquid' | 'unknown', string>
+    magneticType: Record<'none' | 'diamagnetic' | 'paramagnetic' | 'antiferromagnetic' | 'ferromagnetic', string>
     blocks: Record<'s' | 'p' | 'd' | 'f', string>
     gridStructures: {
       hexagonal: string
