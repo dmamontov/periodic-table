@@ -10,9 +10,9 @@
 
 <table>
 <tr>
-<td><img src="docs/screenshots/demo-ru.jpg" width="270" alt="Периодическая таблица"></td>
-<td><img src="docs/screenshots/demo-ru-element.jpg" width="270" alt="Карточка элемента"></td>
-<td><img src="docs/screenshots/demo-ru-collection.jpg" width="270" alt="Сайдбар коллекции"></td>
+<td><a href="docs/screenshots/demo-ru.jpg"><img src="docs/screenshots/demo-ru.jpg" width="270" alt="Периодическая таблица"></a></td>
+<td><a href="docs/screenshots/demo-ru-element.jpg"><img src="docs/screenshots/demo-ru-element.jpg" width="270" alt="Карточка элемента"></a></td>
+<td><a href="docs/screenshots/demo-ru-collection.jpg"><img src="docs/screenshots/demo-ru-collection.jpg" width="270" alt="Сайдбар коллекции"></a></td>
 </tr>
 </table>
 
