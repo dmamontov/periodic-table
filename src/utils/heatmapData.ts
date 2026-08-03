@@ -1,7 +1,6 @@
-import type { StoredElementDetail } from '../data/elementDetails'
 import type { Locale, LocaleMessages } from '../locales/types'
-import rawIsotopes from '../data/element-isotopes.json'
-import { elements, storedElementDetails } from '../data'
+import elementLookups from '../data/element-lookups.json'
+import { elements, storedElementDetails, type StoredElementDetail } from '../data'
 import { type DecayModeKey } from '../locales/partials/decay'
 import { formatDecayType } from './elementIsotopes'
 
@@ -71,7 +70,7 @@ const HALF_LIFE_UNIT_SECONDS: Record<number, number> = {
 const elementDetails = storedElementDetails
 const halfLifeRawByNumber = new Map<number, string>()
 const lifetimeRawByNumber = new Map<number, string>()
-const isotopeData = rawIsotopes as Record<string, { decay: DecayModeKey }>
+const isotopeData = elementLookups.isotopes as Record<string, { decay: DecayModeKey }>
 
 const DECAY_MODE_SCORE: Record<DecayModeKey, number> = {
   stable: 0,

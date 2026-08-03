@@ -1,6 +1,6 @@
 import type { Locale } from '../locales/types'
 import { localeMessages } from '../locales/messages'
-import elementColorIndex from '../data/element-color-index.json'
+import elementLookups from '../data/element-lookups.json'
 import { getElementGhsPictograms } from '../data'
 import type { GhsDisplayItem } from '../types/ghs'
 
@@ -38,7 +38,7 @@ const GLOSSY_COLOR_INDICES = new Set([12, 14, 15, 20])
 const SUBTLE_COLOR_INDICES = new Set([0, 21, 22])
 const MATTE_COLOR_INDICES = new Set([16])
 
-const colorIndexByNumber = elementColorIndex as Record<string, number>
+const colorIndexByNumber = elementLookups.colorIndex as Record<string, number>
 
 export function formatOpener(
   raw: string | null | undefined,

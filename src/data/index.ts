@@ -1,15 +1,18 @@
 import type { Element } from '../types/element'
 import type { ElementDetail } from '../types/elementDetail'
 import rawElements from './elements.json'
-import { storedElementDetails } from './elementDetails'
-export { storedElementDetails } from './elementDetails'
-import elementRadiacodeIsotopes from './element-radiacode-isotope.json'
-import elementGhs from './element-ghs.json'
+import rawDetails from './details.json'
+import elementLookups from './element-lookups.json'
 import type { GhsPictogramId } from '../types/ghs'
 import { myElements } from './myCollection'
 import type { LocalizedLabel } from '../utils/localizedLabel'
 
 type RawElement = Omit<Element, 'category' | 'inCollection' | 'collection'>
+
+/** On-disk shape: number/symbol/name live in elements.json or OverviewCommon. */
+export type StoredElementDetail = Omit<ElementDetail, 'number' | 'symbol' | 'name'>
+
+export const storedElementDetails = rawDetails as Record<string, StoredElementDetail>
 
 export type CategoryId =
   | 'alkali'
@@ -104,6 +107,8 @@ export const collectionSpectrumFilenames: Record<string, LocalizedLabel> = Objec
 
 export const mainElements = elements.filter((el) => el.row <= 7)
 export const fBlockElements = elements.filter((el) => el.row >= 8)
+export const lanthanides = fBlockElements.filter((el) => el.row === 8)
+export const actinides = fBlockElements.filter((el) => el.row === 9)
 
 const elementBySymbol = new Map(
   elements.map((el) => [el.symbol.toLowerCase(), el]),
@@ -355,7 +360,7 @@ export interface RadiacodeIsotopeRef {
 }
 
 export function getElementRadiacodeIsotope(number: number): RadiacodeIsotopeRef | null {
-  const entry = (elementRadiacodeIsotopes as Record<string, RadiacodeIsotopeRef>)[String(number)]
+  const entry = (elementLookups.radiacodeIsotope as Record<string, RadiacodeIsotopeRef>)[String(number)]
   return entry ?? null
 }
 
@@ -364,7 +369,7 @@ export function getRadiacodeIsotopeUrl(slug: string): string {
 }
 
 export function getElementGhsPictograms(number: number): GhsPictogramId[] {
-  const list = (elementGhs as Record<string, GhsPictogramId[]>)[String(number)]
+  const list = (elementLookups.ghs as Record<string, GhsPictogramId[]>)[String(number)]
   return list ?? []
 }
 
