@@ -3,10 +3,8 @@ import { openersEn } from '../partials/openers.en'
 import { nfpaLabels } from '../partials/nfpa'
 import { ghsLabels } from '../partials/ghs'
 import { countriesZh } from '../partials/countries'
-import { collectionLabels } from '../partials/collection'
 
 const messages: LocaleMessages = {
-  "title": "马蒙托夫 — 元素收藏",
   "siteHeading": {
     "line1": "化学元素周期系",
     "line2": "德·伊·门捷列夫"
@@ -22,7 +20,6 @@ const messages: LocaleMessages = {
     "collection": "收藏"
   },
   "collectionPanel": {
-    "title": "马蒙托夫收藏",
     "subtitle": "数据一览",
     "close": "关闭",
     "statCollected": "已收集元素",
@@ -79,10 +76,6 @@ const messages: LocaleMessages = {
       "seconds": "秒"
     }
   },
-  "collection": {
-    "mamontov": "马蒙托夫收藏",
-    ...collectionLabels.zh
-  },
   "sidebar": {
     "close": "关闭",
     "wikipedia": "维基百科",
@@ -100,7 +93,6 @@ const messages: LocaleMessages = {
     "sections": {
       "overview": "概况",
       "description": "简介",
-      "collection": "马蒙托夫收藏",
       "properties": "性质",
       "thermodynamic": "热力学性质",
       "atomic": "原子性质",

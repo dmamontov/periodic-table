@@ -23,7 +23,7 @@ type ColumnCell = CategoryItem | CollectionItem | null
 
 const selectedCategory = defineModel<string>({ default: 'all' })
 
-const { tLegend, tCategories, messages, locale } = useLocale()
+const { tLegend, tCategories, locale, collectionName } = useLocale()
 
 const categoryColor = Object.fromEntries(
   allCategories.map((c) => [c.id, c.color]),
@@ -104,7 +104,7 @@ function onItemClick(item: CategoryItem | CollectionItem) {
             }"
           />
           <span class="category-filter__label">
-            {{ item.kind === 'collection' ? messages.collection.mamontov : categoryLabel(item.id) }}
+            {{ item.kind === 'collection' ? collectionName : categoryLabel(item.id) }}
           </span>
         </button>
         <span

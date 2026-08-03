@@ -113,7 +113,7 @@ const selectedElementRouteSymbol = computed(() =>
   selectedElement.value ? getElementRouteSymbol(selectedElement.value.symbol) : undefined,
 )
 
-useSeo(selectedElement, selectedElementRouteSymbol, messages)
+useSeo(selectedElement, selectedElementRouteSymbol, messages, locale)
 
 const heatmapIntensityByNumber = computed(() => {
   const id = selectedHeatmap.value

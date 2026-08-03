@@ -9,7 +9,7 @@ const RADIOACTIVE_COLOR = 'var(--color-error)'
 
 const route = useRoute()
 const router = useRouter()
-const { messages, tLegend } = useLocale()
+const { messages, tLegend, collectionName } = useLocale()
 
 const isOpen = computed(() => route.name === 'collection')
 const stats = computeCollectionStats()
@@ -44,7 +44,7 @@ function close() {
       <div v-if="isOpen" class="collection-panel__shell">
         <header class="collection-panel__header">
           <div class="collection-panel__heading">
-            <h2 class="collection-panel__title">{{ messages.collectionPanel.title }}</h2>
+            <h2 class="collection-panel__title">{{ collectionName }}</h2>
             <p class="collection-panel__subtitle">{{ messages.collectionPanel.subtitle }}</p>
           </div>
           <button

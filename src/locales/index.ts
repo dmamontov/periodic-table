@@ -8,6 +8,8 @@ import {
 } from 'vue'
 import { localeMessages } from './messages'
 import type { LegendKey, Locale, LocaleMessages } from './types'
+import { collectionName as collectionNameConfig } from '../data/myCollection'
+import { resolveLocalizedLabel } from '../utils/localizedLabel'
 
 const STORAGE_KEY = 'periodic-table-locale'
 
@@ -107,7 +109,19 @@ function createLocale() {
     return locale.value === 'ru' ? mass : mass.replace(',', '.')
   }
 
-  return { locale, messages, setLocale, tLegend, tCategories, tSidebar, tElement, formatMass }
+  const collectionName = computed(() => resolveLocalizedLabel(collectionNameConfig, locale.value))
+
+  return {
+    locale,
+    messages,
+    setLocale,
+    tLegend,
+    tCategories,
+    tSidebar,
+    tElement,
+    formatMass,
+    collectionName,
+  }
 }
 
 export function installLocale(app: App) {

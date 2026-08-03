@@ -3,10 +3,8 @@ import { openersEn } from '../partials/openers.en'
 import { nfpaLabels } from '../partials/nfpa'
 import { ghsLabels } from '../partials/ghs'
 import { countriesEn } from '../partials/countries'
-import { collectionLabels } from '../partials/collection'
 
 const messages: LocaleMessages = {
-  "title": "Mamontov — Element Collection",
   "siteHeading": {
     "line1": "The Periodic System of Chemical Elements",
     "line2": "D. I. Mendeleev"
@@ -22,7 +20,6 @@ const messages: LocaleMessages = {
     "collection": "Collection"
   },
   "collectionPanel": {
-    "title": "Mamontov Collection",
     "subtitle": "In numbers",
     "close": "Close",
     "statCollected": "Elements collected",
@@ -79,10 +76,6 @@ const messages: LocaleMessages = {
       "seconds": "s"
     }
   },
-  "collection": {
-    "mamontov": "Mamontov Collection",
-    ...collectionLabels.en
-  },
   "sidebar": {
     "close": "Close",
     "wikipedia": "Wikipedia",
@@ -100,7 +93,6 @@ const messages: LocaleMessages = {
     "sections": {
       "overview": "Overview",
       "description": "Description",
-      "collection": "Mamontov Collection",
       "properties": "Properties",
       "thermodynamic": "Thermodynamic properties",
       "atomic": "Atomic properties",

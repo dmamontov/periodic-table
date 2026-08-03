@@ -8,13 +8,7 @@
     "color": "#8cc63f",
     "row": 1,
     "col": 1,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "gas",
-      "container": "dischargeAmpoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 2,
@@ -25,13 +19,7 @@
     "color": "#fa9d99",
     "row": 1,
     "col": 18,
-    "periodEnd": true,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "gas",
-      "container": "dischargeAmpoule"
-    }
+    "periodEnd": true
   },
   {
     "number": 3,
@@ -42,13 +30,7 @@
     "color": "#f95354",
     "row": 2,
     "col": 1,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "metal",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 4,
@@ -59,13 +41,7 @@
     "color": "#ff9933",
     "row": 2,
     "col": 2,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 5,
@@ -76,13 +52,7 @@
     "color": "#00a23b",
     "row": 2,
     "col": 13,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 6,
@@ -93,13 +63,7 @@
     "color": "#8cc63f",
     "row": 2,
     "col": 14,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 7,
@@ -110,13 +74,7 @@
     "color": "#8cc63f",
     "row": 2,
     "col": 15,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "gas",
-      "container": "dischargeAmpoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 8,
@@ -127,13 +85,7 @@
     "color": "#8cc63f",
     "row": 2,
     "col": 16,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "995",
-      "sampleState": "gas",
-      "container": "dischargeAmpoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 9,
@@ -144,13 +96,7 @@
     "color": "#ffcc00",
     "row": 2,
     "col": 17,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "7598",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 10,
@@ -161,13 +107,7 @@
     "color": "#fa9d99",
     "row": 2,
     "col": 18,
-    "periodEnd": true,
-    "inCollection": true,
-    "collection": {
-      "purity": "99994",
-      "sampleState": "gas",
-      "container": "dischargeAmpoule"
-    }
+    "periodEnd": true
   },
   {
     "number": 11,
@@ -178,13 +118,7 @@
     "color": "#f95354",
     "row": 3,
     "col": 1,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "metal",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 12,
@@ -195,13 +129,7 @@
     "color": "#ff9933",
     "row": 3,
     "col": 2,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 13,
@@ -212,13 +140,7 @@
     "color": "#6b90ca",
     "row": 3,
     "col": 13,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 14,
@@ -229,13 +151,7 @@
     "color": "#00a23b",
     "row": 3,
     "col": 14,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "6N",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 15,
@@ -246,13 +162,7 @@
     "color": "#8cc63f",
     "row": 3,
     "col": 15,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "987",
-      "sampleState": "pressedPowder",
-      "container": "acrylicBox"
-    }
+    "periodEnd": false
   },
   {
     "number": 16,
@@ -263,13 +173,7 @@
     "color": "#8cc63f",
     "row": 3,
     "col": 16,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "pressedPowder",
-      "container": "acrylicBox"
-    }
+    "periodEnd": false
   },
   {
     "number": 17,
@@ -280,13 +184,7 @@
     "color": "#ffcc00",
     "row": 3,
     "col": 17,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "99",
-      "sampleState": "liquefiedGas",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 18,
@@ -297,13 +195,7 @@
     "color": "#fa9d99",
     "row": 3,
     "col": 18,
-    "periodEnd": true,
-    "inCollection": true,
-    "collection": {
-      "purity": "99998",
-      "sampleState": "gas",
-      "container": "dischargeAmpoule"
-    }
+    "periodEnd": true
   },
   {
     "number": 19,
@@ -314,13 +206,7 @@
     "color": "#f95354",
     "row": 4,
     "col": 1,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "metal",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 20,
@@ -331,13 +217,7 @@
     "color": "#ff9933",
     "row": 4,
     "col": 2,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "granules",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 21,
@@ -348,13 +228,7 @@
     "color": "#99afcb",
     "row": 4,
     "col": 3,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9995",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 22,
@@ -365,13 +239,7 @@
     "color": "#99afcb",
     "row": 4,
     "col": 4,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "995",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 23,
@@ -382,13 +250,7 @@
     "color": "#99afcb",
     "row": 4,
     "col": 5,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 24,
@@ -399,13 +261,7 @@
     "color": "#99afcb",
     "row": 4,
     "col": 6,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "997",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 25,
@@ -416,13 +272,7 @@
     "color": "#99afcb",
     "row": 4,
     "col": 7,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "997",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 26,
@@ -433,13 +283,7 @@
     "color": "#99afcb",
     "row": 4,
     "col": 8,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 27,
@@ -450,13 +294,7 @@
     "color": "#99afcb",
     "row": 4,
     "col": 9,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9996",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 28,
@@ -467,13 +305,7 @@
     "color": "#99afcb",
     "row": 4,
     "col": 10,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "996",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 29,
@@ -484,13 +316,7 @@
     "color": "#99afcb",
     "row": 4,
     "col": 11,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9995",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 30,
@@ -501,13 +327,7 @@
     "color": "#99afcb",
     "row": 4,
     "col": 12,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 31,
@@ -518,13 +338,7 @@
     "color": "#6b90ca",
     "row": 4,
     "col": 13,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "metal",
-      "container": "acrylicBox"
-    }
+    "periodEnd": false
   },
   {
     "number": 32,
@@ -535,13 +349,7 @@
     "color": "#00a23b",
     "row": 4,
     "col": 14,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "5N",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 33,
@@ -552,13 +360,7 @@
     "color": "#00a23b",
     "row": 4,
     "col": 15,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "powder",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 34,
@@ -569,13 +371,7 @@
     "color": "#8cc63f",
     "row": 4,
     "col": 16,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "~999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 35,
@@ -586,13 +382,7 @@
     "color": "#ffcc00",
     "row": 4,
     "col": 17,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "99",
-      "sampleState": "liquid",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 36,
@@ -603,13 +393,7 @@
     "color": "#fa9d99",
     "row": 4,
     "col": 18,
-    "periodEnd": true,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "gas",
-      "container": "dischargeAmpoule"
-    }
+    "periodEnd": true
   },
   {
     "number": 37,
@@ -620,13 +404,7 @@
     "color": "#f95354",
     "row": 5,
     "col": 1,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "metal",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 38,
@@ -637,13 +415,7 @@
     "color": "#ff9933",
     "row": 5,
     "col": 2,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "metal",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 39,
@@ -654,13 +426,7 @@
     "color": "#99afcb",
     "row": 5,
     "col": 3,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 40,
@@ -671,13 +437,7 @@
     "color": "#99afcb",
     "row": 5,
     "col": 4,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "992",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 41,
@@ -688,13 +448,7 @@
     "color": "#99afcb",
     "row": 5,
     "col": 5,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9995",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 42,
@@ -705,13 +459,7 @@
     "color": "#99afcb",
     "row": 5,
     "col": 6,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9995",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 43,
@@ -722,8 +470,7 @@
     "color": "#99afcb",
     "row": 5,
     "col": 7,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 44,
@@ -734,13 +481,7 @@
     "color": "#99afcb",
     "row": 5,
     "col": 8,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9998",
-      "sampleState": "bead",
-      "container": "acrylicBox"
-    }
+    "periodEnd": false
   },
   {
     "number": 45,
@@ -751,13 +492,7 @@
     "color": "#99afcb",
     "row": 5,
     "col": 9,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9995",
-      "sampleState": "bead",
-      "container": "acrylicBox"
-    }
+    "periodEnd": false
   },
   {
     "number": 46,
@@ -768,13 +503,7 @@
     "color": "#99afcb",
     "row": 5,
     "col": 10,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9995",
-      "sampleState": "plate",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 47,
@@ -785,13 +514,7 @@
     "color": "#99afcb",
     "row": 5,
     "col": 11,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 48,
@@ -802,13 +525,7 @@
     "color": "#99afcb",
     "row": 5,
     "col": 12,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "99995",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 49,
@@ -819,13 +536,7 @@
     "color": "#6b90ca",
     "row": 5,
     "col": 13,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "99995",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 50,
@@ -836,13 +547,7 @@
     "color": "#6b90ca",
     "row": 5,
     "col": 14,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 51,
@@ -853,13 +558,7 @@
     "color": "#00a23b",
     "row": 5,
     "col": 15,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 52,
@@ -870,13 +569,7 @@
     "color": "#00a23b",
     "row": 5,
     "col": 16,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 53,
@@ -887,13 +580,7 @@
     "color": "#ffcc00",
     "row": 5,
     "col": 17,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "granules",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 54,
@@ -904,13 +591,7 @@
     "color": "#fa9d99",
     "row": 5,
     "col": 18,
-    "periodEnd": true,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "gas",
-      "container": "dischargeAmpoule"
-    }
+    "periodEnd": true
   },
   {
     "number": 55,
@@ -921,13 +602,7 @@
     "color": "#f95354",
     "row": 6,
     "col": 1,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "metal",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 56,
@@ -938,13 +613,7 @@
     "color": "#ff9933",
     "row": 6,
     "col": 2,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "metal",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 57,
@@ -955,13 +624,7 @@
     "color": "#64c0da",
     "row": 8,
     "col": 4,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "metal",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 58,
@@ -972,13 +635,7 @@
     "color": "#64c0da",
     "row": 8,
     "col": 5,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "metal",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 59,
@@ -989,13 +646,7 @@
     "color": "#64c0da",
     "row": 8,
     "col": 6,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "metal",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 60,
@@ -1006,13 +657,7 @@
     "color": "#64c0da",
     "row": 8,
     "col": 7,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "metal",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 61,
@@ -1023,8 +668,7 @@
     "color": "#64c0da",
     "row": 8,
     "col": 8,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 62,
@@ -1035,13 +679,7 @@
     "color": "#64c0da",
     "row": 8,
     "col": 9,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9995",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 63,
@@ -1052,13 +690,7 @@
     "color": "#64c0da",
     "row": 8,
     "col": 10,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "metal",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 64,
@@ -1069,13 +701,7 @@
     "color": "#64c0da",
     "row": 8,
     "col": 11,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 65,
@@ -1086,13 +712,7 @@
     "color": "#64c0da",
     "row": 8,
     "col": 12,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9995",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 66,
@@ -1103,13 +723,7 @@
     "color": "#64c0da",
     "row": 8,
     "col": 13,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 67,
@@ -1120,13 +734,7 @@
     "color": "#64c0da",
     "row": 8,
     "col": 14,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 68,
@@ -1137,13 +745,7 @@
     "color": "#64c0da",
     "row": 8,
     "col": 15,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 69,
@@ -1154,13 +756,7 @@
     "color": "#64c0da",
     "row": 8,
     "col": 16,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 70,
@@ -1171,13 +767,7 @@
     "color": "#64c0da",
     "row": 8,
     "col": 17,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 71,
@@ -1188,13 +778,7 @@
     "color": "#64c0da",
     "row": 8,
     "col": 18,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9995",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 72,
@@ -1205,13 +789,7 @@
     "color": "#99afcb",
     "row": 6,
     "col": 4,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 73,
@@ -1222,13 +800,7 @@
     "color": "#99afcb",
     "row": 6,
     "col": 5,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9995",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 74,
@@ -1239,13 +811,7 @@
     "color": "#99afcb",
     "row": 6,
     "col": 6,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9995",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 75,
@@ -1256,13 +822,7 @@
     "color": "#99afcb",
     "row": 6,
     "col": 7,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 76,
@@ -1273,13 +833,7 @@
     "color": "#99afcb",
     "row": 6,
     "col": 8,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9995",
-      "sampleState": "bead",
-      "container": "acrylicBox"
-    }
+    "periodEnd": false
   },
   {
     "number": 77,
@@ -1290,13 +844,7 @@
     "color": "#99afcb",
     "row": 6,
     "col": 9,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9998",
-      "sampleState": "powder",
-      "container": "substrate"
-    }
+    "periodEnd": false
   },
   {
     "number": 78,
@@ -1307,13 +855,7 @@
     "color": "#99afcb",
     "row": 6,
     "col": 10,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9995",
-      "sampleState": "plate",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 79,
@@ -1324,13 +866,7 @@
     "color": "#99afcb",
     "row": 6,
     "col": 11,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "plate",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 80,
@@ -1341,13 +877,7 @@
     "color": "#99afcb",
     "row": 6,
     "col": 12,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999995",
-      "sampleState": "metal",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 81,
@@ -1358,13 +888,7 @@
     "color": "#6b90ca",
     "row": 6,
     "col": 13,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "~999",
-      "sampleState": "metal",
-      "container": "ampoule"
-    }
+    "periodEnd": false
   },
   {
     "number": 82,
@@ -1375,13 +899,7 @@
     "color": "#6b90ca",
     "row": 6,
     "col": 14,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 83,
@@ -1392,13 +910,7 @@
     "color": "#6b90ca",
     "row": 6,
     "col": 15,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "9999",
-      "sampleState": "cubicIngot",
-      "container": null
-    }
+    "periodEnd": false
   },
   {
     "number": 84,
@@ -1409,8 +921,7 @@
     "color": "#6b90ca",
     "row": 6,
     "col": 16,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 85,
@@ -1421,8 +932,7 @@
     "color": "#ffcc00",
     "row": 6,
     "col": 17,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 86,
@@ -1433,18 +943,7 @@
     "color": "#fa9d99",
     "row": 6,
     "col": 18,
-    "periodEnd": true,
-    "inCollection": true,
-    "collection": {
-      "sampleState": "rn86",
-      "container": "ampoule",
-      "isotope": "222",
-      "sourceType": "secondary",
-      "decayParent": {
-        "symbol": "Ra",
-        "isotope": "226"
-      }
-    }
+    "periodEnd": true
   },
   {
     "number": 87,
@@ -1455,8 +954,7 @@
     "color": "#f95354",
     "row": 7,
     "col": 1,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 88,
@@ -1467,15 +965,7 @@
     "color": "#ff9933",
     "row": 7,
     "col": 2,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "sampleState": "ra88",
-      "container": "ampoule",
-      "isotope": "226",
-      "sourceType": "primary",
-      "spectrum": "ra-88-spd"
-    }
+    "periodEnd": false
   },
   {
     "number": 89,
@@ -1486,8 +976,7 @@
     "color": "#00aec2",
     "row": 9,
     "col": 4,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 90,
@@ -1498,16 +987,7 @@
     "color": "#00aec2",
     "row": 9,
     "col": 5,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "~2%",
-      "sampleState": "th90",
-      "container": "ampoule",
-      "isotope": "232",
-      "sourceType": "primary",
-      "spectrum": "th-90-wt20"
-    }
+    "periodEnd": false
   },
   {
     "number": 91,
@@ -1518,8 +998,7 @@
     "color": "#00aec2",
     "row": 9,
     "col": 6,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 92,
@@ -1530,16 +1009,7 @@
     "color": "#00aec2",
     "row": 9,
     "col": 7,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "purity": "~2%",
-      "sampleState": "u92",
-      "container": "ampoule",
-      "isotope": "238",
-      "sourceType": "primary",
-      "spectrum": "u-92-glass"
-    }
+    "periodEnd": false
   },
   {
     "number": 93,
@@ -1550,8 +1020,7 @@
     "color": "#00aec2",
     "row": 9,
     "col": 8,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 94,
@@ -1562,15 +1031,7 @@
     "color": "#00aec2",
     "row": 9,
     "col": 9,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "sampleState": "pu94",
-      "container": "acrylicBox",
-      "isotope": "239",
-      "sourceType": "primary",
-      "spectrum": "pu-94-rid6m"
-    }
+    "periodEnd": false
   },
   {
     "number": 95,
@@ -1581,15 +1042,7 @@
     "color": "#00aec2",
     "row": 9,
     "col": 10,
-    "periodEnd": false,
-    "inCollection": true,
-    "collection": {
-      "sampleState": "am95",
-      "container": "acrylicCoinCapsule",
-      "isotope": "241",
-      "sourceType": "primary",
-      "spectrum": "am-95-his07"
-    }
+    "periodEnd": false
   },
   {
     "number": 96,
@@ -1600,8 +1053,7 @@
     "color": "#00aec2",
     "row": 9,
     "col": 11,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 97,
@@ -1612,8 +1064,7 @@
     "color": "#00aec2",
     "row": 9,
     "col": 12,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 98,
@@ -1624,8 +1075,7 @@
     "color": "#00aec2",
     "row": 9,
     "col": 13,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 99,
@@ -1636,8 +1086,7 @@
     "color": "#00aec2",
     "row": 9,
     "col": 14,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 100,
@@ -1648,8 +1097,7 @@
     "color": "#00aec2",
     "row": 9,
     "col": 15,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 101,
@@ -1660,8 +1108,7 @@
     "color": "#00aec2",
     "row": 9,
     "col": 16,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 102,
@@ -1672,8 +1119,7 @@
     "color": "#00aec2",
     "row": 9,
     "col": 17,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 103,
@@ -1684,8 +1130,7 @@
     "color": "#00aec2",
     "row": 9,
     "col": 18,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 104,
@@ -1696,8 +1141,7 @@
     "color": "#99afcb",
     "row": 7,
     "col": 4,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 105,
@@ -1708,8 +1152,7 @@
     "color": "#99afcb",
     "row": 7,
     "col": 5,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 106,
@@ -1720,8 +1163,7 @@
     "color": "#99afcb",
     "row": 7,
     "col": 6,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 107,
@@ -1732,8 +1174,7 @@
     "color": "#99afcb",
     "row": 7,
     "col": 7,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 108,
@@ -1744,8 +1185,7 @@
     "color": "#99afcb",
     "row": 7,
     "col": 8,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 109,
@@ -1756,8 +1196,7 @@
     "color": "#99afcb",
     "row": 7,
     "col": 9,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 110,
@@ -1768,8 +1207,7 @@
     "color": "#99afcb",
     "row": 7,
     "col": 10,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 111,
@@ -1780,8 +1218,7 @@
     "color": "#99afcb",
     "row": 7,
     "col": 11,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 112,
@@ -1792,8 +1229,7 @@
     "color": "#99afcb",
     "row": 7,
     "col": 12,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 113,
@@ -1804,8 +1240,7 @@
     "color": "#6b90ca",
     "row": 7,
     "col": 13,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 114,
@@ -1816,8 +1251,7 @@
     "color": "#6b90ca",
     "row": 7,
     "col": 14,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 115,
@@ -1828,8 +1262,7 @@
     "color": "#6b90ca",
     "row": 7,
     "col": 15,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 116,
@@ -1840,8 +1273,7 @@
     "color": "#6b90ca",
     "row": 7,
     "col": 16,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 117,
@@ -1852,8 +1284,7 @@
     "color": "#ffcc00",
     "row": 7,
     "col": 17,
-    "periodEnd": false,
-    "inCollection": false
+    "periodEnd": false
   },
   {
     "number": 118,
@@ -1864,7 +1295,6 @@
     "color": "#fa9d99",
     "row": 7,
     "col": 18,
-    "periodEnd": true,
-    "inCollection": false
+    "periodEnd": true
   }
 ]

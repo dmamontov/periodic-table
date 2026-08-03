@@ -26,6 +26,8 @@ import { formatDecayType, formatIsotopeHtml, formatMainIsotopesHtml } from './el
 import { formatNucleusDurationDisplay } from './heatmapData'
 import { getElementApplications } from '../locales/partials/applications'
 import { getElementDescription } from '../locales/partials/descriptions'
+import { collectionName } from '../data/myCollection'
+import { resolveLocalizedLabel } from './localizedLabel'
 
 const SECTION_COLORS: Record<DetailSection['id'], string> = {
   overview: '#f6511d',
@@ -408,7 +410,7 @@ export function buildElementSections(
   collectionItems.push(
     prop(
       s.props.collectionSampleState,
-      fmt(resolveCollectionSampleState(locale, element.collection?.sampleState)),
+      fmt(resolveCollectionSampleState(locale, element.collection)),
     ),
     prop(
       s.props.collectionContainer,
@@ -450,7 +452,7 @@ export function buildElementSections(
 
   const collectionSection: DetailSection = {
     id: 'collection',
-    title: s.sections.collection,
+    title: resolveLocalizedLabel(collectionName, locale),
     color: SECTION_COLORS.collection,
     items: collectionItems,
   }
