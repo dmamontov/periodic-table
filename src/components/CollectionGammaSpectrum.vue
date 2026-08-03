@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import {
   channelToEnergy,
   getCollectionSpectrum,
@@ -13,7 +13,16 @@ const props = defineProps<{
   accentColor?: string
 }>()
 
-const spectrum = computed(() => getCollectionSpectrum(props.spectrumId))
+const spectrum = ref<CollectionSpectrumData | null>(null)
+
+watch(
+  () => props.spectrumId,
+  async (id) => {
+    spectrum.value = await getCollectionSpectrum(id)
+  },
+  { immediate: true },
+)
+
 const { tSidebar, messages } = useLocale()
 const xmlDownload = computed(() => {
   const href = getCollectionSpectrumXmlHref(props.spectrumId)

@@ -3,11 +3,6 @@ import type { ElementDetail } from '../types/elementDetail'
 import rawElements from './elements.json'
 import { storedElementDetails } from './elementDetails'
 export { storedElementDetails } from './elementDetails'
-import th90Wt20 from './spectra/th-90-wt20.json'
-import ra88Spd from './spectra/ra-88-spd.json'
-import am95His07 from './spectra/am-95-his07.json'
-import u92Glass from './spectra/u-92-glass.json'
-import pu94Rid6m from './spectra/pu-94-rid6m.json'
 import elementRadiacodeIsotopes from './element-radiacode-isotope.json'
 import elementGhs from './element-ghs.json'
 import type { GhsPictogramId } from '../types/ghs'
@@ -313,30 +308,31 @@ export interface CollectionSpectrumData {
   counts: number[]
 }
 
-const SPECTRA: Record<string, CollectionSpectrumData> = {
-  [th90Wt20.id]: th90Wt20 as CollectionSpectrumData,
-  [ra88Spd.id]: ra88Spd as CollectionSpectrumData,
-  [am95His07.id]: am95His07 as CollectionSpectrumData,
-  [u92Glass.id]: u92Glass as CollectionSpectrumData,
-  [pu94Rid6m.id]: pu94Rid6m as CollectionSpectrumData,
+/**
+ * Lazy-loaded by spectrum id (== JSON filename), so a spectrum's data only
+ * enters the bundle when an element that references it is actually opened.
+ */
+const spectrumLoaders = import.meta.glob<{ default: CollectionSpectrumData }>('./spectra/*.json')
+
+const spectrumLoaderById = new Map<string, () => Promise<{ default: CollectionSpectrumData }>>()
+for (const [path, loader] of Object.entries(spectrumLoaders)) {
+  const match = /([^/]+)\.json$/.exec(path)
+  if (match?.[1]) spectrumLoaderById.set(match[1], loader)
 }
 
-const SPECTRUM_XML_HREF: Record<string, string> = {
-  'th-90-wt20': '/collection-spectra/th-90-wt20.xml',
-  'ra-88-spd': '/collection-spectra/ra-88-spd.xml',
-  'am-95-his07': '/collection-spectra/am-95-his07.xml',
-  'u-92-glass': '/collection-spectra/u-92-glass.xml',
-  'pu-94-rid6m': '/collection-spectra/pu-94-rid6m.xml',
-}
-
-export function getCollectionSpectrum(id: string | null | undefined): CollectionSpectrumData | null {
+export async function getCollectionSpectrum(
+  id: string | null | undefined,
+): Promise<CollectionSpectrumData | null> {
   if (!id) return null
-  return SPECTRA[id] ?? null
+  const loader = spectrumLoaderById.get(id)
+  if (!loader) return null
+  const module = await loader()
+  return module.default
 }
 
 export function getCollectionSpectrumXmlHref(id: string | null | undefined): string | null {
-  if (!id) return null
-  return SPECTRUM_XML_HREF[id] ?? null
+  if (!id || !spectrumLoaderById.has(id)) return null
+  return `/collection-spectra/${id}.xml`
 }
 
 export interface RadiacodeIsotopeRef {
