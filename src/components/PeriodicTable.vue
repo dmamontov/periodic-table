@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { computed, defineAsyncComponent, ref, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute, useRouter, type LocationQuery, type LocationQueryRaw } from 'vue-router'
 import type { Element } from '../types/element'
 import {
+  allCategories,
   fBlockElements,
   getElementBySymbol,
   getElementRouteSymbol,
@@ -31,9 +32,45 @@ const route = useRoute()
 const router = useRouter()
 const { locale, messages } = useLocale()
 
-const selectedCategory = ref('all')
+const VALID_CATEGORY_QUERY_VALUES = new Set<string>([
+  'collection',
+  ...allCategories.map((c) => c.id),
+])
+const VALID_HEATMAP_QUERY_VALUES = new Set<string>(HEATMAP_DEFINITIONS.map((d) => d.id))
+
+function readQueryValue(query: LocationQuery, key: string): string | undefined {
+  const raw = query[key]
+  const value = Array.isArray(raw) ? raw[0] : raw
+  return value ?? undefined
+}
+
+function readCategoryFromQuery(query: LocationQuery): string {
+  const value = readQueryValue(query, 'category')
+  return value && VALID_CATEGORY_QUERY_VALUES.has(value) ? value : 'all'
+}
+
+function readHeatmapFromQuery(query: LocationQuery): HeatmapId | null {
+  const value = readQueryValue(query, 'heatmap')
+  return value && VALID_HEATMAP_QUERY_VALUES.has(value) ? (value as HeatmapId) : null
+}
+
+const selectedCategory = ref(readCategoryFromQuery(route.query))
 const selectedElement = ref<Element | null>(null)
-const selectedHeatmap = ref<HeatmapId | null>(null)
+const selectedHeatmap = ref<HeatmapId | null>(readHeatmapFromQuery(route.query))
+
+watch(
+  [selectedCategory, selectedHeatmap],
+  ([category, heatmap]) => {
+    const nextQuery: LocationQueryRaw = { ...route.query }
+    if (category === 'all') delete nextQuery.category
+    else nextQuery.category = category
+    if (!heatmap) delete nextQuery.heatmap
+    else nextQuery.heatmap = heatmap
+
+    void router.replace({ query: nextQuery })
+  },
+  { immediate: true },
+)
 
 watch(
   () => route.params.symbol,
@@ -45,14 +82,14 @@ watch(
 
     const element = getElementBySymbol(symbol)
     if (!element) {
-      void router.replace({ name: 'home' })
+      void router.replace({ name: 'home', query: route.query })
       selectedElement.value = null
       return
     }
 
     const routeSymbol = getElementRouteSymbol(element.symbol)
     if (symbol !== routeSymbol) {
-      void router.replace({ name: 'element', params: { symbol: routeSymbol } })
+      void router.replace({ name: 'element', params: { symbol: routeSymbol }, query: route.query })
       return
     }
 
@@ -157,15 +194,19 @@ const isFBlockGroupLabelHighlighted = computed(() => {
 
 function onSelectElement(element: Element, toggle = true) {
   if (toggle && selectedElement.value?.number === element.number) {
-    void router.push({ name: 'home' })
+    void router.push({ name: 'home', query: route.query })
     return
   }
 
-  void router.push({ name: 'element', params: { symbol: getElementRouteSymbol(element.symbol) } })
+  void router.push({
+    name: 'element',
+    params: { symbol: getElementRouteSymbol(element.symbol) },
+    query: route.query,
+  })
 }
 
 function closeSidebar() {
-  void router.push({ name: 'home' })
+  void router.push({ name: 'home', query: route.query })
 }
 
 function heatmapHint(number: number): string | undefined {

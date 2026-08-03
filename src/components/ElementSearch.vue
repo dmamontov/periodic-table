@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import type { Element } from '../types/element'
 import { elements, getElementRouteSymbol } from '../data'
 import { useLocale } from '../locales'
 import { searchElements } from '../utils/elementSearch'
 import { formatElementSymbol } from '../utils/elementFormatters'
 
+const route = useRoute()
 const router = useRouter()
 const { messages } = useLocale()
 
@@ -62,7 +63,11 @@ function toggle() {
 }
 
 function selectElement(element: Element) {
-  void router.push({ name: 'element', params: { symbol: getElementRouteSymbol(element.symbol) } })
+  void router.push({
+    name: 'element',
+    params: { symbol: getElementRouteSymbol(element.symbol) },
+    query: route.query,
+  })
   close()
 }
 

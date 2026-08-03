@@ -12,13 +12,13 @@ const rootEl = ref<HTMLElement | null>(null)
 const flyoutStyle = ref<{ top: string; left: string; width: string }>({
   top: '0px',
   left: '0px',
-  width: '180px',
+  width: '280px',
 })
 
 const VIEWPORT_MARGIN = 12
 const FLYOUT_WIDTH = 280
 
-const isDashboardActive = computed(() => route.name === 'dashboard')
+const isCollectionActive = computed(() => route.name === 'collection')
 
 function updateFlyoutPosition() {
   const rect = rootEl.value?.getBoundingClientRect()
@@ -49,8 +49,8 @@ function toggle() {
   else open()
 }
 
-function navigate(name: 'dashboard') {
-  void router.push({ name })
+function navigate(name: 'collection') {
+  void router.push({ name, query: route.query })
   close()
 }
 
@@ -104,8 +104,8 @@ onBeforeUnmount(() => {
         <button
           type="button"
           class="main-menu__item"
-          :class="{ 'main-menu__item--active': isDashboardActive }"
-          @click="navigate('dashboard')"
+          :class="{ 'main-menu__item--active': isCollectionActive }"
+          @click="navigate('collection')"
         >
           <svg class="main-menu__item-icon" viewBox="0 0 16 16" aria-hidden="true">
             <path

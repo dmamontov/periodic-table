@@ -11,7 +11,7 @@ const route = useRoute()
 const router = useRouter()
 const { messages, tLegend } = useLocale()
 
-const isOpen = computed(() => route.name === 'dashboard')
+const isOpen = computed(() => route.name === 'collection')
 const stats = computeCollectionStats()
 const categoryCollapsed = ref(false)
 
@@ -33,7 +33,7 @@ function categoryPercent(collected: number, total: number): number {
 }
 
 function close() {
-  void router.push({ name: 'home' })
+  void router.push({ name: 'home', query: route.query })
 }
 </script>
 
