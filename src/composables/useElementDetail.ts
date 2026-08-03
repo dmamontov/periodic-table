@@ -8,10 +8,7 @@ export function useElementDetail(element: Ref<Element | null>) {
     return getElementDetail(element.value.number)
   })
 
-  const error = computed(() => {
-    if (!element.value) return null
-    return detail.value ? null : 'Not found'
-  })
+  const error = computed(() => Boolean(element.value) && !detail.value)
 
   return { detail, error }
 }

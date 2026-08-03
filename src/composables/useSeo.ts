@@ -24,9 +24,9 @@ export function useSeo(
     const title = el ? `${elementName} (${el.symbol}) — ${siteTitleText}` : siteTitleText
     const description = el
       ? m.seo.elementDescription
-          .replace('%name%', elementName)
-          .replace('%symbol%', el.symbol)
-          .replace('%number%', String(el.number))
+          .replaceAll('%name%', elementName)
+          .replaceAll('%symbol%', el.symbol)
+          .replaceAll('%number%', String(el.number))
       : m.seo.description
     const url = symbol ? `${siteUrl}/element/${symbol}` : `${siteUrl}/`
 
