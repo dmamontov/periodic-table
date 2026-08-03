@@ -10,8 +10,9 @@
 
 <table>
 <tr>
-<td><img src="docs/screenshots/demo-ru.jpg" width="400" alt="Периодическая таблица"></td>
-<td><img src="docs/screenshots/demo-ru-element.jpg" width="400" alt="Карточка элемента"></td>
+<td><img src="docs/screenshots/demo-ru.jpg" width="270" alt="Периодическая таблица"></td>
+<td><img src="docs/screenshots/demo-ru-element.jpg" width="270" alt="Карточка элемента"></td>
+<td><img src="docs/screenshots/demo-ru-collection.jpg" width="270" alt="Сайдбар коллекции"></td>
 </tr>
 </table>
 
