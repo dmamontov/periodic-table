@@ -6,14 +6,16 @@ import {
   type App,
   type InjectionKey,
 } from 'vue'
-import { localeMessages } from './messages'
+import ru from './lang/ru'
+import en from './lang/en'
+import zh from './lang/zh'
 import type { LegendKey, Locale, LocaleMessages } from './types'
 import { collectionName as collectionNameConfig } from '../data/myCollection'
 import { resolveLocalizedLabel } from '../utils/localizedLabel'
 
 const STORAGE_KEY = 'periodic-table-locale'
 
-export { localeMessages }
+export const localeMessages: Record<Locale, LocaleMessages> = { ru, en, zh }
 
 export const localeOptions: { value: Locale; label: string }[] = [
   { value: 'ru', label: 'Рус' },
