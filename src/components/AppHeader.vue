@@ -13,12 +13,10 @@ const { messages } = useLocale()
   <header class="app-header">
     <div class="app-header__inner">
       <div class="app-header__controls">
-        <MainMenu class="app-header__menu" />
-        <div class="app-header__controls-group">
-          <ThemeSwitcher />
-          <LanguageSwitcher />
-          <ElementSearch />
-        </div>
+        <ThemeSwitcher />
+        <MainMenu />
+        <LanguageSwitcher />
+        <ElementSearch />
       </div>
       <h1 class="app-header__title">
         <span class="app-header__title-line app-header__title-line--primary">
@@ -48,18 +46,6 @@ const { messages } = useLocale()
 }
 
 .app-header__controls {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  width: 100%;
-}
-
-.app-header__menu {
-  justify-self: start;
-}
-
-.app-header__controls-group {
-  grid-column: 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;

@@ -20,18 +20,18 @@ const messages: LocaleMessages = {
   "menu": {
     "label": "Menu",
     "table": "Table",
-    "dashboard": "Dashboard"
+    "dashboard": "Collection"
   },
   "dashboard": {
-    "title": "Collection Dashboard",
-    "subtitle": "The Mamontov collection in numbers",
+    "title": "Mamontov Collection",
+    "subtitle": "In numbers",
     "close": "Close",
     "statCollected": "Elements collected",
     "statRadioactive": "Radioactive samples",
     "statSpectra": "With a gamma spectrum",
-    "statCategories": "Categories represented",
-    "byCategory": "By category",
-    "byState": "By sample form"
+    "statPurest": "Purest sample",
+    "statFullest": "Fully collected",
+    "statEmptiest": "Least complete"
   },
   "theme": "Theme",
   "themeLight": "Light theme",

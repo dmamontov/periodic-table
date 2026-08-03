@@ -3,11 +3,12 @@ import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useLocale } from '../locales'
 import { computeCollectionStats } from '../utils/collectionStats'
-import { resolveCollectionLabel } from '../utils/collectionLabels'
+import { formatCollectionPurity } from '../utils/collectionLabels'
+import { formatElementSymbol } from '../utils/elementFormatters'
 
 const route = useRoute()
 const router = useRouter()
-const { locale, messages, tLegend } = useLocale()
+const { locale, messages, tElement, tLegend } = useLocale()
 
 const isOpen = computed(() => route.name === 'dashboard')
 const stats = computeCollectionStats()
@@ -15,25 +16,19 @@ const stats = computeCollectionStats()
 const collectedPercent = computed(() =>
   Math.round((stats.collectedCount / stats.totalElements) * 100),
 )
-const categoriesRepresented = computed(
-  () => stats.categoryCounts.filter((c) => c.collected > 0).length,
+
+const purestPurityDisplay = computed(() => {
+  if (!stats.purestSample) return ''
+  const formatted = formatCollectionPurity(stats.purestSample.purityRaw)
+  return locale.value === 'ru' ? formatted : formatted.replace(',', '.')
+})
+
+const purestName = computed(() =>
+  stats.purestSample ? tElement(stats.purestSample.number) : '',
 )
-const maxStateCount = computed(() => stats.stateCounts[0]?.count ?? 1)
 
 function close() {
   void router.push({ name: 'home' })
-}
-
-function categoryPercent(collected: number, total: number): number {
-  return total === 0 ? 0 : Math.round((collected / total) * 100)
-}
-
-function statePercent(count: number): number {
-  return Math.round((count / maxStateCount.value) * 100)
-}
-
-function stateLabel(key: string): string {
-  return resolveCollectionLabel(locale.value, 'sampleStates', key)
 }
 </script>
 
@@ -84,10 +79,7 @@ function stateLabel(key: string): string {
               <span class="dashboard-stat__value">{{ stats.collectedCount }}<span class="dashboard-stat__value-total">/{{ stats.totalElements }}</span></span>
               <span class="dashboard-stat__label">{{ messages.dashboard.statCollected }}</span>
               <span class="dashboard-stat__bar">
-                <span
-                  class="dashboard-stat__bar-fill"
-                  :style="{ width: collectedPercent + '%' }"
-                />
+                <span class="dashboard-stat__bar-fill" :style="{ width: collectedPercent + '%' }" />
               </span>
             </div>
 
@@ -101,55 +93,42 @@ function stateLabel(key: string): string {
               <span class="dashboard-stat__label">{{ messages.dashboard.statSpectra }}</span>
             </div>
 
-            <div class="dashboard-stat">
-              <span class="dashboard-stat__value">{{ categoriesRepresented }}<span class="dashboard-stat__value-total">/{{ stats.categoryCounts.length }}</span></span>
-              <span class="dashboard-stat__label">{{ messages.dashboard.statCategories }}</span>
+            <div v-if="stats.purestSample" class="dashboard-stat">
+              <span class="dashboard-stat__value">{{ purestPurityDisplay }}</span>
+              <span class="dashboard-stat__label">{{ messages.dashboard.statPurest }}</span>
+              <span class="dashboard-stat__extra">
+                <span
+                  class="dashboard-stat__dot"
+                  :style="{ backgroundColor: stats.purestSample.color }"
+                />
+                {{ purestName }} ({{ formatElementSymbol(stats.purestSample.symbol) }})
+              </span>
+            </div>
+
+            <div v-if="stats.fullestCategory" class="dashboard-stat">
+              <span class="dashboard-stat__value">{{ stats.fullestCategory.collected }}<span class="dashboard-stat__value-total">/{{ stats.fullestCategory.total }}</span></span>
+              <span class="dashboard-stat__label">{{ messages.dashboard.statFullest }}</span>
+              <span class="dashboard-stat__extra">
+                <span
+                  class="dashboard-stat__dot"
+                  :style="{ backgroundColor: stats.fullestCategory.color }"
+                />
+                {{ tLegend(stats.fullestCategory.id) }}
+              </span>
+            </div>
+
+            <div v-if="stats.emptiestCategory" class="dashboard-stat">
+              <span class="dashboard-stat__value">{{ stats.emptiestCategory.collected }}<span class="dashboard-stat__value-total">/{{ stats.emptiestCategory.total }}</span></span>
+              <span class="dashboard-stat__label">{{ messages.dashboard.statEmptiest }}</span>
+              <span class="dashboard-stat__extra">
+                <span
+                  class="dashboard-stat__dot"
+                  :style="{ backgroundColor: stats.emptiestCategory.color }"
+                />
+                {{ tLegend(stats.emptiestCategory.id) }}
+              </span>
             </div>
           </div>
-
-          <section class="dashboard-panel__section">
-            <h3 class="dashboard-panel__section-title">{{ messages.dashboard.byCategory }}</h3>
-            <div class="dashboard-breakdown">
-              <div
-                v-for="cat in stats.categoryCounts"
-                :key="cat.id"
-                class="dashboard-breakdown__row dashboard-breakdown__row--category"
-              >
-                <span class="dashboard-breakdown__swatch" :style="{ backgroundColor: cat.color }" />
-                <span class="dashboard-breakdown__label">{{ tLegend(cat.id) }}</span>
-                <span class="dashboard-breakdown__track">
-                  <span
-                    class="dashboard-breakdown__fill"
-                    :style="{
-                      width: categoryPercent(cat.collected, cat.total) + '%',
-                      backgroundColor: cat.color,
-                    }"
-                  />
-                </span>
-                <span class="dashboard-breakdown__value">{{ cat.collected }}/{{ cat.total }}</span>
-              </div>
-            </div>
-          </section>
-
-          <section class="dashboard-panel__section">
-            <h3 class="dashboard-panel__section-title">{{ messages.dashboard.byState }}</h3>
-            <div class="dashboard-breakdown">
-              <div
-                v-for="state in stats.stateCounts"
-                :key="state.key"
-                class="dashboard-breakdown__row dashboard-breakdown__row--state"
-              >
-                <span class="dashboard-breakdown__label">{{ stateLabel(state.key) }}</span>
-                <span class="dashboard-breakdown__track">
-                  <span
-                    class="dashboard-breakdown__fill dashboard-breakdown__fill--accent"
-                    :style="{ width: statePercent(state.count) + '%' }"
-                  />
-                </span>
-                <span class="dashboard-breakdown__value">{{ state.count }}</span>
-              </div>
-            </div>
-          </section>
         </div>
       </div>
     </aside>
@@ -262,7 +241,7 @@ function stateLabel(key: string): string {
 
 .dashboard-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 10px;
 }
 
@@ -311,78 +290,23 @@ function stateLabel(key: string): string {
   background: var(--color-link);
 }
 
-.dashboard-panel__section-title {
-  margin: 0 0 10px;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--color-text-secondary);
-}
-
-.dashboard-breakdown {
+.dashboard-stat__extra {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 14px 16px;
-  border: 1px solid var(--color-chart-border);
-  border-radius: 8px;
-  background: var(--color-chart-bg);
-}
-
-.dashboard-breakdown__row {
-  display: grid;
   align-items: center;
-  gap: 8px;
-}
-
-.dashboard-breakdown__row--category {
-  grid-template-columns: 9px minmax(90px, auto) 1fr auto;
-}
-
-.dashboard-breakdown__row--state {
-  grid-template-columns: minmax(120px, auto) 1fr auto;
-}
-
-.dashboard-breakdown__swatch {
-  width: 9px;
-  height: 9px;
-  border-radius: 3px;
-  flex-shrink: 0;
-}
-
-.dashboard-breakdown__label {
-  font-size: 12.5px;
-  color: var(--color-text);
-  white-space: nowrap;
+  gap: 6px;
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.dashboard-breakdown__track {
-  position: relative;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--color-heatmap-fade);
-  overflow: hidden;
-}
-
-.dashboard-breakdown__fill {
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-}
-
-.dashboard-breakdown__fill--accent {
-  background: var(--color-link);
-}
-
-.dashboard-breakdown__value {
-  min-width: 2.4em;
-  font-size: 12px;
-  font-variant-numeric: tabular-nums;
-  color: var(--color-text-tertiary);
-  text-align: right;
+.dashboard-stat__dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
 }
 
 @media (max-width: 900px) {
@@ -397,14 +321,6 @@ function stateLabel(key: string): string {
   .dashboard-panel__content {
     padding: 12px 16px 24px;
     gap: 20px;
-  }
-
-  .dashboard-breakdown__row--category {
-    grid-template-columns: 9px minmax(70px, auto) 1fr auto;
-  }
-
-  .dashboard-breakdown__row--state {
-    grid-template-columns: minmax(90px, auto) 1fr auto;
   }
 }
 </style>

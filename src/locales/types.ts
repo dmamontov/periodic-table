@@ -36,9 +36,9 @@ export interface LocaleMessages {
     statCollected: string
     statRadioactive: string
     statSpectra: string
-    statCategories: string
-    byCategory: string
-    byState: string
+    statPurest: string
+    statFullest: string
+    statEmptiest: string
   }
   theme: string
   themeLight: string

@@ -20,18 +20,18 @@ const messages: LocaleMessages = {
   "menu": {
     "label": "Меню",
     "table": "Таблица",
-    "dashboard": "Дэшборд"
+    "dashboard": "Коллекция"
   },
   "dashboard": {
-    "title": "Дэшборд коллекции",
-    "subtitle": "Коллекция Мамонтова в цифрах",
+    "title": "Коллекция Мамонтова",
+    "subtitle": "В цифрах",
     "close": "Закрыть",
     "statCollected": "Собрано элементов",
     "statRadioactive": "Радиоактивных образцов",
     "statSpectra": "С гамма-спектром",
-    "statCategories": "Категорий представлено",
-    "byCategory": "По категориям",
-    "byState": "По форме образца"
+    "statPurest": "Самый чистый образец",
+    "statFullest": "Собрана полностью",
+    "statEmptiest": "Меньше всего собрано"
   },
   "theme": "Тема",
   "themeLight": "Светлая тема",
