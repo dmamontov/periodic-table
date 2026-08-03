@@ -8,7 +8,7 @@ import CollectionGammaSpectrum from './CollectionGammaSpectrum.vue'
 
 const COLLECTED_COLOR = '#c9a227'
 const RADIOACTIVE_COLOR = 'var(--color-error)'
-const SPECTRA_COLOR = '#c9a227'
+const SPECTRA_COLOR = 'var(--color-link)'
 
 const route = useRoute()
 const router = useRouter()

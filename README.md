@@ -10,9 +10,9 @@ Live site: **[periodic.mamontov.tech](https://periodic.mamontov.tech)**
 
 <table>
 <tr>
-<td><img src="docs/screenshots/demo-en.jpg" width="270" alt="Periodic table"></td>
-<td><img src="docs/screenshots/demo-en-element.jpg" width="270" alt="Element card"></td>
-<td><img src="docs/screenshots/demo-en-collection.jpg" width="270" alt="Collection sidebar"></td>
+<td><a href="docs/screenshots/demo-en.jpg"><img src="docs/screenshots/demo-en.jpg" width="270" alt="Periodic table"></a></td>
+<td><a href="docs/screenshots/demo-en-element.jpg"><img src="docs/screenshots/demo-en-element.jpg" width="270" alt="Element card"></a></td>
+<td><a href="docs/screenshots/demo-en-collection.jpg"><img src="docs/screenshots/demo-en-collection.jpg" width="270" alt="Collection sidebar"></a></td>
 </tr>
 </table>
 

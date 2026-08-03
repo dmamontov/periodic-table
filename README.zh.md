@@ -10,9 +10,9 @@
 
 <table>
 <tr>
-<td><img src="docs/screenshots/demo-zh.jpg" width="270" alt="元素周期表"></td>
-<td><img src="docs/screenshots/demo-zh-element.jpg" width="270" alt="元素卡片"></td>
-<td><img src="docs/screenshots/demo-zh-collection.jpg" width="270" alt="收藏侧边栏"></td>
+<td><a href="docs/screenshots/demo-zh.jpg"><img src="docs/screenshots/demo-zh.jpg" width="270" alt="元素周期表"></a></td>
+<td><a href="docs/screenshots/demo-zh-element.jpg"><img src="docs/screenshots/demo-zh-element.jpg" width="270" alt="元素卡片"></a></td>
+<td><a href="docs/screenshots/demo-zh-collection.jpg"><img src="docs/screenshots/demo-zh-collection.jpg" width="270" alt="收藏侧边栏"></a></td>
 </tr>
 </table>
 
