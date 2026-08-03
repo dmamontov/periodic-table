@@ -3,11 +3,11 @@ import type { ElementDetail } from '../types/elementDetail'
 import ru from '../locales/lang/ru'
 import en from '../locales/lang/en'
 import zh from '../locales/lang/zh'
-import thoisoiLinks from '../data/thoisoi-youtube.json'
+import detailsFile from '../data/details.json'
 
 const localeMessages = { ru, en, zh }
 
-const thoisoiVideos = thoisoiLinks as Record<string, string>
+const thoisoiVideos = detailsFile.youtube as Record<string, string>
 
 function youtubeSearch(query: string): string {
   return `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`

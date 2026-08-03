@@ -1,6 +1,6 @@
 import type { Locale } from '../locales/types'
 import { decayLabels, type DecayModeKey } from '../locales/partials/decay'
-import elementLookups from '../data/element-lookups.json'
+import detailsFile from '../data/details.json'
 import { formatElementSymbol } from './elementFormatters'
 
 export interface ElementIsotopeEntry {
@@ -13,7 +13,7 @@ export interface ElementIsotopeRecord {
   isotopes: ElementIsotopeEntry[]
 }
 
-const isotopeData = elementLookups.isotopes as Record<string, ElementIsotopeRecord>
+const isotopeData = detailsFile.isotopes as Record<string, ElementIsotopeRecord>
 
 const ISOTOPE_MASS_SUPERSCRIPT: Record<string, string> = {
   '0': '⁰',
