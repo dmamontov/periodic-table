@@ -3,6 +3,7 @@ import { localeMessages } from '../locales'
 import detailsFile from '../data/details.json'
 import { getSymbolByNumber } from '../data'
 import { formatElementSymbol } from './elementFormatters'
+import type { ElementCollectionDecayParent } from '../types/element'
 
 export interface ElementIsotopeEntry {
   mass: number
@@ -36,6 +37,20 @@ export function formatMainIsotopesHtml(symbol: string): string {
       return abundance ? `${iso} (${abundance}%)` : iso
     })
     .join(', ')
+}
+
+/** Decay chain notation, e.g. "²¹⁰Pb → ²¹⁰Bi → ²¹⁰Po" — empty string if there's no chain. */
+export function formatDecayChainHtml(
+  currentSymbol: string,
+  currentIsotope: string | null | undefined,
+  parents: ElementCollectionDecayParent[] | null | undefined,
+): string {
+  if (!parents?.length) return ''
+  const chain = parents.filter((p) => p.symbol && p.isotope)
+  if (!chain.length) return ''
+  const labels = chain.map((p) => formatIsotopeHtml(p.symbol, p.isotope))
+  labels.push(formatIsotopeHtml(currentSymbol, currentIsotope))
+  return labels.join(' → ')
 }
 
 export function formatDecayType(number: number, locale: Locale): string {

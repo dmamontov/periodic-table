@@ -36,6 +36,7 @@
   --color-chart-axis: #8a8578;
   --color-chart-axis-muted: #a39e92;
   --color-chart-line-muted: #c8c2b6;
+  --color-chart-marker: #d1453c;
   --layout-section-gap: 12px;
   --pill-switcher-height: 24px;
   --pill-switcher-min-width: 36px;
@@ -85,6 +86,7 @@
   --color-chart-axis: #9a9588;
   --color-chart-axis-muted: #7a756a;
   --color-chart-line-muted: #5a564e;
+  --color-chart-marker: #e5484d;
 }
 
 html {
@@ -152,4 +154,9 @@ html.pwa-standalone body {
   #app {
     padding-top: max(var(--mobile-landscape-top), env(safe-area-inset-top, 0px));
   }
+}
+
+sup.collection-isotope-mass {
+  font-size: 0.62em;
+  font-weight: 700;
 }

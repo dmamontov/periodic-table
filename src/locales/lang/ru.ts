@@ -268,12 +268,12 @@ const messages: LocaleMessages = {
     "weakRadioactiveBadge": "Слабо радиоактивен",
     "collectionBadge": "В коллекции",
     "collectionSpectrumDownload": "Скачать",
+    "collectionSpectrumZoom": "Увеличить спектр",
     "miniTableAria": "Миниатюра периодической таблицы, выбранный элемент выделен",
     "sourceTypes": {
       "primary": "Прямой источник",
       "secondary": "Продукт распада"
-    },
-    "spectrumMinutes": "мин"
+    }
   },
   "openers": {
     "0": "Генри Кавендиш",

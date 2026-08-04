@@ -250,9 +250,9 @@ export interface LocaleMessages {
     weakRadioactiveBadge: string
     collectionBadge: string
     collectionSpectrumDownload: string
+    collectionSpectrumZoom: string
     miniTableAria: string
     sourceTypes: Record<'primary' | 'secondary', string>
-    spectrumMinutes: string
   }
   openers: Record<string, string>
   nfpa: {
