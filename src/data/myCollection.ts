@@ -404,6 +404,8 @@ export const myElements: Record<string, ElementCollection> = {
       { symbol: 'Pb', isotope: '210' },
       { symbol: 'Bi', isotope: '210' },
     ],
+    spectrum: 'po-84-staticmaster',
+    spectrumFilename: { ru: 'Po-210 (Staticmaster).xml', en: 'Po-210 (Staticmaster).xml', zh: 'Po-210 (Staticmaster).xml' },
   },
   Rn: {
     description: { ru: 'Светосостав постоянного действия', en: 'Self-luminous compound', zh: '夜光涂料' },
