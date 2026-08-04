@@ -395,12 +395,22 @@ export const myElements: Record<string, ElementCollection> = {
     sampleState: 'cubicIngot',
     purity: '9999',
   },
+  Po: {
+    description: { ru: 'Источник из антистатической щётки Staticmaster', en: 'Source from a Staticmaster antistatic brush', zh: 'Staticmaster 防静电刷辐射源' },
+    container: 'acrylicCoinCapsule',
+    isotope: '210',
+    sourceType: 'secondary',
+    decayParent: [
+      { symbol: 'Pb', isotope: '210' },
+      { symbol: 'Bi', isotope: '210' },
+    ],
+  },
   Rn: {
     description: { ru: 'Светосостав постоянного действия', en: 'Self-luminous compound', zh: '夜光涂料' },
     container: 'ampoule',
     isotope: '222',
     sourceType: 'secondary',
-    decayParent: { symbol: 'Ra', isotope: '226' },
+    decayParent: [{ symbol: 'Ra', isotope: '226' }],
   },
   Ra: {
     description: { ru: 'Стрелки часов со светосоставом постоянного действия', en: 'Clock hands with self-luminous paint', zh: '带夜光涂料的钟表指针' },

@@ -23,10 +23,12 @@ export interface ElementCollection {
   isotope?: string | null
   purity?: string | null
   /**
-   * Parent in the decay chain: the element isn't stored on its own, but is
+   * Ancestors in the decay chain: the element isn't stored on its own, but is
    * continuously produced inside the sample (e.g. ²²²Rn from ²²⁶Ra in a sealed ampoule).
+   * List from the most distant ancestor to the immediate parent, e.g.
+   * [²¹⁰Pb, ²¹⁰Bi] for ²¹⁰Po produced by Pb-210 → Bi-210 → Po-210.
    */
-  decayParent?: ElementCollectionDecayParent | null
+  decayParent?: ElementCollectionDecayParent[] | null
   /** Primary / secondary — for radioactive samples in the collection */
   sourceType?: string | null
   /** γ-spectrum ID from data/spectra/, e.g. "th-90-wt20" */
