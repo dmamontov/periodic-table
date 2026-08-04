@@ -9,7 +9,7 @@ import {
 } from '../data'
 import { useLocale } from '../locales'
 import { resolveLocalizedLabel } from '../utils/localizedLabel'
-import { spectrumAnnotations } from '../data/spectrumAnnotations'
+import type { SpectrumAnnotation } from '../types/element'
 import GammaSpectrumChartSvg from './GammaSpectrumChartSvg.vue'
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue'
 
@@ -19,6 +19,7 @@ const props = defineProps<{
   elementSymbol?: string
   elementName?: string
   originHtml?: string
+  annotations?: SpectrumAnnotation[] | null
 }>()
 
 const spectrum = ref<CollectionSpectrumData | null>(null)
@@ -168,7 +169,7 @@ const chart = computed(() => {
 
   const xTicks = buildXTicks(displayMaxEnergy)
 
-  const markers = (spectrumAnnotations[props.spectrumId] ?? [])
+  const markers = (props.annotations ?? [])
     .filter((a) => a.energy > 0 && a.energy <= displayMaxEnergy)
     .map((a) => ({ x: toX(a.energy), label: a.label }))
 

@@ -406,6 +406,10 @@ export const myElements: Record<string, ElementCollection> = {
     ],
     spectrum: 'po-84-staticmaster',
     spectrumFilename: { ru: 'Po-210 (Staticmaster).xml', en: 'Po-210 (Staticmaster).xml', zh: 'Po-210 (Staticmaster).xml' },
+    spectrumAnnotations: [
+      { energy: 46.5, label: 'Pb-210' },
+      { energy: 75.0, label: 'Pb/Bi Kα' },
+    ],
   },
   Rn: {
     description: { ru: 'Светосостав постоянного действия', en: 'Self-luminous compound', zh: '夜光涂料' },
@@ -421,6 +425,11 @@ export const myElements: Record<string, ElementCollection> = {
     sourceType: 'primary',
     spectrum: 'ra-88-spd',
     spectrumFilename: { ru: 'Ra-226 (СПД).xml', en: 'Ra-226 (SPD).xml', zh: 'Ra-226 (SPD).xml' },
+    spectrumAnnotations: [
+      { energy: 186.2, label: 'Ra-226' },
+      { energy: 351.9, label: 'Pb-214' },
+      { energy: 609.3, label: 'Bi-214' },
+    ],
   },
   Th: {
     description: { ru: 'Торированные электроды WT-20', en: 'WT-20 thoriated electrodes', zh: 'WT-20 钍钨电极' },
@@ -430,6 +439,7 @@ export const myElements: Record<string, ElementCollection> = {
     sourceType: 'primary',
     spectrum: 'th-90-wt20',
     spectrumFilename: { ru: 'Th-232 (WT-20).xml', en: 'Th-232 (WT-20).xml', zh: 'Th-232 (WT-20).xml' },
+    spectrumAnnotations: [{ energy: 238.6, label: 'Pb-212' }],
   },
   U: {
     description: { ru: 'Бисер из урансодержащего стекла', en: 'Beads from uranium-containing glass', zh: '含铀玻璃珠' },
@@ -439,6 +449,11 @@ export const myElements: Record<string, ElementCollection> = {
     sourceType: 'primary',
     spectrum: 'u-92-glass',
     spectrumFilename: { ru: 'U-238 (Бисер из ураносодержащего стекла).xml', en: 'U-238 (Uranium glass beads).xml', zh: 'U-238（含铀玻璃珠）.xml' },
+    spectrumAnnotations: [
+      { energy: 63.3, label: 'Th-234' },
+      { energy: 92.6, label: 'Th-234' },
+      { energy: 185.7, label: 'U-235' },
+    ],
   },
   Pu: {
     description: { ru: 'Источник из дымового извещателя РИД-6М', en: 'Source from RID-6M smoke detector', zh: 'RID-6M 烟雾探测器辐射源' },
@@ -447,6 +462,7 @@ export const myElements: Record<string, ElementCollection> = {
     sourceType: 'primary',
     spectrum: 'pu-94-rid6m',
     spectrumFilename: { ru: 'Pu-239 (РИД-6М).xml', en: 'Pu-239 (RID-6M).xml', zh: 'Pu-239 (RID-6M).xml' },
+    spectrumAnnotations: [{ energy: 17.2, label: 'U Lα (Pu-239)' }],
   },
   Am: {
     description: { ru: 'Источник из дымового детектора HIS-07', en: 'Source from HIS-07 smoke detector', zh: 'HIS-07 烟雾探测器辐射源' },
@@ -455,5 +471,9 @@ export const myElements: Record<string, ElementCollection> = {
     sourceType: 'primary',
     spectrum: 'am-95-his07',
     spectrumFilename: { ru: 'Am-241 (HIS-07).xml', en: 'Am-241 (HIS-07).xml', zh: 'Am-241 (HIS-07).xml' },
+    spectrumAnnotations: [
+      { energy: 59.5, label: 'Am-241' },
+      { energy: 26.3, label: 'Am-241' },
+    ],
   },
 }
