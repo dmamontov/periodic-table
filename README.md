@@ -20,7 +20,8 @@ Live site: **[periodic.mamontov.tech](https://periodic.mamontov.tech)**
 
 - **Full periodic table** - all 118 elements, including the f-block (lanthanides/actinides), with a responsive layout for desktop and mobile
 - **Element card** - 12+ dedicated sections: overview, physical and thermodynamic properties, atomic and electromagnetic characteristics, crystal lattice, reactivity, natural abundance, applications
-- **Element collection** - sample state and container, purity, isotope, origin (direct source / decay product with chain), photos, an interactive gamma spectrum with the original XML available for download
+- **Element collection** - sample state and container, purity, isotope, origin (direct source / decay product with a multi-step decay chain), photos, an interactive gamma spectrum - click to enlarge, isotope reference lines confirmed against the actual measurement (not just copied from a table), original XML available for download
+- **Collection overview** - a dedicated panel with collection stats by category and every recorded gamma spectrum in one place
 - **Radioactivity** - radioactive elements flagged on the table, NFPA 704 and GHS pictogram cards, isotope and half-life data
 - **Multilingual** - Russian, English, Chinese (instant switching, browser language auto-detection)
 - **Dark/light theme** - manual or system-based
@@ -83,11 +84,11 @@ The app will be available at `http://localhost:5173`.
 Forked this to track your own elements? Everything you need to change lives in **one file**: [`src/data/myCollection.ts`](src/data/myCollection.ts). No need to touch `elements.json` or the locale files.
 
 - `collectionName` / `siteTitle` / `siteUrl` - rename the collection and point it at your own domain.
-- `myElements` - a `symbol → details` map. Add a key to mark an element as yours; `{}` alone is enough ("I have it, no details yet"). Fill in `sampleState`, `container`, `purity`, `isotope`, `sourceType`, `decayParent`, `spectrum` as you go - all optional.
+- `myElements` - a `symbol → details` map. Add a key to mark an element as yours; `{}` alone is enough ("I have it, no details yet"). Fill in `sampleState`, `container`, `purity`, `isotope`, `sourceType`, `decayParent`, `spectrum`, `spectrumAnnotations` as you go - all optional.
 - If the built-in `sampleState`/`container` vocabulary (in [`src/locales/collection.ts`](src/locales/collection.ts)) doesn't cover your sample, either add a new entry there, or skip it entirely and put ready-made text straight into an element's `description` field - see the radioactive elements in `myCollection.ts` for an example. `sourceType` is fixed to `'primary'` / `'secondary'`.
 - Every text field accepts either a plain string (shown in all three UI languages) or `{ ru, en, zh }` if you want it translated.
 
-Gamma spectra (the `spectrum`/`spectrumFilename` fields) are optional - only set them if you actually have measurement files to drop into `src/data/spectra/`.
+Gamma spectra (the `spectrum`/`spectrumFilename` fields) are optional - only set them if you actually have measurement files to drop into `src/data/spectra/`. `spectrumAnnotations` marks reference gamma/X-ray lines on the chart (energy in keV + a label) - only add a line once you've confirmed it's both a documented emission line and actually visible against the background in your own measurement, not just copied from a table.
 
 ## Scripts
 

@@ -20,7 +20,8 @@
 
 - **完整元素周期表** - 全部 118 个元素，包括 f 区（镧系/锕系），适配桌面与移动端的响应式布局
 - **元素卡片** - 12+ 个专项板块：概况、物理与热力学性质、原子与电磁特性、晶体结构、反应活性、自然丰度、应用
-- **元素收藏** - 样品状态与容器、纯度、同位素、来源（直接来源 / 衰变产物及衰变链）、照片，以及可下载原始 XML 的交互式伽马能谱
+- **元素收藏** - 样品状态与容器、纯度、同位素、来源（直接来源 / 多步衰变链的衰变产物）、照片，以及交互式伽马能谱——点击放大、经实测确认的同位素参考线（而非直接照搬表格数值）、可下载原始 XML
+- **收藏总览** - 独立面板，按类别统计收藏进度，并集中展示所有已记录的能谱
 - **放射性标注** - 表格中标出放射性元素，提供 NFPA 704 与 GHS 象形图卡片、同位素与半衰期数据
 - **多语言** - 俄语、英语、中文（即时切换，自动检测浏览器语言）
 - **深色/浅色主题** - 手动切换或跟随系统
@@ -83,11 +84,11 @@ pnpm dev
 Fork 了本项目、想记录自己的元素收藏？需要修改的内容全部集中在**一个文件**里：[`src/data/myCollection.ts`](src/data/myCollection.ts)。不需要动 `elements.json`，也不需要动语言文件。
 
 - `collectionName` / `siteTitle` / `siteUrl` - 重命名收藏名称，并换成你自己的域名。
-- `myElements` - 一个"元素符号 → 详情"的映射表。只要加上一个键就代表这个元素归你所有；空对象 `{}` 已经足够（"我有这个元素，细节以后再补"）。`sampleState`、`container`、`purity`、`isotope`、`sourceType`、`decayParent`、`spectrum` 都是可选字段，可以慢慢填。
+- `myElements` - 一个"元素符号 → 详情"的映射表。只要加上一个键就代表这个元素归你所有；空对象 `{}` 已经足够（"我有这个元素，细节以后再补"）。`sampleState`、`container`、`purity`、`isotope`、`sourceType`、`decayParent`、`spectrum`、`spectrumAnnotations` 都是可选字段，可以慢慢填。
 - 如果内置的 `sampleState`/`container` 词汇表（在 [`src/locales/collection.ts`](src/locales/collection.ts) 中）不够用，你可以在那里添加新条目，也可以完全跳过词汇表，直接把现成的文字写进该元素的 `description` 字段 - `myCollection.ts` 里的放射性元素就是这么做的，可以参考。`sourceType` 固定取值为 `'primary'` 或 `'secondary'`。
 - 任何文本字段既可以写成一个普通字符串（在三种界面语言下都显示同一内容），也可以写成 `{ ru, en, zh }` 对象来分别翻译。
 
-伽马能谱（`spectrum`/`spectrumFilename` 字段）是可选的 - 只有当你确实有测量文件要放进 `src/data/spectra/` 时才需要填写。
+伽马能谱（`spectrum`/`spectrumFilename` 字段）是可选的 - 只有当你确实有测量文件要放进 `src/data/spectra/` 时才需要填写。`spectrumAnnotations` 字段在图表上标出参考伽马/X 射线谱线（能量单位 keV + 标签）- 只有当它既是该同位素的已记录发射线，又确实能在你自己的测量本底之上看到时，才值得添加，而不是直接照抄表格数值。
 
 ## 脚本命令
 
