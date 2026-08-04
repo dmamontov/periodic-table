@@ -4,7 +4,9 @@ import { useRoute, useRouter } from 'vue-router'
 import { useLocale } from '../locales'
 import { computeCollectionStats } from '../utils/collectionStats'
 import { elements, getElementRouteSymbol } from '../data'
+import { formatDecayChainHtml, formatIsotopeHtml } from '../utils/elementIsotopes'
 import CollectionGammaSpectrum from './CollectionGammaSpectrum.vue'
+import ElementSpectrumHeading from './ElementSpectrumHeading.vue'
 
 const COLLECTED_COLOR = '#c9a227'
 const RADIOACTIVE_COLOR = 'var(--color-error)'
@@ -22,7 +24,18 @@ const spectraCollapsed = ref(false)
 const spectrumElements = elements.flatMap((el) => {
   const spectrumId = el.collection?.spectrum
   if (!spectrumId) return []
-  return [{ symbol: el.symbol, routeSymbol: getElementRouteSymbol(el.symbol), color: el.color, spectrumId }]
+  const originHtml =
+    formatDecayChainHtml(el.symbol, el.collection?.isotope, el.collection?.decayParent) ||
+    formatIsotopeHtml(el.symbol, el.collection?.isotope)
+  return [
+    {
+      symbol: el.symbol,
+      routeSymbol: getElementRouteSymbol(el.symbol),
+      color: el.color,
+      spectrumId,
+      originHtml,
+    },
+  ]
 })
 
 function percentOf(part: number, total: number): number {
@@ -208,14 +221,21 @@ function openElement(symbol: string) {
                   class="collection-panel__spectrum-header"
                   @click="openElement(item.routeSymbol)"
                 >
-                  <span
-                    class="collection-panel__spectrum-swatch"
-                    :style="{ backgroundColor: item.color }"
+                  <ElementSpectrumHeading
+                    :symbol="item.symbol"
+                    :name="messages.elements[item.symbol] ?? ''"
+                    :accent="item.color"
+                    :origin-html="item.originHtml"
+                    compact
                   />
-                  <span class="collection-panel__spectrum-symbol">{{ item.symbol }}</span>
-                  <span class="collection-panel__spectrum-name">{{ messages.elements[item.symbol] }}</span>
                 </button>
-                <CollectionGammaSpectrum :spectrum-id="item.spectrumId" :accent-color="item.color" />
+                <CollectionGammaSpectrum
+                  :spectrum-id="item.spectrumId"
+                  :accent-color="item.color"
+                  :element-symbol="item.symbol"
+                  :element-name="messages.elements[item.symbol]"
+                  :origin-html="item.originHtml"
+                />
               </div>
             </div>
           </section>
@@ -326,7 +346,7 @@ function openElement(symbol: string) {
   padding: 8px 24px 32px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 20px;
 }
 
 .collection-panel__stat-rows,
@@ -405,14 +425,6 @@ function openElement(symbol: string) {
   color: var(--color-text-tertiary);
 }
 
-.collection-panel__section {
-  padding-top: 4px;
-}
-
-.collection-panel__section + .collection-panel__section {
-  margin-top: 8px;
-}
-
 .collection-panel__section-title {
   display: flex;
   align-items: center;
@@ -468,9 +480,7 @@ function openElement(symbol: string) {
 }
 
 .collection-panel__spectrum-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  display: block;
   width: 100%;
   margin: 0 0 8px;
   padding: 0;
@@ -480,32 +490,11 @@ function openElement(symbol: string) {
   text-align: left;
 }
 
-.collection-panel__spectrum-swatch {
-  flex-shrink: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 3px;
-}
-
-.collection-panel__spectrum-symbol {
-  flex-shrink: 0;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--color-text);
-}
-
-.collection-panel__spectrum-name {
-  flex: 1 1 auto;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 13px;
-  color: var(--color-text-secondary);
+.collection-panel__spectrum-header :deep(.element-spectrum-heading__name) {
   transition: color 0.15s ease;
 }
 
-.collection-panel__spectrum-header:hover .collection-panel__spectrum-name {
+.collection-panel__spectrum-header:hover :deep(.element-spectrum-heading__name) {
   color: var(--color-text);
 }
 

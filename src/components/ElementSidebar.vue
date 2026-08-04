@@ -12,6 +12,7 @@ import {
   parseOxidationStates,
 } from '../utils/elementDetailSections'
 import { buildGhsDisplay, buildNfpaDisplay, formatElementSymbol } from '../utils/elementFormatters'
+import { formatDecayChainHtml, formatIsotopeHtml } from '../utils/elementIsotopes'
 import { getWikipediaUrl } from '../utils/wikipedia'
 import { getYouTubeUrl } from '../utils/youtube'
 import wikiIconWhite from '../assets/wiki-icon.svg'
@@ -46,6 +47,15 @@ const displaySymbol = computed(() => {
 const elementName = computed(() => {
   void locale.value
   return props.element ? tElement(props.element.number) : ''
+})
+
+const spectrumOriginHtml = computed(() => {
+  const el = props.element
+  if (!el) return ''
+  return (
+    formatDecayChainHtml(el.symbol, el.collection?.isotope, el.collection?.decayParent) ||
+    formatIsotopeHtml(el.symbol, el.collection?.isotope)
+  )
 })
 
 const elementMass = computed(() => {
@@ -468,6 +478,9 @@ function toggleSection(sectionKey: string): void {
                   v-else-if="item.collectionSpectrumId"
                   :spectrum-id="item.collectionSpectrumId"
                   :accent-color="element.color"
+                  :element-symbol="displaySymbol"
+                  :element-name="elementName"
+                  :origin-html="spectrumOriginHtml"
                   class="element-sidebar__collection-spectrum"
                 />
                 <div

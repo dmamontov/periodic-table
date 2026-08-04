@@ -268,12 +268,12 @@ const messages: LocaleMessages = {
     "weakRadioactiveBadge": "弱放射性",
     "collectionBadge": "在收藏中",
     "collectionSpectrumDownload": "下载",
+    "collectionSpectrumZoom": "放大光谱",
     "miniTableAria": "元素周期表缩略图，所选元素已高亮",
     "sourceTypes": {
       "primary": "直接来源",
       "secondary": "衰变产物"
-    },
-    "spectrumMinutes": "分钟"
+    }
   },
   "openers": {
     "0": "Henry Cavendish",

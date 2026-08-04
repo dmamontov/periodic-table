@@ -29,6 +29,7 @@ lerna-debug.log*
 
 # Claude Code
 .claude/settings.local.json
+CLAUDE.md
 
 # Editor / IDE
 .vscode

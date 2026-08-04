@@ -1,6 +1,6 @@
 import type { LocaleMessages } from '../locales/types'
 import type { Locale } from '../locales/types'
-import type { Element, ElementCollectionDecayParent } from '../types/element'
+import type { Element } from '../types/element'
 import type {
   AggregationState,
   DetailProp,
@@ -30,7 +30,12 @@ import {
   getElementSampleColorHex,
 } from './elementFormatters'
 import { getPubChemUrl } from './pubchem'
-import { formatDecayType, formatIsotopeHtml, formatMainIsotopesHtml } from './elementIsotopes'
+import {
+  formatDecayChainHtml,
+  formatDecayType,
+  formatIsotopeHtml,
+  formatMainIsotopesHtml,
+} from './elementIsotopes'
 import { formatNucleusDurationDisplay } from './heatmapData'
 import { getElementApplications, getElementDescription } from '../locales'
 import { collectionName } from '../data/myCollection'
@@ -145,19 +150,6 @@ function propLink(label: string, value: string, href: string | null): DetailProp
     href: empty ? null : href,
     empty,
   }
-}
-
-function formatDecayChainHtml(
-  currentSymbol: string,
-  currentIsotope: string | null | undefined,
-  parents: ElementCollectionDecayParent[] | null | undefined,
-): string {
-  if (!parents?.length) return EMPTY
-  const chain = parents.filter((p) => p.symbol && p.isotope)
-  if (!chain.length) return EMPTY
-  const labels = chain.map((p) => formatIsotopeHtml(p.symbol, p.isotope))
-  labels.push(formatIsotopeHtml(currentSymbol, currentIsotope))
-  return labels.join(' → ')
 }
 
 function propMiniTable(): DetailProp {
