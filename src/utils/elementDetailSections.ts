@@ -150,12 +150,14 @@ function propLink(label: string, value: string, href: string | null): DetailProp
 function formatDecayChainHtml(
   currentSymbol: string,
   currentIsotope: string | null | undefined,
-  parent: ElementCollectionDecayParent | null | undefined,
+  parents: ElementCollectionDecayParent[] | null | undefined,
 ): string {
-  if (!parent?.symbol || !parent?.isotope) return EMPTY
-  const parentLabel = formatIsotopeHtml(parent.symbol, parent.isotope)
-  const currentLabel = formatIsotopeHtml(currentSymbol, currentIsotope)
-  return `${parentLabel} → ${currentLabel}`
+  if (!parents?.length) return EMPTY
+  const chain = parents.filter((p) => p.symbol && p.isotope)
+  if (!chain.length) return EMPTY
+  const labels = chain.map((p) => formatIsotopeHtml(p.symbol, p.isotope))
+  labels.push(formatIsotopeHtml(currentSymbol, currentIsotope))
+  return labels.join(' → ')
 }
 
 function propMiniTable(): DetailProp {
