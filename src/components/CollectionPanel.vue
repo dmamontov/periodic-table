@@ -34,6 +34,7 @@ const spectrumElements = elements.flatMap((el) => {
       color: el.color,
       spectrumId,
       originHtml,
+      annotations: el.collection?.spectrumAnnotations,
     },
   ]
 })
@@ -235,6 +236,7 @@ function openElement(symbol: string) {
                   :element-symbol="item.symbol"
                   :element-name="messages.elements[item.symbol]"
                   :origin-html="item.originHtml"
+                  :annotations="item.annotations"
                 />
               </div>
             </div>

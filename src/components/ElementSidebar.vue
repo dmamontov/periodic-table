@@ -481,6 +481,7 @@ function toggleSection(sectionKey: string): void {
                   :element-symbol="displaySymbol"
                   :element-name="elementName"
                   :origin-html="spectrumOriginHtml"
+                  :annotations="element.collection?.spectrumAnnotations"
                   class="element-sidebar__collection-spectrum"
                 />
                 <div

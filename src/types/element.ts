@@ -9,6 +9,13 @@ export interface ElementCollectionDecayParent {
   sampleState?: string | null
 }
 
+export interface SpectrumAnnotation {
+  /** Line energy, keV */
+  energy: number
+  /** Short label — the actual emitting isotope/line, not necessarily the sample's own element */
+  label: string
+}
+
 export interface ElementCollection {
   /** State or form of the material (gas, beads, electrodes…); a key into sampleStateLabels */
   sampleState?: string | null
@@ -35,6 +42,13 @@ export interface ElementCollection {
   spectrum?: string | null
   /** Download filename for the spectrum's XML */
   spectrumFilename?: LocalizedLabel | null
+  /**
+   * Reference gamma/X-ray lines marked on the spectrum chart. Each one should
+   * be a documented emission line for the labeled isotope AND show a real,
+   * background-subtracted signal in this specific spectrum — not just a
+   * textbook value pasted in blind.
+   */
+  spectrumAnnotations?: SpectrumAnnotation[] | null
 }
 
 export interface Element {
