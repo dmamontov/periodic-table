@@ -362,7 +362,7 @@ function openElement(symbol: string) {
 
 .collection-panel__divider {
   height: 1px;
-  margin: 20px 0;
+  margin: 12px 0;
   border: none;
   background: var(--color-border);
 }
