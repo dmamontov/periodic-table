@@ -179,8 +179,7 @@ onBeforeUnmount(() => {
             @click="selectElement(element)"
             @mouseenter="activeIndex = index"
           >
-            <span class="element-search__swatch" :style="{ backgroundColor: element.color }" />
-            <span class="element-search__symbol">{{ formatElementSymbol(element.symbol) }}</span>
+            <span class="element-search__symbol" :style="{ color: element.color }">{{ formatElementSymbol(element.symbol) }}</span>
             <span class="element-search__name">{{ messages.elements[element.symbol] }}</span>
             <span class="element-search__number">{{ element.number }}</span>
           </button>
@@ -304,13 +303,6 @@ onBeforeUnmount(() => {
 
 .element-search__result--active {
   background: var(--color-bg-muted);
-}
-
-.element-search__swatch {
-  flex-shrink: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 3px;
 }
 
 .element-search__symbol {
