@@ -498,7 +498,9 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
    spill above the top edge and the footer spill below the bottom edge at
    the same time. Anchor all four edges directly instead of centering with a
    transform — the box then has a fixed, well-defined size regardless of any
-   vh/dvh quirks, and anything that still doesn't fit scrolls internally. */
+   vh/dvh quirks. Header/footer keep their natural size and the chart takes
+   whatever's left (flex:1 1 auto; min-height:0), shrinking in width - and,
+   via aspect-ratio, in height - to fit instead of triggering a scrollbar. */
 @media (orientation: landscape) and (max-width: 960px) {
   .gamma-spectrum-modal {
     top: 12px;
@@ -507,7 +509,22 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
     left: 12px;
     width: auto;
     transform: none;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .gamma-spectrum-modal__header,
+  .gamma-spectrum-modal__footer {
+    flex-shrink: 0;
+  }
+
+  .gamma-spectrum-modal__chart {
+    flex: 1 1 auto;
+    min-height: 0;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
 </style>
