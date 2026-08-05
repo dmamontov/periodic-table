@@ -269,6 +269,8 @@ const messages: LocaleMessages = {
     "collectionBadge": "В коллекции",
     "collectionSpectrumDownload": "Скачать",
     "collectionSpectrumZoom": "Увеличить спектр",
+    "collectionSpectrumPrev": "Предыдущий спектр",
+    "collectionSpectrumNext": "Следующий спектр",
     "miniTableAria": "Миниатюра периодической таблицы, выбранный элемент выделен",
     "sourceTypes": {
       "primary": "Прямой источник",

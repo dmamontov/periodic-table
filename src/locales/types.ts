@@ -251,6 +251,8 @@ export interface LocaleMessages {
     collectionBadge: string
     collectionSpectrumDownload: string
     collectionSpectrumZoom: string
+    collectionSpectrumPrev: string
+    collectionSpectrumNext: string
     miniTableAria: string
     sourceTypes: Record<'primary' | 'secondary', string>
   }

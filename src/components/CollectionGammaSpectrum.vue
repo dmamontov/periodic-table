@@ -13,6 +13,14 @@ import type { SpectrumAnnotation } from '../types/element'
 import GammaSpectrumChartSvg from './GammaSpectrumChartSvg.vue'
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue'
 
+interface SpectrumSibling {
+  symbol: string
+  color: string
+  spectrumId: string
+  originHtml?: string
+  annotations?: SpectrumAnnotation[] | null
+}
+
 const props = defineProps<{
   spectrumId: string
   accentColor?: string
@@ -20,31 +28,72 @@ const props = defineProps<{
   elementName?: string
   originHtml?: string
   annotations?: SpectrumAnnotation[] | null
+  /** Other spectra to page through in the zoom modal (e.g. the whole collection list) - omit for a single, non-navigable spectrum. */
+  siblings?: SpectrumSibling[]
+  siblingIndex?: number
 }>()
 
+const { tSidebar, locale, messages } = useLocale()
+
+const activeIndex = ref(props.siblingIndex ?? 0)
+const siblingCount = computed(() => props.siblings?.length ?? 0)
+const canNavigate = computed(() => siblingCount.value > 1)
+const activeSibling = computed(() => props.siblings?.[activeIndex.value])
+
+const activeSpectrumId = computed(() => activeSibling.value?.spectrumId ?? props.spectrumId)
+const activeSymbol = computed(() => activeSibling.value?.symbol ?? props.elementSymbol)
+const activeName = computed(() => {
+  const sibling = activeSibling.value
+  return sibling ? messages.value.elements[sibling.symbol] ?? '' : props.elementName
+})
+const activeOriginHtml = computed(() => activeSibling.value?.originHtml ?? props.originHtml)
+const activeAnnotations = computed(() => activeSibling.value?.annotations ?? props.annotations)
+const accent = computed(() => props.accentColor ?? '#c9a227')
+const modalAccent = computed(() => activeSibling.value?.color ?? accent.value)
+
+function navigate(delta: number) {
+  if (!canNavigate.value) return
+  const count = siblingCount.value
+  activeIndex.value = (activeIndex.value + delta + count) % count
+}
+
+function navigatePrev() {
+  navigate(-1)
+}
+
+function navigateNext() {
+  navigate(1)
+}
+
+// `spectrum` backs the small static preview tile - always this element's own
+// spectrum. `modalSpectrum` backs the zoom modal, which can page through
+// siblings - kept separate so navigating inside an open modal never changes
+// what the collection list's own thumbnail is showing.
+async function fetchSpectrum(id: string): Promise<CollectionSpectrumData | null> {
+  try {
+    return await getCollectionSpectrum(id)
+  } catch {
+    // A chunk fetch can be aborted mid-flight (fast navigation, HMR reload);
+    // leave the chart unrendered rather than surface an unhandled rejection.
+    return null
+  }
+}
+
 const spectrum = ref<CollectionSpectrumData | null>(null)
+watch(() => props.spectrumId, async (id) => { spectrum.value = await fetchSpectrum(id) }, { immediate: true })
 
-watch(
-  () => props.spectrumId,
-  async (id) => {
-    try {
-      spectrum.value = await getCollectionSpectrum(id)
-    } catch {
-      // A chunk fetch can be aborted mid-flight (fast navigation, HMR reload);
-      // leave the chart unrendered rather than surface an unhandled rejection.
-      spectrum.value = null
-    }
-  },
-  { immediate: true },
-)
+const modalSpectrum = ref<CollectionSpectrumData | null>(null)
+watch(activeSpectrumId, async (id) => { modalSpectrum.value = await fetchSpectrum(id) }, { immediate: true })
 
-const { tSidebar, locale } = useLocale()
-const xmlDownload = computed(() => {
-  const href = getCollectionSpectrumXmlHref(props.spectrumId)
-  const filename = resolveLocalizedLabel(collectionSpectrumFilenames[props.spectrumId], locale.value)
+function buildXmlDownload(id: string) {
+  const href = getCollectionSpectrumXmlHref(id)
+  const filename = resolveLocalizedLabel(collectionSpectrumFilenames[id], locale.value)
   if (!href || !filename) return null
   return { href, filename }
-})
+}
+
+const xmlDownload = computed(() => buildXmlDownload(props.spectrumId))
+const modalXmlDownload = computed(() => buildXmlDownload(activeSpectrumId.value))
 
 const CHART_WIDTH = 640
 const CHART_HEIGHT = 260
@@ -119,8 +168,10 @@ function smoothCounts(counts: number[], radius = 2): number[] {
   return out
 }
 
-const chart = computed(() => {
-  const data = spectrum.value
+function buildChart(
+  data: CollectionSpectrumData | null,
+  annotations: SpectrumAnnotation[] | null | undefined,
+) {
   if (!data) return null
 
   const { counts, calibration } = data
@@ -169,7 +220,7 @@ const chart = computed(() => {
 
   const xTicks = buildXTicks(displayMaxEnergy)
 
-  const markers = (props.annotations ?? [])
+  const markers = (annotations ?? [])
     .filter((a) => a.energy > 0 && a.energy <= displayMaxEnergy)
     .map((a) => ({ x: toX(a.energy), label: a.label }))
 
@@ -195,11 +246,17 @@ const chart = computed(() => {
     })),
     markers,
   }
-})
+}
 
-const accent = computed(() => props.accentColor ?? '#c9a227')
+const chart = computed(() => buildChart(spectrum.value, props.annotations))
+const modalChart = computed(() => buildChart(modalSpectrum.value, activeAnnotations.value))
 
-const caption = computed(() => spectrum.value?.device ?? '')
+function buildCaption(data: CollectionSpectrumData | null): string {
+  return data?.device ?? ''
+}
+
+const caption = computed(() => buildCaption(spectrum.value))
+const modalCaption = computed(() => buildCaption(modalSpectrum.value))
 
 function formatDuration(totalSeconds: number): string {
   const h = Math.floor(totalSeconds / 3600)
@@ -209,13 +266,14 @@ function formatDuration(totalSeconds: number): string {
   return `${pad(h)}:${pad(m)}:${pad(s)}`
 }
 
-const durationLabel = computed(() => {
-  const data = spectrum.value
+function buildDurationLabel(data: CollectionSpectrumData | null): string {
   return data ? formatDuration(data.measurementTimeSec) : ''
-})
+}
 
-const cpsLabel = computed(() => {
-  const data = spectrum.value
+const durationLabel = computed(() => buildDurationLabel(spectrum.value))
+const modalDurationLabel = computed(() => buildDurationLabel(modalSpectrum.value))
+
+function buildCpsLabel(data: CollectionSpectrumData | null): string {
   if (!data) return ''
   // Overall count rate over the whole measurement — exclude the device's
   // overflow tally in the last channel, same as the chart itself.
@@ -223,11 +281,15 @@ const cpsLabel = computed(() => {
   const cps = totalCounts / data.measurementTimeSec
   const loc = locale.value === 'zh' ? 'zh-CN' : locale.value
   return `${cps.toLocaleString(loc, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} cps`
-})
+}
+
+const cpsLabel = computed(() => buildCpsLabel(spectrum.value))
+const modalCpsLabel = computed(() => buildCpsLabel(modalSpectrum.value))
 
 const isZoomed = ref(false)
 
 function openZoom() {
+  activeIndex.value = props.siblingIndex ?? 0
   isZoomed.value = true
   document.addEventListener('keydown', onKeydown)
 }
@@ -239,6 +301,8 @@ function closeZoom() {
 
 function onKeydown(event: KeyboardEvent) {
   if (event.key === 'Escape') closeZoom()
+  else if (event.key === 'ArrowLeft') navigatePrev()
+  else if (event.key === 'ArrowRight') navigateNext()
 }
 
 onUnmounted(() => document.removeEventListener('keydown', onKeydown))
@@ -288,11 +352,11 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
         <div v-if="isZoomed" class="gamma-spectrum-modal" role="dialog" aria-modal="true">
           <div class="gamma-spectrum-modal__header">
             <ElementSpectrumHeading
-              v-if="elementSymbol"
-              :symbol="elementSymbol"
-              :name="elementName ?? ''"
-              :accent="accent"
-              :origin-html="originHtml"
+              v-if="activeSymbol"
+              :symbol="activeSymbol"
+              :name="activeName ?? ''"
+              :accent="modalAccent"
+              :origin-html="activeOriginHtml"
             />
             <button
               type="button"
@@ -312,23 +376,64 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
             </button>
           </div>
 
-          <GammaSpectrumChartSvg
-            class="gamma-spectrum-modal__chart"
-            :chart="chart"
-            :spectrum-id="spectrumId"
-            :accent="accent"
-            :sample-label="spectrum.sample"
-            :duration-label="durationLabel"
-            :cps-label="cpsLabel"
-          />
+          <div class="gamma-spectrum-modal__chart-wrap">
+            <button
+              v-if="canNavigate"
+              type="button"
+              class="gamma-spectrum-modal__nav gamma-spectrum-modal__nav--prev"
+              :aria-label="tSidebar('collectionSpectrumPrev')"
+              @click="navigatePrev"
+            >
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path
+                  d="M10 3l-5 5 5 5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <GammaSpectrumChartSvg
+              v-if="modalChart && modalSpectrum"
+              class="gamma-spectrum-modal__chart"
+              :chart="modalChart"
+              :spectrum-id="activeSpectrumId"
+              :accent="modalAccent"
+              :sample-label="modalSpectrum.sample"
+              :duration-label="modalDurationLabel"
+              :cps-label="modalCpsLabel"
+            />
+
+            <button
+              v-if="canNavigate"
+              type="button"
+              class="gamma-spectrum-modal__nav gamma-spectrum-modal__nav--next"
+              :aria-label="tSidebar('collectionSpectrumNext')"
+              @click="navigateNext"
+            >
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path
+                  d="M6 3l5 5-5 5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
 
           <div class="gamma-spectrum-modal__footer">
-            <p class="collection-gamma-spectrum__caption">{{ caption }}</p>
+            <p class="collection-gamma-spectrum__caption">{{ modalCaption }}</p>
             <a
-              v-if="xmlDownload"
+              v-if="modalXmlDownload"
               class="collection-gamma-spectrum__download"
-              :href="xmlDownload.href"
-              :download="xmlDownload.filename"
+              :href="modalXmlDownload.href"
+              :download="modalXmlDownload.filename"
             >
               {{ tSidebar('collectionSpectrumDownload') }}
             </a>
@@ -471,11 +576,53 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
   height: 15px;
 }
 
+.gamma-spectrum-modal__chart-wrap {
+  position: relative;
+  width: 100%;
+}
+
 .gamma-spectrum-modal__chart {
   aspect-ratio: 640 / 260;
   width: 100%;
   border: 1px solid var(--color-chart-border);
   border-radius: 6px;
+}
+
+.gamma-spectrum-modal__nav {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-bg-muted);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--color-shadow-md);
+  transition: background-color 0.15s ease, color 0.15s ease;
+  transform: translateY(-50%);
+}
+
+.gamma-spectrum-modal__nav:hover {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.gamma-spectrum-modal__nav svg {
+  width: 16px;
+  height: 16px;
+}
+
+.gamma-spectrum-modal__nav--prev {
+  left: 8px;
+}
+
+.gamma-spectrum-modal__nav--next {
+  right: 8px;
 }
 
 .gamma-spectrum-modal__footer {
@@ -519,12 +666,19 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
     flex-shrink: 0;
   }
 
-  .gamma-spectrum-modal__chart {
+  .gamma-spectrum-modal__chart-wrap {
     flex: 1 1 auto;
     min-height: 0;
     width: auto;
     max-width: 100%;
     margin: 0 auto;
+    display: flex;
+  }
+
+  .gamma-spectrum-modal__chart {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
   }
 }
 </style>

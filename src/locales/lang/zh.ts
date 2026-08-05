@@ -269,6 +269,8 @@ const messages: LocaleMessages = {
     "collectionBadge": "在收藏中",
     "collectionSpectrumDownload": "下载",
     "collectionSpectrumZoom": "放大光谱",
+    "collectionSpectrumPrev": "上一个光谱",
+    "collectionSpectrumNext": "下一个光谱",
     "miniTableAria": "元素周期表缩略图，所选元素已高亮",
     "sourceTypes": {
       "primary": "直接来源",
