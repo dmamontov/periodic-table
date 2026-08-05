@@ -213,7 +213,7 @@ function openElement(symbol: string) {
 
             <div v-show="!spectraCollapsed" class="collection-panel__spectra-list">
               <div
-                v-for="item in spectrumElements"
+                v-for="(item, index) in spectrumElements"
                 :key="item.symbol"
                 class="collection-panel__spectrum-card"
               >
@@ -237,6 +237,8 @@ function openElement(symbol: string) {
                   :element-name="messages.elements[item.symbol]"
                   :origin-html="item.originHtml"
                   :annotations="item.annotations"
+                  :siblings="spectrumElements"
+                  :sibling-index="index"
                 />
               </div>
             </div>
