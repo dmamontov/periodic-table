@@ -492,16 +492,22 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
   }
 }
 
-/* Phones in landscape (incl. PWA / Pro Max width > 900px): the centered
-   min(900px, 94vw) panel leaves gaps on both sides narrow enough that the
-   already-open collection panel or table bleeds through the translucent
-   backdrop. Anchor to both edges instead so there's no gap left to bleed. */
+/* Phones in landscape (incl. PWA / Pro Max width > 900px): the short viewport
+   (~440pt tall) is shorter than the modal's natural content height, so
+   centering with top:50%/translateY(-50%) and no height limit let the header
+   spill above the top edge and the footer spill below the bottom edge at
+   the same time. Anchor all four edges directly instead of centering with a
+   transform — the box then has a fixed, well-defined size regardless of any
+   vh/dvh quirks, and anything that still doesn't fit scrolls internally. */
 @media (orientation: landscape) and (max-width: 960px) {
   .gamma-spectrum-modal {
-    left: 12px;
+    top: 12px;
     right: 12px;
+    bottom: 12px;
+    left: 12px;
     width: auto;
-    transform: translateY(-50%);
+    transform: none;
+    overflow-y: auto;
   }
 }
 </style>

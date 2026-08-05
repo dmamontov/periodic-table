@@ -722,9 +722,11 @@ function toggleSection(sectionKey: string): void {
   position: fixed;
   top: 0;
   right: 0;
-  bottom: 0;
   z-index: 210;
   width: min(400px, 100vw);
+  height: 100vh;
+  height: 100dvh;
+  height: -webkit-fill-available;
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
   box-sizing: border-box;
