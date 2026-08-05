@@ -7,9 +7,11 @@ import { installLocale } from './locales'
 import { installTheme } from './theme'
 import { initPwaUpdates } from './pwa'
 import { initPwaStandalone } from './utils/pwaStandalone'
+import { initRealViewportHeight } from './utils/viewportHeight'
 import { scheduleElementImagePreload } from './utils/elementImageCache'
 
 initPwaStandalone()
+initRealViewportHeight()
 initPwaUpdates()
 
 const app = createApp(App)
