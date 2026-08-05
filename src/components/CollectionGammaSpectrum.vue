@@ -669,16 +669,21 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
   .gamma-spectrum-modal__chart-wrap {
     flex: 1 1 auto;
     min-height: 0;
-    width: auto;
-    max-width: 100%;
-    margin: 0 auto;
-    display: flex;
+    width: 100%;
   }
 
-  .gamma-spectrum-modal__chart {
+  /* Specificity has to beat GammaSpectrumChartSvg's own scoped
+     `.gamma-spectrum-svg { width: 100%; height: auto }` (equal-specificity
+     single-class rule) - a bare `.gamma-spectrum-modal__chart` override lost
+     that fight depending on build CSS ordering, which is why this only
+     showed up in landscape (portrait's width:100% happened to match the
+     child's own default, so the ordering bug had no visible effect there). */
+  .gamma-spectrum-modal__chart-wrap .gamma-spectrum-modal__chart {
+    display: block;
     width: auto;
     height: 100%;
     max-width: 100%;
+    margin: 0 auto;
   }
 }
 </style>
