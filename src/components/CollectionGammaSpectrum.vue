@@ -486,9 +486,22 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
   margin-top: 10px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 640px), (orientation: landscape) and (max-width: 960px) {
   .gamma-spectrum-modal {
     padding: 14px;
+  }
+}
+
+/* Phones in landscape (incl. PWA / Pro Max width > 900px): the centered
+   min(900px, 94vw) panel leaves gaps on both sides narrow enough that the
+   already-open collection panel or table bleeds through the translucent
+   backdrop. Anchor to both edges instead so there's no gap left to bleed. */
+@media (orientation: landscape) and (max-width: 960px) {
+  .gamma-spectrum-modal {
+    left: 12px;
+    right: 12px;
+    width: auto;
+    transform: translateY(-50%);
   }
 }
 </style>
