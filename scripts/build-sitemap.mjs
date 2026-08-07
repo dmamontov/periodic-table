@@ -1,8 +1,5 @@
 #!/usr/bin/env node
-/**
- * Generate public/sitemap.xml from src/data/elements.json.
- * Run: node scripts/build-sitemap.mjs
- */
+/** Generate public/sitemap.xml from src/data/elements.json. Run: node scripts/build-sitemap.mjs */
 import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'

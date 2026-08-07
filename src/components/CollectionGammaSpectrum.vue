@@ -46,11 +46,7 @@ const activeName = computed(() => {
   const sibling = activeSibling.value
   return sibling ? messages.value.elements[sibling.symbol] ?? '' : props.elementName
 })
-// Fall back to this card's own props only when there's no active sibling at
-// all (the single, non-navigable view) - once a sibling IS active, use its
-// own fields as-is, even if empty. A per-field `??` fallback would show this
-// card's own element's origin/annotations on a *different* element's
-// spectrum whenever that sibling simply has no value of its own set.
+// Per-field `??` would leak this card's own origin/annotations onto a sibling that simply has none of its own.
 const activeOriginHtml = computed(() =>
   activeSibling.value ? activeSibling.value.originHtml : props.originHtml,
 )
@@ -74,18 +70,14 @@ function navigateNext() {
   navigate(1)
 }
 
-// `spectrum` backs the small static preview tile - always this element's own
-// spectrum, fetched eagerly. `modalSpectrum` backs the zoom modal, which can
-// page through siblings - kept separate so navigating inside an open modal
-// never changes what the collection list's own thumbnail is showing.
+// `modalSpectrum` is kept separate from `spectrum` so navigating siblings in the modal never changes the thumbnail.
 const isZoomed = ref(false)
 
 async function fetchSpectrum(id: string): Promise<CollectionSpectrumData | null> {
   try {
     return await getCollectionSpectrum(id)
   } catch {
-    // A chunk fetch can be aborted mid-flight (fast navigation, HMR reload);
-    // leave the chart unrendered rather than surface an unhandled rejection.
+    // A chunk fetch can be aborted mid-flight; leave the chart unrendered rather than throw.
     return null
   }
 }
@@ -101,25 +93,13 @@ watch(
   { immediate: true },
 )
 
-// Only fetch for the modal while it's actually open - the initial id is
-// usually the same as `spectrum` above, already cached by the watcher just
-// above, so the first open renders instantly. A revisited sibling also
-// renders instantly from the cache. `seq` guards a fast double-click
-// resolving out of order: only the most recent request for this card may
-// write `modalSpectrum`, so a slow response for a sibling the user has since
-// navigated away from can't clobber what's currently on screen. Uncached ids
-// are cleared to null while loading rather than left showing the previous
-// sibling's chart under the new sibling's already-updated header.
+// Fetches only while the modal is open, reusing the `spectrum` cache; `seq` drops stale responses from out-of-order navigation.
 let modalFetchSeq = 0
 const modalSpectrum = ref<CollectionSpectrumData | null>(null)
 watch(
   [activeSpectrumId, isZoomed],
   async ([id, zoomed]) => {
-    // Bump unconditionally, even on a cache hit or an early return while
-    // closed: this invalidates any still-in-flight fetch from a *previous*
-    // invocation (e.g. navigate to an uncached sibling, then back to a
-    // cached one before that fetch resolves) - otherwise it could land
-    // later and clobber the correctly-displayed cached data.
+    // Bumped unconditionally so a still-in-flight fetch from a previous invocation can't land late and clobber the display.
     const seq = ++modalFetchSeq
     if (!zoomed) return
     if (modalSpectrumCache.has(id)) {
@@ -151,8 +131,7 @@ function detectDisplayMaxEnergy(
   counts: number[],
   calibration: CollectionSpectrumData['calibration'],
 ): number {
-  // The device dumps an overflow/pileup tally into the very last channel
-  // regardless of the real spectrum shape; excluded so it doesn't stretch the range.
+  // Last channel is the device's overflow/pileup tally, not a real count — excluded so it doesn't stretch the range.
   const spectralCounts = counts.slice(0, -1)
   const maxCount = Math.max(...spectralCounts)
   const threshold = Math.max(maxCount * 0.02, 6)
@@ -199,11 +178,7 @@ function formatYTick(value: number): string {
   return `${Number.isInteger(k) ? k : k.toFixed(1)}k`
 }
 
-/**
- * Light moving average. Adjacent channels are uncorrelated noise, but a real
- * gamma peak spans several of them — smoothing tames the single-channel
- * Poisson spikes that a log scale would otherwise blow up into fake "peaks".
- */
+/** Light moving average — tames single-channel Poisson spikes a log scale would blow up into fake peaks. */
 function smoothCounts(counts: number[], radius = 2): number[] {
   const n = counts.length
   const out = new Array<number>(n)
@@ -247,8 +222,7 @@ function buildChart(
 
   const toX = (energy: number) => pad.left + (energy / displayMaxEnergy) * plotW
   const toY = (count: number) => pad.top + plotH - (count / maxCount) * plotH
-  // Each channel's own bar edges — a real spectrometer bins counts per
-  // channel rather than interpolating a curve between channel centers.
+  // Each channel's own bar edges — a spectrometer bins counts per channel, it doesn't interpolate a curve.
   const leftEdgeX = (ch: number) => toX(channelToEnergy(ch - 0.5, calibration))
   const rightEdgeX = (ch: number) => toX(channelToEnergy(ch + 0.5, calibration))
 
@@ -324,8 +298,7 @@ const modalDurationLabel = computed(() => buildDurationLabel(modalSpectrum.value
 
 function buildCpsLabel(data: CollectionSpectrumData | null): string {
   if (!data) return ''
-  // Overall count rate over the whole measurement — exclude the device's
-  // overflow tally in the last channel, same as the chart itself.
+  // Same overflow-tally exclusion as the chart.
   const totalCounts = data.counts.slice(0, -1).reduce((sum, c) => sum + c, 0)
   const cps = totalCounts / data.measurementTimeSec
   const loc = locale.value === 'zh' ? 'zh-CN' : locale.value
@@ -686,15 +659,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
   }
 }
 
-/* Phones in landscape (incl. PWA / Pro Max width > 900px): the short viewport
-   (~440pt tall) is shorter than the modal's natural content height, so
-   centering with top:50%/translateY(-50%) and no height limit let the header
-   spill above the top edge and the footer spill below the bottom edge at
-   the same time. Anchor all four edges directly instead of centering with a
-   transform — the box then has a fixed, well-defined size regardless of any
-   vh/dvh quirks. Header/footer keep their natural size and the chart takes
-   whatever's left (flex:1 1 auto; min-height:0), shrinking in width - and,
-   via aspect-ratio, in height - to fit instead of triggering a scrollbar. */
+/* Short landscape viewports: anchor all four edges instead of centering with a transform, so header/footer can't spill past the top/bottom edge. */
 @media (orientation: landscape) and (max-width: 960px) {
   .gamma-spectrum-modal {
     top: 12px;
@@ -716,22 +681,12 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
   .gamma-spectrum-modal__chart-wrap {
     flex: 1 1 auto;
     min-height: 0;
-    /* Shrink-to-fit instead of stretching to the column's full width: the
-       chart is sized by height (aspect-ratio driven), so it's often
-       narrower than the wrap - letterboxed. The nav buttons are positioned
-       absolute against *this* element's edges, so it has to hug the
-       chart's actual rendered width or the arrows end up stranded near the
-       modal's outer edges instead of next to the chart. */
+    /* Shrink-to-fit so the absolutely-positioned nav buttons hug the letterboxed chart, not the wrap's full width. */
     width: auto;
     align-self: center;
   }
 
-  /* Specificity has to beat GammaSpectrumChartSvg's own scoped
-     `.gamma-spectrum-svg { width: 100%; height: auto }` (equal-specificity
-     single-class rule) - a bare `.gamma-spectrum-modal__chart` override lost
-     that fight depending on build CSS ordering, which is why this only
-     showed up in landscape (portrait's width:100% happened to match the
-     child's own default, so the ordering bug had no visible effect there). */
+  /* Higher specificity than GammaSpectrumChartSvg's own scoped width/height rule, which a bare override loses depending on build CSS ordering. */
   .gamma-spectrum-modal__chart-wrap .gamma-spectrum-modal__chart {
     display: block;
     width: auto;

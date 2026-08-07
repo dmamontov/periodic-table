@@ -22,11 +22,12 @@ const sectionCollapsed = ref(false)
 const spectraCollapsed = ref(false)
 
 const spectrumElements = elements.flatMap((el) => {
-  const spectrumId = el.collection?.spectrum
+  const spectrumId = el.collection?.spectrum?.id
   if (!spectrumId) return []
+  const radioactive = el.collection?.radioactive
   const originHtml =
-    formatDecayChainHtml(el.symbol, el.collection?.isotope, el.collection?.decayParent) ||
-    formatIsotopeHtml(el.symbol, el.collection?.isotope)
+    formatDecayChainHtml(el.symbol, radioactive?.isotope, radioactive?.decayParent) ||
+    formatIsotopeHtml(el.symbol, radioactive?.isotope)
   return [
     {
       symbol: el.symbol,
@@ -34,7 +35,7 @@ const spectrumElements = elements.flatMap((el) => {
       color: el.color,
       spectrumId,
       originHtml,
-      annotations: el.collection?.spectrumAnnotations,
+      annotations: el.collection?.spectrum?.annotations,
     },
   ]
 })

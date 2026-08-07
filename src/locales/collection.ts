@@ -1,11 +1,6 @@
 import type { LocalizedLabel } from '../utils/localizedLabel'
 
-/**
- * Generic vocabulary for describing collection samples. Add a new key here
- * whenever `myCollection.ts` needs a sample state / container / source type
- * that isn't listed yet. A plain string is shown in every UI language; use
- * `{ ru, en, zh }` only if you want it translated.
- */
+/** Generic vocabulary for describing collection samples — add a key here when myCollection.ts needs one not listed yet. */
 export const sampleStateLabels: Record<string, LocalizedLabel> = {
   gas: { ru: 'Газ', en: 'Gas', zh: '气体' },
   liquefiedGas: { ru: 'Сжиженный газ', en: 'Liquefied gas', zh: '液化气体' },
