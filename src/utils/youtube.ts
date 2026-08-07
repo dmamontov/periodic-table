@@ -31,10 +31,7 @@ function searchQuery(number: number, locale: Locale, detail: ElementDetail | nul
   return `${name} periodic table`
 }
 
-/**
- * YouTube: for RU, a direct link from thoisoi.ru when available, otherwise a search.
- * For EN/ZH it's always a YouTube search.
- */
+/** RU prefers a direct thoisoi.ru link when available; EN/ZH always fall back to a YouTube search. */
 export function getYouTubeUrl(
   number: number,
   locale: Locale,

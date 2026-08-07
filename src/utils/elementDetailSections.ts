@@ -391,7 +391,7 @@ export function buildElementSections(
 
   const purity = prop(
     s.props.collectionPurity,
-    fmt(formatCollectionPurity(element.collection?.purity)),
+    fmt(formatCollectionPurity(element.collection?.physical?.purity)),
   )
   if (!purity.empty) collectionItems.push(purity)
 
@@ -402,38 +402,40 @@ export function buildElementSections(
     ),
     prop(
       s.props.collectionContainer,
-      fmt(resolveCollectionLabel(locale, 'containers', element.collection?.container)),
+      fmt(resolveCollectionLabel(locale, 'containers', element.collection?.physical?.container)),
     ),
   )
 
   if (showRadioactiveCollectionFields) {
+    const radioactive = element.collection?.radioactive
+
     collectionItems.push(
       prop(
         s.props.collectionIsotope,
-        formatIsotopeHtml(element.symbol, element.collection?.isotope),
+        formatIsotopeHtml(element.symbol, radioactive?.isotope),
         true,
       ),
     )
 
-    if (element.collection?.sourceType === 'secondary') {
+    if (radioactive?.sourceType === 'secondary') {
       collectionItems.push(
         prop(
           s.props.collectionSourceType,
-          fmt(resolveSourceType(locale, element.collection?.sourceType)),
+          fmt(resolveSourceType(locale, radioactive?.sourceType)),
         ),
       )
     }
 
     const decayParent = prop(
       s.props.collectionDecayParent,
-      formatDecayChainHtml(element.symbol, element.collection?.isotope, element.collection?.decayParent),
+      formatDecayChainHtml(element.symbol, radioactive?.isotope, radioactive?.decayParent),
       true,
     )
     if (!decayParent.empty) collectionItems.push(decayParent)
 
     const spectrum = propCollectionSpectrum(
       s.props.collectionSpectrum,
-      element.collection?.spectrum,
+      element.collection?.spectrum?.id,
     )
     if (!spectrum.empty) collectionItems.push(spectrum)
   }

@@ -100,8 +100,8 @@ export const elements: Element[] = (rawElements as RawElement[]).map((el) => {
 /** spectrumId → download filename, assembled from myCollection.ts */
 export const collectionSpectrumFilenames: Record<string, LocalizedLabel> = Object.fromEntries(
   Object.values(myElements)
-    .filter((entry) => entry.spectrum && entry.spectrumFilename)
-    .map((entry) => [entry.spectrum!, entry.spectrumFilename!]),
+    .filter((entry) => entry.spectrum?.filename)
+    .map((entry) => [entry.spectrum!.id, entry.spectrum!.filename!]),
 )
 
 export const mainElements = elements.filter((el) => el.row <= 7)
@@ -333,10 +333,7 @@ export interface CollectionSpectrumData {
   counts: number[]
 }
 
-/**
- * Lazy-loaded by spectrum id (== JSON filename), so a spectrum's data only
- * enters the bundle when an element that references it is actually opened.
- */
+/** Lazy-loaded by spectrum id so a spectrum's data only enters the bundle once its element is opened. */
 const spectrumLoaders = import.meta.glob<{ default: CollectionSpectrumData }>('./spectra/*.json')
 
 const spectrumLoaderById = new Map<string, () => Promise<{ default: CollectionSpectrumData }>>()

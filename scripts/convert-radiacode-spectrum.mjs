@@ -1,9 +1,5 @@
 #!/usr/bin/env node
-/**
- * Convert RadiaCode / GammaVision-style spectrum XML to collection JSON.
- * Usage: node scripts/convert-radiacode-spectrum.mjs <input.xml> <output-id>
- * Example: node scripts/convert-radiacode-spectrum.mjs "Th-232 (WT-20).xml" th-90-wt20
- */
+/** Convert RadiaCode/GammaVision spectrum XML to collection JSON. Usage: node scripts/convert-radiacode-spectrum.mjs <input.xml> <output-id> */
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'

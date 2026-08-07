@@ -16,39 +16,39 @@ export interface SpectrumAnnotation {
   label: string
 }
 
-export interface ElementCollection {
+export interface ElementCollectionPhysical {
   /** State or form of the material (gas, beads, electrodes…); a key into sampleStateLabels */
   sampleState?: string | null
-  /**
-   * Ready-made description of the sample when it doesn't reduce to a plain
-   * sampleState (e.g. "Clock hands with self-luminous paint"). Overrides sampleState.
-   */
+  /** Ready-made description overriding sampleState (e.g. "Clock hands with self-luminous paint") */
   description?: LocalizedLabel | null
   /** Vessel or packaging (ampoule, box…); empty — sample has no separate container */
   container?: string | null
+  purity?: string | null
+}
+
+export interface ElementCollectionRadioactive {
   /** Isotope mass number, e.g. "226" → ²²⁶Ra */
   isotope?: string | null
-  purity?: string | null
-  /**
-   * Ancestors in the decay chain: the element isn't stored on its own, but is
-   * continuously produced inside the sample (e.g. ²²²Rn from ²²⁶Ra in a sealed ampoule).
-   * List from the most distant ancestor to the immediate parent, e.g.
-   * [²¹⁰Pb, ²¹⁰Bi] for ²¹⁰Po produced by Pb-210 → Bi-210 → Po-210.
-   */
-  decayParent?: ElementCollectionDecayParent[] | null
   /** Primary / secondary — for radioactive samples in the collection */
   sourceType?: string | null
+  /** Ancestors continuously producing this element in situ, most distant first, e.g. [Pb-210, Bi-210] for Po-210 */
+  decayParent?: ElementCollectionDecayParent[] | null
+}
+
+export interface ElementCollectionSpectrum {
   /** γ-spectrum ID from data/spectra/, e.g. "th-90-wt20" */
-  spectrum?: string | null
+  id: string
   /** Download filename for the spectrum's XML */
-  spectrumFilename?: LocalizedLabel | null
-  /**
-   * Reference gamma/X-ray lines marked on the spectrum chart. Each one should
-   * be a documented emission line for the labeled isotope AND show a real,
-   * background-subtracted signal in this specific spectrum — not just a
-   * textbook value pasted in blind.
-   */
-  spectrumAnnotations?: SpectrumAnnotation[] | null
+  filename?: LocalizedLabel | null
+  /** Reference gamma/X-ray lines on the chart — each must be a documented line AND show a real signal in this spectrum */
+  annotations?: SpectrumAnnotation[] | null
+}
+
+export interface ElementCollection {
+  physical?: ElementCollectionPhysical | null
+  /** Present only for radioactive samples in the collection */
+  radioactive?: ElementCollectionRadioactive | null
+  spectrum?: ElementCollectionSpectrum | null
 }
 
 export interface Element {

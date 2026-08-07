@@ -52,9 +52,10 @@ const elementName = computed(() => {
 const spectrumOriginHtml = computed(() => {
   const el = props.element
   if (!el) return ''
+  const radioactive = el.collection?.radioactive
   return (
-    formatDecayChainHtml(el.symbol, el.collection?.isotope, el.collection?.decayParent) ||
-    formatIsotopeHtml(el.symbol, el.collection?.isotope)
+    formatDecayChainHtml(el.symbol, radioactive?.isotope, radioactive?.decayParent) ||
+    formatIsotopeHtml(el.symbol, radioactive?.isotope)
   )
 })
 
@@ -481,7 +482,7 @@ function toggleSection(sectionKey: string): void {
                   :element-symbol="displaySymbol"
                   :element-name="elementName"
                   :origin-html="spectrumOriginHtml"
-                  :annotations="element.collection?.spectrumAnnotations"
+                  :annotations="element.collection?.spectrum?.annotations"
                   class="element-sidebar__collection-spectrum"
                 />
                 <div

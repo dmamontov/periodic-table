@@ -28,9 +28,10 @@ export function resolveCollectionSampleState(
   locale: Locale,
   entry: ElementCollection | null | undefined,
 ): string {
-  if (!entry) return ''
-  if (entry.description) return resolveLocalizedLabel(entry.description, locale)
-  return resolveCollectionLabel(locale, 'sampleStates', entry.sampleState)
+  const physical = entry?.physical
+  if (!physical) return ''
+  if (physical.description) return resolveLocalizedLabel(physical.description, locale)
+  return resolveCollectionLabel(locale, 'sampleStates', physical.sampleState)
 }
 
 /** 999 → 99,9%; 6N → 99,9999%; ~999 → ~99,9%; values that already contain % are returned as-is */
