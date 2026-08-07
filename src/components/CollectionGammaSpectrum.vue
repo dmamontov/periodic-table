@@ -46,8 +46,17 @@ const activeName = computed(() => {
   const sibling = activeSibling.value
   return sibling ? messages.value.elements[sibling.symbol] ?? '' : props.elementName
 })
-const activeOriginHtml = computed(() => activeSibling.value?.originHtml ?? props.originHtml)
-const activeAnnotations = computed(() => activeSibling.value?.annotations ?? props.annotations)
+// Fall back to this card's own props only when there's no active sibling at
+// all (the single, non-navigable view) - once a sibling IS active, use its
+// own fields as-is, even if empty. A per-field `??` fallback would show this
+// card's own element's origin/annotations on a *different* element's
+// spectrum whenever that sibling simply has no value of its own set.
+const activeOriginHtml = computed(() =>
+  activeSibling.value ? activeSibling.value.originHtml : props.originHtml,
+)
+const activeAnnotations = computed(() =>
+  activeSibling.value ? activeSibling.value.annotations : props.annotations,
+)
 const accent = computed(() => props.accentColor ?? '#c9a227')
 const modalAccent = computed(() => activeSibling.value?.color ?? accent.value)
 
@@ -66,9 +75,11 @@ function navigateNext() {
 }
 
 // `spectrum` backs the small static preview tile - always this element's own
-// spectrum. `modalSpectrum` backs the zoom modal, which can page through
-// siblings - kept separate so navigating inside an open modal never changes
-// what the collection list's own thumbnail is showing.
+// spectrum, fetched eagerly. `modalSpectrum` backs the zoom modal, which can
+// page through siblings - kept separate so navigating inside an open modal
+// never changes what the collection list's own thumbnail is showing.
+const isZoomed = ref(false)
+
 async function fetchSpectrum(id: string): Promise<CollectionSpectrumData | null> {
   try {
     return await getCollectionSpectrum(id)
@@ -80,10 +91,48 @@ async function fetchSpectrum(id: string): Promise<CollectionSpectrumData | null>
 }
 
 const spectrum = ref<CollectionSpectrumData | null>(null)
-watch(() => props.spectrumId, async (id) => { spectrum.value = await fetchSpectrum(id) }, { immediate: true })
+const modalSpectrumCache = new Map<string, CollectionSpectrumData | null>()
+watch(
+  () => props.spectrumId,
+  async (id) => {
+    spectrum.value = await fetchSpectrum(id)
+    modalSpectrumCache.set(id, spectrum.value)
+  },
+  { immediate: true },
+)
 
+// Only fetch for the modal while it's actually open - the initial id is
+// usually the same as `spectrum` above, already cached by the watcher just
+// above, so the first open renders instantly. A revisited sibling also
+// renders instantly from the cache. `seq` guards a fast double-click
+// resolving out of order: only the most recent request for this card may
+// write `modalSpectrum`, so a slow response for a sibling the user has since
+// navigated away from can't clobber what's currently on screen. Uncached ids
+// are cleared to null while loading rather than left showing the previous
+// sibling's chart under the new sibling's already-updated header.
+let modalFetchSeq = 0
 const modalSpectrum = ref<CollectionSpectrumData | null>(null)
-watch(activeSpectrumId, async (id) => { modalSpectrum.value = await fetchSpectrum(id) }, { immediate: true })
+watch(
+  [activeSpectrumId, isZoomed],
+  async ([id, zoomed]) => {
+    // Bump unconditionally, even on a cache hit or an early return while
+    // closed: this invalidates any still-in-flight fetch from a *previous*
+    // invocation (e.g. navigate to an uncached sibling, then back to a
+    // cached one before that fetch resolves) - otherwise it could land
+    // later and clobber the correctly-displayed cached data.
+    const seq = ++modalFetchSeq
+    if (!zoomed) return
+    if (modalSpectrumCache.has(id)) {
+      modalSpectrum.value = modalSpectrumCache.get(id) ?? null
+      return
+    }
+    modalSpectrum.value = null
+    const data = await fetchSpectrum(id)
+    modalSpectrumCache.set(id, data)
+    if (seq === modalFetchSeq) modalSpectrum.value = data
+  },
+  { immediate: true },
+)
 
 function buildXmlDownload(id: string) {
   const href = getCollectionSpectrumXmlHref(id)
@@ -285,8 +334,6 @@ function buildCpsLabel(data: CollectionSpectrumData | null): string {
 
 const cpsLabel = computed(() => buildCpsLabel(spectrum.value))
 const modalCpsLabel = computed(() => buildCpsLabel(modalSpectrum.value))
-
-const isZoomed = ref(false)
 
 function openZoom() {
   activeIndex.value = props.siblingIndex ?? 0
@@ -669,7 +716,14 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
   .gamma-spectrum-modal__chart-wrap {
     flex: 1 1 auto;
     min-height: 0;
-    width: 100%;
+    /* Shrink-to-fit instead of stretching to the column's full width: the
+       chart is sized by height (aspect-ratio driven), so it's often
+       narrower than the wrap - letterboxed. The nav buttons are positioned
+       absolute against *this* element's edges, so it has to hug the
+       chart's actual rendered width or the arrows end up stranded near the
+       modal's outer edges instead of next to the chart. */
+    width: auto;
+    align-self: center;
   }
 
   /* Specificity has to beat GammaSpectrumChartSvg's own scoped
