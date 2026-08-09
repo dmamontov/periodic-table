@@ -1,6 +1,6 @@
 import { computed, type Ref } from 'vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
-import type { Element } from '../types/element'
+import type { Element } from '../types/element/element'
 import type { Locale, LocaleMessages } from '../locales/types'
 import { siteTitle, siteUrl } from '../data/collection'
 import { resolveLocalizedLabel } from '../utils/localizedLabel'

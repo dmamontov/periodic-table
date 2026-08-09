@@ -2,7 +2,7 @@ import type { Locale, LocaleMessages, DecayModeKey } from '../locales/types'
 import { localeMessages } from '../locales'
 import detailsFile from '../data/elements/details.json'
 import { elements, storedElementDetails, getSymbolByNumber } from '../data'
-import type { StoredElementDetail } from '../types/elementDetail'
+import type { StoredElementDetail } from '../types/element/detail'
 import type { HeatmapId, HeatmapGroupId, HeatmapDefinition, HeatmapDataset } from '../types/heatmap'
 import { formatDecayType } from './element/isotopes'
 

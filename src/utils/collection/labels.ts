@@ -2,7 +2,7 @@ import { containerLabels, sampleStateLabels } from '../../locales/collection'
 import { resolveLocalizedLabel } from '../localizedLabel'
 import { localeMessages } from '../../locales'
 import type { Locale } from '../../locales/types'
-import type { ElementCollection } from '../../types/collection'
+import type { ElementCollection } from '../../types/collection/collection'
 
 const DICTS = {
   sampleStates: sampleStateLabels,

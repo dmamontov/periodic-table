@@ -1,5 +1,5 @@
 import type { Locale } from '../../locales/types'
-import type { ElementDetail } from '../../types/elementDetail'
+import type { ElementDetail } from '../../types/element/detail'
 import { localeMessages } from '../../locales'
 import detailsFile from '../../data/elements/details.json'
 import { getSymbolByNumber } from '../../data'

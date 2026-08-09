@@ -121,28 +121,26 @@ Fork 了本项目、想记录自己的元素收藏？需要修改的内容全部
 
 ```
 src/
-├── components/      # UI 组件，按主题分组：
-│   ├── layout/      #   页头、页脚、菜单、搜索、语言/主题切换器
-│   ├── table/       #   周期表本身：单元格、筛选器、热力图选择器
-│   ├── element/     #   元素详情侧边栏
-│   ├── collection/  #   收藏面板与伽马能谱图表
-│   └── common/      #   以上各组共用的小组件
-├── composables/     # 可复用逻辑（useElementDetail）
-├── data/            # 元素数据、参考表、收藏能谱
-├── locales/         # 翻译文本（ru/en/zh）与本地化词典
-├── router/          # 路由（/、/element/:symbol）
-├── theme/           # 主题处理（浅色/深色/自动）
-├── types/           # element.ts、collection.ts、elementDetail.ts、detailSection.ts、
-│                    # heatmap.ts、collectionSpectrum.ts、ghs.ts、category.ts
-├── utils/           # 按主题分组：
-│   ├── collection/  #   收藏标签/统计格式化
-│   ├── element/     #   元素详情分区、格式化、同位素、搜索、图片缓存
-│   ├── external-links/ # Wikipedia/YouTube/PubChem 链接生成
-│   ├── heatmap.ts   #   热力图定义与数据集
-│   ├── localizedLabel.ts
-│   └── pwaStandalone.ts
-└── views/           # 应用页面
-cli/                 # 项目 CLI：生成站点地图、转换能谱、收藏向导
+├── components/        # UI，按主题分组：
+│   ├── layout/        #   页头、页脚、菜单、搜索、语言/主题切换器
+│   ├── table/         #   周期表本身：单元格、筛选器、热力图选择器
+│   ├── element/       #   元素详情侧边栏
+│   ├── collection/    #   收藏面板与伽马能谱图表
+│   └── common/        #   以上各组共用的小组件
+├── composables/       # 可复用逻辑（useElementDetail）
+├── data/              # 元素数据、参考表、个人收藏叠加层
+├── locales/           # 翻译文本（ru/en/zh）与本地化词典
+├── router/            # 路由（/、/element/:symbol）
+├── theme/             # 主题处理（浅色/深色/自动）
+├── types/             # 共享 TypeScript 类型，按主题分组：
+│   ├── element/       #   元素模型、其详情数据及 UI 分区结构
+│   └── collection/    #   个人收藏及其能谱数据
+├── utils/             # 格式化/辅助函数，按主题分组：
+│   ├── collection/    #   收藏样本标签/纯度格式化与统计
+│   ├── element/       #   构建与格式化单个元素的数据
+│   └── external-links/ # Wikipedia/YouTube/PubChem 链接生成
+└── views/             # 应用页面
+cli/                   # 项目 CLI：生成站点地图、转换能谱、收藏向导
 ```
 
 ## Docker

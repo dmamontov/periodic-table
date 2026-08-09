@@ -1,4 +1,4 @@
-import type { GhsPictogramId } from '../../types/ghs'
+import type { GhsPictogramId } from '../../types/element/ghs'
 import acuteToxicity from './acuteToxicity.svg'
 import compressedGas from './compressedGas.svg'
 import corrosive from './corrosive.svg'

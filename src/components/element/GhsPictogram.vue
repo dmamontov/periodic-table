@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { GhsPictogramId } from '../../types/ghs'
+import type { GhsPictogramId } from '../../types/element/ghs'
 import { ghsPictogramSources } from '../../assets/ghs'
 
 defineProps<{

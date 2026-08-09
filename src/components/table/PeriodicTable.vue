@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, defineAsyncComponent, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import type { Element } from '../../types/element'
+import type { Element } from '../../types/element/element'
 import {
   allCategories,
   fBlockElements,

@@ -1,4 +1,4 @@
-import type { LocalizedLabel } from '../utils/localizedLabel'
+import type { LocalizedLabel } from '../../utils/localizedLabel'
 
 export interface ElementCollectionDecayParent {
   /** Parent element's symbol, e.g. "Ra" */

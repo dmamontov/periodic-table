@@ -1,13 +1,13 @@
 import type { LocaleMessages } from '../../locales/types'
 import type { Locale } from '../../locales/types'
-import type { Element } from '../../types/element'
+import type { Element } from '../../types/element/element'
 import type {
   AggregationState,
   ElementDetail,
   GridPro,
   MagneticType,
-} from '../../types/elementDetail'
-import type { DetailProp, DetailSection } from '../../types/detailSection'
+} from '../../types/element/detail'
+import type { DetailProp, DetailSection } from '../../types/element/section'
 import { getElementPeriod } from '../../data'
 import {
   getElementRadiacodeIsotope,

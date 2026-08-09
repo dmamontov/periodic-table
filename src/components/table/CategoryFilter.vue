@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { allCategories } from '../../data'
-import type { CategoryId } from '../../types/category'
+import type { CategoryId } from '../../types/element/category'
 import { useLocale } from '../../locales'
 
 const ALL_COLOR = '#615f5f'

@@ -121,28 +121,26 @@ Gamma spectra (the `spectrum.id`/`spectrum.filename` fields) are optional - only
 
 ```
 src/
-├── components/      # UI components, grouped by topic:
-│   ├── layout/      #   header, footer, menu, search, language/theme switchers
-│   ├── table/       #   the periodic table itself: cells, filters, heatmap selector
-│   ├── element/     #   the element detail sidebar
-│   ├── collection/  #   collection panel and gamma-spectrum charts
-│   └── common/      #   small components shared across the groups above
-├── composables/     # reusable logic (useElementDetail)
-├── data/            # element data, reference tables, collection spectra
-├── locales/         # translations (ru/en/zh) and localization dictionaries
-├── router/          # routes (/, /element/:symbol)
-├── theme/           # theme handling (light/dark/auto)
-├── types/           # element.ts, collection.ts, elementDetail.ts, detailSection.ts,
-│                    # heatmap.ts, collectionSpectrum.ts, ghs.ts, category.ts
-├── utils/           # grouped by topic:
-│   ├── collection/  #   collection labels/stats formatting
-│   ├── element/     #   element detail sections, formatters, isotopes, search, image cache
-│   ├── external-links/ # Wikipedia/YouTube/PubChem link builders
-│   ├── heatmap.ts   #   heatmap definitions/datasets
-│   ├── localizedLabel.ts
-│   └── pwaStandalone.ts
-└── views/           # app screens
-cli/                 # project CLI: sitemap generation, spectrum conversion, collection wizard
+├── components/        # UI, grouped by topic:
+│   ├── layout/        #   header, footer, menu, search, language/theme switchers
+│   ├── table/         #   the periodic table itself: cells, filters, heatmap selector
+│   ├── element/       #   the element detail sidebar
+│   ├── collection/    #   collection panel and gamma-spectrum charts
+│   └── common/        #   small components shared across the groups above
+├── composables/       # reusable logic (useElementDetail)
+├── data/              # element data, reference tables, the personal collection overlay
+├── locales/           # translations (ru/en/zh) and localization dictionaries
+├── router/            # routes (/, /element/:symbol)
+├── theme/             # theme handling (light/dark/auto)
+├── types/             # shared TypeScript types, grouped by topic:
+│   ├── element/       #   the element model, its detail data, and UI section shapes
+│   └── collection/    #   the personal collection and its spectrum data
+├── utils/             # formatting/data helpers, grouped by topic:
+│   ├── collection/    #   collection sample label/purity formatting and stats
+│   ├── element/       #   building and formatting a single element's data
+│   └── external-links/ #  Wikipedia/YouTube/PubChem link builders
+└── views/             # app screens
+cli/                   # project CLI: sitemap generation, spectrum conversion, collection wizard
 ```
 
 ## Docker

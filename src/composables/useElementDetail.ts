@@ -1,5 +1,5 @@
 import { computed, type Ref } from 'vue'
-import type { Element } from '../types/element'
+import type { Element } from '../types/element/element'
 import { getElementDetail } from '../data'
 
 export function useElementDetail(element: Ref<Element | null>) {

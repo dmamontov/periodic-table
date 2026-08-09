@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, ref, toRef, watch } from 'vue'
-import type { Element } from '../../types/element'
-import type { DetailSection } from '../../types/detailSection'
+import type { Element } from '../../types/element/element'
+import type { DetailSection } from '../../types/element/section'
 import { useLocale } from '../../locales'
 import { useTheme } from '../../theme'
 import { useElementDetail } from '../../composables/useElementDetail'

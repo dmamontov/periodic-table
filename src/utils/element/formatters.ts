@@ -2,8 +2,8 @@ import type { Locale } from '../../locales/types'
 import { localeMessages } from '../../locales'
 import detailsFile from '../../data/elements/details.json'
 import { getElementGhsPictograms, getSymbolByNumber } from '../../data'
-import type { GhsDisplayItem } from '../../types/ghs'
-import type { ElementSampleColorFinish } from '../../types/element'
+import type { GhsDisplayItem } from '../../types/element/ghs'
+import type { ElementSampleColorFinish } from '../../types/element/element'
 
 /** Realistic pure-substance colors (an extended palette, not Jmol/CPK). */
 export const ELEMENT_SAMPLE_COLORS = [

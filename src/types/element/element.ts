@@ -1,4 +1,4 @@
-import type { ElementCollection } from './collection'
+import type { ElementCollection } from '../collection/collection'
 
 /** Visual finish of the physical sample's swatch color (the rest render as metallic). */
 export type ElementSampleColorFinish = 'metallic' | 'glossy' | 'subtle' | 'matte'

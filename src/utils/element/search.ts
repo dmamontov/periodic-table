@@ -1,4 +1,4 @@
-import type { Element } from '../../types/element'
+import type { Element } from '../../types/element/element'
 import type { LocaleMessages } from '../../locales/types'
 
 const MAX_RESULTS = 8

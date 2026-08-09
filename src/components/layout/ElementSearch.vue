@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import type { Element } from '../../types/element'
+import type { Element } from '../../types/element/element'
 import { elements, getElementRouteSymbol } from '../../data'
 import { useLocale } from '../../locales'
 import { searchElements } from '../../utils/element/search'

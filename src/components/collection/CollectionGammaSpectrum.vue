@@ -8,8 +8,8 @@ import {
 } from '../../data'
 import { useLocale } from '../../locales'
 import { resolveLocalizedLabel } from '../../utils/localizedLabel'
-import type { CollectionSpectrumData } from '../../types/collectionSpectrum'
-import type { SpectrumAnnotation } from '../../types/collection'
+import type { CollectionSpectrumData } from '../../types/collection/spectrum'
+import type { SpectrumAnnotation } from '../../types/collection/collection'
 import GammaSpectrumChartSvg from './GammaSpectrumChartSvg.vue'
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue'
 

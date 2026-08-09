@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { XMLParser } from 'fast-xml-parser'
 import { ROOT } from '../lib/paths.ts'
-import type { CollectionSpectrumData } from '../../src/types/collectionSpectrum.ts'
+import type { CollectionSpectrumData } from '../../src/types/collection/spectrum.ts'
 
 interface RadiacodeResultData {
   DeviceConfigReference?: { Name?: string }
