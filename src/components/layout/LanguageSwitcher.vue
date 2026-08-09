@@ -1,13 +1,20 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { localeOptions, useLocale } from '../../locales'
 import PillSwitcherGroup from '../common/PillSwitcherGroup.vue'
 import PillSwitcherButton from '../common/PillSwitcherButton.vue'
 
 const { locale, setLocale } = useLocale()
+
+const groupAriaLabel = computed(() => {
+  if (locale.value === 'ru') return 'Язык'
+  if (locale.value === 'zh') return '语言'
+  return 'Language'
+})
 </script>
 
 <template>
-  <PillSwitcherGroup :aria-label="locale === 'ru' ? 'Язык' : locale === 'zh' ? '语言' : 'Language'">
+  <PillSwitcherGroup :aria-label="groupAriaLabel">
     <PillSwitcherButton
       v-for="option in localeOptions"
       :key="option.value"

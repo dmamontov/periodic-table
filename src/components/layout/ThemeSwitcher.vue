@@ -1,11 +1,17 @@
 <script setup lang="ts">
-import { themeOptions, useTheme } from '../../theme'
+import { themeOptions, useTheme, type ThemePreference } from '../../theme'
 import { useLocale } from '../../locales'
 import PillSwitcherGroup from '../common/PillSwitcherGroup.vue'
 import PillSwitcherButton from '../common/PillSwitcherButton.vue'
 
 const { theme, setTheme } = useTheme()
 const { messages } = useLocale()
+
+function themeAriaLabel(value: ThemePreference): string {
+  if (value === 'light') return messages.value.themeLight
+  if (value === 'dark') return messages.value.themeDark
+  return messages.value.themeAuto
+}
 </script>
 
 <template>
@@ -14,13 +20,7 @@ const { messages } = useLocale()
       v-for="option in themeOptions"
       :key="option.value"
       :active="theme === option.value"
-      :aria-label="
-        option.value === 'light'
-          ? messages.themeLight
-          : option.value === 'dark'
-            ? messages.themeDark
-            : messages.themeAuto
-      "
+      :aria-label="themeAriaLabel(option.value)"
       @click="setTheme(option.value)"
     >
       <svg

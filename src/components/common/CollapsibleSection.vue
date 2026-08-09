@@ -2,12 +2,9 @@
 defineProps<{
   title: string
   accentColor?: string
-  collapsed: boolean
 }>()
 
-defineEmits<{
-  'update:collapsed': [value: boolean]
-}>()
+const collapsed = defineModel<boolean>('collapsed', { required: true })
 </script>
 
 <template>
@@ -17,7 +14,7 @@ defineEmits<{
       class="collapsible-section__title"
       :style="{ borderColor: accentColor }"
       :aria-expanded="!collapsed"
-      @click="$emit('update:collapsed', !collapsed)"
+      @click="collapsed = !collapsed"
     >
       <span>{{ title }}</span>
       <span class="collapsible-section__chevron" aria-hidden="true" />
