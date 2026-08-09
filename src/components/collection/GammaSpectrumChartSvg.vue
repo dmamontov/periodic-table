@@ -1,18 +1,5 @@
 <script setup lang="ts">
-export interface GammaSpectrumChartData {
-  width: number
-  height: number
-  baseY: number
-  pad: { left: number; right: number; top: number; bottom: number }
-  plotW: number
-  plotH: number
-  displayMaxEnergy: number
-  areaPath: string
-  linePath: string
-  xTicks: { energy: number; x: number; label: string }[]
-  yTicks: { value: number; y: number; label: string }[]
-  markers: { x: number; label: string }[]
-}
+import type { GammaSpectrumChartData } from '../../types/collection/spectrum'
 
 defineProps<{
   chart: GammaSpectrumChartData
