@@ -5,9 +5,8 @@ import {
   HEATMAP_GROUP_ORDER,
   formatHeatmapRangeValue,
   getHeatmapDataset,
-  type HeatmapGroupId,
-  type HeatmapId,
 } from '../../utils/heatmap'
+import type { HeatmapGroupId, HeatmapId } from '../../types/heatmap'
 import { useLocale } from '../../locales'
 
 const selectedHeatmap = defineModel<HeatmapId | null>('selectedHeatmap', { default: null })

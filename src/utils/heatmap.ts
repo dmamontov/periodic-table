@@ -1,38 +1,10 @@
 import type { Locale, LocaleMessages, DecayModeKey } from '../locales/types'
 import { localeMessages } from '../locales'
 import detailsFile from '../data/elements/details.json'
-import { elements, storedElementDetails, getSymbolByNumber, type StoredElementDetail } from '../data'
+import { elements, storedElementDetails, getSymbolByNumber } from '../data'
+import type { StoredElementDetail } from '../types/elementDetail'
+import type { HeatmapId, HeatmapGroupId, HeatmapDefinition, HeatmapDataset } from '../types/heatmap'
 import { formatDecayType } from './element/isotopes'
-
-export type HeatmapId =
-  | 'electronegativity'
-  | 'atomicRadius'
-  | 'ionizationEnergy'
-  | 'electronAffinity'
-  | 'density'
-  | 'meltingPoint'
-  | 'boilingPoint'
-  | 'atomicMass'
-  | 'covalentRadius'
-  | 'halfLife'
-  | 'lifetime'
-  | 'decayMode'
-  | 'earthAbundance'
-  | 'meteoriteAbundance'
-  | 'rarity'
-
-export type HeatmapGroupId = 'atomic' | 'trends' | 'physical' | 'nuclear' | 'other'
-
-export interface HeatmapDefinition {
-  id: HeatmapId
-  group: HeatmapGroupId
-  labelKey: keyof LocaleMessages['heatmap']['maps']
-  unitKey?: keyof LocaleMessages['sidebar']['units']
-  accent: string
-  scale?: 'linear' | 'log'
-  /** Lower raw value → higher cell brightness (e.g. rarity). */
-  invertIntensity?: boolean
-}
 
 export const HEATMAP_GROUP_ORDER: HeatmapGroupId[] = ['atomic', 'trends', 'physical', 'nuclear', 'other']
 
@@ -246,13 +218,6 @@ function extractHeatmapValue(
     default:
       return null
   }
-}
-
-export interface HeatmapDataset {
-  values: Map<number, number | null>
-  min: number
-  max: number
-  withData: number
 }
 
 function buildDataset(id: HeatmapId): HeatmapDataset {

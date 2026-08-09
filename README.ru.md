@@ -115,7 +115,7 @@ pnpm dev
 | `pnpm data:spectrum:convert -- <input.xml> <output-id>` | Конвертация XML-спектра RadiaCode → JSON для коллекции |
 | `pnpm data:collection:edit [-- <symbol>]` | Интерактивный мастер добавления/редактирования/удаления записей в `collection.ts` - запрашивает каждое поле, используя те же словари, что и само приложение, проверяет `sampleState`/`container`/`sourceType` по `src/locales/collection.ts` и сверяет `spectrum.id` с файлами, реально лежащими в `src/data/spectra/`. Передайте символ элемента, чтобы сразу перейти к нему, например `pnpm data:collection:edit -- Fr`. Переписывает только объект `myElements`, не трогая `collectionName`/`siteTitle`/`siteUrl` и комментарии. После сохранения запустите `pnpm check`. |
 
-`cli/index.ts` также зарегистрирован как `bin` пакета (`periodic-table`), так что `pnpm exec periodic-table <команда>` тоже работает. `cli/**/*.ts` типизирован и проверяется в рамках `pnpm typecheck` (см. `tsconfig.node.json`), при этом типы импортируются напрямую из `src/types/element.ts` и соседних файлов - поэтому мастер физически не может собрать запись `collection.ts`, не соответствующую реальной модели данных приложения.
+`cli/index.ts` также зарегистрирован как `bin` пакета (`periodic-table`), так что `pnpm exec periodic-table <команда>` тоже работает. `cli/**/*.ts` типизирован и проверяется в рамках `pnpm typecheck` (см. `tsconfig.node.json`), при этом типы импортируются напрямую из `src/types/` (`collection.ts` и соседних файлов) - поэтому мастер физически не может собрать запись `collection.ts`, не соответствующую реальной модели данных приложения.
 
 ## Структура проекта
 
@@ -132,7 +132,8 @@ src/
 ├── locales/         # переводы (ru/en/zh) и словари локализации
 ├── router/          # роуты (/, /element/:symbol)
 ├── theme/           # обработка темы (светлая/тёмная/авто)
-├── types/           # типы данных элементов
+├── types/           # element.ts, collection.ts, elementDetail.ts, detailSection.ts,
+│                    # heatmap.ts, collectionSpectrum.ts, ghs.ts, category.ts
 ├── utils/           # сгруппированы по смыслу:
 │   ├── collection/  #   форматирование ярлыков/статистики коллекции
 │   ├── element/     #   секции карточки элемента, форматтеры, изотопы, поиск, кеш картинок

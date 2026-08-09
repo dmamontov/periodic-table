@@ -19,7 +19,7 @@ import type {
   ElementCollectionRadioactive,
   ElementCollectionSpectrum,
   SpectrumAnnotation,
-} from '../../src/types/element.ts'
+} from '../../src/types/collection.ts'
 import type { LocalizedLabel } from '../../src/utils/localizedLabel.ts'
 import { ROOT } from '../lib/paths.ts'
 import { loadElements, type ElementRow } from '../lib/element-data.ts'

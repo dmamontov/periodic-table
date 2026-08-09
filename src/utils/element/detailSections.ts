@@ -3,12 +3,11 @@ import type { Locale } from '../../locales/types'
 import type { Element } from '../../types/element'
 import type {
   AggregationState,
-  DetailProp,
-  DetailSection,
   ElementDetail,
   GridPro,
   MagneticType,
 } from '../../types/elementDetail'
+import type { DetailProp, DetailSection } from '../../types/detailSection'
 import { getElementPeriod } from '../../data'
 import {
   getElementRadiacodeIsotope,

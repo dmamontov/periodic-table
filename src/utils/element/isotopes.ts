@@ -3,7 +3,7 @@ import { localeMessages } from '../../locales'
 import detailsFile from '../../data/elements/details.json'
 import { getSymbolByNumber } from '../../data'
 import { formatElementSymbol } from './formatters'
-import type { ElementCollectionDecayParent } from '../../types/element'
+import type { ElementCollectionDecayParent } from '../../types/collection'
 
 export interface ElementIsotopeEntry {
   mass: number

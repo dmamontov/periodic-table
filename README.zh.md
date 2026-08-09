@@ -115,7 +115,7 @@ Fork 了本项目、想记录自己的元素收藏？需要修改的内容全部
 | `pnpm data:spectrum:convert -- <input.xml> <output-id>` | 将 RadiaCode 的 XML 能谱转换为收藏用的 JSON |
 | `pnpm data:collection:edit [-- <symbol>]` | 交互式向导，用于添加/编辑/删除 `collection.ts` 中的条目 - 使用与应用本身相同的词汇表逐字段询问，依据 `src/locales/collection.ts` 校验 `sampleState`/`container`/`sourceType`，并核对 `spectrum.id` 是否在 `src/data/spectra/` 中真实存在对应文件。传入元素符号即可直接跳转到该元素，例如 `pnpm data:collection:edit -- Fr`。只会重写 `myElements` 对象，`collectionName`/`siteTitle`/`siteUrl` 及注释保持不变。保存后请运行 `pnpm check`。 |
 
-`cli/index.ts` 同时被注册为该包的 `bin`（`periodic-table`），所以 `pnpm exec periodic-table <命令>` 也可以用。`cli/**/*.ts` 已纳入 `pnpm typecheck` 的类型检查范围（见 `tsconfig.node.json`），其类型直接从 `src/types/element.ts` 等文件导入，因此该向导不可能构造出与应用真实数据模型不一致的 `collection.ts` 条目。
+`cli/index.ts` 同时被注册为该包的 `bin`（`periodic-table`），所以 `pnpm exec periodic-table <命令>` 也可以用。`cli/**/*.ts` 已纳入 `pnpm typecheck` 的类型检查范围（见 `tsconfig.node.json`），其类型直接从 `src/types/`（`collection.ts` 等文件）导入，因此该向导不可能构造出与应用真实数据模型不一致的 `collection.ts` 条目。
 
 ## 项目结构
 
@@ -132,7 +132,8 @@ src/
 ├── locales/         # 翻译文本（ru/en/zh）与本地化词典
 ├── router/          # 路由（/、/element/:symbol）
 ├── theme/           # 主题处理（浅色/深色/自动）
-├── types/           # 元素数据类型
+├── types/           # element.ts、collection.ts、elementDetail.ts、detailSection.ts、
+│                    # heatmap.ts、collectionSpectrum.ts、ghs.ts、category.ts
 ├── utils/           # 按主题分组：
 │   ├── collection/  #   收藏标签/统计格式化
 │   ├── element/     #   元素详情分区、格式化、同位素、搜索、图片缓存

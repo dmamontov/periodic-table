@@ -1,4 +1,4 @@
-import type { ElementCollection } from '../types/element'
+import type { ElementCollection } from '../types/collection'
 import type { LocalizedLabel } from '../utils/localizedLabel'
 
 /**

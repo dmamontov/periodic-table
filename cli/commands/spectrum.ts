@@ -2,20 +2,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { XMLParser } from 'fast-xml-parser'
 import { ROOT } from '../lib/paths.ts'
-
-/** Mirrors the `CollectionSpectrumData` shape consumed by `src/data/index.ts` — kept local so this CLI's Node-side type program never has to pull in that browser-facing module (it relies on `import.meta.glob`, a Vite-only ambient type). */
-interface CollectionSpectrumData {
-  id: string
-  device: string
-  sample: string
-  serialNumber: string
-  measurementTimeSec: number
-  startTime: string
-  endTime: string
-  channels: number
-  calibration: [number, number, number]
-  counts: number[]
-}
+import type { CollectionSpectrumData } from '../../src/types/collectionSpectrum.ts'
 
 interface RadiacodeResultData {
   DeviceConfigReference?: { Name?: string }

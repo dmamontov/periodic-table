@@ -5,7 +5,7 @@ import type {
   ElementCollectionPhysical,
   ElementCollectionRadioactive,
   ElementCollectionSpectrum,
-} from '../../src/types/element.ts'
+} from '../../src/types/collection.ts'
 import type { LocalizedLabel } from '../../src/utils/localizedLabel.ts'
 import { ROOT } from './paths.ts'
 import type { ElementRow } from './element-data.ts'

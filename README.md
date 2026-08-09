@@ -115,7 +115,7 @@ Gamma spectra (the `spectrum.id`/`spectrum.filename` fields) are optional - only
 | `pnpm data:spectrum:convert -- <input.xml> <output-id>` | Convert a RadiaCode XML spectrum → JSON for the collection |
 | `pnpm data:collection:edit [-- <symbol>]` | Interactive wizard to add/edit/delete `collection.ts` entries — prompts for every field with the same vocab/dictionaries the app uses, validates `sampleState`/`container`/`sourceType` against `src/locales/collection.ts`, and checks a `spectrum.id` against the files actually present in `src/data/spectra/`. Pass an element symbol to jump straight to it, e.g. `pnpm data:collection:edit -- Fr`. Rewrites only the `myElements` object, leaving `collectionName`/`siteTitle`/`siteUrl` and comments untouched. Run `pnpm check` after saving. |
 
-`cli/index.ts` is also registered as the package's `bin` (`periodic-table`), so `pnpm exec periodic-table <command>` works too. `cli/**/*.ts` is type-checked as part of `pnpm typecheck` (see `tsconfig.node.json`) and imports its types directly from `src/types/element.ts` and friends, so the wizard can't construct a `collection.ts` entry that doesn't match the app's own data model.
+`cli/index.ts` is also registered as the package's `bin` (`periodic-table`), so `pnpm exec periodic-table <command>` works too. `cli/**/*.ts` is type-checked as part of `pnpm typecheck` (see `tsconfig.node.json`) and imports its types directly from `src/types/` (`collection.ts` and friends), so the wizard can't construct a `collection.ts` entry that doesn't match the app's own data model.
 
 ## Project structure
 
@@ -132,7 +132,8 @@ src/
 ├── locales/         # translations (ru/en/zh) and localization dictionaries
 ├── router/          # routes (/, /element/:symbol)
 ├── theme/           # theme handling (light/dark/auto)
-├── types/           # element data types
+├── types/           # element.ts, collection.ts, elementDetail.ts, detailSection.ts,
+│                    # heatmap.ts, collectionSpectrum.ts, ghs.ts, category.ts
 ├── utils/           # grouped by topic:
 │   ├── collection/  #   collection labels/stats formatting
 │   ├── element/     #   element detail sections, formatters, isotopes, search, image cache

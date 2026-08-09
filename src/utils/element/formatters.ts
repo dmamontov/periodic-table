@@ -3,6 +3,7 @@ import { localeMessages } from '../../locales'
 import detailsFile from '../../data/elements/details.json'
 import { getElementGhsPictograms, getSymbolByNumber } from '../../data'
 import type { GhsDisplayItem } from '../../types/ghs'
+import type { ElementSampleColorFinish } from '../../types/element'
 
 /** Realistic pure-substance colors (an extended palette, not Jmol/CPK). */
 export const ELEMENT_SAMPLE_COLORS = [
@@ -30,8 +31,6 @@ export const ELEMENT_SAMPLE_COLORS = [
   '#F5F0D8', // 21 fluorine (pale yellow gas)
   '#E8E2B0', // 22 chlorine (pale yellow, faintly greenish)
 ] as const
-
-export type ElementSampleColorFinish = 'metallic' | 'glossy' | 'subtle' | 'matte'
 
 /** Palette indices with a matte / glossy / subtle finish (the rest are metallic). */
 const GLOSSY_COLOR_INDICES = new Set([12, 14, 15, 20])

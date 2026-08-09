@@ -1,4 +1,4 @@
-import type { CategoryId } from '../../data'
+import type { CategoryId } from '../../types/category'
 import { allCategories, elements, isElementRadioactive } from '../../data'
 
 /** Elements past einsteinium (99) are too short-lived to ever hold a physical sample of. */

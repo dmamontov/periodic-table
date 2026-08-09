@@ -122,41 +122,5 @@ export interface ElementDetail {
   PrevalenceCommon?: PrevalenceCommon
 }
 
-export type SectionId =
-  | 'overview'
-  | 'description'
-  | 'collection'
-  | 'properties'
-  | 'thermodynamic'
-  | 'atomic'
-  | 'electromagnetic'
-  | 'grid'
-  | 'additional'
-  | 'reactivity'
-  | 'nuclear'
-  | 'nfpa'
-  | 'ghs'
-  | 'prevalence'
-  | 'applications'
-
-export interface DetailProp {
-  label: string
-  value: string
-  html?: boolean
-  href?: string | null
-  imageUrl?: string | null
-  colorHex?: string | null
-  colorFinish?: 'metallic' | 'glossy' | 'subtle' | 'matte'
-  collectionSpectrumId?: string | null
-  kind?: 'miniTable'
-  empty?: boolean
-}
-
-export interface DetailSection {
-  id: SectionId
-  sectionKey?: string
-  title: string
-  color: string
-  items: DetailProp[]
-  gridStructureNum?: number | null
-}
+/** On-disk shape: number/symbol/name live in elements/elements.json or OverviewCommon. */
+export type StoredElementDetail = Omit<ElementDetail, 'number' | 'symbol' | 'name'>

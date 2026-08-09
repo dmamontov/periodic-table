@@ -17,8 +17,8 @@ import {
   formatHeatmapCellDisplay,
   formatHeatmapElementValue,
   getHeatmapIntensity,
-  type HeatmapId,
 } from '../../utils/heatmap'
+import type { HeatmapId } from '../../types/heatmap'
 import { useSeo } from '../../composables/useSeo'
 import ElementCell from './ElementCell.vue'
 import EmptyCell from './EmptyCell.vue'

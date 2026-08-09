@@ -1,5 +1,7 @@
 import type { Element } from '../types/element'
-import type { ElementDetail } from '../types/elementDetail'
+import type { ElementDetail, StoredElementDetail } from '../types/elementDetail'
+import type { CategoryId } from '../types/category'
+import type { CollectionSpectrumData, RadiacodeIsotopeRef } from '../types/collectionSpectrum'
 import rawElements from './elements/elements.json'
 import detailsFile from './elements/details.json'
 import type { GhsPictogramId } from '../types/ghs'
@@ -8,22 +10,7 @@ import type { LocalizedLabel } from '../utils/localizedLabel'
 
 type RawElement = Omit<Element, 'category' | 'inCollection' | 'collection'>
 
-/** On-disk shape: number/symbol/name live in elements/elements.json or OverviewCommon. */
-export type StoredElementDetail = Omit<ElementDetail, 'number' | 'symbol' | 'name'>
-
 export const storedElementDetails = detailsFile.elements as Record<string, StoredElementDetail>
-
-export type CategoryId =
-  | 'alkali'
-  | 'alkaline-earth'
-  | 'transition'
-  | 'post-transition'
-  | 'metalloid'
-  | 'nonmetal'
-  | 'halogen'
-  | 'noble-gas'
-  | 'lanthanides'
-  | 'actinides'
 
 const CATEGORY_COLORS: Record<CategoryId, string> = {
   alkali: '#d62839',
@@ -320,19 +307,6 @@ export function getGridStructureImageUrl(
   return getGridStructureImageUrlByNum(getPrimaryGridStructureNum(gridStructureNum))
 }
 
-export interface CollectionSpectrumData {
-  id: string
-  device: string
-  sample: string
-  serialNumber: string
-  measurementTimeSec: number
-  startTime: string
-  endTime: string
-  channels: number
-  calibration: [number, number, number]
-  counts: number[]
-}
-
 /** Lazy-loaded by spectrum id so a spectrum's data only enters the bundle once its element is opened. */
 const spectrumLoaders = import.meta.glob<{ default: CollectionSpectrumData }>('./spectra/*.json')
 
@@ -355,11 +329,6 @@ export async function getCollectionSpectrum(
 export function getCollectionSpectrumXmlHref(id: string | null | undefined): string | null {
   if (!id || !spectrumLoaderById.has(id)) return null
   return `/collection-spectra/${id}.xml`
-}
-
-export interface RadiacodeIsotopeRef {
-  isotope: string
-  slug: string
 }
 
 export function getElementRadiacodeIsotope(number: number): RadiacodeIsotopeRef | null {
