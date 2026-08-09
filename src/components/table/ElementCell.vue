@@ -2,9 +2,9 @@
 import { computed } from 'vue'
 import type { Element } from '../../types/element'
 import { getCellBorderRadius, getElementPeriod, isElementRadioactive, isElementWeaklyRadioactive } from '../../data'
-import { intensityToBrightness } from '../../utils/heatmapData'
+import { intensityToBrightness } from '../../utils/heatmap'
 import { useLocale } from '../../locales'
-import { formatElementSymbol } from '../../utils/elementFormatters'
+import { formatElementSymbol } from '../../utils/element/formatters'
 import RadiationIcon from '../common/RadiationIcon.vue'
 
 const { tElement, formatMass, tSidebar, locale } = useLocale()

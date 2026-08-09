@@ -133,7 +133,13 @@ src/
 ├── router/          # 路由（/、/element/:symbol）
 ├── theme/           # 主题处理（浅色/深色/自动）
 ├── types/           # 元素数据类型
-├── utils/           # 格式化、热力图、同位素、GHS/NFPA
+├── utils/           # 按主题分组：
+│   ├── collection/  #   收藏标签/统计格式化
+│   ├── element/     #   元素详情分区、格式化、同位素、搜索、图片缓存
+│   ├── external-links/ # Wikipedia/YouTube/PubChem 链接生成
+│   ├── heatmap.ts   #   热力图定义与数据集
+│   ├── localizedLabel.ts
+│   └── pwaStandalone.ts
 └── views/           # 应用页面
 cli/                 # 项目 CLI：生成站点地图、转换能谱、收藏向导
 ```

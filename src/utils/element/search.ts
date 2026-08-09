@@ -1,5 +1,5 @@
-import type { Element } from '../types/element'
-import type { LocaleMessages } from '../locales/types'
+import type { Element } from '../../types/element'
+import type { LocaleMessages } from '../../locales/types'
 
 const MAX_RESULTS = 8
 

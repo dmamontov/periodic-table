@@ -1,7 +1,7 @@
-import type { Locale } from '../locales/types'
-import type { ElementDetail } from '../types/elementDetail'
-import { localeMessages } from '../locales'
-import { getSymbolByNumber } from '../data'
+import type { Locale } from '../../locales/types'
+import type { ElementDetail } from '../../types/elementDetail'
+import { localeMessages } from '../../locales'
+import { getSymbolByNumber } from '../../data'
 
 const WIKI_HOST: Record<Locale, string> = {
   ru: 'ru.wikipedia.org',

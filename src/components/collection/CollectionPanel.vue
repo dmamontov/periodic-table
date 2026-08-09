@@ -2,11 +2,12 @@
 import { computed, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useLocale } from '../../locales'
-import { computeCollectionStats } from '../../utils/collectionStats'
+import { computeCollectionStats } from '../../utils/collection/stats'
 import { elements, getElementRouteSymbol } from '../../data'
-import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/elementIsotopes'
+import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes'
 import CollectionGammaSpectrum from './CollectionGammaSpectrum.vue'
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue'
+import CollapsibleSection from '../common/CollapsibleSection.vue'
 
 const COLLECTED_COLOR = '#c9a227'
 const RADIOACTIVE_COLOR = 'var(--color-error)'
@@ -94,22 +95,11 @@ function openElement(symbol: string) {
         </header>
 
         <div class="collection-panel__content">
-          <section
-            class="collection-panel__section"
-            :class="{ 'collection-panel__section--collapsed': sectionCollapsed }"
+          <CollapsibleSection
+            v-model:collapsed="sectionCollapsed"
+            :title="messages.collectionPanel.sectionTitle"
+            :accent-color="COLLECTED_COLOR"
           >
-            <button
-              type="button"
-              class="collection-panel__section-title"
-              :style="{ borderColor: COLLECTED_COLOR }"
-              :aria-expanded="!sectionCollapsed"
-              @click="sectionCollapsed = !sectionCollapsed"
-            >
-              <span>{{ messages.collectionPanel.sectionTitle }}</span>
-              <span class="collection-panel__section-chevron" aria-hidden="true" />
-            </button>
-
-            <div v-show="!sectionCollapsed">
               <p class="collection-panel__note">{{ messages.collectionPanel.collectibleNote }}</p>
 
               <div class="collection-panel__stat-rows">
@@ -193,26 +183,15 @@ function openElement(symbol: string) {
               </div>
 
               <hr class="collection-panel__divider" />
-            </div>
-          </section>
+          </CollapsibleSection>
 
-          <section
+          <CollapsibleSection
             v-if="spectrumElements.length"
-            class="collection-panel__section"
-            :class="{ 'collection-panel__section--collapsed': spectraCollapsed }"
+            v-model:collapsed="spectraCollapsed"
+            :title="messages.collectionPanel.spectraSectionTitle"
+            :accent-color="SPECTRA_COLOR"
           >
-            <button
-              type="button"
-              class="collection-panel__section-title"
-              :style="{ borderColor: SPECTRA_COLOR }"
-              :aria-expanded="!spectraCollapsed"
-              @click="spectraCollapsed = !spectraCollapsed"
-            >
-              <span>{{ messages.collectionPanel.spectraSectionTitle }}</span>
-              <span class="collection-panel__section-chevron" aria-hidden="true" />
-            </button>
-
-            <div v-show="!spectraCollapsed" class="collection-panel__spectra-list">
+<div class="collection-panel__spectra-list">
               <div
                 v-for="(item, index) in spectrumElements"
                 :key="item.symbol"
@@ -243,7 +222,7 @@ function openElement(symbol: string) {
                 />
               </div>
             </div>
-          </section>
+          </CollapsibleSection>
         </div>
       </div>
     </aside>
@@ -427,49 +406,6 @@ function openElement(symbol: string) {
 
 .collection-panel__row-value-total {
   color: var(--color-text-tertiary);
-}
-
-.collection-panel__section-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  width: 100%;
-  margin: 0 0 12px;
-  padding: 0 0 0 12px;
-  border: none;
-  border-left: 4px solid;
-  background: none;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--color-text);
-  line-height: 1.3;
-  text-align: left;
-  cursor: pointer;
-  transition: color 0.15s ease;
-}
-
-.collection-panel__section-title:hover {
-  color: var(--color-text-secondary);
-}
-
-.collection-panel__section--collapsed .collection-panel__section-title {
-  margin-bottom: 0;
-}
-
-.collection-panel__section-chevron {
-  flex-shrink: 0;
-  width: 7px;
-  height: 7px;
-  margin-right: 6px;
-  border-right: 2px solid var(--color-text-secondary);
-  border-bottom: 2px solid var(--color-text-secondary);
-  transform: rotate(45deg);
-  transition: transform 0.2s ease;
-}
-
-.collection-panel__section--collapsed .collection-panel__section-chevron {
-  transform: rotate(-45deg);
 }
 
 .collection-panel__spectra-list {

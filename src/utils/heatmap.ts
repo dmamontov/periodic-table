@@ -2,7 +2,7 @@ import type { Locale, LocaleMessages, DecayModeKey } from '../locales/types'
 import { localeMessages } from '../locales'
 import detailsFile from '../data/elements/details.json'
 import { elements, storedElementDetails, getSymbolByNumber, type StoredElementDetail } from '../data'
-import { formatDecayType } from './elementIsotopes'
+import { formatDecayType } from './element/isotopes'
 
 export type HeatmapId =
   | 'electronegativity'

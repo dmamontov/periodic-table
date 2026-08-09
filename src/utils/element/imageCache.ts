@@ -1,4 +1,4 @@
-import { getElementImageUrl, hasElementImage } from '../data'
+import { getElementImageUrl, hasElementImage } from '../../data'
 
 const preloadedUrls = new Set<string>()
 

@@ -1,5 +1,5 @@
-import type { CategoryId } from '../data'
-import { allCategories, elements, isElementRadioactive } from '../data'
+import type { CategoryId } from '../../data'
+import { allCategories, elements, isElementRadioactive } from '../../data'
 
 /** Elements past einsteinium (99) are too short-lived to ever hold a physical sample of. */
 const COLLECTIBLE_MAX_NUMBER = 99

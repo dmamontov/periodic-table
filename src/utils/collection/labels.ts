@@ -1,8 +1,8 @@
-import { containerLabels, sampleStateLabels } from '../locales/collection'
-import { resolveLocalizedLabel } from './localizedLabel'
-import { localeMessages } from '../locales'
-import type { Locale } from '../locales/types'
-import type { ElementCollection } from '../types/element'
+import { containerLabels, sampleStateLabels } from '../../locales/collection'
+import { resolveLocalizedLabel } from '../localizedLabel'
+import { localeMessages } from '../../locales'
+import type { Locale } from '../../locales/types'
+import type { ElementCollection } from '../../types/element'
 
 const DICTS = {
   sampleStates: sampleStateLabels,

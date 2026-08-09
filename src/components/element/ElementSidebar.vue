@@ -10,11 +10,11 @@ import {
   buildElementSections,
   isSectionEmpty,
   parseOxidationStates,
-} from '../../utils/elementDetailSections'
-import { buildGhsDisplay, buildNfpaDisplay, formatElementSymbol } from '../../utils/elementFormatters'
-import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/elementIsotopes'
-import { getWikipediaUrl } from '../../utils/wikipedia'
-import { getYouTubeUrl } from '../../utils/youtube'
+} from '../../utils/element/detailSections'
+import { buildGhsDisplay, buildNfpaDisplay, formatElementSymbol } from '../../utils/element/formatters'
+import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes'
+import { getWikipediaUrl } from '../../utils/external-links/wikipedia'
+import { getYouTubeUrl } from '../../utils/external-links/youtube'
 import wikiIconWhite from '../../assets/wiki-icon.svg'
 import wikiIconDark from '../../assets/wiki-icon-dark.svg'
 import youtubeIcon from '../../assets/youtube-icon.svg'
@@ -24,6 +24,7 @@ import CollectionGammaSpectrum from '../collection/CollectionGammaSpectrum.vue'
 import ElementMiniTable from '../table/ElementMiniTable.vue'
 import GhsPictogram from './GhsPictogram.vue'
 import RadiationIcon from '../common/RadiationIcon.vue'
+import CollapsibleSection from '../common/CollapsibleSection.vue'
 
 const props = defineProps<{
   element: Element | null
@@ -428,27 +429,15 @@ function toggleSection(sectionKey: string): void {
         <div v-if="error" class="element-sidebar__error">{{ tSidebar('error') }}</div>
 
         <div v-if="detail" class="element-sidebar__body">
-          <section
+          <CollapsibleSection
             v-for="section in sections"
             :key="section.sectionKey ?? section.id"
             class="element-sidebar__section"
-            :class="{ 'element-sidebar__section--collapsed': isSectionCollapsed(section.sectionKey ?? section.id) }"
+            :title="section.title"
+            :accent-color="section.color"
+            :collapsed="isSectionCollapsed(section.sectionKey ?? section.id)"
+            @update:collapsed="toggleSection(section.sectionKey ?? section.id)"
           >
-            <button
-              type="button"
-              class="element-sidebar__section-title"
-              :style="{ borderColor: section.color }"
-              :aria-expanded="!isSectionCollapsed(section.sectionKey ?? section.id)"
-              @click="toggleSection(section.sectionKey ?? section.id)"
-            >
-              <span>{{ section.title }}</span>
-              <span class="element-sidebar__section-chevron" aria-hidden="true" />
-            </button>
-
-            <div
-              v-show="!isSectionCollapsed(section.sectionKey ?? section.id)"
-              class="element-sidebar__section-body"
-            >
             <ul v-if="section.id !== 'grid' && section.id !== 'nfpa' && section.id !== 'ghs'" class="element-sidebar__props">
               <template v-for="(item, idx) in section.items" :key="`${section.sectionKey ?? section.id}-${idx}`">
                 <li
@@ -690,8 +679,7 @@ function toggleSection(sectionKey: string): void {
                 </div>
               </div>
             </template>
-            </div>
-          </section>
+          </CollapsibleSection>
         </div>
         </div>
       </div>
@@ -1110,57 +1098,14 @@ function toggleSection(sectionKey: string): void {
 
 .element-sidebar__section {
   padding: 0 24px;
+  /* Read by CollapsibleSection's own .collapsible-section__title rule — CSS custom properties inherit
+     through the DOM regardless of style scoping, so this reaches the child without :deep(). */
+  --collapsible-section-title-margin: 20px 0 12px;
+  --collapsible-section-title-margin-bottom-collapsed: 20px;
 }
 
 .element-sidebar__section + .element-sidebar__section {
   margin-top: 8px;
-}
-
-.element-sidebar__section-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  width: 100%;
-  margin: 20px 0 12px;
-  padding: 0 0 0 12px;
-  border: none;
-  border-left: 4px solid;
-  background: none;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--color-text);
-  line-height: 1.3;
-  text-align: left;
-  cursor: pointer;
-  transition: color 0.15s ease;
-}
-
-.element-sidebar__section-title:hover {
-  color: var(--color-text-secondary);
-}
-
-.element-sidebar__section--collapsed .element-sidebar__section-title {
-  margin-bottom: 20px;
-}
-
-.element-sidebar__section-chevron {
-  flex-shrink: 0;
-  width: 7px;
-  height: 7px;
-  margin-right: 6px;
-  border-right: 2px solid var(--color-text-secondary);
-  border-bottom: 2px solid var(--color-text-secondary);
-  transform: rotate(45deg);
-  transition: transform 0.2s ease;
-}
-
-.element-sidebar__section--collapsed .element-sidebar__section-chevron {
-  transform: rotate(-45deg);
-}
-
-.element-sidebar__section-body {
-  overflow: visible;
 }
 
 .element-sidebar__props {

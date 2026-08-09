@@ -4,8 +4,8 @@ import { useRouter } from 'vue-router'
 import type { Element } from '../../types/element'
 import { elements, getElementRouteSymbol } from '../../data'
 import { useLocale } from '../../locales'
-import { searchElements } from '../../utils/elementSearch'
-import { formatElementSymbol } from '../../utils/elementFormatters'
+import { searchElements } from '../../utils/element/search'
+import { formatElementSymbol } from '../../utils/element/formatters'
 
 const router = useRouter()
 const { messages } = useLocale()

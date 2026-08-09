@@ -8,7 +8,7 @@ import { installLocale } from './locales'
 import { installTheme } from './theme'
 import { initPwaUpdates } from './pwa'
 import { initPwaStandalone } from './utils/pwaStandalone'
-import { scheduleElementImagePreload } from './utils/elementImageCache'
+import { scheduleElementImagePreload } from './utils/element/imageCache'
 
 initPwaStandalone()
 initPwaUpdates()

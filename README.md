@@ -133,7 +133,13 @@ src/
 ├── router/          # routes (/, /element/:symbol)
 ├── theme/           # theme handling (light/dark/auto)
 ├── types/           # element data types
-├── utils/           # formatting, heatmaps, isotopes, GHS/NFPA
+├── utils/           # grouped by topic:
+│   ├── collection/  #   collection labels/stats formatting
+│   ├── element/     #   element detail sections, formatters, isotopes, search, image cache
+│   ├── external-links/ # Wikipedia/YouTube/PubChem link builders
+│   ├── heatmap.ts   #   heatmap definitions/datasets
+│   ├── localizedLabel.ts
+│   └── pwaStandalone.ts
 └── views/           # app screens
 cli/                 # project CLI: sitemap generation, spectrum conversion, collection wizard
 ```

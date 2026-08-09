@@ -1,6 +1,6 @@
-import type { LocaleMessages } from '../locales/types'
-import type { Locale } from '../locales/types'
-import type { Element } from '../types/element'
+import type { LocaleMessages } from '../../locales/types'
+import type { Locale } from '../../locales/types'
+import type { Element } from '../../types/element'
 import type {
   AggregationState,
   DetailProp,
@@ -8,38 +8,38 @@ import type {
   ElementDetail,
   GridPro,
   MagneticType,
-} from '../types/elementDetail'
-import { getElementPeriod } from '../data'
+} from '../../types/elementDetail'
+import { getElementPeriod } from '../../data'
 import {
   getElementRadiacodeIsotope,
   getElementSpectrumUrl,
   getRadiacodeIsotopeUrl,
   isElementRadioactive,
   isElementWeaklyRadioactive,
-} from '../data'
+} from '../../data'
 import {
   resolveCollectionLabel,
   resolveCollectionSampleState,
   resolveSourceType,
   formatCollectionPurity,
-} from './collectionLabels'
+} from '../collection/labels'
 import {
   formatIonChargeHtml,
   formatOpener,
   getElementSampleColorFinish,
   getElementSampleColorHex,
-} from './elementFormatters'
-import { getPubChemUrl } from './pubchem'
+} from './formatters'
+import { getPubChemUrl } from '../external-links/pubchem'
 import {
   formatDecayChainHtml,
   formatDecayType,
   formatIsotopeHtml,
   formatMainIsotopesHtml,
-} from './elementIsotopes'
-import { formatNucleusDurationDisplay } from './heatmapData'
-import { getElementApplications, getElementDescription } from '../locales'
-import { collectionName } from '../data/collection'
-import { resolveLocalizedLabel } from './localizedLabel'
+} from './isotopes'
+import { formatNucleusDurationDisplay } from '../heatmap'
+import { getElementApplications, getElementDescription } from '../../locales'
+import { collectionName } from '../../data/collection'
+import { resolveLocalizedLabel } from '../localizedLabel'
 
 const SECTION_COLORS: Record<DetailSection['id'], string> = {
   overview: '#f6511d',

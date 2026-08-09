@@ -7,7 +7,7 @@ import {
   getHeatmapDataset,
   type HeatmapGroupId,
   type HeatmapId,
-} from '../../utils/heatmapData'
+} from '../../utils/heatmap'
 import { useLocale } from '../../locales'
 
 const selectedHeatmap = defineModel<HeatmapId | null>('selectedHeatmap', { default: null })
