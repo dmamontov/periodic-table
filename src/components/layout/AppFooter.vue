@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import OrnamentDivider from './OrnamentDivider.vue'
 
-const year = new Date().getFullYear()
+const LAUNCH_YEAR = 2026
+const currentYear = new Date().getFullYear()
+const year = currentYear > LAUNCH_YEAR ? `${LAUNCH_YEAR}–${currentYear}` : `${LAUNCH_YEAR}`
 const email = 'd@mamontov.tech'
 const githubUrl = 'https://github.com/dmamontov/periodic-table'
 </script>
