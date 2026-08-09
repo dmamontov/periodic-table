@@ -1,4 +1,4 @@
-import { nextTick, onBeforeUnmount, onMounted, ref, type Ref } from 'vue'
+import { nextTick, onBeforeUnmount, onMounted, readonly, ref, type Ref } from 'vue'
 
 const VIEWPORT_MARGIN = 12
 
@@ -11,9 +11,9 @@ export interface UseDismissibleFlyoutOptions {
 
 /**
  * Open/close + viewport-clamped positioning for a flyout anchored to `rootEl`, dismissed on outside click or window resize.
- * `rootEl` is a parameter (not created here) because Vue's SFC compiler only recognizes a `ref="x"` template binding
- * when `x` is declared via a plain `const x = ref(...)` in the component itself — a value destructured from a composable
- * isn't confidently classified as a ref, and the template-ref attribute silently fails to bind at runtime.
+ * `rootEl` is a parameter (not created here) because a `ref="x"` template binding only resolves when `x` is created
+ * directly in the consuming component itself — via a plain `const x = ref(...)` or `useTemplateRef('x')` — not when
+ * it's a value destructured from a composable's return, which the SFC compiler can't confidently bind at runtime.
  */
 export function useDismissibleFlyout(
   rootEl: Ref<HTMLElement | null>,
@@ -75,5 +75,5 @@ export function useDismissibleFlyout(
     window.removeEventListener('resize', onWindowResize)
   })
 
-  return { isOpen, flyoutStyle, open, close, toggle }
+  return { isOpen: readonly(isOpen), flyoutStyle: readonly(flyoutStyle), open, close, toggle }
 }

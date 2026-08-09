@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { useTemplateRef } from 'vue'
 import { useDismissibleFlyout } from '../../composables/useDismissibleFlyout'
 
 const props = defineProps<{
@@ -11,7 +11,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{ open: []; close: [] }>()
 
-const rootEl = ref<HTMLElement | null>(null)
+const rootEl = useTemplateRef<HTMLElement>('rootEl')
 const { isOpen, flyoutStyle, open, close, toggle } = useDismissibleFlyout(rootEl, {
   onOpen: () => emit('open'),
   onClose: () => emit('close'),

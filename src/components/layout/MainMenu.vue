@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, useTemplateRef } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useLocale } from '../../locales'
 import FlyoutTrigger from '../common/FlyoutTrigger.vue'
@@ -10,7 +10,7 @@ const { messages } = useLocale()
 
 const isCollectionActive = computed(() => route.name === 'collection')
 
-const flyoutRef = ref<InstanceType<typeof FlyoutTrigger> | null>(null)
+const flyoutRef = useTemplateRef<InstanceType<typeof FlyoutTrigger>>('flyoutRef')
 
 function navigate(name: 'collection') {
   void router.push({ name })

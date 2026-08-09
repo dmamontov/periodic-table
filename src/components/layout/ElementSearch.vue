@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, useTemplateRef } from 'vue'
 import { useRouter } from 'vue-router'
 import type { Element } from '../../types/element/element'
 import { elements, getElementRouteSymbol } from '../../data'
@@ -14,8 +14,8 @@ const { messages } = useLocale()
 
 const query = ref('')
 const activeIndex = ref(0)
-const inputEl = ref<HTMLInputElement | null>(null)
-const flyoutRef = ref<InstanceType<typeof FlyoutTrigger> | null>(null)
+const inputEl = useTemplateRef<HTMLInputElement>('inputEl')
+const flyoutRef = useTemplateRef<InstanceType<typeof FlyoutTrigger>>('flyoutRef')
 
 const results = computed(() => searchElements(query.value, elements, messages.value))
 
