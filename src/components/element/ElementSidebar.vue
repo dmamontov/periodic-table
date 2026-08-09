@@ -4,6 +4,7 @@ import type { Element } from '../../types/element/element'
 import type { DetailSection } from '../../types/element/section'
 import { useLocale } from '../../locales'
 import { useTheme } from '../../theme'
+import { COLLECTION_COLOR, RADIOACTIVE_COLOR, WEAK_RADIOACTIVE_COLOR, PARTICLE_COLORS } from '../../theme/colors'
 import { useElementDetail } from '../../composables/useElementDetail'
 import { getElementImageUrl, getGridStructureImageUrlByNum, hasElementImage, isElementRadioactive, isElementWeaklyRadioactive } from '../../data'
 import {
@@ -919,7 +920,7 @@ function toggleSection(sectionKey: string): void {
   align-items: center;
   padding: 5px 10px;
   border-radius: 5px;
-  background: #c9a227;
+  background: v-bind(COLLECTION_COLOR);
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -932,7 +933,7 @@ function toggleSection(sectionKey: string): void {
   align-items: center;
   padding: 5px 10px;
   border-radius: 5px;
-  background: #d14a0f;
+  background: v-bind(RADIOACTIVE_COLOR);
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -941,7 +942,7 @@ function toggleSection(sectionKey: string): void {
 }
 
 .element-sidebar__radioactive-badge--weak {
-  background: #8a9aab;
+  background: v-bind(WEAK_RADIOACTIVE_COLOR);
 }
 
 .element-sidebar__back {
@@ -1594,15 +1595,15 @@ function toggleSection(sectionKey: string): void {
 }
 
 .element-sidebar__particle-label--e {
-  background: #5b8def;
+  background: v-bind('PARTICLE_COLORS.electron');
 }
 
 .element-sidebar__particle-label--p {
-  background: #e05a6f;
+  background: v-bind('PARTICLE_COLORS.proton');
 }
 
 .element-sidebar__particle-label--n {
-  background: #5cad52;
+  background: v-bind('PARTICLE_COLORS.neutron');
 }
 
 .element-sidebar__particle-value {

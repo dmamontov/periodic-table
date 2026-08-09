@@ -131,7 +131,7 @@ src/
 ├── data/              # element data, reference tables, the personal collection overlay
 ├── locales/           # translations (ru/en/zh) and localization dictionaries
 ├── router/            # routes (/, /element/:symbol)
-├── theme/             # theme handling (light/dark/auto)
+├── theme/             # theme handling (light/dark/auto) and the configurable color palette (categories, heatmaps, collection accent, sidebar sections)
 ├── types/             # shared TypeScript types, grouped by topic:
 │   ├── element/       #   the element model, its detail data, and UI section shapes
 │   └── collection/    #   the personal collection and its spectrum data

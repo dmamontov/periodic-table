@@ -8,8 +8,8 @@ import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/iso
 import CollectionGammaSpectrum from './CollectionGammaSpectrum.vue'
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue'
 import CollapsibleSection from '../common/CollapsibleSection.vue'
+import { COLLECTION_COLOR } from '../../theme/colors'
 
-const COLLECTED_COLOR = '#c9a227'
 const RADIOACTIVE_COLOR = 'var(--color-error)'
 const SPECTRA_COLOR = 'var(--color-link)'
 
@@ -98,7 +98,7 @@ function openElement(symbol: string) {
           <CollapsibleSection
             v-model:collapsed="sectionCollapsed"
             :title="messages.collectionPanel.sectionTitle"
-            :accent-color="COLLECTED_COLOR"
+            :accent-color="COLLECTION_COLOR"
           >
               <p class="collection-panel__note">{{ messages.collectionPanel.collectibleNote }}</p>
 
@@ -110,7 +110,7 @@ function openElement(symbol: string) {
                       class="collection-panel__row-fill"
                       :style="{
                         width: percentOf(stats.elementCounts.collected, stats.elementCounts.total) + '%',
-                        backgroundColor: COLLECTED_COLOR,
+                        backgroundColor: COLLECTION_COLOR,
                       }"
                     />
                     <span
@@ -120,7 +120,7 @@ function openElement(symbol: string) {
                       }"
                     />
                   </span>
-                  <span class="collection-panel__row-value"><span :style="{ color: COLLECTED_COLOR }">{{ stats.elementCounts.collected }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-mid">{{
+                  <span class="collection-panel__row-value"><span :style="{ color: COLLECTION_COLOR }">{{ stats.elementCounts.collected }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-mid">{{
                       stats.elementCounts.collectible
                     }}</span><span class="collection-panel__row-value-sep">/</span><span class="collection-panel__row-value-total">{{
                       stats.elementCounts.total

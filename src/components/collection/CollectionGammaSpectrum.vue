@@ -9,6 +9,7 @@ import {
 import { useLocale } from '../../locales'
 import { resolveLocalizedLabel } from '../../utils/localizedLabel'
 import { cyclicIndex } from '../../utils/cyclicIndex'
+import { COLLECTION_COLOR } from '../../theme/colors'
 import type { CollectionSpectrumData } from '../../types/collection/spectrum'
 import type { SpectrumAnnotation } from '../../types/collection/collection'
 import GammaSpectrumChartSvg from './GammaSpectrumChartSvg.vue'
@@ -54,7 +55,7 @@ const activeOriginHtml = computed(() =>
 const activeAnnotations = computed(() =>
   activeSibling.value ? activeSibling.value.annotations : props.annotations,
 )
-const accent = computed(() => props.accentColor ?? '#c9a227')
+const accent = computed(() => props.accentColor ?? COLLECTION_COLOR)
 const modalAccent = computed(() => activeSibling.value?.color ?? accent.value)
 
 function navigate(delta: number) {
@@ -504,7 +505,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
   flex-shrink: 0;
   font-size: 11px;
   font-weight: 600;
-  color: #c9a227;
+  color: v-bind(COLLECTION_COLOR);
   text-decoration: none;
   white-space: nowrap;
 }

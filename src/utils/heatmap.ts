@@ -5,26 +5,27 @@ import { elements, storedElementDetails, getSymbolByNumber } from '../data'
 import type { StoredElementDetail } from '../types/element/detail'
 import type { HeatmapId, HeatmapGroupId, HeatmapDefinition, HeatmapDataset } from '../types/heatmap'
 import { formatDecayType } from './element/isotopes'
+import { HEATMAP_ACCENT_COLORS } from '../theme/colors'
 
 export const HEATMAP_GROUP_ORDER: HeatmapGroupId[] = ['atomic', 'trends', 'physical', 'nuclear', 'other']
 
 /** Order within groups follows periodic-table conventions (mass/radii → trends → T → nuclear → abundance). */
 export const HEATMAP_DEFINITIONS: HeatmapDefinition[] = [
-  { id: 'atomicMass', group: 'atomic', labelKey: 'atomicMass', unitKey: 'gPerMol', accent: '#495057' },
-  { id: 'atomicRadius', group: 'atomic', labelKey: 'atomicRadius', unitKey: 'pm', accent: '#0077b6' },
-  { id: 'covalentRadius', group: 'atomic', labelKey: 'covalentRadius', unitKey: 'pm', accent: '#4361ee' },
-  { id: 'electronegativity', group: 'trends', labelKey: 'electronegativity', accent: '#7b2cbf' },
-  { id: 'ionizationEnergy', group: 'trends', labelKey: 'ionizationEnergy', unitKey: 'eV', accent: '#e85d04' },
-  { id: 'electronAffinity', group: 'trends', labelKey: 'electronAffinity', unitKey: 'eV', accent: '#2a9d8f' },
-  { id: 'density', group: 'physical', labelKey: 'density', unitKey: 'gPerCm3', accent: '#6d4c41' },
-  { id: 'meltingPoint', group: 'physical', labelKey: 'meltingPoint', unitKey: 'celsius', accent: '#dc2f02' },
-  { id: 'boilingPoint', group: 'physical', labelKey: 'boilingPoint', unitKey: 'celsius', accent: '#9d0208' },
-  { id: 'decayMode', group: 'nuclear', labelKey: 'decayMode', accent: '#40916c' },
-  { id: 'halfLife', group: 'nuclear', labelKey: 'halfLife', accent: '#52b788', scale: 'log' },
-  { id: 'lifetime', group: 'nuclear', labelKey: 'lifetime', accent: '#2d6a4f', scale: 'log' },
-  { id: 'earthAbundance', group: 'other', labelKey: 'earthAbundance', accent: '#1b4332', scale: 'log' },
-  { id: 'meteoriteAbundance', group: 'other', labelKey: 'meteoriteAbundance', accent: '#2d6a4f', scale: 'log' },
-  { id: 'rarity', group: 'other', labelKey: 'rarity', accent: '#40916c', scale: 'log', invertIntensity: true },
+  { id: 'atomicMass', group: 'atomic', labelKey: 'atomicMass', unitKey: 'gPerMol', accent: HEATMAP_ACCENT_COLORS.atomicMass },
+  { id: 'atomicRadius', group: 'atomic', labelKey: 'atomicRadius', unitKey: 'pm', accent: HEATMAP_ACCENT_COLORS.atomicRadius },
+  { id: 'covalentRadius', group: 'atomic', labelKey: 'covalentRadius', unitKey: 'pm', accent: HEATMAP_ACCENT_COLORS.covalentRadius },
+  { id: 'electronegativity', group: 'trends', labelKey: 'electronegativity', accent: HEATMAP_ACCENT_COLORS.electronegativity },
+  { id: 'ionizationEnergy', group: 'trends', labelKey: 'ionizationEnergy', unitKey: 'eV', accent: HEATMAP_ACCENT_COLORS.ionizationEnergy },
+  { id: 'electronAffinity', group: 'trends', labelKey: 'electronAffinity', unitKey: 'eV', accent: HEATMAP_ACCENT_COLORS.electronAffinity },
+  { id: 'density', group: 'physical', labelKey: 'density', unitKey: 'gPerCm3', accent: HEATMAP_ACCENT_COLORS.density },
+  { id: 'meltingPoint', group: 'physical', labelKey: 'meltingPoint', unitKey: 'celsius', accent: HEATMAP_ACCENT_COLORS.meltingPoint },
+  { id: 'boilingPoint', group: 'physical', labelKey: 'boilingPoint', unitKey: 'celsius', accent: HEATMAP_ACCENT_COLORS.boilingPoint },
+  { id: 'decayMode', group: 'nuclear', labelKey: 'decayMode', accent: HEATMAP_ACCENT_COLORS.decayMode },
+  { id: 'halfLife', group: 'nuclear', labelKey: 'halfLife', accent: HEATMAP_ACCENT_COLORS.halfLife, scale: 'log' },
+  { id: 'lifetime', group: 'nuclear', labelKey: 'lifetime', accent: HEATMAP_ACCENT_COLORS.lifetime, scale: 'log' },
+  { id: 'earthAbundance', group: 'other', labelKey: 'earthAbundance', accent: HEATMAP_ACCENT_COLORS.earthAbundance, scale: 'log' },
+  { id: 'meteoriteAbundance', group: 'other', labelKey: 'meteoriteAbundance', accent: HEATMAP_ACCENT_COLORS.meteoriteAbundance, scale: 'log' },
+  { id: 'rarity', group: 'other', labelKey: 'rarity', accent: HEATMAP_ACCENT_COLORS.rarity, scale: 'log', invertIntensity: true },
 ]
 
 const BRIGHTNESS_MIN = 0.52

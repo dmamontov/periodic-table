@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { PARTICLE_COLORS } from '../../theme/colors'
 
 const props = defineProps<{
   shell: string | null | undefined
@@ -31,7 +32,7 @@ function electronsForOrbit(count: number, radius: number) {
 
 function orbitBorderColor(index: number) {
   const mix = (BORDER_OPACITY[index] ?? 0) * 35
-  return `color-mix(in srgb, ${props.accentColor ?? '#5b8def'} ${mix}%, var(--color-border-input))`
+  return `color-mix(in srgb, ${props.accentColor ?? PARTICLE_COLORS.electron} ${mix}%, var(--color-border-input))`
 }
 </script>
 
@@ -62,7 +63,7 @@ function orbitBorderColor(index: number) {
             class="electron-shell__atom"
             :style="{
               transform: electron.transform,
-              backgroundColor: accentColor ?? '#5b8def',
+              backgroundColor: accentColor ?? PARTICLE_COLORS.electron,
             }"
           />
         </ul>

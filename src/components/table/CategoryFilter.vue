@@ -2,9 +2,9 @@
 import { allCategories } from '../../data'
 import type { CategoryId } from '../../types/element/category'
 import { useLocale } from '../../locales'
+import { COLLECTION_COLOR } from '../../theme/colors'
 
 const ALL_COLOR = '#615f5f'
-const COLLECTION_COLOR = '#c9a227'
 
 const COLLECTION_FILTER_ID = 'collection'
 

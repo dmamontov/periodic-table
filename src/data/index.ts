@@ -7,23 +7,11 @@ import rawElements from './elements/elements.json'
 import detailsFile from './elements/details.json'
 import { myElements } from './collection'
 import type { LocalizedLabel } from '../utils/localizedLabel'
+import { CATEGORY_COLORS } from '../theme/colors'
 
 type RawElement = Omit<Element, 'category' | 'inCollection' | 'collection'>
 
 export const storedElementDetails = detailsFile.elements as Record<string, StoredElementDetail>
-
-const CATEGORY_COLORS: Record<CategoryId, string> = {
-  alkali: '#d62839',
-  'alkaline-earth': '#e76f2a',
-  transition: '#7d8cc4',
-  'post-transition': '#4f5bd5',
-  metalloid: '#1f9d6b',
-  nonmetal: '#5fa03a',
-  halogen: '#d4a012',
-  'noble-gas': '#d45d8d',
-  lanthanides: '#3aafb9',
-  actinides: '#007c91',
-}
 
 export function getCategoryColor(category: CategoryId): string {
   return CATEGORY_COLORS[category]

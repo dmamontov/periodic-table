@@ -29,6 +29,7 @@ import {
   getElementSampleColorHex,
 } from './formatters'
 import { getPubChemUrl } from '../external-links/pubchem'
+import { SECTION_COLORS } from '../../theme/colors'
 import {
   formatDecayChainHtml,
   formatDecayType,
@@ -39,24 +40,6 @@ import { formatNucleusDurationDisplay } from '../heatmap'
 import { getElementApplications, getElementDescription } from '../../locales'
 import { collectionName } from '../../data/collection'
 import { resolveLocalizedLabel } from '../localizedLabel'
-
-const SECTION_COLORS: Record<DetailSection['id'], string> = {
-  overview: '#f6511d',
-  description: '#6f42c1',
-  collection: '#c9a227',
-  properties: '#00a878',
-  thermodynamic: '#3f84e5',
-  atomic: '#ce2d4f',
-  electromagnetic: '#258ea6',
-  grid: '#ce2d4f',
-  additional: '#e94f37',
-  reactivity: '#53a548',
-  nuclear: '#ce2d4f',
-  nfpa: '#e76f2a',
-  ghs: '#c0392b',
-  prevalence: '#0e63a5',
-  applications: '#5b4b8a',
-}
 
 const GRID_STRUCTURES: Record<string, keyof LocaleMessages['sidebar']['gridStructures']> = {
   '1': 'hexagonal',
