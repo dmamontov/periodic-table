@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useLocale } from '../locales'
-import { computeCollectionStats } from '../utils/collectionStats'
-import { elements, getElementRouteSymbol } from '../data'
-import { formatDecayChainHtml, formatIsotopeHtml } from '../utils/elementIsotopes'
+import { useLocale } from '../../locales'
+import { computeCollectionStats } from '../../utils/collectionStats'
+import { elements, getElementRouteSymbol } from '../../data'
+import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/elementIsotopes'
 import CollectionGammaSpectrum from './CollectionGammaSpectrum.vue'
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue'
 

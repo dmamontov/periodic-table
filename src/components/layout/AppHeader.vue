@@ -4,7 +4,7 @@ import LanguageSwitcher from './LanguageSwitcher.vue'
 import MainMenu from './MainMenu.vue'
 import OrnamentDivider from './OrnamentDivider.vue'
 import ThemeSwitcher from './ThemeSwitcher.vue'
-import { useLocale } from '../locales'
+import { useLocale } from '../../locales'
 
 const { messages } = useLocale()
 </script>

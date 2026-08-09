@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { Element } from '../types/element'
-import { getCellBorderRadius, getElementPeriod, isElementRadioactive, isElementWeaklyRadioactive } from '../data'
-import { intensityToBrightness } from '../utils/heatmapData'
-import { useLocale } from '../locales'
-import { formatElementSymbol } from '../utils/elementFormatters'
-import RadiationIcon from './RadiationIcon.vue'
+import type { Element } from '../../types/element'
+import { getCellBorderRadius, getElementPeriod, isElementRadioactive, isElementWeaklyRadioactive } from '../../data'
+import { intensityToBrightness } from '../../utils/heatmapData'
+import { useLocale } from '../../locales'
+import { formatElementSymbol } from '../../utils/elementFormatters'
+import RadiationIcon from '../common/RadiationIcon.vue'
 
 const { tElement, formatMass, tSidebar, locale } = useLocale()
 

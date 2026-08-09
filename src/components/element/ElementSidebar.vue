@@ -1,29 +1,29 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, ref, toRef, watch } from 'vue'
-import type { Element } from '../types/element'
-import type { DetailSection } from '../types/elementDetail'
-import { useLocale } from '../locales'
-import { useTheme } from '../theme'
-import { useElementDetail } from '../composables/useElementDetail'
-import { getElementImageUrl, getGridStructureImageUrlByNum, hasElementImage, isElementRadioactive, isElementWeaklyRadioactive } from '../data'
+import type { Element } from '../../types/element'
+import type { DetailSection } from '../../types/elementDetail'
+import { useLocale } from '../../locales'
+import { useTheme } from '../../theme'
+import { useElementDetail } from '../../composables/useElementDetail'
+import { getElementImageUrl, getGridStructureImageUrlByNum, hasElementImage, isElementRadioactive, isElementWeaklyRadioactive } from '../../data'
 import {
   buildElementSections,
   isSectionEmpty,
   parseOxidationStates,
-} from '../utils/elementDetailSections'
-import { buildGhsDisplay, buildNfpaDisplay, formatElementSymbol } from '../utils/elementFormatters'
-import { formatDecayChainHtml, formatIsotopeHtml } from '../utils/elementIsotopes'
-import { getWikipediaUrl } from '../utils/wikipedia'
-import { getYouTubeUrl } from '../utils/youtube'
-import wikiIconWhite from '../assets/wiki-icon.svg'
-import wikiIconDark from '../assets/wiki-icon-dark.svg'
-import youtubeIcon from '../assets/youtube-icon.svg'
-import youtubeIconWhite from '../assets/youtube-icon-white.svg'
+} from '../../utils/elementDetailSections'
+import { buildGhsDisplay, buildNfpaDisplay, formatElementSymbol } from '../../utils/elementFormatters'
+import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/elementIsotopes'
+import { getWikipediaUrl } from '../../utils/wikipedia'
+import { getYouTubeUrl } from '../../utils/youtube'
+import wikiIconWhite from '../../assets/wiki-icon.svg'
+import wikiIconDark from '../../assets/wiki-icon-dark.svg'
+import youtubeIcon from '../../assets/youtube-icon.svg'
+import youtubeIconWhite from '../../assets/youtube-icon-white.svg'
 import ElectronShell from './ElectronShell.vue'
-import CollectionGammaSpectrum from './CollectionGammaSpectrum.vue'
-import ElementMiniTable from './ElementMiniTable.vue'
+import CollectionGammaSpectrum from '../collection/CollectionGammaSpectrum.vue'
+import ElementMiniTable from '../table/ElementMiniTable.vue'
 import GhsPictogram from './GhsPictogram.vue'
-import RadiationIcon from './RadiationIcon.vue'
+import RadiationIcon from '../common/RadiationIcon.vue'
 
 const props = defineProps<{
   element: Element | null

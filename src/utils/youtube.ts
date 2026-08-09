@@ -1,7 +1,7 @@
 import type { Locale } from '../locales/types'
 import type { ElementDetail } from '../types/elementDetail'
 import { localeMessages } from '../locales'
-import detailsFile from '../data/details.json'
+import detailsFile from '../data/elements/details.json'
 import { getSymbolByNumber } from '../data'
 
 const thoisoiVideos = detailsFile.youtube as Record<string, string>

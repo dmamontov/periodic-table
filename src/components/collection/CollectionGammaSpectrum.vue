@@ -6,10 +6,10 @@ import {
   getCollectionSpectrum,
   getCollectionSpectrumXmlHref,
   type CollectionSpectrumData,
-} from '../data'
-import { useLocale } from '../locales'
-import { resolveLocalizedLabel } from '../utils/localizedLabel'
-import type { SpectrumAnnotation } from '../types/element'
+} from '../../data'
+import { useLocale } from '../../locales'
+import { resolveLocalizedLabel } from '../../utils/localizedLabel'
+import type { SpectrumAnnotation } from '../../types/element'
 import GammaSpectrumChartSvg from './GammaSpectrumChartSvg.vue'
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue'
 

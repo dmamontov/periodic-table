@@ -1,14 +1,14 @@
 import type { Element } from '../types/element'
 import type { ElementDetail } from '../types/elementDetail'
-import rawElements from './elements.json'
-import detailsFile from './details.json'
+import rawElements from './elements/elements.json'
+import detailsFile from './elements/details.json'
 import type { GhsPictogramId } from '../types/ghs'
-import { myElements } from './myCollection'
+import { myElements } from './collection'
 import type { LocalizedLabel } from '../utils/localizedLabel'
 
 type RawElement = Omit<Element, 'category' | 'inCollection' | 'collection'>
 
-/** On-disk shape: number/symbol/name live in elements.json or OverviewCommon. */
+/** On-disk shape: number/symbol/name live in elements/elements.json or OverviewCommon. */
 export type StoredElementDetail = Omit<ElementDetail, 'number' | 'symbol' | 'name'>
 
 export const storedElementDetails = detailsFile.elements as Record<string, StoredElementDetail>
@@ -97,7 +97,7 @@ export const elements: Element[] = (rawElements as RawElement[]).map((el) => {
   }
 })
 
-/** spectrumId → download filename, assembled from myCollection.ts */
+/** spectrumId → download filename, assembled from collection.ts */
 export const collectionSpectrumFilenames: Record<string, LocalizedLabel> = Object.fromEntries(
   Object.values(myElements)
     .filter((entry) => entry.spectrum?.filename)

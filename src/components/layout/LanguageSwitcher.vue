@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { localeOptions, useLocale } from '../locales'
+import { localeOptions, useLocale } from '../../locales'
 
 const { locale, setLocale } = useLocale()
 </script>

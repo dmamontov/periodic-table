@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, defineAsyncComponent, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import type { Element } from '../types/element'
+import type { Element } from '../../types/element'
 import {
   allCategories,
   fBlockElements,
@@ -11,22 +11,22 @@ import {
   getTopRowByCol,
   isColumnHead,
   mainElements,
-} from '../data'
+} from '../../data'
 import {
   HEATMAP_DEFINITIONS,
   formatHeatmapCellDisplay,
   formatHeatmapElementValue,
   getHeatmapIntensity,
   type HeatmapId,
-} from '../utils/heatmapData'
-import { useSeo } from '../composables/useSeo'
+} from '../../utils/heatmapData'
+import { useSeo } from '../../composables/useSeo'
 import ElementCell from './ElementCell.vue'
 import EmptyCell from './EmptyCell.vue'
 import TableFilters from './TableFilters.vue'
 import HeatmapSelector from './HeatmapSelector.vue'
-import { useLocale } from '../locales'
+import { useLocale } from '../../locales'
 
-const ElementSidebar = defineAsyncComponent(() => import('./ElementSidebar.vue'))
+const ElementSidebar = defineAsyncComponent(() => import('../element/ElementSidebar.vue'))
 
 const route = useRoute()
 const router = useRouter()

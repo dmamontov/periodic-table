@@ -1,12 +1,9 @@
-import { watchEffect, type Ref } from 'vue'
+import { computed, type Ref } from 'vue'
+import { useHead, useSeoMeta } from '@unhead/vue'
 import type { Element } from '../types/element'
 import type { Locale, LocaleMessages } from '../locales/types'
-import { siteTitle, siteUrl } from '../data/myCollection'
+import { siteTitle, siteUrl } from '../data/collection'
 import { resolveLocalizedLabel } from '../utils/localizedLabel'
-
-function setMeta(selector: string, attr: 'content' | 'href', value: string) {
-  document.head.querySelector(selector)?.setAttribute(attr, value)
-}
 
 export function useSeo(
   element: Ref<Element | null>,
@@ -14,29 +11,41 @@ export function useSeo(
   messages: Ref<LocaleMessages>,
   locale: Ref<Locale>,
 ) {
-  watchEffect(() => {
+  const title = computed(() => {
     const m = messages.value
     const el = element.value
-    const symbol = routeSymbol.value
     const siteTitleText = resolveLocalizedLabel(siteTitle, locale.value)
-
     const elementName = el ? (m.elements[el.symbol] ?? '') : ''
-    const title = el ? `${elementName} (${el.symbol}) — ${siteTitleText}` : siteTitleText
-    const description = el
-      ? m.seo.elementDescription
-          .replaceAll('%name%', elementName)
-          .replaceAll('%symbol%', el.symbol)
-          .replaceAll('%number%', String(el.number))
-      : m.seo.description
-    const url = symbol ? `${siteUrl}/element/${symbol}` : `${siteUrl}/`
+    return el ? `${elementName} (${el.symbol}) — ${siteTitleText}` : siteTitleText
+  })
 
-    document.title = title
-    setMeta('meta[name="description"]', 'content', description)
-    setMeta('link[rel="canonical"]', 'href', url)
-    setMeta('meta[property="og:title"]', 'content', title)
-    setMeta('meta[property="og:description"]', 'content', description)
-    setMeta('meta[property="og:url"]', 'content', url)
-    setMeta('meta[name="twitter:title"]', 'content', title)
-    setMeta('meta[name="twitter:description"]', 'content', description)
+  const description = computed(() => {
+    const m = messages.value
+    const el = element.value
+    if (!el) return m.seo.description
+    const elementName = m.elements[el.symbol] ?? ''
+    return m.seo.elementDescription
+      .replaceAll('%name%', elementName)
+      .replaceAll('%symbol%', el.symbol)
+      .replaceAll('%number%', String(el.number))
+  })
+
+  const url = computed(() => {
+    const symbol = routeSymbol.value
+    return symbol ? `${siteUrl}/element/${symbol}` : `${siteUrl}/`
+  })
+
+  useHead({
+    title,
+    link: [{ rel: 'canonical', href: url }],
+  })
+
+  useSeoMeta({
+    description,
+    ogTitle: title,
+    ogDescription: description,
+    ogUrl: url,
+    twitterTitle: title,
+    twitterDescription: description,
   })
 }

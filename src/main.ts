@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createHead } from '@unhead/vue/client'
 import 'unfonts.css'
 import './style.css'
 import App from './App.vue'
@@ -14,6 +15,7 @@ initPwaUpdates()
 
 const app = createApp(App)
 app.use(router)
+app.use(createHead())
 installLocale(app)
 installTheme(app)
 app.mount('#app')

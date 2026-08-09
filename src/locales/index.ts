@@ -10,7 +10,7 @@ import ru from './lang/ru'
 import en from './lang/en'
 import zh from './lang/zh'
 import type { LegendKey, Locale, LocaleMessages } from './types'
-import { collectionName as collectionNameConfig } from '../data/myCollection'
+import { collectionName as collectionNameConfig } from '../data/collection'
 import { getSymbolByNumber } from '../data'
 import { resolveLocalizedLabel } from '../utils/localizedLabel'
 

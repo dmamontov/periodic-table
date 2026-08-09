@@ -1,6 +1,6 @@
 import type { Locale, LocaleMessages, DecayModeKey } from '../locales/types'
 import { localeMessages } from '../locales'
-import detailsFile from '../data/details.json'
+import detailsFile from '../data/elements/details.json'
 import { elements, storedElementDetails, getSymbolByNumber, type StoredElementDetail } from '../data'
 import { formatDecayType } from './elementIsotopes'
 
@@ -58,7 +58,7 @@ export const HEATMAP_DEFINITIONS: HeatmapDefinition[] = [
 const BRIGHTNESS_MIN = 0.52
 const BRIGHTNESS_MAX = 1.02
 
-/** Half-life units in details.json: value/unitCode */
+/** Half-life units in elements/details.json: value/unitCode */
 const HALF_LIFE_UNIT_SECONDS: Record<number, number> = {
   1: 365.25 * 24 * 3600,
   2: 24 * 3600,

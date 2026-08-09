@@ -1,6 +1,6 @@
 import type { Locale } from '../locales/types'
 import { localeMessages } from '../locales'
-import detailsFile from '../data/details.json'
+import detailsFile from '../data/elements/details.json'
 import { getElementGhsPictograms, getSymbolByNumber } from '../data'
 import type { GhsDisplayItem } from '../types/ghs'
 

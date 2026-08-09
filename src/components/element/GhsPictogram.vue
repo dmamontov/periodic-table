@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { GhsPictogramId } from '../types/ghs'
-import { ghsPictogramSources } from '../assets/ghs'
+import type { GhsPictogramId } from '../../types/ghs'
+import { ghsPictogramSources } from '../../assets/ghs'
 
 defineProps<{
   id: GhsPictogramId

@@ -81,14 +81,17 @@ pnpm dev
 
 ## 建立属于你自己的收藏
 
-Fork 了本项目、想记录自己的元素收藏？需要修改的内容全部集中在**一个文件**里：[`src/data/myCollection.ts`](src/data/myCollection.ts)。不需要动 `elements.json`，也不需要动语言文件。
+Fork 了本项目、想记录自己的元素收藏？需要修改的内容全部集中在**一个文件**里：[`src/data/collection.ts`](src/data/collection.ts)。不需要动 `elements/elements.json`，也不需要动语言文件。
 
 - `collectionName` / `siteTitle` / `siteUrl` - 重命名收藏名称，并换成你自己的域名。
-- `myElements` - 一个"元素符号 → 详情"的映射表。只要加上一个键就代表这个元素归你所有；空对象 `{}` 已经足够（"我有这个元素，细节以后再补"）。`sampleState`、`container`、`purity`、`isotope`、`sourceType`、`decayParent`、`spectrum`、`spectrumAnnotations` 都是可选字段，可以慢慢填。
-- 如果内置的 `sampleState`/`container` 词汇表（在 [`src/locales/collection.ts`](src/locales/collection.ts) 中）不够用，你可以在那里添加新条目，也可以完全跳过词汇表，直接把现成的文字写进该元素的 `description` 字段 - `myCollection.ts` 里的放射性元素就是这么做的，可以参考。`sourceType` 固定取值为 `'primary'` 或 `'secondary'`。
+- `myElements` - 一个"元素符号 → 详情"的映射表。只要加上一个键就代表这个元素归你所有；空对象 `{}` 已经足够（"我有这个元素，细节以后再补"）。每条记录的字段按主题分组，均为可选：
+  - `physical` - `sampleState`、`container`、`purity`、`description`。
+  - `radioactive` - `isotope`、`sourceType`、`decayParent`。非放射性元素可以整组省略。
+  - `spectrum` - `id`、`filename`、`annotations`。没有测量文件时可以整组省略。
+- 如果内置的 `sampleState`/`container` 词汇表（在 [`src/locales/collection.ts`](src/locales/collection.ts) 中）不够用，你可以在那里添加新条目，也可以完全跳过词汇表，直接把现成的文字写进该元素的 `physical.description` 字段 - `collection.ts` 里的放射性元素就是这么做的，可以参考。`radioactive.sourceType` 固定取值为 `'primary'` 或 `'secondary'`。
 - 任何文本字段既可以写成一个普通字符串（在三种界面语言下都显示同一内容），也可以写成 `{ ru, en, zh }` 对象来分别翻译。
 
-伽马能谱（`spectrum`/`spectrumFilename` 字段）是可选的 - 只有当你确实有测量文件要放进 `src/data/spectra/` 时才需要填写。`spectrumAnnotations` 字段在图表上标出参考伽马/X 射线谱线（能量单位 keV + 标签）- 只有当它既是该同位素的已记录发射线，又确实能在你自己的测量本底之上看到时，才值得添加，而不是直接照抄表格数值。
+伽马能谱（`spectrum.id`/`spectrum.filename` 字段）是可选的 - 只有当你确实有测量文件要放进 `src/data/spectra/` 时才需要填写。`spectrum.annotations` 字段在图表上标出参考伽马/X 射线谱线（能量单位 keV + 标签）- 只有当它既是该同位素的已记录发射线，又确实能在你自己的测量本底之上看到时，才值得添加，而不是直接照抄表格数值。
 
 ## 脚本命令
 
@@ -101,20 +104,29 @@ Fork 了本项目、想记录自己的元素收藏？需要修改的内容全部
 | `pnpm lint` / `pnpm lint:fix` | 代码检查（ESLint） |
 | `pnpm check` | `typecheck` + `lint` |
 
-### 脚本
+### 项目 CLI
 
-`scripts/` 目录下只有两个独立工具，只有第一个会自动运行：
+`cli/` 是一个小型 TypeScript 工具（通过 [`tsx`](https://github.com/privatenumber/tsx) 运行，无需单独构建），有一个入口和三个子命令。不带参数运行 `pnpm cli` 会显示交互式菜单，也可以直接调用某个子命令：
 
 | 命令 | 用途 |
 |---|---|
-| `pnpm build` | 在类型检查和打包之前，还会通过 `scripts/build-sitemap.mjs` 从 `src/data/elements.json` 重新生成 `public/sitemap.xml` |
-| `pnpm data:spectrum:convert` | 将 RadiaCode 的 XML 能谱转换为收藏用的 JSON |
+| `pnpm cli` | 交互式菜单 - 选择要用的工具（sitemap / spectrum / collection） |
+| `pnpm cli sitemap`（也是 `pnpm build` 的一部分） | 从 `src/data/elements/elements.json` 重新生成 `public/sitemap.xml` |
+| `pnpm data:spectrum:convert -- <input.xml> <output-id>` | 将 RadiaCode 的 XML 能谱转换为收藏用的 JSON |
+| `pnpm data:collection:edit [-- <symbol>]` | 交互式向导，用于添加/编辑/删除 `collection.ts` 中的条目 - 使用与应用本身相同的词汇表逐字段询问，依据 `src/locales/collection.ts` 校验 `sampleState`/`container`/`sourceType`，并核对 `spectrum.id` 是否在 `src/data/spectra/` 中真实存在对应文件。传入元素符号即可直接跳转到该元素，例如 `pnpm data:collection:edit -- Fr`。只会重写 `myElements` 对象，`collectionName`/`siteTitle`/`siteUrl` 及注释保持不变。保存后请运行 `pnpm check`。 |
+
+`cli/index.ts` 同时被注册为该包的 `bin`（`periodic-table`），所以 `pnpm exec periodic-table <命令>` 也可以用。`cli/**/*.ts` 已纳入 `pnpm typecheck` 的类型检查范围（见 `tsconfig.node.json`），其类型直接从 `src/types/element.ts` 等文件导入，因此该向导不可能构造出与应用真实数据模型不一致的 `collection.ts` 条目。
 
 ## 项目结构
 
 ```
 src/
-├── components/     # UI 组件（周期表、元素卡片、筛选器、热力图……）
+├── components/      # UI 组件，按主题分组：
+│   ├── layout/      #   页头、页脚、菜单、搜索、语言/主题切换器
+│   ├── table/       #   周期表本身：单元格、筛选器、热力图选择器
+│   ├── element/     #   元素详情侧边栏
+│   ├── collection/  #   收藏面板与伽马能谱图表
+│   └── common/      #   以上各组共用的小组件
 ├── composables/     # 可复用逻辑（useElementDetail）
 ├── data/            # 元素数据、参考表、收藏能谱
 ├── locales/         # 翻译文本（ru/en/zh）与本地化词典
@@ -123,7 +135,7 @@ src/
 ├── types/           # 元素数据类型
 ├── utils/           # 格式化、热力图、同位素、GHS/NFPA
 └── views/           # 应用页面
-scripts/             # 生成站点地图、转换 RadiaCode 能谱
+cli/                 # 项目 CLI：生成站点地图、转换能谱、收藏向导
 ```
 
 ## Docker

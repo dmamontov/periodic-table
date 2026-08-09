@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import radiationIconSrc from '../assets/radiation-icon.svg'
+import radiationIconSrc from '../../assets/radiation-icon.svg'
 
 defineProps<{
   /** White icon for dark/colored backgrounds (element cells) */

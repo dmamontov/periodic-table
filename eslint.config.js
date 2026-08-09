@@ -38,20 +38,9 @@ export default tseslint.config(
     },
   },
   {
-    files: ['vite.config.ts'],
+    files: ['vite.config.ts', 'cli/**/*.ts'],
     languageOptions: {
       globals: globals.node,
-    },
-  },
-  {
-    files: ['scripts/**/*.mjs'],
-    extends: [tseslint.configs.disableTypeChecked],
-    languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-      globals: {
-        ...globals.node,
-      },
     },
   },
   {

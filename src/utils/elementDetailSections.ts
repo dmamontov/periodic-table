@@ -38,7 +38,7 @@ import {
 } from './elementIsotopes'
 import { formatNucleusDurationDisplay } from './heatmapData'
 import { getElementApplications, getElementDescription } from '../locales'
-import { collectionName } from '../data/myCollection'
+import { collectionName } from '../data/collection'
 import { resolveLocalizedLabel } from './localizedLabel'
 
 const SECTION_COLORS: Record<DetailSection['id'], string> = {

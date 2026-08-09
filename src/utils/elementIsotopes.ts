@@ -1,6 +1,6 @@
 import type { Locale, DecayModeKey } from '../locales/types'
 import { localeMessages } from '../locales'
-import detailsFile from '../data/details.json'
+import detailsFile from '../data/elements/details.json'
 import { getSymbolByNumber } from '../data'
 import { formatElementSymbol } from './elementFormatters'
 import type { ElementCollectionDecayParent } from '../types/element'

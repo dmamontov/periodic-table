@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useLocale } from '../locales'
+import { useLocale } from '../../locales'
 
 const route = useRoute()
 const router = useRouter()
