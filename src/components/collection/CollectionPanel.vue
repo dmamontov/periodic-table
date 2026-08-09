@@ -79,7 +79,7 @@ function openElement(symbol: string) {
           >
               <p class="collection-panel__note">{{ messages.collectionPanel.collectibleNote }}</p>
 
-              <div class="collection-panel__stat-rows">
+              <div class="collection-panel__rows">
                 <div class="collection-panel__row">
                   <span class="collection-panel__row-label">{{ messages.collectionPanel.statCollected }}</span>
                   <span class="collection-panel__row-track">
@@ -135,11 +135,9 @@ function openElement(symbol: string) {
                       stats.radioactiveCounts.total
                     }}</span></span>
                 </div>
-              </div>
 
-              <hr class="collection-panel__divider" />
+                <hr class="collection-panel__divider" />
 
-              <div class="collection-panel__category-rows">
                 <div v-for="cat in stats.categoryCounts" :key="cat.id" class="collection-panel__row">
                   <span class="collection-panel__row-label">{{ tLegend(cat.id) }}</span>
                   <span class="collection-panel__row-track">
@@ -159,7 +157,7 @@ function openElement(symbol: string) {
                 </div>
               </div>
 
-              <hr class="collection-panel__divider" />
+              <hr class="collection-panel__divider collection-panel__divider--section-end" />
           </CollapsibleSection>
 
           <CollapsibleSection
@@ -242,8 +240,7 @@ function openElement(symbol: string) {
   gap: 20px;
 }
 
-.collection-panel__stat-rows,
-.collection-panel__category-rows {
+.collection-panel__rows {
   display: grid;
   grid-template-columns: minmax(120px, auto) 1fr auto;
   align-items: center;
@@ -252,10 +249,15 @@ function openElement(symbol: string) {
 }
 
 .collection-panel__divider {
+  grid-column: 1 / -1;
   height: 1px;
-  margin: 12px 0;
+  margin: 0;
   border: none;
   background: var(--color-border);
+}
+
+.collection-panel__divider--section-end {
+  margin-top: 12px;
 }
 
 .collection-panel__row {
@@ -357,8 +359,7 @@ function openElement(symbol: string) {
     padding: 8px 16px 24px;
   }
 
-  .collection-panel__stat-rows,
-  .collection-panel__category-rows {
+  .collection-panel__rows {
     grid-template-columns: minmax(90px, auto) 1fr auto;
     column-gap: 8px;
   }
