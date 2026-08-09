@@ -26,6 +26,8 @@ import ElementMiniTable from '../table/ElementMiniTable.vue'
 import GhsPictogram from './GhsPictogram.vue'
 import RadiationIcon from '../common/RadiationIcon.vue'
 import CollapsibleSection from '../common/CollapsibleSection.vue'
+import DrawerShell from '../common/DrawerShell.vue'
+import Badge from '../common/Badge.vue'
 
 const props = defineProps<{
   element: Element | null
@@ -260,22 +262,12 @@ function toggleSection(sectionKey: string): void {
 </script>
 
 <template>
-  <Teleport to="body">
-    <Transition name="sidebar-backdrop">
-      <button
-        v-if="isOpen"
-        type="button"
-        class="element-sidebar__backdrop"
-        :aria-label="tSidebar('close')"
-        @click="emit('close')"
-      />
-    </Transition>
-
-    <aside
-      class="element-sidebar"
-      :class="{ 'element-sidebar--open': isOpen }"
-      :aria-hidden="!isOpen"
-    >
+  <DrawerShell
+    panel-class="element-sidebar"
+    :is-open="isOpen"
+    :close-label="tSidebar('close')"
+    @close="emit('close')"
+  >
       <div v-if="element" class="element-sidebar__shell">
         <div
           class="element-sidebar__sticky-nav"
@@ -404,25 +396,13 @@ function toggleSection(sectionKey: string): void {
               </p>
             </div>
             <div class="element-sidebar__header-badges">
-              <span
-                class="element-sidebar__category"
-                :style="{ backgroundColor: element.color }"
-              >
-                {{ categoryLabel }}
-              </span>
-              <span
-                v-if="isRadioactive"
-                class="element-sidebar__radioactive-badge"
-                :class="{ 'element-sidebar__radioactive-badge--weak': isWeaklyRadioactive }"
-              >
+              <Badge :color="element.color">{{ categoryLabel }}</Badge>
+              <Badge v-if="isRadioactive" :color="isWeaklyRadioactive ? WEAK_RADIOACTIVE_COLOR : RADIOACTIVE_COLOR">
                 {{ isWeaklyRadioactive ? tSidebar('weakRadioactiveBadge') : tSidebar('radioactiveBadge') }}
-              </span>
-              <span
-                v-if="isInCollection"
-                class="element-sidebar__collection-badge"
-              >
+              </Badge>
+              <Badge v-if="isInCollection" :color="COLLECTION_COLOR">
                 {{ tSidebar('collectionBadge') }}
-              </span>
+              </Badge>
             </div>
           </div>
         </header>
@@ -684,47 +664,10 @@ function toggleSection(sectionKey: string): void {
         </div>
         </div>
       </div>
-    </aside>
-  </Teleport>
+  </DrawerShell>
 </template>
 
 <style scoped>
-.element-sidebar__backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  border: none;
-  background: var(--color-overlay);
-  cursor: pointer;
-}
-
-.sidebar-backdrop-enter-active,
-.sidebar-backdrop-leave-active {
-  transition: opacity 0.25s ease;
-}
-
-.sidebar-backdrop-enter-from,
-.sidebar-backdrop-leave-to {
-  opacity: 0;
-}
-
-.element-sidebar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 210;
-  width: min(400px, 100vw);
-  padding-top: env(safe-area-inset-top, 0px);
-  padding-bottom: env(safe-area-inset-bottom, 0px);
-  box-sizing: border-box;
-  background: var(--color-bg);
-  border-left: 1px solid var(--color-border);
-  box-shadow: -4px 0 24px var(--color-shadow-md);
-  transform: translateX(100%);
-  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-}
 
 .element-sidebar__sticky-nav {
   position: absolute;
@@ -828,10 +771,6 @@ function toggleSection(sectionKey: string): void {
   pointer-events: none;
 }
 
-.element-sidebar--open {
-  transform: translateX(0);
-}
-
 .element-sidebar__shell {
   position: relative;
   height: 100%;
@@ -901,48 +840,6 @@ function toggleSection(sectionKey: string): void {
   font-weight: 700;
   line-height: 1.2;
   color: var(--color-text);
-}
-
-.element-sidebar__category {
-  flex-shrink: 0;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 1.2;
-  text-align: right;
-  white-space: nowrap;
-}
-
-.element-sidebar__collection-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background: v-bind(COLLECTION_COLOR);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 1.2;
-  white-space: nowrap;
-}
-
-.element-sidebar__radioactive-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background: v-bind(RADIOACTIVE_COLOR);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 1.2;
-  white-space: nowrap;
-}
-
-.element-sidebar__radioactive-badge--weak {
-  background: v-bind(WEAK_RADIOACTIVE_COLOR);
 }
 
 .element-sidebar__back {
@@ -1629,16 +1526,21 @@ function toggleSection(sectionKey: string): void {
 }
 
 @media (max-width: 900px) and (orientation: portrait) {
-  .element-sidebar {
+  .element-sidebar__prop--mini-table .element-mini-table {
+    max-width: none;
+  }
+}
+</style>
+
+<style>
+/* Same DrawerShell/Teleport issue as CollectionPanel.vue's own trailing unscoped block — see the comment there. */
+@media (max-width: 900px) and (orientation: portrait) {
+  .drawer-shell.element-sidebar {
     width: 100vw;
     left: 0;
     right: 0;
     border-left: none;
     box-shadow: none;
-  }
-
-  .element-sidebar__prop--mini-table .element-mini-table {
-    max-width: none;
   }
 }
 </style>

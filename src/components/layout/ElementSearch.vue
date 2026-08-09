@@ -7,29 +7,30 @@ import { useLocale } from '../../locales'
 import { searchElements } from '../../utils/element/search'
 import { formatElementSymbol } from '../../utils/element/formatters'
 import { cyclicIndex } from '../../utils/cyclicIndex'
-import { useDismissibleFlyout } from '../../composables/useDismissibleFlyout'
+import FlyoutTrigger from '../common/FlyoutTrigger.vue'
 
 const router = useRouter()
 const { messages } = useLocale()
 
 const query = ref('')
 const activeIndex = ref(0)
-const rootEl = ref<HTMLElement | null>(null)
 const inputEl = ref<HTMLInputElement | null>(null)
+const flyoutRef = ref<InstanceType<typeof FlyoutTrigger> | null>(null)
 
 const results = computed(() => searchElements(query.value, elements, messages.value))
 
-const { isOpen, flyoutStyle, open, close, toggle } = useDismissibleFlyout(rootEl, {
-  onOpen: () => inputEl.value?.focus(),
-  onClose: () => {
-    query.value = ''
-    activeIndex.value = 0
-  },
-})
+function onFlyoutOpen() {
+  inputEl.value?.focus()
+}
+
+function onFlyoutClose() {
+  query.value = ''
+  activeIndex.value = 0
+}
 
 function selectElement(element: Element) {
   void router.push({ name: 'element', params: { symbol: getElementRouteSymbol(element.symbol) } })
-  close()
+  flyoutRef.value?.close()
 }
 
 function onQueryInput() {
@@ -57,7 +58,7 @@ function onKeydown(event: KeyboardEvent) {
     }
   } else if (event.key === 'Escape') {
     event.preventDefault()
-    close()
+    flyoutRef.value?.close()
     inputEl.value?.blur()
   }
 }
@@ -72,7 +73,7 @@ function onGlobalKeydown(event: KeyboardEvent) {
   if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return
   if (isTypingTarget(event.target)) return
   event.preventDefault()
-  open()
+  flyoutRef.value?.open()
 }
 
 onMounted(() => {
@@ -85,117 +86,67 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div ref="rootEl" class="element-search" :class="{ 'element-search--open': isOpen }">
-    <button
-      type="button"
-      class="element-search__toggle"
-      :aria-label="messages.search.label"
-      :aria-expanded="isOpen"
-      @click="toggle"
-    >
+  <FlyoutTrigger
+    ref="flyoutRef"
+    class="element-search"
+    :toggle-aria-label="messages.search.label"
+    @open="onFlyoutOpen"
+    @close="onFlyoutClose"
+  >
+    <template #icon>
       <svg class="element-search__icon" viewBox="0 0 16 16" aria-hidden="true">
         <circle cx="6.75" cy="6.75" r="4.25" fill="none" stroke="currentColor" stroke-width="1.5" />
         <path d="M10 10l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
       </svg>
-    </button>
+    </template>
 
-    <Transition name="element-search-fade">
-      <div v-if="isOpen" class="element-search__flyout" :style="flyoutStyle">
-        <div class="element-search__input-row">
-          <svg class="element-search__input-icon" viewBox="0 0 16 16" aria-hidden="true">
-            <circle cx="6.75" cy="6.75" r="4.25" fill="none" stroke="currentColor" stroke-width="1.5" />
-            <path d="M10 10l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-          </svg>
-          <input
-            ref="inputEl"
-            v-model="query"
-            type="text"
-            class="element-search__input"
-            role="combobox"
-            aria-autocomplete="list"
-            aria-controls="element-search-listbox"
-            :aria-expanded="results.length > 0"
-            :placeholder="messages.search.placeholder"
-            @input="onQueryInput"
-            @keydown="onKeydown"
-          />
-        </div>
+    <div class="element-search__input-row">
+      <svg class="element-search__input-icon" viewBox="0 0 16 16" aria-hidden="true">
+        <circle cx="6.75" cy="6.75" r="4.25" fill="none" stroke="currentColor" stroke-width="1.5" />
+        <path d="M10 10l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+      </svg>
+      <input
+        ref="inputEl"
+        v-model="query"
+        type="text"
+        class="element-search__input"
+        role="combobox"
+        aria-autocomplete="list"
+        aria-controls="element-search-listbox"
+        :aria-expanded="results.length > 0"
+        :placeholder="messages.search.placeholder"
+        @input="onQueryInput"
+        @keydown="onKeydown"
+      />
+    </div>
 
-        <div v-if="query" id="element-search-listbox" class="element-search__panel" role="listbox">
-          <button
-            v-for="(element, index) in results"
-            :key="element.number"
-            type="button"
-            role="option"
-            class="element-search__result"
-            :class="{ 'element-search__result--active': index === activeIndex }"
-            :aria-selected="index === activeIndex"
-            @click="selectElement(element)"
-            @mouseenter="activeIndex = index"
-          >
-            <span class="element-search__symbol" :style="{ color: element.color }">{{ formatElementSymbol(element.symbol) }}</span>
-            <span class="element-search__name">{{ messages.elements[element.symbol] }}</span>
-            <span class="element-search__number">{{ element.number }}</span>
-          </button>
+    <div v-if="query" id="element-search-listbox" class="element-search__panel" role="listbox">
+      <button
+        v-for="(element, index) in results"
+        :key="element.number"
+        type="button"
+        role="option"
+        class="element-search__result"
+        :class="{ 'element-search__result--active': index === activeIndex }"
+        :aria-selected="index === activeIndex"
+        @click="selectElement(element)"
+        @mouseenter="activeIndex = index"
+      >
+        <span class="element-search__symbol" :style="{ color: element.color }">{{ formatElementSymbol(element.symbol) }}</span>
+        <span class="element-search__name">{{ messages.elements[element.symbol] }}</span>
+        <span class="element-search__number">{{ element.number }}</span>
+      </button>
 
-          <p v-if="results.length === 0" class="element-search__empty">{{ messages.search.noResults }}</p>
-        </div>
-      </div>
-    </Transition>
-  </div>
+      <p v-if="results.length === 0" class="element-search__empty">{{ messages.search.noResults }}</p>
+    </div>
+  </FlyoutTrigger>
 </template>
 
 <style scoped>
-.element-search {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  padding: 2px;
-  border-radius: 6px;
-  background: var(--color-bg-muted);
-}
-
-.element-search__toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: var(--pill-switcher-height);
-  height: var(--pill-switcher-height);
-  border: none;
-  border-radius: 4px;
-  background: transparent;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
-}
-
-.element-search__toggle:hover {
-  color: var(--color-text);
-}
-
-.element-search--open .element-search__toggle {
-  background: var(--color-bg-elevated);
-  color: var(--color-text);
-  box-shadow: 0 1px 2px var(--color-shadow);
-}
-
 .element-search__icon {
   width: var(--pill-switcher-icon-size);
   height: var(--pill-switcher-icon-size);
   display: block;
-}
-
-.element-search__flyout {
-  position: fixed;
-  z-index: 50;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  background: var(--color-bg-elevated);
-  box-shadow: 0 8px 24px var(--color-shadow-lg);
-  overflow: hidden;
 }
 
 .element-search__input-row {
@@ -289,17 +240,6 @@ onBeforeUnmount(() => {
   font-size: 13px;
   color: var(--color-text-muted);
   text-align: center;
-}
-
-.element-search-fade-enter-active,
-.element-search-fade-leave-active {
-  transition: opacity 0.15s ease, transform 0.15s ease;
-}
-
-.element-search-fade-enter-from,
-.element-search-fade-leave-to {
-  opacity: 0;
-  transform: translateY(-4px);
 }
 
 @media (max-width: 900px) {

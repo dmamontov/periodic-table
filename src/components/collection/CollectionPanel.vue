@@ -8,6 +8,8 @@ import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/iso
 import CollectionGammaSpectrum from './CollectionGammaSpectrum.vue'
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue'
 import CollapsibleSection from '../common/CollapsibleSection.vue'
+import DrawerShell from '../common/DrawerShell.vue'
+import CloseButton from '../common/CloseButton.vue'
 import { COLLECTION_COLOR } from '../../theme/colors'
 
 const RADIOACTIVE_COLOR = 'var(--color-error)'
@@ -55,43 +57,18 @@ function openElement(symbol: string) {
 </script>
 
 <template>
-  <Teleport to="body">
-    <Transition name="collection-panel-backdrop">
-      <button
-        v-if="isOpen"
-        type="button"
-        class="collection-panel__backdrop"
-        :aria-label="messages.collectionPanel.close"
-        @click="close"
-      />
-    </Transition>
-
-    <aside
-      class="collection-panel"
-      :class="{ 'collection-panel--open': isOpen }"
-      :aria-hidden="!isOpen"
-    >
+  <DrawerShell
+    panel-class="collection-panel"
+    :is-open="isOpen"
+    :close-label="messages.collectionPanel.close"
+    @close="close"
+  >
       <div v-if="isOpen" class="collection-panel__shell">
         <header class="collection-panel__header">
           <div class="collection-panel__heading">
             <h2 class="collection-panel__title">{{ collectionName }}</h2>
           </div>
-          <button
-            type="button"
-            class="collection-panel__close"
-            :aria-label="messages.collectionPanel.close"
-            @click="close"
-          >
-            <svg viewBox="0 0 16 16" aria-hidden="true">
-              <path
-                d="M4 4l8 8M12 4l-8 8"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              />
-            </svg>
-          </button>
+          <CloseButton :aria-label="messages.collectionPanel.close" @click="close" />
         </header>
 
         <div class="collection-panel__content">
@@ -225,52 +202,10 @@ function openElement(symbol: string) {
           </CollapsibleSection>
         </div>
       </div>
-    </aside>
-  </Teleport>
+  </DrawerShell>
 </template>
 
 <style scoped>
-.collection-panel__backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  border: none;
-  background: var(--color-overlay);
-  cursor: pointer;
-}
-
-.collection-panel-backdrop-enter-active,
-.collection-panel-backdrop-leave-active {
-  transition: opacity 0.25s ease;
-}
-
-.collection-panel-backdrop-enter-from,
-.collection-panel-backdrop-leave-to {
-  opacity: 0;
-}
-
-.collection-panel {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 210;
-  width: min(720px, 96vw);
-  padding-top: env(safe-area-inset-top, 0px);
-  padding-bottom: env(safe-area-inset-bottom, 0px);
-  box-sizing: border-box;
-  background: var(--color-bg);
-  border-left: 1px solid var(--color-border);
-  box-shadow: -4px 0 24px var(--color-shadow-md);
-  transform: translateX(100%);
-  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-}
-
-.collection-panel--open {
-  transform: translateX(0);
-}
-
 .collection-panel__shell {
   display: flex;
   flex-direction: column;
@@ -298,31 +233,6 @@ function openElement(symbol: string) {
   font-size: 12px;
   line-height: 1.4;
   color: var(--color-text-tertiary);
-}
-
-.collection-panel__close {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border: none;
-  border-radius: 50%;
-  background: var(--color-bg-muted);
-  color: var(--color-text-muted);
-  cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
-}
-
-.collection-panel__close:hover {
-  background: var(--color-bg-elevated);
-  color: var(--color-text);
-}
-
-.collection-panel__close svg {
-  width: 15px;
-  height: 15px;
 }
 
 .collection-panel__content {
@@ -439,10 +349,6 @@ function openElement(symbol: string) {
 }
 
 @media (max-width: 900px) {
-  .collection-panel {
-    width: 100vw;
-  }
-
   .collection-panel__header {
     padding: 16px 16px 4px;
   }
@@ -455,6 +361,26 @@ function openElement(symbol: string) {
   .collection-panel__category-rows {
     grid-template-columns: minmax(90px, auto) 1fr auto;
     column-gap: 8px;
+  }
+}
+</style>
+
+<style>
+/*
+ * DrawerShell teleports its root to <body>, so it's no longer a DOM descendant
+ * of CollectionPanel's own render tree — neither scoped attribute selectors nor
+ * :deep() (which still requires a scope-attribute ancestor) can reach it. This
+ * unscoped block targets it by class directly; ".drawer-shell.collection-panel"
+ * matches DrawerShell's own scoped ".drawer-shell[data-v-x]" specificity so the
+ * override wins on normal cascade order (this block is emitted after DrawerShell's).
+ */
+.drawer-shell.collection-panel {
+  width: min(720px, 96vw);
+}
+
+@media (max-width: 900px) {
+  .drawer-shell.collection-panel {
+    width: 100vw;
   }
 }
 </style>

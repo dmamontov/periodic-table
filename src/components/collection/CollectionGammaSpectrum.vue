@@ -14,6 +14,7 @@ import type { CollectionSpectrumData } from '../../types/collection/spectrum'
 import type { SpectrumAnnotation } from '../../types/collection/collection'
 import GammaSpectrumChartSvg from './GammaSpectrumChartSvg.vue'
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue'
+import CloseButton from '../common/CloseButton.vue'
 
 interface SpectrumSibling {
   symbol: string
@@ -379,22 +380,11 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
               :accent="modalAccent"
               :origin-html="activeOriginHtml"
             />
-            <button
-              type="button"
+            <CloseButton
               class="gamma-spectrum-modal__close"
               :aria-label="tSidebar('close')"
               @click="closeZoom"
-            >
-              <svg viewBox="0 0 16 16" aria-hidden="true">
-                <path
-                  d="M4 4l8 8M12 4l-8 8"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </button>
+            />
           </div>
 
           <div class="gamma-spectrum-modal__chart-wrap">
@@ -572,29 +562,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
 }
 
 .gamma-spectrum-modal__close {
-  flex-shrink: 0;
   margin-left: auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border: none;
-  border-radius: 50%;
-  background: var(--color-bg-muted);
-  color: var(--color-text-muted);
-  cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
-}
-
-.gamma-spectrum-modal__close:hover {
-  background: var(--color-bg);
-  color: var(--color-text);
-}
-
-.gamma-spectrum-modal__close svg {
-  width: 15px;
-  height: 15px;
 }
 
 .gamma-spectrum-modal__chart-wrap {
