@@ -1,81 +1,26 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useLocale } from '../../locales'
+import { useDismissibleFlyout } from '../../composables/useDismissibleFlyout'
 
 const route = useRoute()
 const router = useRouter()
 const { messages } = useLocale()
 
-const isOpen = ref(false)
-const rootEl = ref<HTMLElement | null>(null)
-const flyoutStyle = ref<{ top: string; left: string; width: string }>({
-  top: '0px',
-  left: '0px',
-  width: '280px',
-})
-
-const VIEWPORT_MARGIN = 12
-
 const isCollectionActive = computed(() => route.name === 'collection')
 
-/** Spans the whole header controls row: from the main menu button's left edge to the search button's right edge. */
-function updateFlyoutPosition() {
-  const controlsRect = rootEl.value?.parentElement?.getBoundingClientRect()
-  if (!controlsRect) return
-
-  const width = Math.min(controlsRect.width, window.innerWidth - VIEWPORT_MARGIN * 2)
-  const maxLeft = window.innerWidth - VIEWPORT_MARGIN - width
-  const left = Math.min(Math.max(controlsRect.left, VIEWPORT_MARGIN), Math.max(maxLeft, VIEWPORT_MARGIN))
-
-  flyoutStyle.value = {
-    top: `${controlsRect.bottom + 6}px`,
-    left: `${left}px`,
-    width: `${width}px`,
-  }
-}
-
-function open() {
-  isOpen.value = true
-  void nextTick(updateFlyoutPosition)
-}
-
-function close() {
-  isOpen.value = false
-}
-
-function toggle() {
-  if (isOpen.value) close()
-  else open()
-}
+const rootEl = ref<HTMLElement | null>(null)
+const { isOpen, flyoutStyle, close, toggle } = useDismissibleFlyout(rootEl)
 
 function navigate(name: 'collection') {
   void router.push({ name })
   close()
 }
 
-function onDocumentPointerDown(event: PointerEvent) {
-  if (!isOpen.value) return
-  if (rootEl.value && !rootEl.value.contains(event.target as Node)) close()
-}
-
 function onKeydown(event: KeyboardEvent) {
   if (event.key === 'Escape') close()
 }
-
-function onWindowResize() {
-  if (isOpen.value) updateFlyoutPosition()
-}
-
-onMounted(() => {
-  document.addEventListener('pointerdown', onDocumentPointerDown)
-  window.addEventListener('resize', onWindowResize)
-})
-
-onBeforeUnmount(() => {
-  document.removeEventListener('pointerdown', onDocumentPointerDown)
-  window.removeEventListener('resize', onWindowResize)
-})
 </script>
 
 <template>

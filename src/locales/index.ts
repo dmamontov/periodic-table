@@ -13,6 +13,7 @@ import type { LegendKey, Locale, LocaleMessages } from './types'
 import { collectionName as collectionNameConfig } from '../data/collection'
 import { getSymbolByNumber } from '../data'
 import { resolveLocalizedLabel } from '../utils/localizedLabel'
+import { readStorage, writeStorage } from '../utils/storage'
 
 const STORAGE_KEY = 'periodic-table-locale'
 
@@ -68,22 +69,16 @@ type LocaleContext = ReturnType<typeof createLocale>
 
 const localeKey: InjectionKey<LocaleContext> = Symbol('locale')
 
+function isLocale(value: string): value is Locale {
+  return value === 'ru' || value === 'en' || value === 'zh'
+}
+
 function readStoredLocale(): Locale | null {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY)
-    if (stored === 'ru' || stored === 'en' || stored === 'zh') return stored
-  } catch {
-    // localStorage may be unavailable (private mode, blocked storage)
-  }
-  return null
+  return readStorage(localStorage, STORAGE_KEY, isLocale)
 }
 
 function persistLocale(value: Locale): void {
-  try {
-    localStorage.setItem(STORAGE_KEY, value)
-  } catch {
-    // ignore write failures
-  }
+  writeStorage(localStorage, STORAGE_KEY, value)
 }
 
 function detectLocale(): Locale {

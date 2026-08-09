@@ -8,6 +8,7 @@ import {
 } from '../../data'
 import { useLocale } from '../../locales'
 import { resolveLocalizedLabel } from '../../utils/localizedLabel'
+import { cyclicIndex } from '../../utils/cyclicIndex'
 import type { CollectionSpectrumData } from '../../types/collection/spectrum'
 import type { SpectrumAnnotation } from '../../types/collection/collection'
 import GammaSpectrumChartSvg from './GammaSpectrumChartSvg.vue'
@@ -58,8 +59,7 @@ const modalAccent = computed(() => activeSibling.value?.color ?? accent.value)
 
 function navigate(delta: number) {
   if (!canNavigate.value) return
-  const count = siblingCount.value
-  activeIndex.value = (activeIndex.value + delta + count) % count
+  activeIndex.value = cyclicIndex(activeIndex.value, delta, siblingCount.value)
 }
 
 function navigatePrev() {

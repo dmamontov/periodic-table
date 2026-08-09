@@ -6,6 +6,7 @@ import {
   type App,
   type InjectionKey,
 } from 'vue'
+import { readStorage, writeStorage } from '../utils/storage'
 
 export type ThemePreference = 'light' | 'dark' | 'auto'
 export type ResolvedTheme = 'light' | 'dark'
@@ -22,22 +23,16 @@ type ThemeContext = ReturnType<typeof createTheme>
 
 const themeKey: InjectionKey<ThemeContext> = Symbol('theme')
 
+function isThemePreference(value: string): value is ThemePreference {
+  return value === 'light' || value === 'dark' || value === 'auto'
+}
+
 function readStoredTheme(): ThemePreference | null {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY)
-    if (stored === 'light' || stored === 'dark' || stored === 'auto') return stored
-  } catch {
-    // localStorage may be unavailable
-  }
-  return null
+  return readStorage(localStorage, STORAGE_KEY, isThemePreference)
 }
 
 function persistTheme(value: ThemePreference): void {
-  try {
-    localStorage.setItem(STORAGE_KEY, value)
-  } catch {
-    // ignore write failures
-  }
+  writeStorage(localStorage, STORAGE_KEY, value)
 }
 
 function resolveTheme(preference: ThemePreference): ResolvedTheme {

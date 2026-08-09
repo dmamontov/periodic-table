@@ -1,64 +1,31 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import type { Element } from '../../types/element/element'
 import { elements, getElementRouteSymbol } from '../../data'
 import { useLocale } from '../../locales'
 import { searchElements } from '../../utils/element/search'
 import { formatElementSymbol } from '../../utils/element/formatters'
+import { cyclicIndex } from '../../utils/cyclicIndex'
+import { useDismissibleFlyout } from '../../composables/useDismissibleFlyout'
 
 const router = useRouter()
 const { messages } = useLocale()
 
-const isOpen = ref(false)
 const query = ref('')
 const activeIndex = ref(0)
 const rootEl = ref<HTMLElement | null>(null)
 const inputEl = ref<HTMLInputElement | null>(null)
-const flyoutStyle = ref<{ top: string; left: string; width: string }>({
-  top: '0px',
-  left: '0px',
-  width: '280px',
-})
 
 const results = computed(() => searchElements(query.value, elements, messages.value))
 
-const VIEWPORT_MARGIN = 12
-
-/** Spans the whole header controls row: from the main menu button's left edge to the search button's right edge. */
-function updateFlyoutPosition() {
-  const controlsRect = rootEl.value?.parentElement?.getBoundingClientRect()
-  if (!controlsRect) return
-
-  const width = Math.min(controlsRect.width, window.innerWidth - VIEWPORT_MARGIN * 2)
-  const maxLeft = window.innerWidth - VIEWPORT_MARGIN - width
-  const left = Math.min(Math.max(controlsRect.left, VIEWPORT_MARGIN), Math.max(maxLeft, VIEWPORT_MARGIN))
-
-  flyoutStyle.value = {
-    top: `${controlsRect.bottom + 6}px`,
-    left: `${left}px`,
-    width: `${width}px`,
-  }
-}
-
-function open() {
-  isOpen.value = true
-  void nextTick(() => {
-    inputEl.value?.focus()
-    updateFlyoutPosition()
-  })
-}
-
-function close() {
-  isOpen.value = false
-  query.value = ''
-  activeIndex.value = 0
-}
-
-function toggle() {
-  if (isOpen.value) close()
-  else open()
-}
+const { isOpen, flyoutStyle, open, close, toggle } = useDismissibleFlyout(rootEl, {
+  onOpen: () => inputEl.value?.focus(),
+  onClose: () => {
+    query.value = ''
+    activeIndex.value = 0
+  },
+})
 
 function selectElement(element: Element) {
   void router.push({ name: 'element', params: { symbol: getElementRouteSymbol(element.symbol) } })
@@ -72,7 +39,7 @@ function onQueryInput() {
 function moveActive(delta: number) {
   const count = results.value.length
   if (!count) return
-  activeIndex.value = (activeIndex.value + delta + count) % count
+  activeIndex.value = cyclicIndex(activeIndex.value, delta, count)
 }
 
 function onKeydown(event: KeyboardEvent) {
@@ -95,11 +62,6 @@ function onKeydown(event: KeyboardEvent) {
   }
 }
 
-function onDocumentPointerDown(event: PointerEvent) {
-  if (!isOpen.value) return
-  if (rootEl.value && !rootEl.value.contains(event.target as Node)) close()
-}
-
 function isTypingTarget(target: EventTarget | null): boolean {
   if (!(target instanceof HTMLElement)) return false
   const tag = target.tagName
@@ -113,20 +75,12 @@ function onGlobalKeydown(event: KeyboardEvent) {
   open()
 }
 
-function onWindowResize() {
-  if (isOpen.value) updateFlyoutPosition()
-}
-
 onMounted(() => {
-  document.addEventListener('pointerdown', onDocumentPointerDown)
   document.addEventListener('keydown', onGlobalKeydown)
-  window.addEventListener('resize', onWindowResize)
 })
 
 onBeforeUnmount(() => {
-  document.removeEventListener('pointerdown', onDocumentPointerDown)
   document.removeEventListener('keydown', onGlobalKeydown)
-  window.removeEventListener('resize', onWindowResize)
 })
 </script>
 

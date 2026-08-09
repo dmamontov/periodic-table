@@ -19,6 +19,7 @@ import {
   getHeatmapIntensity,
 } from '../../utils/heatmap'
 import type { HeatmapId } from '../../types/heatmap'
+import { readStorage, writeStorage } from '../../utils/storage'
 import { useSeo } from '../../composables/useSeo'
 import ElementCell from './ElementCell.vue'
 import EmptyCell from './EmptyCell.vue'
@@ -38,42 +39,28 @@ const HEATMAP_STORAGE_KEY = 'periodic-table-heatmap'
 const VALID_CATEGORY_VALUES = new Set<string>(['collection', ...allCategories.map((c) => c.id)])
 const VALID_HEATMAP_VALUES = new Set<string>(HEATMAP_DEFINITIONS.map((d) => d.id))
 
+function isValidCategory(value: string): value is string {
+  return VALID_CATEGORY_VALUES.has(value)
+}
+
+function isValidHeatmap(value: string): value is HeatmapId {
+  return VALID_HEATMAP_VALUES.has(value)
+}
+
 function readStoredCategory(): string {
-  try {
-    const stored = sessionStorage.getItem(CATEGORY_STORAGE_KEY)
-    if (stored && VALID_CATEGORY_VALUES.has(stored)) return stored
-  } catch {
-    // sessionStorage may be unavailable (private mode, blocked storage)
-  }
-  return 'all'
+  return readStorage(sessionStorage, CATEGORY_STORAGE_KEY, isValidCategory) ?? 'all'
 }
 
 function readStoredHeatmap(): HeatmapId | null {
-  try {
-    const stored = sessionStorage.getItem(HEATMAP_STORAGE_KEY)
-    if (stored && VALID_HEATMAP_VALUES.has(stored)) return stored as HeatmapId
-  } catch {
-    // sessionStorage may be unavailable
-  }
-  return null
+  return readStorage(sessionStorage, HEATMAP_STORAGE_KEY, isValidHeatmap)
 }
 
 function persistCategory(value: string): void {
-  try {
-    if (value === 'all') sessionStorage.removeItem(CATEGORY_STORAGE_KEY)
-    else sessionStorage.setItem(CATEGORY_STORAGE_KEY, value)
-  } catch {
-    // ignore write failures
-  }
+  writeStorage(sessionStorage, CATEGORY_STORAGE_KEY, value === 'all' ? null : value)
 }
 
 function persistHeatmap(value: HeatmapId | null): void {
-  try {
-    if (!value) sessionStorage.removeItem(HEATMAP_STORAGE_KEY)
-    else sessionStorage.setItem(HEATMAP_STORAGE_KEY, value)
-  } catch {
-    // ignore write failures
-  }
+  writeStorage(sessionStorage, HEATMAP_STORAGE_KEY, value)
 }
 
 const selectedCategory = ref(readStoredCategory())
