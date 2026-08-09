@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, ref, toRef, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, ref, toRef, useTemplateRef, watch } from 'vue'
 import type { Element } from '../../types/element/element'
 import type { DetailSection } from '../../types/element/section'
 import { useLocale } from '../../locales'
 import { useTheme } from '../../theme'
-import { COLLECTION_COLOR, RADIOACTIVE_COLOR, WEAK_RADIOACTIVE_COLOR, PARTICLE_COLORS } from '../../theme/colors'
+import { COLLECTION_COLOR, RADIOACTIVE_COLOR, WEAK_RADIOACTIVE_COLOR } from '../../theme/colors'
 import { useElementDetail } from '../../composables/useElementDetail'
 import { getElementImageUrl, getGridStructureImageUrlByNum, hasElementImage, isElementRadioactive, isElementWeaklyRadioactive } from '../../data'
 import {
@@ -20,11 +20,11 @@ import wikiIconWhite from '../../assets/wiki-icon.svg'
 import wikiIconDark from '../../assets/wiki-icon-dark.svg'
 import youtubeIcon from '../../assets/youtube-icon.svg'
 import youtubeIconWhite from '../../assets/youtube-icon-white.svg'
-import ElectronShell from './ElectronShell.vue'
-import CollectionGammaSpectrum from '../collection/CollectionGammaSpectrum.vue'
-import ElementMiniTable from '../table/ElementMiniTable.vue'
-import GhsPictogram from './GhsPictogram.vue'
-import RadiationIcon from '../common/RadiationIcon.vue'
+import ElementSidebarPropList from './ElementSidebarPropList.vue'
+import ElementSidebarGridSection from './ElementSidebarGridSection.vue'
+import ElementSidebarNfpaSection from './ElementSidebarNfpaSection.vue'
+import ElementSidebarGhsSection from './ElementSidebarGhsSection.vue'
+import ElementSidebarOverviewSection from './ElementSidebarOverviewSection.vue'
 import CollapsibleSection from '../common/CollapsibleSection.vue'
 import DrawerShell from '../common/DrawerShell.vue'
 import Badge from '../common/Badge.vue'
@@ -165,8 +165,8 @@ const youtubeUrl = computed(() => {
 const collapsedSections = ref<Set<string>>(new Set())
 let lastCollapsedForElement: number | undefined
 
-const containerRef = ref<HTMLElement | null>(null)
-const headerSentinelRef = ref<HTMLElement | null>(null)
+const containerRef = useTemplateRef<HTMLElement>('containerRef')
+const headerSentinelRef = useTemplateRef<HTMLElement>('headerSentinelRef')
 const showStickyNav = ref(false)
 let headerObserver: IntersectionObserver | null = null
 
@@ -419,247 +419,41 @@ function toggleSection(sectionKey: string): void {
             :collapsed="isSectionCollapsed(section.sectionKey ?? section.id)"
             @update:collapsed="toggleSection(section.sectionKey ?? section.id)"
           >
-            <ul v-if="section.id !== 'grid' && section.id !== 'nfpa' && section.id !== 'ghs'" class="element-sidebar__props">
-              <template v-for="(item, idx) in section.items" :key="`${section.sectionKey ?? section.id}-${idx}`">
-                <li
-                  v-if="item.kind === 'miniTable'"
-                  class="element-sidebar__prop element-sidebar__prop--mini-table"
-                >
-                  <ElementMiniTable
-                    v-if="element"
-                    :selected-number="element.number"
-                  />
-                </li>
-                <li
-                  v-else
-                  class="element-sidebar__prop"
-                  :class="{
-                    'element-sidebar__prop--empty': item.empty,
-                    'element-sidebar__prop--text': !item.label,
-                  }"
-                >
-                <span v-if="item.label" class="element-sidebar__prop-label">{{ item.label }}</span>
-                <img
-                  v-if="item.imageUrl"
-                  :src="item.imageUrl"
-                  :alt="item.label"
-                  class="element-sidebar__spectrum-image"
-                />
-                <CollectionGammaSpectrum
-                  v-else-if="item.collectionSpectrumId"
-                  :spectrum-id="item.collectionSpectrumId"
-                  :accent-color="element.color"
-                  :element-symbol="displaySymbol"
-                  :element-name="elementName"
-                  :origin-html="spectrumOriginHtml"
-                  :annotations="element.collection?.spectrum?.annotations"
-                  class="element-sidebar__collection-spectrum"
-                />
-                <div
-                  v-else-if="item.colorHex"
-                  class="element-sidebar__color-swatch"
-                  :class="`element-sidebar__color-swatch--${item.colorFinish ?? 'metallic'}`"
-                  :style="{ backgroundColor: item.colorHex }"
-                />
-                <span
-                  v-else-if="item.html"
-                  class="element-sidebar__prop-value"
-                  v-html="item.value"
-                />
-                <a
-                  v-else-if="item.href"
-                  :href="item.href"
-                  class="element-sidebar__prop-value element-sidebar__prop-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {{ item.value }}
-                </a>
-                <span v-else class="element-sidebar__prop-value">{{ item.value }}</span>
-              </li>
-              </template>
+            <ElementSidebarPropList
+              v-if="section.id !== 'grid' && section.id !== 'nfpa' && section.id !== 'ghs'"
+              :section="section"
+              :element="element"
+              :display-symbol="displaySymbol"
+              :element-name="elementName"
+              :spectrum-origin-html="spectrumOriginHtml"
+              :oxidation-states="oxidationStates"
+            />
 
-              <li
-                v-if="section.id === 'atomic' && oxidationStates"
-                class="element-sidebar__prop"
-              >
-                <span class="element-sidebar__prop-label">{{ tSidebar('oxidationStates') }}</span>
-                <div class="element-sidebar__oxidation">
-                  <ul class="element-sidebar__oxidation-row element-sidebar__oxidation-row--negative">
-                    <li
-                      v-for="(cell, oi) in oxidationStates.negative"
-                      :key="`n-${oi}`"
-                      class="element-sidebar__oxidation-item"
-                      :class="`element-sidebar__oxidation-item--${cell.variant}`"
-                    >
-                      {{ cell.label === '-' ? '−' : cell.label }}
-                    </li>
-                  </ul>
-                  <ul class="element-sidebar__oxidation-row element-sidebar__oxidation-row--positive">
-                    <li
-                      v-for="(cell, oi) in oxidationStates.positive"
-                      :key="`p-${oi}`"
-                      class="element-sidebar__oxidation-item"
-                      :class="`element-sidebar__oxidation-item--${cell.variant}`"
-                    >
-                      {{ cell.label === '-' ? '−' : cell.label }}
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
+            <ElementSidebarGridSection
+              v-if="section.id === 'grid'"
+              :section="section"
+              :image-url="gridSectionImageUrl(section)"
+            />
 
-            <template v-if="section.id === 'grid'">
-              <div class="element-sidebar__grid-layout">
-                <ul class="element-sidebar__props element-sidebar__props--grid">
-                  <li
-                    v-for="(item, idx) in section.items.slice(0, 3)"
-                    :key="`grid-${section.sectionKey ?? section.id}-${idx}`"
-                    class="element-sidebar__prop element-sidebar__prop--grid"
-                    :class="{ 'element-sidebar__prop--empty': item.empty }"
-                  >
-                    <span class="element-sidebar__prop-label">{{ item.label }}</span>
-                    <span
-                      v-if="item.html"
-                      class="element-sidebar__prop-value"
-                      v-html="item.value"
-                    />
-                    <span v-else class="element-sidebar__prop-value">{{ item.value }}</span>
-                  </li>
-                </ul>
-                <img
-                  v-if="gridSectionImageUrl(section)"
-                  :src="gridSectionImageUrl(section)!"
-                  :alt="section.items[0]?.value ?? ''"
-                  class="element-sidebar__grid-image"
-                />
-              </div>
-              <ul
-                v-if="section.items.slice(3).length"
-                class="element-sidebar__props"
-              >
-                <li
-                  v-for="(item, idx) in section.items.slice(3)"
-                  :key="`grid-extra-${section.sectionKey ?? section.id}-${idx}`"
-                  class="element-sidebar__prop"
-                  :class="{ 'element-sidebar__prop--empty': item.empty }"
-                >
-                  <span class="element-sidebar__prop-label">{{ item.label }}</span>
-                  <span
-                    v-if="item.html"
-                    class="element-sidebar__prop-value"
-                    v-html="item.value"
-                  />
-                  <span v-else class="element-sidebar__prop-value">{{ item.value }}</span>
-                </li>
-              </ul>
-            </template>
+            <ElementSidebarNfpaSection
+              v-if="section.id === 'nfpa'"
+              :nfpa-view="nfpaView"
+              :has-diamond="Boolean(nfpaDisplay)"
+            />
 
-            <template v-if="section.id === 'nfpa'">
-              <div class="element-sidebar__nfpa-layout">
-                <ul class="element-sidebar__props element-sidebar__props--nfpa">
-                  <li
-                    class="element-sidebar__prop element-sidebar__prop--nfpa element-sidebar__prop--nfpa-red"
-                    :class="{ 'element-sidebar__prop--empty': nfpaView.redLabel === '----' }"
-                  >
-                    <span class="element-sidebar__prop-label">{{ tSidebar('nfpaFire') }}</span>
-                    <span class="element-sidebar__prop-value">{{ nfpaView.redLabel }}</span>
-                  </li>
-                  <li
-                    class="element-sidebar__prop element-sidebar__prop--nfpa element-sidebar__prop--nfpa-blue"
-                    :class="{ 'element-sidebar__prop--empty': nfpaView.blueLabel === '----' }"
-                  >
-                    <span class="element-sidebar__prop-label">{{ tSidebar('nfpaHealth') }}</span>
-                    <span class="element-sidebar__prop-value">{{ nfpaView.blueLabel }}</span>
-                  </li>
-                  <li
-                    class="element-sidebar__prop element-sidebar__prop--nfpa element-sidebar__prop--nfpa-yellow"
-                    :class="{ 'element-sidebar__prop--empty': nfpaView.yellowLabel === '----' }"
-                  >
-                    <span class="element-sidebar__prop-label">{{ tSidebar('nfpaReactivity') }}</span>
-                    <span class="element-sidebar__prop-value">{{ nfpaView.yellowLabel }}</span>
-                  </li>
-                  <li
-                    class="element-sidebar__prop element-sidebar__prop--nfpa element-sidebar__prop--nfpa-white"
-                    :class="{ 'element-sidebar__prop--empty': nfpaView.whiteLabel === '----' }"
-                  >
-                    <span class="element-sidebar__prop-label">{{ tSidebar('nfpaSpecial') }}</span>
-                    <span class="element-sidebar__prop-value">{{ nfpaView.whiteLabel }}</span>
-                  </li>
-                </ul>
-                <div v-if="nfpaDisplay" class="element-sidebar__diamond-wrap">
-                  <div
-                    class="element-sidebar__diamond"
-                    :aria-label="tSidebar('nfpaDiamond')"
-                  >
-                    <div class="element-sidebar__diamond-item element-sidebar__diamond-item--red">
-                      <span>{{ nfpaView.red }}</span>
-                    </div>
-                    <div class="element-sidebar__diamond-item element-sidebar__diamond-item--yellow">
-                      <span>{{ nfpaView.yellow }}</span>
-                    </div>
-                    <div class="element-sidebar__diamond-item element-sidebar__diamond-item--blue">
-                      <span>{{ nfpaView.blue }}</span>
-                    </div>
-                    <div class="element-sidebar__diamond-item element-sidebar__diamond-item--white">
-                      <span class="element-sidebar__diamond-white-inner">
-                        <template
-                          v-for="(part, index) in nfpaView.whiteDiamondParts"
-                          :key="index"
-                        >
-                          <RadiationIcon
-                            v-if="part.type === 'rad'"
-                            class="element-sidebar__diamond-rad"
-                            :light="resolvedTheme === 'dark'"
-                          />
-                          <span
-                            v-else
-                            :class="{ 'element-sidebar__diamond-w-strike': nfpaView.whiteStrike && part.value === 'W' }"
-                          >{{ part.value }}</span>
-                        </template>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </template>
+            <ElementSidebarGhsSection
+              v-if="section.id === 'ghs'"
+              :items="ghsDisplay"
+            />
 
-            <template v-if="section.id === 'ghs'">
-              <div class="element-sidebar__ghs-grid">
-                <div
-                  v-for="item in ghsDisplay"
-                  :key="item.id"
-                  class="element-sidebar__ghs-item"
-                >
-                  <GhsPictogram :id="item.id" />
-                  <span class="element-sidebar__ghs-label">{{ item.label }}</span>
-                </div>
-              </div>
-            </template>
-
-            <template v-if="section.id === 'overview'">
-              <ElectronShell :shell="overview?.elementShell" :accent-color="element.color" />
-              <div class="element-sidebar__particles">
-                <div class="element-sidebar__particle">
-                  <span class="element-sidebar__particle-label element-sidebar__particle-label--e">
-                    {{ tSidebar('electrons') }}
-                  </span>
-                  <span class="element-sidebar__particle-value">{{ overview?.elementE ?? '—' }}</span>
-                </div>
-                <div class="element-sidebar__particle">
-                  <span class="element-sidebar__particle-label element-sidebar__particle-label--p">
-                    {{ tSidebar('protons') }}
-                  </span>
-                  <span class="element-sidebar__particle-value">{{ overview?.elementP ?? '—' }}</span>
-                </div>
-                <div class="element-sidebar__particle">
-                  <span class="element-sidebar__particle-label element-sidebar__particle-label--n">
-                    {{ tSidebar('neutrons') }}
-                  </span>
-                  <span class="element-sidebar__particle-value">{{ overview?.elementN ?? '—' }}</span>
-                </div>
-              </div>
-            </template>
+            <ElementSidebarOverviewSection
+              v-if="section.id === 'overview'"
+              :shell="overview?.elementShell"
+              :accent-color="element.color"
+              :electrons="overview?.elementE"
+              :protons="overview?.elementP"
+              :neutrons="overview?.elementN"
+            />
           </CollapsibleSection>
         </div>
         </div>
@@ -1006,510 +800,6 @@ function toggleSection(sectionKey: string): void {
   margin-top: 8px;
 }
 
-.element-sidebar__props {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.element-sidebar__prop {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px 16px;
-  padding: 11px 0;
-  border-bottom: 1px solid var(--color-border-light);
-  font-size: 13px;
-}
-
-.element-sidebar__prop--empty {
-  opacity: 0.45;
-}
-
-.element-sidebar__prop--text {
-  display: block;
-}
-
-.element-sidebar__prop--text .element-sidebar__prop-value {
-  display: block;
-  text-align: left;
-  font-weight: 400;
-  line-height: 1.45;
-}
-
-.element-sidebar__prop-label {
-  color: var(--color-text-secondary);
-  font-weight: 400;
-}
-
-.element-sidebar__prop-value {
-  color: var(--color-text);
-  font-weight: 700;
-  text-align: right;
-  word-break: break-word;
-}
-
-.element-sidebar__prop-link {
-  color: var(--color-link);
-  text-decoration: none;
-}
-
-.element-sidebar__prop-link:hover {
-  text-decoration: underline;
-}
-
-.element-sidebar__prop-value sup {
-  font-size: 0.72em;
-  line-height: 0;
-  vertical-align: super;
-}
-
-.element-sidebar__prop-value sub {
-  font-size: 0.72em;
-  line-height: 0;
-  vertical-align: sub;
-}
-
-.element-sidebar__prop-value sup.collection-isotope-mass {
-  font-size: 0.62em;
-  font-weight: 700;
-}
-
-.element-sidebar__prop-value :is(sup, sub) small {
-  font-size: inherit;
-}
-
-.element-sidebar__prop:has(.element-sidebar__oxidation),
-.element-sidebar__prop:has(.element-sidebar__spectrum-image),
-.element-sidebar__prop:has(.element-sidebar__collection-spectrum),
-.element-sidebar__prop:has(.element-sidebar__color-swatch),
-.element-sidebar__prop--mini-table {
-  grid-template-columns: 1fr;
-}
-
-.element-sidebar__prop--mini-table {
-  justify-items: stretch;
-}
-
-.element-sidebar__prop--mini-table .element-mini-table {
-  max-width: 320px;
-  margin: 0 auto;
-}
-
-.element-sidebar__spectrum-image {
-  display: block;
-  width: 100%;
-  margin-top: 6px;
-  border-radius: 4px;
-}
-
-.element-sidebar__color-swatch {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 26px;
-  margin-top: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.element-sidebar__color-swatch::before,
-.element-sidebar__color-swatch::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-/* Polished metal: cylinder + top highlight, no diagonal streak */
-.element-sidebar__color-swatch--metallic {
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.8),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.45),
-    inset 1px 0 1px rgba(255, 255, 255, 0.15),
-    inset -1px 0 1px rgba(0, 0, 0, 0.18);
-}
-
-.element-sidebar__color-swatch--metallic::before {
-  background:
-    radial-gradient(
-      ellipse 110% 70% at 50% -35%,
-      rgba(255, 255, 255, 0.75) 0%,
-      rgba(255, 255, 255, 0.28) 38%,
-      transparent 68%
-    );
-}
-
-.element-sidebar__color-swatch--metallic::after {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.22) 0%,
-      rgba(255, 255, 255, 0.04) 22%,
-      rgba(0, 0, 0, 0.04) 58%,
-      rgba(0, 0, 0, 0.28) 100%
-    ),
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.22) 0%,
-      rgba(255, 255, 255, 0.1) 14%,
-      rgba(255, 255, 255, 0.18) 50%,
-      rgba(255, 255, 255, 0.06) 86%,
-      rgba(0, 0, 0, 0.22) 100%
-    );
-}
-
-/* Glossy (sulfur, bromine, iodine): soft convex sheen */
-.element-sidebar__color-swatch--glossy {
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.55),
-    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.element-sidebar__color-swatch--glossy::before {
-  background: radial-gradient(
-    ellipse 100% 80% at 50% 0%,
-    rgba(255, 255, 255, 0.45) 0%,
-    transparent 65%
-  );
-}
-
-.element-sidebar__color-swatch--glossy::after {
-  background: linear-gradient(
-    180deg,
-    transparent 40%,
-    rgba(0, 0, 0, 0.15) 100%
-  );
-}
-
-/* Gases: subtle top glint */
-.element-sidebar__color-swatch--subtle {
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
-}
-
-.element-sidebar__color-swatch--subtle::before {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.35) 0%,
-    transparent 45%
-  );
-}
-
-.element-sidebar__color-swatch--subtle::after {
-  display: none;
-}
-
-/* Matte surface */
-.element-sidebar__color-swatch--matte {
-  box-shadow: inset 0 -1px 3px rgba(0, 0, 0, 0.22);
-}
-
-.element-sidebar__color-swatch--matte::before {
-  display: none;
-}
-
-.element-sidebar__color-swatch--matte::after {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.05) 0%,
-    transparent 35%,
-    rgba(0, 0, 0, 0.2) 100%
-  );
-}
-
-.element-sidebar__grid-layout {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-
-.element-sidebar__props--grid {
-  flex: 1;
-  min-width: 0;
-}
-
-.element-sidebar__prop--grid {
-  grid-template-columns: 1fr;
-  gap: 4px;
-}
-
-.element-sidebar__prop--grid .element-sidebar__prop-value {
-  text-align: left;
-}
-
-.element-sidebar__grid-image {
-  flex-shrink: 0;
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-}
-
-.element-sidebar__nfpa-layout {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-
-.element-sidebar__props--nfpa {
-  flex: 1;
-  min-width: 0;
-}
-
-.element-sidebar__prop--nfpa {
-  display: block;
-  position: relative;
-  padding-left: 22px;
-  grid-template-columns: unset;
-  gap: 0;
-  border-bottom-color: var(--color-border-subtle);
-}
-
-.element-sidebar__prop--nfpa::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-
-.element-sidebar__prop--nfpa-red::before {
-  background: #d62839;
-}
-
-.element-sidebar__prop--nfpa-blue::before {
-  background: #4f5bd5;
-}
-
-.element-sidebar__prop--nfpa-yellow::before {
-  background: #d4a012;
-}
-
-.element-sidebar__prop--nfpa-white::before {
-  background: var(--color-bg-muted);
-  border: 1px solid var(--color-border-input);
-}
-
-.element-sidebar__prop--nfpa .element-sidebar__prop-label {
-  display: block;
-  margin-bottom: 2px;
-  font-weight: 700;
-  color: var(--color-text);
-  font-size: 13px;
-}
-
-.element-sidebar__prop--nfpa .element-sidebar__prop-value {
-  display: block;
-  text-align: left;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 1.35;
-}
-
-.element-sidebar__diamond-wrap {
-  flex-shrink: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  width: 100px;
-  height: 100px;
-  margin-top: 10px;
-  padding-top: 2px;
-}
-
-.element-sidebar__ghs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
-  gap: 12px 16px;
-}
-
-.element-sidebar__ghs-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  min-width: 0;
-  width: 100%;
-  text-align: center;
-}
-
-.element-sidebar__ghs-label {
-  width: 100%;
-  max-width: 100%;
-  font-size: 12px;
-  line-height: 1.35;
-  color: var(--color-text-secondary);
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  hyphens: auto;
-}
-
-.element-sidebar__diamond {
-  flex-shrink: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2px;
-  width: 82px;
-  height: 82px;
-  min-width: 82px;
-  padding: 2px;
-  border: 1px solid var(--color-border);
-  border-radius: 5px;
-  background: var(--color-bg-subtle);
-  transform: rotate(45deg);
-  margin: 0;
-  box-sizing: border-box;
-}
-
-.element-sidebar__diamond-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 3px;
-  font-size: 15px;
-  font-weight: 700;
-  color: #fff;
-}
-
-.element-sidebar__diamond-item > span {
-  display: block;
-  transform: rotate(-45deg);
-  line-height: 1;
-}
-
-.element-sidebar__diamond-item--red {
-  background: #d62839;
-}
-
-.element-sidebar__diamond-item--yellow {
-  background: #d4a012;
-  color: #fff;
-}
-
-.element-sidebar__diamond-item--blue {
-  background: #4f5bd5;
-}
-
-.element-sidebar__diamond-item--white {
-  background: var(--color-bg);
-  color: var(--color-text-secondary);
-  font-size: 10px;
-  border: 1px solid var(--color-border);
-}
-
-.element-sidebar__diamond-white-inner {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1px;
-  line-height: 1;
-}
-
-.element-sidebar__diamond-rad {
-  width: 1.45em;
-  height: 1.45em;
-  line-height: 1;
-}
-
-.element-sidebar__diamond-w-strike {
-  text-decoration: line-through;
-}
-
-.element-sidebar__oxidation {
-  margin-top: 6px;
-}
-
-.element-sidebar__oxidation-row {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.element-sidebar__oxidation-row--positive {
-  margin-top: 0;
-}
-
-.element-sidebar__oxidation-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 27px;
-  height: 27px;
-  margin: 0 5px 5px 0;
-  border-radius: 50%;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.element-sidebar__oxidation-item--empty {
-  background: var(--color-bg-muted);
-  color: var(--color-text-muted);
-}
-
-.element-sidebar__oxidation-item--zero {
-  background: #e6f3f6;
-  color: #4a8a9b;
-}
-
-.element-sidebar__oxidation-item--negative {
-  background: #e8f0fc;
-  color: #3d6fc4;
-}
-
-.element-sidebar__oxidation-item--positive {
-  background: #fcebee;
-  color: #c43d52;
-}
-
-.element-sidebar__particles {
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-  margin: 16px 0 8px;
-  text-align: center;
-}
-
-.element-sidebar__particle {
-  flex: 1;
-}
-
-.element-sidebar__particle-label {
-  display: inline-block;
-  padding: 5px 8px;
-  border-radius: 5px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 6px;
-  text-transform: uppercase;
-}
-
-.element-sidebar__particle-label--e {
-  background: v-bind('PARTICLE_COLORS.electron');
-}
-
-.element-sidebar__particle-label--p {
-  background: v-bind('PARTICLE_COLORS.proton');
-}
-
-.element-sidebar__particle-label--n {
-  background: v-bind('PARTICLE_COLORS.neutron');
-}
-
-.element-sidebar__particle-value {
-  display: block;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--color-text);
-}
-
 @media (max-width: 900px) {
   .element-sidebar__symbol {
     font-size: 52px;
@@ -1517,17 +807,6 @@ function toggleSection(sectionKey: string): void {
 
   .element-sidebar__name {
     font-size: 20px;
-  }
-
-  .element-sidebar__ghs-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px 10px;
-  }
-}
-
-@media (max-width: 900px) and (orientation: portrait) {
-  .element-sidebar__prop--mini-table .element-mini-table {
-    max-width: none;
   }
 }
 </style>
