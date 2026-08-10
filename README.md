@@ -27,8 +27,7 @@ Live site: **[periodic.mamontov.tech](https://periodic.mamontov.tech)**
 - **Dark/light theme** - manual or system-based
 - **PWA** - installable on device, works offline (Workbox precache)
 
-<details>
-<summary><strong>Full list of element card properties</strong> (click to expand)</summary>
+## Element card properties
 
 | Section | Properties |
 |---|---|
@@ -46,8 +45,6 @@ Live site: **[periodic.mamontov.tech](https://periodic.mamontov.tech)**
 | NFPA 704 | flammability, health hazard, reactivity, special hazard |
 | GHS hazard pictograms | — |
 | Abundance | share by mass in the universe, the Sun, the ocean, the human body, Earth's crust, and meteorites |
-
-</details>
 
 ## Tech stack
 
