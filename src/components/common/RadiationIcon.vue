@@ -21,6 +21,7 @@ defineProps<{
 .radiation-icon {
   display: block;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
 .radiation-icon--light {
