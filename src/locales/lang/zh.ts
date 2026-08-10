@@ -88,7 +88,7 @@ const messages: LocaleMessages = {
     "blockSuffix": "区",
     "sections": {
       "overview": "概况",
-      "mining": "开采/生产地区",
+      "mining": "产地",
       "description": "简介",
       "properties": "性质",
       "thermodynamic": "热力学性质",

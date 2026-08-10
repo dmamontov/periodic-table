@@ -23,7 +23,7 @@ Live site: **[periodic.mamontov.tech](https://periodic.mamontov.tech)**
 - **Element collection** - sample state and container, purity, isotope, origin (direct source / decay product with a multi-step decay chain), photos, an interactive gamma spectrum - click to enlarge, isotope reference lines confirmed against the actual measurement (not just copied from a table), original XML available for download
 - **Collection overview** - a dedicated panel with collection stats by category and every recorded gamma spectrum in one place
 - **Radioactivity** - radioactive elements flagged on the table, NFPA 704 and GHS pictogram cards, isotope and half-life data
-- **Where it's mined/produced** - an interactive map on every element's card, all 118, including synthetic ones (highlighting the discovery/production facility's country) and industrial gases (highlighting the leading producing countries)
+- **Production geography** - an interactive map on every element's card, all 118, including synthetic ones (highlighting the discovery/production facility's country) and industrial gases (highlighting the leading producing countries)
 - **Multilingual** - Russian, English, Chinese (instant switching, browser language auto-detection)
 - **Dark/light theme** - manual or system-based
 - **PWA** - installable on device, works offline (Workbox precache)
@@ -46,7 +46,7 @@ Live site: **[periodic.mamontov.tech](https://periodic.mamontov.tech)**
 | NFPA 704 | flammability, health hazard, reactivity, special hazard |
 | GHS hazard pictograms | — |
 | Abundance | share by mass in the universe, the Sun, the ocean, the human body, Earth's crust, and meteorites |
-| Where it's mined/produced | own section on every one of the 118 elements - map of producing countries plus a short note |
+| Production geography | own section on every one of the 118 elements - map of producing countries plus a short note |
 
 ## Tech stack
 

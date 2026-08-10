@@ -88,7 +88,7 @@ const messages: LocaleMessages = {
     "blockSuffix": "блок",
     "sections": {
       "overview": "Общие сведения",
-      "mining": "Где добывают/производят",
+      "mining": "География производства",
       "description": "Описание",
       "properties": "Свойства",
       "thermodynamic": "Термодинамические свойства",
