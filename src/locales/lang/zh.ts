@@ -176,6 +176,7 @@ const messages: LocaleMessages = {
       "collectionSourceType": "来源：",
       "collectionDecayParent": "衰变链：",
       "collectionPurity": "纯度：",
+      "collectionWeight": "重量：",
       "collectionSpectrum": "谱：",
       "spectrum": "谱："
     },
@@ -191,7 +192,8 @@ const messages: LocaleMessages = {
       "pm": "(皮米)",
       "cm3PerMol": "(立方厘米/摩尔)",
       "mPerS": "(米/秒)",
-      "wPerMK": "(瓦/米·K)"
+      "wPerMK": "(瓦/米·K)",
+      "gram": "克"
     },
     "aggregationState": {
       "gas": "气态",

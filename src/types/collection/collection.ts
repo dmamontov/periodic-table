@@ -24,6 +24,8 @@ export interface ElementCollectionPhysical {
   /** Vessel or packaging (ampoule, box…); empty — sample has no separate container */
   container?: string | null
   purity?: string | null
+  /** Sample weight, grams; a leading "~" marks it approximate (e.g. calculated from bulk density for a hypothetical 1×1×1 cm cube) */
+  weight?: string | null
 }
 
 export interface ElementCollectionRadioactive {

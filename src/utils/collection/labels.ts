@@ -70,3 +70,16 @@ export function formatCollectionPurity(value: string | null | undefined): string
 
   return approximate ? `~${formatted}` : formatted
 }
+
+/** 1.85 → 1.85 г; ~1.85 → ~1.85 г (approximate) */
+export function formatCollectionWeight(value: string | null | undefined, gramUnit: string): string {
+  if (!value) return ''
+  const trimmed = value.trim()
+  if (!trimmed) return ''
+
+  const approximate = trimmed.startsWith('~')
+  const raw = approximate ? trimmed.slice(1).trim() : trimmed
+  if (!raw || Number.isNaN(Number(raw))) return trimmed
+
+  return `${approximate ? '~' : ''}${raw} ${gramUnit}`
+}

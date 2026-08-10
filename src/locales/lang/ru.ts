@@ -176,6 +176,7 @@ const messages: LocaleMessages = {
       "collectionSourceType": "Происхождение:",
       "collectionDecayParent": "Цепочка распада:",
       "collectionPurity": "Чистота:",
+      "collectionWeight": "Вес:",
       "collectionSpectrum": "Спектр:",
       "spectrum": "Спектр:"
     },
@@ -191,7 +192,8 @@ const messages: LocaleMessages = {
       "pm": "(pm)",
       "cm3PerMol": "(см³/моль)",
       "mPerS": "(м/с)",
-      "wPerMK": "(Вт/мК)"
+      "wPerMK": "(Вт/мК)",
+      "gram": "г"
     },
     "aggregationState": {
       "gas": "Газ",

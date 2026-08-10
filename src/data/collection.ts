@@ -66,7 +66,10 @@ export const myElements: Record<string, ElementCollection> = {
     physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '995' },
   },
   F: {
-    physical: { sampleState: 'cubicIngot', purity: '7598' },
+    physical: {
+      description: { ru: 'Куб фторопласта (C₂F₄)', en: 'PTFE (C₂F₄) cube', zh: '聚四氟乙烯（C₂F₄）立方体' },
+      purity: '7598',
+    },
   },
   Ne: {
     physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '99994' },

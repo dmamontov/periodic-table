@@ -22,6 +22,7 @@ import {
   resolveCollectionSampleState,
   resolveSourceType,
   formatCollectionPurity,
+  formatCollectionWeight,
 } from '../collection/labels'
 import {
   formatIonChargeHtml,
@@ -401,6 +402,12 @@ export function buildElementSections(
     fmt(formatCollectionPurity(element.collection?.physical?.purity)),
   )
   if (!purity.empty) collectionItems.push(purity)
+
+  const weight = prop(
+    s.props.collectionWeight,
+    fmt(formatCollectionWeight(element.collection?.physical?.weight, u.gram)),
+  )
+  if (!weight.empty) collectionItems.push(weight)
 
   collectionItems.push(
     prop(

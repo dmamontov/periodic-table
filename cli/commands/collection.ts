@@ -192,6 +192,9 @@ async function editWizard(
   physical.purity = await askText('Purity', existing?.physical?.purity, {
     placeholder: '999 → 99.9%; 6N → 99.9999%; ~999 → ~99.9% (approximate)',
   })
+  physical.weight = await askText('Weight, grams', existing?.physical?.weight, {
+    placeholder: '1.85 → 1.85 g; ~1.85 → ~1.85 g (approximate)',
+  })
   const wantDescription = await askConfirm(
     'Use a ready-made description instead of sampleState (e.g. "Clock hands with self-luminous paint")?',
     !!existing?.physical?.description,

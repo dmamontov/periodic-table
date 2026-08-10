@@ -20,7 +20,7 @@ Live site: **[periodic.mamontov.tech](https://periodic.mamontov.tech)**
 
 - **Full periodic table** - all 118 elements, including the f-block (lanthanides/actinides), with a responsive layout for desktop and mobile
 - **Element card** - 12+ dedicated sections: overview, physical and thermodynamic properties, atomic and electromagnetic characteristics, crystal lattice, reactivity, natural abundance, applications
-- **Element collection** - sample state and container, purity, isotope, origin (direct source / decay product with a multi-step decay chain), photos, an interactive gamma spectrum - click to enlarge, isotope reference lines confirmed against the actual measurement (not just copied from a table), original XML available for download
+- **Element collection** - sample state and container, purity, weight, isotope, origin (direct source / decay product with a multi-step decay chain), photos, an interactive gamma spectrum - click to enlarge, isotope reference lines confirmed against the actual measurement (not just copied from a table), original XML available for download
 - **Collection overview** - a dedicated panel with collection stats by category and every recorded gamma spectrum in one place
 - **Radioactivity** - radioactive elements flagged on the table, NFPA 704 and GHS pictogram cards, isotope and half-life data
 - **Production geography** - an interactive map on every element's card, all 118, including synthetic ones (highlighting the discovery/production facility's country) and industrial gases (highlighting the leading producing countries)
@@ -73,10 +73,11 @@ Forked this to track your own elements? Everything you need to change lives in *
 
 - `collectionName` / `siteTitle` / `siteUrl` - rename the collection and point it at your own domain.
 - `myElements` - a `symbol → details` map. Add a key to mark an element as yours; `{}` alone is enough ("I have it, no details yet"). Each entry groups its fields by topic, all optional:
-  - `physical` - `sampleState`, `container`, `purity`, `description`.
+  - `physical` - `sampleState`, `container`, `purity`, `weight`, `description`.
   - `radioactive` - `isotope`, `sourceType`, `decayParent`. Omit the whole group for non-radioactive elements.
   - `spectrum` - `id`, `filename`, `annotations`. Omit the whole group if you have no measurement file.
 - If the built-in `sampleState`/`container` vocabulary (in [`src/locales/collection.ts`](src/locales/collection.ts)) doesn't cover your sample, either add a new entry there, or skip it entirely and put ready-made text straight into an element's `physical.description` field - see the radioactive elements in `collection.ts` for an example. `radioactive.sourceType` is fixed to `'primary'` / `'secondary'`.
+- `physical.weight` is grams, plain text - `1.85` shows as "1.85 g", `~1.85` (leading tilde) shows as "~1.85 g" for an estimated rather than measured weight.
 - Every text field accepts either a plain string (shown in all three UI languages) or `{ ru, en, zh }` if you want it translated.
 
 Gamma spectra (the `spectrum.id`/`spectrum.filename` fields) are optional - only set them if you actually have measurement files to drop into `src/data/spectra/`. `spectrum.annotations` marks reference gamma/X-ray lines on the chart (energy in keV + a label) - only add a line once you've confirmed it's both a documented emission line and actually visible against the background in your own measurement, not just copied from a table.

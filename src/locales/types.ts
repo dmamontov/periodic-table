@@ -198,6 +198,7 @@ export interface LocaleMessages {
       collectionSourceType: string
       collectionDecayParent: string
       collectionPurity: string
+      collectionWeight: string
       collectionSpectrum: string
       spectrum: string
     }
@@ -214,6 +215,7 @@ export interface LocaleMessages {
       cm3PerMol: string
       mPerS: string
       wPerMK: string
+      gram: string
     }
     aggregationState: Record<'gas' | 'solid' | 'liquid' | 'unknown', string>
     magneticType: Record<'none' | 'diamagnetic' | 'paramagnetic' | 'antiferromagnetic' | 'ferromagnetic', string>
