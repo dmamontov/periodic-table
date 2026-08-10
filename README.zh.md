@@ -73,11 +73,12 @@ Fork 了本项目、想记录自己的元素收藏？需要修改的内容全部
 
 - `collectionName` / `siteTitle` / `siteUrl` - 重命名收藏名称，并换成你自己的域名。
 - `myElements` - 一个"元素符号 → 详情"的映射表。只要加上一个键就代表这个元素归你所有；空对象 `{}` 已经足够（"我有这个元素，细节以后再补"）。每条记录的字段按主题分组，均为可选：
-  - `physical` - `sampleState`、`container`、`purity`、`weight`、`description`。
+  - `physical` - `sampleState`、`container`、`purity`、`weight`、`allotrope`、`description`。
   - `radioactive` - `isotope`、`sourceType`、`decayParent`。非放射性元素可以整组省略。
   - `spectrum` - `id`、`filename`、`annotations`。没有测量文件时可以整组省略。
 - 如果内置的 `sampleState`/`container` 词汇表（在 [`src/locales/collection.ts`](src/locales/collection.ts) 中）不够用，你可以在那里添加新条目，也可以完全跳过词汇表，直接把现成的文字写进该元素的 `physical.description` 字段 - `collection.ts` 里的放射性元素就是这么做的，可以参考。`radioactive.sourceType` 固定取值为 `'primary'` 或 `'secondary'`。
 - `physical.weight` 是以克为单位的普通文本 - `1.85` 显示为「1.85 克」，`~1.85`（前面加波浪号）显示为「~1.85 克」，表示估算而非实测的重量。
+- `physical.allotrope` 用于标明该元素若有多种同素异形体时样品的具体形态（例如磷的「红磷」、碳的「石墨」）- 作为独立一行显示在 `sampleState` 旁边，而非取代它。
 - 任何文本字段既可以写成一个普通字符串（在三种界面语言下都显示同一内容），也可以写成 `{ ru, en, zh }` 对象来分别翻译。
 
 伽马能谱（`spectrum.id`/`spectrum.filename` 字段）是可选的 - 只有当你确实有测量文件要放进 `src/data/spectra/` 时才需要填写。`spectrum.annotations` 字段在图表上标出参考伽马/X 射线谱线（能量单位 keV + 标签）- 只有当它既是该同位素的已记录发射线，又确实能在你自己的测量本底之上看到时，才值得添加，而不是直接照抄表格数值。

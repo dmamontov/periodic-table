@@ -21,6 +21,8 @@ export interface ElementCollectionPhysical {
   sampleState?: string | null
   /** Ready-made description overriding sampleState (e.g. "Clock hands with self-luminous paint") */
   description?: LocalizedLabel | null
+  /** Specific allotrope/modification of the element, when the sample is one of several (e.g. "Red phosphorus", "Graphite") — free text, shown alongside sampleState rather than replacing it */
+  allotrope?: LocalizedLabel | null
   /** Vessel or packaging (ampoule, box…); empty — sample has no separate container */
   container?: string | null
   purity?: string | null

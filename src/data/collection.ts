@@ -57,7 +57,11 @@ export const myElements: Record<string, ElementCollection> = {
     physical: { sampleState: 'cubicIngot', purity: '999' },
   },
   C: {
-    physical: { sampleState: 'cubicIngot', purity: '999' },
+    physical: {
+      sampleState: 'cubicIngot',
+      purity: '999',
+            allotrope: { ru: 'Графит', en: 'Graphite', zh: '石墨' },
+    },
   },
   N: {
     physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '999' },
@@ -87,7 +91,12 @@ export const myElements: Record<string, ElementCollection> = {
     physical: { sampleState: 'cubicIngot', purity: '6N' },
   },
   P: {
-    physical: { sampleState: 'pressedPowder', container: 'acrylicBox', purity: '987' },
+    physical: {
+      sampleState: 'pressedPowder',
+      container: 'acrylicBox',
+      purity: '987',
+            allotrope: { ru: 'Красный фосфор', en: 'Red phosphorus', zh: '红磷' },
+    },
   },
   S: {
     physical: { sampleState: 'pressedPowder', container: 'acrylicBox', purity: '999' },

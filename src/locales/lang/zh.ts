@@ -171,6 +171,7 @@ const messages: LocaleMessages = {
       "neutronCrossSection": "中子截面：",
       "color": "颜色：",
       "collectionSampleState": "样品：",
+      "collectionAllotrope": "同素异形体：",
       "collectionContainer": "容器：",
       "collectionIsotope": "同位素：",
       "collectionSourceType": "来源：",

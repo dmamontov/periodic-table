@@ -414,6 +414,15 @@ export function buildElementSections(
       s.props.collectionSampleState,
       fmt(resolveCollectionSampleState(locale, element.collection)),
     ),
+  )
+
+  const allotrope = prop(
+    s.props.collectionAllotrope,
+    fmt(resolveLocalizedLabel(element.collection?.physical?.allotrope, locale)),
+  )
+  if (!allotrope.empty) collectionItems.push(allotrope)
+
+  collectionItems.push(
     prop(
       s.props.collectionContainer,
       fmt(resolveCollectionLabel(locale, 'containers', element.collection?.physical?.container)),

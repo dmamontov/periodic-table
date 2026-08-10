@@ -73,11 +73,12 @@ Forked this to track your own elements? Everything you need to change lives in *
 
 - `collectionName` / `siteTitle` / `siteUrl` - rename the collection and point it at your own domain.
 - `myElements` - a `symbol → details` map. Add a key to mark an element as yours; `{}` alone is enough ("I have it, no details yet"). Each entry groups its fields by topic, all optional:
-  - `physical` - `sampleState`, `container`, `purity`, `weight`, `description`.
+  - `physical` - `sampleState`, `container`, `purity`, `weight`, `allotrope`, `description`.
   - `radioactive` - `isotope`, `sourceType`, `decayParent`. Omit the whole group for non-radioactive elements.
   - `spectrum` - `id`, `filename`, `annotations`. Omit the whole group if you have no measurement file.
 - If the built-in `sampleState`/`container` vocabulary (in [`src/locales/collection.ts`](src/locales/collection.ts)) doesn't cover your sample, either add a new entry there, or skip it entirely and put ready-made text straight into an element's `physical.description` field - see the radioactive elements in `collection.ts` for an example. `radioactive.sourceType` is fixed to `'primary'` / `'secondary'`.
 - `physical.weight` is grams, plain text - `1.85` shows as "1.85 g", `~1.85` (leading tilde) shows as "~1.85 g" for an estimated rather than measured weight.
+- `physical.allotrope` names the specific allotrope/modification when the sample is one of several the element can take (e.g. "Red phosphorus" for P, "Graphite" for C) - shown as its own row alongside `sampleState`, not instead of it.
 - Every text field accepts either a plain string (shown in all three UI languages) or `{ ru, en, zh }` if you want it translated.
 
 Gamma spectra (the `spectrum.id`/`spectrum.filename` fields) are optional - only set them if you actually have measurement files to drop into `src/data/spectra/`. `spectrum.annotations` marks reference gamma/X-ray lines on the chart (energy in keV + a label) - only add a line once you've confirmed it's both a documented emission line and actually visible against the background in your own measurement, not just copied from a table.

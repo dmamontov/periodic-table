@@ -193,6 +193,7 @@ export interface LocaleMessages {
       neutronCrossSection: string
       color: string
       collectionSampleState: string
+      collectionAllotrope: string
       collectionContainer: string
       collectionIsotope: string
       collectionSourceType: string

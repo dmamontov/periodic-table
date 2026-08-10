@@ -171,6 +171,7 @@ const messages: LocaleMessages = {
       "neutronCrossSection": "Ядерное эффективное сечение, Барн:",
       "color": "Цвет:",
       "collectionSampleState": "Образец:",
+      "collectionAllotrope": "Модификация:",
       "collectionContainer": "Контейнер:",
       "collectionIsotope": "Изотоп:",
       "collectionSourceType": "Происхождение:",

@@ -195,6 +195,13 @@ async function editWizard(
   physical.weight = await askText('Weight, grams', existing?.physical?.weight, {
     placeholder: '1.85 → 1.85 g; ~1.85 → ~1.85 g (approximate)',
   })
+  const wantAllotrope = await askConfirm(
+    'Specific allotrope/modification (e.g. "Red phosphorus", "Graphite")?',
+    !!existing?.physical?.allotrope,
+  )
+  physical.allotrope = wantAllotrope
+    ? await askLocalizedLabel('Allotrope', existing?.physical?.allotrope)
+    : undefined
   const wantDescription = await askConfirm(
     'Use a ready-made description instead of sampleState (e.g. "Clock hands with self-luminous paint")?',
     !!existing?.physical?.description,
