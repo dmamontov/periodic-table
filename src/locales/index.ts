@@ -47,6 +47,17 @@ export function getElementDescription(number: number, locale: Locale): string {
   )
 }
 
+export function getElementProductionNote(number: number, locale: Locale): string {
+  const key = getSymbolByNumber(number)
+  if (!key) return ''
+  return (
+    localeMessages[locale].production[key] ??
+    localeMessages.en.production[key] ??
+    localeMessages.ru.production[key] ??
+    ''
+  )
+}
+
 const LEGEND_KEY_BY_ID: Record<string, LegendKey> = {
   alkali: 'alkali',
   'alkaline-earth': 'alkalineEarth',

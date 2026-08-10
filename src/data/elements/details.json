@@ -11418,5 +11418,673 @@
     "Hs": "https://www.youtube.com/watch?v=URrKWQHfAoE",
     "Cn": "https://www.youtube.com/watch?v=D3-WOnG5eRM",
     "Nh": "https://www.youtube.com/watch?v=_fveV0EDygQ"
+  },
+  "productionCountries": {
+    "H": [
+      "cn",
+      "us",
+      "ru"
+    ],
+    "He": [
+      "us",
+      "qa",
+      "dz",
+      "ru",
+      "ca"
+    ],
+    "Li": [
+      "au",
+      "cl",
+      "cn",
+      "ar"
+    ],
+    "Be": [
+      "us",
+      "cn"
+    ],
+    "B": [
+      "tr",
+      "us"
+    ],
+    "C": [
+      "cn",
+      "mg",
+      "mz",
+      "br"
+    ],
+    "N": [
+      "cn",
+      "ru",
+      "in",
+      "us"
+    ],
+    "O": [
+      "us",
+      "cn",
+      "ru"
+    ],
+    "F": [
+      "cn",
+      "mx",
+      "mn",
+      "za"
+    ],
+    "Ne": [
+      "ua",
+      "cn",
+      "ru",
+      "us"
+    ],
+    "Na": [
+      "cn",
+      "us",
+      "in",
+      "de"
+    ],
+    "Mg": [
+      "cn",
+      "us",
+      "ru",
+      "il"
+    ],
+    "Al": [
+      "au",
+      "gn",
+      "cn",
+      "br",
+      "in"
+    ],
+    "Si": [
+      "cn",
+      "br",
+      "no",
+      "ru"
+    ],
+    "P": [
+      "cn",
+      "ma",
+      "us",
+      "ru"
+    ],
+    "S": [
+      "cn",
+      "us",
+      "ru",
+      "sa"
+    ],
+    "Cl": [
+      "cn",
+      "us",
+      "de",
+      "jp"
+    ],
+    "Ar": [
+      "de",
+      "cn",
+      "be",
+      "nl",
+      "ca"
+    ],
+    "K": [
+      "ca",
+      "ru",
+      "by",
+      "cn"
+    ],
+    "Ca": [
+      "cn",
+      "ru",
+      "us"
+    ],
+    "Sc": [
+      "cn",
+      "ru",
+      "kz",
+      "ph"
+    ],
+    "Ti": [
+      "au",
+      "za",
+      "cn",
+      "mz",
+      "ke"
+    ],
+    "V": [
+      "cn",
+      "ru",
+      "za",
+      "br"
+    ],
+    "Cr": [
+      "za",
+      "kz",
+      "tr",
+      "in"
+    ],
+    "Mn": [
+      "za",
+      "au",
+      "ga",
+      "cn"
+    ],
+    "Fe": [
+      "au",
+      "br",
+      "cn",
+      "in",
+      "ru"
+    ],
+    "Co": [
+      "cd",
+      "id",
+      "ru",
+      "au",
+      "ca"
+    ],
+    "Ni": [
+      "id",
+      "ph",
+      "ru",
+      "nc",
+      "au"
+    ],
+    "Cu": [
+      "cl",
+      "pe",
+      "cd",
+      "cn",
+      "us"
+    ],
+    "Zn": [
+      "cn",
+      "au",
+      "pe",
+      "in",
+      "mx"
+    ],
+    "Ga": [
+      "cn"
+    ],
+    "Ge": [
+      "cn"
+    ],
+    "As": [
+      "cn",
+      "ma",
+      "ru"
+    ],
+    "Se": [
+      "jp",
+      "de",
+      "be",
+      "ru",
+      "ph"
+    ],
+    "Br": [
+      "il",
+      "jo",
+      "cn",
+      "us"
+    ],
+    "Kr": [
+      "ua",
+      "cn",
+      "ru",
+      "us"
+    ],
+    "Rb": [
+      "cn"
+    ],
+    "Sr": [
+      "es",
+      "cn",
+      "mx",
+      "ar"
+    ],
+    "Y": [
+      "cn",
+      "mm",
+      "us",
+      "au",
+      "th"
+    ],
+    "Zr": [
+      "au",
+      "za",
+      "cn",
+      "mz",
+      "id"
+    ],
+    "Nb": [
+      "br",
+      "ca",
+      "cd",
+      "ru",
+      "rw"
+    ],
+    "Mo": [
+      "cn",
+      "cl",
+      "pe",
+      "us",
+      "mx"
+    ],
+    "Tc": [
+      "ca",
+      "nl",
+      "be",
+      "za"
+    ],
+    "Ru": [
+      "za",
+      "ru",
+      "zw",
+      "ca",
+      "us"
+    ],
+    "Rh": [
+      "za",
+      "ru",
+      "zw",
+      "ca",
+      "us"
+    ],
+    "Pd": [
+      "ru",
+      "za",
+      "ca",
+      "zw",
+      "us"
+    ],
+    "Ag": [
+      "mx",
+      "cn",
+      "pe",
+      "cl",
+      "pl"
+    ],
+    "Cd": [
+      "cn",
+      "kr",
+      "ca",
+      "jp",
+      "mx"
+    ],
+    "In": [
+      "cn",
+      "kr",
+      "jp",
+      "ca",
+      "be"
+    ],
+    "Sn": [
+      "cn",
+      "mm",
+      "id",
+      "pe",
+      "cd"
+    ],
+    "Sb": [
+      "cn",
+      "tj",
+      "tr",
+      "mm",
+      "ru"
+    ],
+    "Te": [
+      "cn",
+      "ru",
+      "jp",
+      "ca",
+      "se"
+    ],
+    "I": [
+      "cl",
+      "jp",
+      "us",
+      "tm",
+      "ir"
+    ],
+    "Xe": [
+      "cn",
+      "in",
+      "de",
+      "us",
+      "ru"
+    ],
+    "Cs": [
+      "cn",
+      "ca"
+    ],
+    "Ba": [
+      "in",
+      "cn",
+      "ma",
+      "kz",
+      "la"
+    ],
+    "La": [
+      "cn",
+      "us",
+      "mm",
+      "au",
+      "th"
+    ],
+    "Ce": [
+      "cn",
+      "us",
+      "mm",
+      "au",
+      "th"
+    ],
+    "Pr": [
+      "cn",
+      "us",
+      "mm",
+      "au",
+      "th"
+    ],
+    "Nd": [
+      "cn",
+      "us",
+      "mm",
+      "au",
+      "th"
+    ],
+    "Pm": [
+      "us",
+      "ru"
+    ],
+    "Sm": [
+      "cn",
+      "us",
+      "mm",
+      "au",
+      "th"
+    ],
+    "Eu": [
+      "cn",
+      "us",
+      "mm",
+      "au",
+      "th"
+    ],
+    "Gd": [
+      "cn",
+      "us",
+      "mm",
+      "au",
+      "th"
+    ],
+    "Tb": [
+      "cn",
+      "mm",
+      "us",
+      "au",
+      "th"
+    ],
+    "Dy": [
+      "cn",
+      "mm",
+      "us",
+      "au",
+      "th"
+    ],
+    "Ho": [
+      "cn",
+      "us",
+      "mm",
+      "au",
+      "th"
+    ],
+    "Er": [
+      "cn",
+      "us",
+      "mm",
+      "au",
+      "th"
+    ],
+    "Tm": [
+      "cn",
+      "us",
+      "mm",
+      "au",
+      "th"
+    ],
+    "Yb": [
+      "cn",
+      "us",
+      "mm",
+      "au",
+      "th"
+    ],
+    "Lu": [
+      "cn",
+      "mm",
+      "us",
+      "au",
+      "th"
+    ],
+    "Hf": [
+      "au",
+      "za",
+      "cn",
+      "mz",
+      "id"
+    ],
+    "Ta": [
+      "cd",
+      "rw",
+      "br",
+      "ng",
+      "cn"
+    ],
+    "W": [
+      "cn",
+      "vn",
+      "ru",
+      "kp",
+      "bo"
+    ],
+    "Re": [
+      "cl",
+      "us",
+      "pl",
+      "uz",
+      "kr"
+    ],
+    "Os": [
+      "za",
+      "ru",
+      "zw",
+      "ca",
+      "us"
+    ],
+    "Ir": [
+      "za",
+      "ru",
+      "zw",
+      "ca",
+      "us"
+    ],
+    "Pt": [
+      "za",
+      "ru",
+      "zw",
+      "ca",
+      "us"
+    ],
+    "Au": [
+      "cn",
+      "au",
+      "ru",
+      "ca",
+      "us"
+    ],
+    "Hg": [
+      "cn",
+      "tj",
+      "pe",
+      "no",
+      "kg"
+    ],
+    "Tl": [
+      "cn",
+      "kz",
+      "ru",
+      "pe",
+      "br"
+    ],
+    "Pb": [
+      "cn",
+      "au",
+      "us",
+      "pe",
+      "ru"
+    ],
+    "Bi": [
+      "cn",
+      "la",
+      "kr",
+      "jp",
+      "kz"
+    ],
+    "Po": [
+      "ru"
+    ],
+    "At": [
+      "us",
+      "jp"
+    ],
+    "Rn": [
+      "at",
+      "cz",
+      "ru"
+    ],
+    "Fr": [
+      "fr",
+      "us"
+    ],
+    "Ra": [
+      "no"
+    ],
+    "Ac": [
+      "us",
+      "de",
+      "ru",
+      "ca"
+    ],
+    "Th": [
+      "in",
+      "cn",
+      "br",
+      "my",
+      "vn"
+    ],
+    "Pa": [
+      "gb"
+    ],
+    "U": [
+      "kz",
+      "ca",
+      "na",
+      "au",
+      "uz"
+    ],
+    "Np": [
+      "fr",
+      "ru",
+      "gb"
+    ],
+    "Pu": [
+      "us",
+      "ru",
+      "fr",
+      "gb"
+    ],
+    "Am": [
+      "us",
+      "ru"
+    ],
+    "Cm": [
+      "us",
+      "ru"
+    ],
+    "Bk": [
+      "us"
+    ],
+    "Cf": [
+      "us",
+      "ru"
+    ],
+    "Es": [
+      "us"
+    ],
+    "Fm": [
+      "us"
+    ],
+    "Md": [
+      "us"
+    ],
+    "No": [
+      "ru",
+      "us"
+    ],
+    "Lr": [
+      "us",
+      "ru"
+    ],
+    "Rf": [
+      "ru",
+      "us"
+    ],
+    "Db": [
+      "ru",
+      "us"
+    ],
+    "Sg": [
+      "us",
+      "ru"
+    ],
+    "Bh": [
+      "de"
+    ],
+    "Hs": [
+      "de"
+    ],
+    "Mt": [
+      "de"
+    ],
+    "Ds": [
+      "de"
+    ],
+    "Rg": [
+      "de"
+    ],
+    "Cn": [
+      "de"
+    ],
+    "Nh": [
+      "jp"
+    ],
+    "Fl": [
+      "ru"
+    ],
+    "Mc": [
+      "ru",
+      "us"
+    ],
+    "Lv": [
+      "ru",
+      "us"
+    ],
+    "Ts": [
+      "ru",
+      "us"
+    ],
+    "Og": [
+      "ru",
+      "us"
+    ]
   }
 }

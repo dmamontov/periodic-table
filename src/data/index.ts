@@ -337,6 +337,13 @@ export function getElementGhsPictograms(number: number): GhsPictogramId[] {
   return list ?? []
 }
 
+export function getElementProductionCountries(number: number): string[] {
+  const symbol = getSymbolByNumber(number)
+  if (!symbol) return []
+  const list = (detailsFile.productionCountries as Record<string, string[]>)[symbol]
+  return list ?? []
+}
+
 export function channelToEnergy(
   channel: number,
   calibration: CollectionSpectrumData['calibration'],

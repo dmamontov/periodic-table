@@ -110,6 +110,7 @@ export interface LocaleMessages {
     blockSuffix: string
     sections: {
       overview: string
+      mining: string
       description: string
       properties: string
       thermodynamic: string
@@ -278,6 +279,7 @@ export interface LocaleMessages {
   decay: Record<DecayModeKey, string>
   applications: Record<string, string>
   descriptions: Record<string, string>
+  production: Record<string, string>
   legend: Record<LegendKey, string>
   elements: Record<string, string>
   seo: {

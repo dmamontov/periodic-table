@@ -41,6 +41,7 @@ export const PARTICLE_COLORS = {
 /** Accent color per element-detail sidebar section (left border, section title). */
 export const SECTION_COLORS: Record<SectionId, string> = {
   overview: '#f6511d',
+  mining: '#a0622d',
   description: '#6f42c1',
   collection: COLLECTION_COLOR,
   properties: '#00a878',

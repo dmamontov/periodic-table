@@ -11,6 +11,9 @@ importers:
       '@fontsource/pt-sans':
         specifier: 5.2.8
         version: 5.2.8
+      '@svg-maps/world':
+        specifier: 2.0.0
+        version: 2.0.0
       '@unhead/vue':
         specifier: 3.3.1
         version: 3.3.1(@oxc-project/types@0.133.0)(esbuild@0.28.2)(lightningcss@1.32.0)(rolldown@1.0.3)(rollup@4.62.2)(vite@8.0.16(@types/node@24.13.2)(esbuild@0.28.2)(terser@5.48.0)(tsx@4.23.11))(vue@3.5.38(typescript@6.0.3))
@@ -20,6 +23,9 @@ importers:
       vue-router:
         specifier: 4.6.4
         version: 4.6.4(vue@3.5.38(typescript@6.0.3))
+      vue-svg-map:
+        specifier: 2.0.0-beta.1
+        version: 2.0.0-beta.1(vue@3.5.38(typescript@6.0.3))
       workbox-window:
         specifier: 7.4.1
         version: 7.4.1
@@ -1135,6 +1141,9 @@ packages:
     resolution: {integrity: sha512-BfzEnDJOt9T8M989/lA37EcJgat01wLRnoi5dQf3QzOH7jzpqTAzdDbVfRljVr5r+jzKqpbHeyOfAaXxAd0PAA==, tarball: https://registry.npmjs.org/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.62.2.tgz}
     cpu: [x64]
     os: [win32]
+
+  '@svg-maps/world@2.0.0':
+    resolution: {integrity: sha512-VmYYnyygJ5Zhr48xPqukFBoq4aCBgVNIjBzqBnWKXSdHhrRK3pntdvbCa8lMsxwVCFzEw9a+smIMEGI2sC1xcQ==, tarball: https://registry.npmjs.org/@svg-maps/world/-/world-2.0.0.tgz}
 
   '@trickfilm400/rollup-plugin-off-main-thread@3.0.0-pre1':
     resolution: {integrity: sha512-/67zpWDBLV+oYAEL682s1ktXL0HgqX76f6gaVGkGnVZlBbm1zd0v4Bz8MFF2GGhoX9rvfq3KSQHubFHwa6w6/Q==, tarball: https://registry.npmjs.org/@trickfilm400/rollup-plugin-off-main-thread/-/rollup-plugin-off-main-thread-3.0.0-pre1.tgz}
@@ -2828,6 +2837,11 @@ packages:
     peerDependencies:
       vue: ^3.5.0
 
+  vue-svg-map@2.0.0-beta.1:
+    resolution: {integrity: sha512-kl6PqyD9mN4qFO6xkY0M0r2mbVYqO5YHc63GhTb944oXZDi0CIxNJLrdRFxp0UgempK6oei1Vz2o/K6mEMxfww==, tarball: https://registry.npmjs.org/vue-svg-map/-/vue-svg-map-2.0.0-beta.1.tgz}
+    peerDependencies:
+      vue: ^3.0.0
+
   vue-tsc@3.3.5:
     resolution: {integrity: sha512-Rzh/G2MmNlMSAMTiQEjDrsb4dgB/jbtEM47rVN2NtidF1dfb/q4w4QvpQBtW5+y3y5H27Hjh7deVwk+YB02fNg==, tarball: https://registry.npmjs.org/vue-tsc/-/vue-tsc-3.3.5.tgz}
     hasBin: true
@@ -4002,6 +4016,8 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.62.2':
     optional: true
+
+  '@svg-maps/world@2.0.0': {}
 
   '@trickfilm400/rollup-plugin-off-main-thread@3.0.0-pre1':
     dependencies:
@@ -5870,6 +5886,10 @@ snapshots:
   vue-router@4.6.4(vue@3.5.38(typescript@6.0.3)):
     dependencies:
       '@vue/devtools-api': 6.6.4
+      vue: 3.5.38(typescript@6.0.3)
+
+  vue-svg-map@2.0.0-beta.1(vue@3.5.38(typescript@6.0.3)):
+    dependencies:
       vue: 3.5.38(typescript@6.0.3)
 
   vue-tsc@3.3.5(typescript@6.0.3):

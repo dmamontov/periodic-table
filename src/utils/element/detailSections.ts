@@ -10,6 +10,7 @@ import type {
 import type { DetailProp, DetailSection } from '../../types/element/section'
 import { getElementPeriod } from '../../data'
 import {
+  getElementProductionCountries,
   getElementRadiacodeIsotope,
   getElementSpectrumUrl,
   getRadiacodeIsotopeUrl,
@@ -37,7 +38,7 @@ import {
   formatMainIsotopesHtml,
 } from './isotopes'
 import { formatNucleusDurationDisplay } from '../heatmap'
-import { getElementApplications, getElementDescription } from '../../locales'
+import { getElementApplications, getElementDescription, getElementProductionNote } from '../../locales'
 import { collectionName } from '../../data/collection'
 import { resolveLocalizedLabel } from '../localizedLabel'
 
@@ -443,6 +444,15 @@ export function buildElementSections(
     items: [prop('', getElementDescription(detail.number, locale))],
   }
 
+  const miningSection: DetailSection = {
+    id: 'mining',
+    title: s.sections.mining,
+    color: SECTION_COLORS.mining,
+    items: [],
+    miningCountries: getElementProductionCountries(detail.number),
+    miningNote: getElementProductionNote(detail.number, locale),
+  }
+
   const sections: DetailSection[] = [
     ...(element.inCollection ? [collectionSection] : []),
     overviewSection,
@@ -604,6 +614,7 @@ export function buildElementSections(
         prop(s.prevalence.meteorites.replace('%s', elementName), pr?.prevalence6 ? `${pr.prevalence6}%` : EMPTY),
       ],
     },
+    miningSection,
   ]
 
   return sections.map(withSectionKey)
@@ -626,6 +637,8 @@ function hasOxidationContent(rows: OxidationStateRows | null): boolean {
 
 export function isSectionEmpty(section: DetailSection, context: SectionEmptyContext): boolean {
   switch (section.id) {
+    case 'mining':
+      return false
     case 'nfpa':
       return !context.nfpaDisplay
     case 'ghs':

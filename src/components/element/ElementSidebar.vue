@@ -25,6 +25,7 @@ import ElementSidebarGridSection from './ElementSidebarGridSection.vue'
 import ElementSidebarNfpaSection from './ElementSidebarNfpaSection.vue'
 import ElementSidebarGhsSection from './ElementSidebarGhsSection.vue'
 import ElementSidebarOverviewSection from './ElementSidebarOverviewSection.vue'
+import ElementSidebarMiningSection from './ElementSidebarMiningSection.vue'
 import CollapsibleSection from '../common/CollapsibleSection.vue'
 import DrawerShell from '../common/DrawerShell.vue'
 import Badge from '../common/Badge.vue'
@@ -420,7 +421,7 @@ function toggleSection(sectionKey: string): void {
             @update:collapsed="toggleSection(section.sectionKey ?? section.id)"
           >
             <ElementSidebarPropList
-              v-if="section.id !== 'grid' && section.id !== 'nfpa' && section.id !== 'ghs'"
+              v-if="section.id !== 'grid' && section.id !== 'nfpa' && section.id !== 'ghs' && section.id !== 'mining'"
               :section="section"
               :element="element"
               :display-symbol="displaySymbol"
@@ -453,6 +454,12 @@ function toggleSection(sectionKey: string): void {
               :electrons="overview?.elementE"
               :protons="overview?.elementP"
               :neutrons="overview?.elementN"
+            />
+
+            <ElementSidebarMiningSection
+              v-if="section.id === 'mining'"
+              :countries="section.miningCountries ?? []"
+              :note="section.miningNote ?? ''"
             />
           </CollapsibleSection>
         </div>

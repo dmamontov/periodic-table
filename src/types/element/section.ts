@@ -2,6 +2,7 @@ import type { ElementSampleColorFinish } from './element'
 
 export type SectionId =
   | 'overview'
+  | 'mining'
   | 'description'
   | 'collection'
   | 'properties'
@@ -37,4 +38,6 @@ export interface DetailSection {
   color: string
   items: DetailProp[]
   gridStructureNum?: number | null
+  miningCountries?: string[]
+  miningNote?: string
 }
