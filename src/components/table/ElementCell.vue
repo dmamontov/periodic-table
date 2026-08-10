@@ -257,8 +257,8 @@ const isWeaklyRadioactive = computed(() => isElementWeaklyRadioactive(props.elem
 }
 
 .element-cell__radioactive-icon {
-  width: calc(var(--cell-size, 76px) * 0.105);
-  height: calc(var(--cell-size, 76px) * 0.105);
+  width: calc(var(--cell-size, 76px) * 0.12);
+  height: calc(var(--cell-size, 76px) * 0.12);
 }
 
 .element-cell__radioactive--weak {
