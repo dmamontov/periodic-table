@@ -30,33 +30,22 @@ Live site: **[periodic.mamontov.tech](https://periodic.mamontov.tech)**
 <details>
 <summary><strong>Full list of element card properties</strong> (click to expand)</summary>
 
-**Overview** - Latin name, English name, year of discovery, discoverer, country of discovery, CAS number, color, electron shell
-
-**Description** - free-text summary
-
-**Applications** - free-text overview of practical uses
-
-**Properties** - atomic number, atomic mass, density, melting point, boiling point, valence, period, group, block, position on the periodic table (mini map), emission spectrum (image)
-
-**Atomic properties** - electron configuration, ion charge, ionization potential, atomic radius, covalent radius, Van der Waals radius, oxidation states
-
-**Reactivity** - electronegativity, valence, electron affinity
-
-**Thermodynamic properties** - state of matter, molar heat of fusion, specific heat capacity, thermal expansion, molar heat of vaporization
-
-**Electromagnetic properties** - electrical conductivity, electrical type, magnetic type, volume/mass/molar magnetic susceptibility, resistivity, superconductivity temperature
-
-**Crystal lattice** - lattice structure, lattice parameters, ratio, Debye temperature, space group, space group number, lattice structure image
-
-**Additional information** - CID number, RTEC number, Brinell/Mohs/Vickers hardness, bulk modulus, Young's modulus, liquid density, molar volume, Poisson's ratio, shear modulus, speed of sound, refractive index, thermal conductivity
-
-**Nuclear properties** - radioactivity, main isotopes, decay mode, half-life, lifetime, neutron cross section, RadiaCode isotope reference (for radioactive elements)
-
-**NFPA 704** - flammability, health hazard, reactivity, special hazard
-
-**GHS hazard pictograms**
-
-**Abundance** - share by mass in the universe, the Sun, the ocean, the human body, Earth's crust, and meteorites
+| Section | Properties |
+|---|---|
+| Overview | Latin name, English name, year of discovery, discoverer, country of discovery, CAS number, color, electron shell |
+| Description | free-text summary |
+| Applications | free-text overview of practical uses |
+| Properties | atomic number, atomic mass, density, melting point, boiling point, valence, period, group, block, position on the periodic table (mini map), emission spectrum (image) |
+| Atomic properties | electron configuration, ion charge, ionization potential, atomic radius, covalent radius, Van der Waals radius, oxidation states |
+| Reactivity | electronegativity, valence, electron affinity |
+| Thermodynamic properties | state of matter, molar heat of fusion, specific heat capacity, thermal expansion, molar heat of vaporization |
+| Electromagnetic properties | electrical conductivity, electrical type, magnetic type, volume/mass/molar magnetic susceptibility, resistivity, superconductivity temperature |
+| Crystal lattice | lattice structure, lattice parameters, ratio, Debye temperature, space group, space group number, lattice structure image |
+| Additional information | CID number, RTEC number, Brinell/Mohs/Vickers hardness, bulk modulus, Young's modulus, liquid density, molar volume, Poisson's ratio, shear modulus, speed of sound, refractive index, thermal conductivity |
+| Nuclear properties | radioactivity, main isotopes, decay mode, half-life, lifetime, neutron cross section, RadiaCode isotope reference (for radioactive elements) |
+| NFPA 704 | flammability, health hazard, reactivity, special hazard |
+| GHS hazard pictograms | — |
+| Abundance | share by mass in the universe, the Sun, the ocean, the human body, Earth's crust, and meteorites |
 
 </details>
 
