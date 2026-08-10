@@ -144,6 +144,27 @@ function propMiniTable(): DetailProp {
   }
 }
 
+function propCountryMap(countries: string[]): DetailProp {
+  return {
+    label: '',
+    value: '',
+    kind: 'countryMap',
+    mapCountries: countries,
+    empty: false,
+  }
+}
+
+const ISO_COUNTRY_CODE = /^[A-Z]{2}$/
+
+function discoveryMapCountries(code: string | null | undefined): string[] {
+  if (!code) return []
+  return code
+    .split(',')
+    .map((part) => part.trim())
+    .filter((part) => ISO_COUNTRY_CODE.test(part))
+    .map((part) => part.toLowerCase())
+}
+
 function propColor(
   label: string,
   colorHex: string | null,
@@ -347,6 +368,8 @@ export function buildElementSections(
   const pr = detail.PrevalenceCommon
   const period = getElementPeriod(element)
 
+  const discoveryCountries = discoveryMapCountries(o?.countryOpener)
+
   const overviewSection: DetailSection = {
     id: 'overview',
     title: s.sections.overview,
@@ -357,6 +380,7 @@ export function buildElementSections(
       prop(s.props.discoveryYear, fmt(o?.elementOpenedYear)),
       prop(s.props.discoveryOpener, formatOpener(o?.elementOpener, locale)),
       prop(s.props.discoveryCountry, countryLabel(o?.countryOpener, messages)),
+      ...(discoveryCountries.length > 0 ? [propCountryMap(discoveryCountries)] : []),
       prop(s.props.casNumber, fmt(o?.casNumber)),
       propColor(
         s.props.color,

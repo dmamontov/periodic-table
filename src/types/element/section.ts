@@ -27,7 +27,8 @@ export interface DetailProp {
   colorHex?: string | null
   colorFinish?: ElementSampleColorFinish
   collectionSpectrumId?: string | null
-  kind?: 'miniTable'
+  kind?: 'miniTable' | 'countryMap'
+  mapCountries?: string[]
   empty?: boolean
 }
 

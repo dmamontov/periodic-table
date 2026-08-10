@@ -1,10 +1,13 @@
 <script setup lang="ts">
+import { defineAsyncComponent } from 'vue'
 import { useLocale } from '../../locales'
 import type { Element } from '../../types/element/element'
 import type { DetailSection } from '../../types/element/section'
 import type { OxidationStateRows } from '../../utils/element/detailSections'
 import CollectionGammaSpectrum from '../collection/CollectionGammaSpectrum.vue'
 import ElementMiniTable from '../table/ElementMiniTable.vue'
+
+const ElementProductionMap = defineAsyncComponent(() => import('./ElementProductionMap.vue'))
 
 defineProps<{
   section: DetailSection
@@ -26,6 +29,12 @@ const { tSidebar } = useLocale()
         class="element-sidebar__prop element-sidebar__prop--mini-table"
       >
         <ElementMiniTable :selected-number="element.number" />
+      </li>
+      <li
+        v-else-if="item.kind === 'countryMap'"
+        class="element-sidebar__prop element-sidebar__prop--country-map"
+      >
+        <ElementProductionMap :countries="item.mapCountries ?? []" :accent-color="section.color" />
       </li>
       <li
         v-else
@@ -181,7 +190,8 @@ const { tSidebar } = useLocale()
 .element-sidebar__prop:has(.element-sidebar__spectrum-image),
 .element-sidebar__prop:has(.element-sidebar__collection-spectrum),
 .element-sidebar__prop:has(.element-sidebar__color-swatch),
-.element-sidebar__prop--mini-table {
+.element-sidebar__prop--mini-table,
+.element-sidebar__prop--country-map {
   grid-template-columns: 1fr;
 }
 
@@ -190,6 +200,15 @@ const { tSidebar } = useLocale()
 }
 
 .element-sidebar__prop--mini-table .element-mini-table {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.element-sidebar__prop--country-map {
+  justify-items: stretch;
+}
+
+.element-sidebar__prop--country-map .element-production-map {
   max-width: 320px;
   margin: 0 auto;
 }
@@ -367,6 +386,10 @@ const { tSidebar } = useLocale()
 
 @media (max-width: 900px) and (orientation: portrait) {
   .element-sidebar__prop--mini-table .element-mini-table {
+    max-width: none;
+  }
+
+  .element-sidebar__prop--country-map .element-production-map {
     max-width: none;
   }
 }
