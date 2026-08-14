@@ -18,6 +18,8 @@ const messages: LocaleMessages = {
   "collectionPanel": {
     "sectionTitle": "В цифрах",
     "spectraSectionTitle": "Спектры",
+    "wishlistSectionTitle": "Можно приобрести",
+    "wishlistUpgradeBadge": "Замена",
     "close": "Закрыть",
     "statCollected": "Собрано элементов",
     "statRadioactive": "Радиоактивных образцов",

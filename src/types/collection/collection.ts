@@ -54,3 +54,25 @@ export interface ElementCollection {
   radioactive?: ElementCollectionRadioactive | null
   spectrum?: ElementCollectionSpectrum | null
 }
+
+export interface WishlistLink {
+  /** Plain-text label for the link, e.g. "Luciteria" — a seller/brand name, not localized */
+  label: string
+  url: string
+}
+
+export interface WishlistEntry {
+  /** Isotope mass number(s) as sold, e.g. "147" or "242/243/244" for a mixed sample */
+  isotope: string
+  /** Where to get it — an array since a future entry may list more than one seller */
+  links: WishlistLink[]
+  /**
+   * Decay chain from an isotope physically co-located in the same product (per the
+   * seller's own description) down to this sample's isotope, most distant ancestor
+   * first — same shape as ElementCollectionDecayParent. Omit when no such in-situ
+   * decay relationship is described by the seller.
+   */
+  decayParent?: ElementCollectionDecayParent[] | null
+  /** True when this replaces/upgrades an existing myElements sample rather than adding a brand-new element */
+  upgrade?: boolean
+}

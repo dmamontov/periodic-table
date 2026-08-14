@@ -1,4 +1,4 @@
-import type { ElementCollection } from '../types/collection/collection'
+import type { ElementCollection, WishlistEntry } from '../types/collection/collection'
 import type { LocalizedLabel } from '../utils/localizedLabel'
 
 /**
@@ -60,7 +60,7 @@ export const myElements: Record<string, ElementCollection> = {
     physical: {
       sampleState: 'cubicIngot',
       purity: '999',
-            allotrope: { ru: 'Графит', en: 'Graphite', zh: '石墨' },
+      allotrope: { ru: 'Графит', en: 'Graphite', zh: '石墨' },
     },
   },
   N: {
@@ -95,7 +95,7 @@ export const myElements: Record<string, ElementCollection> = {
       sampleState: 'pressedPowder',
       container: 'acrylicBox',
       purity: '987',
-            allotrope: { ru: 'Красный фосфор', en: 'Red phosphorus', zh: '红磷' },
+      allotrope: { ru: 'Красный фосфор', en: 'Red phosphorus', zh: '红磷' },
     },
   },
   S: {
@@ -416,5 +416,90 @@ export const myElements: Record<string, ElementCollection> = {
         { energy: 26.3, label: 'Am-241' },
       ],
     },
+  },
+}
+
+/**
+ * Elements you don't have yet, or already have but in a meaningfully worse state —
+ * keyed by symbol, one entry each. Each WishlistEntry:
+ *   - isotope — mass number(s) as sold, e.g. "227" or "242/243/244" for a mixed
+ *     sample; leave '' for a stable element sold without isotope enrichment.
+ *   - links — where to get it; an array, since one element may end up with more
+ *     than one seller over time. Each link is `{ label, url }`.
+ *   - decayParent — only set this if the seller's own listing describes a parent
+ *     isotope physically co-located in the same product, decaying into the sold
+ *     isotope in situ right now — not just "this is how it was manufactured."
+ *     Same shape as ElementCollectionDecayParent, most distant ancestor first.
+ *   - upgrade — true if this entry replaces an existing myElements sample rather
+ *     than adding a brand-new element.
+ */
+export const wishlist: Record<string, WishlistEntry> = {
+  Pm: { isotope: '147', links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/promethium-lucite-cube-pm2x2' }] },
+  Tc: {
+    isotope: '99',
+    links: [
+      {
+        label: 'Luciteria',
+        url: 'https://luciteria.com/collections/lucite/products/technetium-50mm-lucite-cube-tc2x2',
+      },
+    ],
+  },
+  Ac: {
+    isotope: '227',
+    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/actinium-50mm-lucite-cube-ac2x2' }],
+  },
+  Pa: {
+    isotope: '231',
+    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/protactinium-50mm-lucite-cube' }],
+  },
+  Fr: {
+    isotope: '223',
+    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/francium-50mm-lucite-cube-fr2x2' }],
+    decayParent: [{ symbol: 'Ac', isotope: '227' }],
+  },
+  At: {
+    isotope: '219',
+    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/astatine-lucite-cube-at2x2' }],
+    decayParent: [
+      { symbol: 'Ac', isotope: '227' },
+      { symbol: 'Fr', isotope: '223' },
+    ],
+  },
+  Cm: {
+    isotope: '242/243/244',
+    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/curium-50mm-lucite-cube-cm2x2' }],
+  },
+  Bk: {
+    isotope: '249',
+    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/berkelium-50mm-lucite-cube-bk2x2' }],
+  },
+  Cf: {
+    isotope: '249',
+    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/californium-50mm-lucite-cube-cf2x2' }],
+    decayParent: [{ symbol: 'Bk', isotope: '249' }],
+  },
+  Es: {
+    isotope: '254',
+    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/einsteinium-50mm-lucite-cube-es2x2' }],
+  },
+  Th: {
+    isotope: '232',
+    links: [{ label: 'Luciteria', url: 'https://www.luciteria.com/element-cubes/p/thorium-cube' }],
+    upgrade: true,
+  },
+  U: {
+    isotope: '238',
+    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/uranium-metal-99-9-depleted-u238' }],
+    upgrade: true,
+  },
+  Ir: {
+    isotope: '',
+    links: [
+      {
+        label: 'AliExpress',
+        url: 'https://aliexpress.ru/item/1005011884567298.html?sku_id=12000056887903501',
+      },
+    ],
+    upgrade: true,
   },
 }

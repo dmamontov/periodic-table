@@ -5,8 +5,10 @@ import { useLocale } from '../../locales'
 import { computeCollectionStats } from '../../utils/collection/stats'
 import { elements, getElementRouteSymbol } from '../../data'
 import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes'
+import { wishlist } from '../../data/collection'
 import CollectionGammaSpectrum from './CollectionGammaSpectrum.vue'
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue'
+import CollectionWishlistRow from './CollectionWishlistRow.vue'
 import CollapsibleSection from '../common/CollapsibleSection.vue'
 import DrawerShell from '../common/DrawerShell.vue'
 import CloseButton from '../common/CloseButton.vue'
@@ -23,6 +25,7 @@ const isOpen = computed(() => route.name === 'collection')
 const stats = computeCollectionStats()
 const sectionCollapsed = ref(false)
 const spectraCollapsed = ref(false)
+const wishlistCollapsed = ref(false)
 
 const spectrumElements = elements.flatMap((el) => {
   const spectrumId = el.collection?.spectrum?.id
@@ -39,6 +42,25 @@ const spectrumElements = elements.flatMap((el) => {
       spectrumId,
       originHtml,
       annotations: el.collection?.spectrum?.annotations,
+    },
+  ]
+})
+
+// Iterate in periodic-table (atomic number) order rather than object insertion order.
+const wishlistElements = elements.flatMap((el) => {
+  const entry = wishlist[el.symbol]
+  if (!entry) return []
+  const originHtml =
+    formatDecayChainHtml(el.symbol, entry.isotope, entry.decayParent) ||
+    formatIsotopeHtml(el.symbol, entry.isotope)
+  return [
+    {
+      symbol: el.symbol,
+      routeSymbol: getElementRouteSymbol(el.symbol),
+      color: el.color,
+      originHtml,
+      links: entry.links,
+      upgrade: entry.upgrade,
     },
   ]
 })
@@ -198,6 +220,27 @@ function openElement(symbol: string) {
               </div>
             </div>
           </CollapsibleSection>
+
+          <CollapsibleSection
+            v-if="wishlistElements.length"
+            v-model:collapsed="wishlistCollapsed"
+            :title="messages.collectionPanel.wishlistSectionTitle"
+            :accent-color="COLLECTION_COLOR"
+          >
+            <div class="collection-panel__wishlist-list">
+              <CollectionWishlistRow
+                v-for="item in wishlistElements"
+                :key="item.symbol"
+                :symbol="item.symbol"
+                :name="messages.elements[item.symbol] ?? ''"
+                :color="item.color"
+                :origin-html="item.originHtml"
+                :links="item.links"
+                :upgrade="item.upgrade"
+                @open="openElement(item.routeSymbol)"
+              />
+            </div>
+          </CollapsibleSection>
         </div>
       </div>
   </DrawerShell>
@@ -348,6 +391,11 @@ function openElement(symbol: string) {
 
 .collection-panel__spectrum-header:hover :deep(.element-spectrum-heading__name) {
   color: var(--color-text);
+}
+
+.collection-panel__wishlist-list {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 900px) {
