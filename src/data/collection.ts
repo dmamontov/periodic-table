@@ -312,9 +312,14 @@ export const myElements: Record<string, ElementCollection> = {
     spectrum: {
       id: 'po-84-staticmaster',
       filename: { ru: 'Po-210 (Staticmaster).xml', en: 'Po-210 (Staticmaster).xml', zh: 'Po-210 (Staticmaster).xml' },
+      leadShielded: true,
       annotations: [
-        { energy: 46.5, label: 'Pb-210' },
-        { energy: 75.0, label: 'Pb/Bi Kα' },
+        { energy: 47.4, label: 'Pb-210' },
+        { energy: 78.3, label: 'Pb Kα/Kβ' },
+        { energy: 183.7, label: 'Ra-226' },
+        { energy: 288.3, label: 'Pb-214' },
+        { energy: 342.4, label: 'Pb-214' },
+        { energy: 596.1, label: 'Bi-214' },
       ],
     },
   },
@@ -327,6 +332,19 @@ export const myElements: Record<string, ElementCollection> = {
       isotope: '222',
       sourceType: 'secondary',
       decayParent: [{ symbol: 'Ra', isotope: '226' }],
+    },
+    spectrum: {
+      id: 'rn-86-spd',
+      filename: { ru: 'Rn-222 (СПД).xml', en: 'Rn-222 (SPD).xml', zh: 'Rn-222 (SPD).xml' },
+      leadShielded: true,
+      annotations: [
+        { energy: 78.3, label: 'Pb Kα/Kβ' },
+        { energy: 181.3, label: 'Ra-226' },
+        { energy: 237.0, label: 'Pb-214' },
+        { energy: 290.8, label: 'Pb-214' },
+        { energy: 342.4, label: 'Pb-214' },
+        { energy: 593.5, label: 'Bi-214' },
+      ],
     },
   },
   Ra: {
@@ -341,10 +359,14 @@ export const myElements: Record<string, ElementCollection> = {
     spectrum: {
       id: 'ra-88-spd',
       filename: { ru: 'Ra-226 (СПД).xml', en: 'Ra-226 (SPD).xml', zh: 'Ra-226 (SPD).xml' },
+      leadShielded: true,
       annotations: [
-        { energy: 186.2, label: 'Ra-226' },
-        { energy: 351.9, label: 'Pb-214' },
-        { energy: 609.3, label: 'Bi-214' },
+        { energy: 78.3, label: 'Pb Kα/Kβ' },
+        { energy: 181.3, label: 'Ra-226' },
+        { energy: 237.0, label: 'Pb-214' },
+        { energy: 288.3, label: 'Pb-214' },
+        { energy: 342.4, label: 'Pb-214' },
+        { energy: 593.5, label: 'Bi-214' },
       ],
     },
   },
@@ -361,7 +383,13 @@ export const myElements: Record<string, ElementCollection> = {
     spectrum: {
       id: 'th-90-wt20',
       filename: { ru: 'Th-232 (WT-20).xml', en: 'Th-232 (WT-20).xml', zh: 'Th-232 (WT-20).xml' },
-      annotations: [{ energy: 238.6, label: 'Pb-212' }],
+      leadShielded: true,
+      annotations: [
+        { energy: 64.0, label: 'Th-232' },
+        { energy: 232.2, label: 'Pb-212' },
+        { energy: 327.6, label: 'Ac-228' },
+        { energy: 568.0, label: 'Tl-208' },
+      ],
     },
   },
   U: {
@@ -377,10 +405,11 @@ export const myElements: Record<string, ElementCollection> = {
     spectrum: {
       id: 'u-92-glass',
       filename: { ru: 'U-238 (Бисер из ураносодержащего стекла).xml', en: 'U-238 (Uranium glass beads).xml', zh: 'U-238（含铀玻璃珠）.xml' },
+      leadShielded: true,
       annotations: [
-        { energy: 63.3, label: 'Th-234' },
+        { energy: 66.4, label: 'Th-234' },
         { energy: 92.6, label: 'Th-234' },
-        { energy: 185.7, label: 'U-235' },
+        { energy: 181.3, label: 'U-235' },
       ],
     },
   },
@@ -396,7 +425,11 @@ export const myElements: Record<string, ElementCollection> = {
     spectrum: {
       id: 'pu-94-rid6m',
       filename: { ru: 'Pu-239 (РИД-6М).xml', en: 'Pu-239 (RID-6M).xml', zh: 'Pu-239 (RID-6M).xml' },
-      annotations: [{ energy: 17.2, label: 'U Lα (Pu-239)' }],
+      leadShielded: true,
+      annotations: [
+        { energy: 16.7, label: 'U Lα (Pu-239)' },
+        { energy: 61.7, label: 'Am-241' },
+      ],
     },
   },
   Am: {
@@ -411,9 +444,10 @@ export const myElements: Record<string, ElementCollection> = {
     spectrum: {
       id: 'am-95-his07',
       filename: { ru: 'Am-241 (HIS-07).xml', en: 'Am-241 (HIS-07).xml', zh: 'Am-241 (HIS-07).xml' },
+      leadShielded: true,
       annotations: [
-        { energy: 59.5, label: 'Am-241' },
-        { energy: 26.3, label: 'Am-241' },
+        { energy: 19.1, label: 'Np Lα (Am-241)' },
+        { energy: 61.7, label: 'Am-241' },
       ],
     },
   },
@@ -426,6 +460,15 @@ export const myElements: Record<string, ElementCollection> = {
       isotope: '237',
       sourceType: 'secondary',
       decayParent: [{ symbol: 'Am', isotope: '241' }],
+    },
+    spectrum: {
+      id: 'np-93-his07',
+      filename: { ru: 'Np-237 (HIS-07).xml', en: 'Np-237 (HIS-07).xml', zh: 'Np-237 (HIS-07).xml' },
+      leadShielded: true,
+      annotations: [
+        { energy: 19.1, label: 'Np Lα (Am-241)' },
+        { energy: 61.7, label: 'Am-241' },
+      ],
     },
   },
 }
