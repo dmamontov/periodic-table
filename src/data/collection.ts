@@ -556,4 +556,10 @@ export const wishlist: Record<string, WishlistEntry> = {
     ],
     upgrade: true,
   },
+  Np: {
+    isotope: '237',
+    links: [{ label: 'eBay', url: 'https://www.ebay.com/itm/227286127570' }],
+    decayParent: [{ symbol: 'Am', isotope: '241' }],
+    upgrade: true,
+  },
 }
