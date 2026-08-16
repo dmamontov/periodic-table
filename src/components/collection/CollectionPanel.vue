@@ -42,6 +42,7 @@ const spectrumElements = elements.flatMap((el) => {
       spectrumId,
       originHtml,
       annotations: el.collection?.spectrum?.annotations,
+      leadShielded: el.collection?.spectrum?.leadShielded,
     },
   ]
 })
@@ -214,6 +215,7 @@ function openElement(symbol: string) {
                   :element-name="messages.elements[item.symbol]"
                   :origin-html="item.originHtml"
                   :annotations="item.annotations"
+                  :lead-shielded="item.leadShielded"
                   :siblings="spectrumElements"
                   :sibling-index="index"
                 />

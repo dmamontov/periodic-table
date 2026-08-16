@@ -259,6 +259,11 @@ export interface LocaleMessages {
     collectionSpectrumZoom: string
     collectionSpectrumPrev: string
     collectionSpectrumNext: string
+    collectionSpectrumScale: string
+    collectionSpectrumFilter: string
+    collectionSpectrumLeadShielded: string
+    collectionSpectrumScaleLinear: string
+    collectionSpectrumScaleLog: string
     miniTableAria: string
     sourceTypes: Record<'primary' | 'secondary', string>
   }

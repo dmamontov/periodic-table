@@ -59,6 +59,7 @@ const { tSidebar } = useLocale()
           :element-name="elementName"
           :origin-html="spectrumOriginHtml"
           :annotations="element.collection?.spectrum?.annotations"
+          :lead-shielded="element.collection?.spectrum?.leadShielded"
           class="element-sidebar__collection-spectrum"
         />
         <div

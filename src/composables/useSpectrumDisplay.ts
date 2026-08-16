@@ -7,6 +7,7 @@ import {
   formatSpectrumCaption,
   formatSpectrumCpsLabel,
   formatSpectrumDurationLabel,
+  type SpectrumYScale,
 } from '../utils/collection/spectrumChart'
 import type { CollectionSpectrumData } from '../types/collection/spectrum'
 import type { SpectrumAnnotation } from '../types/collection/collection'
@@ -16,10 +17,14 @@ export function useSpectrumDisplay(
   data: Ref<CollectionSpectrumData | null>,
   spectrumId: Ref<string | undefined>,
   annotations: Ref<SpectrumAnnotation[] | null | undefined>,
+  yScale?: Ref<SpectrumYScale>,
+  smoothingRadius?: Ref<number>,
 ) {
   const { locale } = useLocale()
 
-  const chart = computed(() => buildSpectrumChart(data.value, annotations.value))
+  const chart = computed(() =>
+    buildSpectrumChart(data.value, annotations.value, yScale?.value, smoothingRadius?.value),
+  )
   const caption = computed(() => formatSpectrumCaption(data.value))
   const durationLabel = computed(() => formatSpectrumDurationLabel(data.value))
   const cpsLabel = computed(() => formatSpectrumCpsLabel(data.value, locale.value))

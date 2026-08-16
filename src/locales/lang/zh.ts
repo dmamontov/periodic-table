@@ -277,6 +277,11 @@ const messages: LocaleMessages = {
     "collectionSpectrumZoom": "放大光谱",
     "collectionSpectrumPrev": "上一个光谱",
     "collectionSpectrumNext": "下一个光谱",
+    "collectionSpectrumScale": "计数刻度",
+    "collectionSpectrumFilter": "滤波",
+    "collectionSpectrumLeadShielded": "在铅屏蔽室内测量",
+    "collectionSpectrumScaleLinear": "lin",
+    "collectionSpectrumScaleLog": "log",
     "miniTableAria": "元素周期表缩略图，所选元素已高亮",
     "sourceTypes": {
       "primary": "直接来源",

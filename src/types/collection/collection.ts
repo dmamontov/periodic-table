@@ -46,6 +46,8 @@ export interface ElementCollectionSpectrum {
   filename?: LocalizedLabel | null
   /** Reference gamma/X-ray lines on the chart — each must be a documented line AND show a real signal in this spectrum */
   annotations?: SpectrumAnnotation[] | null
+  /** True if this measurement was taken inside a lead shield (background-suppressing enclosure) */
+  leadShielded?: boolean | null
 }
 
 export interface ElementCollection {

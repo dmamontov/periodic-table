@@ -277,6 +277,11 @@ const messages: LocaleMessages = {
     "collectionSpectrumZoom": "Увеличить спектр",
     "collectionSpectrumPrev": "Предыдущий спектр",
     "collectionSpectrumNext": "Следующий спектр",
+    "collectionSpectrumScale": "Шкала счёта",
+    "collectionSpectrumFilter": "Фильтр",
+    "collectionSpectrumLeadShielded": "Измерено в свинцовом домике",
+    "collectionSpectrumScaleLinear": "lin",
+    "collectionSpectrumScaleLog": "log",
     "miniTableAria": "Миниатюра периодической таблицы, выбранный элемент выделен",
     "sourceTypes": {
       "primary": "Прямой источник",

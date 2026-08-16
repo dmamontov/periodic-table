@@ -50,6 +50,13 @@ function buildYTicks(maxCount: number): number[] {
   return ticks
 }
 
+/** One tick per decade (0, 1, 10, 100, ...) for the log count axis, matching the log1p mapping in toY. */
+function buildYTicksLog(maxCount: number): number[] {
+  const ticks: number[] = [0]
+  for (let v = 1; v <= maxCount; v *= 10) ticks.push(v)
+  return ticks
+}
+
 function formatYTick(value: number): string {
   if (value < 1000) return String(value)
   const k = value / 1000
@@ -70,16 +77,24 @@ function smoothCounts(counts: number[], radius = 2): number[] {
   return out
 }
 
+export type SpectrumYScale = 'linear' | 'log'
+
+/** Moving-average radius, 0 (off) to 4 (max) — mirrors the RadiaCode app's own 0-4 spectrum filter slider. */
+export const SPECTRUM_SMOOTHING_MAX = 4
+export const SPECTRUM_SMOOTHING_DEFAULT = 2
+
 export function buildSpectrumChart(
   data: CollectionSpectrumData | null,
   annotations: SpectrumAnnotation[] | null | undefined,
+  yScale: SpectrumYScale = 'linear',
+  smoothingRadius: number = SPECTRUM_SMOOTHING_DEFAULT,
 ): GammaSpectrumChartData | null {
   if (!data) return null
 
   const { counts, calibration } = data
   const displayMaxEnergy = detectDisplayMaxEnergy(counts, calibration)
   // Drop the device's overflow tally in the last channel before smoothing/plotting.
-  const smoothed = smoothCounts(counts.slice(0, -1))
+  const smoothed = smoothCounts(counts.slice(0, -1), smoothingRadius)
   const points: { ch: number; count: number }[] = []
 
   for (let ch = 0; ch < smoothed.length; ch++) {
@@ -99,7 +114,12 @@ export function buildSpectrumChart(
   const baseY = pad.top + plotH
 
   const toX = (energy: number) => pad.left + (energy / displayMaxEnergy) * plotW
-  const toY = (count: number) => pad.top + plotH - (count / maxCount) * plotH
+  // log1p, not log — count=0 must still land on the baseline, same as in linear mode.
+  const logMax = Math.log10(maxCount + 1)
+  const toY =
+    yScale === 'log'
+      ? (count: number) => pad.top + plotH - (Math.log10(count + 1) / logMax) * plotH
+      : (count: number) => pad.top + plotH - (count / maxCount) * plotH
   // Each channel's own bar edges — a spectrometer bins counts per channel, it doesn't interpolate a curve.
   const leftEdgeX = (ch: number) => toX(channelToEnergy(ch - 0.5, calibration))
   const rightEdgeX = (ch: number) => toX(channelToEnergy(ch + 0.5, calibration))
@@ -140,7 +160,7 @@ export function buildSpectrumChart(
       x: toX(e),
       label: String(e),
     })),
-    yTicks: buildYTicks(maxCount).map((v) => ({
+    yTicks: (yScale === 'log' ? buildYTicksLog(maxCount) : buildYTicks(maxCount)).map((v) => ({
       value: v,
       y: toY(v),
       label: formatYTick(v),
