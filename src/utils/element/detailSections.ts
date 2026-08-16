@@ -2,10 +2,19 @@ import type { LocaleMessages } from '../../locales/types'
 import type { Locale } from '../../locales/types'
 import type { Element } from '../../types/element/element'
 import type {
+  Additional,
   AggregationState,
+  Atomic,
+  Electromagnetic,
   ElementDetail,
   Grid,
   MagneticType,
+  Nucleus,
+  Overview,
+  Prevalence,
+  Properties,
+  Reactivity,
+  Thermo,
 } from '../../types/element/detail'
 import type { DetailProp, DetailSection } from '../../types/element/section'
 import { getElementPeriod } from '../../data'
@@ -348,30 +357,31 @@ function withUnit(value: string | null | undefined, unit: string): string {
   return v === EMPTY ? EMPTY : `${v} ${unit}`
 }
 
-export function buildElementSections(
-  detail: ElementDetail,
-  element: Element,
-  messages: LocaleMessages,
-  elementName: string,
-  locale: Locale,
-): DetailSection[] {
-  const s = messages.sidebar
-  const u = s.units
-  const o = detail.overview
-  const p = detail.properties
-  const t = detail.thermo
-  const a = detail.atomic
-  const e = detail.electromagnetic
-  const g = detail.grid
-  const add = detail.additional
-  const r = detail.reactivity
-  const n = detail.nucleus
-  const pr = detail.prevalence
-  const period = getElementPeriod(element)
+interface SectionBuildContext {
+  detail: ElementDetail
+  element: Element
+  messages: LocaleMessages
+  elementName: string
+  locale: Locale
+  s: LocaleMessages['sidebar']
+  u: LocaleMessages['sidebar']['units']
+  o?: Overview
+  p?: Properties
+  t?: Thermo
+  a?: Atomic
+  e?: Electromagnetic
+  g?: Grid
+  add?: Additional
+  r?: Reactivity
+  n?: Nucleus
+  pr?: Prevalence
+  period: number
+}
 
+function buildOverviewSection(ctx: SectionBuildContext): DetailSection {
+  const { detail, messages, locale, s, o } = ctx
   const discoveryCountries = discoveryMapCountries(o?.countryOpener)
-
-  const overviewSection: DetailSection = {
+  return {
     id: 'overview',
     title: s.sections.overview,
     color: SECTION_COLORS.overview,
@@ -391,7 +401,10 @@ export function buildElementSections(
       prop(s.props.electronShell, fmt(o?.elementShell)),
     ],
   }
+}
 
+function buildCollectionSection(ctx: SectionBuildContext): DetailSection {
+  const { detail, element, locale, s, u } = ctx
   const showRadioactiveCollectionFields =
     isElementRadioactive(detail.number) && !isElementWeaklyRadioactive(detail.number)
 
@@ -463,28 +476,37 @@ export function buildElementSections(
     if (!spectrum.empty) collectionItems.push(spectrum)
   }
 
-  const collectionSection: DetailSection = {
+  return {
     id: 'collection',
     title: resolveLocalizedLabel(collectionName, locale),
     color: SECTION_COLORS.collection,
     items: collectionItems,
   }
+}
 
-  const applicationsSection: DetailSection = {
+function buildApplicationsSection(ctx: SectionBuildContext): DetailSection {
+  const { detail, locale, s } = ctx
+  return {
     id: 'applications',
     title: s.sections.applications,
     color: SECTION_COLORS.applications,
     items: [prop('', getElementApplications(detail.number, locale))],
   }
+}
 
-  const descriptionSection: DetailSection = {
+function buildDescriptionSection(ctx: SectionBuildContext): DetailSection {
+  const { detail, locale, s } = ctx
+  return {
     id: 'description',
     title: s.sections.description,
     color: SECTION_COLORS.description,
     items: [prop('', getElementDescription(detail.number, locale))],
   }
+}
 
-  const miningSection: DetailSection = {
+function buildMiningSection(ctx: SectionBuildContext): DetailSection {
+  const { detail, locale, s } = ctx
+  return {
     id: 'mining',
     title: s.sections.mining,
     color: SECTION_COLORS.mining,
@@ -492,169 +514,244 @@ export function buildElementSections(
     miningCountries: getElementProductionCountries(detail.number),
     miningNote: getElementProductionNote(detail.number, locale),
   }
+}
+
+function buildPropertiesSection(ctx: SectionBuildContext): DetailSection {
+  const { detail, messages, s, u, p, period } = ctx
+  return {
+    id: 'properties',
+    title: s.sections.properties,
+    color: SECTION_COLORS.properties,
+    items: [
+      prop(s.props.atomicNumber, String(detail.number)),
+      prop(s.props.atomicMass, withUnit(p?.elementMasse, u.gPerMol)),
+      prop(s.props.density, withUnit(p?.elementDensity, u.gPerCm3)),
+      prop(s.props.meltingPoint, fmtTemp(p?.elementMeltingPoint, u)),
+      prop(s.props.boilingPoint, fmtTemp(p?.elementBoilingPoint, u)),
+      prop(s.props.valence, fmt(p?.elValence)),
+      prop(s.props.period, String(period)),
+      prop(s.props.group, fmt(p?.elementGroup)),
+      prop(s.props.block, blockLabel(p?.elementBlock, messages)),
+      propMiniTable(),
+      propImage(s.props.emissionSpectrum, getElementSpectrumUrl(detail.number)),
+    ],
+  }
+}
+
+function buildAtomicSection(ctx: SectionBuildContext): DetailSection {
+  const { element, s, u, o, a } = ctx
+  return {
+    id: 'atomic',
+    title: s.sections.atomic,
+    color: SECTION_COLORS.atomic,
+    items: [
+      prop(s.props.electronConfig, fmt(o?.elementConfiguration)),
+      prop(
+        s.props.ionCharge,
+        formatIonChargeHtml(element.symbol, a?.ionCharge),
+        true,
+      ),
+      prop(s.props.ionizationPotential, withUnit(a?.ionizationPotential, u.eV)),
+      prop(s.props.atomicRadius, withUnit(a?.atomicRadius, u.pm)),
+      prop(s.props.covalentRadius, withUnit(a?.covalentRadius, u.pm)),
+      prop(s.props.vanDerWaalsRadius, withUnit(a?.vanDerWaalsRadius, u.pm)),
+    ],
+  }
+}
+
+function buildReactivitySection(ctx: SectionBuildContext): DetailSection {
+  const { s, u, p, r } = ctx
+  return {
+    id: 'reactivity',
+    title: s.sections.reactivity,
+    color: SECTION_COLORS.reactivity,
+    items: [
+      prop(s.props.electronegativity, fmt(r?.electronegativity)),
+      prop(s.props.valence, fmt(p?.elValence)),
+      prop(s.props.electronAffinity, withUnit(r?.atomElectronEnergy, u.kjPerMol)),
+    ],
+  }
+}
+
+function buildThermodynamicSection(ctx: SectionBuildContext): DetailSection {
+  const { messages, s, u, p, t } = ctx
+  return {
+    id: 'thermodynamic',
+    title: s.sections.thermodynamic,
+    color: SECTION_COLORS.thermodynamic,
+    items: [
+      prop(s.props.aggregationState, aggregationLabel(p?.aggregationState, messages)),
+      prop(s.props.fusionHeat, withUnit(t?.fusionHeat, u.kjPerMol)),
+      prop(s.props.specificHeat, withUnit(t?.specificHeat, u.jPerKgK)),
+      prop(s.props.thermalExpansion, fmt(t?.thermalExpansion)),
+      prop(s.props.vaporizationHeat, withUnit(t?.vaporizationHeat, u.kjPerMol)),
+    ],
+  }
+}
+
+function buildElectromagneticSection(ctx: SectionBuildContext): DetailSection {
+  const { messages, s, e } = ctx
+  return {
+    id: 'electromagnetic',
+    title: s.sections.electromagnetic,
+    color: SECTION_COLORS.electromagnetic,
+    items: [
+      prop(s.props.electroConductivity, fmt(e?.es_electro)),
+      prop(s.props.electricType, fmt(e?.es_etype)),
+      prop(s.props.magneticType, magneticLabel(e?.es_mtype, messages)),
+      prop(s.props.volumeMagneticSusceptibility, fmt(e?.es_omvospr), true),
+      prop(s.props.massMagneticSusceptibility, fmt(e?.es_umvospr), true),
+      prop(s.props.molarMagneticSusceptibility, fmt(e?.es_mmvospr), true),
+      prop(s.props.resistivity, fmt(e?.es_udel)),
+      prop(s.props.superconductivityTemp, fmt(e?.es_temp)),
+    ],
+  }
+}
+
+function buildAdditionalSection(ctx: SectionBuildContext): DetailSection {
+  const { s, u, add } = ctx
+  return {
+    id: 'additional',
+    title: s.sections.additional,
+    color: SECTION_COLORS.additional,
+    items: [
+      propLink(s.props.cid, fmt(add?.numberCID), getPubChemUrl(add?.numberCID)),
+      prop(s.props.rtec, fmt(add?.numberRTEC)),
+      prop(s.props.brinellHardness, fmt(add?.brinellHardness)),
+      prop(s.props.mohsHardness, fmt(add?.mohsHardness)),
+      prop(s.props.vickersHardness, fmt(add?.vickersHardness)),
+      prop(s.props.bulkModulus, fmt(add?.bulkModulus)),
+      prop(s.props.youngModulus, fmt(add?.youngModulus)),
+      prop(s.props.liquidDensity, fmt(add?.liquidDensity)),
+      prop(s.props.molarVolume, withUnit(add?.molarValue, u.cm3PerMol)),
+      prop(s.props.poissonRatio, fmt(add?.poissonRatio)),
+      prop(s.props.shearModulus, fmt(add?.shearModulus)),
+      prop(s.props.soundSpeed, withUnit(add?.soundSpeed, u.mPerS)),
+      prop(s.props.refractiveIndex, fmt(add?.refractiveIndex)),
+      prop(s.props.thermalConductivity, withUnit(add?.thermalConductivity, u.wPerMK)),
+    ],
+  }
+}
+
+function buildNuclearSection(ctx: SectionBuildContext): DetailSection {
+  const { detail, element, messages, locale, s, n } = ctx
+  const nuclearItems: DetailProp[] = [
+    prop(
+      s.props.radioactive,
+      isElementWeaklyRadioactive(detail.number)
+        ? messages.sidebar.weakRadioactiveYes
+        : isElementRadioactive(detail.number)
+          ? messages.sidebar.yes
+          : messages.sidebar.no,
+    ),
+    prop(
+      s.props.mainIsotopes,
+      formatMainIsotopesHtml(element.symbol),
+      true,
+    ),
+    prop(s.props.decayType, formatDecayType(detail.number, locale)),
+    prop(s.props.halfLife, formatNucleusDurationDisplay(n?.halfLife, locale, messages) || EMPTY),
+    prop(s.props.lifetime, formatNucleusDurationDisplay(n?.lifetime, locale, messages) || EMPTY),
+    prop(s.props.neutronCrossSection, n?.neutronCrossSection ? `${n.neutronCrossSection} (b)` : EMPTY),
+  ]
+
+  if (isElementRadioactive(detail.number)) {
+    const rc = getElementRadiacodeIsotope(detail.number)
+    if (rc) {
+      nuclearItems.push(
+        propLink(s.props.spectrum, rc.isotope, getRadiacodeIsotopeUrl(rc.slug)),
+      )
+    }
+  }
+
+  return {
+    id: 'nuclear',
+    title: s.sections.nuclear,
+    color: SECTION_COLORS.nuclear,
+    items: nuclearItems,
+  }
+}
+
+function buildNfpaSection(ctx: SectionBuildContext): DetailSection {
+  return {
+    id: 'nfpa',
+    title: ctx.s.sections.nfpa,
+    color: SECTION_COLORS.nfpa,
+    items: [],
+  }
+}
+
+function buildGhsSection(ctx: SectionBuildContext): DetailSection {
+  return {
+    id: 'ghs',
+    title: ctx.s.sections.ghs,
+    color: SECTION_COLORS.ghs,
+    items: [],
+  }
+}
+
+function buildPrevalenceSection(ctx: SectionBuildContext): DetailSection {
+  const { elementName, s, pr } = ctx
+  return {
+    id: 'prevalence',
+    title: s.sections.prevalence,
+    color: SECTION_COLORS.prevalence,
+    items: [
+      prop(s.prevalence.universe.replace('%s', elementName), pr?.prevalence1 ? `${pr.prevalence1}%` : EMPTY),
+      prop(s.prevalence.sun.replace('%s', elementName), pr?.prevalence2 ? `${pr.prevalence2}%` : EMPTY),
+      prop(s.prevalence.ocean.replace('%s', elementName), pr?.prevalence3 ? `${pr.prevalence3}%` : EMPTY),
+      prop(s.prevalence.human.replace('%s', elementName), pr?.prevalence4 ? `${pr.prevalence4}%` : EMPTY),
+      prop(s.prevalence.crust.replace('%s', elementName), pr?.prevalence5 ? `${pr.prevalence5}%` : EMPTY),
+      prop(s.prevalence.meteorites.replace('%s', elementName), pr?.prevalence6 ? `${pr.prevalence6}%` : EMPTY),
+    ],
+  }
+}
+
+export function buildElementSections(
+  detail: ElementDetail,
+  element: Element,
+  messages: LocaleMessages,
+  elementName: string,
+  locale: Locale,
+): DetailSection[] {
+  const ctx: SectionBuildContext = {
+    detail,
+    element,
+    messages,
+    elementName,
+    locale,
+    s: messages.sidebar,
+    u: messages.sidebar.units,
+    o: detail.overview,
+    p: detail.properties,
+    t: detail.thermo,
+    a: detail.atomic,
+    e: detail.electromagnetic,
+    g: detail.grid,
+    add: detail.additional,
+    r: detail.reactivity,
+    n: detail.nucleus,
+    pr: detail.prevalence,
+    period: getElementPeriod(element),
+  }
 
   const sections: DetailSection[] = [
-    ...(element.inCollection ? [collectionSection] : []),
-    overviewSection,
-    descriptionSection,
-    applicationsSection,
-    {
-      id: 'properties',
-      title: s.sections.properties,
-      color: SECTION_COLORS.properties,
-      items: [
-        prop(s.props.atomicNumber, String(detail.number)),
-        prop(s.props.atomicMass, withUnit(p?.elementMasse, u.gPerMol)),
-        prop(s.props.density, withUnit(p?.elementDensity, u.gPerCm3)),
-        prop(s.props.meltingPoint, fmtTemp(p?.elementMeltingPoint, u)),
-        prop(s.props.boilingPoint, fmtTemp(p?.elementBoilingPoint, u)),
-        prop(s.props.valence, fmt(p?.elValence)),
-        prop(s.props.period, String(period)),
-        prop(s.props.group, fmt(p?.elementGroup)),
-        prop(s.props.block, blockLabel(p?.elementBlock, messages)),
-        propMiniTable(),
-        propImage(s.props.emissionSpectrum, getElementSpectrumUrl(detail.number)),
-      ],
-    },
-    {
-      id: 'atomic',
-      title: s.sections.atomic,
-      color: SECTION_COLORS.atomic,
-      items: [
-        prop(s.props.electronConfig, fmt(o?.elementConfiguration)),
-        prop(
-          s.props.ionCharge,
-          formatIonChargeHtml(element.symbol, a?.ionCharge),
-          true,
-        ),
-        prop(s.props.ionizationPotential, withUnit(a?.ionizationPotential, u.eV)),
-        prop(s.props.atomicRadius, withUnit(a?.atomicRadius, u.pm)),
-        prop(s.props.covalentRadius, withUnit(a?.covalentRadius, u.pm)),
-        prop(s.props.vanDerWaalsRadius, withUnit(a?.vanDerWaalsRadius, u.pm)),
-      ],
-    },
-    {
-      id: 'reactivity',
-      title: s.sections.reactivity,
-      color: SECTION_COLORS.reactivity,
-      items: [
-        prop(s.props.electronegativity, fmt(r?.electronegativity)),
-        prop(s.props.valence, fmt(p?.elValence)),
-        prop(s.props.electronAffinity, withUnit(r?.atomElectronEnergy, u.kjPerMol)),
-      ],
-    },
-    {
-      id: 'thermodynamic',
-      title: s.sections.thermodynamic,
-      color: SECTION_COLORS.thermodynamic,
-      items: [
-        prop(s.props.aggregationState, aggregationLabel(p?.aggregationState, messages)),
-        prop(s.props.fusionHeat, withUnit(t?.fusionHeat, u.kjPerMol)),
-        prop(s.props.specificHeat, withUnit(t?.specificHeat, u.jPerKgK)),
-        prop(s.props.thermalExpansion, fmt(t?.thermalExpansion)),
-        prop(s.props.vaporizationHeat, withUnit(t?.vaporizationHeat, u.kjPerMol)),
-      ],
-    },
-    {
-      id: 'electromagnetic',
-      title: s.sections.electromagnetic,
-      color: SECTION_COLORS.electromagnetic,
-      items: [
-        prop(s.props.electroConductivity, fmt(e?.es_electro)),
-        prop(s.props.electricType, fmt(e?.es_etype)),
-        prop(s.props.magneticType, magneticLabel(e?.es_mtype, messages)),
-        prop(s.props.volumeMagneticSusceptibility, fmt(e?.es_omvospr), true),
-        prop(s.props.massMagneticSusceptibility, fmt(e?.es_umvospr), true),
-        prop(s.props.molarMagneticSusceptibility, fmt(e?.es_mmvospr), true),
-        prop(s.props.resistivity, fmt(e?.es_udel)),
-        prop(s.props.superconductivityTemp, fmt(e?.es_temp)),
-      ],
-    },
-    ...buildGridSections(g, messages, s, u),
-    {
-      id: 'additional',
-      title: s.sections.additional,
-      color: SECTION_COLORS.additional,
-      items: [
-        propLink(s.props.cid, fmt(add?.numberCID), getPubChemUrl(add?.numberCID)),
-        prop(s.props.rtec, fmt(add?.numberRTEC)),
-        prop(s.props.brinellHardness, fmt(add?.brinellHardness)),
-        prop(s.props.mohsHardness, fmt(add?.mohsHardness)),
-        prop(s.props.vickersHardness, fmt(add?.vickersHardness)),
-        prop(s.props.bulkModulus, fmt(add?.bulkModulus)),
-        prop(s.props.youngModulus, fmt(add?.youngModulus)),
-        prop(s.props.liquidDensity, fmt(add?.liquidDensity)),
-        prop(s.props.molarVolume, withUnit(add?.molarValue, u.cm3PerMol)),
-        prop(s.props.poissonRatio, fmt(add?.poissonRatio)),
-        prop(s.props.shearModulus, fmt(add?.shearModulus)),
-        prop(s.props.soundSpeed, withUnit(add?.soundSpeed, u.mPerS)),
-        prop(s.props.refractiveIndex, fmt(add?.refractiveIndex)),
-        prop(s.props.thermalConductivity, withUnit(add?.thermalConductivity, u.wPerMK)),
-      ],
-    },
-    (() => {
-      const nuclearItems: DetailProp[] = [
-        prop(
-          s.props.radioactive,
-          isElementWeaklyRadioactive(detail.number)
-            ? messages.sidebar.weakRadioactiveYes
-            : isElementRadioactive(detail.number)
-              ? messages.sidebar.yes
-              : messages.sidebar.no,
-        ),
-        prop(
-          s.props.mainIsotopes,
-          formatMainIsotopesHtml(element.symbol),
-          true,
-        ),
-        prop(s.props.decayType, formatDecayType(detail.number, locale)),
-        prop(s.props.halfLife, formatNucleusDurationDisplay(n?.halfLife, locale, messages) || EMPTY),
-        prop(s.props.lifetime, formatNucleusDurationDisplay(n?.lifetime, locale, messages) || EMPTY),
-        prop(s.props.neutronCrossSection, n?.neutronCrossSection ? `${n.neutronCrossSection} (b)` : EMPTY),
-      ]
-
-      if (isElementRadioactive(detail.number)) {
-        const rc = getElementRadiacodeIsotope(detail.number)
-        if (rc) {
-          nuclearItems.push(
-            propLink(s.props.spectrum, rc.isotope, getRadiacodeIsotopeUrl(rc.slug)),
-          )
-        }
-      }
-
-      return {
-        id: 'nuclear' as const,
-        title: s.sections.nuclear,
-        color: SECTION_COLORS.nuclear,
-        items: nuclearItems,
-      }
-    })(),
-    {
-      id: 'nfpa',
-      title: s.sections.nfpa,
-      color: SECTION_COLORS.nfpa,
-      items: [],
-    },
-    {
-      id: 'ghs',
-      title: s.sections.ghs,
-      color: SECTION_COLORS.ghs,
-      items: [],
-    },
-    {
-      id: 'prevalence',
-      title: s.sections.prevalence,
-      color: SECTION_COLORS.prevalence,
-      items: [
-        prop(s.prevalence.universe.replace('%s', elementName), pr?.prevalence1 ? `${pr.prevalence1}%` : EMPTY),
-        prop(s.prevalence.sun.replace('%s', elementName), pr?.prevalence2 ? `${pr.prevalence2}%` : EMPTY),
-        prop(s.prevalence.ocean.replace('%s', elementName), pr?.prevalence3 ? `${pr.prevalence3}%` : EMPTY),
-        prop(s.prevalence.human.replace('%s', elementName), pr?.prevalence4 ? `${pr.prevalence4}%` : EMPTY),
-        prop(s.prevalence.crust.replace('%s', elementName), pr?.prevalence5 ? `${pr.prevalence5}%` : EMPTY),
-        prop(s.prevalence.meteorites.replace('%s', elementName), pr?.prevalence6 ? `${pr.prevalence6}%` : EMPTY),
-      ],
-    },
-    miningSection,
+    ...(element.inCollection ? [buildCollectionSection(ctx)] : []),
+    buildOverviewSection(ctx),
+    buildDescriptionSection(ctx),
+    buildApplicationsSection(ctx),
+    buildPropertiesSection(ctx),
+    buildAtomicSection(ctx),
+    buildReactivitySection(ctx),
+    buildThermodynamicSection(ctx),
+    buildElectromagneticSection(ctx),
+    ...buildGridSections(ctx.g, ctx.messages, ctx.s, ctx.u),
+    buildAdditionalSection(ctx),
+    buildNuclearSection(ctx),
+    buildNfpaSection(ctx),
+    buildGhsSection(ctx),
+    buildPrevalenceSection(ctx),
+    buildMiningSection(ctx),
   ]
 
   return sections.map(withSectionKey)

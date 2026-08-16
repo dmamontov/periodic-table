@@ -1,5 +1,7 @@
 <script setup lang="ts">
-defineProps<{
+import { nextTick, onBeforeUnmount, useTemplateRef, watch } from 'vue'
+
+const props = defineProps<{
   isOpen: boolean
   closeLabel: string
   /** Class applied to the drawer's own <aside> (not just the wrapping Teleport root) — needed since Teleport content isn't a reliable target for automatic attr fallthrough. */
@@ -7,6 +9,59 @@ defineProps<{
 }>()
 
 const emit = defineEmits<{ close: [] }>()
+
+const panelRef = useTemplateRef<HTMLElement>('panelRef')
+let lastFocused: HTMLElement | null = null
+
+function focusableElements(): HTMLElement[] {
+  const root = panelRef.value
+  if (!root) return []
+  return Array.from(
+    root.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    ),
+  ).filter((el) => el.offsetParent !== null)
+}
+
+function onKeydown(event: KeyboardEvent): void {
+  if (event.key === 'Escape') {
+    emit('close')
+    return
+  }
+  if (event.key !== 'Tab') return
+  const focusable = focusableElements()
+  const first = focusable[0]
+  const last = focusable[focusable.length - 1]
+  if (!first || !last) return
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault()
+    last.focus()
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault()
+    first.focus()
+  }
+}
+
+watch(
+  () => props.isOpen,
+  (open) => {
+    if (open) {
+      lastFocused = document.activeElement as HTMLElement | null
+      window.addEventListener('keydown', onKeydown)
+      void nextTick(() => {
+        const target = focusableElements()[0] ?? panelRef.value
+        target?.focus()
+      })
+    } else {
+      window.removeEventListener('keydown', onKeydown)
+      lastFocused?.focus()
+      lastFocused = null
+    }
+  },
+  { immediate: true },
+)
+
+onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
 </script>
 
 <template>
@@ -22,9 +77,13 @@ const emit = defineEmits<{ close: [] }>()
     </Transition>
 
     <aside
+      ref="panelRef"
       class="drawer-shell"
       :class="[panelClass, { 'drawer-shell--open': isOpen }]"
       :aria-hidden="!isOpen"
+      role="dialog"
+      aria-modal="true"
+      tabindex="-1"
     >
       <slot />
     </aside>
