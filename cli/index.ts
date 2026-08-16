@@ -12,7 +12,7 @@ const program = new Command()
 
 program
   .command('sitemap')
-  .description('Generate public/sitemap.xml from src/data/elements/elements.json and collection.ts siteUrl')
+  .description('Generate public/sitemap.xml from src/data/elements/elements.ts and collection.ts siteUrl')
   .action(() => buildSitemap())
 
 program

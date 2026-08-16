@@ -1,21 +1,8 @@
-import type { Locale, DecayModeKey } from '../../locales/types'
+import type { Locale } from '../../locales/types'
 import { localeMessages } from '../../locales'
-import detailsFile from '../../data/elements/details.json'
-import { getSymbolByNumber } from '../../data'
+import { getSymbolByNumber, storedElementDetails } from '../../data'
 import { formatElementSymbol } from './formatters'
 import type { ElementCollectionDecayParent } from '../../types/collection/collection'
-
-export interface ElementIsotopeEntry {
-  mass: number
-  abundance?: string | null
-}
-
-export interface ElementIsotopeRecord {
-  decay: DecayModeKey
-  isotopes: ElementIsotopeEntry[]
-}
-
-const isotopeData = detailsFile.isotopes as Record<string, ElementIsotopeRecord>
 
 /** HTML isotope notation with mass superscript before symbol. */
 export function formatIsotopeHtml(
@@ -28,7 +15,7 @@ export function formatIsotopeHtml(
 }
 
 export function formatMainIsotopesHtml(symbol: string): string {
-  const record = isotopeData[symbol]
+  const record = storedElementDetails[symbol]?.isotopes
   if (!record?.isotopes?.length) return ''
 
   return record.isotopes
@@ -55,7 +42,7 @@ export function formatDecayChainHtml(
 
 export function formatDecayType(number: number, locale: Locale): string {
   const symbol = getSymbolByNumber(number)
-  const key = symbol ? isotopeData[symbol]?.decay : undefined
+  const key = symbol ? storedElementDetails[symbol]?.isotopes?.decay : undefined
   if (!key) return ''
   return localeMessages[locale].decay[key] ?? localeMessages.ru.decay[key] ?? ''
 }

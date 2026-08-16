@@ -4,7 +4,7 @@ import type { Element } from '../../types/element/element'
 import type {
   AggregationState,
   ElementDetail,
-  GridPro,
+  Grid,
   MagneticType,
 } from '../../types/element/detail'
 import type { DetailProp, DetailSection } from '../../types/element/section'
@@ -273,7 +273,7 @@ function gridStructureLabel(
 }
 
 function buildGridSections(
-  g: GridPro | undefined,
+  g: Grid | undefined,
   messages: LocaleMessages,
   s: LocaleMessages['sidebar'],
   u: LocaleMessages['sidebar']['units'],
@@ -357,16 +357,16 @@ export function buildElementSections(
 ): DetailSection[] {
   const s = messages.sidebar
   const u = s.units
-  const o = detail.OverviewCommon
-  const p = detail.PropertiesCommon
-  const t = detail.ThermoPro
-  const a = detail.AtomicCommon
-  const e = detail.ElectromagneticCommon
-  const g = detail.GridPro
-  const add = detail.AdditionalPro
-  const r = detail.ReactivityCommon
-  const n = detail.NucleusPro
-  const pr = detail.PrevalenceCommon
+  const o = detail.overview
+  const p = detail.properties
+  const t = detail.thermo
+  const a = detail.atomic
+  const e = detail.electromagnetic
+  const g = detail.grid
+  const add = detail.additional
+  const r = detail.reactivity
+  const n = detail.nucleus
+  const pr = detail.prevalence
   const period = getElementPeriod(element)
 
   const discoveryCountries = discoveryMapCountries(o?.countryOpener)

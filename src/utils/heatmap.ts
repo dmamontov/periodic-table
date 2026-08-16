@@ -1,6 +1,5 @@
 import type { Locale, LocaleMessages, DecayModeKey } from '../locales/types'
 import { localeMessages } from '../locales'
-import detailsFile from '../data/elements/details.json'
 import { elements, storedElementDetails, getSymbolByNumber } from '../data'
 import type { StoredElementDetail } from '../types/element/detail'
 import type { HeatmapId, HeatmapGroupId, HeatmapDefinition, HeatmapDataset } from '../types/heatmap'
@@ -31,7 +30,7 @@ export const HEATMAP_DEFINITIONS: HeatmapDefinition[] = [
 const BRIGHTNESS_MIN = 0.52
 const BRIGHTNESS_MAX = 1.02
 
-/** Half-life units in elements/details.json: value/unitCode */
+/** Half-life units in elements/details.ts: value/unitCode */
 const HALF_LIFE_UNIT_SECONDS: Record<number, number> = {
   1: 365.25 * 24 * 3600,
   2: 24 * 3600,
@@ -43,7 +42,6 @@ const HALF_LIFE_UNIT_SECONDS: Record<number, number> = {
 const elementDetails = storedElementDetails
 const halfLifeRawByNumber = new Map<number, string>()
 const lifetimeRawByNumber = new Map<number, string>()
-const isotopeData = detailsFile.isotopes as Record<string, { decay: DecayModeKey }>
 
 const DECAY_MODE_SCORE: Record<DecayModeKey, number> = {
   stable: 0,
@@ -77,7 +75,7 @@ const DECAY_CELL_LABEL: Record<DecayModeKey, string> = {
 
 function getDecayModeScore(number: number): number | null {
   const symbol = getSymbolByNumber(number)
-  const mode = symbol ? isotopeData[symbol]?.decay : undefined
+  const mode = symbol ? elementDetails[symbol]?.isotopes?.decay : undefined
   return mode ? DECAY_MODE_SCORE[mode] ?? null : null
 }
 
@@ -130,7 +128,7 @@ function extractNucleusDurationValue(
   detail: StoredElementDetail | null,
   field: 'halfLife' | 'lifetime',
 ): number | null {
-  const raw = detail?.NucleusPro?.[field]
+  const raw = detail?.nucleus?.[field]
   if (raw == null || raw === '' || raw === '∞') return null
   const seconds = parseHalfLifeToSeconds(raw)
   if (seconds == null || !Number.isFinite(seconds) || seconds <= 0) return null
@@ -147,7 +145,7 @@ function extractLifetimeValue(detail: StoredElementDetail | null): number | null
 
 /** Minimum % among all known reservoirs (universe, Sun, ocean, body, crust, meteorites). */
 function extractGlobalRarityValue(detail: StoredElementDetail | null): number | null {
-  const pr = detail?.PrevalenceCommon
+  const pr = detail?.prevalence
   if (!pr) return null
 
   const abundances = [
@@ -167,9 +165,9 @@ function extractGlobalRarityValue(detail: StoredElementDetail | null): number | 
 
 function extractPrevalenceValue(
   detail: StoredElementDetail | null,
-  key: keyof NonNullable<StoredElementDetail['PrevalenceCommon']>,
+  key: keyof NonNullable<StoredElementDetail['prevalence']>,
 ): number | null {
-  const value = parseDetailNumeric(detail?.PrevalenceCommon?.[key])
+  const value = parseDetailNumeric(detail?.prevalence?.[key])
   return value != null && value > 0 ? value : null
 }
 
@@ -187,23 +185,23 @@ function extractHeatmapValue(
 
   switch (id) {
     case 'electronegativity':
-      return parseDetailNumeric(detail.ReactivityCommon?.electronegativity)
+      return parseDetailNumeric(detail.reactivity?.electronegativity)
     case 'atomicRadius':
-      return parseDetailNumeric(detail.AtomicCommon?.atomicRadius)
+      return parseDetailNumeric(detail.atomic?.atomicRadius)
     case 'ionizationEnergy':
-      return parseDetailNumeric(detail.AtomicCommon?.ionizationPotential)
+      return parseDetailNumeric(detail.atomic?.ionizationPotential)
     case 'electronAffinity':
-      return parseDetailNumeric(detail.ReactivityCommon?.atomElectronEnergy)
+      return parseDetailNumeric(detail.reactivity?.atomElectronEnergy)
     case 'density':
-      return parseDetailNumeric(detail.PropertiesCommon?.elementDensity)
+      return parseDetailNumeric(detail.properties?.elementDensity)
     case 'meltingPoint':
-      return parseDetailNumeric(detail.PropertiesCommon?.elementMeltingPoint)
+      return parseDetailNumeric(detail.properties?.elementMeltingPoint)
     case 'boilingPoint':
-      return parseDetailNumeric(detail.PropertiesCommon?.elementBoilingPoint)
+      return parseDetailNumeric(detail.properties?.elementBoilingPoint)
     case 'atomicMass':
-      return parseDetailNumeric(detail.PropertiesCommon?.elementMasse) ?? parseAtomicMass(atomicMass)
+      return parseDetailNumeric(detail.properties?.elementMasse) ?? parseAtomicMass(atomicMass)
     case 'covalentRadius':
-      return parseDetailNumeric(detail.AtomicCommon?.covalentRadius)
+      return parseDetailNumeric(detail.atomic?.covalentRadius)
     case 'halfLife':
       return extractHalfLifeValue(detail)
     case 'lifetime':
@@ -234,7 +232,7 @@ function buildDataset(id: HeatmapId): HeatmapDataset {
     if (id === 'halfLife' || id === 'lifetime') {
       const field = id === 'halfLife' ? 'halfLife' : 'lifetime'
       const rawMap = id === 'halfLife' ? halfLifeRawByNumber : lifetimeRawByNumber
-      const raw = detail?.NucleusPro?.[field]
+      const raw = detail?.nucleus?.[field]
       if (raw != null && raw !== '' && raw !== '∞' && value != null) {
         rawMap.set(element.number, raw)
         withData += 1
@@ -464,7 +462,7 @@ export function formatHeatmapElementValue(
 
   if (id === 'decayMode') {
     const symbol = getSymbolByNumber(number)
-    const mode = symbol ? isotopeData[symbol]?.decay : undefined
+    const mode = symbol ? elementDetails[symbol]?.isotopes?.decay : undefined
     if (!mode) return null
     if (mode === 'stable') return messages.heatmap.stable
     return formatDecayType(number, locale as Locale)
@@ -513,7 +511,7 @@ export function formatHeatmapCellDisplay(
   if (!def?.unitKey) {
     if (id === 'decayMode') {
       const symbol = getSymbolByNumber(number)
-      const mode = symbol ? isotopeData[symbol]?.decay : undefined
+      const mode = symbol ? elementDetails[symbol]?.isotopes?.decay : undefined
       if (!mode) return '—'
       if (mode === 'stable') return messages.heatmap.stable
       return DECAY_CELL_LABEL[mode] ?? formatted

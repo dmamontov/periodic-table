@@ -1,4 +1,8 @@
-export interface OverviewCommon {
+import type { DecayModeKey } from '../../locales/types'
+import type { GhsPictogramId } from './ghs'
+import type { RadiacodeIsotopeRef } from '../collection/spectrum'
+
+export interface Overview {
   latinName?: string | null
   englishName?: string | null
   elementOpenedYear?: string | null
@@ -18,7 +22,7 @@ export interface OverviewCommon {
 
 export type AggregationState = 'gas' | 'solid' | 'liquid' | 'unknown'
 
-export interface PropertiesCommon {
+export interface Properties {
   elementMasse?: string | null
   elementDensity?: string | null
   elementMeltingPoint?: string | null
@@ -29,14 +33,14 @@ export interface PropertiesCommon {
   aggregationState?: AggregationState | null
 }
 
-export interface ThermoPro {
+export interface Thermo {
   fusionHeat?: string | null
   specificHeat?: string | null
   thermalExpansion?: string | null
   vaporizationHeat?: string | null
 }
 
-export interface AtomicCommon {
+export interface Atomic {
   oxidationState?: string | null
   ionCharge?: string | null
   ionizationPotential?: string | null
@@ -47,7 +51,7 @@ export interface AtomicCommon {
 
 export type MagneticType = 'none' | 'diamagnetic' | 'paramagnetic' | 'antiferromagnetic' | 'ferromagnetic'
 
-export interface ElectromagneticCommon {
+export interface Electromagnetic {
   es_electro?: string | null
   es_etype?: string | null
   es_mtype?: MagneticType | null
@@ -58,7 +62,7 @@ export interface ElectromagneticCommon {
   es_temp?: string | null
 }
 
-export interface GridPro {
+export interface Grid {
   gridStructureNum?: string | null
   gridParams?: string | null
   ratio?: string | null
@@ -67,7 +71,7 @@ export interface GridPro {
   space2?: string | null
 }
 
-export interface AdditionalPro {
+export interface Additional {
   elementColor?: string | null
   numberCID?: string | null
   numberRTEC?: string | null
@@ -85,19 +89,19 @@ export interface AdditionalPro {
   thermalConductivity?: string | null
 }
 
-export interface ReactivityCommon {
+export interface Reactivity {
   electronegativity?: string | null
   atomElectronEnergy?: string | null
 }
 
-export interface NucleusPro {
+export interface Nucleus {
   halfLife?: string | null
   lifetime?: string | null
   neutronCrossSection?: string | null
   nfpaCube?: string | null
 }
 
-export interface PrevalenceCommon {
+export interface Prevalence {
   prevalence1?: string | null
   prevalence2?: string | null
   prevalence3?: string | null
@@ -106,21 +110,40 @@ export interface PrevalenceCommon {
   prevalence6?: string | null
 }
 
+export interface ElementIsotopeEntry {
+  mass: number
+  abundance?: string | null
+}
+
+export interface ElementIsotopeRecord {
+  decay: DecayModeKey
+  isotopes: ElementIsotopeEntry[]
+}
+
 export interface ElementDetail {
   number: number
   symbol: string
   name: string
-  OverviewCommon?: OverviewCommon
-  PropertiesCommon?: PropertiesCommon
-  ThermoPro?: ThermoPro
-  AtomicCommon?: AtomicCommon
-  ElectromagneticCommon?: ElectromagneticCommon
-  GridPro?: GridPro
-  AdditionalPro?: AdditionalPro
-  ReactivityCommon?: ReactivityCommon
-  NucleusPro?: NucleusPro
-  PrevalenceCommon?: PrevalenceCommon
+  overview?: Overview
+  properties?: Properties
+  thermo?: Thermo
+  atomic?: Atomic
+  electromagnetic?: Electromagnetic
+  grid?: Grid
+  additional?: Additional
+  reactivity?: Reactivity
+  nucleus?: Nucleus
+  prevalence?: Prevalence
+  /** Index into ELEMENT_SAMPLE_COLORS (utils/element/formatters.ts) */
+  colorIndex?: number
+  ghs?: GhsPictogramId[]
+  radiacodeIsotope?: RadiacodeIsotopeRef
+  isotopes?: ElementIsotopeRecord
+  /** Direct thoisoi.ru video link (RU only — EN/ZH always fall back to a YouTube search) */
+  youtube?: string
+  /** Lowercase ISO 3166-1 alpha-2 codes — see the "mining" section in CLAUDE.md */
+  productionCountries?: string[]
 }
 
-/** On-disk shape: number/symbol/name live in elements/elements.json or OverviewCommon. */
+/** On-disk shape: number/symbol come from elements/elements.ts, name from overview.englishName. */
 export type StoredElementDetail = Omit<ElementDetail, 'number' | 'symbol' | 'name'>

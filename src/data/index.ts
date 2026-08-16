@@ -3,15 +3,13 @@ import type { ElementDetail, StoredElementDetail } from '../types/element/detail
 import type { CategoryId } from '../types/element/category'
 import type { GhsPictogramId } from '../types/element/ghs'
 import type { CollectionSpectrumData, RadiacodeIsotopeRef } from '../types/collection/spectrum'
-import rawElements from './elements/elements.json'
-import detailsFile from './elements/details.json'
+import { elements as rawElements } from './elements/elements'
+import { elementDetails as rawDetails } from './elements/details'
 import { myElements } from './collection'
 import type { LocalizedLabel } from '../utils/localizedLabel'
 import { CATEGORY_COLORS } from '../theme/colors'
 
-type RawElement = Omit<Element, 'category' | 'inCollection' | 'collection'>
-
-export const storedElementDetails = detailsFile.elements as Record<string, StoredElementDetail>
+export const storedElementDetails: Record<string, StoredElementDetail> = rawDetails
 
 export function getCategoryColor(category: CategoryId): string {
   return CATEGORY_COLORS[category]
@@ -60,7 +58,7 @@ export function getElementCategory(
   return 'transition'
 }
 
-export const elements: Element[] = (rawElements as RawElement[]).map((el) => {
+export const elements: Element[] = rawElements.map((el) => {
   const category = getElementCategory(el.number, el.oldGroup, el.row)
   const collection = myElements[el.symbol] ?? null
   return {
@@ -244,13 +242,13 @@ export function getElementDetail(number: number): ElementDetail | null {
     ...raw,
     number,
     symbol: meta.symbol,
-    name: raw.OverviewCommon?.englishName ?? '',
+    name: raw.overview?.englishName ?? '',
   }
 }
 
 export function hasElementImage(number: number): boolean {
   const symbol = getSymbolByNumber(number)
-  return symbol ? elementDetails[symbol]?.OverviewCommon?.hasImage === true : false
+  return symbol ? elementDetails[symbol]?.overview?.hasImage === true : false
 }
 
 export function getElementImageUrl(number: number): string | null {
@@ -260,7 +258,7 @@ export function getElementImageUrl(number: number): string | null {
 
 export function hasElementSpectrum(number: number): boolean {
   const symbol = getSymbolByNumber(number)
-  return symbol ? elementDetails[symbol]?.OverviewCommon?.hasSpectre === true : false
+  return symbol ? elementDetails[symbol]?.overview?.hasSpectre === true : false
 }
 
 export function getElementSpectrumUrl(number: number): string | null {
@@ -322,8 +320,7 @@ export function getCollectionSpectrumXmlHref(id: string | null | undefined): str
 export function getElementRadiacodeIsotope(number: number): RadiacodeIsotopeRef | null {
   const symbol = getSymbolByNumber(number)
   if (!symbol) return null
-  const entry = (detailsFile.radiacodeIsotope as Record<string, RadiacodeIsotopeRef>)[symbol]
-  return entry ?? null
+  return elementDetails[symbol]?.radiacodeIsotope ?? null
 }
 
 export function getRadiacodeIsotopeUrl(slug: string): string {
@@ -333,15 +330,13 @@ export function getRadiacodeIsotopeUrl(slug: string): string {
 export function getElementGhsPictograms(number: number): GhsPictogramId[] {
   const symbol = getSymbolByNumber(number)
   if (!symbol) return []
-  const list = (detailsFile.ghs as Record<string, GhsPictogramId[]>)[symbol]
-  return list ?? []
+  return elementDetails[symbol]?.ghs ?? []
 }
 
 export function getElementProductionCountries(number: number): string[] {
   const symbol = getSymbolByNumber(number)
   if (!symbol) return []
-  const list = (detailsFile.productionCountries as Record<string, string[]>)[symbol]
-  return list ?? []
+  return elementDetails[symbol]?.productionCountries ?? []
 }
 
 export function channelToEnergy(

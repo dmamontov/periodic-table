@@ -1,7 +1,6 @@
 import type { Locale } from '../../locales/types'
 import { localeMessages } from '../../locales'
-import detailsFile from '../../data/elements/details.json'
-import { getElementGhsPictograms, getSymbolByNumber } from '../../data'
+import { getElementGhsPictograms, getSymbolByNumber, storedElementDetails } from '../../data'
 import type { GhsDisplayItem } from '../../types/element/ghs'
 import type { ElementSampleColorFinish } from '../../types/element/element'
 
@@ -37,7 +36,9 @@ const GLOSSY_COLOR_INDICES = new Set([12, 14, 15, 20])
 const SUBTLE_COLOR_INDICES = new Set([0, 21, 22])
 const MATTE_COLOR_INDICES = new Set([16])
 
-const colorIndexBySymbol = detailsFile.colorIndex as Record<string, number>
+function getColorIndex(symbol: string): number | undefined {
+  return storedElementDetails[symbol]?.colorIndex
+}
 
 export function formatOpener(
   raw: string | null | undefined,
@@ -68,7 +69,7 @@ export function formatIonChargeHtml(
 
 export function getElementSampleColorHex(atomicNumber: number): string | null {
   const symbol = getSymbolByNumber(atomicNumber)
-  const index = symbol ? colorIndexBySymbol[symbol] : undefined
+  const index = symbol ? getColorIndex(symbol) : undefined
   if (index === undefined || index < 0 || index >= ELEMENT_SAMPLE_COLORS.length) return null
   const color = ELEMENT_SAMPLE_COLORS[index]
   return color ?? null
@@ -76,7 +77,7 @@ export function getElementSampleColorHex(atomicNumber: number): string | null {
 
 export function getElementSampleColorFinish(atomicNumber: number): ElementSampleColorFinish {
   const symbol = getSymbolByNumber(atomicNumber)
-  const index = symbol ? colorIndexBySymbol[symbol] : undefined
+  const index = symbol ? getColorIndex(symbol) : undefined
   if (index === undefined) return 'metallic'
   if (MATTE_COLOR_INDICES.has(index)) return 'matte'
   if (SUBTLE_COLOR_INDICES.has(index)) return 'subtle'

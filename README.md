@@ -69,7 +69,7 @@ The app will be available at `http://localhost:5173`.
 
 ## Make it your own collection
 
-Forked this to track your own elements? Everything you need to change lives in **one file**: [`src/data/collection.ts`](src/data/collection.ts). No need to touch `elements/elements.json` or the locale files.
+Forked this to track your own elements? Everything you need to change lives in **one file**: [`src/data/collection.ts`](src/data/collection.ts). No need to touch `elements/elements.ts` or the locale files.
 
 - `collectionName` / `siteTitle` / `siteUrl` - rename the collection and point it at your own domain.
 - `myElements` - a `symbol → details` map. Add a key to mark an element as yours; `{}` alone is enough ("I have it, no details yet"). Each entry groups its fields by topic, all optional:
@@ -101,7 +101,7 @@ Gamma spectra (the `spectrum.id`/`spectrum.filename` fields) are optional - only
 | Command | Purpose |
 |---|---|
 | `pnpm cli` | Interactive menu — pick a tool (sitemap / spectrum / collection) |
-| `pnpm cli sitemap` (aliased as part of `pnpm build`) | Regenerate `public/sitemap.xml` from `src/data/elements/elements.json` |
+| `pnpm cli sitemap` (aliased as part of `pnpm build`) | Regenerate `public/sitemap.xml` from `src/data/elements/elements.ts` |
 | `pnpm data:spectrum:convert -- <input.xml> <output-id>` | Convert a RadiaCode XML spectrum → JSON for the collection |
 | `pnpm data:collection:edit [-- <symbol>]` | Interactive wizard to add/edit/delete `collection.ts` entries — prompts for every field with the same vocab/dictionaries the app uses, validates `sampleState`/`container`/`sourceType` against `src/locales/collection.ts`, and checks a `spectrum.id` against the files actually present in `src/data/spectra/`. Pass an element symbol to jump straight to it, e.g. `pnpm data:collection:edit -- Fr`. Rewrites only the `myElements` object, leaving `collectionName`/`siteTitle`/`siteUrl` and comments untouched. Run `pnpm check` after saving. |
 

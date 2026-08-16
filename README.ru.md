@@ -69,7 +69,7 @@ pnpm dev
 
 ## Как завести свою коллекцию
 
-Форкнули репозиторий и хотите вести собственную коллекцию элементов? Всё, что нужно поменять, лежит в **одном файле**: [`src/data/collection.ts`](src/data/collection.ts). Трогать `elements/elements.json` или файлы локализации не нужно.
+Форкнули репозиторий и хотите вести собственную коллекцию элементов? Всё, что нужно поменять, лежит в **одном файле**: [`src/data/collection.ts`](src/data/collection.ts). Трогать `elements/elements.ts` или файлы локализации не нужно.
 
 - `collectionName` / `siteTitle` / `siteUrl` - переименовать коллекцию и указать свой домен.
 - `myElements` - карта `символ → детали`. Чтобы отметить элемент своим, достаточно добавить ключ; одного `{}` уже хватает («он у меня есть, подробностей пока нет»). Поля каждой записи сгруппированы по теме, все необязательны:
@@ -101,7 +101,7 @@ pnpm dev
 | Команда | Назначение |
 |---|---|
 | `pnpm cli` | Интерактивное меню - выбор инструмента (sitemap / spectrum / collection) |
-| `pnpm cli sitemap` (также часть `pnpm build`) | Пересобрать `public/sitemap.xml` из `src/data/elements/elements.json` |
+| `pnpm cli sitemap` (также часть `pnpm build`) | Пересобрать `public/sitemap.xml` из `src/data/elements/elements.ts` |
 | `pnpm data:spectrum:convert -- <input.xml> <output-id>` | Конвертация XML-спектра RadiaCode → JSON для коллекции |
 | `pnpm data:collection:edit [-- <symbol>]` | Интерактивный мастер добавления/редактирования/удаления записей в `collection.ts` - запрашивает каждое поле, используя те же словари, что и само приложение, проверяет `sampleState`/`container`/`sourceType` по `src/locales/collection.ts` и сверяет `spectrum.id` с файлами, реально лежащими в `src/data/spectra/`. Передайте символ элемента, чтобы сразу перейти к нему, например `pnpm data:collection:edit -- Fr`. Переписывает только объект `myElements`, не трогая `collectionName`/`siteTitle`/`siteUrl` и комментарии. После сохранения запустите `pnpm check`. |
 

@@ -66,7 +66,7 @@ const spectrumOriginHtml = computed(() => {
 
 const elementMass = computed(() => {
   if (!props.element) return ''
-  const mass = detail.value?.PropertiesCommon?.elementMasse ?? props.element.mass
+  const mass = detail.value?.properties?.elementMasse ?? props.element.mass
   void locale.value
   return formatMass(mass)
 })
@@ -76,7 +76,7 @@ const categoryLabel = computed(() => {
   return props.element ? tLegend(props.element.category) : ''
 })
 
-const overview = computed(() => detail.value?.OverviewCommon)
+const overview = computed(() => detail.value?.overview)
 
 const isRadioactive = computed(() =>
   props.element ? isElementRadioactive(props.element.number) : false,
@@ -94,7 +94,7 @@ function gridSectionImageUrl(section: DetailSection): string | null {
 
 const nfpaDisplay = computed(() => {
   void locale.value
-  return buildNfpaDisplay(detail.value?.NucleusPro?.nfpaCube, locale.value)
+  return buildNfpaDisplay(detail.value?.nucleus?.nfpaCube, locale.value)
 })
 
 const ghsDisplay = computed(() => {
@@ -132,7 +132,7 @@ const sections = computed(() => {
 })
 
 const oxidationStates = computed(() =>
-  parseOxidationStates(detail.value?.AtomicCommon?.oxidationState),
+  parseOxidationStates(detail.value?.atomic?.oxidationState),
 )
 
 const imageUrl = computed(() =>

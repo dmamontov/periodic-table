@@ -69,7 +69,7 @@ pnpm dev
 
 ## 建立属于你自己的收藏
 
-Fork 了本项目、想记录自己的元素收藏？需要修改的内容全部集中在**一个文件**里：[`src/data/collection.ts`](src/data/collection.ts)。不需要动 `elements/elements.json`，也不需要动语言文件。
+Fork 了本项目、想记录自己的元素收藏？需要修改的内容全部集中在**一个文件**里：[`src/data/collection.ts`](src/data/collection.ts)。不需要动 `elements/elements.ts`，也不需要动语言文件。
 
 - `collectionName` / `siteTitle` / `siteUrl` - 重命名收藏名称，并换成你自己的域名。
 - `myElements` - 一个"元素符号 → 详情"的映射表。只要加上一个键就代表这个元素归你所有；空对象 `{}` 已经足够（"我有这个元素，细节以后再补"）。每条记录的字段按主题分组，均为可选：
@@ -101,7 +101,7 @@ Fork 了本项目、想记录自己的元素收藏？需要修改的内容全部
 | 命令 | 用途 |
 |---|---|
 | `pnpm cli` | 交互式菜单 - 选择要用的工具（sitemap / spectrum / collection） |
-| `pnpm cli sitemap`（也是 `pnpm build` 的一部分） | 从 `src/data/elements/elements.json` 重新生成 `public/sitemap.xml` |
+| `pnpm cli sitemap`（也是 `pnpm build` 的一部分） | 从 `src/data/elements/elements.ts` 重新生成 `public/sitemap.xml` |
 | `pnpm data:spectrum:convert -- <input.xml> <output-id>` | 将 RadiaCode 的 XML 能谱转换为收藏用的 JSON |
 | `pnpm data:collection:edit [-- <symbol>]` | 交互式向导，用于添加/编辑/删除 `collection.ts` 中的条目 - 使用与应用本身相同的词汇表逐字段询问，依据 `src/locales/collection.ts` 校验 `sampleState`/`container`/`sourceType`，并核对 `spectrum.id` 是否在 `src/data/spectra/` 中真实存在对应文件。传入元素符号即可直接跳转到该元素，例如 `pnpm data:collection:edit -- Fr`。只会重写 `myElements` 对象，`collectionName`/`siteTitle`/`siteUrl` 及注释保持不变。保存后请运行 `pnpm check`。 |
 

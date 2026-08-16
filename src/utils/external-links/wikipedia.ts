@@ -20,7 +20,7 @@ function firstNonEmpty(...values: (string | null | undefined)[]): string {
 function wikiTitle(number: number, locale: Locale, detail: ElementDetail | null): string {
   const symbol = detail?.symbol ?? getSymbolByNumber(number)
   if (locale === 'en') {
-    return firstNonEmpty(detail?.OverviewCommon?.englishName, symbol && localeMessages.en.elements[symbol])
+    return firstNonEmpty(detail?.overview?.englishName, symbol && localeMessages.en.elements[symbol])
   }
   return (symbol && localeMessages[locale].elements[symbol]) ?? ''
 }
