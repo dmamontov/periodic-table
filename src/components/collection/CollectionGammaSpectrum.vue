@@ -617,22 +617,21 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
   .gamma-spectrum-modal__chart-wrap {
     flex: 1 1 auto;
     min-height: 0;
+    /* Stays a full-width, plain block box — the aspect-ratio math below lives on its
+       (non-flex-item) child instead, since resolving `width: auto` from `aspect-ratio`
+       + `height: 100%` directly on a non-stretched flex item (the previous approach,
+       via `align-self: center`) isn't reliable in every engine. */
     width: 100%;
-    /* Center the (letterboxed) chart instead of stretching it, without relying on
-       shrink-to-fit sizing — some PWA/WebView engines fail to resolve an auto width
-       from `aspect-ratio` + `height: 100%` on a non-stretched flex item, collapsing
-       the chart to a sliver. Filling the box and letting the SVG's own
-       viewBox + preserveAspectRatio do the letterboxing is robust everywhere. */
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   /* Higher specificity than GammaSpectrumChartSvg's own scoped width/height rule, which a bare override loses depending on build CSS ordering. */
   .gamma-spectrum-modal__chart-wrap .gamma-spectrum-modal__chart {
     display: block;
-    width: 100%;
     height: 100%;
+    aspect-ratio: 640 / 260;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
 </style>
