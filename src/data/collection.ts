@@ -417,6 +417,17 @@ export const myElements: Record<string, ElementCollection> = {
       ],
     },
   },
+  Np: {
+    physical: {
+      description: { ru: 'Источник из дымового детектора HIS-07', en: 'Source from HIS-07 smoke detector', zh: 'HIS-07 烟雾探测器辐射源' },
+      container: 'acrylicCoinCapsule',
+    },
+    radioactive: {
+      isotope: '237',
+      sourceType: 'secondary',
+      decayParent: [{ symbol: 'Am', isotope: '241' }],
+    },
+  },
 }
 
 /**
