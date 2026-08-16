@@ -57,7 +57,6 @@ const emit = defineEmits<{ close: [] }>()
   right: 0;
   z-index: 210;
   width: min(400px, 100vw);
-  /* Static vh, not dvh — see the comment on body's min-height in style.css. */
   height: 100vh;
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);

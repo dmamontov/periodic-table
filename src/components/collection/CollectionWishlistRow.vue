@@ -73,6 +73,7 @@ const { messages } = useLocale()
 
 .collection-wishlist-row__links {
   flex-shrink: 0;
+  min-width: 12ch;
   display: flex;
   flex-direction: column;
   align-items: flex-end;

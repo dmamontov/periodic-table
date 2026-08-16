@@ -104,10 +104,7 @@ body {
   font-family: var(--font-body);
   background: var(--color-bg);
   color: var(--color-text);
-  /* Static vh, not dvh/-webkit-fill-available: on-device iOS WebKit desyncs the
-     compositor when this height recalculates during the toolbar show/hide
-     animation, leaving position:fixed descendants (e.g. DrawerShell) stuck
-     with a stale paint until a real scroll/touch event forces a repaint. */
+  /* Static vh, not dvh: iOS WebKit desyncs the compositor mid toolbar-animation, leaving fixed descendants stuck with a stale paint. */
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -115,7 +112,6 @@ body {
 }
 
 #app {
-  /* See body's min-height comment above — same dvh-repaint bug, same fix. */
   min-height: 100vh;
   max-width: 100vw;
   overflow-x: hidden;
