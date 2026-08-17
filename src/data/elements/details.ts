@@ -9523,7 +9523,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "elementOpenedYear": "1753",
       "casNumber": "CAS7440-69-9",
       "elementOpener": "40",
-      "countryOpener": "MiddleEast",
+      "countryOpener": "FR",
       "elementShell": "K2-L8-M18-N32-O18-P5-Q0-R0",
       "elementE": "83",
       "elementP": "83",
