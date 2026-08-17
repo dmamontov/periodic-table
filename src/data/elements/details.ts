@@ -4249,7 +4249,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Strontium",
       "englishName": "Strontium",
-      "elementOpenedYear": "1787",
+      "elementOpenedYear": "1790",
       "casNumber": "CAS7440-24-6",
       "elementOpener": "30",
       "countryOpener": "GB",
