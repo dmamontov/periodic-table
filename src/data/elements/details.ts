@@ -10464,11 +10464,15 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=F0g06xHAQ6o",
     "productionCountries": [
-      { "country": "kz" },
-      { "country": "ca" },
-      { "country": "na" },
-      { "country": "au" },
-      { "country": "uz" }
+      { "country": "kz", "share": "38.65" },
+      { "country": "ca", "share": "23.76" },
+      { "country": "na", "share": "12.18" },
+      { "country": "au", "share": "7.64" },
+      { "country": "uz", "share": "6.64" },
+      { "country": "ru", "share": "4.55" },
+      { "country": "cn", "share": "2.66" },
+      { "country": "ne", "share": "1.60" },
+      { "country": "in", "share": "0.83" }
     ]
   },
   "Np": {
