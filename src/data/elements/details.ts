@@ -3545,7 +3545,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=LkI1lihNeH0",
     "productionCountries": [
-      { "country": "cn" }
+      { "country": "cn", "share": "99" },
+      { "country": "jp" },
+      { "country": "kr" },
+      { "country": "ru" }
     ]
   },
   "Ge": {
@@ -3660,7 +3663,13 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=jI1eTv5zdzg",
     "productionCountries": [
-      { "country": "cn" }
+      { "country": "cn", "share": "63" },
+      { "country": "be" },
+      { "country": "ca" },
+      { "country": "ru" },
+      { "country": "us" },
+      { "country": "jp" },
+      { "country": "de" }
     ]
   },
   "As": {
@@ -3767,9 +3776,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       ]
     },
     "productionCountries": [
+      { "country": "pe" },
       { "country": "cn" },
-      { "country": "ma" },
-      { "country": "ru" }
+      { "country": "ma" }
     ]
   },
   "Se": {
@@ -5501,8 +5510,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=PjWz0ROaBeg",
     "productionCountries": [
-      { "country": "cn" },
-      { "country": "kr" },
+      { "country": "cn", "share": "39" },
+      { "country": "kr", "share": "19" },
       { "country": "ca" },
       { "country": "jp" },
       { "country": "mx" }
@@ -5617,11 +5626,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=O8kbUMP5-m4",
     "productionCountries": [
-      { "country": "cn" },
-      { "country": "kr" },
-      { "country": "jp" },
-      { "country": "ca" },
-      { "country": "be" }
+      { "country": "cn", "share": "39" },
+      { "country": "kr", "share": "27" },
+      { "country": "ca", "share": "9" },
+      { "country": "jp", "share": "9" }
     ]
   },
   "Sn": {
@@ -5984,11 +5992,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=OEU9QVxMmOo",
     "productionCountries": [
-      { "country": "cn" },
-      { "country": "ru" },
-      { "country": "jp" },
-      { "country": "ca" },
-      { "country": "se" }
+      { "country": "cn", "share": "50" },
+      { "country": "ru", "share": "4.7" },
+      { "country": "jp", "share": "4.7" },
+      { "country": "se", "share": "3.1" },
+      { "country": "ca", "share": "1.8" },
+      { "country": "uz", "share": "0.9" }
     ]
   },
   "I": {
@@ -9195,8 +9204,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=MbJRT6XLvBE",
     "productionCountries": [
-      { "country": "cn" },
-      { "country": "tj" },
+      { "country": "cn", "share": "94.6" },
+      { "country": "tj", "share": "2.7" },
+      { "country": "mx", "share": "2.19" },
       { "country": "pe" },
       { "country": "no" },
       { "country": "kg" }
@@ -9560,9 +9570,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=s-39JB3qr5I",
     "productionCountries": [
-      { "country": "cn" },
-      { "country": "la" },
-      { "country": "kr" },
+      { "country": "cn", "share": "74" },
+      { "country": "la", "share": "6.4" },
+      { "country": "kr", "share": "5.6" },
       { "country": "jp" },
       { "country": "kz" }
     ]
