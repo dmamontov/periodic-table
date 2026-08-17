@@ -659,9 +659,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=q-Oyp936Big",
     "productionCountries": [
-      { "country": "cn" },
-      { "country": "mg" },
-      { "country": "mz" },
+      { "country": "cn", "share": "78" },
+      { "country": "mg", "share": "5.5" },
+      { "country": "mz", "share": "4.6" },
       { "country": "br" }
     ]
   },
@@ -4242,7 +4242,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=V1-LcbGSsmw",
     "productionCountries": [
-      { "country": "cn" }
+      { "country": "cn", "share": "99" }
     ]
   },
   "Sr": {
@@ -4355,7 +4355,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=vSJw0Ds2CV0",
     "productionCountries": [
-      { "country": "es" },
+      { "country": "ir", "share": "50" },
+      { "country": "es", "share": "25" },
       { "country": "cn" },
       { "country": "mx" },
       { "country": "ar" }
@@ -6446,10 +6447,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=R4Vzn9fmBLI",
     "productionCountries": [
-      { "country": "in" },
-      { "country": "cn" },
-      { "country": "ma" },
-      { "country": "kz" },
+      { "country": "in", "share": "32" },
+      { "country": "cn", "share": "25" },
+      { "country": "ma", "share": "12" },
+      { "country": "kz", "share": "8" },
       { "country": "la" }
     ]
   },
@@ -8667,8 +8668,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=3x8VM08eUy8",
     "productionCountries": [
-      { "country": "cl" },
-      { "country": "us" },
+      { "country": "cl", "share": "37" },
+      { "country": "us", "share": "12.1" },
       { "country": "pl" },
       { "country": "uz" },
       { "country": "kr" }
