@@ -294,7 +294,7 @@ export const myElements: Record<string, ElementCollection> = {
       {
         physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~2', acquiredDate: '2024-09-23' },
         retained: true,
-        reason: 'wrongAmpouleSize',
+        reason: 'wrongSize',
       },
     ],
   },
@@ -373,7 +373,7 @@ export const myElements: Record<string, ElementCollection> = {
       {
         physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~2', acquiredDate: '2024-09-23' },
         retained: true,
-        reason: 'wrongAmpouleSize',
+        reason: 'wrongSize',
       },
     ],
   },

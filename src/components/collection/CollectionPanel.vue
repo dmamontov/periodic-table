@@ -3,29 +3,38 @@ import { computed, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useLocale } from '../../locales'
 import { computeCollectionStats } from '../../utils/collection/stats'
+import { formatCollectionAcquiredDate } from '../../utils/collection/labels'
 import { elements, getElementRouteSymbol } from '../../data'
 import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes'
 import { wishlist } from '../../data/collection'
+import type { Element } from '../../types/element/element'
+import type { ElementCollection, ElementCollectionHistoryEntry } from '../../types/collection/collection'
 import CollectionGammaSpectrum from './CollectionGammaSpectrum.vue'
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue'
 import CollectionWishlistRow from './CollectionWishlistRow.vue'
+import CollectionHistoryRow from './CollectionHistoryRow.vue'
 import CollapsibleSection from '../common/CollapsibleSection.vue'
 import DrawerShell from '../common/DrawerShell.vue'
 import CloseButton from '../common/CloseButton.vue'
-import { COLLECTION_COLOR } from '../../theme/colors'
+import { COLLECTION_COLOR, WISHLIST_UPGRADE_COLOR } from '../../theme/colors'
 
 const RADIOACTIVE_COLOR = 'var(--color-error)'
 const SPECTRA_COLOR = 'var(--color-link)'
+const WISHLIST_COLOR = WISHLIST_UPGRADE_COLOR
+const HISTORY_COLOR = '#8b5cf6'
+const HISTORY_NEW_COLOR = COLLECTION_COLOR
+const HISTORY_REPLACED_COLOR = '#64748b'
 
 const route = useRoute()
 const router = useRouter()
-const { messages, tLegend, collectionName } = useLocale()
+const { messages, locale, tLegend, collectionName } = useLocale()
 
 const isOpen = computed(() => route.name === 'collection')
 const stats = computeCollectionStats()
 const sectionCollapsed = ref(false)
-const spectraCollapsed = ref(false)
-const wishlistCollapsed = ref(false)
+const spectraCollapsed = ref(true)
+const historyCollapsed = ref(true)
+const wishlistCollapsed = ref(true)
 
 const spectrumElements = elements.flatMap((el) => {
   const spectrumId = el.collection?.spectrum?.id
@@ -46,6 +55,36 @@ const spectrumElements = elements.flatMap((el) => {
     },
   ]
 })
+
+interface HistoryTimelineItem {
+  key: string
+  element: Element
+  symbol: string
+  color: string
+  rawDate: string
+  type: 'new' | 'replacement'
+}
+
+const historyTimeline: HistoryTimelineItem[] = elements
+  .flatMap((el) => {
+    if (!el.collection) return []
+    const versions: (ElementCollectionHistoryEntry | ElementCollection)[] = [...(el.collection.history ?? []), el.collection]
+    return versions.flatMap((version, index) => {
+      const rawDate = version.physical?.acquiredDate
+      if (!rawDate) return []
+      return [
+        {
+          key: `${el.symbol}-${index}`,
+          element: el,
+          symbol: el.symbol,
+          color: el.color,
+          rawDate,
+          type: index === 0 ? ('new' as const) : ('replacement' as const),
+        },
+      ]
+    })
+  })
+  .sort((a, b) => b.rawDate.localeCompare(a.rawDate))
 
 // Iterate in periodic-table (atomic number) order rather than object insertion order.
 const wishlistElements = elements.flatMap((el) => {
@@ -227,7 +266,7 @@ function openElement(symbol: string) {
             v-if="wishlistElements.length"
             v-model:collapsed="wishlistCollapsed"
             :title="messages.collectionPanel.wishlistSectionTitle"
-            :accent-color="COLLECTION_COLOR"
+            :accent-color="WISHLIST_COLOR"
           >
             <div class="collection-panel__wishlist-list">
               <CollectionWishlistRow
@@ -240,6 +279,26 @@ function openElement(symbol: string) {
                 :links="item.links"
                 :upgrade="item.upgrade"
                 @open="openElement(item.routeSymbol)"
+              />
+            </div>
+          </CollapsibleSection>
+
+          <CollapsibleSection
+            v-if="historyTimeline.length"
+            v-model:collapsed="historyCollapsed"
+            :title="messages.collectionPanel.historySectionTitle"
+            :accent-color="HISTORY_COLOR"
+          >
+            <div class="collection-panel__timeline">
+              <CollectionHistoryRow
+                v-for="item in historyTimeline"
+                :key="item.key"
+                :element="item.element"
+                :name="messages.elements[item.symbol] ?? ''"
+                :color="item.color"
+                :date="formatCollectionAcquiredDate(item.rawDate, locale)"
+                :badge-color="item.type === 'new' ? HISTORY_NEW_COLOR : HISTORY_REPLACED_COLOR"
+                :badge-label="item.type === 'new' ? messages.collectionPanel.historyNewBadge : messages.collectionPanel.historyReplacedBadge"
               />
             </div>
           </CollapsibleSection>
@@ -396,6 +455,11 @@ function openElement(symbol: string) {
 }
 
 .collection-panel__wishlist-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.collection-panel__timeline {
   display: flex;
   flex-direction: column;
 }

@@ -26,6 +26,6 @@ export const containerLabels: Record<string, LocalizedLabel> = {
 /** Standardized reasons a `history` entry was replaced — add a key here rather than free text on the entry. */
 export const reasonLabels: Record<string, LocalizedLabel> = {
   degradedStorage: { ru: 'Испортился при хранении', en: 'Degraded in storage', zh: '存放变质' },
-  wrongAmpouleSize: { ru: 'Не подходит размер', en: 'Wrong size', zh: '尺寸不合适' },
+  wrongSize: { ru: 'Не подходит размер', en: 'Wrong size', zh: '尺寸不合适' },
   betterSample: { ru: 'Апгрейд на лучший образец', en: 'Upgraded to a better sample', zh: '升级为更好的样品' },
 }

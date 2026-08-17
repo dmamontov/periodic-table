@@ -110,21 +110,23 @@ function onKeydown(event: KeyboardEvent): void {
 </script>
 
 <template>
-  <button
-    type="button"
-    class="element-collection-history-trigger"
-    :style="{ color: accent }"
-    :aria-label="messages.sidebar.props.collectionHistory"
-    :title="messages.sidebar.props.collectionHistory"
-    @click="open"
-  >
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M10 2h4" />
-      <path d="M12 14v-4" />
-      <path d="M4 13a8 8 0 0 1 8-7 8 8 0 1 1-5.3 14L4 17.6" />
-      <path d="M9 17H4v5" />
-    </svg>
-  </button>
+  <slot name="trigger" :open="open">
+    <button
+      type="button"
+      class="element-collection-history-trigger"
+      :style="{ color: accent }"
+      :aria-label="messages.sidebar.props.collectionHistory"
+      :title="messages.sidebar.props.collectionHistory"
+      @click="open"
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 2h4" />
+        <path d="M12 14v-4" />
+        <path d="M4 13a8 8 0 0 1 8-7 8 8 0 1 1-5.3 14L4 17.6" />
+        <path d="M9 17H4v5" />
+      </svg>
+    </button>
+  </slot>
 
   <Teleport to="body">
     <Transition name="collection-history-modal-backdrop">

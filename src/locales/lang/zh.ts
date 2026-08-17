@@ -18,6 +18,9 @@ const messages: LocaleMessages = {
   "collectionPanel": {
     "sectionTitle": "数据一览",
     "spectraSectionTitle": "能谱",
+    "historySectionTitle": "变更历史",
+    "historyNewBadge": "新增",
+    "historyReplacedBadge": "更换",
     "wishlistSectionTitle": "可购买",
     "wishlistUpgradeBadge": "升级",
     "close": "关闭",

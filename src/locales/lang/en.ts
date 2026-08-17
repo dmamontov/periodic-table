@@ -18,6 +18,9 @@ const messages: LocaleMessages = {
   "collectionPanel": {
     "sectionTitle": "In numbers",
     "spectraSectionTitle": "Spectra",
+    "historySectionTitle": "Change history",
+    "historyNewBadge": "New",
+    "historyReplacedBadge": "Replaced",
     "wishlistSectionTitle": "Available to buy",
     "wishlistUpgradeBadge": "Upgrade",
     "close": "Close",

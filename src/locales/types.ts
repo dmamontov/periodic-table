@@ -40,6 +40,9 @@ export interface LocaleMessages {
   collectionPanel: {
     sectionTitle: string
     spectraSectionTitle: string
+    historySectionTitle: string
+    historyNewBadge: string
+    historyReplacedBadge: string
     wishlistSectionTitle: string
     wishlistUpgradeBadge: string
     close: string
