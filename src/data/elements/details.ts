@@ -204,8 +204,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=TngesFm8xiQ",
     "productionCountries": [
-      { "country": "us" },
-      { "country": "qa" },
+      { "country": "us", "share": "42.6" },
+      { "country": "qa", "share": "33.2" },
       { "country": "dz" },
       { "country": "ru" },
       { "country": "ca" }
@@ -971,10 +971,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       ]
     },
     "productionCountries": [
-      { "country": "cn" },
-      { "country": "mx" },
-      { "country": "mn" },
-      { "country": "za" }
+      { "country": "cn", "share": "38" },
+      { "country": "mx", "share": "10" },
+      { "country": "vn", "share": "2" },
+      { "country": "mn", "share": "2" },
+      { "country": "za", "share": "2" }
     ]
   },
   "Ne": {
@@ -1078,10 +1079,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=CjXagBB9y9U",
     "productionCountries": [
-      { "country": "ua" },
       { "country": "cn" },
       { "country": "ru" },
-      { "country": "us" }
+      { "country": "us" },
+      { "country": "ua" }
     ]
   },
   "Na": {
@@ -4021,9 +4022,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=bHKNPTiMf1Y",
     "productionCountries": [
-      { "country": "il" },
-      { "country": "jo" },
-      { "country": "cn" },
+      { "country": "il", "share": "43.2" },
+      { "country": "jo", "share": "25.5" },
+      { "country": "cn", "share": "22.7" },
       { "country": "us" }
     ]
   },
@@ -4127,10 +4128,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=0QwmgHKaiUQ",
     "productionCountries": [
-      { "country": "ua" },
       { "country": "cn" },
       { "country": "ru" },
-      { "country": "us" }
+      { "country": "us" },
+      { "country": "ua" }
     ]
   },
   "Rb": {
@@ -6109,8 +6110,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=U-sijD3MGSM",
     "productionCountries": [
-      { "country": "cl" },
-      { "country": "jp" },
+      { "country": "cl", "share": "64" },
+      { "country": "jp", "share": "25" },
       { "country": "us" },
       { "country": "tm" },
       { "country": "ir" }
@@ -6216,10 +6217,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "youtube": "https://www.youtube.com/watch?v=rOyE8yg-xvg",
     "productionCountries": [
       { "country": "cn" },
-      { "country": "in" },
-      { "country": "de" },
+      { "country": "ru" },
       { "country": "us" },
-      { "country": "ru" }
+      { "country": "in" },
+      { "country": "de" }
     ]
   },
   "Cs": {
