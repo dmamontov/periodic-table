@@ -9728,7 +9728,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Astatine",
       "elementOpenedYear": "1940",
       "casNumber": "CAS7440-68-8",
-      "elementOpener": "37",
+      "elementOpener": "87/88/89",
       "countryOpener": "US",
       "elementShell": "K2-L8-M18-N32-O18-P7-Q0-R0",
       "elementE": "85",
@@ -9802,7 +9802,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Radon",
       "englishName": "Radon",
-      "elementOpenedYear": "1899",
+      "elementOpenedYear": "1900",
       "casNumber": "CAS10043-92-2",
       "elementOpener": "68",
       "countryOpener": "DE",
@@ -10054,7 +10054,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Actinium",
       "englishName": "Actinium",
-      "elementOpenedYear": "1902",
+      "elementOpenedYear": "1899",
       "casNumber": "CAS7440-34-8",
       "elementOpener": "34",
       "countryOpener": "FR",
@@ -10159,7 +10159,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "properties": {
       "elementMasse": "232.038041097472",
       "elementDensity": "11.72",
-      "elementMeltingPoint": "1842.0",
+      "elementMeltingPoint": "1750.0",
       "elementBoilingPoint": "4788.0",
       "elValence": "4",
       "elementGroup": "7/III-",

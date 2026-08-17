@@ -387,7 +387,10 @@ const messages: LocaleMessages = {
     "83": "Hieronymous Theodor Richter",
     "84": "Louis Soret",
     "85": "Juan José Elhuyar",
-    "86": "Fausto Elhuyar"
+    "86": "Fausto Elhuyar",
+    "87": "Dale R. Corson",
+    "88": "Kenneth Ross MacKenzie",
+    "89": "Emilio Segrè"
   },
   "nfpa": {
     "nfpa1": {
