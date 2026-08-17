@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import type {
   ElementCollection,
+  ElementCollectionHistoryEntry,
   ElementCollectionPhysical,
   ElementCollectionRadioactive,
   ElementCollectionSpectrum,
@@ -37,10 +38,13 @@ function serializePhysical(physical: ElementCollectionPhysical | null | undefine
   const fields: [string, string][] = []
   if (physical.sampleState) fields.push(['sampleState', quoteString(physical.sampleState)])
   if (physical.description) fields.push(['description', serializeLocalizedLabel(physical.description)])
+  if (physical.allotrope) fields.push(['allotrope', serializeLocalizedLabel(physical.allotrope)])
   if (physical.container) fields.push(['container', quoteString(physical.container)])
   if (physical.purity) fields.push(['purity', quoteString(physical.purity)])
+  if (physical.weight) fields.push(['weight', quoteString(physical.weight)])
+  if (physical.acquiredDate) fields.push(['acquiredDate', quoteString(physical.acquiredDate)])
   if (fields.length === 0) return null
-  if (!physical.description) {
+  if (!physical.description && !physical.allotrope) {
     return `${indent}physical: { ${fields.map(([key, value]) => `${key}: ${value}`).join(', ')} },`
   }
   const lines = fields.map(([key, value]) => `${indent}  ${key}: ${value},`)
@@ -69,6 +73,7 @@ function serializeSpectrum(spectrum: ElementCollectionSpectrum | null | undefine
   if (!spectrum?.id) return null
   const lines = [`${indent}  id: ${quoteString(spectrum.id)},`]
   if (spectrum.filename) lines.push(`${indent}  filename: ${serializeLocalizedLabel(spectrum.filename)},`)
+  if (spectrum.leadShielded) lines.push(`${indent}  leadShielded: true,`)
   if (spectrum.annotations?.length) {
     lines.push(`${indent}  annotations: [`)
     for (const annotation of spectrum.annotations) {
@@ -79,12 +84,34 @@ function serializeSpectrum(spectrum: ElementCollectionSpectrum | null | undefine
   return `${indent}spectrum: {\n${lines.join('\n')}\n${indent}},`
 }
 
+function serializeHistoryEntry(entry: ElementCollectionHistoryEntry, indent: string): string {
+  const lines = [
+    serializePhysical(entry.physical, `${indent}  `),
+    serializeRadioactive(entry.radioactive, `${indent}  `),
+    serializeSpectrum(entry.spectrum, `${indent}  `),
+  ].filter((line): line is string => line !== null)
+  if (entry.retained !== undefined && entry.retained !== null) {
+    lines.push(`${indent}  retained: ${entry.retained},`)
+  }
+  if (entry.reason) {
+    lines.push(`${indent}  reason: ${quoteString(entry.reason)},`)
+  }
+  return `${indent}{\n${lines.join('\n')}\n${indent}},`
+}
+
+function serializeHistory(history: ElementCollectionHistoryEntry[] | null | undefined, indent: string): string | null {
+  if (!history?.length) return null
+  const lines = history.map((entry) => serializeHistoryEntry(entry, `${indent}  `))
+  return `${indent}history: [\n${lines.join('\n')}\n${indent}],`
+}
+
 export function serializeEntry(symbol: string, entry: ElementCollection): string {
   const indent = '    '
   const groupLines = [
     serializePhysical(entry.physical, indent),
     serializeRadioactive(entry.radioactive, indent),
     serializeSpectrum(entry.spectrum, indent),
+    serializeHistory(entry.history, indent),
   ].filter((line): line is string => line !== null)
   if (groupLines.length === 0) return `  ${symbol}: {},`
   return `  ${symbol}: {\n${groupLines.join('\n')}\n  },`

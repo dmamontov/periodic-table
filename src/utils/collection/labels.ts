@@ -1,12 +1,13 @@
-import { containerLabels, sampleStateLabels } from '../../locales/collection'
+import { containerLabels, reasonLabels, sampleStateLabels } from '../../locales/collection'
 import { resolveLocalizedLabel } from '../localizedLabel'
 import { localeMessages } from '../../locales'
 import type { Locale } from '../../locales/types'
-import type { ElementCollection } from '../../types/collection/collection'
+import type { ElementCollection, ElementCollectionPhysical } from '../../types/collection/collection'
 
 const DICTS = {
   sampleStates: sampleStateLabels,
   containers: containerLabels,
+  reasons: reasonLabels,
 }
 
 export function resolveCollectionLabel(
@@ -24,14 +25,21 @@ export function resolveSourceType(locale: Locale, key: string | null | undefined
   return localeMessages[locale].sidebar.sourceTypes[key as 'primary' | 'secondary'] ?? key
 }
 
+/** Works for both the live ElementCollectionPhysical and a history entry's physical snapshot. */
+export function resolvePhysicalStateLabel(
+  physical: Pick<ElementCollectionPhysical, 'description' | 'sampleState'> | null | undefined,
+  locale: Locale,
+): string {
+  if (!physical) return ''
+  if (physical.description) return resolveLocalizedLabel(physical.description, locale)
+  return resolveCollectionLabel(locale, 'sampleStates', physical.sampleState)
+}
+
 export function resolveCollectionSampleState(
   locale: Locale,
   entry: ElementCollection | null | undefined,
 ): string {
-  const physical = entry?.physical
-  if (!physical) return ''
-  if (physical.description) return resolveLocalizedLabel(physical.description, locale)
-  return resolveCollectionLabel(locale, 'sampleStates', physical.sampleState)
+  return resolvePhysicalStateLabel(entry?.physical, locale)
 }
 
 /** 999 → 99,9%; 6N → 99,9999%; ~999 → ~99,9%; values that already contain % are returned as-is */
@@ -69,6 +77,19 @@ export function formatCollectionPurity(value: string | null | undefined): string
   if (!formatted) return trimmed
 
   return approximate ? `~${formatted}` : formatted
+}
+
+/** '2021-05-01' → "1 мая 2021 г." (ru) / "May 1, 2021" (en) / "2021年5月1日" (zh) */
+export function formatCollectionAcquiredDate(value: string | null | undefined, locale: Locale): string {
+  if (!value) return ''
+  const date = new Date(`${value}T00:00:00`)
+  if (Number.isNaN(date.getTime())) return value
+
+  return date.toLocaleDateString(locale === 'zh' ? 'zh-CN' : locale, {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
 }
 
 /** 1.85 → 1.85 г; ~1.85 → ~1.85 г (approximate) */

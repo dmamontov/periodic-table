@@ -30,6 +30,7 @@ import {
   resolveCollectionLabel,
   resolveCollectionSampleState,
   resolveSourceType,
+  formatCollectionAcquiredDate,
   formatCollectionPurity,
   formatCollectionWeight,
 } from '../collection/labels'
@@ -441,6 +442,12 @@ function buildCollectionSection(ctx: SectionBuildContext): DetailSection {
       fmt(resolveCollectionLabel(locale, 'containers', element.collection?.physical?.container)),
     ),
   )
+
+  const acquiredDate = prop(
+    s.props.collectionAcquiredDate,
+    fmt(formatCollectionAcquiredDate(element.collection?.physical?.acquiredDate, locale)),
+  )
+  if (!acquiredDate.empty) collectionItems.push(acquiredDate)
 
   if (showRadioactiveCollectionFields) {
     const radioactive = element.collection?.radioactive

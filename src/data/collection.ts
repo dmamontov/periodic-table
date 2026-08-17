@@ -42,264 +42,448 @@ export const siteUrl = 'https://periodic.mamontov.tech'
 
 export const myElements: Record<string, ElementCollection> = {
   H: {
-    physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '999' },
+    physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '999', acquiredDate: '2021-07-31' },
   },
   He: {
-    physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '9999' },
+    physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '9999', acquiredDate: '2021-07-31' },
   },
   Li: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.06', acquiredDate: '2022-02-14' },
   },
   Be: {
-    physical: { sampleState: 'cubicIngot', purity: '999' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~1.85', acquiredDate: '2024-08-26' },
   },
   B: {
-    physical: { sampleState: 'cubicIngot', purity: '999' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~2.34', acquiredDate: '2024-10-09' },
+    history: [
+      {
+        physical: { sampleState: 'powder', container: 'acrylicBox', purity: '997', weight: '~1', acquiredDate: '2022-02-21' },
+        retained: true,
+        reason: 'betterSample',
+      },
+      {
+        physical: { sampleState: 'powder', container: 'ampoule', purity: '999', weight: '~0.1', acquiredDate: '2024-08-26' },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   C: {
     physical: {
       sampleState: 'cubicIngot',
-      purity: '999',
       allotrope: { ru: 'Графит', en: 'Graphite', zh: '石墨' },
+      purity: '999',
+      weight: '~2.27',
+      acquiredDate: '2021-05-01',
     },
   },
   N: {
-    physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '999' },
+    physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '999', acquiredDate: '2021-07-31' },
   },
   O: {
-    physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '995' },
+    physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '995', acquiredDate: '2021-07-31' },
   },
   F: {
     physical: {
       description: { ru: 'Куб фторопласта (C₂F₄)', en: 'PTFE (C₂F₄) cube', zh: '聚四氟乙烯（C₂F₄）立方体' },
       purity: '7598',
+      acquiredDate: '2024-09-07',
     },
+    history: [
+      {
+        physical: {
+          description: { ru: 'Газ F₂N₂', en: 'F₂N₂ gas', zh: 'F₂N₂ 气体' },
+          container: 'ampoule',
+          purity: '50',
+          acquiredDate: '2022-02-14',
+        },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   Ne: {
-    physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '99994' },
+    physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '99994', acquiredDate: '2021-07-31' },
   },
   Na: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~0.04', acquiredDate: '2024-09-23' },
   },
   Mg: {
-    physical: { sampleState: 'cubicIngot', purity: '9999' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~1.74', acquiredDate: '2021-05-01' },
   },
   Al: {
-    physical: { sampleState: 'cubicIngot', purity: '9999' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~2.70', acquiredDate: '2024-09-16' },
+    history: [
+      {
+        physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~2.70', acquiredDate: '2021-05-17' },
+        retained: false,
+        reason: 'betterSample',
+      },
+    ],
   },
   Si: {
-    physical: { sampleState: 'cubicIngot', purity: '6N' },
+    physical: { sampleState: 'cubicIngot', purity: '6N', weight: '~2.33', acquiredDate: '2021-11-13' },
   },
   P: {
     physical: {
       sampleState: 'pressedPowder',
+      allotrope: { ru: 'Красный фосфор', en: 'Red phosphorus', zh: '红磷' },
       container: 'acrylicBox',
       purity: '987',
-      allotrope: { ru: 'Красный фосфор', en: 'Red phosphorus', zh: '红磷' },
+      weight: '~2.34',
+      acquiredDate: '2024-09-03',
     },
+    history: [
+      {
+        physical: {
+          sampleState: 'pressedPowder',
+          allotrope: { ru: 'Красный фосфор', en: 'Red phosphorus', zh: '红磷' },
+          container: 'acrylicBox',
+          purity: '987',
+          weight: '~2.34',
+          acquiredDate: '2022-02-21',
+        },
+        retained: false,
+        reason: 'degradedStorage',
+      },
+    ],
   },
   S: {
-    physical: { sampleState: 'pressedPowder', container: 'acrylicBox', purity: '999' },
+    physical: {
+      sampleState: 'pressedPowder',
+      allotrope: { ru: 'Ромбическая сера', en: 'Rhombic sulfur', zh: '斜方硫' },
+      container: 'acrylicBox',
+      purity: '999',
+      weight: '~2.07',
+      acquiredDate: '2024-08-26',
+    },
+    history: [
+      {
+        physical: { sampleState: 'powder', container: 'acrylicBox', purity: '999', weight: '~2', acquiredDate: '2022-02-21' },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   Cl: {
-    physical: { sampleState: 'liquefiedGas', container: 'ampoule', purity: '99' },
+    physical: { sampleState: 'liquefiedGas', container: 'ampoule', purity: '99', acquiredDate: '2024-09-03' },
+    history: [
+      {
+        physical: { sampleState: 'gas', container: 'ampoule', purity: '99', acquiredDate: '2022-02-14' },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   Ar: {
-    physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '99998' },
+    physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '99998', acquiredDate: '2021-07-31' },
   },
   K: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~0.05', acquiredDate: '2026-05-23' },
+    history: [
+      {
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~0.05', acquiredDate: '2024-09-23' },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   Ca: {
-    physical: { sampleState: 'granules', container: 'ampoule', purity: '999' },
+    physical: { sampleState: 'granules', container: 'ampoule', purity: '999', weight: '~0.1', acquiredDate: '2026-05-21' },
   },
   Sc: {
-    physical: { sampleState: 'cubicIngot', purity: '9995' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~2.99', acquiredDate: '2024-09-16' },
   },
   Ti: {
-    physical: { sampleState: 'cubicIngot', purity: '995' },
+    physical: { sampleState: 'cubicIngot', purity: '995', weight: '~4.51', acquiredDate: '2024-09-07' },
+    history: [
+      {
+        physical: { sampleState: 'cubicIngot', purity: '995', weight: '~4.51', acquiredDate: '2021-07-26' },
+        retained: false,
+        reason: 'betterSample',
+      },
+    ],
   },
   V: {
-    physical: { sampleState: 'cubicIngot', purity: '999' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~6.11', acquiredDate: '2022-01-02' },
   },
   Cr: {
-    physical: { sampleState: 'cubicIngot', purity: '997' },
+    physical: { sampleState: 'cubicIngot', purity: '997', weight: '~7.15', acquiredDate: '2021-07-26' },
   },
   Mn: {
-    physical: { sampleState: 'cubicIngot', purity: '997' },
+    physical: { sampleState: 'cubicIngot', purity: '997', weight: '~7.21', acquiredDate: '2024-09-07' },
+    history: [
+      {
+        physical: { sampleState: 'metal', container: 'acrylicBox', purity: '998', weight: '5', acquiredDate: '2022-02-21' },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   Fe: {
-    physical: { sampleState: 'cubicIngot', purity: '9999' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~7.87', acquiredDate: '2024-09-26' },
+    history: [
+      {
+        physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~7.87', acquiredDate: '2021-05-01' },
+        retained: false,
+        reason: 'degradedStorage',
+      },
+    ],
   },
   Co: {
-    physical: { sampleState: 'cubicIngot', purity: '9996' },
+    physical: { sampleState: 'cubicIngot', purity: '9996', weight: '~8.90', acquiredDate: '2021-05-05' },
   },
   Ni: {
-    physical: { sampleState: 'cubicIngot', purity: '996' },
+    physical: { sampleState: 'cubicIngot', purity: '996', weight: '~8.91', acquiredDate: '2021-05-09' },
   },
   Cu: {
-    physical: { sampleState: 'cubicIngot', purity: '9995' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~8.96', acquiredDate: '2024-09-07' },
+    history: [
+      {
+        physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~8.96', acquiredDate: '2021-05-09' },
+        retained: false,
+        reason: 'degradedStorage',
+      },
+    ],
   },
   Zn: {
-    physical: { sampleState: 'cubicIngot', purity: '9999' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~7.13', acquiredDate: '2024-09-16' },
+    history: [
+      {
+        physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~7.13', acquiredDate: '2021-05-17' },
+        retained: false,
+        reason: 'betterSample',
+      },
+    ],
   },
   Ga: {
-    physical: { sampleState: 'metal', container: 'acrylicBox', purity: '9999' },
+    physical: { sampleState: 'metal', container: 'acrylicBox', purity: '9999', weight: '~5.91', acquiredDate: '2022-01-09' },
   },
   Ge: {
-    physical: { sampleState: 'cubicIngot', purity: '5N' },
+    physical: { sampleState: 'cubicIngot', purity: '5N', weight: '~5.32', acquiredDate: '2026-05-21' },
   },
   As: {
-    physical: { sampleState: 'powder', container: 'ampoule', purity: '999' },
+    physical: { sampleState: 'powder', container: 'ampoule', purity: '999', weight: '~0.1', acquiredDate: '2026-06-22' },
+    history: [
+      {
+        physical: { sampleState: 'powder', container: 'ampoule', purity: '999', weight: '~0.1' },
+        retained: false,
+        reason: 'degradedStorage',
+      },
+    ],
   },
   Se: {
-    physical: { sampleState: 'cubicIngot', purity: '~999' },
+    physical: { sampleState: 'cubicIngot', purity: '~999', weight: '~4.81', acquiredDate: '2024-09-03' },
   },
   Br: {
-    physical: { sampleState: 'liquid', container: 'ampoule', purity: '99' },
+    physical: { sampleState: 'liquid', container: 'ampoule', purity: '99', weight: '~0.25', acquiredDate: '2024-09-23' },
+    history: [
+      {
+        physical: { sampleState: 'liquid', container: 'ampoule', purity: '99', weight: '~0.25', acquiredDate: '2022-02-01' },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   Kr: {
-    physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '9999' },
+    physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '9999', acquiredDate: '2021-07-31' },
   },
   Rb: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~0.12', acquiredDate: '2026-06-16' },
+    history: [
+      {
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~2', acquiredDate: '2024-09-23' },
+        retained: true,
+        reason: 'wrongAmpouleSize',
+      },
+    ],
   },
   Sr: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.2', acquiredDate: '2026-06-22' },
   },
   Y: {
-    physical: { sampleState: 'cubicIngot', purity: '999' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~4.47', acquiredDate: '2022-01-09' },
   },
   Zr: {
-    physical: { sampleState: 'cubicIngot', purity: '992' },
+    physical: { sampleState: 'cubicIngot', purity: '992', weight: '~6.52', acquiredDate: '2021-07-28' },
   },
   Nb: {
-    physical: { sampleState: 'cubicIngot', purity: '9995' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~8.57', acquiredDate: '2021-09-01' },
   },
   Mo: {
-    physical: { sampleState: 'cubicIngot', purity: '9995' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~10.28', acquiredDate: '2022-01-09' },
   },
   Ru: {
-    physical: { sampleState: 'bead', container: 'acrylicBox', purity: '9998' },
+    physical: { sampleState: 'bead', container: 'acrylicBox', purity: '9998', weight: '~0.5', acquiredDate: '2026-06-28' },
+    history: [
+      {
+        physical: { sampleState: 'powder', container: 'substrate', purity: '999', weight: '~0.01', acquiredDate: '2026-05-23' },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   Rh: {
-    physical: { sampleState: 'bead', container: 'acrylicBox', purity: '9995' },
+    physical: { sampleState: 'bead', container: 'acrylicBox', purity: '9995', weight: '~0.3', acquiredDate: '2026-07-19' },
+    history: [
+      {
+        physical: { sampleState: 'powder', container: 'substrate', purity: '9995', weight: '~0.01', acquiredDate: '2026-05-23' },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   Pd: {
-    physical: { sampleState: 'plate', purity: '9995' },
+    physical: { sampleState: 'plate', purity: '9995', weight: '~0.13', acquiredDate: '2026-06-14' },
+    history: [
+      {
+        physical: { sampleState: 'foil', container: 'substrate', purity: '999', weight: '~0.01', acquiredDate: '2026-05-23' },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   Ag: {
-    physical: { sampleState: 'cubicIngot', purity: '9999' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~10.49', acquiredDate: '2021-09-01' },
   },
   Cd: {
-    physical: { sampleState: 'cubicIngot', purity: '99995' },
+    physical: { sampleState: 'cubicIngot', purity: '99995', weight: '~8.65', acquiredDate: '2024-09-03' },
   },
   In: {
-    physical: { sampleState: 'cubicIngot', purity: '99995' },
+    physical: { sampleState: 'cubicIngot', purity: '99995', weight: '~7.31', acquiredDate: '2022-02-06' },
   },
   Sn: {
-    physical: { sampleState: 'cubicIngot', purity: '9999' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~7.29', acquiredDate: '2021-05-17' },
   },
   Sb: {
-    physical: { sampleState: 'cubicIngot', purity: '999' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~6.70', acquiredDate: '2021-05-09' },
   },
   Te: {
-    physical: { sampleState: 'cubicIngot', purity: '9999' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~6.24', acquiredDate: '2021-07-28' },
   },
   I: {
-    physical: { sampleState: 'granules', container: 'ampoule', purity: '999' },
+    physical: { sampleState: 'granules', container: 'ampoule', purity: '999', weight: '~0.2', acquiredDate: '2022-02-01' },
   },
   Xe: {
-    physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '9999' },
+    physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '9999', acquiredDate: '2021-07-31' },
   },
   Cs: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~0.05', acquiredDate: '2026-05-21' },
+    history: [
+      {
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~2', acquiredDate: '2024-09-23' },
+        retained: true,
+        reason: 'wrongAmpouleSize',
+      },
+    ],
   },
   Ba: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.1', acquiredDate: '2024-08-26' },
   },
   La: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-05-21' },
   },
   Ce: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-05-21' },
   },
   Pr: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-05-21' },
   },
   Nd: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-06-05' },
   },
   Sm: {
-    physical: { sampleState: 'cubicIngot', purity: '9995' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~7.52', acquiredDate: '2022-01-09' },
   },
   Eu: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~0.2', acquiredDate: '2026-05-21' },
   },
   Gd: {
-    physical: { sampleState: 'cubicIngot', purity: '9999' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~7.90', acquiredDate: '2022-01-09' },
   },
   Tb: {
-    physical: { sampleState: 'cubicIngot', purity: '9995' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~8.23', acquiredDate: '2024-09-26' },
   },
   Dy: {
-    physical: { sampleState: 'cubicIngot', purity: '999' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~8.54', acquiredDate: '2024-09-16' },
   },
   Ho: {
-    physical: { sampleState: 'cubicIngot', purity: '999' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~8.79', acquiredDate: '2022-02-06' },
   },
   Er: {
-    physical: { sampleState: 'cubicIngot', purity: '999' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~9.07', acquiredDate: '2022-02-06' },
   },
   Tm: {
-    physical: { sampleState: 'cubicIngot', purity: '9999' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~9.32', acquiredDate: '2024-09-16' },
   },
   Yb: {
-    physical: { sampleState: 'cubicIngot', purity: '9999' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~6.90', acquiredDate: '2024-09-16' },
   },
   Lu: {
-    physical: { sampleState: 'cubicIngot', purity: '9995' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~9.84', acquiredDate: '2024-09-16' },
   },
   Hf: {
-    physical: { sampleState: 'cubicIngot', purity: '999' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~13.31', acquiredDate: '2024-09-03' },
   },
   Ta: {
-    physical: { sampleState: 'cubicIngot', purity: '9995' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~16.69', acquiredDate: '2022-10-07' },
   },
   W: {
-    physical: { sampleState: 'cubicIngot', purity: '9995' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~19.25', acquiredDate: '2021-09-01' },
   },
   Re: {
-    physical: { sampleState: 'cubicIngot', purity: '999' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~21.02', acquiredDate: '2024-09-03' },
   },
   Os: {
-    physical: { sampleState: 'bead', container: 'acrylicBox', purity: '9995' },
+    physical: { sampleState: 'bead', container: 'acrylicBox', purity: '9995', weight: '~1', acquiredDate: '2026-06-28' },
+    history: [
+      {
+        physical: { sampleState: 'powder', container: 'substrate', purity: '999', weight: '~0.01', acquiredDate: '2026-05-23' },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   Ir: {
-    physical: { sampleState: 'powder', container: 'substrate', purity: '9998' },
+    physical: { sampleState: 'powder', container: 'substrate', purity: '9998', weight: '~0.01', acquiredDate: '2026-05-23' },
   },
   Pt: {
-    physical: { sampleState: 'plate', purity: '9995' },
+    physical: { sampleState: 'plate', purity: '9995', weight: '~0.22', acquiredDate: '2026-06-04' },
+    history: [
+      {
+        physical: { sampleState: 'foil', container: 'substrate', purity: '999', weight: '~0.02', acquiredDate: '2026-05-23' },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   Au: {
-    physical: { sampleState: 'plate', purity: '9999' },
+    physical: { sampleState: 'plate', purity: '9999', weight: '~0.19', acquiredDate: '2026-06-19' },
+    history: [
+      {
+        physical: { sampleState: 'foil', container: 'substrate', purity: '999', weight: '~0.02', acquiredDate: '2026-05-23' },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   Hg: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999995' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999995', weight: '~1', acquiredDate: '2022-02-14' },
   },
   Tl: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '~999' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '~999', acquiredDate: '2026-05-25' },
   },
   Pb: {
-    physical: { sampleState: 'cubicIngot', purity: '9999' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~11.34', acquiredDate: '2021-05-13' },
   },
   Bi: {
-    physical: { sampleState: 'cubicIngot', purity: '9999' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~9.78', acquiredDate: '2021-05-13' },
   },
   Po: {
     physical: {
       description: { ru: 'Источник из антистатической щётки Staticmaster', en: 'Source from a Staticmaster antistatic brush', zh: 'Staticmaster 防静电刷辐射源' },
       container: 'acrylicCoinCapsule',
+      acquiredDate: '2026-06-27',
     },
     radioactive: {
       isotope: '210',
@@ -327,11 +511,14 @@ export const myElements: Record<string, ElementCollection> = {
     physical: {
       description: { ru: 'Светосостав постоянного действия', en: 'Self-luminous compound', zh: '夜光涂料' },
       container: 'ampoule',
+      acquiredDate: '2026-06-02',
     },
     radioactive: {
       isotope: '222',
       sourceType: 'secondary',
-      decayParent: [{ symbol: 'Ra', isotope: '226' }],
+      decayParent: [
+        { symbol: 'Ra', isotope: '226' },
+      ],
     },
     spectrum: {
       id: 'rn-86-spd',
@@ -340,7 +527,7 @@ export const myElements: Record<string, ElementCollection> = {
       annotations: [
         { energy: 78.3, label: 'Pb Kα/Kβ' },
         { energy: 181.3, label: 'Ra-226' },
-        { energy: 237.0, label: 'Pb-214' },
+        { energy: 237, label: 'Pb-214' },
         { energy: 290.8, label: 'Pb-214' },
         { energy: 342.4, label: 'Pb-214' },
         { energy: 593.5, label: 'Bi-214' },
@@ -351,6 +538,7 @@ export const myElements: Record<string, ElementCollection> = {
     physical: {
       description: { ru: 'Стрелки часов со светосоставом постоянного действия', en: 'Clock hands with self-luminous paint', zh: '带夜光涂料的钟表指针' },
       container: 'ampoule',
+      acquiredDate: '2026-06-02',
     },
     radioactive: {
       isotope: '226',
@@ -363,7 +551,7 @@ export const myElements: Record<string, ElementCollection> = {
       annotations: [
         { energy: 78.3, label: 'Pb Kα/Kβ' },
         { energy: 181.3, label: 'Ra-226' },
-        { energy: 237.0, label: 'Pb-214' },
+        { energy: 237, label: 'Pb-214' },
         { energy: 288.3, label: 'Pb-214' },
         { energy: 342.4, label: 'Pb-214' },
         { energy: 593.5, label: 'Bi-214' },
@@ -375,7 +563,22 @@ export const myElements: Record<string, ElementCollection> = {
       description: { ru: 'Торированные электроды WT-20', en: 'WT-20 thoriated electrodes', zh: 'WT-20 钍钨电极' },
       container: 'ampoule',
       purity: '~2%',
+      acquiredDate: '2026-06-03',
     },
+    history: [
+      {
+        physical: {
+          description: { ru: 'Кулон скалярной энергии', en: 'Scalar energy pendant', zh: '量子能量吊坠' },
+          acquiredDate: '2026-05-21',
+        },
+        radioactive: {
+          isotope: '232',
+          sourceType: 'primary',
+        },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
     radioactive: {
       isotope: '232',
       sourceType: 'primary',
@@ -385,10 +588,10 @@ export const myElements: Record<string, ElementCollection> = {
       filename: { ru: 'Th-232 (WT-20).xml', en: 'Th-232 (WT-20).xml', zh: 'Th-232 (WT-20).xml' },
       leadShielded: true,
       annotations: [
-        { energy: 64.0, label: 'Th-232' },
+        { energy: 64, label: 'Th-232' },
         { energy: 232.2, label: 'Pb-212' },
         { energy: 327.6, label: 'Ac-228' },
-        { energy: 568.0, label: 'Tl-208' },
+        { energy: 568, label: 'Tl-208' },
       ],
     },
   },
@@ -397,6 +600,7 @@ export const myElements: Record<string, ElementCollection> = {
       description: { ru: 'Бисер из урансодержащего стекла', en: 'Beads from uranium-containing glass', zh: '含铀玻璃珠' },
       container: 'ampoule',
       purity: '~2%',
+      acquiredDate: '2021-11-18',
     },
     radioactive: {
       isotope: '238',
@@ -413,10 +617,34 @@ export const myElements: Record<string, ElementCollection> = {
       ],
     },
   },
+  Np: {
+    physical: {
+      description: { ru: 'Источник из дымового детектора HIS-07', en: 'Source from HIS-07 smoke detector', zh: 'HIS-07 烟雾探测器辐射源' },
+      container: 'acrylicCoinCapsule',
+      acquiredDate: '2026-06-27',
+    },
+    radioactive: {
+      isotope: '237',
+      sourceType: 'secondary',
+      decayParent: [
+        { symbol: 'Am', isotope: '241' },
+      ],
+    },
+    spectrum: {
+      id: 'np-93-his07',
+      filename: { ru: 'Np-237 (HIS-07).xml', en: 'Np-237 (HIS-07).xml', zh: 'Np-237 (HIS-07).xml' },
+      leadShielded: true,
+      annotations: [
+        { energy: 19.1, label: 'Np Lα (Am-241)' },
+        { energy: 61.7, label: 'Am-241' },
+      ],
+    },
+  },
   Pu: {
     physical: {
       description: { ru: 'Источник из дымового извещателя РИД-6М', en: 'Source from RID-6M smoke detector', zh: 'RID-6M 烟雾探测器辐射源' },
       container: 'acrylicBox',
+      acquiredDate: '2026-07-11',
     },
     radioactive: {
       isotope: '239',
@@ -436,6 +664,7 @@ export const myElements: Record<string, ElementCollection> = {
     physical: {
       description: { ru: 'Источник из дымового детектора HIS-07', en: 'Source from HIS-07 smoke detector', zh: 'HIS-07 烟雾探测器辐射源' },
       container: 'acrylicCoinCapsule',
+      acquiredDate: '2026-06-06',
     },
     radioactive: {
       isotope: '241',
@@ -444,26 +673,6 @@ export const myElements: Record<string, ElementCollection> = {
     spectrum: {
       id: 'am-95-his07',
       filename: { ru: 'Am-241 (HIS-07).xml', en: 'Am-241 (HIS-07).xml', zh: 'Am-241 (HIS-07).xml' },
-      leadShielded: true,
-      annotations: [
-        { energy: 19.1, label: 'Np Lα (Am-241)' },
-        { energy: 61.7, label: 'Am-241' },
-      ],
-    },
-  },
-  Np: {
-    physical: {
-      description: { ru: 'Источник из дымового детектора HIS-07', en: 'Source from HIS-07 smoke detector', zh: 'HIS-07 烟雾探测器辐射源' },
-      container: 'acrylicCoinCapsule',
-    },
-    radioactive: {
-      isotope: '237',
-      sourceType: 'secondary',
-      decayParent: [{ symbol: 'Am', isotope: '241' }],
-    },
-    spectrum: {
-      id: 'np-93-his07',
-      filename: { ru: 'Np-237 (HIS-07).xml', en: 'Np-237 (HIS-07).xml', zh: 'Np-237 (HIS-07).xml' },
       leadShielded: true,
       annotations: [
         { energy: 19.1, label: 'Np Lα (Am-241)' },

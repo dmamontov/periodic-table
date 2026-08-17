@@ -28,6 +28,7 @@ import ElementSidebarNfpaSection from './ElementSidebarNfpaSection.vue'
 import ElementSidebarGhsSection from './ElementSidebarGhsSection.vue'
 import ElementSidebarOverviewSection from './ElementSidebarOverviewSection.vue'
 import ElementSidebarMiningSection from './ElementSidebarMiningSection.vue'
+import ElementCollectionHistoryModal from './ElementCollectionHistoryModal.vue'
 import CollapsibleSection from '../common/CollapsibleSection.vue'
 import DrawerShell from '../common/DrawerShell.vue'
 import Badge from '../common/Badge.vue'
@@ -532,6 +533,15 @@ function toggleSection(sectionKey: string): void {
             :collapsed="isSectionCollapsed(section.sectionKey ?? section.id)"
             @update:collapsed="toggleSection(section.sectionKey ?? section.id)"
           >
+            <template v-if="section.id === 'collection'" #action>
+              <ElementCollectionHistoryModal
+                :element="element"
+                :element-name="elementName"
+                :display-symbol="displaySymbol"
+                :accent-color="section.color"
+              />
+            </template>
+
             <ElementSidebarPropList
               v-if="section.id !== 'grid' && section.id !== 'nfpa' && section.id !== 'ghs' && section.id !== 'mining'"
               :section="section"

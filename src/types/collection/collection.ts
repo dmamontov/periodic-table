@@ -28,6 +28,8 @@ export interface ElementCollectionPhysical {
   purity?: string | null
   /** Sample weight, grams; a leading "~" marks it approximate (e.g. calculated from bulk density for a hypothetical 1×1×1 cm cube) */
   weight?: string | null
+  /** ISO YYYY-MM-DD — date this specific version (this object's own sampleState/description/etc.) became current. On a later replacement, archive this whole object into a new `history` entry and set a new acquiredDate here. */
+  acquiredDate?: string | null
 }
 
 export interface ElementCollectionRadioactive {
@@ -50,11 +52,24 @@ export interface ElementCollectionSpectrum {
   leadShielded?: boolean | null
 }
 
+/** A past version of this collection entry — same shape as ElementCollection minus its own `history`. Dated via its own `physical.acquiredDate`, same field as the live version. */
+export interface ElementCollectionHistoryEntry {
+  physical?: ElementCollectionPhysical | null
+  radioactive?: ElementCollectionRadioactive | null
+  spectrum?: ElementCollectionSpectrum | null
+  /** Whether this earlier sample is still physically kept, not consumed/merged into the replacement. Omit if unknown. */
+  retained?: boolean | null
+  /** Why this version was replaced — a key into reasonLabels. Omit if unknown. */
+  reason?: string | null
+}
+
 export interface ElementCollection {
   physical?: ElementCollectionPhysical | null
   /** Present only for radioactive samples in the collection */
   radioactive?: ElementCollectionRadioactive | null
   spectrum?: ElementCollectionSpectrum | null
+  /** Earlier versions of this collection entry before a physical replacement, oldest first. The live fields above always describe the *current* version. */
+  history?: ElementCollectionHistoryEntry[] | null
 }
 
 export interface WishlistLink {

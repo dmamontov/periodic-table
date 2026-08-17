@@ -15,6 +15,7 @@ import {
 import type {
   ElementCollection,
   ElementCollectionDecayParent,
+  ElementCollectionHistoryEntry,
   ElementCollectionPhysical,
   ElementCollectionRadioactive,
   ElementCollectionSpectrum,
@@ -32,6 +33,7 @@ interface Vocabulary {
   elementNames: Record<string, string>
   sampleStateLabels: Record<string, LocalizedLabel>
   containerLabels: Record<string, LocalizedLabel>
+  reasonLabels: Record<string, LocalizedLabel>
   sourceTypeLabels: Record<string, string>
   existingSpectrumIds: string[]
 }
@@ -176,6 +178,78 @@ async function askAnnotations(
   return list.length ? list : undefined
 }
 
+function describeHistoryEntryForLog(entry: ElementCollectionHistoryEntry): string {
+  const label = entry.physical?.description
+    ? resolveLocalizedLabelForLog(entry.physical.description)
+    : (entry.physical?.sampleState ?? '?')
+  return `${label} (since ${entry.physical?.acquiredDate})`
+}
+
+async function askCollectionHistory(
+  existing: ElementCollectionHistoryEntry[] | null | undefined,
+  vocab: Vocabulary,
+): Promise<ElementCollectionHistoryEntry[] | undefined> {
+  note(
+    'Earlier versions of this collection entry, before it was replaced by the current form factor/weight — oldest first. Can carry its own physical/spectrum info, same as the live entry.',
+    'Collection history',
+  )
+  const list: ElementCollectionHistoryEntry[] = existing ? existing.map((e) => ({ ...e })) : []
+  while (true) {
+    if (list.length) {
+      log.step(`Current history: ${list.map(describeHistoryEntryForLog).join('; ')}`)
+    }
+    const add = await askConfirm(list.length ? 'Add another earlier version?' : 'Add an earlier version?', false)
+    if (!add) break
+
+    const physical: ElementCollectionPhysical = {}
+    physical.acquiredDate = await askRequiredText('Acquired date (when this version became current)', {
+      placeholder: 'YYYY-MM-DD',
+      validate: (v) => (/^\d{4}-\d{2}-\d{2}$/.test(v.trim()) ? undefined : 'Use YYYY-MM-DD format'),
+    })
+    physical.sampleState = await askEnum('Sample state', undefined, vocab.sampleStateLabels)
+    physical.container = await askEnum('Container', undefined, vocab.containerLabels)
+    physical.purity = await askText('Purity', undefined, {
+      placeholder: '999 → 99.9%; 6N → 99.9999%; ~999 → ~99.9% (approximate)',
+    })
+    physical.weight = await askText('Weight, grams', undefined)
+    const wantDescription = await askConfirm('Use a ready-made description instead of sample state?', false)
+    physical.description = wantDescription ? await askLocalizedLabel('Description', undefined) : undefined
+
+    const wantSpectrum = await askConfirm('Does this earlier version have its own gamma-spectrum measurement?', false)
+    let spectrum: ElementCollectionSpectrum | undefined
+    if (wantSpectrum) {
+      const id = await askText('Spectrum id', undefined, {
+        placeholder: 'symbol-atomicnumber-label, e.g. th-90-wt20',
+      })
+      if (id && !vocab.existingSpectrumIds.includes(id)) {
+        log.warn(`File src/data/spectra/${id}.json not found — run \`pnpm data:spectrum:convert -- <input.xml> ${id}\` first.`)
+      }
+      const filename = await askLocalizedLabel('Download filename', undefined)
+      if (id) spectrum = { id, filename }
+    }
+
+    const knowsRetained = await askConfirm('Do you know whether this earlier sample is still physically kept?', true)
+    const retained = knowsRetained
+      ? await askConfirm('Is it still kept (not consumed/discarded/merged into the replacement)?', true)
+      : undefined
+
+    const reason = await askEnum('Reason for replacement', undefined, vocab.reasonLabels)
+
+    const entry: ElementCollectionHistoryEntry = {}
+    const cleanedPhysical = cleanObject(physical)
+    if (cleanedPhysical) entry.physical = cleanedPhysical
+    if (spectrum) entry.spectrum = cleanObject(spectrum)
+    if (retained !== undefined) entry.retained = retained
+    if (reason) entry.reason = reason
+    list.push(entry)
+  }
+  return list.length ? list : undefined
+}
+
+function resolveLocalizedLabelForLog(label: LocalizedLabel): string {
+  return typeof label === 'string' ? label : (label.ru ?? '?')
+}
+
 function cleanObject<T extends object>(obj: T): T | undefined {
   const entries = Object.entries(obj).filter(([, v]) => v !== undefined)
   return entries.length ? (Object.fromEntries(entries) as T) : undefined
@@ -194,6 +268,10 @@ async function editWizard(
   })
   physical.weight = await askText('Weight, grams', existing?.physical?.weight, {
     placeholder: '1.85 → 1.85 g; ~1.85 → ~1.85 g (approximate)',
+  })
+  physical.acquiredDate = await askText('Acquired date', existing?.physical?.acquiredDate, {
+    placeholder: 'YYYY-MM-DD, e.g. 2021-05-01',
+    validate: (v) => (!v.trim() || /^\d{4}-\d{2}-\d{2}$/.test(v.trim()) ? undefined : 'Use YYYY-MM-DD format'),
   })
   const wantAllotrope = await askConfirm(
     'Specific allotrope/modification (e.g. "Red phosphorus", "Graphite")?',
@@ -253,10 +331,14 @@ async function editWizard(
     if (id) spectrum = { id, filename, annotations }
   }
 
+  log.info('History')
+  const history = await askCollectionHistory(existing?.history, vocab)
+
   const entry: ElementCollection = {}
   if (hasPhysical) entry.physical = cleanObject(physical)
   if (radioactive) entry.radioactive = cleanObject(radioactive)
   if (spectrum) entry.spectrum = cleanObject(spectrum)
+  if (history) entry.history = history
 
   note(JSON.stringify(entry, null, 2), 'Entry preview')
   const confirmed = await askConfirm('Save?', true)
@@ -301,7 +383,7 @@ async function pickAction(hasExisting: boolean): Promise<'edit' | 'delete' | 'ad
 async function loadVocabulary(): Promise<Vocabulary> {
   const elements = loadElements()
   const ruMessages = (await import('../../src/locales/lang/ru.ts')).default
-  const { sampleStateLabels, containerLabels } = await import('../../src/locales/collection.ts')
+  const { sampleStateLabels, containerLabels, reasonLabels } = await import('../../src/locales/collection.ts')
   const existingSpectrumIds = readdirSync(SPECTRA_DIR)
     .filter((f) => f.endsWith('.json'))
     .map((f) => f.replace(/\.json$/, ''))
@@ -311,6 +393,7 @@ async function loadVocabulary(): Promise<Vocabulary> {
     elementNames: ruMessages.elements,
     sampleStateLabels,
     containerLabels,
+    reasonLabels,
     sourceTypeLabels: ruMessages.sidebar.sourceTypes,
     existingSpectrumIds,
   }

@@ -112,6 +112,10 @@ export interface LocaleMessages {
     protons: string
     neutrons: string
     blockSuffix: string
+    collectionHistorySince: string
+    collectionHistoryCurrent: string
+    collectionHistoryRetained: string
+    collectionHistoryNotRetained: string
     sections: {
       overview: string
       mining: string
@@ -199,6 +203,9 @@ export interface LocaleMessages {
       collectionSampleState: string
       collectionAllotrope: string
       collectionContainer: string
+      collectionAcquiredDate: string
+      collectionHistory: string
+      collectionHistoryReason: string
       collectionIsotope: string
       collectionSourceType: string
       collectionDecayParent: string
