@@ -4936,10 +4936,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=2UbPY7VHLWs",
     "productionCountries": [
-      { "country": "ca" },
       { "country": "nl" },
       { "country": "be" },
-      { "country": "za" }
+      { "country": "za" },
+      { "country": "au" },
+      { "country": "ru" }
     ]
   },
   "Ru": {
