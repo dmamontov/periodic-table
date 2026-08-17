@@ -6,7 +6,9 @@ import { useLocale } from '../../locales'
 import { useTheme } from '../../theme'
 import { COLLECTION_COLOR, RADIOACTIVE_COLOR, WEAK_RADIOACTIVE_COLOR } from '../../theme/colors'
 import { useElementDetail } from '../../composables/useElementDetail'
-import { getElementImageUrl, getGridStructureImageUrlByNum, hasElementImage, isElementRadioactive, isElementWeaklyRadioactive } from '../../data'
+import { getElementImageUrl, getElementRouteSymbol, getGridStructureImageUrlByNum, hasElementImage, isElementRadioactive, isElementWeaklyRadioactive } from '../../data'
+import { siteTitle, siteUrl } from '../../data/collection'
+import { resolveLocalizedLabel } from '../../utils/localizedLabel'
 import {
   buildElementSections,
   isSectionEmpty,
@@ -162,6 +164,44 @@ const youtubeUrl = computed(() => {
   if (!props.element) return ''
   return getYouTubeUrl(props.element.number, locale.value, detail.value)
 })
+
+const shareIconColor = computed(() => (resolvedTheme.value === 'dark' ? '#ffffff' : '#2f2f2f'))
+
+const shareUrl = computed(() => {
+  if (!props.element) return ''
+  return `${siteUrl}/element/${getElementRouteSymbol(props.element.symbol)}`
+})
+
+const shareCopied = ref(false)
+let shareCopiedTimeout: ReturnType<typeof setTimeout> | undefined
+
+async function share(): Promise<void> {
+  if (!props.element) return
+  const url = shareUrl.value
+  const title = `${elementName.value} (${displaySymbol.value}) — ${resolveLocalizedLabel(siteTitle, locale.value)}`
+
+  if (navigator.share) {
+    try {
+      await navigator.share({ title, url })
+    } catch {
+      // user dismissed the native share sheet — not an error
+    }
+    return
+  }
+
+  try {
+    await navigator.clipboard.writeText(url)
+  } catch {
+    return
+  }
+  shareCopied.value = true
+  clearTimeout(shareCopiedTimeout)
+  shareCopiedTimeout = setTimeout(() => {
+    shareCopied.value = false
+  }, 1500)
+}
+
+onBeforeUnmount(() => clearTimeout(shareCopiedTimeout))
 
 const collapsedSections = ref<Set<string>>(new Set())
 let lastCollapsedForElement: number | undefined
@@ -320,6 +360,41 @@ function toggleSection(sectionKey: string): void {
                 alt=""
               />
             </a>
+            <button
+              type="button"
+              class="element-sidebar__header-link element-sidebar__header-link--share"
+              :aria-label="shareCopied ? tSidebar('shareCopied') : tSidebar('share')"
+              @click="share"
+            >
+              <svg
+                v-if="!shareCopied"
+                class="element-sidebar__header-link-icon element-sidebar__header-link-icon--share"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 2v13" />
+                <path d="m16 6-4-4-4 4" />
+                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+              </svg>
+              <svg
+                v-else
+                class="element-sidebar__header-link-icon element-sidebar__header-link-icon--share"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 12l5 5L20 6" />
+              </svg>
+            </button>
           </div>
         </div>
 
@@ -376,6 +451,43 @@ function toggleSection(sectionKey: string): void {
                   alt=""
                 />
               </a>
+              <button
+                type="button"
+                class="element-sidebar__header-link element-sidebar__header-link--on-image element-sidebar__header-link--share"
+                :aria-label="shareCopied ? tSidebar('shareCopied') : tSidebar('share')"
+                @click="share"
+              >
+                <svg
+                  v-if="!shareCopied"
+                  class="element-sidebar__header-link-icon element-sidebar__header-link-icon--share"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  :style="{ color: shareIconColor }"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 2v13" />
+                  <path d="m16 6-4-4-4 4" />
+                  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                </svg>
+                <svg
+                  v-else
+                  class="element-sidebar__header-link-icon element-sidebar__header-link-icon--share"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  :style="{ color: shareIconColor }"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4 12l5 5L20 6" />
+                </svg>
+              </button>
             </div>
           </div>
 
@@ -566,6 +678,12 @@ function toggleSection(sectionKey: string): void {
   height: 17px;
 }
 
+.element-sidebar__sticky-nav .element-sidebar__header-link-icon--share {
+  width: 14px;
+  height: 14px;
+  color: #fff;
+}
+
 .element-sidebar__header-sentinel {
   height: 1px;
   margin: 0;
@@ -714,9 +832,13 @@ function toggleSection(sectionKey: string): void {
   justify-content: center;
   width: 36px;
   height: 36px;
+  padding: 0;
+  border: none;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.22);
   box-shadow: none;
+  font: inherit;
+  cursor: pointer;
   transition: transform 0.15s ease, background-color 0.15s ease;
 }
 
@@ -731,9 +853,19 @@ function toggleSection(sectionKey: string): void {
   height: 20px;
 }
 
+.element-sidebar__header-link-icon--share {
+  width: 17px;
+  height: 17px;
+}
+
 .element-sidebar__header--no-image .element-sidebar__header-link-icon--youtube {
   width: 17px;
   height: 17px;
+}
+
+.element-sidebar__header--no-image .element-sidebar__header-link-icon--share {
+  width: 15px;
+  height: 15px;
 }
 
 .element-sidebar__header-link--on-image {

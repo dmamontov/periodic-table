@@ -78,6 +78,8 @@ const messages: LocaleMessages = {
     "close": "关闭",
     "wikipedia": "维基百科",
     "youtube": "YouTube",
+    "share": "分享",
+    "shareCopied": "链接已复制",
     "massUnit": "(克/摩尔)",
     "loading": "加载中…",
     "error": "无法加载数据",

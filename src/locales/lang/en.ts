@@ -78,6 +78,8 @@ const messages: LocaleMessages = {
     "close": "Close",
     "wikipedia": "Wikipedia",
     "youtube": "YouTube",
+    "share": "Share",
+    "shareCopied": "Link copied",
     "massUnit": "(g/mol)",
     "loading": "Loading…",
     "error": "Failed to load data",

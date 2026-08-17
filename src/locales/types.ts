@@ -100,6 +100,8 @@ export interface LocaleMessages {
     close: string
     wikipedia: string
     youtube: string
+    share: string
+    shareCopied: string
     massUnit: string
     loading: string
     error: string
