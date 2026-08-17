@@ -5039,9 +5039,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "productionCountries": [
       { "country": "za" },
       { "country": "ru" },
-      { "country": "zw" },
-      { "country": "ca" },
-      { "country": "us" }
+      { "country": "zw" }
     ]
   },
   "Rh": {
@@ -5149,11 +5147,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=aTCYhuD9vfM",
     "productionCountries": [
-      { "country": "za" },
+      { "country": "za", "share": "81.5" },
       { "country": "ru" },
       { "country": "zw" },
-      { "country": "ca" },
-      { "country": "us" }
+      { "country": "ca" }
     ]
   },
   "Pd": {
@@ -5266,11 +5263,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=zDRGZ53Mhp4",
     "productionCountries": [
-      { "country": "ru" },
-      { "country": "za" },
-      { "country": "ca" },
-      { "country": "zw" },
-      { "country": "us" }
+      { "country": "ru", "share": "39.5" },
+      { "country": "za", "share": "37.9" },
+      { "country": "ca", "share": "7.9" },
+      { "country": "zw", "share": "7.9" },
+      { "country": "us", "share": "4.2" }
     ]
   },
   "Ag": {
@@ -8730,11 +8727,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=gTrhMFygoTs",
     "productionCountries": [
-      { "country": "za" },
-      { "country": "ru" },
-      { "country": "zw" },
       { "country": "ca" },
-      { "country": "us" }
+      { "country": "ru" },
+      { "country": "za" }
     ]
   },
   "Ir": {
@@ -8846,10 +8841,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "youtube": "https://www.youtube.com/watch?v=PR6XD-afjYI",
     "productionCountries": [
       { "country": "za" },
-      { "country": "ru" },
-      { "country": "zw" },
       { "country": "ca" },
-      { "country": "us" }
+      { "country": "ru" }
     ]
   },
   "Pt": {
