@@ -439,8 +439,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=z2JJ_YccUXQ",
     "productionCountries": [
-      { "country": "us" },
-      { "country": "cn" }
+      { "country": "us", "share": "85" },
+      { "country": "br" },
+      { "country": "cn" },
+      { "country": "kz" }
     ]
   },
   "B": {
@@ -548,6 +550,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "youtube": "https://www.youtube.com/watch?v=YRWWf3Obsdg",
     "productionCountries": [
       { "country": "tr" },
+      { "country": "cn" },
+      { "country": "cl" },
+      { "country": "ar" },
       { "country": "us" }
     ]
   },
@@ -1536,10 +1541,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=uHHMTQqziAA",
     "productionCountries": [
-      { "country": "cn" },
-      { "country": "br" },
-      { "country": "no" },
-      { "country": "ru" }
+      { "country": "cn", "share": "85" },
+      { "country": "br", "share": "4" },
+      { "country": "no", "share": "2.6" },
+      { "country": "fr", "share": "2" },
+      { "country": "ru", "share": "1.1" }
     ]
   },
   "P": {
@@ -2322,7 +2328,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "youtube": "https://www.youtube.com/watch?v=GzEuy18eljQ",
     "productionCountries": [
       { "country": "cn" },
-      { "country": "ru" },
       { "country": "kz" },
       { "country": "ph" }
     ]
@@ -8253,11 +8258,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "youtube": "https://www.youtube.com/watch?v=j2R1EZu2DKE",
     "productionCountries": [
-      { "country": "au" },
-      { "country": "za" },
-      { "country": "cn" },
-      { "country": "mz" },
-      { "country": "id" }
+      { "country": "fr", "share": "72" },
+      { "country": "de", "share": "10" },
+      { "country": "be", "share": "7" },
+      { "country": "cn", "share": "4" }
     ]
   },
   "Ta": {
