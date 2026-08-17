@@ -2,16 +2,27 @@
 import { SvgMap } from 'vue-svg-map'
 import WorldMap from '@svg-maps/world'
 import type { Location } from 'vue-svg-map'
+import type { ProductionCountryEntry } from '../../types/element/detail'
+
+const MIN_OPACITY = 0.3
 
 const props = defineProps<{
-  countries: string[]
+  countries: ProductionCountryEntry[]
   accentColor: string
 }>()
 
 function locationAttributes(location: Location) {
-  const isActive = props.countries.includes(location.id)
+  const entry = props.countries.find((c) => c.country === location.id)
+  if (!entry) {
+    return { class: 'element-production-map__country' }
+  }
+  const share = entry.share ? Number(entry.share) : null
+  const fillOpacity = share ? MIN_OPACITY + (share / 100) * (1 - MIN_OPACITY) : 1
+  const title = share ? `${location.name} — ${share}%` : location.name
   return {
-    class: isActive ? 'element-production-map__country element-production-map__country--active' : 'element-production-map__country',
+    class: 'element-production-map__country element-production-map__country--active',
+    style: { fillOpacity },
+    title,
   }
 }
 </script>

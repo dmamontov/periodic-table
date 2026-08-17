@@ -34,7 +34,7 @@ const { tSidebar } = useLocale()
         v-else-if="item.kind === 'countryMap'"
         class="element-sidebar__prop element-sidebar__prop--country-map"
       >
-        <ElementProductionMap :countries="item.mapCountries ?? []" :accent-color="section.color" />
+        <ElementProductionMap :countries="(item.mapCountries ?? []).map((c) => ({ country: c }))" :accent-color="section.color" />
       </li>
       <li
         v-else

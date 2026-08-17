@@ -1,4 +1,5 @@
 import type { ElementSampleColorFinish } from './element'
+import type { ProductionCountryEntry } from './detail'
 
 export type SectionId =
   | 'overview'
@@ -39,6 +40,6 @@ export interface DetailSection {
   color: string
   items: DetailProp[]
   gridStructureNum?: number | null
-  miningCountries?: string[]
+  miningCountries?: ProductionCountryEntry[]
   miningNote?: string
 }

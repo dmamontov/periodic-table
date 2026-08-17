@@ -115,6 +115,13 @@ export interface ElementIsotopeEntry {
   abundance?: string | null
 }
 
+export interface ProductionCountryEntry {
+  /** Lowercase ISO 3166-1 alpha-2 code */
+  country: string
+  /** Share of world production/mining, percent — omit if unknown or not applicable */
+  share?: string | null
+}
+
 export interface ElementIsotopeRecord {
   decay: DecayModeKey
   isotopes: ElementIsotopeEntry[]
@@ -141,8 +148,8 @@ export interface ElementDetail {
   isotopes?: ElementIsotopeRecord
   /** Direct thoisoi.ru video link (RU only — EN/ZH always fall back to a YouTube search) */
   youtube?: string
-  /** Lowercase ISO 3166-1 alpha-2 codes — see the "mining" section in CLAUDE.md */
-  productionCountries?: string[]
+  /** See the "mining" section in CLAUDE.md */
+  productionCountries?: ProductionCountryEntry[]
 }
 
 /** On-disk shape: number/symbol come from elements/elements.ts, name from overview.englishName. */

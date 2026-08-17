@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from 'vue'
 import { SECTION_COLORS } from '../../theme/colors'
+import type { ProductionCountryEntry } from '../../types/element/detail'
 
 const ElementProductionMap = defineAsyncComponent(() => import('./ElementProductionMap.vue'))
 
 defineProps<{
-  countries: string[]
+  countries: ProductionCountryEntry[]
   note: string
 }>()
 </script>

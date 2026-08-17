@@ -1,5 +1,5 @@
 import type { Element } from '../types/element/element'
-import type { ElementDetail, StoredElementDetail } from '../types/element/detail'
+import type { ElementDetail, ProductionCountryEntry, StoredElementDetail } from '../types/element/detail'
 import type { CategoryId } from '../types/element/category'
 import type { GhsPictogramId } from '../types/element/ghs'
 import type { CollectionSpectrumData, RadiacodeIsotopeRef } from '../types/collection/spectrum'
@@ -333,7 +333,7 @@ export function getElementGhsPictograms(number: number): GhsPictogramId[] {
   return elementDetails[symbol]?.ghs ?? []
 }
 
-export function getElementProductionCountries(number: number): string[] {
+export function getElementProductionCountries(number: number): ProductionCountryEntry[] {
   const symbol = getSymbolByNumber(number)
   if (!symbol) return []
   return elementDetails[symbol]?.productionCountries ?? []
