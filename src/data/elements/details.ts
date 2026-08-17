@@ -2723,7 +2723,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "properties": {
       "elementMasse": "54.9380430430528",
-      "elementDensity": "7.21",
+      "elementDensity": "7.3",
       "elementMeltingPoint": "1246.0",
       "elementBoilingPoint": "2061.0",
       "elValence": "2, 3, 4, 6, 7",
@@ -2819,7 +2819,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Ferrum",
       "englishName": "Iron",
-      "elementOpenedYear": "5000 BC",
+      "elementOpenedYear": "~3500 BC",
       "casNumber": "CAS7439-89-6",
       "countryOpener": "MiddleEast",
       "elementShell": "K2-L8-M14-N2-O0-P0-Q0-R0",
@@ -2952,7 +2952,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Cobaltum",
       "englishName": "Cobalt",
-      "elementOpenedYear": "1735",
+      "elementOpenedYear": "1739",
       "casNumber": "CAS7440-48-4",
       "elementOpener": "22",
       "countryOpener": "SE",
@@ -2968,7 +2968,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "properties": {
       "elementMasse": "58.9331935652212",
-      "elementDensity": "8.90",
+      "elementDensity": "8.86",
       "elementMeltingPoint": "1495.0",
       "elementBoilingPoint": "2927.0",
       "elValence": "2, 3",
