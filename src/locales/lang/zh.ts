@@ -384,7 +384,8 @@ const messages: LocaleMessages = {
     "80": "Albertus Magnus",
     "81": "Anders Gustaf Ekeberg",
     "82": "Lord Rayleigh",
-    "83": "Hieronymous Theodor Richter"
+    "83": "Hieronymous Theodor Richter",
+    "84": "Louis Soret"
   },
   "nfpa": {
     "nfpa1": {
