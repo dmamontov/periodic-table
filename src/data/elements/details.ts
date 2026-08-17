@@ -776,7 +776,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Oxygen",
       "elementOpenedYear": "1771",
       "casNumber": "CAS7782-44-7",
-      "elementOpener": "62/9/10",
+      "elementOpener": "9/10",
       "countryOpener": "SE, GB",
       "elementShell": "K2-L6-M0-N0-O0-P0-Q0-R0",
       "elementE": "8",
@@ -884,7 +884,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Fluorum",
       "englishName": "Fluorine",
-      "elementOpenedYear": "1810",
+      "elementOpenedYear": "1886",
       "casNumber": "CAS7782-41-4",
       "elementOpener": "11",
       "countryOpener": "FR",
