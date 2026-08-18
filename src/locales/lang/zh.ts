@@ -392,7 +392,10 @@ const messages: LocaleMessages = {
     "88": "Kenneth Ross MacKenzie",
     "89": "Emilio Segrè",
     "90": "Karl Samuel Leberecht Hermann",
-    "91": "Wilhelm Hisinger"
+    "91": "Wilhelm Hisinger",
+    "92": "Jacob A. Marinsky",
+    "93": "Lawrence E. Glendenin",
+    "94": "Charles D. Coryell"
   },
   "nfpa": {
     "nfpa1": {
