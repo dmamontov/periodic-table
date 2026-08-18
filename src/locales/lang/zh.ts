@@ -409,7 +409,11 @@ const messages: LocaleMessages = {
     "105": "Joseph Kennedy",
     "106": "Ralph James",
     "107": "Leon Morgan",
-    "108": "John Cranston"
+    "108": "John Cranston",
+    "109": "Stanley G. Thompson",
+    "110": "Kenneth Street Jr.",
+    "111": "Gregory Choppin",
+    "112": "Bernard Harvey"
   },
   "nfpa": {
     "nfpa1": {

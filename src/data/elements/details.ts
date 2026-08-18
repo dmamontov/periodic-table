@@ -10839,7 +10839,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Berkelium",
       "elementOpenedYear": "1949",
       "casNumber": "CAS7440-40-6",
-      "elementOpener": "49",
+      "elementOpener": "49/36/109",
       "countryOpener": "US",
       "elementShell": "K2-L8-M18-N32-O27-P8-Q2-R0",
       "elementE": "97",
@@ -10915,7 +10915,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Californium",
       "elementOpenedYear": "1950",
       "casNumber": "CAS7440-71-3",
-      "elementOpener": "49",
+      "elementOpener": "49/109/110/36",
       "countryOpener": "US",
       "elementShell": "K2-L8-M18-N32-O28-P8-Q2-R0",
       "elementE": "98",
@@ -10927,7 +10927,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "elementRadioactivity": true
     },
     "properties": {
-      "elementMasse": "250.513720879175",
+      "elementMasse": "251.079587",
       "elementDensity": "15.1",
       "elementMeltingPoint": "900.0",
       "elementBoilingPoint": "1472.0",
@@ -10991,7 +10991,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Einsteinium",
       "elementOpenedYear": "1952",
       "casNumber": "CAS7429-92-7",
-      "elementOpener": "36",
+      "elementOpener": "36/111/112/109/49",
       "countryOpener": "US",
       "elementShell": "K2-L8-M18-N32-O29-P8-Q2-R0",
       "elementE": "99",
@@ -11003,7 +11003,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "elementRadioactivity": true
     },
     "properties": {
-      "elementMasse": "252.978415747183",
+      "elementMasse": "252.082980",
       "elementDensity": "~8.84",
       "elementMeltingPoint": "860.0",
       "elementBoilingPoint": "996.0",
@@ -11058,7 +11058,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Fermium",
       "elementOpenedYear": "1952",
       "casNumber": "CAS7440-72-4",
-      "elementOpener": "49",
+      "elementOpener": "49/36/109",
       "countryOpener": "US",
       "elementShell": "K2-L8-M18-N32-O30-P8-Q2-R0",
       "elementE": "100",
@@ -11070,7 +11070,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "elementRadioactivity": true
     },
     "properties": {
-      "elementMasse": "256.896588020105",
+      "elementMasse": "257.095105",
       "elementDensity": "~9.7",
       "elementMeltingPoint": "1527.0",
       "elementBoilingPoint": "**",
@@ -11125,7 +11125,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Mendelevium",
       "elementOpenedYear": "1955",
       "casNumber": "CAS7440-11-1",
-      "elementOpener": "49",
+      "elementOpener": "49/36/111/112/109",
       "countryOpener": "US",
       "elementShell": "K2-L8-M18-N32-O31-P8-Q2-R0",
       "elementE": "101",
@@ -11137,7 +11137,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "elementRadioactivity": true
     },
     "properties": {
-      "elementMasse": "258.788547718991",
+      "elementMasse": "258.098434",
       "elementDensity": "~10.3",
       "elementMeltingPoint": "827.0",
       "elementBoilingPoint": "**",
@@ -11190,10 +11190,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Nobelium",
       "englishName": "Nobelium",
-      "elementOpenedYear": "1965",
+      "elementOpenedYear": "1966",
       "casNumber": "CAS10028-14-5",
-      "elementOpener": "49",
-      "countryOpener": "SE, US",
+      "elementOpener": "53/54",
+      "countryOpener": "RU",
       "elementShell": "K2-L8-M18-N32-O32-P8-Q2-R0",
       "elementE": "102",
       "elementP": "102",
@@ -11204,7 +11204,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "elementRadioactivity": true
     },
     "properties": {
-      "elementMasse": "260.670278035494",
+      "elementMasse": "259.100998",
       "elementDensity": "~9.9",
       "elementMeltingPoint": "827.0",
       "elementBoilingPoint": "**",
