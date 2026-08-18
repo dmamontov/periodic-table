@@ -402,7 +402,14 @@ const messages: LocaleMessages = {
     "98": "George de Hevesy",
     "99": "Walter Noddack",
     "100": "Ida Tacke",
-    "101": "Otto Berg"
+    "101": "Otto Berg",
+    "102": "Edwin McMillan",
+    "103": "Philip Abelson",
+    "104": "Arthur Wahl",
+    "105": "Joseph Kennedy",
+    "106": "Ralph James",
+    "107": "Leon Morgan",
+    "108": "John Cranston"
   },
   "nfpa": {
     "nfpa1": {
