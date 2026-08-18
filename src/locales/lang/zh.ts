@@ -366,7 +366,7 @@ const messages: LocaleMessages = {
     "62": "Michał Sędziwój",
     "63": "Andreas Sigismund Marggraf",
     "64": "Peter Armbruster",
-    "65": "Gottfried Munzenber",
+    "65": "Gottfried Münzenberg",
     "66": "William Crookes",
     "67": "Carl Wilhelm Scheele",
     "68": "Friedrich Ernst Dorn",
