@@ -395,7 +395,11 @@ const messages: LocaleMessages = {
     "91": "Wilhelm Hisinger",
     "92": "Jacob A. Marinsky",
     "93": "Lawrence E. Glendenin",
-    "94": "Charles D. Coryell"
+    "94": "Charles D. Coryell",
+    "95": "Marc Delafontaine",
+    "96": "Georges Urbain",
+    "97": "Dirk Coster",
+    "98": "George de Hevesy"
   },
   "nfpa": {
     "nfpa1": {

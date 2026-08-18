@@ -7629,7 +7629,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Holmium",
       "elementOpenedYear": "1878",
       "casNumber": "CAS7440-60-0",
-      "elementOpener": "72/84",
+      "elementOpener": "72/84/95",
       "countryOpener": "SE, CH",
       "elementShell": "K2-L8-M18-N29-O8-P2-Q0-R0",
       "elementE": "67",
@@ -7644,8 +7644,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "properties": {
       "elementMasse": "164.930329134847",
       "elementDensity": "8.79",
-      "elementMeltingPoint": "1461.0",
-      "elementBoilingPoint": "2600.0",
+      "elementMeltingPoint": "1472.0",
+      "elementBoilingPoint": "2700.0",
       "elValence": "3",
       "elementGroup": "6/III-",
       "elementBlock": "f",
@@ -7990,7 +7990,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "elementRadioactivity": false
     },
     "properties": {
-      "elementMasse": "173.054130783813",
+      "elementMasse": "173.045",
       "elementDensity": "6.9",
       "elementMeltingPoint": "824.0",
       "elementBoilingPoint": "1196.0",
@@ -8096,6 +8096,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Lutetium",
       "elementOpenedYear": "1906",
       "casNumber": "CAS7439-94-3",
+      "elementOpener": "96/71",
       "countryOpener": "FR, AT",
       "elementShell": "K2-L8-M18-N32-O9-P2-Q0-R0",
       "elementE": "71",
@@ -8107,9 +8108,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "elementRadioactivity": false
     },
     "properties": {
-      "elementMasse": "174.966816947491",
+      "elementMasse": "174.96669",
       "elementDensity": "9.84",
-      "elementMeltingPoint": "1652.0",
+      "elementMeltingPoint": "1663.0",
       "elementBoilingPoint": "3402.0",
       "elValence": "3",
       "elementGroup": "6/III-",
@@ -8211,6 +8212,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Hafnium",
       "elementOpenedYear": "1923",
       "casNumber": "CAS7440-58-6",
+      "elementOpener": "97/98",
       "countryOpener": "DK",
       "elementShell": "K2-L8-M18-N32-O10-P2-Q0-R0",
       "elementE": "72",
