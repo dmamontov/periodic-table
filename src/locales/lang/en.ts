@@ -391,7 +391,8 @@ const messages: LocaleMessages = {
     "87": "Dale R. Corson",
     "88": "Kenneth Ross MacKenzie",
     "89": "Emilio Segrè",
-    "90": "Karl Samuel Leberecht Hermann"
+    "90": "Karl Samuel Leberecht Hermann",
+    "91": "Wilhelm Hisinger"
   },
   "nfpa": {
     "nfpa1": {

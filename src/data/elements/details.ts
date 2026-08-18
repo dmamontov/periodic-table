@@ -6581,6 +6581,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Cerium",
       "elementOpenedYear": "1803",
       "casNumber": "CAS7440-45-1",
+      "elementOpener": "32/16/91",
       "countryOpener": "DE, SE",
       "elementShell": "K2-L8-M18-N19-O9-P2-Q0-R0",
       "elementE": "58",
