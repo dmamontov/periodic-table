@@ -11635,7 +11635,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Meitnerium",
       "elementOpenedYear": "1982",
       "casNumber": "CAS54038-01-6",
-      "elementOpener": "57",
+      "elementOpener": "64/65",
       "countryOpener": "DE",
       "elementShell": "K2-L8-M18-N32-O32-P15-Q2-R0",
       "elementE": "109",
@@ -11813,7 +11813,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
   },
   "Cn": {
     "overview": {
-      "latinName": "Copernecium",
+      "latinName": "Copernicium",
       "englishName": "Copernicium",
       "elementOpenedYear": "1996",
       "casNumber": "CAS54084-26-3",
@@ -11876,10 +11876,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Nihonium",
       "englishName": "Nihonium",
-      "elementOpenedYear": "2003",
+      "elementOpenedYear": "2004",
       "casNumber": "CAS54084-70-7",
       "elementOpener": "56",
-      "countryOpener": "RU, US",
+      "countryOpener": "JP",
       "elementShell": "K2-L8-M18-N32-O32-P18-Q3-R0",
       "elementE": "113",
       "elementP": "113",
@@ -11941,8 +11941,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Flerovium",
       "elementOpenedYear": "1998",
       "casNumber": "CAS54085-16-4",
-      "elementOpener": "54",
-      "countryOpener": "RU",
+      "elementOpener": "54/55",
+      "countryOpener": "RU, US",
       "elementShell": "K2-L8-M18-N32-O32-P18-Q4-R0",
       "elementE": "114",
       "elementP": "114",
@@ -11954,8 +11954,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "properties": {
       "elementMasse": "290.217148623513",
-      "elementMeltingPoint": "-73.0",
-      "elementBoilingPoint": "107.0",
+      "elementMeltingPoint": "**",
+      "elementBoilingPoint": "**",
       "elementGroup": "7/IV+",
       "elementBlock": "p",
       "aggregationState": "solid"
