@@ -9821,7 +9821,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "elementRadioactivity": true
     },
     "properties": {
-      "elementMasse": "220.190117161994",
+      "elementMasse": "222.018",
       "elementDensity": "0.00973",
       "elementMeltingPoint": "-71.0",
       "elementBoilingPoint": "-61.7",
@@ -9907,7 +9907,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "properties": {
       "elementMasse": "223.01973",
-      "elementDensity": "~1.87",
+      "elementDensity": "~2.458",
       "elementMeltingPoint": "27.0",
       "elementBoilingPoint": "677.0",
       "elementGroup": "7/I+",
