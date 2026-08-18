@@ -9036,7 +9036,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Aurum",
       "englishName": "Gold",
-      "elementOpenedYear": "6000 BC",
+      "elementOpenedYear": "~4000 BC",
       "casNumber": "CAS7440-57-5",
       "countryOpener": "NahalQana",
       "elementShell": "K2-L8-M18-N32-O18-P1-Q0-R0",
@@ -9398,7 +9398,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Lead",
       "elementOpenedYear": "7000 BC",
       "casNumber": "CAS7439-92-1",
-      "countryOpener": "EG",
+      "countryOpener": "TR",
       "elementShell": "K2-L8-M18-N32-O18-P4-Q0-R0",
       "elementE": "82",
       "elementP": "82",
