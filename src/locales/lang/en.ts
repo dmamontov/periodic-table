@@ -399,7 +399,10 @@ const messages: LocaleMessages = {
     "95": "Marc Delafontaine",
     "96": "Georges Urbain",
     "97": "Dirk Coster",
-    "98": "George de Hevesy"
+    "98": "George de Hevesy",
+    "99": "Walter Noddack",
+    "100": "Ida Tacke",
+    "101": "Otto Berg"
   },
   "nfpa": {
     "nfpa1": {
