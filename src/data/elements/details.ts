@@ -2945,6 +2945,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
         {
           "mass": 57,
           "abundance": "2.119"
+        },
+        {
+          "mass": 58,
+          "abundance": "0.282"
         }
       ]
     },
@@ -3199,6 +3203,14 @@ export const elementDetails: Record<string, StoredElementDetail> = {
         {
           "mass": 62,
           "abundance": "3.634"
+        },
+        {
+          "mass": 61,
+          "abundance": "1.1399"
+        },
+        {
+          "mass": 64,
+          "abundance": "0.9256"
         }
       ]
     },
@@ -3450,15 +3462,23 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "isotopes": [
         {
           "mass": 64,
-          "abundance": "48.63"
+          "abundance": "49.17"
         },
         {
           "mass": 68,
-          "abundance": "18.75"
+          "abundance": "18.45"
         },
         {
           "mass": 66,
-          "abundance": "27.90"
+          "abundance": "27.73"
+        },
+        {
+          "mass": 67,
+          "abundance": "4.04"
+        },
+        {
+          "mass": 70,
+          "abundance": "0.61"
         }
       ]
     },
