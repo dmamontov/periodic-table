@@ -5913,6 +5913,34 @@ export const elementDetails: Record<string, StoredElementDetail> = {
         {
           "mass": 116,
           "abundance": "14.54"
+        },
+        {
+          "mass": 119,
+          "abundance": "8.59"
+        },
+        {
+          "mass": 117,
+          "abundance": "7.68"
+        },
+        {
+          "mass": 124,
+          "abundance": "5.79"
+        },
+        {
+          "mass": 122,
+          "abundance": "4.63"
+        },
+        {
+          "mass": 112,
+          "abundance": "0.97"
+        },
+        {
+          "mass": 114,
+          "abundance": "0.66"
+        },
+        {
+          "mass": 115,
+          "abundance": "0.34"
         }
       ]
     },
@@ -6013,7 +6041,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "∞",
       "lifetime": "∞",
-      "neutronCrossSection": "5.4",
+      "neutronCrossSection": "4.91",
       "nfpaCube": "2,1,0,-"
     },
     "prevalence": {
@@ -6129,7 +6157,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "∞",
       "lifetime": "∞",
-      "neutronCrossSection": "5.4",
+      "neutronCrossSection": "4.7",
       "nfpaCube": "0,2,0,-"
     },
     "prevalence": {
@@ -6156,6 +6184,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
         {
           "mass": 126,
           "abundance": "18.84"
+        },
+        {
+          "mass": 125,
+          "abundance": "7.07"
+        },
+        {
+          "mass": 124,
+          "abundance": "4.74"
+        },
+        {
+          "mass": 122,
+          "abundance": "2.55"
+        },
+        {
+          "mass": 123,
+          "abundance": "0.89"
+        },
+        {
+          "mass": 120,
+          "abundance": "0.09"
         }
       ]
     },
@@ -6341,7 +6389,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "∞",
       "lifetime": "∞",
-      "neutronCrossSection": "25.0",
+      "neutronCrossSection": "23.9",
       "nfpaCube": "0,0,0,SA"
     },
     "prevalence": {
@@ -6367,6 +6415,30 @@ export const elementDetails: Record<string, StoredElementDetail> = {
         {
           "mass": 131,
           "abundance": "21.23"
+        },
+        {
+          "mass": 134,
+          "abundance": "10.436"
+        },
+        {
+          "mass": 136,
+          "abundance": "8.857"
+        },
+        {
+          "mass": 130,
+          "abundance": "4.071"
+        },
+        {
+          "mass": 128,
+          "abundance": "1.910"
+        },
+        {
+          "mass": 124,
+          "abundance": "0.095"
+        },
+        {
+          "mass": 126,
+          "abundance": "0.089"
         }
       ]
     },
