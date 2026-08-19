@@ -840,7 +840,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "∞",
       "lifetime": "∞",
-      "neutronCrossSection": "0.00028",
+      "neutronCrossSection": "0.00019",
       "nfpaCube": "0,3,2,OX"
     },
     "prevalence": {
