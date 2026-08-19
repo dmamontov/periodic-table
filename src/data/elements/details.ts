@@ -1402,7 +1402,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "∞",
       "lifetime": "∞",
-      "neutronCrossSection": "0.233",
+      "neutronCrossSection": "0.231",
       "nfpaCube": "1,0,1,-"
     },
     "prevalence": {
@@ -1516,7 +1516,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "∞",
       "lifetime": "∞",
-      "neutronCrossSection": "0.166",
+      "neutronCrossSection": "0.171",
       "nfpaCube": "0,1,0,-"
     },
     "prevalence": {
@@ -1626,7 +1626,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "∞",
       "lifetime": "∞",
-      "neutronCrossSection": "0.18",
+      "neutronCrossSection": "0.172",
       "nfpaCube": "4,4,2,-"
     },
     "prevalence": {
@@ -1734,7 +1734,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "∞",
       "lifetime": "∞",
-      "neutronCrossSection": "0.52",
+      "neutronCrossSection": "0.53",
       "nfpaCube": "1,2,0,-"
     },
     "prevalence": {
@@ -1763,6 +1763,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
         {
           "mass": 33,
           "abundance": "0.75"
+        },
+        {
+          "mass": 36,
+          "abundance": "0.0157"
         }
       ]
     },
@@ -1847,7 +1851,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "∞",
       "lifetime": "∞",
-      "neutronCrossSection": "35.3",
+      "neutronCrossSection": "33.5",
       "nfpaCube": "0,4,0,OX"
     },
     "prevalence": {
@@ -1954,7 +1958,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "∞",
       "lifetime": "∞",
-      "neutronCrossSection": "0.66",
+      "neutronCrossSection": "0.675",
       "nfpaCube": "0,0,0,SA"
     },
     "prevalence": {
@@ -1972,15 +1976,15 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "isotopes": [
         {
           "mass": 40,
-          "abundance": "99.6025"
+          "abundance": "99.6035"
         },
         {
           "mass": 36,
-          "abundance": "0.3345"
+          "abundance": "0.3336"
         },
         {
           "mass": 38,
-          "abundance": "0.063"
+          "abundance": "0.0629"
         }
       ]
     },
