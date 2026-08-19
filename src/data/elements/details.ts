@@ -5009,9 +5009,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "atomElectronEnergy": "53.0"
     },
     "nucleus": {
-      "halfLife": "4210000/1",
-      "lifetime": "6075030/1",
-      "neutronCrossSection": "22.0",
+      "halfLife": "211100/1",
+      "lifetime": "304553/1",
+      "neutronCrossSection": "20.0",
       "nfpaCube": "1,4,1,RAD"
     },
     "prevalence": {},
@@ -5157,6 +5157,22 @@ export const elementDetails: Record<string, StoredElementDetail> = {
         {
           "mass": 101,
           "abundance": "17.06"
+        },
+        {
+          "mass": 99,
+          "abundance": "12.76"
+        },
+        {
+          "mass": 100,
+          "abundance": "12.60"
+        },
+        {
+          "mass": 96,
+          "abundance": "5.54"
+        },
+        {
+          "mass": 98,
+          "abundance": "1.87"
         }
       ]
     },
@@ -5383,6 +5399,18 @@ export const elementDetails: Record<string, StoredElementDetail> = {
         {
           "mass": 105,
           "abundance": "22.33"
+        },
+        {
+          "mass": 110,
+          "abundance": "11.72"
+        },
+        {
+          "mass": 104,
+          "abundance": "11.14"
+        },
+        {
+          "mass": 102,
+          "abundance": "1.02"
         }
       ]
     },
@@ -5596,7 +5624,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "∞",
       "lifetime": "∞",
-      "neutronCrossSection": "2450.0",
+      "neutronCrossSection": "2520.0",
       "nfpaCube": "2,2,0,-"
     },
     "prevalence": {
@@ -5627,6 +5655,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
         {
           "mass": 111,
           "abundance": "12.80"
+        },
+        {
+          "mass": 110,
+          "abundance": "12.470"
+        },
+        {
+          "mass": 113,
+          "abundance": "12.227"
+        },
+        {
+          "mass": 116,
+          "abundance": "7.512"
+        },
+        {
+          "mass": 106,
+          "abundance": "1.245"
+        },
+        {
+          "mass": 108,
+          "abundance": "0.888"
         }
       ]
     },
