@@ -93,11 +93,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "isotopes": [
         {
           "mass": 1,
-          "abundance": "99.985"
+          "abundance": "99.9885"
         },
         {
           "mass": 2,
-          "abundance": "0.015"
+          "abundance": "0.0115"
         }
       ]
     },
