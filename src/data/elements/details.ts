@@ -714,7 +714,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "grid": {
       "gridStructureNum": "1 | 7",
-      "gridParams": "5.661 Å | a=6.83 Å",
+      "gridParams": "5.661 Å | a=4.116 Å; c=6.734 Å",
       "space1": "P6<sub><small>3</small></sub>/mmc",
       "space2": "194"
     },
