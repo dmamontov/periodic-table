@@ -11700,7 +11700,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "11/3",
       "lifetime": "15.873/3",
-      "neutronCrossSection": "0",
       "nfpaCube": "1,4,2,W+RAD"
     },
     "prevalence": {},
@@ -11711,7 +11710,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "healthHazard"
     ],
     "isotopes": {
-      "decay": "alpha",
+      "decay": "spontaneousFission",
       "isotopes": [
         {
           "mass": 266
@@ -11761,9 +11760,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "additional": {},
     "reactivity": {},
     "nucleus": {
-      "halfLife": "11/4",
+      "halfLife": "78/4",
       "lifetime": "1.8/3",
-      "neutronCrossSection": "0",
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
@@ -11773,7 +11771,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "healthHazard"
     ],
     "isotopes": {
-      "decay": "alpha",
+      "decay": "spontaneousFission",
       "isotopes": [
         {
           "mass": 267
@@ -11823,9 +11821,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "additional": {},
     "reactivity": {},
     "nucleus": {
-      "halfLife": "30.8/3",
-      "lifetime": "44.4444/3",
-      "neutronCrossSection": "0",
+      "halfLife": "16/3",
+      "lifetime": "23.083/3",
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
@@ -11885,9 +11882,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "additional": {},
     "reactivity": {},
     "nucleus": {
-      "halfLife": "1.1111/3",
-      "lifetime": "1.6033173/3",
-      "neutronCrossSection": "0",
+      "halfLife": "96/5",
+      "lifetime": "138.5/5",
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
@@ -11897,7 +11893,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "healthHazard"
     ],
     "isotopes": {
-      "decay": "spontaneousFission",
+      "decay": "alpha",
       "isotopes": [
         {
           "mass": 271
@@ -11946,9 +11942,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "additional": {},
     "reactivity": {},
     "nucleus": {
-      "halfLife": "1.5/3",
-      "lifetime": "22.1645/3",
-      "neutronCrossSection": "0",
+      "halfLife": "2.4/4",
+      "lifetime": "3.4625/4",
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
@@ -12007,9 +12002,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "additional": {},
     "reactivity": {},
     "nucleus": {
-      "halfLife": "1.1/3",
-      "lifetime": "1.60173/3",
-      "neutronCrossSection": "0",
+      "halfLife": "46/5",
+      "lifetime": "66.36/5",
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
@@ -12019,10 +12013,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "healthHazard"
     ],
     "isotopes": {
-      "decay": "spontaneousFission",
+      "decay": "alpha",
       "isotopes": [
         {
-          "mass": 277
+          "mass": 271
         }
       ]
     },
