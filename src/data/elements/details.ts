@@ -30,7 +30,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "aggregationState": "gas"
     },
     "thermo": {
-      "fusionHeat": "0.1",
+      "fusionHeat": "0.117",
       "specificHeat": "14300",
       "vaporizationHeat": "0.904"
     },
@@ -143,9 +143,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "atomic": {
       "oxidationState": "-,-,-,-,-,0,-,-,-,-,-,-,-,-,-",
-      "ionizationPotential": "24.547",
+      "ionizationPotential": "24.587",
       "atomicRadius": "31",
-      "covalentRadius": "37",
+      "covalentRadius": "28",
       "vanDerWaalsRadius": "140"
     },
     "electromagnetic": {
@@ -158,8 +158,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridStructureNum": "2 | 7",
       "gridParams": "a=3.570 Å; c=5.84 Å | 0",
       "ratio": "1.633 | 0",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "space1": "P6<sub><small>3</small></sub>/mmc",
+      "space2": "194"
     },
     "additional": {
       "elementColor": "0",
@@ -171,7 +171,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "thermalConductivity": "0.1513"
     },
     "reactivity": {
-      "atomElectronEnergy": "-48.0"
+      "atomElectronEnergy": "0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -408,7 +408,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.57",
-      "atomElectronEnergy": "-48.0"
+      "atomElectronEnergy": "0"
     },
     "nucleus": {
       "halfLife": "∞",
