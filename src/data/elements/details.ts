@@ -8903,6 +8903,14 @@ export const elementDetails: Record<string, StoredElementDetail> = {
         {
           "mass": 186,
           "abundance": "28.43"
+        },
+        {
+          "mass": 183,
+          "abundance": "14.31"
+        },
+        {
+          "mass": 180,
+          "abundance": "0.12"
         }
       ]
     },
@@ -9016,7 +9024,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "decay": "betaMinus",
       "isotopes": [
         {
-          "mass": 187
+          "mass": 187,
+          "abundance": "62.60"
+        },
+        {
+          "mass": 185,
+          "abundance": "37.40"
         }
       ]
     },
@@ -9110,7 +9123,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "∞",
       "lifetime": "∞",
-      "neutronCrossSection": "15.0",
+      "neutronCrossSection": "16.0",
       "nfpaCube": "3,3,1,W"
     },
     "prevalence": {
@@ -9128,7 +9141,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "isotopes": [
         {
           "mass": 192,
-          "abundance": "41.78"
+          "abundance": "40.78"
         },
         {
           "mass": 190,
@@ -9137,6 +9150,22 @@ export const elementDetails: Record<string, StoredElementDetail> = {
         {
           "mass": 189,
           "abundance": "16.15"
+        },
+        {
+          "mass": 188,
+          "abundance": "13.24"
+        },
+        {
+          "mass": 187,
+          "abundance": "1.96"
+        },
+        {
+          "mass": 186,
+          "abundance": "1.59"
+        },
+        {
+          "mass": 184,
+          "abundance": "0.02"
         }
       ]
     },
@@ -9341,7 +9370,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "497000000000/1",
       "lifetime": "716887586483/1",
-      "neutronCrossSection": "10.0",
+      "neutronCrossSection": "10.3",
       "nfpaCube": "0,0,0,-"
     },
     "prevalence": {
@@ -9355,11 +9384,19 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "isotopes": [
         {
           "mass": 195,
-          "abundance": "33.832"
+          "abundance": "33.78"
+        },
+        {
+          "mass": 194,
+          "abundance": "32.86"
+        },
+        {
+          "mass": 196,
+          "abundance": "25.21"
         },
         {
           "mass": 198,
-          "abundance": "7.163"
+          "abundance": "7.356"
         },
         {
           "mass": 192,
@@ -9367,7 +9404,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
         },
         {
           "mass": 190,
-          "abundance": "0.014"
+          "abundance": "0.012"
         }
       ]
     },
