@@ -9491,7 +9491,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ionCharge": "1+, 3+",
       "ionizationPotential": "9.226",
       "atomicRadius": "174",
-      "covalentRadius": "130",
+      "covalentRadius": "136",
       "vanDerWaalsRadius": "166"
     },
     "electromagnetic": {
@@ -9612,7 +9612,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ionizationPotential": "10.438",
       "atomicRadius": "171",
       "covalentRadius": "132",
-      "vanDerWaalsRadius": "209"
+      "vanDerWaalsRadius": "155"
     },
     "electromagnetic": {
       "es_electro": "1040582.72632674",
@@ -9645,7 +9645,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "2",
-      "atomElectronEnergy": "-48.0"
+      "atomElectronEnergy": "0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -9883,7 +9883,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "grid": {
       "gridStructureNum": "4",
       "gridParams": "4.950 Å",
-      "debyeTemperature": "96",
+      "debyeTemperature": "105",
       "space1": "Fm_ 3m",
       "space2": "225"
     },
@@ -10017,8 +10017,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridStructureNum": "5",
       "gridParams": "a=4.746 Å; α=57.23°",
       "debyeTemperature": "120",
-      "space1": "C12/m1",
-      "space2": "12"
+      "space1": "R_ 3m",
+      "space2": "166"
     },
     "additional": {
       "elementColor": "1",
@@ -10107,6 +10107,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "thermo": {
       "fusionHeat": "13.0",
+      "specificHeat": "126",
       "thermalExpansion": "23.5 ⋅ 10<sup><small>-6</small></sup>",
       "vaporizationHeat": "102.91"
     },
@@ -10120,11 +10121,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {
       "es_electro": "2500000.0",
+      "es_mtype": "diamagnetic",
       "es_udel": "4.3 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "7 | 4 | 10 | 9",
-      "gridParams": "3.35 Å | a=5.638 Å | a=5.45 Å; c=8.36 Å | a=3.66 Å; b=4.34 Å; c=4.49 Å",
+      "gridStructureNum": "7",
+      "gridParams": "3.35 Å",
       "space1": "Pm-3m",
       "space2": "221"
     },
