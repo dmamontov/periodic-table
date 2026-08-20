@@ -10204,15 +10204,14 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "atomic": {
       "oxidationState": "-,-,-,-,1,-,1,-,3,-,5,-,7,-,-",
       "ionCharge": "1-",
-      "ionizationPotential": "9.5",
+      "ionizationPotential": "9.3175",
       "atomicRadius": "127",
-      "covalentRadius": "148",
+      "covalentRadius": "150",
       "vanDerWaalsRadius": "202"
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "4",
-      "debyeTemperature": "195"
+      "gridStructureNum": "4"
     },
     "additional": {
       "elementColor": "1",
@@ -10282,10 +10281,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "oxidationState": "-,-,-,-,-,0,-,2,-,-,-,-,-,-,-",
       "ionizationPotential": "10.745",
       "atomicRadius": "120",
-      "covalentRadius": "146",
+      "covalentRadius": "150",
       "vanDerWaalsRadius": "220"
     },
-    "electromagnetic": {},
+    "electromagnetic": {
+      "es_mtype": "diamagnetic"
+    },
     "grid": {
       "gridStructureNum": "4"
     },
@@ -10364,13 +10365,17 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,1,-,-,-,-,-,-,-,-",
       "ionCharge": "1+",
-      "ionizationPotential": "3.9",
-      "covalentRadius": "242",
+      "ionizationPotential": "4.0727",
+      "covalentRadius": "260",
       "vanDerWaalsRadius": "348"
     },
-    "electromagnetic": {},
+    "electromagnetic": {
+      "es_mtype": "paramagnetic"
+    },
     "grid": {
-      "gridStructureNum": "3"
+      "gridStructureNum": "3",
+      "gridParams": "a=6.704 Å",
+      "debyeTemperature": "39"
     },
     "additional": {
       "elementColor": "1"
@@ -10441,16 +10446,20 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "oxidationState": "-,-,-,-,-,-,-,2,-,-,-,-,-,-,-",
       "ionCharge": "2+",
       "ionizationPotential": "5.279",
-      "covalentRadius": "211",
+      "atomicRadius": "215",
+      "covalentRadius": "221",
       "vanDerWaalsRadius": "283"
     },
     "electromagnetic": {
       "es_electro": "1000000.0",
       "es_etype": "1",
+      "es_mtype": "diamagnetic",
       "es_udel": "1 ⋅ 10<sup><small>-6</small></sup>"
     },
     "grid": {
       "gridStructureNum": "3",
+      "gridParams": "a=5.148 Å",
+      "debyeTemperature": "89",
       "space1": "Im_ 3m",
       "space2": "229"
     },
@@ -10462,7 +10471,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "0.9",
-      "atomElectronEnergy": "9.6485"
+      "atomElectronEnergy": "0"
     },
     "nucleus": {
       "halfLife": "1600/1",
@@ -10534,12 +10543,14 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "oxidationState": "-,-,-,-,-,-,-,2,3,-,-,-,-,-,-",
       "ionCharge": "4+",
       "ionizationPotential": "5.17",
-      "covalentRadius": "201",
+      "atomicRadius": "195",
+      "covalentRadius": "215",
       "vanDerWaalsRadius": "260"
     },
     "electromagnetic": {},
     "grid": {
       "gridStructureNum": "4",
+      "gridParams": "5.315 Å",
       "space1": "Fm_ 3m",
       "space2": "225"
     },
@@ -10623,13 +10634,15 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,2,3,4,-,-,-,-,-",
       "ionCharge": "4+",
-      "ionizationPotential": "6.08",
-      "covalentRadius": "190",
+      "ionizationPotential": "6.3067",
+      "atomicRadius": "180",
+      "covalentRadius": "206",
       "vanDerWaalsRadius": "237"
     },
     "electromagnetic": {
       "es_electro": "6802721.08843537",
       "es_etype": "1",
+      "es_mtype": "paramagnetic",
       "es_omvospr": "8.4 ⋅ 10<sup><small>-5</small></sup>",
       "es_umvospr": "7.2 ⋅ 10<sup><small>-9</small></sup>",
       "es_mmvospr": "1.7 ⋅ 10<sup><small>-9</small></sup>",
@@ -10639,6 +10652,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "grid": {
       "gridStructureNum": "4",
       "gridParams": "5.080 Å",
+      "debyeTemperature": "163",
       "space1": "Fm_ 3m",
       "space2": "225"
     },
