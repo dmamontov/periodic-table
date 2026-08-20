@@ -10196,7 +10196,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "healthHazard"
     ],
     "isotopes": {
-      "decay": "alpha",
+      "decay": "electronCapture",
       "isotopes": [
         {
           "mass": 210
@@ -10343,7 +10343,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "nucleus": {
       "halfLife": "22/4",
-      "lifetime": "31.746/3",
+      "lifetime": "31.746/4",
       "nfpaCube": "4,4,3,W+RAD"
     },
     "prevalence": {},
