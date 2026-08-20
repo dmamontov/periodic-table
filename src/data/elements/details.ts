@@ -8744,14 +8744,15 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,2,3,4,5,-,-,-,-",
       "ionCharge": "5+",
-      "ionizationPotential": "7.89",
+      "ionizationPotential": "7.5496",
       "atomicRadius": "200",
-      "covalentRadius": "158",
+      "covalentRadius": "170",
       "vanDerWaalsRadius": "217"
     },
     "electromagnetic": {
       "es_electro": "7633587.78625954",
       "es_etype": "1",
+      "es_mtype": "paramagnetic",
       "es_omvospr": "1.782 ⋅ 10<sup><small>-4</small></sup>",
       "es_umvospr": "1.07 ⋅ 10<sup><small>-8</small></sup>",
       "es_mmvospr": "1.936 ⋅ 10<sup><small>-9</small></sup>",
@@ -8759,7 +8760,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "es_temp": "4.47"
     },
     "grid": {
-      "gridStructureNum": "10",
+      "gridStructureNum": "3",
       "gridParams": "3.310 Å",
       "debyeTemperature": "250",
       "space1": "Im_ 3m",
@@ -8863,9 +8864,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "atomic": {
       "oxidationState": "-,-,-,-,-,0,-,2,3,4,5,6,-,-,-",
       "ionCharge": "6+",
-      "ionizationPotential": "7.98",
+      "ionizationPotential": "7.864",
       "atomicRadius": "193",
-      "covalentRadius": "150",
+      "covalentRadius": "162",
       "vanDerWaalsRadius": "210"
     },
     "electromagnetic": {
@@ -8881,7 +8882,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "grid": {
       "gridStructureNum": "3 | 7",
       "gridParams": "3.160 Å | z=8",
-      "debyeTemperature": "405",
+      "debyeTemperature": "383",
       "space1": "Im_ 3m",
       "space2": "229"
     },
@@ -8995,14 +8996,15 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "atomic": {
       "oxidationState": "-,-,-,-,1,0,1,2,3,4,5,6,7,-,-",
       "ionCharge": "7+",
-      "ionizationPotential": "7.88",
+      "ionizationPotential": "7.83",
       "atomicRadius": "188",
-      "covalentRadius": "141",
+      "covalentRadius": "151",
       "vanDerWaalsRadius": "217"
     },
     "electromagnetic": {
       "es_electro": "5181347.15025907",
       "es_etype": "1",
+      "es_mtype": "paramagnetic",
       "es_omvospr": "9.59 ⋅ 10<sup><small>-5</small></sup>",
       "es_umvospr": "4.56 ⋅ 10<sup><small>-9</small></sup>",
       "es_mmvospr": "8.49 ⋅ 10<sup><small>-10</small></sup>",
@@ -9010,8 +9012,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "es_temp": "1.7"
     },
     "grid": {
-      "gridStructureNum": "2 | 10",
-      "gridParams": "a=2.761 Å; c=4.456 Å | a=1.012 Å c=1.595 Å",
+      "gridStructureNum": "2",
+      "gridParams": "a=2.761 Å; c=4.456 Å",
       "ratio": "1.614",
       "debyeTemperature": "416",
       "space1": "P6<sub><small>3</small></sub>/mmc",
@@ -9107,14 +9109,14 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "fusionHeat": "57.85",
       "specificHeat": "130",
       "thermalExpansion": "5.1 ⋅ 10<sup><small>-6</small></sup>",
-      "vaporizationHeat": "678.0"
+      "vaporizationHeat": "630.0"
     },
     "atomic": {
       "oxidationState": "-,-,-,2,1,0,1,2,3,4,5,6,7,8,-",
       "ionCharge": "4+",
-      "ionizationPotential": "8.7",
+      "ionizationPotential": "8.4382",
       "atomicRadius": "185",
-      "covalentRadius": "136",
+      "covalentRadius": "144",
       "vanDerWaalsRadius": "216"
     },
     "electromagnetic": {
@@ -9131,6 +9133,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridStructureNum": "2",
       "gridParams": "a=2.734 Å; c=4.317 Å",
       "ratio": "1.579",
+      "debyeTemperature": "467",
       "space1": "P6<sub><small>3</small></sub>/mmc",
       "space2": "194"
     },
@@ -9246,9 +9249,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "atomic": {
       "oxidationState": "-,-,3,-,1,0,1,2,3,4,5,6,7,8,9",
       "ionCharge": "4+",
-      "ionizationPotential": "9.1",
+      "ionizationPotential": "8.967",
       "atomicRadius": "180",
-      "covalentRadius": "132",
+      "covalentRadius": "141",
       "vanDerWaalsRadius": "202"
     },
     "electromagnetic": {
@@ -9361,8 +9364,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ionCharge": "2+, 4+",
       "ionizationPotential": "9",
       "atomicRadius": "177",
-      "covalentRadius": "130",
-      "vanDerWaalsRadius": "209"
+      "covalentRadius": "136",
+      "vanDerWaalsRadius": "175"
     },
     "electromagnetic": {
       "es_electro": "9523809.52380952",
