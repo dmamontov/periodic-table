@@ -2771,7 +2771,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ionCharge": "2+, 4+",
       "ionizationPotential": "7.434",
       "atomicRadius": "161",
-      "covalentRadius": "129",
+      "covalentRadius": "139",
       "vanDerWaalsRadius": "197"
     },
     "electromagnetic": {
@@ -2804,7 +2804,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.55",
-      "atomElectronEnergy": "-50.0"
+      "atomElectronEnergy": "0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -2882,7 +2882,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ionCharge": "2+, 3+",
       "ionizationPotential": "7.902",
       "atomicRadius": "156",
-      "covalentRadius": "124",
+      "covalentRadius": "132",
       "vanDerWaalsRadius": "194"
     },
     "electromagnetic": {
@@ -3020,7 +3020,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ionCharge": "2+, 3+",
       "ionizationPotential": "7.881",
       "atomicRadius": "152",
-      "covalentRadius": "118",
+      "covalentRadius": "126",
       "vanDerWaalsRadius": "192"
     },
     "electromagnetic": {
@@ -3031,7 +3031,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "grid": {
       "gridStructureNum": "2 | 4",
-      "gridParams": "a=2.505 Å; c=4.089 Å | a=3.5370 Å",
+      "gridParams": "a=2.505 Å; c=4.070 Å | a=3.5370 Å",
       "ratio": "1.632",
       "debyeTemperature": "460",
       "space1": "P6<sub><small>3</small></sub>/mmc",
@@ -3137,8 +3137,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "oxidationState": "-,-,-,-,-,0,1,2,3,4,-,-,-,-,-",
       "ionCharge": "2+, 3+",
       "ionizationPotential": "7.640",
-      "atomicRadius": "124",
-      "covalentRadius": "117",
+      "atomicRadius": "149",
+      "covalentRadius": "124",
       "vanDerWaalsRadius": "163"
     },
     "electromagnetic": {
@@ -3270,7 +3270,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ionCharge": "2+, 1+",
       "ionizationPotential": "7.726",
       "atomicRadius": "145",
-      "covalentRadius": "122",
+      "covalentRadius": "132",
       "vanDerWaalsRadius": "140"
     },
     "electromagnetic": {
@@ -3441,7 +3441,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.65",
-      "atomElectronEnergy": "-58.0"
+      "atomElectronEnergy": "0"
     },
     "nucleus": {
       "halfLife": "∞",
