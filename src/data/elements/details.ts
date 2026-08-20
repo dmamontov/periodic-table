@@ -11434,9 +11434,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "atomElectronEnergy": "-28.6"
     },
     "nucleus": {
-      "halfLife": "275.7/1",
+      "halfLife": "275.7/2",
       "lifetime": "397.8351/2",
-      "neutronCrossSection": "160.0",
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
@@ -11449,7 +11448,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "decay": "alpha",
       "isotopes": [
         {
-          "mass": 252
+          "mass": 254
         }
       ]
     },
@@ -11570,7 +11569,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "51.5/2",
       "lifetime": "74.3145/2",
-      "neutronCrossSection": "0",
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
@@ -11636,8 +11634,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "nucleus": {
       "halfLife": "58.4/4",
-      "lifetime": "83.694/3",
-      "neutronCrossSection": "0",
+      "lifetime": "83.694/4",
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
