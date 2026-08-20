@@ -10728,8 +10728,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "atomElectronEnergy": "53.03"
     },
     "nucleus": {
-      "halfLife": "32765/1",
-      "lifetime": "47272.68/1",
+      "halfLife": "32570/1",
+      "lifetime": "46995.0/1",
       "neutronCrossSection": "200.0",
       "nfpaCube": "1,4,2,RAD"
     },
@@ -10946,7 +10946,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "atomElectronEnergy": "45.85"
     },
     "nucleus": {
-      "halfLife": "214401/1",
+      "halfLife": "2144000/1",
       "lifetime": "3093792/1",
       "neutronCrossSection": "180.0",
       "nfpaCube": "1,4,2,RAD"
@@ -11041,8 +11041,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "atomElectronEnergy": "-48.33"
     },
     "nucleus": {
-      "halfLife": "80000000/1",
-      "lifetime": "115440000/1",
+      "halfLife": "81300000/1",
+      "lifetime": "117315900/1",
       "neutronCrossSection": "1.7",
       "nfpaCube": "2,4,2,RAD"
     },
@@ -11216,7 +11216,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "15600000/1",
       "lifetime": "22510800/1",
-      "neutronCrossSection": "60.0",
+      "neutronCrossSection": "57.0",
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
