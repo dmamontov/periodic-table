@@ -2044,6 +2044,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "electromagnetic": {
       "es_electro": "13888888.8888889",
       "es_etype": "1",
+      "es_mtype": "paramagnetic",
       "es_omvospr": "5.74 ⋅ 10<sup><small>-6</small></sup>",
       "es_umvospr": "6.7 ⋅ 10<sup><small>-9</small></sup>",
       "es_mmvospr": "2.62 ⋅ 10<sup><small>-10</small></sup>",
@@ -2164,7 +2165,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "electromagnetic": {
       "es_electro": "29761904.7619048",
       "es_etype": "1",
-      "es_mtype": "paramagnetic",
+      "es_mtype": "diamagnetic",
       "es_omvospr": "2.139 ⋅ 10<sup><small>-5</small></sup>",
       "es_umvospr": "1.38 ⋅ 10<sup><small>-9</small></sup>",
       "es_mmvospr": "5.531 ⋅ 10<sup><small>-10</small></sup>",
@@ -2287,12 +2288,13 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ionCharge": "3+",
       "ionizationPotential": "6.561",
       "atomicRadius": "184",
-      "covalentRadius": "159",
+      "covalentRadius": "170",
       "vanDerWaalsRadius": "211"
     },
     "electromagnetic": {
       "es_electro": "1779359.43060498",
       "es_etype": "1",
+      "es_mtype": "paramagnetic",
       "es_omvospr": "2.627 ⋅ 10<sup><small>-4</small></sup>",
       "es_umvospr": "8.8 ⋅ 10<sup><small>-9</small></sup>",
       "es_mmvospr": "3.956 ⋅ 10<sup><small>-9</small></sup>",
@@ -2396,7 +2398,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ionCharge": "3+, 4+",
       "ionizationPotential": "6.828",
       "atomicRadius": "176",
-      "covalentRadius": "148",
+      "covalentRadius": "160",
       "vanDerWaalsRadius": "187"
     },
     "electromagnetic": {
@@ -2527,12 +2529,13 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ionCharge": "3+, 5+",
       "ionizationPotential": "6.746",
       "atomicRadius": "171",
-      "covalentRadius": "144",
+      "covalentRadius": "153",
       "vanDerWaalsRadius": "179"
     },
     "electromagnetic": {
       "es_electro": "5076142.1319797",
       "es_etype": "1",
+      "es_mtype": "paramagnetic",
       "es_omvospr": "3.837 ⋅ 10<sup><small>-4</small></sup>",
       "es_umvospr": "5.28 ⋅ 10<sup><small>-9</small></sup>",
       "es_mmvospr": "3.199 ⋅ 10<sup><small>-9</small></sup>",
@@ -2643,7 +2646,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ionCharge": "2+, 3+",
       "ionizationPotential": "6.767",
       "atomicRadius": "166",
-      "covalentRadius": "130",
+      "covalentRadius": "139",
       "vanDerWaalsRadius": "189"
     },
     "electromagnetic": {
