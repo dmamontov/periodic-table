@@ -12062,9 +12062,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "additional": {},
     "reactivity": {},
     "nucleus": {
-      "halfLife": "20/5",
-      "lifetime": "28.86/5",
-      "neutronCrossSection": "0",
+      "halfLife": "4.5/5",
+      "lifetime": "6.4921/5",
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
@@ -12122,9 +12121,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "additional": {},
     "reactivity": {},
     "nucleus": {
-      "halfLife": "9.9/5",
-      "lifetime": "14.2857/5",
-      "neutronCrossSection": "0",
+      "halfLife": "12/5",
+      "lifetime": "17.3123/5",
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
@@ -12184,9 +12182,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "atomElectronEnergy": "151.0"
     },
     "nucleus": {
-      "halfLife": "5.1/4",
-      "lifetime": "7.3593/4",
-      "neutronCrossSection": "0",
+      "halfLife": "100/5",
+      "lifetime": "144.2695/5",
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
@@ -12244,9 +12241,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "additional": {},
     "reactivity": {},
     "nucleus": {
-      "halfLife": "29/5",
-      "lifetime": "41.847/5",
-      "neutronCrossSection": "0",
+      "halfLife": "33/5",
+      "lifetime": "47.6089/5",
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
@@ -12309,7 +12305,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "9.5/5",
       "lifetime": "13.7085/5",
-      "neutronCrossSection": "0",
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
@@ -12368,9 +12363,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "additional": {},
     "reactivity": {},
     "nucleus": {
-      "halfLife": "19/5",
-      "lifetime": "27.417/5",
-      "neutronCrossSection": "0",
+      "halfLife": "2.4/5",
+      "lifetime": "3.4625/5",
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
@@ -12380,7 +12374,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "healthHazard"
     ],
     "isotopes": {
-      "decay": "spontaneousFission",
+      "decay": "alpha",
       "isotopes": [
         {
           "mass": 289
