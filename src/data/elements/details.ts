@@ -1140,7 +1140,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "grid": {
       "gridStructureNum": "3 | 1",
-      "gridParams": "4.2820 Å | a=2.767 Å; с=6.154 Å",
+      "gridParams": "4.2820 Å | a=3.767 Å; c=6.154 Å",
       "debyeTemperature": "158",
       "space1": "Im_ 3m",
       "space2": "229"
