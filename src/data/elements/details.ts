@@ -7259,8 +7259,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "atomElectronEnergy": "12.45"
     },
     "nucleus": {
-      "halfLife": "17.72/1",
-      "lifetime": "25.56996/1",
+      "halfLife": "2.6234/1",
+      "lifetime": "3.7855/1",
       "neutronCrossSection": "8400.0",
       "nfpaCube": "1,4,2,W+RAD"
     },
@@ -7400,6 +7400,22 @@ export const elementDetails: Record<string, StoredElementDetail> = {
         {
           "mass": 144,
           "abundance": "3.07"
+        },
+        {
+          "mass": 147,
+          "abundance": "14.99"
+        },
+        {
+          "mass": 149,
+          "abundance": "13.82"
+        },
+        {
+          "mass": 148,
+          "abundance": "11.24"
+        },
+        {
+          "mass": 150,
+          "abundance": "7.38"
         }
       ]
     },
@@ -7633,6 +7649,22 @@ export const elementDetails: Record<string, StoredElementDetail> = {
         {
           "mass": 156,
           "abundance": "20.47"
+        },
+        {
+          "mass": 157,
+          "abundance": "15.65"
+        },
+        {
+          "mass": 155,
+          "abundance": "14.80"
+        },
+        {
+          "mass": 154,
+          "abundance": "2.18"
+        },
+        {
+          "mass": 152,
+          "abundance": "0.20"
         }
       ]
     },
@@ -7868,6 +7900,22 @@ export const elementDetails: Record<string, StoredElementDetail> = {
         {
           "mass": 162,
           "abundance": "25.475"
+        },
+        {
+          "mass": 161,
+          "abundance": "18.889"
+        },
+        {
+          "mass": 160,
+          "abundance": "2.329"
+        },
+        {
+          "mass": 158,
+          "abundance": "0.095"
+        },
+        {
+          "mass": 156,
+          "abundance": "0.056"
         }
       ]
     },
