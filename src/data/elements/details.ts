@@ -4262,7 +4262,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "es_omvospr": "0.00000398",
       "es_umvospr": "2.6 ⋅ 10<sup><small>-9</small></sup>",
       "es_mmvospr": "2.22 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "1.28 ⋅ 10<sup><small>-7</small></sup>"
+      "es_udel": "1.28 ⋅ 10<sup><small>-7</small></sup>",
+      "es_mtype": "paramagnetic"
     },
     "grid": {
       "gridStructureNum": "3",
@@ -4379,7 +4380,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "grid": {
       "gridStructureNum": "4 | 6 | 3",
-      "gridParams": "6.080 Å | a=0.431 Å; c=0.705 Å | a=0.485",
+      "gridParams": "6.080 Å | a=4.31 Å; c=7.05 Å | a=4.85 Å",
       "debyeTemperature": "147",
       "space1": "Fm_ 3m",
       "space2": "225"
@@ -4496,7 +4497,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "es_umvospr": "6.66 ⋅ 10<sup><small>-98/small></sup>",
       "es_mmvospr": "5.921 ⋅ 10<sup><small>-9</small></sup>",
       "es_udel": "5.96 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "1.3"
+      "es_temp": "1.3",
+      "es_mtype": "paramagnetic"
     },
     "grid": {
       "gridStructureNum": "2 | 7",
@@ -4743,7 +4745,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "es_umvospr": "2.76 ⋅ 10<sup><small>-8</small></sup>",
       "es_mmvospr": "2.56 ⋅ 10<sup><small>-9</small></sup>",
       "es_udel": "1.52 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "9.25"
+      "es_temp": "9.25",
+      "es_mtype": "paramagnetic"
     },
     "grid": {
       "gridStructureNum": "3",
