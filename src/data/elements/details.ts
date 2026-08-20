@@ -9614,7 +9614,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "nucleus": {
       "halfLife": "∞",
       "lifetime": "∞",
-      "neutronCrossSection": "374.0",
+      "neutronCrossSection": "372.3",
       "nfpaCube": "0,3,0,-"
     },
     "prevalence": {
@@ -9635,15 +9635,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "isotopes": [
         {
           "mass": 202,
-          "abundance": "29.86"
+          "abundance": "29.74"
         },
         {
           "mass": 200,
-          "abundance": "23.10"
+          "abundance": "23.14"
         },
         {
           "mass": 199,
-          "abundance": "16.87"
+          "abundance": "16.94"
+        },
+        {
+          "mass": 201,
+          "abundance": "13.17"
+        },
+        {
+          "mass": 198,
+          "abundance": "10.04"
+        },
+        {
+          "mass": 204,
+          "abundance": "6.82"
+        },
+        {
+          "mass": 196,
+          "abundance": "0.15"
         }
       ]
     },
@@ -9887,6 +9903,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
         {
           "mass": 207,
           "abundance": "22.1"
+        },
+        {
+          "mass": 204,
+          "abundance": "1.4"
         }
       ]
     },
@@ -10082,8 +10102,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "atomElectronEnergy": "136.0"
     },
     "nucleus": {
-      "halfLife": "125/1",
-      "lifetime": "180.6636/1",
+      "halfLife": "0.3790/1",
+      "lifetime": "0.5468/1",
       "neutronCrossSection": "0.5",
       "nfpaCube": "1,4,2,RAD"
     },
