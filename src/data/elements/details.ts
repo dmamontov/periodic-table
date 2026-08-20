@@ -819,7 +819,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "grid": {
       "gridStructureNum": "7",
-      "gridParams": "a=5.403 Å; b=3.429 Å; c=5.086 Å; β=135.53°",
+      "gridParams": "a=5.403 Å; b=3.429 Å; c=5.086 Å; β=132.53°",
       "debyeTemperature": "104",
       "space1": "C12/m1",
       "space2": "12"
@@ -921,10 +921,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "covalentRadius": "60",
       "vanDerWaalsRadius": "135"
     },
-    "electromagnetic": {},
+    "electromagnetic": {
+      "es_mtype": "diamagnetic"
+    },
     "grid": {
       "gridStructureNum": "12 | 7",
-      "gridParams": "β = 102.088°; a = 5.4780 Å; b = 3.2701 Å; c = 7",
+      "gridParams": "β = 102.088°; a = 5.4780 Å; b = 3.2701 Å; c = 7.28",
       "space1": "C12/c1",
       "space2": "15"
     },
@@ -1042,7 +1044,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "thermalConductivity": "0.0491"
     },
     "reactivity": {
-      "atomElectronEnergy": "-116.0"
+      "atomElectronEnergy": "0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -1253,7 +1255,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "grid": {
       "gridStructureNum": "2",
-      "gridParams": "a=0.32029 Å; c=0.52000 Å",
+      "gridParams": "a=3.2091 Å; c=5.2103 Å",
       "ratio": "1.624",
       "debyeTemperature": "406",
       "space1": "P6<sub><small>3</small></sub>/mmc",
@@ -1275,7 +1277,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.31",
-      "atomElectronEnergy": "-40.0"
+      "atomElectronEnergy": "0"
     },
     "nucleus": {
       "halfLife": "∞",
