@@ -1609,8 +1609,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "grid": {
       "gridStructureNum": "3",
       "gridParams": "18.800 Å",
-      "space1": "P-1",
-      "space2": "2"
+      "space1": "I-43m",
+      "space2": "217"
     },
     "additional": {
       "elementColor": "6",
@@ -1955,7 +1955,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "thermalConductivity": "0.01772"
     },
     "reactivity": {
-      "atomElectronEnergy": "-96.0"
+      "atomElectronEnergy": "0"
     },
     "nucleus": {
       "halfLife": "∞",
