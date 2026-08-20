@@ -3653,7 +3653,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "atomic": {
       "oxidationState": "-,4,-,-,-,-,-,2,-,4,-,-,-,-,-",
       "ionCharge": "4+",
-      "ionizationPotential": "9.810",
+      "ionizationPotential": "7.899",
       "atomicRadius": "125",
       "covalentRadius": "120",
       "vanDerWaalsRadius": "211"
@@ -3671,8 +3671,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridStructureNum": "8",
       "gridParams": "5.660 Å",
       "debyeTemperature": "370",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "space1": "Fd_ 3m",
+      "space2": "227"
     },
     "additional": {
       "elementColor": "4",
@@ -3775,7 +3775,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "thermo": {
       "fusionHeat": "24.44",
-      "specificHeat": "228",
+      "specificHeat": "328.9",
       "thermalExpansion": "5.6 ⋅ 10<sup><small>-6</small></sup>",
       "vaporizationHeat": "32.4"
     },
@@ -3798,7 +3798,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "grid": {
       "gridStructureNum": "5",
-      "gridParams": "a=0.4123 Å; α=54.17°",
+      "gridParams": "a=4.1315 Å; α=54.17°",
       "debyeTemperature": "282",
       "space1": "R_ 3m",
       "space2": "166"
@@ -3909,8 +3909,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a=4.364 Å; c=4.959 Å",
       "ratio": "1.136",
       "debyeTemperature": "90",
-      "space1": "P12<sub><small>1</small></sub>/c1",
-      "space2": "14"
+      "space1": "P3<sub><small>1</small></sub>21",
+      "space2": "152"
     },
     "additional": {
       "elementColor": "4",
@@ -4017,7 +4017,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "thermo": {
       "fusionHeat": "10.57",
-      "specificHeat": "947.3",
+      "specificHeat": "473.6",
       "vaporizationHeat": "29.96"
     },
     "atomic": {
@@ -4161,7 +4161,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "3",
-      "atomElectronEnergy": "-96.0"
+      "atomElectronEnergy": "0"
     },
     "nucleus": {
       "halfLife": "∞",
