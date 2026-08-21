@@ -12525,9 +12525,14 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "elementBlock": "p",
       "aggregationState": "solid"
     },
-    "thermo": {},
+    "thermo": {
+      "fusionHeat": "5.98",
+      "vaporizationHeat": "138"
+    },
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,-,3,-,-,-,-,-,-",
+      "ionizationPotential": "5.58",
+      "atomicRadius": "187",
       "covalentRadius": "162"
     },
     "electromagnetic": {},
@@ -12585,9 +12590,14 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "elementBlock": "p",
       "aggregationState": "solid"
     },
-    "thermo": {},
+    "thermo": {
+      "fusionHeat": "7.61",
+      "vaporizationHeat": "42"
+    },
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,2,-,-,-,-,-,-,-",
+      "ionizationPotential": "6.88",
+      "atomicRadius": "183",
       "covalentRadius": "175"
     },
     "electromagnetic": {},
@@ -12648,7 +12658,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {},
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,1,-,-,-,-,-,-,-,-",
-      "atomicRadius": "165"
+      "ionizationPotential": "7.70",
+      "atomicRadius": "138",
+      "covalentRadius": "165"
     },
     "electromagnetic": {},
     "grid": {},
@@ -12700,6 +12712,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "properties": {
       "elementMasse": "295.212212582275",
+      "elementDensity": "7.2",
       "elementMeltingPoint": "52.0",
       "elementBoilingPoint": "177.0",
       "elementGroup": "7/VIII+",
@@ -12709,18 +12722,20 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {},
     "atomic": {
       "oxidationState": "-,-,-,-,-,0,-,-,-,-,-,-,-,-,-",
-      "atomicRadius": "157"
+      "ionizationPotential": "8.91",
+      "atomicRadius": "152",
+      "covalentRadius": "157"
     },
     "electromagnetic": {},
     "grid": {
       "gridStructureNum": "4"
     },
     "additional": {
-      "liquidDensity": "177.0",
-      "molarValue": "177.0"
+      "liquidDensity": "6.6",
+      "molarValue": "0.0000410"
     },
     "reactivity": {
-      "atomElectronEnergy": "5.40318"
+      "atomElectronEnergy": "7.72"
     },
     "nucleus": {
       "halfLife": "0.00058/5",
