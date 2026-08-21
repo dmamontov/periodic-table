@@ -12145,9 +12145,13 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {},
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,-,3,4,-,6,-,-,-",
+      "ionizationPotential": "8.29",
+      "atomicRadius": "128",
       "covalentRadius": "129"
     },
-    "electromagnetic": {},
+    "electromagnetic": {
+      "es_mtype": "paramagnetic"
+    },
     "grid": {
       "gridStructureNum": "4"
     },
@@ -12204,6 +12208,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {},
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,2,-,4,-,6,-,-,-",
+      "ionizationPotential": "9.95",
+      "atomicRadius": "132",
       "covalentRadius": "128"
     },
     "electromagnetic": {},
@@ -12263,6 +12269,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {},
     "atomic": {
       "oxidationState": "-,-,-,-,1,0,1,-,3,-,5,-,7,-,-",
+      "ionizationPotential": "10.57",
+      "atomicRadius": "114",
       "covalentRadius": "121"
     },
     "electromagnetic": {},
@@ -12324,6 +12332,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {},
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,-,3,-,-,-,-,-,-",
+      "ionizationPotential": "11.97",
+      "atomicRadius": "147",
       "covalentRadius": "122"
     },
     "electromagnetic": {},
@@ -12331,7 +12341,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridStructureNum": "3"
     },
     "additional": {},
-    "reactivity": {},
+    "reactivity": {
+      "atomElectronEnergy": "0"
+    },
     "nucleus": {
       "halfLife": "33/5",
       "lifetime": "47.6089/5",
@@ -12381,9 +12393,14 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "elementBlock": "p",
       "aggregationState": "solid"
     },
-    "thermo": {},
+    "thermo": {
+      "fusionHeat": "7.61",
+      "vaporizationHeat": "130"
+    },
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,-,3,-,-,-,-,-,-",
+      "ionizationPotential": "7.31",
+      "atomicRadius": "170",
       "covalentRadius": "136"
     },
     "electromagnetic": {},
@@ -12443,17 +12460,23 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "elementBlock": "p",
       "aggregationState": "solid"
     },
-    "thermo": {},
+    "thermo": {
+      "vaporizationHeat": "38"
+    },
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,-,-,4,-,-,-,-,-",
+      "ionizationPotential": "8.539",
+      "atomicRadius": "180",
       "covalentRadius": "143"
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "2"
+      "gridStructureNum": "4"
     },
     "additional": {},
-    "reactivity": {},
+    "reactivity": {
+      "atomElectronEnergy": "0"
+    },
     "nucleus": {
       "halfLife": "2.4/5",
       "lifetime": "3.4625/5",
