@@ -11770,6 +11770,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,-,3,-,-,-,-,-,-",
       "ionCharge": "3+",
+      "ionizationPotential": "4.965",
+      "atomicRadius": "171",
       "covalentRadius": "161",
       "vanDerWaalsRadius": "246"
     },
@@ -11779,6 +11781,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "additional": {},
     "reactivity": {
+      "electronegativity": "1.3",
       "atomElectronEnergy": "-30.04"
     },
     "nucleus": {
@@ -11835,6 +11838,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {},
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,-,-,4,-,-,-,-,-",
+      "atomicRadius": "150",
       "covalentRadius": "157"
     },
     "electromagnetic": {},
@@ -11896,6 +11900,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {},
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,-,3,4,5,-,-,-,-",
+      "atomicRadius": "139",
       "covalentRadius": "149"
     },
     "electromagnetic": {},
@@ -11957,6 +11962,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {},
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,-,-,-,-,6,-,-,-",
+      "atomicRadius": "132",
       "covalentRadius": "143"
     },
     "electromagnetic": {},
@@ -12017,6 +12023,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {},
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,-,-,-,-,-,7,-,-",
+      "atomicRadius": "128",
       "covalentRadius": "141"
     },
     "electromagnetic": {},
@@ -12077,6 +12084,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {},
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,-,-,-,-,-,-,8,-",
+      "atomicRadius": "126",
       "covalentRadius": "134"
     },
     "electromagnetic": {},
