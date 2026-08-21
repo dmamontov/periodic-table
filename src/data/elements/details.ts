@@ -1055,7 +1055,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "prevalence1": "0.13",
       "prevalence2": "0.058",
-      "prevalence3": "1.2 ⋅ 10<sup><small>-6</small></sup>",
+      "prevalence3": "1.2 ⋅ 10<sup><small>-8</small></sup>",
       "prevalence5": "5.0 ⋅ 10<sup><small>-7</small></sup>"
     },
     "colorIndex": 0,
