@@ -2205,7 +2205,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "prevalence1": "0.007",
       "prevalence2": "0.007",
-      "prevalence3": "4.2 ⋅ 10<sup><small>-4</small></sup>",
+      "prevalence3": "0.042",
       "prevalence4": "1.42682033852507",
       "prevalence5": "4.15",
       "prevalence6": "1.1"
@@ -2333,7 +2333,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "prevalence": {
       "prevalence1": "3 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence2": "4 ⋅ 10<sup><small>-4</small></sup>",
+      "prevalence2": "4 ⋅ 10<sup><small>-6</small></sup>",
       "prevalence3": "1.5 ⋅ 10<sup><small>-10</small></sup>",
       "prevalence4": "2 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence5": "0.0022",
@@ -10140,6 +10140,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {
+      "prevalence3": "2 ⋅ 10<sup><small>-18</small></sup>",
       "prevalence5": "2.0 ⋅ 10<sup><small>-14</small></sup>"
     },
     "colorIndex": 1,
@@ -10300,7 +10301,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "neutronCrossSection": "0.7",
       "nfpaCube": "0,4,0,RAD"
     },
-    "prevalence": {},
+    "prevalence": {
+      "prevalence3": "6 ⋅ 10<sup><small>-20</small></sup>"
+    },
     "colorIndex": 0,
     "ghs": [
       "compressedGas",
@@ -10784,6 +10787,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {
+      "prevalence3": "2 ⋅ 10<sup><small>-23</small></sup>",
       "prevalence5": "1.4 ⋅ 10<sup><small>-10</small></sup>"
     },
     "colorIndex": 1,
