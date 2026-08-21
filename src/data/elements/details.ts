@@ -10745,18 +10745,21 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "12.34",
       "specificHeat": "99.1",
+      "thermalExpansion": "11.8 ⋅ 10<sup><small>-6</small></sup>",
       "vaporizationHeat": "481.0"
     },
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,-,-,4,5,-,-,-,-",
       "ionCharge": "4+, 5+",
       "ionizationPotential": "5.89",
-      "covalentRadius": "184",
+      "atomicRadius": "163",
+      "covalentRadius": "200",
       "vanDerWaalsRadius": "243"
     },
     "electromagnetic": {
       "es_electro": "5649717.51412429",
       "es_etype": "1",
+      "es_mtype": "paramagnetic",
       "es_omvospr": "4.995 ⋅ 10<sup><small>-4</small></sup>",
       "es_umvospr": "3.25 ⋅ 10<sup><small>-8</small></sup>",
       "es_mmvospr": "7.509 ⋅ 10<sup><small>-9</small></sup>",
@@ -10767,6 +10770,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridStructureNum": "10",
       "gridParams": "a=3.925 Å; c=3.238 Å",
       "ratio": "0.82",
+      "debyeTemperature": "185",
       "space1": "I4/mmm",
       "space2": "139"
     },
@@ -10840,19 +10844,21 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "9.14",
       "specificHeat": "116",
-      "thermalExpansion": "13.9 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "15.46 ⋅ 10<sup><small>-6</small></sup>",
       "vaporizationHeat": "417.1"
     },
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,-,3,4,5,6,-,-,-",
       "ionCharge": "4+, 6+",
       "ionizationPotential": "6.194",
-      "covalentRadius": "183",
-      "vanDerWaalsRadius": "243"
+      "atomicRadius": "156",
+      "covalentRadius": "196",
+      "vanDerWaalsRadius": "186"
     },
     "electromagnetic": {
       "es_electro": "3571428.57142857",
       "es_etype": "1",
+      "es_mtype": "paramagnetic",
       "es_omvospr": "4.11 ⋅ 10<sup><small>-4</small></sup>",
       "es_umvospr": "2.16 ⋅ 10<sup><small>-8</small></sup>",
       "es_mmvospr": "5.14 ⋅ 10<sup><small>-9</small></sup>",
@@ -10862,6 +10868,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "grid": {
       "gridStructureNum": "9",
       "gridParams": "a=2.854 Å; b=5.870 Å; c=4.955 Å",
+      "debyeTemperature": "248",
       "space1": "Cmcm",
       "space2": "63"
     },
@@ -10883,7 +10890,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.38",
-      "atomElectronEnergy": "50.94"
+      "atomElectronEnergy": "30.39"
     },
     "nucleus": {
       "halfLife": "4468000000/1",
@@ -10966,24 +10973,28 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "aggregationState": "solid"
     },
     "thermo": {
-      "fusionHeat": "3.2",
+      "fusionHeat": "5.19",
+      "specificHeat": "124.3",
       "vaporizationHeat": "336.0"
     },
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,-,3,4,5,6,7,-,-",
       "ionCharge": "5+",
       "ionizationPotential": "6.266",
-      "covalentRadius": "180",
+      "atomicRadius": "155",
+      "covalentRadius": "190",
       "vanDerWaalsRadius": "221"
     },
     "electromagnetic": {
       "es_electro": "819672.131147541",
       "es_etype": "1",
+      "es_mtype": "paramagnetic",
       "es_udel": "1.22 ⋅ 10<sup><small>-6</small></sup>"
     },
     "grid": {
       "gridStructureNum": "9",
       "gridParams": "a=6.663 Å; b=4.723 Å; c=4.887 Å",
+      "debyeTemperature": "259",
       "space1": "Pnma",
       "space2": "62"
     },
@@ -11052,19 +11063,22 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "thermo": {
       "fusionHeat": "2.82",
-      "thermalExpansion": "46.7 ⋅ 10<sup><small>-6</small></sup>",
+      "specificHeat": "145.5",
+      "thermalExpansion": "49.6 ⋅ 10<sup><small>-6</small></sup>",
       "vaporizationHeat": "333.5"
     },
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,2,3,4,5,6,7,-,-",
       "ionCharge": "4+, 6+",
-      "ionizationPotential": "6.06",
-      "covalentRadius": "180",
+      "ionizationPotential": "6.026",
+      "atomicRadius": "159",
+      "covalentRadius": "187",
       "vanDerWaalsRadius": "243"
     },
     "electromagnetic": {
       "es_electro": "684931.506849315",
       "es_etype": "1",
+      "es_mtype": "paramagnetic",
       "es_omvospr": "6.222 ⋅ 10<sup><small>-4</small></sup>",
       "es_umvospr": "3.17 ⋅ 10<sup><small>-8</small></sup>",
       "es_mmvospr": "7.735 ⋅ 10<sup><small>-9</small></sup>",
@@ -11148,17 +11162,21 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "aggregationState": "solid"
     },
     "thermo": {
-      "fusionHeat": "14.39"
+      "fusionHeat": "14.39",
+      "specificHeat": "115.2",
+      "thermalExpansion": "7.1 ⋅ 10<sup><small>-6</small></sup>"
     },
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,2,3,4,5,6,7,-,-",
       "ionCharge": "3+, 4+",
-      "ionizationPotential": "5.993",
-      "covalentRadius": "173",
+      "ionizationPotential": "5.974",
+      "atomicRadius": "173",
+      "covalentRadius": "180",
       "vanDerWaalsRadius": "244"
     },
     "electromagnetic": {
       "es_electro": "1451378.80986938",
+      "es_mtype": "paramagnetic",
       "es_omvospr": "7.04 ⋅ 10<sup><small>-4</small></sup>",
       "es_umvospr": "5.15 ⋅ 10<sup><small>-8</small></sup>",
       "es_mmvospr": "1.251 ⋅ 10<sup><small>-8</small></sup>",
@@ -11169,6 +11187,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridStructureNum": "11",
       "gridParams": "a=3.468 Å; c=11.24 Å",
       "ratio": "3.24",
+      "debyeTemperature": "121",
       "space1": "P6<sub><small>3</small></sub>/mmc",
       "space2": "194"
     },
@@ -11238,22 +11257,27 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "elementBlock": "f",
       "aggregationState": "solid"
     },
-    "thermo": {},
+    "thermo": {
+      "fusionHeat": "13.85"
+    },
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,-,3,4,-,-,-,-,-",
       "ionCharge": "3+",
-      "ionizationPotential": "6.02",
-      "covalentRadius": "168",
+      "ionizationPotential": "5.9915",
+      "atomicRadius": "174",
+      "covalentRadius": "169",
       "vanDerWaalsRadius": "245"
     },
     "electromagnetic": {
       "es_electro": "800000.0",
+      "es_mtype": "paramagnetic",
       "es_udel": "1.25 ⋅ 10<sup><small>-6</small></sup>"
     },
     "grid": {
       "gridStructureNum": "11",
       "gridParams": "a=3.496 Å; c=11.33 Å",
       "ratio": "3.24",
+      "debyeTemperature": "123",
       "space1": "P6<sub><small>3</small></sub>/mmc",
       "space2": "194"
     },
