@@ -297,7 +297,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "6 ⋅ 10<sup><small>-7</small></sup>",
       "prevalence2": "6 ⋅ 10<sup><small>-9</small></sup>",
       "prevalence3": "1.8 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence4": "9.98774237 ⋅ 10<sup><small>-6</small></sup>",
+      "prevalence4": "3 ⋅ 10<sup><small>-6</small></sup>",
       "prevalence5": "0.002",
       "prevalence6": "0.00017"
     },
@@ -529,7 +529,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "1 ⋅ 10<sup><small>-7</small></sup>",
       "prevalence2": "2 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence3": "4.4 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence4": "2.568276609 ⋅ 10<sup><small>-5</small></sup>",
+      "prevalence4": "7 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence5": "0.001",
       "prevalence6": "0.00016"
     },
@@ -1411,7 +1411,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "0.005",
       "prevalence2": "0.006",
       "prevalence3": "5 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence4": "8.560922031-05",
+      "prevalence4": "8.560922031 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence5": "8.23",
       "prevalence6": "0.9"
     },
@@ -1525,7 +1525,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "0.07",
       "prevalence2": "0.099",
       "prevalence3": "1.0 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence4": "0.00142682033853",
+      "prevalence4": "0.026",
       "prevalence5": "28.3",
       "prevalence6": "14.0"
     },
@@ -2335,7 +2335,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "3 ⋅ 10<sup><small>-6</small></sup>",
       "prevalence2": "4 ⋅ 10<sup><small>-4</small></sup>",
       "prevalence3": "1.5 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence4": "2.8536407 ⋅ 10<sup><small>-7</small></sup>",
+      "prevalence4": "2 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence5": "0.0022",
       "prevalence6": "0.00064"
     },
@@ -2578,7 +2578,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "0.0001",
       "prevalence2": "4 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence3": "1.5 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence4": "1.5695024 ⋅ 10<sup><small>-7</small></sup>",
+      "prevalence4": "3 ⋅ 10<sup><small>-6</small></sup>",
       "prevalence5": "0.012",
       "prevalence6": "0.0061"
     },
@@ -2695,7 +2695,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "0.0015",
       "prevalence2": "0.002",
       "prevalence3": "6 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence4": "1.997548474 ⋅ 10<sup><small>-5</small></sup>",
+      "prevalence4": "3 ⋅ 10<sup><small>-6</small></sup>",
       "prevalence5": "0.0102",
       "prevalence6": "0.3"
     },
@@ -3067,7 +3067,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "0.0003",
       "prevalence2": "0.0004",
       "prevalence3": "8 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "4.28046102 ⋅ 10<sup><small>-6</small></sup>",
+      "prevalence4": "2 ⋅ 10<sup><small>-6</small></sup>",
       "prevalence5": "0.0025",
       "prevalence6": "0.059"
     },
@@ -3184,7 +3184,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "0.006",
       "prevalence2": "0.008",
       "prevalence3": "2 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence4": "2.140230508 ⋅ 10<sup><small>-5</small></sup>",
+      "prevalence4": "1 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence5": "0.0084",
       "prevalence6": "1.3"
     },
@@ -3587,7 +3587,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "1 ⋅ 10<sup><small>-6</small></sup>",
       "prevalence2": "4 ⋅ 10<sup><small>-4</small></sup>",
       "prevalence3": "3 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "9.9877424 ⋅ 10<sup><small>-7</small></sup>",
       "prevalence5": "0.0019",
       "prevalence6": "7.6 ⋅ 10<sup><small>-4</small></sup>"
     },
@@ -3701,7 +3700,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "2 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence2": "2 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence3": "6 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "7.13410169 ⋅ 10<sup><small>-6</small></sup>",
       "prevalence5": "1.5 ⋅ 10<sup><small>-4</small></sup>",
       "prevalence6": "0.0021"
     },
@@ -3941,7 +3939,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "prevalence1": "3 ⋅ 10<sup><small>-6</small></sup>",
       "prevalence3": "4.5 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence4": "2.140230508 ⋅ 10<sup><small>-5</small></sup>",
+      "prevalence4": "5 ⋅ 10<sup><small>-6</small></sup>",
       "prevalence5": "5.0⋅ 10<sup><small>-6</small></sup>",
       "prevalence6": "0.0013"
     },
@@ -4299,7 +4297,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "1 ⋅ 10<sup><small>-6</small></sup>",
       "prevalence2": "3 ⋅ 10<sup><small>-4</small></sup>",
       "prevalence3": "1.2 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence4": "0.0009702378302",
+      "prevalence4": "0.00046",
       "prevalence5": "0.009",
       "prevalence6": "3.2 ⋅ 10<sup><small>-4</small></sup>"
     },
@@ -4536,7 +4534,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "7 ⋅ 10<sup><small>-7</small></sup>",
       "prevalence2": "9.9 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence3": "1.3 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "8.560922 ⋅ 10<sup><small>-7</small></sup>",
       "prevalence5": "0.0033",
       "prevalence6": "1.9 ⋅ 10<sup><small>-4</small></sup>"
     },
@@ -4654,7 +4651,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "5 ⋅ 10<sup><small>-6</small></sup>",
       "prevalence2": "4 ⋅ 10<sup><small>-4</small></sup>",
       "prevalence3": "2.6 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "1.42682034 ⋅ 10<sup><small>-6</small></sup>",
+      "prevalence4": "5 ⋅ 10<sup><small>-6</small></sup>",
       "prevalence5": "0.0165",
       "prevalence6": "6.6 ⋅ 10<sup><small>-4</small></sup>"
     },
@@ -4784,7 +4781,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "2 ⋅ 10<sup><small>-7</small></sup>",
       "prevalence2": "4 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence3": "1.0 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence4": "2.14023051 ⋅ 10<sup><small>-6</small></sup>",
       "prevalence5": "0.002",
       "prevalence6": "1.9 ⋅ 10<sup><small>-5</small></sup>"
     },
@@ -5519,7 +5515,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "6 ⋅ 10<sup><small>-8</small></sup>",
       "prevalence2": "1 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence3": "1.0 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence4": "2.85364068⋅ 10<sup><small>-6</small></sup>",
       "prevalence5": "7.5 ⋅ 10<sup><small>-6</small></sup>",
       "prevalence6": "1.4 ⋅ 10<sup><small>-5</small></sup>"
     },
@@ -5782,7 +5777,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "3 ⋅ 10<sup><small>-8</small></sup>",
       "prevalence2": "4 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence3": "1.0 ⋅ 10<sup><small>-9</small></sup>",
-      "prevalence4": "5.7072814 ⋅ 10<sup><small>-7</small></sup>",
       "prevalence5": "2.5 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence6": "4.4 ⋅ 10<sup><small>-6</small></sup>"
     },
@@ -6057,7 +6051,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "4 ⋅ 10<sup><small>-8</small></sup>",
       "prevalence2": "1 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence3": "2.0 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence4": "2.85364068 ⋅ 10<sup><small>-5</small></sup>",
+      "prevalence4": "1.1 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence5": "2.0 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence6": "1.2 ⋅ 10<sup><small>-5</small></sup>"
     },
@@ -6171,7 +6165,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "prevalence": {
       "prevalence1": "9 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "9.9877424 ⋅ 10<sup><small>-5</small></sup>",
+      "prevalence4": "1.2 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence5": "1.0 ⋅ 10<sup><small>-7</small></sup>",
       "prevalence6": "2.1 ⋅ 10<sup><small>-4</small></sup>"
     },
@@ -6544,7 +6538,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "8 ⋅ 10<sup><small>-8</small></sup>",
       "prevalence2": "8 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence3": "5 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence4": "8.56092203 ⋅ 10<sup><small>-6</small></sup>",
+      "prevalence4": "2 ⋅ 10<sup><small>-6</small></sup>",
       "prevalence5": "0.0003",
       "prevalence6": "1.4 ⋅ 10<sup><small>-5</small></sup>"
     },
@@ -6793,7 +6787,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "prevalence1": "2 ⋅ 10<sup><small>-7</small></sup>",
       "prevalence2": "2 ⋅ 10<sup><small>-5</small></sup>",
       "prevalence3": "3.4 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence4": "1.14145627 ⋅ 10<sup><small>-6</small></sup>",
+      "prevalence4": "1.37 ⋅ 10<sup><small>-4</small></sup>",
       "prevalence5": "0.0039",
       "prevalence6": "2.8 ⋅ 10<sup><small>-5</small></sup>"
     },
