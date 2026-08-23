@@ -266,7 +266,7 @@ export const myElements: Record<string, ElementCollection> = {
     physical: { sampleState: 'powder', container: 'ampoule', purity: '999', weight: '~0.1', acquiredDate: '2026-06-22' },
     history: [
       {
-        physical: { sampleState: 'powder', container: 'ampoule', purity: '999', weight: '~0.1' },
+        physical: { sampleState: 'powder', container: 'ampoule', purity: '999', weight: '~0.1', acquiredDate: '2024-08-26' },
         retained: false,
         reason: 'degradedStorage',
       },
