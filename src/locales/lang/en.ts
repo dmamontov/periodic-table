@@ -702,8 +702,8 @@ const messages: LocaleMessages = {
     "Fl": "A synthetic element; radioactive, possibly a heavy, volatile metal in the carbon group.",
     "Mc": "A synthetic element; radioactive, possibly post-transition metal, named after Moscow region.",
     "Lv": "A synthetic element; radioactive, possibly chalcogen-like, named after Livermore.",
-    "Ts": "A synthetic halogen; radioactive, extremely rare, named after Tennessee.",
-    "Og": "A synthetic noble gas; radioactive, heaviest known element, first synthesized in 2002."
+    "Ts": "A synthetic element; radioactive, possibly a halogen, extremely rare, named after Tennessee.",
+    "Og": "A synthetic group-18 element; radioactive, predicted not to behave like a typical noble gas, heaviest known element, first synthesized in 2002."
   },
   "production": {
     "H": "Not mined as an ore — produced industrially (mostly via steam methane reforming); China, the US and Russia are the largest hydrogen producers and consumers.",
