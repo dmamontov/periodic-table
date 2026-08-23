@@ -683,7 +683,7 @@ const messages: LocaleMessages = {
     "Am": "A silvery actinide; radioactive, synthetic, and named after America; used in smoke detectors.",
     "Cm": "A silvery actinide; radioactive and synthetic; curium glows purple in the dark due to self-irradiation.",
     "Bk": "A radioactive actinide; silvery, synthetic, and named after Berkeley; highly toxic.",
-    "Cf": "A silvery actinide; radioactive, synthetic, and first produced in microscopic quantities in 1940.",
+    "Cf": "A silvery actinide; radioactive, synthetic, and first produced in microscopic quantities in 1950.",
     "Es": "A silvery actinide; synthetic and radioactive; named after Einstein; no stable isotopes.",
     "Fm": "A silvery actinide; synthetic, radioactive, and named after Fermi; extremely rare.",
     "Md": "A radioactive actinide; synthetic, named after Mendeleev; first produced in 1955.",
