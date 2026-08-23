@@ -603,7 +603,7 @@ const messages: LocaleMessages = {
     "P": "A reactive nonmetal; exists in white, red, and black allotropes, essential to DNA and ATP.",
     "S": "A yellow nonmetal; known for its smell in compounds, found near volcanoes and in sulfide ores.",
     "Cl": "A yellow-green halogen gas; strong oxidizer and disinfectant, extremely reactive.",
-    "Ar": "A noble gas; colorless, inert, and present in trace amounts in the atmosphere.",
+    "Ar": "A noble gas; colorless, inert, and makes up about 1% of the atmosphere.",
     "K": "A soft alkali metal; silvery, reacts violently with water, essential for nerve function in living organisms.",
     "Ca": "A silvery alkaline-earth metal; fifth most abundant element in Earth's crust, key to bones and shells.",
     "Sc": "A silvery transition metal; light and strong, used in aerospace alloys and often associated with rare-earth chemistry.",
