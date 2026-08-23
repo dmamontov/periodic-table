@@ -9,8 +9,10 @@ import {
   formatCollectionWeight,
   resolveCollectionLabel,
   resolvePhysicalStateLabel,
+  resolveSourceType,
 } from '../../utils/collection/labels'
-import { formatIsotopeHtml } from '../../utils/element/isotopes'
+import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes'
+import { resolveLocalizedLabel } from '../../utils/localizedLabel'
 import CollectionGammaSpectrum from '../collection/CollectionGammaSpectrum.vue'
 import CloseButton from '../common/CloseButton.vue'
 import { COLLECTION_COLOR } from '../../theme/colors'
@@ -66,6 +68,10 @@ function containerLabel(entry: TimelineEntry): string {
   return resolveCollectionLabel(locale.value, 'containers', entry.physical?.container)
 }
 
+function allotropeLabel(entry: TimelineEntry): string {
+  return resolveLocalizedLabel(entry.physical?.allotrope, locale.value)
+}
+
 function purityLabel(entry: TimelineEntry): string {
   return formatCollectionPurity(entry.physical?.purity)
 }
@@ -76,6 +82,15 @@ function weightLabel(entry: TimelineEntry): string {
 
 function isotopeHtml(entry: TimelineEntry): string {
   return formatIsotopeHtml(props.element.symbol, entry.radioactive?.isotope)
+}
+
+function sourceTypeLabel(entry: TimelineEntry): string {
+  if (entry.radioactive?.sourceType !== 'secondary') return ''
+  return resolveSourceType(locale.value, entry.radioactive?.sourceType)
+}
+
+function decayChainHtml(entry: TimelineEntry): string {
+  return formatDecayChainHtml(props.element.symbol, entry.radioactive?.isotope, entry.radioactive?.decayParent)
 }
 
 function reasonLabel(entry: TimelineEntry): string {
@@ -171,14 +186,6 @@ function onKeydown(event: KeyboardEvent): void {
             <div class="collection-history-modal__content">
               <div v-if="dateLabel(entry)" class="collection-history-modal__date">{{ dateLabel(entry) }}</div>
               <ul class="collection-history-modal__facts">
-                <li v-if="stateLabel(entry)" class="collection-history-modal__fact">
-                  <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionSampleState }}</span>
-                  <span class="collection-history-modal__fact-value">{{ stateLabel(entry) }}</span>
-                </li>
-                <li v-if="containerLabel(entry)" class="collection-history-modal__fact">
-                  <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionContainer }}</span>
-                  <span class="collection-history-modal__fact-value">{{ containerLabel(entry) }}</span>
-                </li>
                 <li v-if="purityLabel(entry)" class="collection-history-modal__fact">
                   <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionPurity }}</span>
                   <span class="collection-history-modal__fact-value">{{ purityLabel(entry) }}</span>
@@ -187,9 +194,29 @@ function onKeydown(event: KeyboardEvent): void {
                   <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionWeight }}</span>
                   <span class="collection-history-modal__fact-value">{{ weightLabel(entry) }}</span>
                 </li>
+                <li v-if="stateLabel(entry)" class="collection-history-modal__fact">
+                  <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionSampleState }}</span>
+                  <span class="collection-history-modal__fact-value">{{ stateLabel(entry) }}</span>
+                </li>
+                <li v-if="allotropeLabel(entry)" class="collection-history-modal__fact">
+                  <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionAllotrope }}</span>
+                  <span class="collection-history-modal__fact-value">{{ allotropeLabel(entry) }}</span>
+                </li>
+                <li v-if="containerLabel(entry)" class="collection-history-modal__fact">
+                  <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionContainer }}</span>
+                  <span class="collection-history-modal__fact-value">{{ containerLabel(entry) }}</span>
+                </li>
                 <li v-if="isotopeHtml(entry)" class="collection-history-modal__fact">
                   <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionIsotope }}</span>
                   <span class="collection-history-modal__fact-value" v-html="isotopeHtml(entry)" />
+                </li>
+                <li v-if="sourceTypeLabel(entry)" class="collection-history-modal__fact">
+                  <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionSourceType }}</span>
+                  <span class="collection-history-modal__fact-value">{{ sourceTypeLabel(entry) }}</span>
+                </li>
+                <li v-if="decayChainHtml(entry)" class="collection-history-modal__fact">
+                  <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionDecayParent }}</span>
+                  <span class="collection-history-modal__fact-value" v-html="decayChainHtml(entry)" />
                 </li>
                 <li v-if="reasonLabel(entry)" class="collection-history-modal__fact">
                   <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionHistoryReason }}</span>
