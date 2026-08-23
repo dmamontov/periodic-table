@@ -681,7 +681,7 @@ const messages: LocaleMessages = {
     "Np": "The first transuranium element; silvery, radioactive, and produced artificially in reactors.",
     "Pu": "A silvery actinide; radioactive, toxic, and notable for nuclear energy and weapons history.",
     "Am": "A silvery actinide; radioactive, synthetic, and named after America; used in smoke detectors.",
-    "Cm": "A silvery actinide; radioactive and synthetic; curium glows red in the dark due to self-irradiation.",
+    "Cm": "A silvery actinide; radioactive and synthetic; curium glows purple in the dark due to self-irradiation.",
     "Bk": "A radioactive actinide; silvery, synthetic, and named after Berkeley; highly toxic.",
     "Cf": "A silvery actinide; radioactive, synthetic, and first produced in microscopic quantities in 1940.",
     "Es": "A silvery actinide; synthetic and radioactive; named after Einstein; no stable isotopes.",
