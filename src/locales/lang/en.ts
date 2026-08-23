@@ -486,7 +486,7 @@ const messages: LocaleMessages = {
     "Ar": "Inert welding gas, lighting, winemaking",
     "K": "Fertilizers, soap, glass industry, salt substitutes",
     "Ca": "Cement, lime, metallurgy, food additives",
-    "Sc": "Aerospace alloys, sports equipment, lasers",
+    "Sc": "Aerospace alloys, sports equipment, metal-halide lamps",
     "Ti": "Aerospace, medical implants, white pigments, sports gear",
     "V": "Alloy steel, catalysts, vanadium flow batteries",
     "Cr": "Stainless steel, chrome plating, pigments, leather tanning",
