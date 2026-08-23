@@ -655,7 +655,7 @@ const messages: LocaleMessages = {
     "Ho": "A silvery lanthanide; relatively stable in air compared with other rare earths.",
     "Er": "A silvery lanthanide; pink-colored Er³⁺ ions are used in lasers and fiber optics.",
     "Tm": "A soft, silvery lanthanide; the softest and most malleable rare earth metal.",
-    "Yb": "A silvery lanthanide; the smallest and least reactive of the lanthanides.",
+    "Yb": "A silvery lanthanide; large atomic radius and elevated reactivity due to its Yb2+ state.",
     "Lu": "A silvery lanthanide; last of the series, denser and harder than most rare earths.",
     "Hf": "A lustrous, silvery transition metal; corrosion-resistant and used in nuclear control rods.",
     "Ta": "A hard, blue-gray transition metal; dense, ductile, and resistant to corrosion by acids.",
