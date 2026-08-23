@@ -693,7 +693,7 @@ const messages: LocaleMessages = {
     "Db": "A synthetic transition element; radioactive, named after Dubna; known only in research quantities.",
     "Sg": "A synthetic element; radioactive, named after Seaborg; produced atom by atom in accelerators.",
     "Bh": "A synthetic element; radioactive, named after Bohr; exists only as fleeting atoms.",
-    "Hs": "A synthetic element; radioactive, named after Hesse; among the heaviest elements ever made.",
+    "Hs": "A synthetic element; radioactive, named after Hesse; one of the first superheavy elements ever produced.",
     "Mt": "A synthetic element; radioactive, named after Meitner; one of the rarest substances on Earth.",
     "Ds": "A synthetic element; radioactive, extremely unstable, known only from a handful of atoms.",
     "Rg": "A synthetic element; radioactive, possibly metallic, named after Roentgen; no macroscopic samples.",
