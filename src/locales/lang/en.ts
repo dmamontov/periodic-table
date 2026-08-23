@@ -651,7 +651,7 @@ const messages: LocaleMessages = {
     "Eu": "A soft, silvery lanthanide; most reactive of the rare earths, tarnishes quickly in air.",
     "Gd": "A silvery-white lanthanide; ferromagnetic and used in MRI contrast agents.",
     "Tb": "A silvery lanthanide; malleable, moderately reactive, and used in green phosphors.",
-    "Dy": "A silvery lanthanide; has the highest magnetic moment among naturally occurring elements.",
+    "Dy": "A silvery lanthanide; has one of the highest magnetic moments among naturally occurring elements.",
     "Ho": "A silvery lanthanide; relatively stable in air compared with other rare earths.",
     "Er": "A silvery lanthanide; pink-colored Er³⁺ ions are used in lasers and fiber optics.",
     "Tm": "A soft, silvery lanthanide; the softest and most malleable rare earth metal.",
