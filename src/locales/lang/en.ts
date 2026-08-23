@@ -699,7 +699,7 @@ const messages: LocaleMessages = {
     "Rg": "A synthetic element; radioactive, possibly metallic, named after Roentgen; no macroscopic samples.",
     "Cn": "A synthetic element; radioactive, possibly volatile metal, named after Copernicus.",
     "Nh": "A synthetic element; radioactive, possibly post-transition metal, first made in Japan.",
-    "Fl": "A synthetic element; radioactive, possibly heavy metal in the carbon group.",
+    "Fl": "A synthetic element; radioactive, possibly a heavy, volatile metal in the carbon group.",
     "Mc": "A synthetic element; radioactive, possibly post-transition metal, named after Moscow region.",
     "Lv": "A synthetic element; radioactive, possibly chalcogen-like, named after Livermore.",
     "Ts": "A synthetic halogen; radioactive, extremely rare, named after Tennessee.",
