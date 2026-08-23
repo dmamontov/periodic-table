@@ -575,6 +575,17 @@ export const myElements: Record<string, ElementCollection> = {
           isotope: '232',
           sourceType: 'primary',
         },
+        spectrum: {
+          id: 'th-90-pendant',
+          filename: { ru: 'Th-232 (Медальон).xml', en: 'Th-232 (Pendant).xml', zh: 'Th-232 (吊坠).xml' },
+          leadShielded: true,
+          annotations: [
+            { energy: 78.3, label: 'Pb Kα/Kβ' },
+            { energy: 232.2, label: 'Pb-212' },
+            { energy: 327.6, label: 'Ac-228' },
+            { energy: 568, label: 'Tl-208' },
+          ],
+        },
         retained: true,
         reason: 'betterSample',
       },
