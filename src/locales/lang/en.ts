@@ -470,7 +470,7 @@ const messages: LocaleMessages = {
     "He": "Diving gas mixes, MRI cooling, inert welding, balloons",
     "Li": "Lithium-ion batteries, aerospace alloys, ceramics, psychiatric drugs",
     "Be": "Aerospace alloys, X-ray windows, nuclear physics",
-    "B": "Borosilicate glass, ceramics, detergents, semiconductors",
+    "B": "Borosilicate glass, fiberglass, ceramics, semiconductors",
     "C": "Steel, graphite, carbon fiber, diamonds, organic chemistry",
     "N": "Fertilizers, explosives, nitric acid, food packaging",
     "O": "Steelmaking, medical oxygen, rocket oxidizers, water treatment",
