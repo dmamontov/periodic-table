@@ -12,7 +12,6 @@ import type { SpectrumAnnotation } from '../../types/collection/collection'
 import GammaSpectrumChartSvg from './GammaSpectrumChartSvg.vue'
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue'
 import CloseButton from '../common/CloseButton.vue'
-import InfoTooltip from '../common/InfoTooltip.vue'
 import PillSwitcherGroup from '../common/PillSwitcherGroup.vue'
 import PillSwitcherButton from '../common/PillSwitcherButton.vue'
 import {
@@ -261,11 +260,6 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
             </Transition>
           </Teleport>
         </span>
-        <InfoTooltip
-          v-if="activeEvidenceNote"
-          :text="activeEvidenceNote"
-          :label="tSidebar('collectionSpectrumEvidence')"
-        />
       </p>
       <a
         v-if="xmlDownload"
@@ -276,6 +270,10 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
         {{ tSidebar('collectionSpectrumDownload') }}
       </a>
     </div>
+    <p v-if="activeEvidenceNote" class="collection-gamma-spectrum__evidence">
+      <span class="collection-gamma-spectrum__evidence-label">{{ tSidebar('collectionSpectrumEvidence') }}:</span>
+      {{ activeEvidenceNote }}
+    </p>
 
     <Teleport to="body">
       <Transition name="gamma-spectrum-modal-backdrop">
@@ -413,11 +411,6 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
                     </Transition>
                   </Teleport>
                 </span>
-                <InfoTooltip
-                  v-if="activeEvidenceNote"
-                  :text="activeEvidenceNote"
-                  :label="tSidebar('collectionSpectrumEvidence')"
-                />
               </p>
               <PillSwitcherGroup
                 class="gamma-spectrum-modal__scale-group"
@@ -450,6 +443,10 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
               {{ tSidebar('collectionSpectrumDownload') }}
             </a>
           </div>
+          <p v-if="activeEvidenceNote" class="collection-gamma-spectrum__evidence">
+            <span class="collection-gamma-spectrum__evidence-label">{{ tSidebar('collectionSpectrumEvidence') }}:</span>
+            {{ activeEvidenceNote }}
+          </p>
         </div>
       </Transition>
     </Teleport>
@@ -543,6 +540,19 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
   align-items: center;
   gap: 12px;
   margin-top: 5px;
+}
+
+.collection-gamma-spectrum__evidence {
+  margin: 4px 0 0;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-text-secondary);
+}
+
+.collection-gamma-spectrum__evidence-label {
+  font-weight: 700;
+  color: var(--color-chart-axis);
 }
 
 .collection-gamma-spectrum__download {
@@ -749,7 +759,8 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
   }
 
   .gamma-spectrum-modal__header,
-  .gamma-spectrum-modal__footer {
+  .gamma-spectrum-modal__footer,
+  .collection-gamma-spectrum__evidence {
     flex-shrink: 0;
   }
 

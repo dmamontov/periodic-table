@@ -505,7 +505,7 @@ export const myElements: Record<string, ElementCollection> = {
         { energy: 342.4, label: 'Pb-214' },
         { energy: 596.1, label: 'Bi-214' },
       ],
-      evidenceNote: { ru: 'Видна собственная линия Pb-210 (47 кэВ).', en: "Pb-210's own line (47 keV) is visible.", zh: '可见Pb-210自身特征峰（47 keV）。' },
+      evidenceNote: { ru: 'Po-210 почти не даёт гамма-линий; видна собственная линия его предшественника Pb-210 (47 кэВ).', en: "Po-210 emits almost no gammas of its own; its precursor Pb-210's own line (47 keV) is visible.", zh: 'Po-210几乎不发出伽马射线；可见其前体Pb-210的自身特征峰（47 keV）。' },
     },
   },
   Rn: {
