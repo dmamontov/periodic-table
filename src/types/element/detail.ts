@@ -8,6 +8,8 @@ export interface SampleColor {
   hex: string
   /** Defaults to 'metallic' when omitted */
   finish?: ElementSampleColorFinish | null
+  /** Modification/state this color is for, e.g. "White phosphorus" */
+  label?: LocalizedLabel | null
 }
 
 export interface Overview {
@@ -17,7 +19,7 @@ export interface Overview {
   casNumber?: string | null
   discoverer?: LocalizedLabel | null
   discoveryCountry?: string | null
-  sampleColor?: SampleColor | null
+  sampleColors?: SampleColor[] | null
   electronShellConfig?: string | null
   electronCount?: string | null
   protonCount?: string | null

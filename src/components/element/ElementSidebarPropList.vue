@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent, ref } from 'vue'
 import { useLocale } from '../../locales'
 import type { Element } from '../../types/element/element'
 import type { DetailSection } from '../../types/element/section'
 import type { OxidationStateRows } from '../../utils/element/detailSections'
+import { useDismissibleTooltip } from '../../composables/useDismissibleTooltip'
 import CollectionGammaSpectrum from '../collection/CollectionGammaSpectrum.vue'
 import ElementMiniTable from '../table/ElementMiniTable.vue'
 
@@ -19,6 +20,27 @@ defineProps<{
 }>()
 
 const { tSidebar } = useLocale()
+
+// Re-anchored to whichever color segment is hovered/tapped right before each open() call - same pattern as ElementProductionMap's per-country tooltip.
+const hoveredColorEl = ref<HTMLElement | null>(null)
+const colorTooltip = useDismissibleTooltip(hoveredColorEl)
+const colorTooltipText = ref('')
+
+function showColorTooltip(event: Event, label: string | undefined) {
+  if (!label) return
+  hoveredColorEl.value = event.currentTarget as HTMLElement
+  colorTooltipText.value = label
+  colorTooltip.open()
+}
+
+function toggleColorTooltip(event: Event, label: string | undefined) {
+  if (!label) return
+  if (colorTooltip.isOpen.value && hoveredColorEl.value === event.currentTarget) {
+    colorTooltip.close()
+    return
+  }
+  showColorTooltip(event, label)
+}
 </script>
 
 <template>
@@ -65,11 +87,26 @@ const { tSidebar } = useLocale()
           class="element-sidebar__collection-spectrum"
         />
         <div
-          v-else-if="item.colorHex"
+          v-else-if="item.colors && item.colors.length === 1"
           class="element-sidebar__color-swatch"
-          :class="`element-sidebar__color-swatch--${item.colorFinish ?? 'metallic'}`"
-          :style="{ backgroundColor: item.colorHex }"
+          :class="`element-sidebar__color-swatch--${item.colors[0]!.finish ?? 'metallic'}`"
+          :style="{ backgroundColor: item.colors[0]!.hex }"
         />
+        <div
+          v-else-if="item.colors && item.colors.length > 1"
+          class="element-sidebar__color-swatch element-sidebar__color-swatch--multi"
+        >
+          <span
+            v-for="(c, ci) in item.colors"
+            :key="ci"
+            class="element-sidebar__color-swatch element-sidebar__color-segment"
+            :class="`element-sidebar__color-swatch--${c.finish ?? 'metallic'}`"
+            :style="{ backgroundColor: c.hex }"
+            @mouseenter="showColorTooltip($event, c.label)"
+            @mouseleave="colorTooltip.close()"
+            @click.stop="toggleColorTooltip($event, c.label)"
+          />
+        </div>
         <span
           v-else-if="item.html"
           class="element-sidebar__prop-value"
@@ -114,6 +151,14 @@ const { tSidebar } = useLocale()
       </div>
     </li>
   </ul>
+
+  <Teleport to="body">
+    <Transition name="info-tooltip-fade">
+      <div v-if="colorTooltip.isOpen.value" class="info-tooltip__bubble" :style="colorTooltip.style.value" role="tooltip">
+        {{ colorTooltipText }}
+      </div>
+    </Transition>
+  </Teleport>
 </template>
 
 <style scoped>
@@ -240,6 +285,46 @@ const { tSidebar } = useLocale()
   position: absolute;
   inset: 0;
   pointer-events: none;
+}
+
+.element-sidebar__color-swatch--multi {
+  display: flex;
+}
+
+.element-sidebar__color-swatch.element-sidebar__color-segment {
+  width: auto;
+  height: 100%;
+  margin-top: 0;
+  flex: 1;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.info-tooltip__bubble {
+  position: fixed;
+  z-index: 320;
+  max-width: 240px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 16px var(--color-shadow-md);
+  color: var(--color-text);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+  transform: translateX(-50%);
+}
+
+.info-tooltip-fade-enter-active,
+.info-tooltip-fade-leave-active {
+  transition: opacity 0.12s ease;
+}
+
+.info-tooltip-fade-enter-from,
+.info-tooltip-fade-leave-to {
+  opacity: 0;
 }
 
 /* Polished metal: cylinder + top highlight, no diagonal streak */

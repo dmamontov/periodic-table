@@ -25,8 +25,7 @@ export interface DetailProp {
   html?: boolean
   href?: string | null
   imageUrl?: string | null
-  colorHex?: string | null
-  colorFinish?: ElementSampleColorFinish
+  colors?: { hex: string; finish?: ElementSampleColorFinish; label?: string }[] | null
   collectionSpectrumId?: string | null
   kind?: 'miniTable' | 'countryMap'
   mapCountries?: string[]

@@ -14,6 +14,7 @@ import type {
   Prevalence,
   Properties,
   Reactivity,
+  SampleColor,
   Thermo,
 } from '../../types/element/detail'
 import type { DetailProp, DetailSection } from '../../types/element/section'
@@ -172,15 +173,19 @@ function discoveryMapCountries(code: string | null | undefined): string[] {
 
 function propColor(
   label: string,
-  colorHex: string | null,
-  colorFinish?: DetailProp['colorFinish'],
+  sampleColors: SampleColor[] | null | undefined,
+  locale: Locale,
 ): DetailProp {
+  const colors = (sampleColors ?? []).map((c) => ({
+    hex: c.hex,
+    finish: c.finish ?? undefined,
+    label: resolveLocalizedLabel(c.label, locale) || undefined,
+  }))
   return {
     label,
     value: EMPTY,
-    colorHex,
-    colorFinish: colorHex ? colorFinish : undefined,
-    empty: !colorHex,
+    colors,
+    empty: colors.length === 0,
   }
 }
 
@@ -388,11 +393,7 @@ function buildOverviewSection(ctx: SectionBuildContext): DetailSection {
       prop(s.props.discoveryCountry, countryLabel(o?.discoveryCountry, messages)),
       ...(discoveryCountries.length > 0 ? [propCountryMap(discoveryCountries)] : []),
       prop(s.props.casNumber, fmt(o?.casNumber)),
-      propColor(
-        s.props.color,
-        o?.sampleColor?.hex ?? null,
-        o?.sampleColor?.finish ?? undefined,
-      ),
+      propColor(s.props.color, o?.sampleColors, locale),
       prop(s.props.electronShell, fmt(o?.electronShellConfig)),
     ],
   }
