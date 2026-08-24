@@ -1,15 +1,18 @@
 <script setup lang="ts">
-import { computed, onUnmounted, ref, watch } from 'vue'
+import { computed, onUnmounted, ref, useTemplateRef, watch } from 'vue'
 import { getCollectionSpectrum } from '../../data'
 import { useLocale } from '../../locales'
 import { cyclicIndex } from '../../utils/cyclicIndex'
+import { resolveLocalizedLabel, type LocalizedLabel } from '../../utils/localizedLabel'
 import { useSpectrumDisplay } from '../../composables/useSpectrumDisplay'
+import { useDismissibleTooltip } from '../../composables/useDismissibleTooltip'
 import { COLLECTION_COLOR } from '../../theme/colors'
 import type { CollectionSpectrumData } from '../../types/collection/spectrum'
 import type { SpectrumAnnotation } from '../../types/collection/collection'
 import GammaSpectrumChartSvg from './GammaSpectrumChartSvg.vue'
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue'
 import CloseButton from '../common/CloseButton.vue'
+import InfoTooltip from '../common/InfoTooltip.vue'
 import PillSwitcherGroup from '../common/PillSwitcherGroup.vue'
 import PillSwitcherButton from '../common/PillSwitcherButton.vue'
 import {
@@ -26,6 +29,7 @@ interface SpectrumSibling {
   annotations?: SpectrumAnnotation[] | null
   leadShielded?: boolean | null
   backgroundSpectrumId?: string | null
+  evidenceNote?: LocalizedLabel | null
 }
 
 const props = defineProps<{
@@ -37,12 +41,13 @@ const props = defineProps<{
   annotations?: SpectrumAnnotation[] | null
   leadShielded?: boolean | null
   backgroundSpectrumId?: string | null
+  evidenceNote?: LocalizedLabel | null
   /** Other spectra to page through in the zoom modal (e.g. the whole collection list) - omit for a single, non-navigable spectrum. */
   siblings?: SpectrumSibling[]
   siblingIndex?: number
 }>()
 
-const { tSidebar, messages } = useLocale()
+const { tSidebar, messages, locale } = useLocale()
 
 const activeIndex = ref(props.siblingIndex ?? 0)
 const siblingCount = computed(() => props.siblings?.length ?? 0)
@@ -68,6 +73,15 @@ const activeLeadShielded = computed(() =>
 const activeBackgroundSpectrumId = computed(() =>
   activeSibling.value ? activeSibling.value.backgroundSpectrumId : props.backgroundSpectrumId,
 )
+const activeEvidenceNote = computed(() => {
+  const note = activeSibling.value ? activeSibling.value.evidenceNote : props.evidenceNote
+  return resolveLocalizedLabel(note, locale.value)
+})
+
+const leadIconEl = useTemplateRef<HTMLElement>('leadIconEl')
+const leadTooltip = useDismissibleTooltip(leadIconEl)
+const modalLeadIconEl = useTemplateRef<HTMLElement>('modalLeadIconEl')
+const modalLeadTooltip = useDismissibleTooltip(modalLeadIconEl)
 const accent = computed(() => props.accentColor ?? COLLECTION_COLOR)
 const modalAccent = computed(() => activeSibling.value?.color ?? accent.value)
 
@@ -206,20 +220,52 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
     <div class="collection-gamma-spectrum__footer">
       <p class="collection-gamma-spectrum__caption">
         {{ caption }}
-        <svg
+        <span
           v-if="leadShielded"
-          class="collection-gamma-spectrum__lead-icon"
-          viewBox="0 0 256 256"
-          role="img"
-          :aria-label="tSidebar('collectionSpectrumLeadShielded')"
-          :title="tSidebar('collectionSpectrumLeadShielded')"
+          ref="leadIconEl"
+          class="collection-gamma-spectrum__lead-icon-wrap"
+          @keydown="leadTooltip.onKeydown"
+          @mouseenter="leadTooltip.open"
+          @mouseleave="leadTooltip.close"
         >
-          <title>{{ tSidebar('collectionSpectrumLeadShielded') }}</title>
-          <path
-            d="M224,56v56c0,52.72-25.52,84.67-46.93,102.19-23.06,18.86-46,25.27-47,25.53a8,8,0,0,1-4.2,0c-1-.26-23.91-6.67-47-25.53C57.52,196.67,32,164.72,32,112V56A16,16,0,0,1,48,40H208A16,16,0,0,1,224,56Z"
-            fill="currentColor"
-          />
-        </svg>
+          <button
+            type="button"
+            class="collection-gamma-spectrum__lead-icon"
+            :aria-label="tSidebar('collectionSpectrumLeadShielded')"
+            @click.stop="leadTooltip.toggle"
+          >
+            <svg viewBox="0 0 256 256" aria-hidden="true">
+              <path
+                d="M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              />
+              <polyline
+                points="88 136 112 160 168 104"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              />
+            </svg>
+          </button>
+          <Teleport to="body">
+            <Transition name="info-tooltip-fade">
+              <div v-if="leadTooltip.isOpen.value" class="info-tooltip__bubble" :style="leadTooltip.style.value" role="tooltip">
+                {{ tSidebar('collectionSpectrumLeadShielded') }}
+              </div>
+            </Transition>
+          </Teleport>
+        </span>
+        <InfoTooltip
+          v-if="activeEvidenceNote"
+          :text="activeEvidenceNote"
+          :label="tSidebar('collectionSpectrumEvidence')"
+        />
       </p>
       <a
         v-if="xmlDownload"
@@ -326,20 +372,52 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
             <div class="gamma-spectrum-modal__footer-left">
               <p class="collection-gamma-spectrum__caption">
                 {{ modalCaption }}
-                <svg
+                <span
                   v-if="activeLeadShielded"
-                  class="collection-gamma-spectrum__lead-icon"
-                  viewBox="0 0 256 256"
-                  role="img"
-                  :aria-label="tSidebar('collectionSpectrumLeadShielded')"
-                  :title="tSidebar('collectionSpectrumLeadShielded')"
+                  ref="modalLeadIconEl"
+                  class="collection-gamma-spectrum__lead-icon-wrap"
+                  @keydown="modalLeadTooltip.onKeydown"
+                  @mouseenter="modalLeadTooltip.open"
+                  @mouseleave="modalLeadTooltip.close"
                 >
-                  <title>{{ tSidebar('collectionSpectrumLeadShielded') }}</title>
-                  <path
-                    d="M224,56v56c0,52.72-25.52,84.67-46.93,102.19-23.06,18.86-46,25.27-47,25.53a8,8,0,0,1-4.2,0c-1-.26-23.91-6.67-47-25.53C57.52,196.67,32,164.72,32,112V56A16,16,0,0,1,48,40H208A16,16,0,0,1,224,56Z"
-                    fill="currentColor"
-                  />
-                </svg>
+                  <button
+                    type="button"
+                    class="collection-gamma-spectrum__lead-icon"
+                    :aria-label="tSidebar('collectionSpectrumLeadShielded')"
+                    @click.stop="modalLeadTooltip.toggle"
+                  >
+                    <svg viewBox="0 0 256 256" aria-hidden="true">
+                      <path
+                        d="M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="16"
+                      />
+                      <polyline
+                        points="88 136 112 160 168 104"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="16"
+                      />
+                    </svg>
+                  </button>
+                  <Teleport to="body">
+                    <Transition name="info-tooltip-fade">
+                      <div v-if="modalLeadTooltip.isOpen.value" class="info-tooltip__bubble" :style="modalLeadTooltip.style.value" role="tooltip">
+                        {{ tSidebar('collectionSpectrumLeadShielded') }}
+                      </div>
+                    </Transition>
+                  </Teleport>
+                </span>
+                <InfoTooltip
+                  v-if="activeEvidenceNote"
+                  :text="activeEvidenceNote"
+                  :label="tSidebar('collectionSpectrumEvidence')"
+                />
               </p>
               <PillSwitcherGroup
                 class="gamma-spectrum-modal__scale-group"
@@ -400,23 +478,63 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
 }
 
 .collection-gamma-spectrum__caption {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   margin: 0;
   font-size: 11px;
   font-weight: 600;
   color: var(--color-chart-axis);
 }
 
+.collection-gamma-spectrum__lead-icon-wrap {
+  display: inline-flex;
+}
+
 .collection-gamma-spectrum__lead-icon {
-  width: 10px;
-  height: 10px;
-  margin-left: 2px;
-  vertical-align: -1px;
-  cursor: help;
+  display: inline-flex;
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
   transition: color 0.15s ease;
 }
 
-.collection-gamma-spectrum__caption:hover .collection-gamma-spectrum__lead-icon {
+.collection-gamma-spectrum__lead-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.collection-gamma-spectrum__lead-icon:hover {
   color: var(--color-text);
+}
+
+.info-tooltip__bubble {
+  position: fixed;
+  z-index: 320;
+  max-width: 240px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 16px var(--color-shadow-md);
+  color: var(--color-text);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.info-tooltip-fade-enter-active,
+.info-tooltip-fade-leave-active {
+  transition: opacity 0.12s ease;
+}
+
+.info-tooltip-fade-enter-from,
+.info-tooltip-fade-leave-to {
+  opacity: 0;
 }
 
 .collection-gamma-spectrum__footer {

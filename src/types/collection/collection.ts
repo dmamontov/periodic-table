@@ -52,6 +52,8 @@ export interface ElementCollectionSpectrum {
   leadShielded?: boolean | null
   /** Natural-background spectrum ID from data/spectra/, overlaid on the chart. Assumes the same channel/calibration grid as this spectrum. */
   backgroundSpectrumId?: string | null
+  /** One-line justification for why this spectrum confirms the claimed isotope — a real, background-subtracted peak matched against reference nuclear data, not just copied from a table */
+  evidenceNote?: LocalizedLabel | null
 }
 
 /** A past version of this collection entry — same shape as ElementCollection minus its own `history`. Dated via its own `physical.acquiredDate`, same field as the live version. */

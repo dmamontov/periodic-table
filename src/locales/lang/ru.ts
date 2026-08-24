@@ -292,6 +292,7 @@ const messages: LocaleMessages = {
     "collectionSpectrumScale": "Шкала счёта",
     "collectionSpectrumFilter": "Фильтр",
     "collectionSpectrumLeadShielded": "Измерено в свинцовом домике",
+    "collectionSpectrumEvidence": "Обоснование",
     "collectionSpectrumScaleLinear": "lin",
     "collectionSpectrumScaleLog": "log",
     "miniTableAria": "Миниатюра периодической таблицы, выбранный элемент выделен",
