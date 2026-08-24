@@ -9,7 +9,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS1333-74-0",
       "discoverer": { "ru": "Генри Кавендиш", "en": "Henry Cavendish", "zh": "Henry Cavendish" },
       "discoveryCountry": "GB",
-      "sampleColors": [{ "hex": "#E8E8E8", "finish": "subtle" }],
+      "sampleColors": [
+        { "hex": "#E8E8E8", "finish": "subtle", "label": { "ru": "Газ", "en": "Gas", "zh": "气体" } },
+        { "hex": "#C05CC0", "finish": "subtle", "label": { "ru": "Газоразряд", "en": "Gas discharge", "zh": "气体放电" } }
+      ],
       "electronShellConfig": "K1-L0-M0-N0-O0-P0-Q0-R0",
       "electronCount": "1",
       "protonCount": "1",
@@ -116,7 +119,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-59-7",
       "discoverer": { "ru": "Пьер Жюль Сезар Жансен, Джозеф Норман Локьер", "en": "Pierre Jules César Janssen, Joseph Norman Lockyer", "zh": "Pierre Jules César Janssen, Joseph Norman Lockyer" },
       "discoveryCountry": "FR, GB",
-      "sampleColors": [{ "hex": "#E8E8E8", "finish": "subtle" }],
+      "sampleColors": [
+        { "hex": "#E8E8E8", "finish": "subtle", "label": { "ru": "Газ", "en": "Gas", "zh": "气体" } },
+        { "hex": "#F0D8B8", "finish": "subtle", "label": { "ru": "Газоразряд", "en": "Gas discharge", "zh": "气体放电" } }
+      ],
       "electronShellConfig": "K2-L0-M0-N0-O0-P0-Q0-R0",
       "electronCount": "2",
       "protonCount": "2",
@@ -676,7 +682,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7727-37-9",
       "discoverer": { "ru": "Даниель Резерфорд", "en": "Daniel Rutherford", "zh": "Daniel Rutherford" },
       "discoveryCountry": "GB",
-      "sampleColors": [{ "hex": "#E8E8E8", "finish": "subtle" }],
+      "sampleColors": [
+        { "hex": "#E8E8E8", "finish": "subtle", "label": { "ru": "Газ", "en": "Gas", "zh": "气体" } },
+        { "hex": "#C79BC0", "finish": "subtle", "label": { "ru": "Газоразряд", "en": "Gas discharge", "zh": "气体放电" } }
+      ],
       "electronShellConfig": "K2-L5-M0-N0-O0-P0-Q0-R0",
       "electronCount": "7",
       "protonCount": "7",
@@ -781,7 +790,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7782-44-7",
       "discoverer": { "ru": "Джозеф Пристли, Карл Вильгельм Шееле", "en": "Joseph Priestley, Carl Wilhelm Scheele", "zh": "Joseph Priestley, Carl Wilhelm Scheele" },
       "discoveryCountry": "SE, GB",
-      "sampleColors": [{ "hex": "#E8E8E8", "finish": "subtle" }],
+      "sampleColors": [
+        { "hex": "#E8E8E8", "finish": "subtle", "label": { "ru": "Газ", "en": "Gas", "zh": "气体" } },
+        { "hex": "#9E8EC0", "finish": "subtle", "label": { "ru": "Газоразряд", "en": "Gas discharge", "zh": "气体放电" } }
+      ],
       "electronShellConfig": "K2-L6-M0-N0-O0-P0-Q0-R0",
       "electronCount": "8",
       "protonCount": "8",
@@ -891,7 +903,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7782-41-4",
       "discoverer": { "ru": "Анри Муассан", "en": "Ferdinand Frederic Henri Moissan", "zh": "Ferdinand Frederic Henri Moissan" },
       "discoveryCountry": "FR",
-      "sampleColors": [{ "hex": "#F5F0D8", "finish": "subtle" }],
+      "sampleColors": [
+        { "hex": "#F5F0D8", "finish": "subtle", "label": { "ru": "Газ", "en": "Gas", "zh": "气体" } },
+        { "hex": "#D8C878", "finish": "subtle", "label": { "ru": "Газоразряд", "en": "Gas discharge", "zh": "气体放电" } }
+      ],
       "electronShellConfig": "K2-L7-M0-N0-O0-P0-Q0-R0",
       "electronCount": "9",
       "protonCount": "9",
@@ -991,7 +1006,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-01-9",
       "discoverer": { "ru": "Уильям Рамзай, Траверс, Морис Уильям", "en": "Sir William Ramsay, Morris William Travers", "zh": "Sir William Ramsay, Morris William Travers" },
       "discoveryCountry": "GB",
-      "sampleColors": [{ "hex": "#E8E8E8", "finish": "subtle" }],
+      "sampleColors": [
+        { "hex": "#E8E8E8", "finish": "subtle", "label": { "ru": "Газ", "en": "Gas", "zh": "气体" } },
+        { "hex": "#FF5A1F", "finish": "subtle", "label": { "ru": "Газоразряд", "en": "Gas discharge", "zh": "气体放电" } }
+      ],
       "electronShellConfig": "K2-L8-M0-N0-O0-P0-Q0-R0",
       "electronCount": "10",
       "protonCount": "10",
@@ -1795,7 +1813,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7782-50-5",
       "discoverer": { "ru": "Карл Вильгельм Шееле", "en": "Carl Wilhelm Scheele", "zh": "Carl Wilhelm Scheele" },
       "discoveryCountry": "SE",
-      "sampleColors": [{ "hex": "#E8E2B0", "finish": "subtle" }],
+      "sampleColors": [
+        { "hex": "#E8E2B0", "finish": "subtle", "label": { "ru": "Газ", "en": "Gas", "zh": "气体" } },
+        { "hex": "#B8D848", "finish": "subtle", "label": { "ru": "Газоразряд", "en": "Gas discharge", "zh": "气体放电" } }
+      ],
       "electronShellConfig": "K2-L8-M7-N0-O0-P0-Q0-R0",
       "electronCount": "17",
       "protonCount": "17",
@@ -1907,7 +1928,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-37-1",
       "discoverer": { "ru": "Лорд Рэлей, Уильям Рамзай", "en": "Lord Rayleigh, Sir William Ramsay", "zh": "Lord Rayleigh, Sir William Ramsay" },
       "discoveryCountry": "GB",
-      "sampleColors": [{ "hex": "#E8E8E8", "finish": "subtle" }],
+      "sampleColors": [
+        { "hex": "#E8E8E8", "finish": "subtle", "label": { "ru": "Газ", "en": "Gas", "zh": "气体" } },
+        { "hex": "#9B85D4", "finish": "subtle", "label": { "ru": "Газоразряд", "en": "Gas discharge", "zh": "气体放电" } }
+      ],
       "electronShellConfig": "K2-L8-M8-N0-O0-P0-Q0-R0",
       "electronCount": "18",
       "protonCount": "18",
@@ -4113,7 +4137,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7439-90-9",
       "discoverer": { "ru": "Уильям Рамзай, Траверс, Морис Уильям", "en": "Sir William Ramsay, Morris William Travers", "zh": "Sir William Ramsay, Morris William Travers" },
       "discoveryCountry": "GB",
-      "sampleColors": [{ "hex": "#E8E8E8", "finish": "subtle" }],
+      "sampleColors": [
+        { "hex": "#E8E8E8", "finish": "subtle", "label": { "ru": "Газ", "en": "Gas", "zh": "气体" } },
+        { "hex": "#C8D4C0", "finish": "subtle", "label": { "ru": "Газоразряд", "en": "Gas discharge", "zh": "气体放电" } }
+      ],
       "electronShellConfig": "K2-L8-M18-N8-O0-P0-Q0-R0",
       "electronCount": "36",
       "protonCount": "36",
@@ -6348,7 +6375,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-63-3",
       "discoverer": { "ru": "Уильям Рамзай, Траверс, Морис Уильям", "en": "William Ramsey, Morris William Travers", "zh": "William Ramsey, Morris William Travers" },
       "discoveryCountry": "GB",
-      "sampleColors": [{ "hex": "#E8E8E8", "finish": "subtle" }],
+      "sampleColors": [
+        { "hex": "#E8E8E8", "finish": "subtle", "label": { "ru": "Газ", "en": "Gas", "zh": "气体" } },
+        { "hex": "#9CAAC0", "finish": "subtle", "label": { "ru": "Газоразряд", "en": "Gas discharge", "zh": "气体放电" } }
+      ],
       "electronShellConfig": "K2-L8-M18-N18-O8-P0-Q0-R0",
       "electronCount": "54",
       "protonCount": "54",
