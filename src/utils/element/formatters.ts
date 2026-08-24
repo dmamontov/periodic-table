@@ -1,44 +1,7 @@
 import type { Locale } from '../../locales/types'
 import { localeMessages } from '../../locales'
-import { getElementGhsPictograms, getSymbolByNumber, storedElementDetails } from '../../data'
+import { getElementGhsPictograms } from '../../data'
 import type { GhsDisplayItem } from '../../types/element/ghs'
-import type { ElementSampleColorFinish } from '../../types/element/element'
-
-/** Realistic pure-substance colors (an extended palette, not Jmol/CPK). */
-export const ELEMENT_SAMPLE_COLORS = [
-  '#E8E8E8', // 0  colorless (gases)
-  '#C6C6C6', // 1  silvery white
-  '#D4B060', // 2  pale gold (Cs, Fr)
-  '#B5B5A8', // 3  white-gray (Be)
-  '#B0B0B0', // 4  shiny gray (Mg)
-  '#808080', // 5  gray (Fe, Ni, U…)
-  '#6A7078', // 6  steel gray (Hf, W, Re)
-  '#9A9A96', // 7  grayish white (Ge, As, Sb)
-  '#8FA4B4', // 8  bluish gray (V, Ga, Zn, Os…)
-  '#D0C8A0', // 9  pale yellow tint (Ca, Sr, Ba, Eu)
-  '#B87333', // 10 copper
-  '#FFD123', // 11 gold
-  '#FFF030', // 12 sulfur yellow
-  '#F0E8B0', // 13 pale halogen yellow (spare)
-  '#A62929', // 14 bromine red-brown
-  '#940094', // 15 iodine purple
-  '#1A1A1A', // 16 black (B, C)
-  '#8A7D72', // 17 brownish silver (Bi)
-  '#B8B8C8', // 18 mercury liquid
-  '#5C5C62', // 19 metallic gray (Pb)
-  '#8C2A2A', // 20 red phosphorus
-  '#F5F0D8', // 21 fluorine (pale yellow gas)
-  '#E8E2B0', // 22 chlorine (pale yellow, faintly greenish)
-] as const
-
-/** Palette indices with a matte / glossy / subtle finish (the rest are metallic). */
-const GLOSSY_COLOR_INDICES = new Set([12, 14, 15, 20])
-const SUBTLE_COLOR_INDICES = new Set([0, 21, 22])
-const MATTE_COLOR_INDICES = new Set([16])
-
-function getColorIndex(symbol: string): number | undefined {
-  return storedElementDetails[symbol]?.colorIndex
-}
 
 export function formatOpener(
   raw: string | null | undefined,
@@ -65,24 +28,6 @@ export function formatIonChargeHtml(
 ): string {
   if (!charge) return '----'
   return `${symbol}<sup>${charge}</sup>`
-}
-
-export function getElementSampleColorHex(atomicNumber: number): string | null {
-  const symbol = getSymbolByNumber(atomicNumber)
-  const index = symbol ? getColorIndex(symbol) : undefined
-  if (index === undefined || index < 0 || index >= ELEMENT_SAMPLE_COLORS.length) return null
-  const color = ELEMENT_SAMPLE_COLORS[index]
-  return color ?? null
-}
-
-export function getElementSampleColorFinish(atomicNumber: number): ElementSampleColorFinish {
-  const symbol = getSymbolByNumber(atomicNumber)
-  const index = symbol ? getColorIndex(symbol) : undefined
-  if (index === undefined) return 'metallic'
-  if (MATTE_COLOR_INDICES.has(index)) return 'matte'
-  if (SUBTLE_COLOR_INDICES.has(index)) return 'subtle'
-  if (GLOSSY_COLOR_INDICES.has(index)) return 'glossy'
-  return 'metallic'
 }
 
 export interface NfpaWhiteDiamondPart {

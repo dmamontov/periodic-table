@@ -37,8 +37,6 @@ import {
 import {
   formatIonChargeHtml,
   formatOpener,
-  getElementSampleColorFinish,
-  getElementSampleColorHex,
 } from './formatters'
 import { getPubChemUrl } from '../external-links/pubchem'
 import { SECTION_COLORS } from '../../theme/colors'
@@ -396,8 +394,8 @@ function buildOverviewSection(ctx: SectionBuildContext): DetailSection {
       prop(s.props.casNumber, fmt(o?.casNumber)),
       propColor(
         s.props.color,
-        getElementSampleColorHex(detail.number),
-        getElementSampleColorFinish(detail.number),
+        detail.sampleColor?.hex ?? null,
+        detail.sampleColor?.finish ?? undefined,
       ),
       prop(s.props.electronShell, fmt(o?.electronShellConfig)),
     ],

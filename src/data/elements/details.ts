@@ -80,7 +80,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.14",
       "meteorites": "2.4"
     },
-    "colorIndex": 0,
+    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "flammable",
       "compressedGas"
@@ -179,7 +179,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ocean": "7.2 ⋅ 10⁻¹⁰",
       "crust": "8.0 ⋅ 10⁻⁷"
     },
-    "colorIndex": 0,
+    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "compressedGas"
     ],
@@ -292,7 +292,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.002",
       "meteorites": "0.00017"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "corrosive",
@@ -412,7 +412,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.8 ⋅ 10⁻⁴",
       "meteorites": "2.9 ⋅ 10⁻⁶"
     },
-    "colorIndex": 3,
+    "sampleColor": { "hex": "#B5B5A8" },
     "ghs": [
       "healthHazard"
     ],
@@ -518,7 +518,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.001",
       "meteorites": "0.00016"
     },
-    "colorIndex": 16,
+    "sampleColor": { "hex": "#1A1A1A", "finish": "matte" },
     "isotopes": {
       "decay": "stable",
       "isotopes": [
@@ -625,7 +625,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.02",
       "meteorites": "1.5"
     },
-    "colorIndex": 16,
+    "sampleColor": { "hex": "#1A1A1A", "finish": "matte" },
     "isotopes": {
       "decay": "stable",
       "isotopes": [
@@ -724,7 +724,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0019",
       "meteorites": "0.14"
     },
-    "colorIndex": 0,
+    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "compressedGas"
     ],
@@ -827,7 +827,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "46.1",
       "meteorites": "40.0"
     },
-    "colorIndex": 0,
+    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "oxidizer",
       "compressedGas"
@@ -929,7 +929,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0585",
       "meteorites": "0.0087"
     },
-    "colorIndex": 21,
+    "sampleColor": { "hex": "#F5F0D8", "finish": "subtle" },
     "ghs": [
       "oxidizer",
       "compressedGas",
@@ -1028,7 +1028,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ocean": "1.2 ⋅ 10⁻⁸",
       "crust": "5.0 ⋅ 10⁻⁷"
     },
-    "colorIndex": 0,
+    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "compressedGas"
     ],
@@ -1144,7 +1144,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.36",
       "meteorites": "0.55"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "corrosive",
@@ -1257,7 +1257,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.33",
       "meteorites": "12.0"
     },
-    "colorIndex": 4,
+    "sampleColor": { "hex": "#B0B0B0" },
     "isotopes": {
       "decay": "stable",
       "isotopes": [
@@ -1376,7 +1376,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "8.23",
       "meteorites": "0.9"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "isotopes": {
       "decay": "stable",
       "isotopes": [
@@ -1487,7 +1487,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "28.3",
       "meteorites": "14.0"
     },
-    "colorIndex": 5,
+    "sampleColor": { "hex": "#808080" },
     "isotopes": {
       "decay": "stable",
       "isotopes": [
@@ -1594,7 +1594,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.105",
       "meteorites": "0.11"
     },
-    "colorIndex": 20,
+    "sampleColor": { "hex": "#8C2A2A", "finish": "glossy" },
     "ghs": [
       "flammable",
       "acuteToxicity"
@@ -1699,7 +1699,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.035",
       "meteorites": "4.0"
     },
-    "colorIndex": 12,
+    "sampleColor": { "hex": "#FFF030", "finish": "glossy" },
     "ghs": [
       "irritant"
     ],
@@ -1813,7 +1813,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0145",
       "meteorites": "0.037"
     },
-    "colorIndex": 22,
+    "sampleColor": { "hex": "#E8E2B0", "finish": "subtle" },
     "ghs": [
       "oxidizer",
       "compressedGas",
@@ -1915,7 +1915,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ocean": "4.5 ⋅ 10⁻⁵",
       "crust": "3.5 ⋅ 10⁻⁴"
     },
-    "colorIndex": 0,
+    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "compressedGas"
     ],
@@ -2031,7 +2031,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.09",
       "meteorites": "0.07"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "corrosive",
@@ -2150,7 +2150,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "4.15",
       "meteorites": "1.1"
     },
-    "colorIndex": 9,
+    "sampleColor": { "hex": "#D0C8A0" },
     "ghs": [
       "flammable",
       "healthHazard"
@@ -2276,7 +2276,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0022",
       "meteorites": "0.00064"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -2386,7 +2386,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.565",
       "meteorites": "0.054"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -2513,7 +2513,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.012",
       "meteorites": "0.0061"
     },
-    "colorIndex": 8,
+    "sampleColor": { "hex": "#8FA4B4" },
     "ghs": [
       "irritant"
     ],
@@ -2627,7 +2627,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0102",
       "meteorites": "0.3"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -2745,7 +2745,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.095",
       "meteorites": "0.27"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -2854,7 +2854,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "5.63",
       "meteorites": "22.0"
     },
-    "colorIndex": 5,
+    "sampleColor": { "hex": "#808080" },
     "ghs": [
       "irritant"
     ],
@@ -2990,7 +2990,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0025",
       "meteorites": "0.059"
     },
-    "colorIndex": 5,
+    "sampleColor": { "hex": "#808080" },
     "ghs": [
       "healthHazard",
       "irritant"
@@ -3104,7 +3104,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0084",
       "meteorites": "1.3"
     },
-    "colorIndex": 5,
+    "sampleColor": { "hex": "#808080" },
     "ghs": [
       "flammable",
       "healthHazard",
@@ -3236,7 +3236,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.006",
       "meteorites": "0.011"
     },
-    "colorIndex": 10,
+    "sampleColor": { "hex": "#B87333" },
     "ghs": [
       "irritant"
     ],
@@ -3367,7 +3367,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.007",
       "meteorites": "0.018"
     },
-    "colorIndex": 8,
+    "sampleColor": { "hex": "#8FA4B4" },
     "ghs": [
       "flammable",
       "irritant"
@@ -3497,7 +3497,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0019",
       "meteorites": "7.6 ⋅ 10⁻⁴"
     },
-    "colorIndex": 8,
+    "sampleColor": { "hex": "#8FA4B4" },
     "ghs": [
       "irritant"
     ],
@@ -3607,7 +3607,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.5 ⋅ 10⁻⁴",
       "meteorites": "0.0021"
     },
-    "colorIndex": 7,
+    "sampleColor": { "hex": "#9A9A96" },
     "ghs": [
       "irritant"
     ],
@@ -3733,7 +3733,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.8 ⋅ 10⁻⁴",
       "meteorites": "1.8 ⋅ 10⁻⁴"
     },
-    "colorIndex": 7,
+    "sampleColor": { "hex": "#9A9A96" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -3841,7 +3841,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "5.0⋅ 10⁻⁶",
       "meteorites": "0.0013"
     },
-    "colorIndex": 5,
+    "sampleColor": { "hex": "#808080" },
     "ghs": [
       "irritant"
     ],
@@ -3963,7 +3963,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.4 ⋅ 10⁻⁴",
       "meteorites": "1.2 ⋅ 10⁻⁴"
     },
-    "colorIndex": 14,
+    "sampleColor": { "hex": "#A62929", "finish": "glossy" },
     "ghs": [
       "oxidizer",
       "corrosive",
@@ -4064,7 +4064,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ocean": "2.1 ⋅ 10⁻⁸",
       "crust": "1.0 ⋅ 10⁻⁸"
     },
-    "colorIndex": 0,
+    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "compressedGas"
     ],
@@ -4190,7 +4190,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.009",
       "meteorites": "3.2 ⋅ 10⁻⁴"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "corrosive",
@@ -4297,7 +4297,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.037",
       "meteorites": "8.6 ⋅ 10⁻⁴"
     },
-    "colorIndex": 9,
+    "sampleColor": { "hex": "#D0C8A0" },
     "ghs": [
       "flammable",
       "healthHazard"
@@ -4420,7 +4420,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0033",
       "meteorites": "1.9 ⋅ 10⁻⁴"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -4535,7 +4535,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0165",
       "meteorites": "6.6 ⋅ 10⁻⁴"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -4661,7 +4661,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.002",
       "meteorites": "1.9 ⋅ 10⁻⁵"
     },
-    "colorIndex": 8,
+    "sampleColor": { "hex": "#8FA4B4" },
     "ghs": [
       "irritant"
     ],
@@ -4772,7 +4772,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.00012",
       "meteorites": "1.2 ⋅ 10⁻⁴"
     },
-    "colorIndex": 5,
+    "sampleColor": { "hex": "#808080" },
     "ghs": [
       "flammable",
       "irritant"
@@ -4891,7 +4891,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,1,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -5012,7 +5012,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1 ⋅ 10⁻⁷",
       "meteorites": "8.1 ⋅ 10⁻⁵"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -5143,7 +5143,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "7 ⋅ 10⁻⁸",
       "meteorites": "1.8 ⋅ 10⁻⁵"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -5251,7 +5251,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "6.3 ⋅ 10⁻⁷",
       "meteorites": "6.5 ⋅ 10⁻⁵"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "isotopes": {
       "decay": "stable",
       "isotopes": [
@@ -5377,7 +5377,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "7.5 ⋅ 10⁻⁶",
       "meteorites": "1.4 ⋅ 10⁻⁵"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "isotopes": {
       "decay": "stable",
       "isotopes": [
@@ -5495,7 +5495,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.5 ⋅ 10⁻⁵",
       "meteorites": "4.4 ⋅ 10⁻⁵"
     },
-    "colorIndex": 8,
+    "sampleColor": { "hex": "#8FA4B4" },
     "ghs": [
       "healthHazard",
       "irritant",
@@ -5633,7 +5633,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.5 ⋅ 10⁻⁵",
       "meteorites": "4.4 ⋅ 10⁻⁶"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -5747,7 +5747,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.00023",
       "meteorites": "1.2 ⋅ 10⁻⁴"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "irritant"
@@ -5902,7 +5902,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.0 ⋅ 10⁻⁵",
       "meteorites": "1.2 ⋅ 10⁻⁵"
     },
-    "colorIndex": 7,
+    "sampleColor": { "hex": "#9A9A96" },
     "ghs": [
       "irritant"
     ],
@@ -6013,7 +6013,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.0 ⋅ 10⁻⁷",
       "meteorites": "2.1 ⋅ 10⁻⁴"
     },
-    "colorIndex": 7,
+    "sampleColor": { "hex": "#9A9A96" },
     "ghs": [
       "irritant"
     ],
@@ -6142,7 +6142,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "4.5 ⋅ 10⁻⁵",
       "meteorites": "2.5 ⋅ 10⁻⁵"
     },
-    "colorIndex": 15,
+    "sampleColor": { "hex": "#940094", "finish": "glossy" },
     "ghs": [
       "corrosive",
       "irritant"
@@ -6238,7 +6238,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ocean": "5 ⋅ 10⁻¹⁰",
       "crust": "3.0 ⋅ 10⁻⁹"
     },
-    "colorIndex": 0,
+    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "compressedGas"
     ],
@@ -6377,7 +6377,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0003",
       "meteorites": "1.4 ⋅ 10⁻⁵"
     },
-    "colorIndex": 2,
+    "sampleColor": { "hex": "#D4B060" },
     "ghs": [
       "flammable",
       "corrosive",
@@ -6483,7 +6483,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0425",
       "meteorites": "2.7 ⋅ 10⁻⁴"
     },
-    "colorIndex": 9,
+    "sampleColor": { "hex": "#D0C8A0" },
     "ghs": [
       "flammable",
       "irritant"
@@ -6620,7 +6620,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0039",
       "meteorites": "2.8 ⋅ 10⁻⁵"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -6738,7 +6738,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.00665",
       "meteorites": "7.5 ⋅ 10⁻⁵"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "irritant"
@@ -6864,7 +6864,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.00092",
       "meteorites": "9.8 ⋅ 10⁻⁶"
     },
-    "colorIndex": 7,
+    "sampleColor": { "hex": "#9A9A96" },
     "ghs": [
       "irritant"
     ],
@@ -6978,7 +6978,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.00415",
       "meteorites": "5.0 ⋅ 10⁻⁵"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -7099,7 +7099,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,W+RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "acuteToxicity",
@@ -7214,7 +7214,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "6.0 ⋅ 10⁻⁴",
       "meteorites": "1.7 ⋅ 10⁻⁵"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -7348,7 +7348,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.0 ⋅ 10⁻⁴",
       "meteorites": "5.9 ⋅ 10⁻⁶"
     },
-    "colorIndex": 9,
+    "sampleColor": { "hex": "#D0C8A0" },
     "ghs": [
       "irritant"
     ],
@@ -7462,7 +7462,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "6.2 ⋅ 10⁻⁴",
       "meteorites": "2.3 ⋅ 10⁻⁵"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -7599,7 +7599,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.2 ⋅ 10⁻⁴",
       "meteorites": "3.9 ⋅ 10⁻⁶"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -7712,7 +7712,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "5.2 ⋅ 10⁻⁴",
       "meteorites": "2.7 ⋅ 10⁻⁵"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -7848,7 +7848,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.3 ⋅ 10⁻⁴",
       "meteorites": "5.9 ⋅ 10⁻⁶"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -7961,7 +7961,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "3.5 ⋅ 10⁻⁴",
       "meteorites": "1.8 ⋅ 10⁻⁵"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -8093,7 +8093,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "5.2 ⋅ 10⁻⁵",
       "meteorites": "2.9 ⋅ 10⁻⁶"
     },
-    "colorIndex": 5,
+    "sampleColor": { "hex": "#808080" },
     "ghs": [
       "irritant"
     ],
@@ -8205,7 +8205,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.8 ⋅ 10⁻⁴",
       "meteorites": "1.8 ⋅ 10⁻⁵"
     },
-    "colorIndex": 9,
+    "sampleColor": { "hex": "#D0C8A0" },
     "ghs": [
       "irritant"
     ],
@@ -8341,7 +8341,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "8.0 ⋅ 10⁻⁵",
       "meteorites": "2.9 ⋅ 10⁻⁶"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -8459,7 +8459,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "3.0 ⋅ 10⁻⁴",
       "meteorites": "1.7 ⋅ 10⁻⁵"
     },
-    "colorIndex": 6,
+    "sampleColor": { "hex": "#6A7078" },
     "ghs": [
       "irritant"
     ],
@@ -8589,7 +8589,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.0 ⋅ 10⁻⁴",
       "meteorites": "2.0 ⋅ 10⁻⁶"
     },
-    "colorIndex": 8,
+    "sampleColor": { "hex": "#8FA4B4" },
     "ghs": [
       "irritant"
     ],
@@ -8708,7 +8708,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.25 ⋅ 10⁻⁴",
       "meteorites": "1.2 ⋅ 10⁻⁵"
     },
-    "colorIndex": 6,
+    "sampleColor": { "hex": "#6A7078" },
     "ghs": [
       "irritant"
     ],
@@ -8838,7 +8838,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "7.0 ⋅ 10⁻⁸",
       "meteorites": "4.9 ⋅ 10⁻⁶"
     },
-    "colorIndex": 6,
+    "sampleColor": { "hex": "#6A7078" },
     "ghs": [
       "irritant"
     ],
@@ -8952,7 +8952,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.5 ⋅ 10⁻⁷",
       "meteorites": "6.5 ⋅ 10⁻⁵"
     },
-    "colorIndex": 8,
+    "sampleColor": { "hex": "#8FA4B4" },
     "ghs": [
       "flammable",
       "healthHazard"
@@ -9084,7 +9084,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.0 ⋅ 10⁻⁷",
       "meteorites": "5.4 ⋅ 10⁻⁵"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -9195,7 +9195,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "5.0 ⋅ 10⁻⁷",
       "meteorites": "9.8 ⋅ 10⁻⁵"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "isotopes": {
       "decay": "alpha",
       "isotopes": [
@@ -9323,7 +9323,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "4.0 ⋅ 10⁻⁷",
       "meteorites": "1.7 ⋅ 10⁻⁵"
     },
-    "colorIndex": 11,
+    "sampleColor": { "hex": "#FFD123" },
     "isotopes": {
       "decay": "stable",
       "isotopes": [
@@ -9437,7 +9437,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "8.5 ⋅ 10⁻⁶",
       "meteorites": "2.5 ⋅ 10⁻⁵"
     },
-    "colorIndex": 18,
+    "sampleColor": { "hex": "#B8B8C8" },
     "ghs": [
       "acuteToxicity",
       "healthHazard",
@@ -9576,7 +9576,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "8.5 ⋅ 10⁻⁵",
       "meteorites": "7.9 ⋅ 10⁻⁶"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard",
@@ -9692,7 +9692,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0014",
       "meteorites": "1.4 ⋅ 10⁻⁴"
     },
-    "colorIndex": 19,
+    "sampleColor": { "hex": "#5C5C62" },
     "ghs": [
       "healthHazard",
       "irritant",
@@ -9823,7 +9823,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "8.5 ⋅ 10⁻⁷",
       "meteorites": "6.9 ⋅ 10⁻⁶"
     },
-    "colorIndex": 17,
+    "sampleColor": { "hex": "#8A7D72" },
     "ghs": [
       "irritant"
     ],
@@ -9918,7 +9918,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ocean": "2 ⋅ 10⁻¹⁸",
       "crust": "2.0 ⋅ 10⁻¹⁴"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -9994,7 +9994,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,4,2,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -10074,7 +10074,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "ocean": "6 ⋅ 10⁻²⁰"
     },
-    "colorIndex": 0,
+    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "compressedGas",
       "acuteToxicity",
@@ -10155,7 +10155,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "4,4,3,W+RAD"
     },
     "prevalence": {},
-    "colorIndex": 2,
+    "sampleColor": { "hex": "#D4B060" },
     "ghs": [
       "flammable",
       "corrosive",
@@ -10247,7 +10247,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "humanBody": "4.0 ⋅ 10⁻¹⁴",
       "crust": "9.0 ⋅ 10⁻¹¹"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "acuteToxicity",
@@ -10333,7 +10333,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "crust": "6.0 ⋅ 10⁻¹⁴"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "acuteToxicity",
@@ -10447,7 +10447,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "9.6 ⋅ 10⁻⁴",
       "meteorites": "3.9 ⋅ 10⁻⁶"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -10550,7 +10550,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ocean": "2 ⋅ 10⁻²³",
       "crust": "1.4 ⋅ 10⁻¹⁰"
     },
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -10660,7 +10660,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.7 ⋅ 10⁻⁴",
       "meteorites": "9.8 ⋅ 10⁻⁷"
     },
-    "colorIndex": 5,
+    "sampleColor": { "hex": "#808080" },
     "ghs": [
       "acuteToxicity",
       "healthHazard",
@@ -10767,7 +10767,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -10862,7 +10862,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,4,2,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -10953,7 +10953,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,1,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11039,7 +11039,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11119,7 +11119,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11191,7 +11191,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11261,7 +11261,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11327,7 +11327,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11392,7 +11392,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11457,7 +11457,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11524,7 +11524,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,W+RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "acuteToxicity",
@@ -11586,7 +11586,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11647,7 +11647,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11708,7 +11708,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11768,7 +11768,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11828,7 +11828,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11891,7 +11891,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11951,7 +11951,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -12013,7 +12013,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -12075,7 +12075,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "colorIndex": 18,
+    "sampleColor": { "hex": "#B8B8C8" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -12141,7 +12141,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -12206,7 +12206,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -12269,7 +12269,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -12333,7 +12333,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "colorIndex": 1,
+    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -12394,7 +12394,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "colorIndex": 22,
+    "sampleColor": { "hex": "#E8E2B0", "finish": "subtle" },
     "ghs": [
       "corrosive",
       "acuteToxicity",
@@ -12462,7 +12462,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "colorIndex": 0,
+    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "compressedGas",
       "healthHazard"

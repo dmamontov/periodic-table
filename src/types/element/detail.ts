@@ -1,6 +1,13 @@
 import type { DecayModeKey } from '../../locales/types'
 import type { GhsPictogramId } from './ghs'
 import type { RadiacodeIsotopeRef } from '../collection/spectrum'
+import type { ElementSampleColorFinish } from './element'
+
+export interface SampleColor {
+  hex: string
+  /** Defaults to 'metallic' when omitted */
+  finish?: ElementSampleColorFinish | null
+}
 
 export interface Overview {
   latinName?: string | null
@@ -138,8 +145,7 @@ export interface ElementDetail {
   reactivity?: Reactivity
   nucleus?: Nucleus
   prevalence?: Prevalence
-  /** Index into ELEMENT_SAMPLE_COLORS (utils/element/formatters.ts) */
-  colorIndex?: number
+  sampleColor?: SampleColor | null
   ghs?: GhsPictogramId[]
   radiacodeIsotope?: RadiacodeIsotopeRef
   isotopes?: ElementIsotopeRecord
