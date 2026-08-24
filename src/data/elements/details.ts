@@ -42,16 +42,16 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-2.23 ⋅ 10<sup><small>-9</small></sup>",
-      "massMagneticSusceptibility": "-2.48 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "-4.999 ⋅ 10<sup><small>-11</small></sup>"
+      "volumeMagneticSusceptibility": "-2.23 ⋅ 10⁻⁹",
+      "massMagneticSusceptibility": "-2.48 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "-4.999 ⋅ 10⁻¹¹"
     },
     "grid": {
       "structureCode": "1",
       "gridParams": "a=3.780 Å; c=6.167 Å",
       "axialRatio": "1.631",
       "debyeTemperature": "119",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -145,15 +145,15 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-1.05 ⋅ 10<sup><small>-9</small></sup>",
-      "massMagneticSusceptibility": "-5.9 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-2.36 ⋅ 10<sup><small>-11</small></sup>"
+      "volumeMagneticSusceptibility": "-1.05 ⋅ 10⁻⁹",
+      "massMagneticSusceptibility": "-5.9 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-2.36 ⋅ 10⁻¹¹"
     },
     "grid": {
       "structureCode": "2 | 7",
       "gridParams": "a=3.570 Å; c=5.84 Å | 0",
       "axialRatio": "1.633 | 0",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -176,8 +176,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "universe": "23.0",
       "sun": "27.1",
-      "ocean": "7.2 ⋅ 10<sup><small>-10</small></sup>",
-      "crust": "8.0 ⋅ 10<sup><small>-7</small></sup>"
+      "ocean": "7.2 ⋅ 10⁻¹⁰",
+      "crust": "8.0 ⋅ 10⁻⁷"
     },
     "colorIndex": 0,
     "ghs": [
@@ -234,7 +234,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "3.0",
       "specificHeat": "3570",
-      "thermalExpansion": "46 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "46 ⋅ 10⁻⁶",
       "vaporizationHeat": "136.0"
     },
     "atomic": {
@@ -249,10 +249,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "10775862.0689655",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "1.37 ⋅ 10<sup><small>-9</small></sup>",
-      "massMagneticSusceptibility": "2.56 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "1.78 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "9.28 ⋅ 10<sup><small>-8</small></sup>"
+      "volumeMagneticSusceptibility": "1.37 ⋅ 10⁻⁹",
+      "massMagneticSusceptibility": "2.56 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "1.78 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "9.28 ⋅ 10⁻⁸"
     },
     "grid": {
       "structureCode": "3 | 2",
@@ -285,10 +285,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,3,2,W"
     },
     "prevalence": {
-      "universe": "6 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "6 ⋅ 10<sup><small>-9</small></sup>",
-      "ocean": "1.8 ⋅ 10<sup><small>-5</small></sup>",
-      "humanBody": "3 ⋅ 10<sup><small>-6</small></sup>",
+      "universe": "6 ⋅ 10⁻⁷",
+      "sun": "6 ⋅ 10⁻⁹",
+      "ocean": "1.8 ⋅ 10⁻⁵",
+      "humanBody": "3 ⋅ 10⁻⁶",
       "crust": "0.002",
       "meteorites": "0.00017"
     },
@@ -351,7 +351,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "7.895",
       "specificHeat": "1820",
-      "thermalExpansion": "11.3 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "11.3 ⋅ 10⁻⁶",
       "vaporizationHeat": "292.0"
     },
     "atomic": {
@@ -366,17 +366,17 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "28089887.6404494",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-2.328 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-1.26 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "-1.136 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "3.56 ⋅ 10<sup><small>-8</small></sup>",
+      "volumeMagneticSusceptibility": "-2.328 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-1.26 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "-1.136 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "3.56 ⋅ 10⁻⁸",
       "superconductingTemperature": "0.026"
     },
     "grid": {
       "structureCode": "2 | 3",
       "gridParams": "a=2.286 Å; c=3.584 Å; z = 2 | a = 2.5515 Å",
       "debyeTemperature": "1160",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -405,12 +405,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,3,0,-"
     },
     "prevalence": {
-      "universe": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "1 ⋅ 10<sup><small>-8</small></sup>",
-      "ocean": "6 ⋅ 10<sup><small>-11</small></sup>",
-      "humanBody": "5.136553 ⋅ 10<sup><small>-8</small></sup>",
-      "crust": "2.8 ⋅ 10<sup><small>-4</small></sup>",
-      "meteorites": "2.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "1 ⋅ 10⁻⁷",
+      "sun": "1 ⋅ 10⁻⁸",
+      "ocean": "6 ⋅ 10⁻¹¹",
+      "humanBody": "5.136553 ⋅ 10⁻⁸",
+      "crust": "2.8 ⋅ 10⁻⁴",
+      "meteorites": "2.9 ⋅ 10⁻⁶"
     },
     "colorIndex": 3,
     "ghs": [
@@ -462,7 +462,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "50.2",
       "specificHeat": "1030",
-      "thermalExpansion": "6 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "6 ⋅ 10⁻⁶",
       "vaporizationHeat": "508.0"
     },
     "atomic": {
@@ -476,9 +476,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "6.66666666666667e-05",
       "electricalType": "2",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-2.14 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-8.7 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-9.41 ⋅ 10<sup><small>-11</small></sup>",
+      "volumeMagneticSusceptibility": "-2.14 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-8.7 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-9.41 ⋅ 10⁻¹¹",
       "electricalResistivity": "15000.0"
     },
     "grid": {
@@ -511,10 +511,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,2,0,-"
     },
     "prevalence": {
-      "universe": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "4.4 ⋅ 10<sup><small>-4</small></sup>",
-      "humanBody": "7 ⋅ 10<sup><small>-5</small></sup>",
+      "universe": "1 ⋅ 10⁻⁷",
+      "sun": "2 ⋅ 10⁻⁷",
+      "ocean": "4.4 ⋅ 10⁻⁴",
+      "humanBody": "7 ⋅ 10⁻⁵",
       "crust": "0.001",
       "meteorites": "0.00016"
     },
@@ -570,7 +570,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "117.0",
       "specificHeat": "710",
-      "thermalExpansion": "0.8 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "0.8 ⋅ 10⁻⁶",
       "vaporizationHeat": "715.0"
     },
     "atomic": {
@@ -584,17 +584,17 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "72727.2727272727",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-1.4 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-6.2 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-7.45 ⋅ 10<sup><small>-11</small></sup>",
-      "electricalResistivity": "1.375 ⋅ 10<sup><small>-5</small></sup>"
+      "volumeMagneticSusceptibility": "-1.4 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-6.2 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-7.45 ⋅ 10⁻¹¹",
+      "electricalResistivity": "1.375 ⋅ 10⁻⁵"
     },
     "grid": {
       "structureCode": "6 | 8",
       "gridParams": "a=2.46; c=6.71; а=3.567 | а=3.567",
       "axialRatio": "2.73 | 0",
       "debyeTemperature": "413 | 2200",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -688,14 +688,14 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-6.8 ⋅ 10<sup><small>-9</small></sup>",
-      "massMagneticSusceptibility": "-5.4 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-1.5 ⋅ 10<sup><small>-10</small></sup>"
+      "volumeMagneticSusceptibility": "-6.8 ⋅ 10⁻⁹",
+      "massMagneticSusceptibility": "-5.4 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-1.5 ⋅ 10⁻¹⁰"
     },
     "grid": {
       "structureCode": "1 | 7",
       "gridParams": "5.661 Å | a=4.116 Å; c=6.734 Å",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -719,7 +719,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "universe": "0.1",
       "sun": "0.1",
-      "ocean": "5.0 ⋅ 10<sup><small>-5</small></sup>",
+      "ocean": "5.0 ⋅ 10⁻⁵",
       "humanBody": "2.56827660934512",
       "crust": "0.0019",
       "meteorites": "0.14"
@@ -790,9 +790,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "1.90772 ⋅ 10<sup><small>-6</small></sup>",
-      "massMagneticSusceptibility": "1.335 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "4.27184 ⋅ 10<sup><small>-8</small></sup>"
+      "volumeMagneticSusceptibility": "1.90772 ⋅ 10⁻⁶",
+      "massMagneticSusceptibility": "1.335 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "4.27184 ⋅ 10⁻⁸"
     },
     "grid": {
       "structureCode": "7",
@@ -922,9 +922,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,4,4,OX"
     },
     "prevalence": {
-      "universe": "4 ⋅ 10<sup><small>-5</small></sup>",
-      "sun": "5 ⋅ 10<sup><small>-5</small></sup>",
-      "ocean": "1.3 ⋅ 10<sup><small>-4</small></sup>",
+      "universe": "4 ⋅ 10⁻⁵",
+      "sun": "5 ⋅ 10⁻⁵",
+      "ocean": "1.3 ⋅ 10⁻⁴",
       "humanBody": "0.00370973288017",
       "crust": "0.0585",
       "meteorites": "0.0087"
@@ -993,9 +993,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-3.69 ⋅ 10<sup><small>-9</small></sup>",
-      "massMagneticSusceptibility": "-4.1 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-8.27 ⋅ 10<sup><small>-11</small></sup>"
+      "volumeMagneticSusceptibility": "-3.69 ⋅ 10⁻⁹",
+      "massMagneticSusceptibility": "-4.1 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-8.27 ⋅ 10⁻¹¹"
     },
     "grid": {
       "structureCode": "4",
@@ -1025,8 +1025,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "universe": "0.13",
       "sun": "0.058",
-      "ocean": "1.2 ⋅ 10<sup><small>-8</small></sup>",
-      "crust": "5.0 ⋅ 10<sup><small>-7</small></sup>"
+      "ocean": "1.2 ⋅ 10⁻⁸",
+      "crust": "5.0 ⋅ 10⁻⁷"
     },
     "colorIndex": 0,
     "ghs": [
@@ -1086,7 +1086,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "2.6",
       "specificHeat": "1230",
-      "thermalExpansion": "71 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "71 ⋅ 10⁻⁶",
       "vaporizationHeat": "97.42"
     },
     "atomic": {
@@ -1101,10 +1101,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "20964360.5870021",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "8.6 ⋅ 10<sup><small>-6</small></sup>",
-      "massMagneticSusceptibility": "8.8 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "2 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "4.77 ⋅ 10<sup><small>-8</small></sup>"
+      "volumeMagneticSusceptibility": "8.6 ⋅ 10⁻⁶",
+      "massMagneticSusceptibility": "8.8 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "2 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "4.77 ⋅ 10⁻⁸"
     },
     "grid": {
       "structureCode": "3 | 1",
@@ -1198,7 +1198,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "8.48",
       "specificHeat": "1020",
-      "thermalExpansion": "24.8 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "24.8 ⋅ 10⁻⁶",
       "vaporizationHeat": "128.0"
     },
     "atomic": {
@@ -1213,17 +1213,17 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "22779043.2801822",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "1.2 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "6.9 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "1.68 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "4.39 ⋅ 10<sup><small>-8</small></sup>"
+      "volumeMagneticSusceptibility": "1.2 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "6.9 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "1.68 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "4.39 ⋅ 10⁻⁸"
     },
     "grid": {
       "structureCode": "2",
       "gridParams": "a=3.2091 Å; c=5.2103 Å",
       "axialRatio": "1.624",
       "debyeTemperature": "406",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -1315,7 +1315,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "10.71",
       "specificHeat": "904",
-      "thermalExpansion": "23.1 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "23.1 ⋅ 10⁻⁶",
       "vaporizationHeat": "284.0"
     },
     "atomic": {
@@ -1330,10 +1330,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "37735849.0566038",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "2.11 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "7.8 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "2.1 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "2.65 ⋅ 10<sup><small>-8</small></sup>",
+      "volumeMagneticSusceptibility": "2.11 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "7.8 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "2.1 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "2.65 ⋅ 10⁻⁸",
       "superconductingTemperature": "1.18"
     },
     "grid": {
@@ -1371,8 +1371,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "universe": "0.005",
       "sun": "0.006",
-      "ocean": "5 ⋅ 10<sup><small>-7</small></sup>",
-      "humanBody": "8.560922031 ⋅ 10<sup><small>-5</small></sup>",
+      "ocean": "5 ⋅ 10⁻⁷",
+      "humanBody": "8.560922031 ⋅ 10⁻⁵",
       "crust": "8.23",
       "meteorites": "0.9"
     },
@@ -1432,7 +1432,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "50.21",
       "specificHeat": "710",
-      "thermalExpansion": "2.6 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "2.6 ⋅ 10⁻⁶",
       "vaporizationHeat": "359.0"
     },
     "atomic": {
@@ -1446,9 +1446,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "1000.0",
       "electricalType": "3",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-2.73 ⋅ 10<sup><small>-6</small></sup>",
-      "massMagneticSusceptibility": "-1.6 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-4.49 ⋅ 10<sup><small>-11</small></sup>",
+      "volumeMagneticSusceptibility": "-2.73 ⋅ 10⁻⁶",
+      "massMagneticSusceptibility": "-1.6 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-4.49 ⋅ 10⁻¹¹",
       "electricalResistivity": "0.001"
     },
     "grid": {
@@ -1482,7 +1482,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "universe": "0.07",
       "sun": "0.099",
-      "ocean": "1.0 ⋅ 10<sup><small>-4</small></sup>",
+      "ocean": "1.0 ⋅ 10⁻⁴",
       "humanBody": "0.026",
       "crust": "28.3",
       "meteorites": "14.0"
@@ -1557,10 +1557,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "10000000.0",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-2.06 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-1.13 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "-3.5 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "1 ⋅ 10<sup><small>-7</small></sup>"
+      "volumeMagneticSusceptibility": "-2.06 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-1.13 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "-3.5 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "1 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "3",
@@ -1589,7 +1589,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "universe": "0.0007",
       "sun": "0.0007",
-      "ocean": "7 ⋅ 10<sup><small>-6</small></sup>",
+      "ocean": "7 ⋅ 10⁻⁶",
       "humanBody": "1.11291986404955",
       "crust": "0.105",
       "meteorites": "0.11"
@@ -1660,10 +1660,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "5.0e-16",
       "electricalType": "2",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-1.22 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-6.2 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-1.99 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "2<sup><small>15</small></sup>"
+      "volumeMagneticSusceptibility": "-1.22 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-6.2 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-1.99 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "2¹⁵"
     },
     "grid": {
       "structureCode": "9",
@@ -1775,9 +1775,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "0.1",
       "electricalType": "2",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-2.31 ⋅ 10<sup><small>-8</small></sup>",
-      "massMagneticSusceptibility": "-7.2 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-5.11 ⋅ 10<sup><small>-10</small></sup>",
+      "volumeMagneticSusceptibility": "-2.31 ⋅ 10⁻⁸",
+      "massMagneticSusceptibility": "-7.2 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-5.11 ⋅ 10⁻¹⁰",
       "electricalResistivity": "10.0"
     },
     "grid": {
@@ -1881,9 +1881,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-1.07 ⋅ 10<sup><small>-8</small></sup>",
-      "massMagneticSusceptibility": "-6 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-2.4 ⋅ 10<sup><small>-10</small></sup>"
+      "volumeMagneticSusceptibility": "-1.07 ⋅ 10⁻⁸",
+      "massMagneticSusceptibility": "-6 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-2.4 ⋅ 10⁻¹⁰"
     },
     "grid": {
       "structureCode": "4",
@@ -1912,8 +1912,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "universe": "0.02",
       "sun": "0.007",
-      "ocean": "4.5 ⋅ 10<sup><small>-5</small></sup>",
-      "crust": "3.5 ⋅ 10<sup><small>-4</small></sup>"
+      "ocean": "4.5 ⋅ 10⁻⁵",
+      "crust": "3.5 ⋅ 10⁻⁴"
     },
     "colorIndex": 0,
     "ghs": [
@@ -1974,7 +1974,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "2.321",
       "specificHeat": "757",
-      "thermalExpansion": "83.3 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "83.3 ⋅ 10⁻⁶",
       "vaporizationHeat": "76.9"
     },
     "atomic": {
@@ -1989,10 +1989,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "13888888.8888889",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "5.74 ⋅ 10<sup><small>-6</small></sup>",
-      "massMagneticSusceptibility": "6.7 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "2.62 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "7.26 ⋅ 10<sup><small>-8</small></sup>"
+      "volumeMagneticSusceptibility": "5.74 ⋅ 10⁻⁶",
+      "massMagneticSusceptibility": "6.7 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "2.62 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "7.26 ⋅ 10⁻⁸"
     },
     "grid": {
       "structureCode": "3",
@@ -2092,7 +2092,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "8.54",
       "specificHeat": "631",
-      "thermalExpansion": "22.3 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "22.3 ⋅ 10⁻⁶",
       "vaporizationHeat": "154.7"
     },
     "atomic": {
@@ -2107,10 +2107,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "29761904.7619048",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "2.139 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "1.38 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "5.531 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "3.36 ⋅ 10<sup><small>-8</small></sup>"
+      "volumeMagneticSusceptibility": "2.139 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "1.38 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "5.531 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "3.36 ⋅ 10⁻⁸"
     },
     "grid": {
       "structureCode": "4 | 3",
@@ -2218,7 +2218,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "14.1",
       "specificHeat": "567",
-      "thermalExpansion": "10.2 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "10.2 ⋅ 10⁻⁶",
       "vaporizationHeat": "332.7"
     },
     "atomic": {
@@ -2233,10 +2233,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "1779359.43060498",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "2.627 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "8.8 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "3.956 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "5.62 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "2.627 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "8.8 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "3.956 ⋅ 10⁻⁹",
+      "electricalResistivity": "5.62 ⋅ 10⁻⁷",
       "superconductingTemperature": "0.05"
     },
     "grid": {
@@ -2244,7 +2244,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a=3.309 Å; c=5.268 Å",
       "axialRatio": "1.592",
       "debyeTemperature": "346",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -2269,10 +2269,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "universe": "3 ⋅ 10<sup><small>-6</small></sup>",
-      "sun": "4 ⋅ 10<sup><small>-6</small></sup>",
-      "ocean": "1.5 ⋅ 10<sup><small>-10</small></sup>",
-      "humanBody": "2 ⋅ 10<sup><small>-5</small></sup>",
+      "universe": "3 ⋅ 10⁻⁶",
+      "sun": "4 ⋅ 10⁻⁶",
+      "ocean": "1.5 ⋅ 10⁻¹⁰",
+      "humanBody": "2 ⋅ 10⁻⁵",
       "crust": "0.0022",
       "meteorites": "0.00064"
     },
@@ -2325,7 +2325,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "14.15",
       "specificHeat": "520",
-      "thermalExpansion": "8.6 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "8.6 ⋅ 10⁻⁶",
       "vaporizationHeat": "425.0"
     },
     "atomic": {
@@ -2340,10 +2340,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "2380952.38095238",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "1.807 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "4.01 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "1.919 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "4.2 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "1.807 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "4.01 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "1.919 ⋅ 10⁻⁹",
+      "electricalResistivity": "4.2 ⋅ 10⁻⁷",
       "superconductingTemperature": "0.4"
     },
     "grid": {
@@ -2351,7 +2351,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a=2.951 Å; с=4.697 Å | a=3.269 Å",
       "axialRatio": "1.587 | 3260",
       "debyeTemperature": "420",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -2380,9 +2380,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "prevalence": {
       "universe": "0.0003",
-      "sun": "4 ⋅ 10<sup><small>-4</small></sup>",
-      "ocean": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "humanBody": "2.853640677 ⋅ 10<sup><small>-5</small></sup>",
+      "sun": "4 ⋅ 10⁻⁴",
+      "ocean": "1 ⋅ 10⁻⁷",
+      "humanBody": "2.853640677 ⋅ 10⁻⁵",
       "crust": "0.565",
       "meteorites": "0.054"
     },
@@ -2453,7 +2453,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "21.5",
       "specificHeat": "489",
-      "thermalExpansion": "8.4 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "8.4 ⋅ 10⁻⁶",
       "vaporizationHeat": "444.0"
     },
     "atomic": {
@@ -2468,10 +2468,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "5076142.1319797",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "3.837 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "5.28 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "3.199 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "1.97 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "3.837 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "5.28 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "3.199 ⋅ 10⁻⁹",
+      "electricalResistivity": "1.97 ⋅ 10⁻⁷",
       "superconductingTemperature": "5.4"
     },
     "grid": {
@@ -2507,9 +2507,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "prevalence": {
       "universe": "0.0001",
-      "sun": "4 ⋅ 10<sup><small>-5</small></sup>",
-      "ocean": "1.5 ⋅ 10<sup><small>-7</small></sup>",
-      "humanBody": "3 ⋅ 10<sup><small>-6</small></sup>",
+      "sun": "4 ⋅ 10⁻⁵",
+      "ocean": "1.5 ⋅ 10⁻⁷",
+      "humanBody": "3 ⋅ 10⁻⁶",
       "crust": "0.012",
       "meteorites": "0.0061"
     },
@@ -2567,7 +2567,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "21.0",
       "specificHeat": "448",
-      "thermalExpansion": "4.9 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "4.9 ⋅ 10⁻⁶",
       "vaporizationHeat": "339.5"
     },
     "atomic": {
@@ -2582,10 +2582,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "8000000.0",
       "electricalType": "1",
       "magneticType": "antiferromagnetic",
-      "volumeMagneticSusceptibility": "3.177 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "4.45 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "2.314 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "1.25 ⋅ 10<sup><small>-7</small></sup>"
+      "volumeMagneticSusceptibility": "3.177 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "4.45 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "2.314 ⋅ 10⁻⁹",
+      "electricalResistivity": "1.25 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "3",
@@ -2622,8 +2622,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "universe": "0.0015",
       "sun": "0.002",
-      "ocean": "6 ⋅ 10<sup><small>-8</small></sup>",
-      "humanBody": "3 ⋅ 10<sup><small>-6</small></sup>",
+      "ocean": "6 ⋅ 10⁻⁸",
+      "humanBody": "3 ⋅ 10⁻⁶",
       "crust": "0.0102",
       "meteorites": "0.3"
     },
@@ -2689,7 +2689,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "12.91",
       "specificHeat": "479",
-      "thermalExpansion": "21.7 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "21.7 ⋅ 10⁻⁶",
       "vaporizationHeat": "221.0"
     },
     "atomic": {
@@ -2704,10 +2704,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "694444.444444444",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "9.0387 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "1.21 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "6.6475 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "1.44 ⋅ 10<sup><small>-6</small></sup>"
+      "volumeMagneticSusceptibility": "9.0387 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "1.21 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "6.6475 ⋅ 10⁻⁹",
+      "electricalResistivity": "1.44 ⋅ 10⁻⁶"
     },
     "grid": {
       "structureCode": "3",
@@ -2740,8 +2740,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "universe": "0.0008",
       "sun": "0.001",
-      "ocean": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "humanBody": "1.712184406 ⋅ 10<sup><small>-5</small></sup>",
+      "ocean": "2 ⋅ 10⁻⁷",
+      "humanBody": "1.712184406 ⋅ 10⁻⁵",
       "crust": "0.095",
       "meteorites": "0.27"
     },
@@ -2797,7 +2797,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "13.81",
       "specificHeat": "449",
-      "thermalExpansion": "11.8 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "11.8 ⋅ 10⁻⁶",
       "vaporizationHeat": "340.0"
     },
     "atomic": {
@@ -2812,7 +2812,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "10405827.2632674",
       "electricalType": "1",
       "magneticType": "ferromagnetic",
-      "electricalResistivity": "9.7 ⋅ 10<sup><small>-8</small></sup>"
+      "electricalResistivity": "9.7 ⋅ 10⁻⁸"
     },
     "grid": {
       "structureCode": "3 | 4 | 3",
@@ -2849,7 +2849,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "universe": "0.11",
       "sun": "0.14",
-      "ocean": "3 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "3 ⋅ 10⁻⁷",
       "humanBody": "0.00599264542181",
       "crust": "5.63",
       "meteorites": "22.0"
@@ -2932,7 +2932,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "16.06",
       "specificHeat": "421",
-      "thermalExpansion": "13 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "13 ⋅ 10⁻⁶",
       "vaporizationHeat": "377.0"
     },
     "atomic": {
@@ -2947,14 +2947,14 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "16025641.025641",
       "electricalType": "1",
       "magneticType": "ferromagnetic",
-      "electricalResistivity": "6.24 ⋅ 10<sup><small>-8</small></sup>"
+      "electricalResistivity": "6.24 ⋅ 10⁻⁸"
     },
     "grid": {
       "structureCode": "2 | 4",
       "gridParams": "a=2.505 Å; c=4.070 Å | a=3.5370 Å",
       "axialRatio": "1.632",
       "debyeTemperature": "460",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -2985,8 +2985,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "universe": "0.0003",
       "sun": "0.0004",
-      "ocean": "8 ⋅ 10<sup><small>-9</small></sup>",
-      "humanBody": "2 ⋅ 10<sup><small>-6</small></sup>",
+      "ocean": "8 ⋅ 10⁻⁹",
+      "humanBody": "2 ⋅ 10⁻⁶",
       "crust": "0.0025",
       "meteorites": "0.059"
     },
@@ -3047,7 +3047,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "17.48",
       "specificHeat": "445",
-      "thermalExpansion": "13.4 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "13.4 ⋅ 10⁻⁶",
       "vaporizationHeat": "379.0"
     },
     "atomic": {
@@ -3062,7 +3062,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "14430014.4300144",
       "electricalType": "1",
       "magneticType": "ferromagnetic",
-      "electricalResistivity": "6.93 ⋅ 10<sup><small>-8</small></sup>"
+      "electricalResistivity": "6.93 ⋅ 10⁻⁸"
     },
     "grid": {
       "structureCode": "4",
@@ -3099,8 +3099,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "universe": "0.006",
       "sun": "0.008",
-      "ocean": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "humanBody": "1 ⋅ 10<sup><small>-5</small></sup>",
+      "ocean": "2 ⋅ 10⁻⁷",
+      "humanBody": "1 ⋅ 10⁻⁵",
       "crust": "0.0084",
       "meteorites": "1.3"
     },
@@ -3176,7 +3176,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "13.26",
       "specificHeat": "384.3",
-      "thermalExpansion": "16.5 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "16.5 ⋅ 10⁻⁶",
       "vaporizationHeat": "300.4"
     },
     "atomic": {
@@ -3191,10 +3191,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "59594755.6615018",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-9.63 ⋅ 10<sup><small>-6</small></sup>",
-      "massMagneticSusceptibility": "-1.08 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-6.86 ⋅ 10<sup><small>-11</small></sup>",
-      "electricalResistivity": "1.678 ⋅ 10<sup><small>-8</small></sup>"
+      "volumeMagneticSusceptibility": "-9.63 ⋅ 10⁻⁶",
+      "massMagneticSusceptibility": "-1.08 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-6.86 ⋅ 10⁻¹¹",
+      "electricalResistivity": "1.678 ⋅ 10⁻⁸"
     },
     "grid": {
       "structureCode": "4",
@@ -3229,9 +3229,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "universe": "6 ⋅ 10<sup><small>-6</small></sup>",
-      "sun": "7 ⋅ 10<sup><small>-5</small></sup>",
-      "ocean": "3 ⋅ 10<sup><small>-7</small></sup>",
+      "universe": "6 ⋅ 10⁻⁶",
+      "sun": "7 ⋅ 10⁻⁵",
+      "ocean": "3 ⋅ 10⁻⁷",
       "humanBody": "0.00010273106437",
       "crust": "0.006",
       "meteorites": "0.011"
@@ -3305,7 +3305,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "7.32",
       "specificHeat": "388",
-      "thermalExpansion": "30.4 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "30.4 ⋅ 10⁻⁶",
       "vaporizationHeat": "115.0"
     },
     "atomic": {
@@ -3320,10 +3320,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "16949152.5423729",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-1.58 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-2.21 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-1.45 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "5.9 ⋅ 10<sup><small>-8</small></sup>",
+      "volumeMagneticSusceptibility": "-1.58 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-2.21 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-1.45 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "5.9 ⋅ 10⁻⁸",
       "superconductingTemperature": "0.85"
     },
     "grid": {
@@ -3331,7 +3331,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a=2.6648 Å; c=4.9468 Å",
       "axialRatio": "1.856",
       "debyeTemperature": "300",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -3360,9 +3360,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,1,2,W"
     },
     "prevalence": {
-      "universe": "3 ⋅ 10<sup><small>-5</small></sup>",
+      "universe": "3 ⋅ 10⁻⁵",
       "sun": "0.0002",
-      "ocean": "5 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "5 ⋅ 10⁻⁷",
       "humanBody": "0.00328168677861",
       "crust": "0.007",
       "meteorites": "0.018"
@@ -3441,7 +3441,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "5.59",
       "specificHeat": "371",
-      "thermalExpansion": "18 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "18 ⋅ 10⁻⁶",
       "vaporizationHeat": "256.0"
     },
     "atomic": {
@@ -3456,10 +3456,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "7352941.17647059",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-1.77 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-3 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-2.09 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "1.36 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "-1.77 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-3 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-2.09 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "1.36 ⋅ 10⁻⁷",
       "superconductingTemperature": "1.083"
     },
     "grid": {
@@ -3491,11 +3491,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,1,0,-"
     },
     "prevalence": {
-      "universe": "1 ⋅ 10<sup><small>-6</small></sup>",
-      "sun": "4 ⋅ 10<sup><small>-6</small></sup>",
-      "ocean": "3 ⋅ 10<sup><small>-9</small></sup>",
+      "universe": "1 ⋅ 10⁻⁶",
+      "sun": "4 ⋅ 10⁻⁶",
+      "ocean": "3 ⋅ 10⁻⁹",
       "crust": "0.0019",
-      "meteorites": "7.6 ⋅ 10<sup><small>-4</small></sup>"
+      "meteorites": "7.6 ⋅ 10⁻⁴"
     },
     "colorIndex": 8,
     "ghs": [
@@ -3551,7 +3551,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "36.94",
       "specificHeat": "321.4",
-      "thermalExpansion": "6 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "6 ⋅ 10⁻⁶",
       "vaporizationHeat": "334.0"
     },
     "atomic": {
@@ -3566,9 +3566,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "1886.79245283019",
       "electricalType": "3",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-7.98 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-1.5 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-1.09 ⋅ 10<sup><small>-10</small></sup>",
+      "volumeMagneticSusceptibility": "-7.98 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-1.5 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-1.09 ⋅ 10⁻¹⁰",
       "electricalResistivity": "0.00053"
     },
     "grid": {
@@ -3601,10 +3601,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,1,0,-"
     },
     "prevalence": {
-      "universe": "2 ⋅ 10<sup><small>-5</small></sup>",
-      "sun": "2 ⋅ 10<sup><small>-5</small></sup>",
-      "ocean": "6 ⋅ 10<sup><small>-9</small></sup>",
-      "crust": "1.5 ⋅ 10<sup><small>-4</small></sup>",
+      "universe": "2 ⋅ 10⁻⁵",
+      "sun": "2 ⋅ 10⁻⁵",
+      "ocean": "6 ⋅ 10⁻⁹",
+      "crust": "1.5 ⋅ 10⁻⁴",
       "meteorites": "0.0021"
     },
     "colorIndex": 7,
@@ -3676,7 +3676,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "24.44",
       "specificHeat": "328.9",
-      "thermalExpansion": "5.6 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "5.6 ⋅ 10⁻⁶",
       "vaporizationHeat": "32.4"
     },
     "atomic": {
@@ -3691,10 +3691,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "3003003.003003",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "-2.23 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-3.9 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-2.92 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "3.33 ⋅ 10<sup><small>-7</small></sup>"
+      "volumeMagneticSusceptibility": "-2.23 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-3.9 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-2.92 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "3.33 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "5",
@@ -3727,11 +3727,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,3,0,-"
     },
     "prevalence": {
-      "universe": "8 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "2.3 ⋅ 10<sup><small>-7</small></sup>",
-      "humanBody": "9.98774237 ⋅ 10<sup><small>-6</small></sup>",
-      "crust": "1.8 ⋅ 10<sup><small>-4</small></sup>",
-      "meteorites": "1.8 ⋅ 10<sup><small>-4</small></sup>"
+      "universe": "8 ⋅ 10⁻⁷",
+      "ocean": "2.3 ⋅ 10⁻⁷",
+      "humanBody": "9.98774237 ⋅ 10⁻⁶",
+      "crust": "1.8 ⋅ 10⁻⁴",
+      "meteorites": "1.8 ⋅ 10⁻⁴"
     },
     "colorIndex": 7,
     "ghs": [
@@ -3782,7 +3782,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "6.69",
       "specificHeat": "321.2",
-      "thermalExpansion": "37 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "37 ⋅ 10⁻⁶",
       "vaporizationHeat": "95.48"
     },
     "atomic": {
@@ -3796,17 +3796,17 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "electromagnetic": {
       "electricalConductivity": "83333333.3333333",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-1.93 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-4 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-3.16 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "1.2 ⋅ 10<sup><small>10</small></sup>"
+      "volumeMagneticSusceptibility": "-1.93 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-4 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-3.16 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "1.2 ⋅ 10¹⁰"
     },
     "grid": {
       "structureCode": "1",
       "gridParams": "a=4.364 Å; c=4.959 Å",
       "axialRatio": "1.136",
       "debyeTemperature": "90",
-      "spaceGroup": "P3<sub><small>1</small></sub>21",
+      "spaceGroup": "P3₁21",
       "spaceGroupNumber": "152"
     },
     "additional": {
@@ -3835,10 +3835,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,2,0,-"
     },
     "prevalence": {
-      "universe": "3 ⋅ 10<sup><small>-6</small></sup>",
-      "ocean": "4.5 ⋅ 10<sup><small>-8</small></sup>",
-      "humanBody": "5 ⋅ 10<sup><small>-6</small></sup>",
-      "crust": "5.0⋅ 10<sup><small>-6</small></sup>",
+      "universe": "3 ⋅ 10⁻⁶",
+      "ocean": "4.5 ⋅ 10⁻⁸",
+      "humanBody": "5 ⋅ 10⁻⁶",
+      "crust": "5.0⋅ 10⁻⁶",
       "meteorites": "0.0013"
     },
     "colorIndex": 5,
@@ -3926,9 +3926,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "1.28205128205128e-11",
       "electricalType": "2",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-1.53 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-4.9 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-7.83 ⋅ 10<sup><small>-10</small></sup>",
+      "volumeMagneticSusceptibility": "-1.53 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-4.9 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-7.83 ⋅ 10⁻¹⁰",
       "electricalResistivity": "78000000000.0"
     },
     "grid": {
@@ -3957,11 +3957,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,3,0,OX"
     },
     "prevalence": {
-      "universe": "7 ⋅ 10<sup><small>-7</small></sup>",
+      "universe": "7 ⋅ 10⁻⁷",
       "ocean": "0.0066",
       "humanBody": "0.00037097328802",
-      "crust": "2.4 ⋅ 10<sup><small>-4</small></sup>",
-      "meteorites": "1.2 ⋅ 10<sup><small>-4</small></sup>"
+      "crust": "2.4 ⋅ 10⁻⁴",
+      "meteorites": "1.2 ⋅ 10⁻⁴"
     },
     "colorIndex": 14,
     "ghs": [
@@ -4030,9 +4030,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-1.65 ⋅ 10<sup><small>-8</small></sup>",
-      "massMagneticSusceptibility": "-4.4 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-3.69 ⋅ 10<sup><small>-10</small></sup>"
+      "volumeMagneticSusceptibility": "-1.65 ⋅ 10⁻⁸",
+      "massMagneticSusceptibility": "-4.4 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-3.69 ⋅ 10⁻¹⁰"
     },
     "grid": {
       "structureCode": "4",
@@ -4060,9 +4060,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,0,0,SA"
     },
     "prevalence": {
-      "universe": "4 ⋅ 10<sup><small>-6</small></sup>",
-      "ocean": "2.1 ⋅ 10<sup><small>-8</small></sup>",
-      "crust": "1.0 ⋅ 10<sup><small>-8</small></sup>"
+      "universe": "4 ⋅ 10⁻⁶",
+      "ocean": "2.1 ⋅ 10⁻⁸",
+      "crust": "1.0 ⋅ 10⁻⁸"
     },
     "colorIndex": 0,
     "ghs": [
@@ -4148,9 +4148,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "7812500.0",
       "electricalType": "1",
       "volumeMagneticSusceptibility": "0.00000398",
-      "massMagneticSusceptibility": "2.6 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "2.22 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "1.28 ⋅ 10<sup><small>-7</small></sup>",
+      "massMagneticSusceptibility": "2.6 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "2.22 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "1.28 ⋅ 10⁻⁷",
       "magneticType": "paramagnetic"
     },
     "grid": {
@@ -4183,12 +4183,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,2,2,W"
     },
     "prevalence": {
-      "universe": "1 ⋅ 10<sup><small>-6</small></sup>",
-      "sun": "3 ⋅ 10<sup><small>-6</small></sup>",
-      "ocean": "1.2 ⋅ 10<sup><small>-5</small></sup>",
+      "universe": "1 ⋅ 10⁻⁶",
+      "sun": "3 ⋅ 10⁻⁶",
+      "ocean": "1.2 ⋅ 10⁻⁵",
       "humanBody": "0.00046",
       "crust": "0.009",
-      "meteorites": "3.2 ⋅ 10<sup><small>-4</small></sup>"
+      "meteorites": "3.2 ⋅ 10⁻⁴"
     },
     "colorIndex": 1,
     "ghs": [
@@ -4243,7 +4243,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "7.43",
       "specificHeat": "300",
-      "thermalExpansion": "22.5 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "22.5 ⋅ 10⁻⁶",
       "vaporizationHeat": "141.0"
     },
     "atomic": {
@@ -4258,10 +4258,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "7575757.57575758",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "-3.47 ⋅ 10<sup><small>-6</small></sup>",
-      "massMagneticSusceptibility": "1.32 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "1.16 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "1.32 ⋅ 10<sup><small>-7</small></sup>"
+      "volumeMagneticSusceptibility": "-3.47 ⋅ 10⁻⁶",
+      "massMagneticSusceptibility": "1.32 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "1.16 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "1.32 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "4 | 6 | 3",
@@ -4290,12 +4290,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,3,2,W"
     },
     "prevalence": {
-      "universe": "4 ⋅ 10<sup><small>-6</small></sup>",
-      "sun": "5 ⋅ 10<sup><small>-6</small></sup>",
-      "ocean": "8.0 ⋅ 10<sup><small>-4</small></sup>",
+      "universe": "4 ⋅ 10⁻⁶",
+      "sun": "5 ⋅ 10⁻⁶",
+      "ocean": "8.0 ⋅ 10⁻⁴",
       "humanBody": "0.00045658250833",
       "crust": "0.037",
-      "meteorites": "8.6 ⋅ 10<sup><small>-4</small></sup>"
+      "meteorites": "8.6 ⋅ 10⁻⁴"
     },
     "colorIndex": 9,
     "ghs": [
@@ -4361,7 +4361,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "11.42",
       "specificHeat": "298",
-      "thermalExpansion": "10.6 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "10.6 ⋅ 10⁻⁶",
       "vaporizationHeat": "390.0"
     },
     "atomic": {
@@ -4375,10 +4375,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "electromagnetic": {
       "electricalConductivity": "1677852.34899329",
       "electricalType": "1",
-      "volumeMagneticSusceptibility": "2.978 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "6.66 ⋅ 10<sup><small>-98/small></sup>",
-      "molarMagneticSusceptibility": "5.921 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "5.96 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "2.978 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "6.66 ⋅ 10⁻⁵",
+      "molarMagneticSusceptibility": "5.921 ⋅ 10⁻⁹",
+      "electricalResistivity": "5.96 ⋅ 10⁻⁷",
       "superconductingTemperature": "1.3",
       "magneticType": "paramagnetic"
     },
@@ -4387,7 +4387,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a=3.647 Å; c=5.731 Å | a=4.08 Å",
       "axialRatio": "1.571",
       "debyeTemperature": "248",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -4414,11 +4414,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,2,0,-"
     },
     "prevalence": {
-      "universe": "7 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "9.9 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "1.3 ⋅ 10<sup><small>-9</small></sup>",
+      "universe": "7 ⋅ 10⁻⁷",
+      "sun": "9.9 ⋅ 10⁻⁷",
+      "ocean": "1.3 ⋅ 10⁻⁹",
       "crust": "0.0033",
-      "meteorites": "1.9 ⋅ 10<sup><small>-4</small></sup>"
+      "meteorites": "1.9 ⋅ 10⁻⁴"
     },
     "colorIndex": 1,
     "ghs": [
@@ -4474,7 +4474,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "14.0",
       "specificHeat": "278",
-      "thermalExpansion": "5.7 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "5.7 ⋅ 10⁻⁶",
       "vaporizationHeat": "573.0"
     },
     "atomic": {
@@ -4489,10 +4489,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "2375296.91211401",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "1.081 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "1.68 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "1.53 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "4.21 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "1.081 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "1.68 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "1.53 ⋅ 10⁻⁹",
+      "electricalResistivity": "4.21 ⋅ 10⁻⁷",
       "superconductingTemperature": "0.61"
     },
     "grid": {
@@ -4500,7 +4500,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a=3.231 Å; c=5.148 Å | a=3.61 Å",
       "axialRatio": "1.593",
       "debyeTemperature": "291",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -4528,12 +4528,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "universe": "5 ⋅ 10<sup><small>-6</small></sup>",
-      "sun": "4 ⋅ 10<sup><small>-6</small></sup>",
-      "ocean": "2.6 ⋅ 10<sup><small>-9</small></sup>",
-      "humanBody": "5 ⋅ 10<sup><small>-6</small></sup>",
+      "universe": "5 ⋅ 10⁻⁶",
+      "sun": "4 ⋅ 10⁻⁶",
+      "ocean": "2.6 ⋅ 10⁻⁹",
+      "humanBody": "5 ⋅ 10⁻⁶",
       "crust": "0.0165",
-      "meteorites": "6.6 ⋅ 10<sup><small>-4</small></sup>"
+      "meteorites": "6.6 ⋅ 10⁻⁴"
     },
     "colorIndex": 1,
     "ghs": [
@@ -4602,7 +4602,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "30.0",
       "specificHeat": "265",
-      "thermalExpansion": "7.3 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "7.3 ⋅ 10⁻⁶",
       "vaporizationHeat": "689.9"
     },
     "atomic": {
@@ -4616,10 +4616,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "electromagnetic": {
       "electricalConductivity": "6578947.36842105",
       "electricalType": "1",
-      "volumeMagneticSusceptibility": "2.408 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "2.76 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "2.56 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "1.52 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "2.408 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "2.76 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "2.56 ⋅ 10⁻⁹",
+      "electricalResistivity": "1.52 ⋅ 10⁻⁷",
       "superconductingTemperature": "9.25",
       "magneticType": "paramagnetic"
     },
@@ -4655,11 +4655,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "4 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "1.0 ⋅ 10<sup><small>-10</small></sup>",
+      "universe": "2 ⋅ 10⁻⁷",
+      "sun": "4 ⋅ 10⁻⁷",
+      "ocean": "1.0 ⋅ 10⁻¹⁰",
       "crust": "0.002",
-      "meteorites": "1.9 ⋅ 10<sup><small>-5</small></sup>"
+      "meteorites": "1.9 ⋅ 10⁻⁵"
     },
     "colorIndex": 8,
     "ghs": [
@@ -4711,7 +4711,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "37.48",
       "specificHeat": "251",
-      "thermalExpansion": "4.8 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "4.8 ⋅ 10⁻⁶",
       "vaporizationHeat": "617.0"
     },
     "atomic": {
@@ -4726,10 +4726,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "18726591.7602996",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "1.203 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "1.17 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "1.122 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "5.34 ⋅ 10<sup><small>-8</small></sup>",
+      "volumeMagneticSusceptibility": "1.203 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "1.17 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "1.122 ⋅ 10⁻⁹",
+      "electricalResistivity": "5.34 ⋅ 10⁻⁸",
       "superconductingTemperature": "0.915"
     },
     "grid": {
@@ -4765,12 +4765,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,1,0,-"
     },
     "prevalence": {
-      "universe": "5 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "9 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "9.9 ⋅ 10<sup><small>-7</small></sup>",
-      "humanBody": "7.13410169 ⋅ 10<sup><small>-6</small></sup>",
+      "universe": "5 ⋅ 10⁻⁷",
+      "sun": "9 ⋅ 10⁻⁷",
+      "ocean": "9.9 ⋅ 10⁻⁷",
+      "humanBody": "7.13410169 ⋅ 10⁻⁶",
       "crust": "0.00012",
-      "meteorites": "1.2 ⋅ 10<sup><small>-4</small></sup>"
+      "meteorites": "1.2 ⋅ 10⁻⁴"
     },
     "colorIndex": 5,
     "ghs": [
@@ -4862,10 +4862,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "5000000.0",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "3.933 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "3.42 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "3.352 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "3.933 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "3.42 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "3.352 ⋅ 10⁻⁹",
+      "electricalResistivity": "2 ⋅ 10⁻⁷",
       "superconductingTemperature": "7.8"
     },
     "grid": {
@@ -4873,7 +4873,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a=2.737 Å; c=4.391 Å",
       "axialRatio": "1.602",
       "debyeTemperature": "453",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -4952,7 +4952,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "38.59",
       "specificHeat": "238",
-      "thermalExpansion": "6.4 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "6.4 ⋅ 10⁻⁶",
       "vaporizationHeat": "619.0"
     },
     "atomic": {
@@ -4967,10 +4967,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "14084507.0422535",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "6.7 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "5.42 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "5.48 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "7.1 ⋅ 10<sup><small>-8</small></sup>",
+      "volumeMagneticSusceptibility": "6.7 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "5.42 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "5.48 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "7.1 ⋅ 10⁻⁸",
       "superconductingTemperature": "0.49"
     },
     "grid": {
@@ -4978,7 +4978,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a=2.706 Å; c=4.282 Å",
       "axialRatio": "1.582",
       "debyeTemperature": "555",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -5006,11 +5006,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "universe": "4 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "5 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "7.0 ⋅ 10<sup><small>-11</small></sup>",
-      "crust": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "meteorites": "8.1 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "4 ⋅ 10⁻⁷",
+      "sun": "5 ⋅ 10⁻⁷",
+      "ocean": "7.0 ⋅ 10⁻¹¹",
+      "crust": "1 ⋅ 10⁻⁷",
+      "meteorites": "8.1 ⋅ 10⁻⁵"
     },
     "colorIndex": 1,
     "ghs": [
@@ -5085,7 +5085,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "26.59",
       "specificHeat": "240",
-      "thermalExpansion": "8.2 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "8.2 ⋅ 10⁻⁶",
       "vaporizationHeat": "494.0"
     },
     "atomic": {
@@ -5100,10 +5100,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "23094688.221709",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "1.643 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "1.36 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "1.4 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "4.33 ⋅ 10<sup><small>-8</small></sup>"
+      "volumeMagneticSusceptibility": "1.643 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "1.36 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "1.4 ⋅ 10⁻⁹",
+      "electricalResistivity": "4.33 ⋅ 10⁻⁸"
     },
     "grid": {
       "structureCode": "4",
@@ -5138,10 +5138,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "universe": "6 ⋅ 10<sup><small>-8</small></sup>",
-      "sun": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "crust": "7 ⋅ 10<sup><small>-8</small></sup>",
-      "meteorites": "1.8 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "6 ⋅ 10⁻⁸",
+      "sun": "2 ⋅ 10⁻⁷",
+      "crust": "7 ⋅ 10⁻⁸",
+      "meteorites": "1.8 ⋅ 10⁻⁵"
     },
     "colorIndex": 1,
     "ghs": [
@@ -5193,7 +5193,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "16.74",
       "specificHeat": "240",
-      "thermalExpansion": "11.8 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "11.8 ⋅ 10⁻⁶",
       "vaporizationHeat": "358.0"
     },
     "atomic": {
@@ -5208,10 +5208,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "9487666.0341556",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "7.899 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "6.57 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "6.992 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "1.054 ⋅ 10<sup><small>-7</small></sup>"
+      "volumeMagneticSusceptibility": "7.899 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "6.57 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "6.992 ⋅ 10⁻⁹",
+      "electricalResistivity": "1.054 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "4",
@@ -5246,10 +5246,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,1,0,-"
     },
     "prevalence": {
-      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "3 ⋅ 10<sup><small>-7</small></sup>",
-      "crust": "6.3 ⋅ 10<sup><small>-7</small></sup>",
-      "meteorites": "6.5 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "2 ⋅ 10⁻⁷",
+      "sun": "3 ⋅ 10⁻⁷",
+      "crust": "6.3 ⋅ 10⁻⁷",
+      "meteorites": "6.5 ⋅ 10⁻⁵"
     },
     "colorIndex": 1,
     "isotopes": {
@@ -5318,7 +5318,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "11.28",
       "specificHeat": "235",
-      "thermalExpansion": "18.9 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "18.9 ⋅ 10⁻⁶",
       "vaporizationHeat": "254.0"
     },
     "atomic": {
@@ -5333,10 +5333,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "63011972.2747322",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "2.41 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-2.27 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-2.45 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "1.587 ⋅ 10<sup><small>-8</small></sup>"
+      "volumeMagneticSusceptibility": "2.41 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-2.27 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-2.45 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "1.587 ⋅ 10⁻⁸"
     },
     "grid": {
       "structureCode": "4",
@@ -5371,11 +5371,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,1,0,-"
     },
     "prevalence": {
-      "universe": "6 ⋅ 10<sup><small>-8</small></sup>",
-      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "1.0 ⋅ 10<sup><small>-8</small></sup>",
-      "crust": "7.5 ⋅ 10<sup><small>-6</small></sup>",
-      "meteorites": "1.4 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "6 ⋅ 10⁻⁸",
+      "sun": "1 ⋅ 10⁻⁷",
+      "ocean": "1.0 ⋅ 10⁻⁸",
+      "crust": "7.5 ⋅ 10⁻⁶",
+      "meteorites": "1.4 ⋅ 10⁻⁵"
     },
     "colorIndex": 1,
     "isotopes": {
@@ -5434,7 +5434,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "6.21",
       "specificHeat": "231.5",
-      "thermalExpansion": "30.8 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "30.8 ⋅ 10⁻⁶",
       "vaporizationHeat": "99.87"
     },
     "atomic": {
@@ -5449,10 +5449,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "13755158.1843191",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-1.99 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-2.3 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-2.59 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "7.27 ⋅ 10<sup><small>-8</small></sup>",
+      "volumeMagneticSusceptibility": "-1.99 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-2.3 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-2.59 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "7.27 ⋅ 10⁻⁸",
       "superconductingTemperature": "0.517"
     },
     "grid": {
@@ -5460,7 +5460,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a=2.979 Å; c=5.618 Å",
       "axialRatio": "1.886",
       "debyeTemperature": "209",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -5488,12 +5488,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,2,0,-"
     },
     "prevalence": {
-      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "6 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "5 ⋅ 10<sup><small>-9</small></sup>",
-      "humanBody": "7.134101693 ⋅ 10<sup><small>-5</small></sup>",
-      "crust": "1.5 ⋅ 10<sup><small>-5</small></sup>",
-      "meteorites": "4.4 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "2 ⋅ 10⁻⁷",
+      "sun": "6 ⋅ 10⁻⁷",
+      "ocean": "5 ⋅ 10⁻⁹",
+      "humanBody": "7.134101693 ⋅ 10⁻⁵",
+      "crust": "1.5 ⋅ 10⁻⁵",
+      "meteorites": "4.4 ⋅ 10⁻⁵"
     },
     "colorIndex": 8,
     "ghs": [
@@ -5576,7 +5576,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "3.281",
       "specificHeat": "233",
-      "thermalExpansion": "32.1 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "32.1 ⋅ 10⁻⁶",
       "vaporizationHeat": "231.8"
     },
     "atomic": {
@@ -5591,10 +5591,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "11947431.30227",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-1.02 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-1.4 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-1.61 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "8.37 ⋅ 10<sup><small>-8</small></sup>",
+      "volumeMagneticSusceptibility": "-1.02 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-1.4 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-1.61 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "8.37 ⋅ 10⁻⁸",
       "superconductingTemperature": "3.41"
     },
     "grid": {
@@ -5627,11 +5627,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "universe": "3 ⋅ 10<sup><small>-8</small></sup>",
-      "sun": "4 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "1.0 ⋅ 10<sup><small>-11</small></sup>",
-      "crust": "2.5 ⋅ 10<sup><small>-5</small></sup>",
-      "meteorites": "4.4 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "3 ⋅ 10⁻⁸",
+      "sun": "4 ⋅ 10⁻⁷",
+      "ocean": "1.0 ⋅ 10⁻¹¹",
+      "crust": "2.5 ⋅ 10⁻⁵",
+      "meteorites": "4.4 ⋅ 10⁻⁶"
     },
     "colorIndex": 1,
     "ghs": [
@@ -5686,7 +5686,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "7.03",
       "specificHeat": "228.4",
-      "thermalExpansion": "22 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "22 ⋅ 10⁻⁶",
       "vaporizationHeat": "296.1"
     },
     "atomic": {
@@ -5701,10 +5701,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "8695652.17391304",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "-2.27 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-3.1 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-3.68 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "1.15 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "-2.27 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-3.1 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-3.68 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "1.15 ⋅ 10⁻⁷",
       "superconductingTemperature": "3.72"
     },
     "grid": {
@@ -5712,7 +5712,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a=5.831 Å; c=3.181 Å",
       "axialRatio": "0.546",
       "debyeTemperature": "195",
-      "spaceGroup": "I4<sub><small>1</small></sub>/amd",
+      "spaceGroup": "I4₁/amd",
       "spaceGroupNumber": "141"
     },
     "additional": {
@@ -5740,12 +5740,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,1,3,-"
     },
     "prevalence": {
-      "universe": "4 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "9 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "9.9 ⋅ 10<sup><small>-10</small></sup>",
-      "humanBody": "2.853640677 ⋅ 10<sup><small>-5</small></sup>",
+      "universe": "4 ⋅ 10⁻⁷",
+      "sun": "9 ⋅ 10⁻⁷",
+      "ocean": "9.9 ⋅ 10⁻¹⁰",
+      "humanBody": "2.853640677 ⋅ 10⁻⁵",
       "crust": "0.00023",
-      "meteorites": "1.2 ⋅ 10<sup><small>-4</small></sup>"
+      "meteorites": "1.2 ⋅ 10⁻⁴"
     },
     "colorIndex": 1,
     "ghs": [
@@ -5843,7 +5843,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "19.79",
       "specificHeat": "207",
-      "thermalExpansion": "11 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "11 ⋅ 10⁻⁶",
       "vaporizationHeat": "193.43"
     },
     "atomic": {
@@ -5858,10 +5858,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "2398081.53477218",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-7.3 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-1.09 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-1.327 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "4.17 ⋅ 10<sup><small>-7</small></sup>"
+      "volumeMagneticSusceptibility": "-7.3 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-1.09 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-1.327 ⋅ 10⁻⁹",
+      "electricalResistivity": "4.17 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "5",
@@ -5895,12 +5895,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,1,0,-"
     },
     "prevalence": {
-      "universe": "4 ⋅ 10<sup><small>-8</small></sup>",
-      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "2.0 ⋅ 10<sup><small>-8</small></sup>",
-      "humanBody": "1.1 ⋅ 10<sup><small>-5</small></sup>",
-      "crust": "2.0 ⋅ 10<sup><small>-5</small></sup>",
-      "meteorites": "1.2 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "4 ⋅ 10⁻⁸",
+      "sun": "1 ⋅ 10⁻⁷",
+      "ocean": "2.0 ⋅ 10⁻⁸",
+      "humanBody": "1.1 ⋅ 10⁻⁵",
+      "crust": "2.0 ⋅ 10⁻⁵",
+      "meteorites": "1.2 ⋅ 10⁻⁵"
     },
     "colorIndex": 7,
     "ghs": [
@@ -5970,9 +5970,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "10000.0",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-2.43 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-3.9 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-4.98 ⋅ 10<sup><small>-10</small></sup>",
+      "volumeMagneticSusceptibility": "-2.43 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-3.9 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-4.98 ⋅ 10⁻¹⁰",
       "electricalResistivity": "0.0001"
     },
     "grid": {
@@ -5980,7 +5980,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a=4.457 Å; c=5.929",
       "axialRatio": "1.330",
       "debyeTemperature": "152",
-      "spaceGroup": "P3<sub><small>1</small></sub>21",
+      "spaceGroup": "P3₁21",
       "spaceGroupNumber": "152"
     },
     "additional": {
@@ -6008,10 +6008,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,2,0,-"
     },
     "prevalence": {
-      "universe": "9 ⋅ 10<sup><small>-7</small></sup>",
-      "humanBody": "1.2 ⋅ 10<sup><small>-5</small></sup>",
-      "crust": "1.0 ⋅ 10<sup><small>-7</small></sup>",
-      "meteorites": "2.1 ⋅ 10<sup><small>-4</small></sup>"
+      "universe": "9 ⋅ 10⁻⁷",
+      "humanBody": "1.2 ⋅ 10⁻⁵",
+      "crust": "1.0 ⋅ 10⁻⁷",
+      "meteorites": "2.1 ⋅ 10⁻⁴"
     },
     "colorIndex": 7,
     "ghs": [
@@ -6106,9 +6106,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "electromagnetic": {
       "electricalConductivity": "7.69230769230769e-08",
       "electricalType": "2",
-      "volumeMagneticSusceptibility": "-2.22 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-4.5 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-1.14 ⋅ 10<sup><small>-9</small></sup>",
+      "volumeMagneticSusceptibility": "-2.22 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-4.5 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-1.14 ⋅ 10⁻⁹",
       "electricalResistivity": "13000000.0"
     },
     "grid": {
@@ -6136,11 +6136,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,3,0,-"
     },
     "prevalence": {
-      "universe": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "6 ⋅ 10<sup><small>-6</small></sup>",
-      "humanBody": "2.853640677 ⋅ 10<sup><small>-5</small></sup>",
-      "crust": "4.5 ⋅ 10<sup><small>-5</small></sup>",
-      "meteorites": "2.5 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "1 ⋅ 10⁻⁷",
+      "ocean": "6 ⋅ 10⁻⁶",
+      "humanBody": "2.853640677 ⋅ 10⁻⁵",
+      "crust": "4.5 ⋅ 10⁻⁵",
+      "meteorites": "2.5 ⋅ 10⁻⁵"
     },
     "colorIndex": 15,
     "ghs": [
@@ -6205,9 +6205,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-2.54 ⋅ 10<sup><small>-8</small></sup>",
-      "massMagneticSusceptibility": "-4.3 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-5.65 ⋅ 10<sup><small>-10</small></sup>"
+      "volumeMagneticSusceptibility": "-2.54 ⋅ 10⁻⁸",
+      "massMagneticSusceptibility": "-4.3 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-5.65 ⋅ 10⁻¹⁰"
     },
     "grid": {
       "structureCode": "4",
@@ -6234,9 +6234,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,0,0,SA"
     },
     "prevalence": {
-      "universe": "1 ⋅ 10<sup><small>-6</small></sup>",
-      "ocean": "5 ⋅ 10<sup><small>-10</small></sup>",
-      "crust": "3.0 ⋅ 10<sup><small>-9</small></sup>"
+      "universe": "1 ⋅ 10⁻⁶",
+      "ocean": "5 ⋅ 10⁻¹⁰",
+      "crust": "3.0 ⋅ 10⁻⁹"
     },
     "colorIndex": 0,
     "ghs": [
@@ -6321,7 +6321,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "2.09",
       "specificHeat": "242",
-      "thermalExpansion": "92.6 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "92.6 ⋅ 10⁻⁶",
       "vaporizationHeat": "63.9"
     },
     "atomic": {
@@ -6336,10 +6336,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "4878048.7804878",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "-5.26 ⋅ 10<sup><small>-6</small></sup>",
-      "massMagneticSusceptibility": "2.8 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "3.72 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "2.05 ⋅ 10<sup><small>-7</small></sup>"
+      "volumeMagneticSusceptibility": "-5.26 ⋅ 10⁻⁶",
+      "massMagneticSusceptibility": "2.8 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "3.72 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "2.05 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "3",
@@ -6370,12 +6370,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,3,2,W"
     },
     "prevalence": {
-      "universe": "8 ⋅ 10<sup><small>-8</small></sup>",
-      "sun": "8 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "5 ⋅ 10<sup><small>-8</small></sup>",
-      "humanBody": "2 ⋅ 10<sup><small>-6</small></sup>",
+      "universe": "8 ⋅ 10⁻⁸",
+      "sun": "8 ⋅ 10⁻⁷",
+      "ocean": "5 ⋅ 10⁻⁸",
+      "humanBody": "2 ⋅ 10⁻⁶",
       "crust": "0.0003",
-      "meteorites": "1.4 ⋅ 10<sup><small>-5</small></sup>"
+      "meteorites": "1.4 ⋅ 10⁻⁵"
     },
     "colorIndex": 2,
     "ghs": [
@@ -6427,7 +6427,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "7.12",
       "specificHeat": "205",
-      "thermalExpansion": "20.6 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "20.6 ⋅ 10⁻⁶",
       "vaporizationHeat": "142"
     },
     "atomic": {
@@ -6442,10 +6442,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "3012048.19277108",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "3.966 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "1.13 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "1.552 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "3.32 ⋅ 10<sup><small>-7</small></sup>"
+      "volumeMagneticSusceptibility": "3.966 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "1.13 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "1.552 ⋅ 10⁻⁹",
+      "electricalResistivity": "3.32 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "3",
@@ -6476,12 +6476,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,2,2,W"
     },
     "prevalence": {
-      "universe": "1 ⋅ 10<sup><small>-6</small></sup>",
-      "sun": "9.9 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "3 ⋅ 10<sup><small>-6</small></sup>",
-      "humanBody": "3.139004745 ⋅ 10<sup><small>-5</small></sup>",
+      "universe": "1 ⋅ 10⁻⁶",
+      "sun": "9.9 ⋅ 10⁻⁷",
+      "ocean": "3 ⋅ 10⁻⁶",
+      "humanBody": "3.139004745 ⋅ 10⁻⁵",
       "crust": "0.0425",
-      "meteorites": "2.7 ⋅ 10<sup><small>-4</small></sup>"
+      "meteorites": "2.7 ⋅ 10⁻⁴"
     },
     "colorIndex": 9,
     "ghs": [
@@ -6559,7 +6559,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "6.2",
       "specificHeat": "195",
-      "thermalExpansion": "5.1 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "5.1 ⋅ 10⁻⁶",
       "vaporizationHeat": "400.0"
     },
     "atomic": {
@@ -6574,10 +6574,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "1626016.2601626",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "6.761 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "1.1 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "1.528 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "6.15 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "6.761 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "1.1 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "1.528 ⋅ 10⁻⁹",
+      "electricalResistivity": "6.15 ⋅ 10⁻⁷",
       "superconductingTemperature": "4.88"
     },
     "grid": {
@@ -6585,7 +6585,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a=3.772 Å; c=12.14 Å",
       "axialRatio": "3.22",
       "debyeTemperature": "135",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -6613,12 +6613,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "3.4 ⋅ 10<sup><small>-10</small></sup>",
-      "humanBody": "1.37 ⋅ 10<sup><small>-4</small></sup>",
+      "universe": "2 ⋅ 10⁻⁷",
+      "sun": "2 ⋅ 10⁻⁷",
+      "ocean": "3.4 ⋅ 10⁻¹⁰",
+      "humanBody": "1.37 ⋅ 10⁻⁴",
       "crust": "0.0039",
-      "meteorites": "2.8 ⋅ 10<sup><small>-5</small></sup>"
+      "meteorites": "2.8 ⋅ 10⁻⁵"
     },
     "colorIndex": 1,
     "ghs": [
@@ -6678,7 +6678,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "5.46",
       "specificHeat": "192",
-      "thermalExpansion": "6.3 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "6.3 ⋅ 10⁻⁶",
       "vaporizationHeat": "398.0"
     },
     "atomic": {
@@ -6694,9 +6694,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalType": "1",
       "magneticType": "paramagnetic",
       "volumeMagneticSusceptibility": "0.0014716",
-      "massMagneticSusceptibility": "2.2 ⋅ 10<sup><small>-7</small></sup>",
-      "molarMagneticSusceptibility": "3.0826 ⋅ 10<sup><small>-8</small></sup>",
-      "electricalResistivity": "8.28 ⋅ 10<sup><small>-7</small></sup>",
+      "massMagneticSusceptibility": "2.2 ⋅ 10⁻⁷",
+      "molarMagneticSusceptibility": "3.0826 ⋅ 10⁻⁸",
+      "electricalResistivity": "8.28 ⋅ 10⁻⁷",
       "superconductingTemperature": "0.022"
     },
     "grid": {
@@ -6731,12 +6731,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,2,2,-"
     },
     "prevalence": {
-      "universe": "1 ⋅ 10<sup><small>-6</small></sup>",
-      "sun": "4 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "1.2 ⋅ 10<sup><small>-10</small></sup>",
-      "humanBody": "5.707281354 ⋅ 10<sup><small>-5</small></sup>",
+      "universe": "1 ⋅ 10⁻⁶",
+      "sun": "4 ⋅ 10⁻⁷",
+      "ocean": "1.2 ⋅ 10⁻¹⁰",
+      "humanBody": "5.707281354 ⋅ 10⁻⁵",
       "crust": "0.00665",
-      "meteorites": "7.5 ⋅ 10<sup><small>-5</small></sup>"
+      "meteorites": "7.5 ⋅ 10⁻⁵"
     },
     "colorIndex": 1,
     "ghs": [
@@ -6805,7 +6805,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "6.89",
       "specificHeat": "193",
-      "thermalExpansion": "4.5 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "4.5 ⋅ 10⁻⁶",
       "vaporizationHeat": "331.0"
     },
     "atomic": {
@@ -6821,16 +6821,16 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalType": "2",
       "magneticType": "paramagnetic",
       "volumeMagneticSusceptibility": "0.0028087",
-      "massMagneticSusceptibility": "4.23 ⋅ 10<sup><small>-7</small></sup>",
-      "molarMagneticSusceptibility": "5.9604 ⋅ 10<sup><small>-8</small></sup>",
-      "electricalResistivity": "7 ⋅ 10<sup><small>-7</small></sup>"
+      "massMagneticSusceptibility": "4.23 ⋅ 10⁻⁷",
+      "molarMagneticSusceptibility": "5.9604 ⋅ 10⁻⁸",
+      "electricalResistivity": "7 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "11",
       "gridParams": "a=3.673 Å; c=11.84 Å",
       "axialRatio": "3.22",
       "debyeTemperature": "152",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -6858,11 +6858,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "6.0 ⋅ 10<sup><small>-11</small></sup>",
+      "universe": "2 ⋅ 10⁻⁷",
+      "sun": "1 ⋅ 10⁻⁷",
+      "ocean": "6.0 ⋅ 10⁻¹¹",
       "crust": "0.00092",
-      "meteorites": "9.8 ⋅ 10<sup><small>-6</small></sup>"
+      "meteorites": "9.8 ⋅ 10⁻⁶"
     },
     "colorIndex": 7,
     "ghs": [
@@ -6918,7 +6918,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "7.14",
       "specificHeat": "190",
-      "thermalExpansion": "6.7 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "6.7 ⋅ 10⁻⁶",
       "vaporizationHeat": "289.0"
     },
     "atomic": {
@@ -6934,16 +6934,16 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalType": "1",
       "magneticType": "paramagnetic",
       "volumeMagneticSusceptibility": "0.0033648",
-      "massMagneticSusceptibility": "4.8 ⋅ 10<sup><small>-7</small></sup>",
-      "molarMagneticSusceptibility": "6.9235 ⋅ 10<sup><small>-8</small></sup>",
-      "electricalResistivity": "6.43 ⋅ 10<sup><small>-7</small></sup>"
+      "massMagneticSusceptibility": "4.8 ⋅ 10⁻⁷",
+      "molarMagneticSusceptibility": "6.9235 ⋅ 10⁻⁸",
+      "electricalResistivity": "6.43 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "11",
       "gridParams": "a=3.658 Å; c=11.80 Å",
       "axialRatio": "3.23",
       "debyeTemperature": "163",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -6972,11 +6972,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "universe": "1 ⋅ 10<sup><small>-6</small></sup>",
-      "sun": "3 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "2.8 ⋅ 10<sup><small>-10</small></sup>",
+      "universe": "1 ⋅ 10⁻⁶",
+      "sun": "3 ⋅ 10⁻⁷",
+      "ocean": "2.8 ⋅ 10⁻¹⁰",
       "crust": "0.00415",
-      "meteorites": "5.0 ⋅ 10<sup><small>-5</small></sup>"
+      "meteorites": "5.0 ⋅ 10⁻⁵"
     },
     "colorIndex": 1,
     "ghs": [
@@ -7055,7 +7055,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "thermo": {
       "fusionHeat": "7.13",
-      "thermalExpansion": "11 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "11 ⋅ 10⁻⁶",
       "vaporizationHeat": "289.0"
     },
     "atomic": {
@@ -7070,14 +7070,14 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "1333333.33333333",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "electricalResistivity": "7.5 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalResistivity": "7.5 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "11",
       "gridParams": "a=3.65 Å; c=11.65 Å",
       "axialRatio": "3.19",
       "debyeTemperature": "163",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -7154,7 +7154,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "8.62",
       "specificHeat": "196",
-      "thermalExpansion": "12.7 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "12.7 ⋅ 10⁻⁶",
       "vaporizationHeat": "192.0"
     },
     "atomic": {
@@ -7169,10 +7169,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "1063829.78723404",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "8.1618 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "1.11 ⋅ 10<sup><small>-7</small></sup>",
-      "molarMagneticSusceptibility": "1.669 ⋅ 10<sup><small>-8</small></sup>",
-      "electricalResistivity": "9.4 ⋅ 10<sup><small>-7</small></sup>"
+      "volumeMagneticSusceptibility": "8.1618 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "1.11 ⋅ 10⁻⁷",
+      "molarMagneticSusceptibility": "1.669 ⋅ 10⁻⁸",
+      "electricalResistivity": "9.4 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "5",
@@ -7207,12 +7207,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "universe": "5 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "4.5 ⋅ 10<sup><small>-11</small></sup>",
-      "humanBody": "7.134102 ⋅ 10<sup><small>-8</small></sup>",
-      "crust": "6.0 ⋅ 10<sup><small>-4</small></sup>",
-      "meteorites": "1.7 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "5 ⋅ 10⁻⁷",
+      "sun": "1 ⋅ 10⁻⁷",
+      "ocean": "4.5 ⋅ 10⁻¹¹",
+      "humanBody": "7.134102 ⋅ 10⁻⁸",
+      "crust": "6.0 ⋅ 10⁻⁴",
+      "meteorites": "1.7 ⋅ 10⁻⁵"
     },
     "colorIndex": 1,
     "ghs": [
@@ -7292,7 +7292,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "9.21",
       "specificHeat": "182",
-      "thermalExpansion": "35 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "35 ⋅ 10⁻⁶",
       "vaporizationHeat": "176.0"
     },
     "atomic": {
@@ -7308,9 +7308,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalType": "1",
       "magneticType": "paramagnetic",
       "volumeMagneticSusceptibility": "0.0014473",
-      "massMagneticSusceptibility": "2.76 ⋅ 10<sup><small>-7</small></sup>",
-      "molarMagneticSusceptibility": "4.1942 ⋅ 10<sup><small>-8</small></sup>",
-      "electricalResistivity": "9 ⋅ 10<sup><small>-7</small></sup>"
+      "massMagneticSusceptibility": "2.76 ⋅ 10⁻⁷",
+      "molarMagneticSusceptibility": "4.1942 ⋅ 10⁻⁸",
+      "electricalResistivity": "9 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "3",
@@ -7342,11 +7342,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "universe": "5 ⋅ 10<sup><small>-8</small></sup>",
-      "sun": "5 ⋅ 10<sup><small>-8</small></sup>",
-      "ocean": "1.3 ⋅ 10<sup><small>-11</small></sup>",
-      "crust": "2.0 ⋅ 10<sup><small>-4</small></sup>",
-      "meteorites": "5.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "5 ⋅ 10⁻⁸",
+      "sun": "5 ⋅ 10⁻⁸",
+      "ocean": "1.3 ⋅ 10⁻¹¹",
+      "crust": "2.0 ⋅ 10⁻⁴",
+      "meteorites": "5.9 ⋅ 10⁻⁶"
     },
     "colorIndex": 9,
     "ghs": [
@@ -7406,7 +7406,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "10.05",
       "specificHeat": "240",
-      "thermalExpansion": "9.4 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "9.4 ⋅ 10⁻⁶",
       "vaporizationHeat": "301.3"
     },
     "atomic": {
@@ -7421,14 +7421,14 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "763358.778625954",
       "electricalType": "1",
       "magneticType": "ferromagnetic",
-      "electricalResistivity": "1.31 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalResistivity": "1.31 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "2",
       "gridParams": "a=3.636 Å; c=5.783 Å",
       "axialRatio": "1.590",
       "debyeTemperature": "182",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -7456,11 +7456,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "7 ⋅ 10<sup><small>-11</small></sup>",
-      "crust": "6.2 ⋅ 10<sup><small>-4</small></sup>",
-      "meteorites": "2.3 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "2 ⋅ 10⁻⁷",
+      "sun": "2 ⋅ 10⁻⁷",
+      "ocean": "7 ⋅ 10⁻¹¹",
+      "crust": "6.2 ⋅ 10⁻⁴",
+      "meteorites": "2.3 ⋅ 10⁻⁵"
     },
     "colorIndex": 1,
     "ghs": [
@@ -7540,7 +7540,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "10.15",
       "specificHeat": "182",
-      "thermalExpansion": "10.3 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "10.3 ⋅ 10⁻⁶",
       "vaporizationHeat": "295.0"
     },
     "atomic": {
@@ -7556,16 +7556,16 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalType": "1",
       "magneticType": "paramagnetic",
       "volumeMagneticSusceptibility": "0.1117784",
-      "massMagneticSusceptibility": "1.36 ⋅ 10<sup><small>-5</small></sup>",
-      "molarMagneticSusceptibility": "2.161385 ⋅ 10<sup><small>-6</small></sup>",
-      "electricalResistivity": "1.15 ⋅ 10<sup><small>-7</small></sup>"
+      "massMagneticSusceptibility": "1.36 ⋅ 10⁻⁵",
+      "molarMagneticSusceptibility": "2.161385 ⋅ 10⁻⁶",
+      "electricalResistivity": "1.15 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "2",
       "gridParams": "a=3.600 Å; c=5.694 Å",
       "axialRatio": "1.582",
       "debyeTemperature": "176",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -7593,11 +7593,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "universe": "5 ⋅ 10<sup><small>-8</small></sup>",
-      "sun": "1 ⋅ 10<sup><small>-8</small></sup>",
-      "ocean": "1.4 ⋅ 10<sup><small>-11</small></sup>",
-      "crust": "1.2 ⋅ 10<sup><small>-4</small></sup>",
-      "meteorites": "3.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "5 ⋅ 10⁻⁸",
+      "sun": "1 ⋅ 10⁻⁸",
+      "ocean": "1.4 ⋅ 10⁻¹¹",
+      "crust": "1.2 ⋅ 10⁻⁴",
+      "meteorites": "3.9 ⋅ 10⁻⁶"
     },
     "colorIndex": 1,
     "ghs": [
@@ -7653,7 +7653,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "11.06",
       "specificHeat": "167",
-      "thermalExpansion": "9.9 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "9.9 ⋅ 10⁻⁶",
       "vaporizationHeat": "280.0"
     },
     "atomic": {
@@ -7669,16 +7669,16 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalType": "1",
       "magneticType": "paramagnetic",
       "volumeMagneticSusceptibility": "0.046603",
-      "massMagneticSusceptibility": "5.45 ⋅ 10<sup><small>-6</small></sup>",
-      "molarMagneticSusceptibility": "8.85625 ⋅ 10<sup><small>-7</small></sup>",
-      "electricalResistivity": "9.26 ⋅ 10<sup><small>-7</small></sup>"
+      "massMagneticSusceptibility": "5.45 ⋅ 10⁻⁶",
+      "molarMagneticSusceptibility": "8.85625 ⋅ 10⁻⁷",
+      "electricalResistivity": "9.26 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "2",
       "gridParams": "a=3.593 Å; c=5.654 Å",
       "axialRatio": "1.574",
       "debyeTemperature": "183",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -7706,11 +7706,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "9.1 ⋅ 10<sup><small>-11</small></sup>",
-      "crust": "5.2 ⋅ 10<sup><small>-4</small></sup>",
-      "meteorites": "2.7 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "2 ⋅ 10⁻⁷",
+      "sun": "2 ⋅ 10⁻⁷",
+      "ocean": "9.1 ⋅ 10⁻¹¹",
+      "crust": "5.2 ⋅ 10⁻⁴",
+      "meteorites": "2.7 ⋅ 10⁻⁵"
     },
     "colorIndex": 1,
     "ghs": [
@@ -7790,7 +7790,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "17.0",
       "specificHeat": "165",
-      "thermalExpansion": "11.2 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "11.2 ⋅ 10⁻⁶",
       "vaporizationHeat": "251.0"
     },
     "atomic": {
@@ -7806,16 +7806,16 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalType": "1",
       "magneticType": "paramagnetic",
       "volumeMagneticSusceptibility": "0.0482845",
-      "massMagneticSusceptibility": "5.49 ⋅ 10<sup><small>-6</small></sup>",
-      "molarMagneticSusceptibility": "9.05467 ⋅ 10<sup><small>-7</small></sup>",
-      "electricalResistivity": "8.14 ⋅ 10<sup><small>-7</small></sup>"
+      "massMagneticSusceptibility": "5.49 ⋅ 10⁻⁶",
+      "molarMagneticSusceptibility": "9.05467 ⋅ 10⁻⁷",
+      "electricalResistivity": "8.14 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "2",
       "gridParams": "a=3.577 Å; c=5.616 Å",
       "axialRatio": "1.570",
       "debyeTemperature": "190",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -7843,10 +7843,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "universe": "5 ⋅ 10<sup><small>-8</small></sup>",
-      "ocean": "2.2 ⋅ 10<sup><small>-11</small></sup>",
-      "crust": "1.3 ⋅ 10<sup><small>-4</small></sup>",
-      "meteorites": "5.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "5 ⋅ 10⁻⁸",
+      "ocean": "2.2 ⋅ 10⁻¹¹",
+      "crust": "1.3 ⋅ 10⁻⁴",
+      "meteorites": "5.9 ⋅ 10⁻⁶"
     },
     "colorIndex": 1,
     "ghs": [
@@ -7902,7 +7902,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "19.9",
       "specificHeat": "168",
-      "thermalExpansion": "12.2 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "12.2 ⋅ 10⁻⁶",
       "vaporizationHeat": "280.0"
     },
     "atomic": {
@@ -7918,16 +7918,16 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalType": "1",
       "magneticType": "paramagnetic",
       "volumeMagneticSusceptibility": "0.0341788",
-      "massMagneticSusceptibility": "3.77 ⋅ 10<sup><small>-6</small></sup>",
-      "molarMagneticSusceptibility": "6.30566 ⋅ 10<sup><small>-7</small></sup>",
-      "electricalResistivity": "8.6 ⋅ 10<sup><small>-7</small></sup>"
+      "massMagneticSusceptibility": "3.77 ⋅ 10⁻⁶",
+      "molarMagneticSusceptibility": "6.30566 ⋅ 10⁻⁷",
+      "electricalResistivity": "8.6 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "2",
       "gridParams": "a=3.560 Å; c=5.587 Å",
       "axialRatio": "1.570",
       "debyeTemperature": "188",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -7955,11 +7955,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "9.0 ⋅ 10<sup><small>-11</small></sup>",
-      "crust": "3.5 ⋅ 10<sup><small>-4</small></sup>",
-      "meteorites": "1.8 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "2 ⋅ 10⁻⁷",
+      "sun": "1 ⋅ 10⁻⁷",
+      "ocean": "9.0 ⋅ 10⁻¹¹",
+      "crust": "3.5 ⋅ 10⁻⁴",
+      "meteorites": "1.8 ⋅ 10⁻⁵"
     },
     "colorIndex": 1,
     "ghs": [
@@ -8035,7 +8035,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "16.84",
       "specificHeat": "160",
-      "thermalExpansion": "13.3 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "13.3 ⋅ 10⁻⁶",
       "vaporizationHeat": "191.0"
     },
     "atomic": {
@@ -8051,16 +8051,16 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalType": "1",
       "magneticType": "paramagnetic",
       "volumeMagneticSusceptibility": "0.0185488",
-      "massMagneticSusceptibility": "1.99 ⋅ 10<sup><small>-6</small></sup>",
-      "molarMagneticSusceptibility": "3.36179 ⋅ 10<sup><small>-7</small></sup>",
-      "electricalResistivity": "6.76 ⋅ 10<sup><small>-7</small></sup>"
+      "massMagneticSusceptibility": "1.99 ⋅ 10⁻⁶",
+      "molarMagneticSusceptibility": "3.36179 ⋅ 10⁻⁷",
+      "electricalResistivity": "6.76 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "2",
       "gridParams": "a=3.540 Å; c=5.56 Å",
       "axialRatio": "1.570",
       "debyeTemperature": "200",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -8087,11 +8087,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "universe": "1 ⋅ 10<sup><small>-8</small></sup>",
-      "sun": "2 ⋅ 10<sup><small>-8</small></sup>",
-      "ocean": "2.0 ⋅ 10<sup><small>-11</small></sup>",
-      "crust": "5.2 ⋅ 10<sup><small>-5</small></sup>",
-      "meteorites": "2.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "1 ⋅ 10⁻⁸",
+      "sun": "2 ⋅ 10⁻⁸",
+      "ocean": "2.0 ⋅ 10⁻¹¹",
+      "crust": "5.2 ⋅ 10⁻⁵",
+      "meteorites": "2.9 ⋅ 10⁻⁶"
     },
     "colorIndex": 5,
     "ghs": [
@@ -8147,7 +8147,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "7.66",
       "specificHeat": "154",
-      "thermalExpansion": "24.31 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "24.31 ⋅ 10⁻⁶",
       "vaporizationHeat": "129.0"
     },
     "atomic": {
@@ -8162,10 +8162,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "4000000.0",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "3.88 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "5.9 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "1.02 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "2.5 ⋅ 10<sup><small>-7</small></sup>"
+      "volumeMagneticSusceptibility": "3.88 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "5.9 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "1.02 ⋅ 10⁻⁹",
+      "electricalResistivity": "2.5 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "4",
@@ -8199,11 +8199,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "8.0 ⋅ 10<sup><small>-11</small></sup>",
-      "crust": "2.8 ⋅ 10<sup><small>-4</small></sup>",
-      "meteorites": "1.8 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "2 ⋅ 10⁻⁷",
+      "sun": "1 ⋅ 10⁻⁷",
+      "ocean": "8.0 ⋅ 10⁻¹¹",
+      "crust": "2.8 ⋅ 10⁻⁴",
+      "meteorites": "1.8 ⋅ 10⁻⁵"
     },
     "colorIndex": 9,
     "ghs": [
@@ -8283,7 +8283,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "22.0",
       "specificHeat": "154",
-      "thermalExpansion": "9.9 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "9.9 ⋅ 10⁻⁶",
       "vaporizationHeat": "414.0"
     },
     "atomic": {
@@ -8297,10 +8297,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "electromagnetic": {
       "electricalConductivity": "1718213.05841924",
       "electricalType": "1",
-      "volumeMagneticSusceptibility": "1.18 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "1.2 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "2.1 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "5.82 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "1.18 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "1.2 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "2.1 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "5.82 ⋅ 10⁻⁷",
       "superconductingTemperature": "0.1"
     },
     "grid": {
@@ -8308,7 +8308,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a=3.503 Å; c=5.551 Å",
       "axialRatio": "1.585",
       "debyeTemperature": "183",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -8335,11 +8335,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "universe": "1 ⋅ 10<sup><small>-8</small></sup>",
-      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "1.5 ⋅ 10<sup><small>-11</small></sup>",
-      "crust": "8.0 ⋅ 10<sup><small>-5</small></sup>",
-      "meteorites": "2.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "1 ⋅ 10⁻⁸",
+      "sun": "1 ⋅ 10⁻⁷",
+      "ocean": "1.5 ⋅ 10⁻¹¹",
+      "crust": "8.0 ⋅ 10⁻⁵",
+      "meteorites": "2.9 ⋅ 10⁻⁶"
     },
     "colorIndex": 1,
     "ghs": [
@@ -8399,7 +8399,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "27.2",
       "specificHeat": "144",
-      "thermalExpansion": "5.9 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "5.9 ⋅ 10⁻⁶",
       "vaporizationHeat": "648.0"
     },
     "atomic": {
@@ -8413,10 +8413,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "electromagnetic": {
       "electricalConductivity": "3021148.03625378",
       "electricalType": "1",
-      "volumeMagneticSusceptibility": "7.05 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "5.3 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "9.46 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "3.31 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "7.05 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "5.3 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "9.46 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "3.31 ⋅ 10⁻⁷",
       "superconductingTemperature": "0.128"
     },
     "grid": {
@@ -8424,7 +8424,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a=3.196 Å; c=5.051 Å | a=3.60 Å",
       "axialRatio": "1.580",
       "debyeTemperature": "252",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -8453,11 +8453,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "universe": "7 ⋅ 10<sup><small>-8</small></sup>",
-      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "8.0 ⋅ 10<sup><small>-10</small></sup>",
-      "crust": "3.0 ⋅ 10<sup><small>-4</small></sup>",
-      "meteorites": "1.7 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "7 ⋅ 10⁻⁸",
+      "sun": "1 ⋅ 10⁻⁷",
+      "ocean": "8.0 ⋅ 10⁻¹⁰",
+      "crust": "3.0 ⋅ 10⁻⁴",
+      "meteorites": "1.7 ⋅ 10⁻⁵"
     },
     "colorIndex": 6,
     "ghs": [
@@ -8529,7 +8529,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "36.57",
       "specificHeat": "140",
-      "thermalExpansion": "6.3 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "6.3 ⋅ 10⁻⁶",
       "vaporizationHeat": "732.8"
     },
     "atomic": {
@@ -8544,10 +8544,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "7633587.78625954",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "1.782 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "1.07 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "1.936 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "1.31 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "1.782 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "1.07 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "1.936 ⋅ 10⁻⁹",
+      "electricalResistivity": "1.31 ⋅ 10⁻⁷",
       "superconductingTemperature": "4.47"
     },
     "grid": {
@@ -8583,11 +8583,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "universe": "8 ⋅ 10<sup><small>-9</small></sup>",
-      "ocean": "2.0 ⋅ 10<sup><small>-10</small></sup>",
-      "humanBody": "2.8536407 ⋅ 10<sup><small>-7</small></sup>",
-      "crust": "2.0 ⋅ 10<sup><small>-4</small></sup>",
-      "meteorites": "2.0 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "8 ⋅ 10⁻⁹",
+      "ocean": "2.0 ⋅ 10⁻¹⁰",
+      "humanBody": "2.8536407 ⋅ 10⁻⁷",
+      "crust": "2.0 ⋅ 10⁻⁴",
+      "meteorites": "2.0 ⋅ 10⁻⁶"
     },
     "colorIndex": 8,
     "ghs": [
@@ -8647,7 +8647,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "52.31",
       "specificHeat": "132",
-      "thermalExpansion": "4.5 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "4.5 ⋅ 10⁻⁶",
       "vaporizationHeat": "806.7"
     },
     "atomic": {
@@ -8662,10 +8662,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "18939393.9393939",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "7.51 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "4.59 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "8.44 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "5.28 ⋅ 10<sup><small>-8</small></sup>",
+      "volumeMagneticSusceptibility": "7.51 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "4.59 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "8.44 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "5.28 ⋅ 10⁻⁸",
       "superconductingTemperature": "0.015"
     },
     "grid": {
@@ -8701,12 +8701,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,1,1,-"
     },
     "prevalence": {
-      "universe": "5 ⋅ 10<sup><small>-8</small></sup>",
-      "sun": "4 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "1.2 ⋅ 10<sup><small>-8</small></sup>",
-      "humanBody": "2.853641 ⋅ 10<sup><small>-8</small></sup>",
-      "crust": "1.25 ⋅ 10<sup><small>-4</small></sup>",
-      "meteorites": "1.2 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "5 ⋅ 10⁻⁸",
+      "sun": "4 ⋅ 10⁻⁷",
+      "ocean": "1.2 ⋅ 10⁻⁸",
+      "humanBody": "2.853641 ⋅ 10⁻⁸",
+      "crust": "1.25 ⋅ 10⁻⁴",
+      "meteorites": "1.2 ⋅ 10⁻⁵"
     },
     "colorIndex": 6,
     "ghs": [
@@ -8777,7 +8777,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "60.43",
       "specificHeat": "137",
-      "thermalExpansion": "6.2 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "6.2 ⋅ 10⁻⁶",
       "vaporizationHeat": "704.0"
     },
     "atomic": {
@@ -8792,10 +8792,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "5181347.15025907",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "9.59 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "4.56 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "8.49 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "1.93 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "9.59 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "4.56 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "8.49 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "1.93 ⋅ 10⁻⁷",
       "superconductingTemperature": "1.7"
     },
     "grid": {
@@ -8803,7 +8803,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a=2.761 Å; c=4.456 Å",
       "axialRatio": "1.614",
       "debyeTemperature": "416",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -8832,11 +8832,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "universe": "2 ⋅ 10<sup><small>-8</small></sup>",
-      "sun": "1 ⋅ 10<sup><small>-8</small></sup>",
-      "ocean": "1.0 ⋅ 10<sup><small>-10</small></sup>",
-      "crust": "7.0 ⋅ 10<sup><small>-8</small></sup>",
-      "meteorites": "4.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "2 ⋅ 10⁻⁸",
+      "sun": "1 ⋅ 10⁻⁸",
+      "ocean": "1.0 ⋅ 10⁻¹⁰",
+      "crust": "7.0 ⋅ 10⁻⁸",
+      "meteorites": "4.9 ⋅ 10⁻⁶"
     },
     "colorIndex": 6,
     "ghs": [
@@ -8893,7 +8893,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "57.85",
       "specificHeat": "130",
-      "thermalExpansion": "5.1 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "5.1 ⋅ 10⁻⁶",
       "vaporizationHeat": "630.0"
     },
     "atomic": {
@@ -8908,10 +8908,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "12315270.9359606",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "1.4 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "6.0 ⋅ 10<sup><small>-10</small></sup>",
-      "molarMagneticSusceptibility": "1.1 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "8.12 ⋅ 10<sup><small>-8</small></sup>",
+      "volumeMagneticSusceptibility": "1.4 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "6.0 ⋅ 10⁻¹⁰",
+      "molarMagneticSusceptibility": "1.1 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "8.12 ⋅ 10⁻⁸",
       "superconductingTemperature": "0.66"
     },
     "grid": {
@@ -8919,7 +8919,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a=2.734 Å; c=4.317 Å",
       "axialRatio": "1.579",
       "debyeTemperature": "467",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -8947,10 +8947,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,3,1,W"
     },
     "prevalence": {
-      "universe": "3 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "crust": "1.5 ⋅ 10<sup><small>-7</small></sup>",
-      "meteorites": "6.5 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "3 ⋅ 10⁻⁷",
+      "sun": "2 ⋅ 10⁻⁷",
+      "crust": "1.5 ⋅ 10⁻⁷",
+      "meteorites": "6.5 ⋅ 10⁻⁵"
     },
     "colorIndex": 8,
     "ghs": [
@@ -9026,7 +9026,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "41.12",
       "specificHeat": "131",
-      "thermalExpansion": "6.4 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "6.4 ⋅ 10⁻⁶",
       "vaporizationHeat": "564.0"
     },
     "atomic": {
@@ -9041,10 +9041,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "21231422.5053079",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "3.77 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "1.67 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "3.21 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "4.71 ⋅ 10<sup><small>-8</small></sup>",
+      "volumeMagneticSusceptibility": "3.77 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "1.67 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "3.21 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "4.71 ⋅ 10⁻⁸",
       "superconductingTemperature": "0.11"
     },
     "grid": {
@@ -9079,10 +9079,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "crust": "1.0 ⋅ 10<sup><small>-7</small></sup>",
-      "meteorites": "5.4 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "2 ⋅ 10⁻⁷",
+      "sun": "2 ⋅ 10⁻⁷",
+      "crust": "1.0 ⋅ 10⁻⁷",
+      "meteorites": "5.4 ⋅ 10⁻⁵"
     },
     "colorIndex": 1,
     "ghs": [
@@ -9137,7 +9137,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "22.17",
       "specificHeat": "133",
-      "thermalExpansion": "8.9 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "8.9 ⋅ 10⁻⁶",
       "vaporizationHeat": "510.0"
     },
     "atomic": {
@@ -9152,10 +9152,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "9523809.52380952",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "2.573 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "1.22 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "2.38 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "1.05 ⋅ 10<sup><small>-7</small></sup>"
+      "volumeMagneticSusceptibility": "2.573 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "1.22 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "2.38 ⋅ 10⁻⁹",
+      "electricalResistivity": "1.05 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "4",
@@ -9190,10 +9190,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,0,0,-"
     },
     "prevalence": {
-      "universe": "5 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "9 ⋅ 10<sup><small>-7</small></sup>",
-      "crust": "5.0 ⋅ 10<sup><small>-7</small></sup>",
-      "meteorites": "9.8 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "5 ⋅ 10⁻⁷",
+      "sun": "9 ⋅ 10⁻⁷",
+      "crust": "5.0 ⋅ 10⁻⁷",
+      "meteorites": "9.8 ⋅ 10⁻⁵"
     },
     "colorIndex": 1,
     "isotopes": {
@@ -9262,7 +9262,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "12.55",
       "specificHeat": "129.1",
-      "thermalExpansion": "14.2 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "14.2 ⋅ 10⁻⁶",
       "vaporizationHeat": "342.0"
     },
     "atomic": {
@@ -9277,10 +9277,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "45167118.33785",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-3.44 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-1.78 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-3.51 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "2.214 ⋅ 10<sup><small>-8</small></sup>"
+      "volumeMagneticSusceptibility": "-3.44 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-1.78 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-3.51 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "2.214 ⋅ 10⁻⁸"
     },
     "grid": {
       "structureCode": "4",
@@ -9316,12 +9316,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,0,0,-"
     },
     "prevalence": {
-      "universe": "6 ⋅ 10<sup><small>-8</small></sup>",
-      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "5.0 ⋅ 10<sup><small>-9</small></sup>",
-      "humanBody": "2.8536407 ⋅ 10<sup><small>-7</small></sup>",
-      "crust": "4.0 ⋅ 10<sup><small>-7</small></sup>",
-      "meteorites": "1.7 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "6 ⋅ 10⁻⁸",
+      "sun": "1 ⋅ 10⁻⁷",
+      "ocean": "5.0 ⋅ 10⁻⁹",
+      "humanBody": "2.8536407 ⋅ 10⁻⁷",
+      "crust": "4.0 ⋅ 10⁻⁷",
+      "meteorites": "1.7 ⋅ 10⁻⁵"
     },
     "colorIndex": 11,
     "isotopes": {
@@ -9380,7 +9380,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "2.29",
       "specificHeat": "139.5",
-      "thermalExpansion": "60.4 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "60.4 ⋅ 10⁻⁶",
       "vaporizationHeat": "59.11"
     },
     "atomic": {
@@ -9395,10 +9395,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "1040582.72632674",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-2.84 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-2.1 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-4.21 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "9.61 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "-2.84 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-2.1 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-4.21 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "9.61 ⋅ 10⁻⁷",
       "superconductingTemperature": "4.154"
     },
     "grid": {
@@ -9430,12 +9430,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,3,0,-"
     },
     "prevalence": {
-      "universe": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "sun": "2 ⋅ 10<sup><small>-6</small></sup>",
-      "ocean": "5.0 ⋅ 10<sup><small>-9</small></sup>",
-      "humanBody": "8.56092203 ⋅ 10<sup><small>-6</small></sup>",
-      "crust": "8.5 ⋅ 10<sup><small>-6</small></sup>",
-      "meteorites": "2.5 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "1 ⋅ 10⁻⁷",
+      "sun": "2 ⋅ 10⁻⁶",
+      "ocean": "5.0 ⋅ 10⁻⁹",
+      "humanBody": "8.56092203 ⋅ 10⁻⁶",
+      "crust": "8.5 ⋅ 10⁻⁶",
+      "meteorites": "2.5 ⋅ 10⁻⁵"
     },
     "colorIndex": 18,
     "ghs": [
@@ -9515,7 +9515,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "4.14",
       "specificHeat": "129",
-      "thermalExpansion": "29.9 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "29.9 ⋅ 10⁻⁶",
       "vaporizationHeat": "165.0"
     },
     "atomic": {
@@ -9530,10 +9530,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "5555555.55555556",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-3.56 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-3.0 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-6.13 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "1.8 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "-3.56 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-3.0 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-6.13 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "1.8 ⋅ 10⁻⁷",
       "superconductingTemperature": "2.38"
     },
     "grid": {
@@ -9541,7 +9541,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a 3.456 c=5.525",
       "axialRatio": "1.599",
       "debyeTemperature": "78.5",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -9569,12 +9569,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,2,0,-"
     },
     "prevalence": {
-      "universe": "5 ⋅ 10<sup><small>-8</small></sup>",
-      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "1.0 ⋅ 10<sup><small>-10</small></sup>",
-      "humanBody": "7.1341017 ⋅ 10<sup><small>-7</small></sup>",
-      "crust": "8.5 ⋅ 10<sup><small>-5</small></sup>",
-      "meteorites": "7.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "5 ⋅ 10⁻⁸",
+      "sun": "1 ⋅ 10⁻⁷",
+      "ocean": "1.0 ⋅ 10⁻¹⁰",
+      "humanBody": "7.1341017 ⋅ 10⁻⁷",
+      "crust": "8.5 ⋅ 10⁻⁵",
+      "meteorites": "7.9 ⋅ 10⁻⁶"
     },
     "colorIndex": 1,
     "ghs": [
@@ -9632,7 +9632,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "4.77",
       "specificHeat": "127",
-      "thermalExpansion": "28.9 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "28.9 ⋅ 10⁻⁶",
       "vaporizationHeat": "179.5"
     },
     "atomic": {
@@ -9647,10 +9647,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "4807692.30769231",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-1.7 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "-1.5 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "-3.11 ⋅ 10<sup><small>-10</small></sup>",
-      "electricalResistivity": "2.08 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "-1.7 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "-1.5 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "-3.11 ⋅ 10⁻¹⁰",
+      "electricalResistivity": "2.08 ⋅ 10⁻⁷",
       "superconductingTemperature": "7.2"
     },
     "grid": {
@@ -9685,12 +9685,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,2,0,-"
     },
     "prevalence": {
-      "universe": "1 ⋅ 10<sup><small>-6</small></sup>",
-      "sun": "9.9 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "3.0 ⋅ 10<sup><small>-9</small></sup>",
+      "universe": "1 ⋅ 10⁻⁶",
+      "sun": "9.9 ⋅ 10⁻⁷",
+      "ocean": "3.0 ⋅ 10⁻⁹",
       "humanBody": "0.00017121844062",
       "crust": "0.0014",
-      "meteorites": "1.4 ⋅ 10<sup><small>-4</small></sup>"
+      "meteorites": "1.4 ⋅ 10⁻⁴"
     },
     "colorIndex": 19,
     "ghs": [
@@ -9764,7 +9764,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "11.3",
       "specificHeat": "122",
-      "thermalExpansion": "13.4 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "13.4 ⋅ 10⁻⁶",
       "vaporizationHeat": "179.0"
     },
     "atomic": {
@@ -9779,10 +9779,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "775193.798449612",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "volumeMagneticSusceptibility": "-1.7 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "-1.7 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "-3.6 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "1.29 ⋅ 10<sup><small>-6</small></sup>"
+      "volumeMagneticSusceptibility": "-1.7 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "-1.7 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "-3.6 ⋅ 10⁻⁹",
+      "electricalResistivity": "1.29 ⋅ 10⁻⁶"
     },
     "grid": {
       "structureCode": "5",
@@ -9816,12 +9816,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,1,0,-"
     },
     "prevalence": {
-      "universe": "7 ⋅ 10<sup><small>-8</small></sup>",
-      "sun": "9.9 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "2.0 ⋅ 10<sup><small>-9</small></sup>",
-      "humanBody": "7.1341017 ⋅ 10<sup><small>-7</small></sup>",
-      "crust": "8.5 ⋅ 10<sup><small>-7</small></sup>",
-      "meteorites": "6.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "7 ⋅ 10⁻⁸",
+      "sun": "9.9 ⋅ 10⁻⁷",
+      "ocean": "2.0 ⋅ 10⁻⁹",
+      "humanBody": "7.1341017 ⋅ 10⁻⁷",
+      "crust": "8.5 ⋅ 10⁻⁷",
+      "meteorites": "6.9 ⋅ 10⁻⁶"
     },
     "colorIndex": 17,
     "ghs": [
@@ -9878,7 +9878,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "13.0",
       "specificHeat": "126",
-      "thermalExpansion": "23.5 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "23.5 ⋅ 10⁻⁶",
       "vaporizationHeat": "102.91"
     },
     "atomic": {
@@ -9892,7 +9892,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "electromagnetic": {
       "electricalConductivity": "2500000.0",
       "magneticType": "diamagnetic",
-      "electricalResistivity": "4.3 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalResistivity": "4.3 ⋅ 10⁻⁷"
     },
     "grid": {
       "structureCode": "7",
@@ -9915,8 +9915,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {
-      "ocean": "2 ⋅ 10<sup><small>-18</small></sup>",
-      "crust": "2.0 ⋅ 10<sup><small>-14</small></sup>"
+      "ocean": "2 ⋅ 10⁻¹⁸",
+      "crust": "2.0 ⋅ 10⁻¹⁴"
     },
     "colorIndex": 1,
     "ghs": [
@@ -10072,7 +10072,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,4,0,RAD"
     },
     "prevalence": {
-      "ocean": "6 ⋅ 10<sup><small>-20</small></sup>"
+      "ocean": "6 ⋅ 10⁻²⁰"
     },
     "colorIndex": 0,
     "ghs": [
@@ -10218,7 +10218,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "1000000.0",
       "electricalType": "1",
       "magneticType": "diamagnetic",
-      "electricalResistivity": "1 ⋅ 10<sup><small>-6</small></sup>"
+      "electricalResistivity": "1 ⋅ 10⁻⁶"
     },
     "grid": {
       "structureCode": "3",
@@ -10243,9 +10243,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,W+RAD"
     },
     "prevalence": {
-      "ocean": "1.0 ⋅ 10<sup><small>-15</small></sup>",
-      "humanBody": "4.0 ⋅ 10<sup><small>-14</small></sup>",
-      "crust": "9.0 ⋅ 10<sup><small>-11</small></sup>"
+      "ocean": "1.0 ⋅ 10⁻¹⁵",
+      "humanBody": "4.0 ⋅ 10⁻¹⁴",
+      "crust": "9.0 ⋅ 10⁻¹¹"
     },
     "colorIndex": 1,
     "ghs": [
@@ -10331,7 +10331,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,W+RAD"
     },
     "prevalence": {
-      "crust": "6.0 ⋅ 10<sup><small>-14</small></sup>"
+      "crust": "6.0 ⋅ 10⁻¹⁴"
     },
     "colorIndex": 1,
     "ghs": [
@@ -10387,7 +10387,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "13.81",
       "specificHeat": "118",
-      "thermalExpansion": "11 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "11 ⋅ 10⁻⁶",
       "vaporizationHeat": "514.0"
     },
     "atomic": {
@@ -10402,10 +10402,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "6802721.08843537",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "8.4 ⋅ 10<sup><small>-5</small></sup>",
-      "massMagneticSusceptibility": "7.2 ⋅ 10<sup><small>-9</small></sup>",
-      "molarMagneticSusceptibility": "1.7 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "1.47 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "8.4 ⋅ 10⁻⁵",
+      "massMagneticSusceptibility": "7.2 ⋅ 10⁻⁹",
+      "molarMagneticSusceptibility": "1.7 ⋅ 10⁻⁹",
+      "electricalResistivity": "1.47 ⋅ 10⁻⁷",
       "superconductingTemperature": "1.38"
     },
     "grid": {
@@ -10440,12 +10440,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,1,RAD"
     },
     "prevalence": {
-      "universe": "4 ⋅ 10<sup><small>-8</small></sup>",
-      "sun": "3 ⋅ 10<sup><small>-8</small></sup>",
-      "ocean": "4.0 ⋅ 10<sup><small>-12</small></sup>",
-      "humanBody": "1.4268203 ⋅ 10<sup><small>-7</small></sup>",
-      "crust": "9.6 ⋅ 10<sup><small>-4</small></sup>",
-      "meteorites": "3.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "4 ⋅ 10⁻⁸",
+      "sun": "3 ⋅ 10⁻⁸",
+      "ocean": "4.0 ⋅ 10⁻¹²",
+      "humanBody": "1.4268203 ⋅ 10⁻⁷",
+      "crust": "9.6 ⋅ 10⁻⁴",
+      "meteorites": "3.9 ⋅ 10⁻⁶"
     },
     "colorIndex": 1,
     "ghs": [
@@ -10502,7 +10502,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "12.34",
       "specificHeat": "99.1",
-      "thermalExpansion": "11.8 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "11.8 ⋅ 10⁻⁶",
       "vaporizationHeat": "481.0"
     },
     "atomic": {
@@ -10517,10 +10517,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "5649717.51412429",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "4.995 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "3.25 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "7.509 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "1.77 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "4.995 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "3.25 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "7.509 ⋅ 10⁻⁹",
+      "electricalResistivity": "1.77 ⋅ 10⁻⁷",
       "superconductingTemperature": "1.4"
     },
     "grid": {
@@ -10546,9 +10546,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {
-      "universe": "2 ⋅ 10<sup><small>-8</small></sup>",
-      "ocean": "2 ⋅ 10<sup><small>-23</small></sup>",
-      "crust": "1.4 ⋅ 10<sup><small>-10</small></sup>"
+      "universe": "2 ⋅ 10⁻⁸",
+      "ocean": "2 ⋅ 10⁻²³",
+      "crust": "1.4 ⋅ 10⁻¹⁰"
     },
     "colorIndex": 1,
     "ghs": [
@@ -10600,7 +10600,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "9.14",
       "specificHeat": "116",
-      "thermalExpansion": "15.46 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "15.46 ⋅ 10⁻⁶",
       "vaporizationHeat": "417.1"
     },
     "atomic": {
@@ -10615,10 +10615,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "3571428.57142857",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "4.11 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "2.16 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "5.14 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "2.8 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "4.11 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "2.16 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "5.14 ⋅ 10⁻⁹",
+      "electricalResistivity": "2.8 ⋅ 10⁻⁷",
       "superconductingTemperature": "0.69"
     },
     "grid": {
@@ -10654,11 +10654,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,1,RAD"
     },
     "prevalence": {
-      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "ocean": "3.3 ⋅ 10<sup><small>-7</small></sup>",
-      "humanBody": "1.4268203 ⋅ 10<sup><small>-7</small></sup>",
-      "crust": "2.7 ⋅ 10<sup><small>-4</small></sup>",
-      "meteorites": "9.8 ⋅ 10<sup><small>-7</small></sup>"
+      "sun": "1 ⋅ 10⁻⁷",
+      "ocean": "3.3 ⋅ 10⁻⁷",
+      "humanBody": "1.4268203 ⋅ 10⁻⁷",
+      "crust": "2.7 ⋅ 10⁻⁴",
+      "meteorites": "9.8 ⋅ 10⁻⁷"
     },
     "colorIndex": 5,
     "ghs": [
@@ -10742,7 +10742,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "819672.131147541",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "electricalResistivity": "1.22 ⋅ 10<sup><small>-6</small></sup>"
+      "electricalResistivity": "1.22 ⋅ 10⁻⁶"
     },
     "grid": {
       "structureCode": "9",
@@ -10814,7 +10814,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "2.82",
       "specificHeat": "145.5",
-      "thermalExpansion": "49.6 ⋅ 10<sup><small>-6</small></sup>",
+      "thermalExpansion": "49.6 ⋅ 10⁻⁶",
       "vaporizationHeat": "333.5"
     },
     "atomic": {
@@ -10829,16 +10829,16 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "electricalConductivity": "684931.506849315",
       "electricalType": "1",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "6.222 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "3.17 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "7.735 ⋅ 10<sup><small>-9</small></sup>",
-      "electricalResistivity": "1.46 ⋅ 10<sup><small>-6</small></sup>"
+      "volumeMagneticSusceptibility": "6.222 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "3.17 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "7.735 ⋅ 10⁻⁹",
+      "electricalResistivity": "1.46 ⋅ 10⁻⁶"
     },
     "grid": {
       "structureCode": "12",
       "gridParams": "a=6.183 Å; b=4.822 Å; c=10.963 Å; β=101.8°",
       "debyeTemperature": "206",
-      "spaceGroup": "P12<sub><small>1</small></sub>/m1",
+      "spaceGroup": "P12₁/m1",
       "spaceGroupNumber": "11"
     },
     "additional": {
@@ -10911,7 +10911,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "thermo": {
       "fusionHeat": "14.39",
       "specificHeat": "115.2",
-      "thermalExpansion": "7.1 ⋅ 10<sup><small>-6</small></sup>"
+      "thermalExpansion": "7.1 ⋅ 10⁻⁶"
     },
     "atomic": {
       "oxidationState": "-,-,-,-,-,-,-,2,3,4,5,6,7,-,-",
@@ -10924,10 +10924,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "electromagnetic": {
       "electricalConductivity": "1451378.80986938",
       "magneticType": "paramagnetic",
-      "volumeMagneticSusceptibility": "7.04 ⋅ 10<sup><small>-4</small></sup>",
-      "massMagneticSusceptibility": "5.15 ⋅ 10<sup><small>-8</small></sup>",
-      "molarMagneticSusceptibility": "1.251 ⋅ 10<sup><small>-8</small></sup>",
-      "electricalResistivity": "6.89 ⋅ 10<sup><small>-7</small></sup>",
+      "volumeMagneticSusceptibility": "7.04 ⋅ 10⁻⁴",
+      "massMagneticSusceptibility": "5.15 ⋅ 10⁻⁸",
+      "molarMagneticSusceptibility": "1.251 ⋅ 10⁻⁸",
+      "electricalResistivity": "6.89 ⋅ 10⁻⁷",
       "superconductingTemperature": "0.6"
     },
     "grid": {
@@ -10935,7 +10935,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "gridParams": "a=3.468 Å; c=11.24 Å",
       "axialRatio": "3.24",
       "debyeTemperature": "121",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -11015,14 +11015,14 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "electromagnetic": {
       "electricalConductivity": "800000.0",
       "magneticType": "paramagnetic",
-      "electricalResistivity": "1.25 ⋅ 10<sup><small>-6</small></sup>"
+      "electricalResistivity": "1.25 ⋅ 10⁻⁶"
     },
     "grid": {
       "structureCode": "11",
       "gridParams": "a=3.496 Å; c=11.33 Å",
       "axialRatio": "3.24",
       "debyeTemperature": "123",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -11100,7 +11100,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "structureCode": "11",
       "gridParams": "a=3.416 Å; c=11.07 Å",
       "axialRatio": "3.24",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {
@@ -11174,7 +11174,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "structureCode": "11",
       "gridParams": "a=3.38 Å; c=11.03 Å",
       "axialRatio": "3.26",
-      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroup": "P6₃/mmc",
       "spaceGroupNumber": "194"
     },
     "additional": {

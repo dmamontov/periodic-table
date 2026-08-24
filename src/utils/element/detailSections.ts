@@ -326,7 +326,7 @@ function buildGridSections(
 
     if (index === 0) {
       if (g?.spaceGroup) {
-        items.push(prop(s.props.spaceGroup, fmt(g.spaceGroup), true))
+        items.push(prop(s.props.spaceGroup, fmt(g.spaceGroup)))
       }
       if (g?.spaceGroupNumber) {
         items.push(prop(s.props.spaceGroupNumber, fmt(g.spaceGroupNumber)))
@@ -606,9 +606,9 @@ function buildElectromagneticSection(ctx: SectionBuildContext): DetailSection {
       prop(s.props.electroConductivity, fmt(e?.electricalConductivity)),
       prop(s.props.electricType, fmt(e?.electricalType)),
       prop(s.props.magneticType, magneticLabel(e?.magneticType, messages)),
-      prop(s.props.volumeMagneticSusceptibility, fmt(e?.volumeMagneticSusceptibility), true),
-      prop(s.props.massMagneticSusceptibility, fmt(e?.massMagneticSusceptibility), true),
-      prop(s.props.molarMagneticSusceptibility, fmt(e?.molarMagneticSusceptibility), true),
+      prop(s.props.volumeMagneticSusceptibility, fmt(e?.volumeMagneticSusceptibility)),
+      prop(s.props.massMagneticSusceptibility, fmt(e?.massMagneticSusceptibility)),
+      prop(s.props.molarMagneticSusceptibility, fmt(e?.molarMagneticSusceptibility)),
       prop(s.props.resistivity, fmt(e?.electricalResistivity)),
       prop(s.props.superconductivityTemp, fmt(e?.superconductingTemperature)),
     ],
