@@ -495,7 +495,6 @@ export const myElements: Record<string, ElementCollection> = {
     },
     spectrum: {
       id: 'po-84-staticmaster',
-      backgroundSpectrumId: 'bg-natural',
       filename: { ru: 'Po-210 (Staticmaster).xml', en: 'Po-210 (Staticmaster).xml', zh: 'Po-210 (Staticmaster).xml' },
       leadShielded: true,
       annotations: [
@@ -523,7 +522,6 @@ export const myElements: Record<string, ElementCollection> = {
     },
     spectrum: {
       id: 'rn-86-spd',
-      backgroundSpectrumId: 'bg-natural',
       filename: { ru: 'Rn-222 (СПД).xml', en: 'Rn-222 (SPD).xml', zh: 'Rn-222 (SPD).xml' },
       leadShielded: true,
       annotations: [
@@ -548,7 +546,6 @@ export const myElements: Record<string, ElementCollection> = {
     },
     spectrum: {
       id: 'ra-88-spd',
-      backgroundSpectrumId: 'bg-natural',
       filename: { ru: 'Ra-226 (СПД).xml', en: 'Ra-226 (SPD).xml', zh: 'Ra-226 (SPD).xml' },
       leadShielded: true,
       annotations: [
@@ -580,7 +577,6 @@ export const myElements: Record<string, ElementCollection> = {
         },
         spectrum: {
           id: 'th-90-pendant',
-          backgroundSpectrumId: 'bg-natural',
           filename: { ru: 'Th-232 (Медальон).xml', en: 'Th-232 (Pendant).xml', zh: 'Th-232 (吊坠).xml' },
           leadShielded: true,
           annotations: [
@@ -600,7 +596,6 @@ export const myElements: Record<string, ElementCollection> = {
     },
     spectrum: {
       id: 'th-90-wt20',
-      backgroundSpectrumId: 'bg-natural',
       filename: { ru: 'Th-232 (WT-20).xml', en: 'Th-232 (WT-20).xml', zh: 'Th-232 (WT-20).xml' },
       leadShielded: true,
       annotations: [
@@ -624,7 +619,6 @@ export const myElements: Record<string, ElementCollection> = {
     },
     spectrum: {
       id: 'u-92-glass',
-      backgroundSpectrumId: 'bg-natural',
       filename: { ru: 'U-238 (Бисер из ураносодержащего стекла).xml', en: 'U-238 (Uranium glass beads).xml', zh: 'U-238（含铀玻璃珠）.xml' },
       leadShielded: true,
       annotations: [
@@ -649,7 +643,6 @@ export const myElements: Record<string, ElementCollection> = {
     },
     spectrum: {
       id: 'np-93-his07',
-      backgroundSpectrumId: 'bg-natural',
       filename: { ru: 'Np-237 (HIS-07).xml', en: 'Np-237 (HIS-07).xml', zh: 'Np-237 (HIS-07).xml' },
       leadShielded: true,
       annotations: [
@@ -670,7 +663,6 @@ export const myElements: Record<string, ElementCollection> = {
     },
     spectrum: {
       id: 'pu-94-rid6m',
-      backgroundSpectrumId: 'bg-natural',
       filename: { ru: 'Pu-239 (РИД-6М).xml', en: 'Pu-239 (RID-6M).xml', zh: 'Pu-239 (RID-6M).xml' },
       leadShielded: true,
       annotations: [
@@ -691,7 +683,6 @@ export const myElements: Record<string, ElementCollection> = {
     },
     spectrum: {
       id: 'am-95-his07',
-      backgroundSpectrumId: 'bg-natural',
       filename: { ru: 'Am-241 (HIS-07).xml', en: 'Am-241 (HIS-07).xml', zh: 'Am-241 (HIS-07).xml' },
       leadShielded: true,
       annotations: [
