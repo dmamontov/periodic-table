@@ -48,7 +48,14 @@ export const myElements: Record<string, ElementCollection> = {
     physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '9999', acquiredDate: '2021-07-31' },
   },
   Li: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.06', acquiredDate: '2022-02-14' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.06', acquiredDate: '2026-08-24' },
+    history: [
+      {
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.06', acquiredDate: '2022-02-14' },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   Be: {
     physical: { sampleState: 'cubicIngot', purity: '999', weight: '~1.85', acquiredDate: '2024-08-26' },
@@ -381,16 +388,44 @@ export const myElements: Record<string, ElementCollection> = {
     physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.1', acquiredDate: '2024-08-26' },
   },
   La: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-05-21' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-08-24' },
+    history: [
+      {
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-05-21' },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   Ce: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-05-21' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-08-24' },
+    history: [
+      {
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-05-21' },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   Pr: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-05-21' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-08-24' },
+    history: [
+      {
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-05-21' },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   Nd: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-06-05' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-08-24' },
+    history: [
+      {
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-06-05' },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
   },
   Sm: {
     physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~7.52', acquiredDate: '2022-01-09' },
