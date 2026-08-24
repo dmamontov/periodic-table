@@ -599,7 +599,7 @@ export const myElements: Record<string, ElementCollection> = {
       filename: { ru: 'Th-232 (WT-20).xml', en: 'Th-232 (WT-20).xml', zh: 'Th-232 (WT-20).xml' },
       leadShielded: true,
       annotations: [
-        { energy: 64, label: 'Th-232' },
+        { energy: 64, label: 'W Kα/Kβ' },
         { energy: 232.2, label: 'Pb-212' },
         { energy: 327.6, label: 'Ac-228' },
         { energy: 568, label: 'Tl-208' },
