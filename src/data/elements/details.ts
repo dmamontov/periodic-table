@@ -7,7 +7,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Hydrogen",
       "discoveryYear": "1766",
       "casNumber": "CAS1333-74-0",
-      "discoverer": "0",
+      "discoverer": { "ru": "Генри Кавендиш", "en": "Henry Cavendish", "zh": "Henry Cavendish" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K1-L0-M0-N0-O0-P0-Q0-R0",
@@ -18,6 +18,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "1s1"
     },
+    "description": { "ru": "Самый лёгкий элемент; бесцветный газ, основа звёзд и воды, самое распространённое вещество во Вселенной.", "en": "The lightest element; a colorless gas and the most abundant substance in the universe, essential for stars and water.", "zh": "最轻的元素；无色气体，宇宙中最丰富的物质，恒星和水的基础。" },
+    "applications": { "ru": "Ракетное топливо, аммиак, нефтепереработка, водородные топливные элементы", "en": "Rocket fuel, ammonia, oil refining, hydrogen fuel cells", "zh": "火箭燃料、氨、炼油、氢燃料电池" },
     "properties": {
       "atomicMass": "1.00797094202593",
       "density": "0.00008988",
@@ -103,7 +105,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "cn" },
       { "country": "us" },
       { "country": "ru" }
-    ]
+    ],
+    "productionNote": { "ru": "Не добывается как руда — производится промышленно (в основном паровым риформингом метана); Китай, США и Россия — крупнейшие производители и потребители водорода.", "en": "Not mined as an ore — produced industrially (mostly via steam methane reforming); China, the US and Russia are the largest hydrogen producers and consumers.", "zh": "不以矿石形式开采——通过工业方法生产（主要为甲烷蒸汽重整）；中国、美国和俄罗斯是最大的氢气生产国和消费国。" }
   },
   "He": {
     "overview": {
@@ -111,7 +114,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Helium",
       "discoveryYear": "1868",
       "casNumber": "CAS7440-59-7",
-      "discoverer": "1/2",
+      "discoverer": { "ru": "Пьер Жюль Сезар Жансен, Джозеф Норман Локьер", "en": "Pierre Jules César Janssen, Joseph Norman Lockyer", "zh": "Pierre Jules César Janssen, Joseph Norman Lockyer" },
       "discoveryCountry": "FR, GB",
       "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L0-M0-N0-O0-P0-Q0-R0",
@@ -122,6 +125,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "1s2"
     },
+    "description": { "ru": "Благородный газ, второй по лёгкости элемент; химически инертен, образуется в звёздах.", "en": "A noble gas, second lightest element; chemically inert and formed mainly in stellar nucleosynthesis.", "zh": "稀有气体，第二轻的元素；化学惰性，主要在恒星中形成。" },
+    "applications": { "ru": "Дыхательные смеси для дайвинга, охлаждение МРТ, инертная сварка, воздушные шары", "en": "Diving gas mixes, MRI cooling, inert welding, balloons", "zh": "潜水呼吸气、核磁共振冷却、惰性焊接、气球" },
     "properties": {
       "atomicMass": "4.00260128098301",
       "density": "0.0001785",
@@ -203,7 +208,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "dz" },
       { "country": "ru" },
       { "country": "ca" }
-    ]
+    ],
+    "productionNote": { "ru": "США и Катар вместе обеспечивают основную часть мировой добычи гелия (извлекается из природного газа), Алжир, Россия и Канада — гораздо меньший второй эшелон.", "en": "The US and Qatar together dominate world helium production (extracted from natural gas fields), with Algeria, Russia and Canada forming a much smaller second tier.", "zh": "美国和卡塔尔合计占世界氦气产量的大部分（从天然气中提取），阿尔及利亚、俄罗斯和加拿大构成规模小得多的第二梯队。" }
   },
   "Li": {
     "overview": {
@@ -211,7 +217,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Lithium",
       "discoveryYear": "1817",
       "casNumber": "CAS7439-93-2",
-      "discoverer": "3",
+      "discoverer": { "ru": "Иоганн Арфведсон", "en": "Johan August Arfwedson", "zh": "Johan August Arfwedson" },
       "discoveryCountry": "SE",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L1-M0-N0-O0-P0-Q0-R0",
@@ -222,6 +228,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "1s2 2s1"
     },
+    "description": { "ru": "Самый лёгкий металл; мягкий, серебристый и очень активный, хранят под маслом или в инертной среде.", "en": "The lightest metal; soft, silvery, and highly reactive, stored under oil or inert atmosphere.", "zh": "最轻的金属；柔软银白色，高度活泼，需保存在油或惰性气氛中。" },
+    "applications": { "ru": "Литий-ионные аккумуляторы, авиационные сплавы, керамика, психиатрические препараты", "en": "Lithium-ion batteries, aerospace alloys, ceramics, psychiatric drugs", "zh": "锂离子电池、航空合金、陶瓷、精神科药物" },
     "properties": {
       "atomicMass": "6.941765353712",
       "density": "0.534",
@@ -320,7 +328,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "ar", "share": "7.5" },
       { "country": "us", "share": "0.4" },
       { "country": "pt", "share": "0.16" }
-    ]
+    ],
+    "productionNote": { "ru": "Австралия, Чили и Китай вместе дают более 85% мировой добычи лития; Аргентина — быстрорастущий производитель из рассолов.", "en": "Australia, Chile and China together account for over 85% of world lithium mine output, with Argentina a fast-growing brine producer.", "zh": "澳大利亚、智利和中国合计占世界锂矿产量的85%以上，阿根廷是快速增长的盐湖卤水生产国。" }
   },
   "Be": {
     "overview": {
@@ -328,7 +337,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Beryllium",
       "discoveryYear": "1798",
       "casNumber": "CAS7440-41-7",
-      "discoverer": "4",
+      "discoverer": { "ru": "Луи Никола Воклен", "en": "Louis-Nicolas Vauquelin", "zh": "Louis-Nicolas Vauquelin" },
       "discoveryCountry": "FR",
       "sampleColor": { "hex": "#B5B5A8" },
       "electronShellConfig": "K2-L2-M0-N0-O0-P0-Q0-R0",
@@ -339,6 +348,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "1s2 2s2"
     },
+    "description": { "ru": "Лёгкий щелочноземельный металл; токсичен в виде пыли, ценится за жёсткость и теплопроводность в сплавах.", "en": "A lightweight alkaline-earth metal; toxic as powder but valued for stiffness and heat conductivity in alloys.", "zh": "轻质碱土金属；粉末有毒，但在合金中以高刚度和导热性著称。" },
+    "applications": { "ru": "Аэрокосмические сплавы, рентгеновские окна, ядерная физика", "en": "Aerospace alloys, X-ray windows, nuclear physics", "zh": "航空合金、X射线窗口、核物理" },
     "properties": {
       "atomicMass": "9.01218306156802",
       "density": "1.85",
@@ -431,7 +442,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "br" },
       { "country": "cn" },
       { "country": "kz" }
-    ]
+    ],
+    "productionNote": { "ru": "США — крупнейший добытчик бериллия (около двух третей мировой добычи), Китай — на втором месте.", "en": "The United States is the leading producer of mined beryllium (about two-thirds of world output), with China second.", "zh": "美国是铍矿开采的主要生产国（约占世界产量的三分之二），中国居第二位。" }
   },
   "B": {
     "overview": {
@@ -439,7 +451,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Boron",
       "discoveryYear": "1808",
       "casNumber": "CAS7440-42-8",
-      "discoverer": "5/6/7",
+      "discoverer": { "ru": "Жозеф Луи Гей-Люссак, Луи Жак Тенар, Гемфри Дэви", "en": "Joseph Louis Gay-Lussac, Louis Jacques Thénard, Humphry Davy", "zh": "Joseph Louis Gay-Lussac, Louis Jacques Thénard, Humphry Davy" },
       "discoveryCountry": "FR, GB",
       "sampleColor": { "hex": "#1A1A1A", "finish": "matte" },
       "electronShellConfig": "K2-L3-M0-N0-O0-P0-Q0-R0",
@@ -450,6 +462,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "1s2 2s2 2p1"
     },
+    "description": { "ru": "Металлоид; твёрдый и хрупкий, основа борной химии и жаростойких материалов.", "en": "A metalloid; hard and brittle, essential to boron chemistry and high-temperature materials.", "zh": "类金属；硬而脆，硼化学和耐高温材料的基础。" },
+    "applications": { "ru": "Боросиликатное стекло, стекловолокно, керамика, полупроводники", "en": "Borosilicate glass, fiberglass, ceramics, semiconductors", "zh": "硼硅玻璃、玻璃纤维、陶瓷、半导体" },
     "properties": {
       "atomicMass": "10.8135187949825",
       "density": "2.34",
@@ -539,7 +553,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "cl" },
       { "country": "ar" },
       { "country": "us" }
-    ]
+    ],
+    "productionNote": { "ru": "Турция — крупнейший в мире производитель бора (боратов); США (Калифорния) — единственный другой значимый производитель.", "en": "Turkey is the world's leading boron producer; the United States (California) is the only other major producer.", "zh": "土耳其是世界领先的硼生产国；美国（加利福尼亚州）是唯一另一个主要生产国。" }
   },
   "C": {
     "overview": {
@@ -547,7 +562,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Carbon",
       "discoveryYear": "3750 BC",
       "casNumber": "CAS7440-44-0",
-      "discoverer": "77",
+      "discoverer": { "ru": "Антуан Лоран Лавуазье", "en": "Antoine Laurent de Lavoisier", "zh": "Antoine Laurent de Lavoisier" },
       "discoveryCountry": "Middle",
       "sampleColor": { "hex": "#1A1A1A", "finish": "matte" },
       "electronShellConfig": "K2-L4-M0-N0-O0-P0-Q0-R0",
@@ -558,6 +573,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "1s2 2s2 2p2"
     },
+    "description": { "ru": "Неметалл — основа органической жизни; существует как графит, алмаз и аморфный углерод.", "en": "A nonmetal forming the basis of organic life; exists as graphite, diamond, and amorphous carbon.", "zh": "非金属，有机生命的基础；以石墨、金刚石和无定形碳存在。" },
+    "applications": { "ru": "Сталь, графит, углеродные волокна, алмазы, органическая химия", "en": "Steel, graphite, carbon fiber, diamonds, organic chemistry", "zh": "钢铁、石墨、碳纤维、金刚石、有机化学" },
     "properties": {
       "atomicMass": "12.0106355612542",
       "density": "2.267",
@@ -645,7 +662,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "mg", "share": "5.5" },
       { "country": "mz", "share": "4.6" },
       { "country": "br" }
-    ]
+    ],
+    "productionNote": { "ru": "Как природный графит: Китай обеспечивает около трёх четвертей мировой добычи, Мадагаскар и Мозамбик — следующие по величине производители, Бразилия — крупный держатель запасов.", "en": "As natural graphite: China accounts for about three-quarters of world mine output, with Madagascar and Mozambique the next-largest producers and Brazil a major reserve holder.", "zh": "以天然石墨计：中国占世界矿产量的约四分之三，马达加斯加和莫桑比克是次于中国的主要生产国，巴西是重要的储量持有国。" }
   },
   "N": {
     "overview": {
@@ -653,7 +671,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Nitrogen",
       "discoveryYear": "1772",
       "casNumber": "CAS7727-37-9",
-      "discoverer": "8",
+      "discoverer": { "ru": "Даниель Резерфорд", "en": "Daniel Rutherford", "zh": "Daniel Rutherford" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L5-M0-N0-O0-P0-Q0-R0",
@@ -664,6 +682,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "1s2 2s2 2p3"
     },
+    "description": { "ru": "Двухатомный газ, составляющий большую часть атмосферы; ключевой элемент белков и промышленности.", "en": "A diatomic gas making up most of Earth's atmosphere; key to proteins, nucleic acids, and industry.", "zh": "双原子气体，占地球大气的大部分；蛋白质、核酸和工业的关键元素。" },
+    "applications": { "ru": "Удобрения, взрывчатые вещества, азотная кислота, пищевая упаковка", "en": "Fertilizers, explosives, nitric acid, food packaging", "zh": "肥料、炸药、硝酸、食品包装" },
     "properties": {
       "atomicMass": "14.0068577516411",
       "density": "0.001251",
@@ -747,7 +767,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "ru" },
       { "country": "in" },
       { "country": "us" }
-    ]
+    ],
+    "productionNote": { "ru": "Не добывается как руда — выделяется из воздуха; как фиксированный азот (аммиак) крупнейшие производители — Китай, Россия, Индия и США.", "en": "Not mined as an ore — separated from air; as fixed nitrogen (ammonia), China, Russia, India and the US are the largest producers.", "zh": "不以矿石形式开采——从空气中分离；作为固定氮（氨），中国、俄罗斯、印度和美国是最大的生产国。" }
   },
   "O": {
     "overview": {
@@ -755,7 +776,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Oxygen",
       "discoveryYear": "1771",
       "casNumber": "CAS7782-44-7",
-      "discoverer": "9/10",
+      "discoverer": { "ru": "Джозеф Пристли, Карл Вильгельм Шееле", "en": "Joseph Priestley, Carl Wilhelm Scheele", "zh": "Joseph Priestley, Carl Wilhelm Scheele" },
       "discoveryCountry": "SE, GB",
       "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L6-M0-N0-O0-P0-Q0-R0",
@@ -766,6 +787,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "1s2 2s2 2p4"
     },
+    "description": { "ru": "Активный неметалл-газ; необходим для дыхания и горения, около пятой части воздуха.", "en": "A reactive nonmetal gas; vital for respiration, combustion, and about one fifth of the air.", "zh": "活泼的非金属气体；呼吸和燃烧必需，约占空气的五分之一。" },
+    "applications": { "ru": "Металлургия, медицинский кислород, ракетные окислители, очистка воды", "en": "Steelmaking, medical oxygen, rocket oxidizers, water treatment", "zh": "炼钢、医用氧、火箭氧化剂、水处理" },
     "properties": {
       "atomicMass": "15.9994049240801",
       "density": "0.001429",
@@ -854,7 +877,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "us" },
       { "country": "cn" },
       { "country": "ru" }
-    ]
+    ],
+    "productionNote": { "ru": "Не добывается как руда — выделяется из воздуха; США, Китай и Россия производят больше всего промышленного кислорода (вместе — около 44% мирового объёма).", "en": "Not mined as an ore — separated from air; the US, China and Russia produce the most industrial oxygen (together about 44% of world volume).", "zh": "不以矿石形式开采——从空气中分离；美国、中国和俄罗斯生产的工业氧气最多（合计约占世界总量的44%）。" }
   },
   "F": {
     "overview": {
@@ -862,7 +886,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Fluorine",
       "discoveryYear": "1886",
       "casNumber": "CAS7782-41-4",
-      "discoverer": "11",
+      "discoverer": { "ru": "Анри Муассан", "en": "Ferdinand Frederic Henri Moissan", "zh": "Ferdinand Frederic Henri Moissan" },
       "discoveryCountry": "FR",
       "sampleColor": { "hex": "#F5F0D8", "finish": "subtle" },
       "electronShellConfig": "K2-L7-M0-N0-O0-P0-Q0-R0",
@@ -873,6 +897,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "1s2 2s2 2p5"
     },
+    "description": { "ru": "Самый электроотрицательный элемент; бледно-жёлтый газ, агрессивно реагирует и разъедает.", "en": "The most electronegative element; pale yellow gas, aggressively reactive and corrosive.", "zh": "电负性最强的元素；淡黄色气体，反应性极强且具有腐蚀性。" },
+    "applications": { "ru": "Фторполимеры (тефлон), фторирование воды, хладагенты, фармацевтика", "en": "Fluoropolymers (Teflon), water fluoridation, refrigerants, pharmaceuticals", "zh": "氟聚合物（特氟龙）、饮水加氟、制冷剂、医药" },
     "properties": {
       "atomicMass": "18.9984031620854",
       "density": "0.001696",
@@ -951,7 +977,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "vn", "share": "2" },
       { "country": "mn", "share": "2" },
       { "country": "za", "share": "2" }
-    ]
+    ],
+    "productionNote": { "ru": "Как плавиковый шпат (флюорит): Китай доминирует в мировой добыче, за ним следуют Мексика, Монголия и ЮАР.", "en": "As fluorspar (fluorite) ore: China dominates world mine output, followed by Mexico, Mongolia and South Africa.", "zh": "以萤石矿计：中国主导世界矿产量，其次是墨西哥、蒙古和南非。" }
   },
   "Ne": {
     "overview": {
@@ -959,7 +986,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Neon",
       "discoveryYear": "1898",
       "casNumber": "CAS7440-01-9",
-      "discoverer": "12/13",
+      "discoverer": { "ru": "Уильям Рамзай, Траверс, Морис Уильям", "en": "Sir William Ramsay, Morris William Travers", "zh": "Sir William Ramsay, Morris William Travers" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L8-M0-N0-O0-P0-Q0-R0",
@@ -970,6 +997,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "1s2 2s2 2p6"
     },
+    "description": { "ru": "Благородный газ; бесцветный, без запаха и химически инертный в обычных условиях.", "en": "A noble gas; colorless, odorless, and chemically inert under normal conditions.", "zh": "稀有气体；无色无味，在通常条件下化学惰性。" },
+    "applications": { "ru": "Рекламная неоновая подсветка, лазеры, криогеника", "en": "Neon signage, lasers, cryogenics", "zh": "霓虹灯、激光、低温技术" },
     "properties": {
       "atomicMass": "20.1800463795723",
       "density": "0.000900",
@@ -1055,7 +1084,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "ru" },
       { "country": "us" },
       { "country": "ua" }
-    ]
+    ],
+    "productionNote": { "ru": "Исторически Украина обеспечивала до 70% мирового неона (побочный продукт крупных установок разделения воздуха), но с 2022 года её производство сильно нарушено войной — часть спроса перешла к Китаю, России и США.", "en": "Ukraine historically supplied up to 70% of the world's neon (a byproduct of large air-separation plants), but its output has been severely disrupted by the war since 2022, shifting more supply to China, Russia and the US.", "zh": "乌克兰历史上曾供应全球高达70%的氖气（大型空气分离装置的副产品），但自2022年以来其产量因战争受到严重影响，更多供应转向中国、俄罗斯和美国。" }
   },
   "Na": {
     "overview": {
@@ -1063,7 +1093,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Sodium",
       "discoveryYear": "1807",
       "casNumber": "CAS7440-23-5",
-      "discoverer": "7",
+      "discoverer": { "ru": "Гемфри Дэви", "en": "Humphry Davy", "zh": "Humphry Davy" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M1-N0-O0-P0-Q0-R0",
@@ -1074,6 +1104,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ne] 3s1 = 1s2 2s2 2p6 3s1"
     },
+    "description": { "ru": "Мягкий серебристый щелочной металл; бурно реагирует с водой, распространён в солях и море.", "en": "A soft, silvery alkali metal; highly reactive with water and abundant in salts and seawater.", "zh": "柔软银白色碱金属；与水剧烈反应，广泛存在于盐和海水中。" },
+    "applications": { "ru": "Поваренная соль, мыло и синтетические моющие, сода для стекольной промышленности, уличное освещение", "en": "Table salt, soap and detergents, soda ash for glassmaking, street lighting", "zh": "食盐、肥皂和洗涤剂、玻璃工业用纯碱、路灯" },
     "properties": {
       "atomicMass": "22.9897692819791",
       "density": "0.968",
@@ -1167,7 +1199,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "de", "share": "6" },
       { "country": "au", "share": "5" },
       { "country": "ca", "share": "4" }
-    ]
+    ],
+    "productionNote": { "ru": "Металлический натрий не добывается напрямую, но добывается/выпаривается поваренная соль (NaCl) — сырьё для его промышленного производства; крупнейшие страны-добытчики соли.", "en": "Sodium metal itself isn't mined, but common salt (sodium chloride) — the feedstock for its industrial production — is mined/evaporated worldwide; top salt-producing countries shown.", "zh": "金属钠本身不进行开采，但作为其工业生产原料的食盐（氯化钠）在世界各地开采/蒸发提取；图中显示主要产盐国。" }
   },
   "Mg": {
     "overview": {
@@ -1175,7 +1208,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Magnesium",
       "discoveryYear": "1755",
       "casNumber": "CAS7439-95-4",
-      "discoverer": "69/7",
+      "discoverer": { "ru": "Джозеф Блэк, Гемфри Дэви", "en": "Joseph Black, Humphry Davy", "zh": "Joseph Black, Humphry Davy" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#B0B0B0" },
       "electronShellConfig": "K2-L8-M2-N0-O0-P0-Q0-R0",
@@ -1186,6 +1219,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ne] 3s2 = 1s2 2s2 2p6 3s2"
     },
+    "description": { "ru": "Лёгкий щелочноземельный металл; серебристый, горит ослепительно белым пламенем, входит в хлорофилл.", "en": "A lightweight alkaline-earth metal; silvery, burns with a bright white flame, central to chlorophyll.", "zh": "轻质碱土金属；银白色，燃烧时发出耀眼白光，叶绿素的核心成分。" },
+    "applications": { "ru": "Легкие магниевые сплавы, фейерверки, металлургия титана, фармацевтические препараты", "en": "Light alloys, fireworks, titanium metallurgy, pharmaceuticals", "zh": "轻质合金、烟花、钛冶金、医药" },
     "properties": {
       "atomicMass": "24.3050516136388",
       "density": "1.738",
@@ -1284,7 +1319,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "ru", "share": "1.5" },
       { "country": "tr", "share": "1.5" },
       { "country": "ir", "share": "0.5" }
-    ]
+    ],
+    "productionNote": { "ru": "Китай обеспечивает около 85-90% мирового производства металлического магния.", "en": "China dominates world magnesium metal production (roughly 85-90% of output).", "zh": "中国主导世界金属镁产量（约占产量的85%-90%）。" }
   },
   "Al": {
     "overview": {
@@ -1292,7 +1328,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Aluminum",
       "discoveryYear": "1825",
       "casNumber": "CAS7429-90-5",
-      "discoverer": "15",
+      "discoverer": { "ru": "Ханс Кристиан Эрстед", "en": "Hans Christian Ørsted", "zh": "Hans Christian Ørsted" },
       "discoveryCountry": "DK",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M3-N0-O0-P0-Q0-R0",
@@ -1303,6 +1339,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ne] 3s2 3p1 = 1s2 2s2 2p6 3s2 3p1"
     },
+    "description": { "ru": "Мягкий серебристый металл; лёгкий, коррозионностойкий, самый распространённый металл в земной коре.", "en": "A soft, silvery post-transition metal; lightweight, corrosion-resistant, and the most abundant metal in Earth's crust.", "zh": "柔软银白色金属；质轻、耐腐蚀，是地壳中含量最丰富的金属。" },
+    "applications": { "ru": "Упаковка, строительство, авиация и авто, электропроводка", "en": "Packaging, construction, transport, electrical wiring", "zh": "包装、建筑、交通运输、电线电缆" },
     "properties": {
       "atomicMass": "26.9815384123685",
       "density": "2.7",
@@ -1401,7 +1439,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "vn", "share": "0.9" },
       { "country": "tr", "share": "0.9" },
       { "country": "gr", "share": "0.2" }
-    ]
+    ],
+    "productionNote": { "ru": "Как боксит (алюминиевая руда): Австралия, Гвинея, Китай, Бразилия и Индия — крупнейшие страны-добытчики.", "en": "As bauxite (aluminium ore): Australia, Guinea, China, Brazil and India are the top mining countries.", "zh": "以铝土矿（铝矿石）计：澳大利亚、几内亚、中国、巴西和印度是主要开采国。" }
   },
   "Si": {
     "overview": {
@@ -1409,7 +1448,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Silicon",
       "discoveryYear": "1824",
       "casNumber": "CAS7440-21-3",
-      "discoverer": "16",
+      "discoverer": { "ru": "Йёнс Якоб Берцелиус", "en": "Jöns Jakob Berzelius", "zh": "Jöns Jakob Berzelius" },
       "discoveryCountry": "SE",
       "sampleColor": { "hex": "#808080" },
       "electronShellConfig": "K2-L8-M4-N0-O0-P0-Q0-R0",
@@ -1420,6 +1459,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ne] 3s2 3p2 = 1s2 2s2 2p6 3s2 3p2"
     },
+    "description": { "ru": "Металлоид; твёрдый, хрупкий, основа полупроводников, стекла и силикатных минералов.", "en": "A metalloid; hard, brittle, and the foundation of semiconductors, glass, and silicate minerals.", "zh": "类金属；硬而脆，半导体、玻璃和硅酸盐矿物的基础。" },
+    "applications": { "ru": "Микроэлектроника, солнечные панели, стекло, кремний для сплавов", "en": "Microelectronics, solar panels, glass, alloying element", "zh": "微电子、太阳能板、玻璃、合金添加剂" },
     "properties": {
       "atomicMass": "28.0849993456101",
       "density": "2.3296",
@@ -1512,7 +1553,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "no", "share": "2.6" },
       { "country": "fr", "share": "2" },
       { "country": "ru", "share": "1.1" }
-    ]
+    ],
+    "productionNote": { "ru": "Китай обеспечивает около 80% мирового производства кремния; Бразилия, Норвегия и Россия — гораздо менее крупные производители.", "en": "China accounts for about 80% of world silicon metal production; Brazil, Norway and Russia are distant secondary producers.", "zh": "中国占世界硅金属产量的约80%；巴西、挪威和俄罗斯是规模较小的次要生产国。" }
   },
   "P": {
     "overview": {
@@ -1520,7 +1562,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Phosphorus",
       "discoveryYear": "1669",
       "casNumber": "CAS7723-14-0",
-      "discoverer": "17",
+      "discoverer": { "ru": "Хенниг Бранд", "en": "Hennig Brand", "zh": "Hennig Brand" },
       "discoveryCountry": "DE",
       "sampleColor": { "hex": "#8C2A2A", "finish": "glossy" },
       "electronShellConfig": "K2-L8-M5-N0-O0-P0-Q0-R0",
@@ -1531,6 +1573,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ne] 3s2 3p3 = 1s2 2s2 2p6 3s2 3p3"
     },
+    "description": { "ru": "Активный неметалл; существует в белой, красной и чёрной модификациях, входит в ДНК и АТФ.", "en": "A reactive nonmetal; exists in white, red, and black allotropes, essential to DNA and ATP.", "zh": "活泼非金属；有白、红、黑等同素异形体，DNA和ATP的组成元素。" },
+    "applications": { "ru": "Удобрения, детергенты, спички, пищевые добавки", "en": "Fertilizers, detergents, matches, food additives", "zh": "肥料、洗涤剂、火柴、食品添加剂" },
     "properties": {
       "atomicMass": "30.9737619977018",
       "density": "1.823",
@@ -1616,7 +1660,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "ru", "share": "6" },
       { "country": "jo", "share": "5" },
       { "country": "eg", "share": "2" }
-    ]
+    ],
+    "productionNote": { "ru": "Как фосфоритная руда: Китай, Марокко, США и Россия — крупнейшие страны-добытчики.", "en": "As phosphate rock: China, Morocco, the United States and Russia are the leading mining countries.", "zh": "以磷矿石计：中国、摩洛哥、美国和俄罗斯是主要开采国。" }
   },
   "S": {
     "overview": {
@@ -1634,6 +1679,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ne] 3s2 3p4 = 1s2 2s2 2p6 3s2 3p4"
     },
+    "description": { "ru": "Жёлтый неметалл; известен запахом соединений, встречается у вулканов и в сульфидных рудах.", "en": "A yellow nonmetal; known for its smell in compounds, found near volcanoes and in sulfide ores.", "zh": "黄色非金属；化合物常有特征气味，见于火山附近和硫化物矿石中。" },
+    "applications": { "ru": "Серная кислота, вулканизация резины, порох, фунгициды", "en": "Sulfuric acid, rubber vulcanization, gunpowder, fungicides", "zh": "硫酸、橡胶硫化、火药、杀菌剂" },
     "properties": {
       "atomicMass": "32.0647874056212",
       "density": "2.07",
@@ -1730,7 +1777,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "us", "share": "8" },
       { "country": "sa" },
       { "country": "ru" }
-    ]
+    ],
+    "productionNote": { "ru": "В основном извлекается как побочный продукт переработки нефти и газа; Китай, США, Россия и Саудовская Аравия — крупнейшие производители.", "en": "Mostly recovered as a byproduct of oil and gas refining; China, the US, Russia and Saudi Arabia are the leading producers.", "zh": "主要作为石油和天然气精炼的副产品回收；中国、美国、俄罗斯和沙特阿拉伯是主要生产国。" }
   },
   "Cl": {
     "overview": {
@@ -1738,7 +1786,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Chlorine",
       "discoveryYear": "1774",
       "casNumber": "CAS7782-50-5",
-      "discoverer": "10",
+      "discoverer": { "ru": "Карл Вильгельм Шееле", "en": "Carl Wilhelm Scheele", "zh": "Carl Wilhelm Scheele" },
       "discoveryCountry": "SE",
       "sampleColor": { "hex": "#E8E2B0", "finish": "subtle" },
       "electronShellConfig": "K2-L8-M7-N0-O0-P0-Q0-R0",
@@ -1749,6 +1797,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ne] 3s2 3p5 = 1s2 2s2 2p6 3s2 3p5"
     },
+    "description": { "ru": "Жёлто-зелёный газ-галоген; сильный окислитель и дезинфектант, очень реакционноспособен.", "en": "A yellow-green halogen gas; strong oxidizer and disinfectant, extremely reactive.", "zh": "黄绿色卤素气体；强氧化剂和消毒剂，反应性极强。" },
+    "applications": { "ru": "ПВХ, отбеливатели, дезинфекция воды, растворители", "en": "PVC, bleaches, water disinfection, solvents", "zh": "PVC、漂白剂、水消毒、溶剂" },
     "properties": {
       "atomicMass": "35.4521387667802",
       "density": "0.00321",
@@ -1839,7 +1889,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "us" },
       { "country": "de" },
       { "country": "jp" }
-    ]
+    ],
+    "productionNote": { "ru": "Не добывается как руда — производится электролизом рассола (хлорно-щелочной процесс); Китай, США, Германия и Япония вместе дают около 85% мирового производства хлора.", "en": "Not mined as an ore — produced via electrolysis of salt brine (the chlor-alkali process); China, the US, Germany and Japan together account for about 85% of world chlorine output.", "zh": "不以矿石形式开采——通过盐水电解（氯碱工艺）生产；中国、美国、德国和日本合计占世界氯气产量的约85%。" }
   },
   "Ar": {
     "overview": {
@@ -1847,7 +1898,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Argon",
       "discoveryYear": "1894",
       "casNumber": "CAS7440-37-1",
-      "discoverer": "82/12",
+      "discoverer": { "ru": "Лорд Рэлей, Уильям Рамзай", "en": "Lord Rayleigh, Sir William Ramsay", "zh": "Lord Rayleigh, Sir William Ramsay" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L8-M8-N0-O0-P0-Q0-R0",
@@ -1858,6 +1909,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ne] 3s2 3p6 = 1s2 2s2 2p6 3s2 3p6"
     },
+    "description": { "ru": "Благородный газ; бесцветный, инертный, составляет около 1% атмосферы.", "en": "A noble gas; colorless, inert, and makes up about 1% of the atmosphere.", "zh": "稀有气体；无色惰性，约占大气的1%。" },
+    "applications": { "ru": "Инертная сварочная среда, лампы, виноделие", "en": "Inert welding gas, lighting, winemaking", "zh": "惰性焊接气、照明、酿酒" },
     "properties": {
       "atomicMass": "39.9477985618953",
       "density": "0.001784",
@@ -1943,7 +1996,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "be" },
       { "country": "nl" },
       { "country": "ca" }
-    ]
+    ],
+    "productionNote": { "ru": "Не добывается как руда — выделяется из воздуха как побочный продукт производства кислорода/азота; Германия, Китай, Бельгия, Нидерланды и Канада — крупнейшие экспортёры (данные по производству отдельно не публикуются).", "en": "Not mined as an ore — separated from air as a byproduct of oxygen/nitrogen production; Germany, China, Belgium, the Netherlands and Canada are the leading exporters (dedicated production-by-country figures aren't published).", "zh": "不以矿石形式开采——作为氧气/氮气生产的副产品从空气中分离；德国、中国、比利时、荷兰和加拿大是主要出口国（未单独发布产量统计数据）。" }
   },
   "K": {
     "overview": {
@@ -1951,7 +2005,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Potassium",
       "discoveryYear": "1807",
       "casNumber": "CAS7440-09-7",
-      "discoverer": "7",
+      "discoverer": { "ru": "Гемфри Дэви", "en": "Humphry Davy", "zh": "Humphry Davy" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M8-N1-O0-P0-Q0-R0",
@@ -1962,6 +2016,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 4s1 = 1s2 2s2 2p6 3s2 3p6 4s1"
     },
+    "description": { "ru": "Мягкий щелочной металл; серебристый, бурно реагирует с водой, важен для работы нервов.", "en": "A soft alkali metal; silvery, reacts violently with water, essential for nerve function in living organisms.", "zh": "柔软碱金属；银白色，与水剧烈反应，对生物神经功能至关重要。" },
+    "applications": { "ru": "Удобрения, мыло, стекольная промышленность, заменители соли", "en": "Fertilizers, soap, glass industry, salt substitutes", "zh": "肥料、肥皂、玻璃工业、代盐" },
     "properties": {
       "atomicMass": "39.0983009088233",
       "density": "0.862",
@@ -2061,7 +2117,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "by", "share": "15" },
       { "country": "cn", "share": "13" },
       { "country": "de", "share": "6" }
-    ]
+    ],
+    "productionNote": { "ru": "Как калийная соль (поташ): Канада — крупнейший производитель, за ней следуют Россия, Беларусь и Китай.", "en": "As potash: Canada is the leading producer, followed by Russia, Belarus and China.", "zh": "以钾盐计：加拿大是主要生产国，其次是俄罗斯、白俄罗斯和中国。" }
   },
   "Ca": {
     "overview": {
@@ -2069,7 +2126,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Calcium",
       "discoveryYear": "1808",
       "casNumber": "CAS7440-70-2",
-      "discoverer": "7",
+      "discoverer": { "ru": "Гемфри Дэви", "en": "Humphry Davy", "zh": "Humphry Davy" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#D0C8A0" },
       "electronShellConfig": "K2-L8-M8-N2-O0-P0-Q0-R0",
@@ -2080,6 +2137,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 4s2 = 1s2 2s2 2p6 3s2 3p6 4s2"
     },
+    "description": { "ru": "Серебристый щелочноземельный металл; пятый по распространённости в коре, основа костей и раковин.", "en": "A silvery alkaline-earth metal; fifth most abundant element in Earth's crust, key to bones and shells.", "zh": "银白色碱土金属；地壳中第五丰富的元素，骨骼和贝壳的主要成分。" },
+    "applications": { "ru": "Цемент, известь, металлургия, пищевые добавки", "en": "Cement, lime, metallurgy, food additives", "zh": "水泥、石灰、冶金、食品添加剂" },
     "properties": {
       "atomicMass": "40.0780224976209",
       "density": "1.54",
@@ -2187,7 +2246,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "vn", "share": "5" },
       { "country": "ru" },
       { "country": "us" }
-    ]
+    ],
+    "productionNote": { "ru": "Известняк (основное сырьё) добывают почти повсеместно, но как металлический кальций производит в основном Китай (около 95% мирового объёма), Россия и США — гораздо меньшие производители.", "en": "Limestone (the feedstock) is quarried almost everywhere, but as metallic calcium it's overwhelmingly produced in China (roughly 95% of world output), with Russia and the US as much smaller producers.", "zh": "石灰岩（原料）几乎在各地都有开采，但金属钙的生产绝大部分集中在中国（约占世界产量的95%），俄罗斯和美国是规模小得多的生产国。" }
   },
   "Sc": {
     "overview": {
@@ -2195,7 +2255,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Scandium",
       "discoveryYear": "1879",
       "casNumber": "CAS7440-20-2",
-      "discoverer": "18",
+      "discoverer": { "ru": "Ларс Фредерик Нильсон", "en": "Lars Fredrik Nilson", "zh": "Lars Fredrik Nilson" },
       "discoveryCountry": "SE",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M9-N2-O0-P0-Q0-R0",
@@ -2206,6 +2266,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 3d1 4s2 = 1s2 2s2 2p6 3s2 3p6 3d1 4s2"
     },
+    "description": { "ru": "Серебристый переходный металл; лёгкий и прочный, связан с химией редкоземельных элементов.", "en": "A silvery transition metal; light and strong, used in aerospace alloys and often associated with rare-earth chemistry.", "zh": "银白色过渡金属；轻质高强，与稀土化学密切相关。" },
+    "applications": { "ru": "Авиационные сплавы, спортивное оборудование, металлогалогенные лампы", "en": "Aerospace alloys, sports equipment, metal-halide lamps", "zh": "航空合金、体育器材、金属卤化物灯" },
     "properties": {
       "atomicMass": "44.9559070745661",
       "density": "2.985",
@@ -2294,7 +2356,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "cn" },
       { "country": "kz" },
       { "country": "ph" }
-    ]
+    ],
+    "productionNote": { "ru": "Извлекается только как побочный продукт (переработка редкоземельных металлов, титана, циркония, урана); Китай, Россия, Казахстан и Филиппины — основные источники, мировое производство — менее 40 тонн в год.", "en": "Recovered only as a byproduct (of rare-earth, titanium, zirconium and uranium processing); China, Russia, Kazakhstan and the Philippines are the main sources, with world output under 40 tons a year.", "zh": "仅作为副产品回收（稀土、钛、锆和铀加工的副产品）；中国、俄罗斯、哈萨克斯坦和菲律宾是主要来源，世界年产量不足40吨。" }
   },
   "Ti": {
     "overview": {
@@ -2302,7 +2365,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Titanium",
       "discoveryYear": "1791",
       "casNumber": "CAS7440-32-6",
-      "discoverer": "61",
+      "discoverer": { "ru": "Уильям Грегор", "en": "William Gregor", "zh": "William Gregor" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M10-N2-O0-P0-Q0-R0",
@@ -2313,6 +2376,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 3d2 4s2 = 1s2 2s2 2p6 3s2 3p6 3d2 4s2"
     },
+    "description": { "ru": "Прочный коррозионностойкий переходный металл; серебристо-белый, отличное соотношение прочности и массы.", "en": "A strong, corrosion-resistant transition metal; silvery-white, with an excellent strength-to-weight ratio.", "zh": "强韧耐腐蚀的过渡金属；银白色，强度重量比优异。" },
+    "applications": { "ru": "Авиация, медицинские импланты, белые пигменты, спортинвентарь", "en": "Aerospace, medical implants, white pigments, sports gear", "zh": "航空航天、医疗植入物、白色颜料、运动装备" },
     "properties": {
       "atomicMass": "47.8667436596202",
       "density": "4.506",
@@ -2422,7 +2487,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "cn" },
       { "country": "mz" },
       { "country": "ke" }
-    ]
+    ],
+    "productionNote": { "ru": "Как титановые минеральные концентраты (ильменит/рутил): Австралия, ЮАР, Китай, Мозамбик и Кения — крупнейшие страны-добытчики.", "en": "As titanium mineral concentrates (ilmenite/rutile): Australia, South Africa, China, Mozambique and Kenya are the top mining countries.", "zh": "以钛矿物精矿（钛铁矿/金红石）计：澳大利亚、南非、中国、莫桑比克和肯尼亚是主要开采国。" }
   },
   "V": {
     "overview": {
@@ -2430,7 +2496,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Vanadium",
       "discoveryYear": "1801",
       "casNumber": "CAS7440-62-2",
-      "discoverer": "19",
+      "discoverer": { "ru": "Андрес Мануэль дель Рио", "en": "Andres Manuel del Rio", "zh": "Andres Manuel del Rio" },
       "discoveryCountry": "MX",
       "sampleColor": { "hex": "#8FA4B4" },
       "electronShellConfig": "K2-L8-M11-N2-O0-P0-Q0-R0",
@@ -2441,6 +2507,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 3d3 4s2 = 1s2 2s2 2p6 3s2 3p6 3d3 4s2"
     },
+    "description": { "ru": "Твёрдый серебристо-серый переходный металл; образует ярко окрашенные соединения, устойчив к коррозии.", "en": "A hard, silvery-gray transition metal; forms colorful compounds and resists corrosion.", "zh": "硬而银灰的过渡金属；形成色彩丰富的化合物，抗腐蚀。" },
+    "applications": { "ru": "Легированная сталь, катализаторы, ванадиевые аккумуляторы", "en": "Alloy steel, catalysts, vanadium flow batteries", "zh": "合金钢、催化剂、钒液流电池" },
     "properties": {
       "atomicMass": "50.9414656566912",
       "density": "6.11",
@@ -2536,7 +2604,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "ru", "share": "21" },
       { "country": "za", "share": "8" },
       { "country": "br", "share": "5" }
-    ]
+    ],
+    "productionNote": { "ru": "Китай, Россия, ЮАР и Бразилия — крупнейшие страны-добытчики ванадия.", "en": "China, Russia, South Africa and Brazil are the top vanadium mining countries.", "zh": "中国、俄罗斯、南非和巴西是主要的钒矿开采国。" }
   },
   "Cr": {
     "overview": {
@@ -2544,7 +2613,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Chromium",
       "discoveryYear": "1797",
       "casNumber": "CAS7440-47-3",
-      "discoverer": "4",
+      "discoverer": { "ru": "Луи Никола Воклен", "en": "Louis-Nicolas Vauquelin", "zh": "Louis-Nicolas Vauquelin" },
       "discoveryCountry": "FR",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M13-N1-O0-P0-Q0-R0",
@@ -2555,6 +2624,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 3d5 4s1 = 1s2 2s2 2p6 3s2 3p6 3d5 4s1"
     },
+    "description": { "ru": "Твёрдый блестящий переходный металл; основа нержавеющей стали и декоративного хромирования.", "en": "A hard, lustrous transition metal; prized for stainless steel and decorative plating.", "zh": "硬而有光泽的过渡金属；不锈钢和装饰镀铬的基础。" },
+    "applications": { "ru": "Нержавеющая сталь, хромирование, пигменты, дубление кожи", "en": "Stainless steel, chrome plating, pigments, leather tanning", "zh": "不锈钢、镀铬、颜料、制革" },
     "properties": {
       "atomicMass": "51.9961302818614",
       "density": "7.15",
@@ -2658,7 +2729,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "kz", "share": "14.6" },
       { "country": "tr", "share": "14.6" },
       { "country": "in", "share": "10.2" }
-    ]
+    ],
+    "productionNote": { "ru": "Как хромитовая руда: ЮАР одна обеспечивает около 40-45% мировой добычи, за ней следуют Казахстан, Турция и Индия.", "en": "As chromite ore: South Africa alone accounts for roughly 40-45% of world output, followed by Kazakhstan, Turkey and India.", "zh": "以铬铁矿计：南非一国就占世界产量的约40%-45%，其次是哈萨克斯坦、土耳其和印度。" }
   },
   "Mn": {
     "overview": {
@@ -2666,7 +2738,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Manganese",
       "discoveryYear": "1774",
       "casNumber": "CAS7439-96-5",
-      "discoverer": "20/21",
+      "discoverer": { "ru": "Юхан Готлиб Ган, Игнатий Готфрид Кайм", "en": "Johan Gottlieb Gahn, Ignatius Gottfried Kaim", "zh": "Johan Gottlieb Gahn, Ignatius Gottfried Kaim" },
       "discoveryCountry": "SE",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M13-N2-O0-P0-Q0-R0",
@@ -2677,6 +2749,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 3d5 4s2 = 1s2 2s2 2p6 3s2 3p6 3d5 4s2"
     },
+    "description": { "ru": "Твёрдый хрупкий переходный металл; необходим для стали, встречается во многих минералах.", "en": "A hard, brittle transition metal; essential for steel and found in many common minerals.", "zh": "硬而脆的过渡金属；钢铁必需，常见于多种矿物中。" },
+    "applications": { "ru": "Легирование стали, аккумуляторы, удобрения, производство стекла", "en": "Steel alloying, batteries, fertilizers, glass production", "zh": "炼钢合金、电池、肥料、玻璃生产" },
     "properties": {
       "atomicMass": "54.9380430430528",
       "density": "7.3",
@@ -2767,7 +2841,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "br", "share": "4" },
       { "country": "in", "share": "3.95" },
       { "country": "cn", "share": "3.5" }
-    ]
+    ],
+    "productionNote": { "ru": "ЮАР, Австралия, Габон и Китай — крупнейшие страны-добытчики марганцевой руды.", "en": "South Africa, Australia, Gabon and China are the top manganese ore mining countries.", "zh": "南非、澳大利亚、加蓬和中国是主要的锰矿开采国。" }
   },
   "Fe": {
     "overview": {
@@ -2785,6 +2860,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 3d6 4s2 = 1s2 2s2 2p6 3s2 3p6 3d6 4s2"
     },
+    "description": { "ru": "Самый распространённый металл Земли по массе; ферромагнитен, входит в гемоглобин.", "en": "The most common metal on Earth by mass; magnetic in its metallic form and central to hemoglobin.", "zh": "地球质量上最常见的金属；金属态有磁性，血红蛋白的核心元素。" },
+    "applications": { "ru": "Сталь, чугун, машиностроение, строительство", "en": "Steel, cast iron, machinery, construction", "zh": "钢铁、铸铁、机械、建筑" },
     "properties": {
       "atomicMass": "55.8451436425238",
       "density": "7.874",
@@ -2901,7 +2978,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "mn", "share": "0.3" },
       { "country": "lr", "share": "0.2" },
       { "country": "vn", "share": "0.07" }
-    ]
+    ],
+    "productionNote": { "ru": "Крупнейшие страны-добытчики железной руды.", "en": "Top iron ore mining countries by output.", "zh": "铁矿石产量最高的国家。" }
   },
   "Co": {
     "overview": {
@@ -2909,7 +2987,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Cobalt",
       "discoveryYear": "1739",
       "casNumber": "CAS7440-48-4",
-      "discoverer": "22",
+      "discoverer": { "ru": "Георг Брандт", "en": "Georg Brandt", "zh": "Georg Brandt" },
       "discoveryCountry": "SE",
       "sampleColor": { "hex": "#808080" },
       "electronShellConfig": "K2-L8-M15-N2-O0-P0-Q0-R0",
@@ -2920,6 +2998,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 3d7 4s2 = 1s2 2s2 2p6 3s2 3p6 3d7 4s2"
     },
+    "description": { "ru": "Твёрдый серебристый переходный металл; ферромагнитен, образует интенсивно окрашенные соединения.", "en": "A hard, silvery transition metal; ferromagnetic and forms intensely colored compounds.", "zh": "硬而银白的过渡金属；铁磁性，化合物颜色鲜艳。" },
+    "applications": { "ru": "Аккумуляторы, магниты, катализаторы, твердосплавный инструмент", "en": "Batteries, magnets, catalysts, cutting tools", "zh": "电池、磁铁、催化剂、切削工具" },
     "properties": {
       "atomicMass": "58.9331935652212",
       "density": "8.86",
@@ -3016,7 +3096,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "pg", "share": "0.9" },
       { "country": "cu", "share": "0.6" },
       { "country": "tr", "share": "0.6" }
-    ]
+    ],
+    "productionNote": { "ru": "ДР Конго обеспечивает более 70% мировой добычи кобальта, Индонезия — быстрорастущий второй производитель (побочный продукт добычи никеля).", "en": "The Democratic Republic of the Congo dominates world cobalt mine output (over 70%), with Indonesia a fast-growing second producer (a byproduct of nickel mining).", "zh": "刚果民主共和国主导世界钴矿产量（超过70%），印度尼西亚是快速增长的第二大生产国（镍矿开采的副产品）。" }
   },
   "Ni": {
     "overview": {
@@ -3024,7 +3105,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Nickel",
       "discoveryYear": "1751",
       "casNumber": "CAS7440-02-0",
-      "discoverer": "23",
+      "discoverer": { "ru": "Аксель Кронстедт", "en": "Axel Frederic von Cronstedt", "zh": "Axel Frederic von Cronstedt" },
       "discoveryCountry": "SE",
       "sampleColor": { "hex": "#808080" },
       "electronShellConfig": "K2-L8-M16-N2-O0-P0-Q0-R0",
@@ -3035,6 +3116,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 3d8 4s2 = 1s2 2s2 2p6 3s2 3p6 3d8 4s2"
     },
+    "description": { "ru": "Серебристо-белый переходный металл; ферромагнитен, коррозионностойкий, широко используется в сплавах.", "en": "A silvery-white transition metal; ferromagnetic, corrosion-resistant, and widely used in alloys.", "zh": "银白色过渡金属；铁磁性、耐腐蚀，广泛用于合金。" },
+    "applications": { "ru": "Нержавеющая сталь, аккумуляторы, монеты, гальванические покрытия", "en": "Stainless steel, batteries, coins, electroplating", "zh": "不锈钢、电池、硬币、电镀" },
     "properties": {
       "atomicMass": "58.6933503482247",
       "density": "8.908",
@@ -3146,7 +3229,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "au", "share": "3.1" },
       { "country": "br", "share": "2.1" },
       { "country": "us", "share": "0.2" }
-    ]
+    ],
+    "productionNote": { "ru": "Индонезия доминирует в мировой добыче никеля, за ней следуют Филиппины, Россия, Новая Каледония и Австралия.", "en": "Indonesia dominates world nickel mine output, followed by the Philippines, Russia, New Caledonia and Australia.", "zh": "印度尼西亚主导世界镍矿产量，其次是菲律宾、俄罗斯、新喀里多尼亚和澳大利亚。" }
   },
   "Cu": {
     "overview": {
@@ -3164,6 +3248,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 3d10 4s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s1"
     },
+    "description": { "ru": "Мягкий красноватый переходный металл; отличный проводник тепла и тока, один из древнейших металлов.", "en": "A soft, reddish transition metal; excellent conductor of heat and electricity, one of humanity's first metals.", "zh": "柔软红棕色过渡金属；热和电的优良导体，人类最早使用的金属之一。" },
+    "applications": { "ru": "Электропроводка, трубы, бронза и латунь, антимикробные покрытия", "en": "Electrical wiring, plumbing, bronze and brass, antimicrobial surfaces", "zh": "电线电缆、管道、青铜黄铜、抗菌表面" },
     "properties": {
       "atomicMass": "63.5460394301709",
       "density": "8.96",
@@ -3274,7 +3360,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "rs", "share": "0.9" },
       { "country": "tz", "share": "0.5" },
       { "country": "tr", "share": "0.5" }
-    ]
+    ],
+    "productionNote": { "ru": "Чили одна обеспечивает около четверти мировой добычи меди; далее следуют Перу, ДР Конго, Китай и США.", "en": "Chile alone accounts for roughly a quarter of world copper mine output; Peru, the DR Congo, China and the US follow.", "zh": "智利一国就占世界铜矿产量的约四分之一；秘鲁、刚果民主共和国、中国和美国紧随其后。" }
   },
   "Zn": {
     "overview": {
@@ -3282,7 +3369,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Zinc",
       "discoveryYear": "1000 BC",
       "casNumber": "CAS7440-66-6",
-      "discoverer": "63",
+      "discoverer": { "ru": "Андреас Сигизмунд Маргграф", "en": "Andreas Sigismund Marggraf", "zh": "Andreas Sigismund Marggraf" },
       "discoveryCountry": "IndiaContinent",
       "sampleColor": { "hex": "#8FA4B4" },
       "electronShellConfig": "K2-L8-M18-N2-O0-P0-Q0-R0",
@@ -3293,6 +3380,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 3d10 4s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2"
     },
+    "description": { "ru": "Сине-белый переходный металл; хрупок при комнатной температуре, основа оцинковки железа.", "en": "A bluish-white transition metal; brittle at room temperature and essential for galvanizing iron.", "zh": "蓝白色过渡金属；室温下较脆，镀锌保护铁的基础。" },
+    "applications": { "ru": "Оцинковка, латунь, батарейки, пищевые добавки", "en": "Galvanizing, brass, batteries, dietary supplements", "zh": "镀锌、黄铜、电池、营养补充剂" },
     "properties": {
       "atomicMass": "65.3777823033184",
       "density": "7.134",
@@ -3410,7 +3499,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "ru", "share": "2.5" },
       { "country": "se", "share": "1.9" },
       { "country": "za", "share": "1.0" }
-    ]
+    ],
+    "productionNote": { "ru": "Китай, Австралия, Перу, Индия и Мексика — крупнейшие страны-добытчики цинковой руды.", "en": "China, Australia, Peru, India and Mexico are the top zinc mining countries.", "zh": "中国、澳大利亚、秘鲁、印度和墨西哥是主要的锌矿开采国。" }
   },
   "Ga": {
     "overview": {
@@ -3418,7 +3508,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Gallium",
       "discoveryYear": "1875",
       "casNumber": "CAS7440-55-3",
-      "discoverer": "24",
+      "discoverer": { "ru": "Поль Эмиль Лекок де Буабодран", "en": "Paul Emile Lecoq de Boisbaudran", "zh": "Paul Emile Lecoq de Boisbaudran" },
       "discoveryCountry": "FR",
       "sampleColor": { "hex": "#8FA4B4" },
       "electronShellConfig": "K2-L8-M18-N3-O0-P0-Q0-R0",
@@ -3429,6 +3519,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 3d10 4s2 4p1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p1"
     },
+    "description": { "ru": "Мягкий серебристый металл; плавится чуть выше комнатной температуры и расширяется при застывании.", "en": "A soft, silvery post-transition metal; melts just above room temperature and expands on freezing.", "zh": "柔软银白色金属；熔点略高于室温，凝固时体积膨胀。" },
+    "applications": { "ru": "Полупроводники, светодиоды, термометры, солнечные элементы", "en": "Semiconductors, LEDs, thermometers, solar cells", "zh": "半导体、LED、温度计、太阳能电池" },
     "properties": {
       "atomicMass": "69.7230661032944",
       "density": "5.91",
@@ -3520,7 +3612,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "jp" },
       { "country": "kr" },
       { "country": "ru" }
-    ]
+    ],
+    "productionNote": { "ru": "Китай обеспечивает практически всё (около 98-99%) мировое первичное производство галлия — побочный продукт переработки алюминиевых и цинковых руд.", "en": "China accounts for essentially all (roughly 98-99%) of world primary gallium production, recovered as a byproduct of aluminium/zinc ore processing.", "zh": "中国几乎占世界原生镓产量的全部（约98%-99%），镓是铝土矿/锌矿加工的副产品。" }
   },
   "Ge": {
     "overview": {
@@ -3528,7 +3621,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Germanium",
       "discoveryYear": "1886",
       "casNumber": "CAS7440-56-4",
-      "discoverer": "25",
+      "discoverer": { "ru": "Клеменс Александр Винклер", "en": "Clemens Alexander Winkler", "zh": "Clemens Alexander Winkler" },
       "discoveryCountry": "DE",
       "sampleColor": { "hex": "#9A9A96" },
       "electronShellConfig": "K2-L8-M18-N4-O0-P0-Q0-R0",
@@ -3539,6 +3632,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 3d10 4s2 4p2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p2"
     },
+    "description": { "ru": "Хрупкий металлоид; серо-белый, важный полупроводник и оптический материал.", "en": "A brittle metalloid; gray-white, important semiconductor and optical material.", "zh": "脆性类金属；灰白色，重要的半导体和光学材料。" },
+    "applications": { "ru": "Оптоволокно, инфракрасная оптика, транзисторы", "en": "Fiber optics, infrared optics, transistors", "zh": "光纤、红外光学、晶体管" },
     "properties": {
       "atomicMass": "72.6298488671316",
       "density": "5.323",
@@ -3645,7 +3740,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "us" },
       { "country": "jp" },
       { "country": "de" }
-    ]
+    ],
+    "productionNote": { "ru": "Китай — доминирующий переработчик германия (около 75-80% мирового производства), извлекаемого как побочный продукт переработки цинковых руд и угля.", "en": "China is the dominant refiner of germanium (roughly 75-80% of world output), recovered as a byproduct of zinc ore processing and coal.", "zh": "中国是锗的主要精炼国（约占世界产量的75%-80%），锗是锌矿加工和煤炭的副产品。" }
   },
   "As": {
     "overview": {
@@ -3653,7 +3749,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Arsenic",
       "discoveryYear": "~1250",
       "casNumber": "CAS7440-38-2",
-      "discoverer": "80",
+      "discoverer": { "ru": "Альберт Великий", "en": "Albertus Magnus", "zh": "Albertus Magnus" },
       "discoveryCountry": "DE",
       "sampleColor": { "hex": "#9A9A96" },
       "electronShellConfig": "K2-L8-M18-N5-O0-P0-Q0-R0",
@@ -3664,6 +3760,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 3d10 4s2 4p3 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p3"
     },
+    "description": { "ru": "Металлоид; серый, многие соединения токсичны, исторически называли «царской отравой».", "en": "A metalloid; gray, toxic in many compounds, historically known as the 'king of poisons'.", "zh": "类金属；灰色，许多化合物有毒，历史上被称为“砒霜之王”。" },
+    "applications": { "ru": "Полупроводники, защита древесины (исторически), пестициды (ограниченно)", "en": "Semiconductors, wood preservation (historical), pesticides (limited)", "zh": "半导体、木材防腐（历史用途）、农药（有限）" },
     "properties": {
       "atomicMass": "74.921594565322",
       "density": "5.727",
@@ -3751,7 +3849,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "pe" },
       { "country": "cn" },
       { "country": "ma" }
-    ]
+    ],
+    "productionNote": { "ru": "Китай доминирует в мировом производстве мышьяка (в виде оксида мышьяка), Марокко и Россия — гораздо меньшие источники.", "en": "China dominates world arsenic (arsenic trioxide) production, with Morocco and Russia as much smaller secondary sources.", "zh": "中国主导世界砷（三氧化二砷）产量，摩洛哥和俄罗斯是规模小得多的次要来源。" }
   },
   "Se": {
     "overview": {
@@ -3759,7 +3858,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Selenium",
       "discoveryYear": "1817",
       "casNumber": "CAS7782-49-2",
-      "discoverer": "16",
+      "discoverer": { "ru": "Йёнс Якоб Берцелиус", "en": "Jöns Jakob Berzelius", "zh": "Jöns Jakob Berzelius" },
       "discoveryCountry": "SE",
       "sampleColor": { "hex": "#808080" },
       "electronShellConfig": "K2-L8-M18-N6-O0-P0-Q0-R0",
@@ -3770,6 +3869,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 3d10 4s2 4p4 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p4"
     },
+    "description": { "ru": "Неметалл, необходимый для жизни; серый, фотопроводим, важен для антиоксидантных ферментов.", "en": "A nonmetal essential to life; gray, photoconductive, and vital in antioxidant enzymes.", "zh": "生命必需的非金属；灰色，具有光导性，抗氧化酶的关键元素。" },
+    "applications": { "ru": "Стекло, копиры, пищевые добавки, солнечные элементы", "en": "Glass, photocopiers, supplements, solar cells", "zh": "玻璃、复印机、营养补充剂、太阳能电池" },
     "properties": {
       "atomicMass": "78.9710814817005",
       "density": "4.81",
@@ -3881,7 +3982,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "be" },
       { "country": "ru" },
       { "country": "ph" }
-    ]
+    ],
+    "productionNote": { "ru": "Извлекается как побочный продукт переработки медных руд; Япония, Германия, Бельгия, Россия и Филиппины — ведущие переработчики.", "en": "Recovered as a byproduct of copper refining; Japan, Germany, Belgium, Russia and the Philippines are the leading refiners.", "zh": "硒作为铜精炼的副产品回收；日本、德国、比利时、俄罗斯和菲律宾是主要的精炼国。" }
   },
   "Br": {
     "overview": {
@@ -3889,7 +3991,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Bromine",
       "discoveryYear": "1826",
       "casNumber": "CAS7726-95-6",
-      "discoverer": "26/27",
+      "discoverer": { "ru": "Антуан Жером Балар, Карл Якоб Лёвих", "en": "Antoine-Jérôme Balard, Karl Jakob Leuwich", "zh": "Antoine-Jérôme Balard, Karl Jakob Leuwich" },
       "discoveryCountry": "FR, DE",
       "sampleColor": { "hex": "#A62929", "finish": "glossy" },
       "electronShellConfig": "K2-L8-M18-N7-O0-P0-Q0-R0",
@@ -3900,6 +4002,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 3d10 4s2 4p5 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p5"
     },
+    "description": { "ru": "Красно-бурая жидкость-галоген; летуч, едок, один из двух элементов-жидкостей при комнатной температуре.", "en": "A red-brown liquid halogen; volatile, corrosive, and one of only two elements liquid at room temperature.", "zh": "红棕色液态卤素；挥发性强、腐蚀性强，是室温下两种液态元素之一。" },
+    "applications": { "ru": "Пламегасители, фармацевтика, фотография", "en": "Flame retardants, pharmaceuticals, photography", "zh": "阻燃剂、医药、摄影" },
     "properties": {
       "atomicMass": "79.9043261630963",
       "density": "3.102",
@@ -3988,7 +4092,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "jo", "share": "25.5" },
       { "country": "cn", "share": "22.7" },
       { "country": "us" }
-    ]
+    ],
+    "productionNote": { "ru": "Израиль и Иордания (рассолы Мёртвого моря) вместе обеспечивают большую часть мировой добычи брома; Китай и США (Арканзас) — другие крупные производители.", "en": "Israel and Jordan (Dead Sea brines) together supply the majority of world bromine, with China and the United States (Arkansas) as other major producers.", "zh": "以色列和约旦（死海卤水）合计供应了世界大部分的溴，中国和美国（阿肯色州）是其他主要生产国。" }
   },
   "Kr": {
     "overview": {
@@ -3996,7 +4101,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Krypton",
       "discoveryYear": "1898",
       "casNumber": "CAS7439-90-9",
-      "discoverer": "12/13",
+      "discoverer": { "ru": "Уильям Рамзай, Траверс, Морис Уильям", "en": "Sir William Ramsay, Morris William Travers", "zh": "Sir William Ramsay, Morris William Travers" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L8-M18-N8-O0-P0-Q0-R0",
@@ -4007,6 +4112,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Ar] 3d10 4s2 4p6 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6"
     },
+    "description": { "ru": "Бесцветный благородный газ; инертен, присутствует в атмосфере в малых количествах.", "en": "A colorless noble gas; inert and present in tiny amounts in the atmosphere.", "zh": "无色稀有气体；惰性，在大气中含量极少。" },
+    "applications": { "ru": "Лампы, лазеры, энергосберегающие окна", "en": "Lighting, lasers, energy-efficient windows", "zh": "照明、激光、节能窗" },
     "properties": {
       "atomicMass": "83.7979997384043",
       "density": "0.003749",
@@ -4103,7 +4210,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "ru" },
       { "country": "us" },
       { "country": "ua" }
-    ]
+    ],
+    "productionNote": { "ru": "Как и неон, криптон — побочный продукт крупных установок разделения воздуха; Украина исторически была крупным поставщиком, но с 2022 года её производство сильно нарушено войной.", "en": "Like neon, krypton is a byproduct of large air-separation plants; Ukraine was historically a major supplier, but its output has been severely disrupted by the war since 2022.", "zh": "与氖气一样，氪气是大型空气分离装置的副产品；乌克兰历史上是主要供应国，但自2022年以来其产量因战争受到严重影响。" }
   },
   "Rb": {
     "overview": {
@@ -4111,7 +4219,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Rubidium",
       "discoveryYear": "1861",
       "casNumber": "CAS7440-17-7",
-      "discoverer": "28/29",
+      "discoverer": { "ru": "Роберт Вильгельм Бунзен, Густав Кирхгоф", "en": "Robert Wilhelm Bunsen, Gustav Robert Kirchhoff", "zh": "Robert Wilhelm Bunsen, Gustav Robert Kirchhoff" },
       "discoveryCountry": "DE",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N8-O1-P0-Q0-R0",
@@ -4122,6 +4230,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 5s1"
     },
+    "description": { "ru": "Мягкий серебристый щелочной металл; самовоспламеняется на воздухе, используется в атомных часах.", "en": "A soft, silvery alkali metal; pyrophoric in air and used in ultra-precise atomic clocks.", "zh": "柔软银白色碱金属；在空气中自燃，用于高精度原子钟。" },
+    "applications": { "ru": "Атомные часы, исследования, специальная оптика", "en": "Atomic clocks, research, specialty optics", "zh": "原子钟、科研、特种光学" },
     "properties": {
       "atomicMass": "85.4676635933375",
       "density": "1.532",
@@ -4212,7 +4322,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "youtube": "https://www.youtube.com/watch?v=V1-LcbGSsmw",
     "productionCountries": [
       { "country": "cn", "share": "99" }
-    ]
+    ],
+    "productionNote": { "ru": "Отдельных месторождений рубидия нет — он извлекается в небольших количествах как побочный продукт переработки литиевой (лепидолит) и цезиевой (поллуцит) руды, в основном в Китае.", "en": "Rubidium has no dedicated mines — it's recovered only in small amounts as a byproduct of lithium (lepidolite) and cesium (pollucite) ore processing, mostly in China.", "zh": "铷没有专门的矿山——它仅作为锂矿（锂云母）和铯矿（铯榴石）加工的副产品少量回收，主要在中国。" }
   },
   "Sr": {
     "overview": {
@@ -4220,7 +4331,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Strontium",
       "discoveryYear": "1790",
       "casNumber": "CAS7440-24-6",
-      "discoverer": "30",
+      "discoverer": { "ru": "Адер Крофорд", "en": "Adair Crawford", "zh": "Adair Crawford" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#D0C8A0" },
       "electronShellConfig": "K2-L8-M18-N8-O2-P0-Q0-R0",
@@ -4231,6 +4342,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 5s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 5s2"
     },
+    "description": { "ru": "Мягкий щелочноземельный металл; серебристый, активный, даёт малиновый цвет пламени.", "en": "A soft alkaline-earth metal; silvery, reactive, and responsible for crimson flame color.", "zh": "柔软碱土金属；银白色，反应活泼，火焰呈深红色。" },
+    "applications": { "ru": "Фейерверки, магниты, радиоизотопы в медицине", "en": "Fireworks, magnets, medical radioisotopes", "zh": "烟花、磁铁、医用放射性同位素" },
     "properties": {
       "atomicMass": "87.6166442781531",
       "density": "2.63",
@@ -4330,7 +4443,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "cn" },
       { "country": "mx" },
       { "country": "ar" }
-    ]
+    ],
+    "productionNote": { "ru": "Как целестиновая руда: Испания, Китай, Мексика и Аргентина — крупнейшие страны-добытчики стронция.", "en": "As celestine ore: Spain, China, Mexico and Argentina are the top strontium mining countries.", "zh": "以天青石矿计：西班牙、中国、墨西哥和阿根廷是主要的锶矿开采国。" }
   },
   "Y": {
     "overview": {
@@ -4338,7 +4452,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Yttrium",
       "discoveryYear": "1794",
       "casNumber": "CAS7440-65-5",
-      "discoverer": "31",
+      "discoverer": { "ru": "Юхан Гадолин", "en": "Johan Gadolin", "zh": "Johan Gadolin" },
       "discoveryCountry": "FI",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N9-O2-P0-Q0-R0",
@@ -4349,6 +4463,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 4d1 5s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d1 5s2"
     },
+    "description": { "ru": "Серебристый переходный металл; активный, химически близок к редкоземельным элементам.", "en": "A silvery transition metal; reactive, often grouped with rare earths in chemistry.", "zh": "银白色过渡金属；活泼，化学上与稀土元素相近。" },
+    "applications": { "ru": "Люминофоры экранов, лазеры, керамика, сверхпроводники", "en": "Display phosphors, lasers, ceramics, superconductors", "zh": "显示荧光粉、激光、陶瓷、超导体" },
     "properties": {
       "atomicMass": "88.9058381585322",
       "density": "4.472",
@@ -4443,7 +4559,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "in", "share": "0.7" },
       { "country": "th" },
       { "country": "vn" }
-    ]
+    ],
+    "productionNote": { "ru": "Иттрий добывают вместе с другими редкоземельными элементами, преимущественно из ионно-адсорбционных глин в Китае; Мьянма — крупный дополнительный источник руды.", "en": "Yttrium is extracted alongside other rare earths, concentrated in China's ion-adsorption clay deposits, with Myanmar a major supplementary ore source.", "zh": "钇与其他稀土元素一同提取，集中于中国的离子吸附型粘土矿床，缅甸是重要的补充矿石来源。" }
   },
   "Zr": {
     "overview": {
@@ -4451,7 +4568,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Zirconium",
       "discoveryYear": "1789",
       "casNumber": "CAS7440-67-7",
-      "discoverer": "32",
+      "discoverer": { "ru": "Мартин Генрих Клапрот", "en": "Martin Heinrich Klaproth", "zh": "Martin Heinrich Klaproth" },
       "discoveryCountry": "DE",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N10-O2-P0-Q0-R0",
@@ -4462,6 +4579,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 4d2 5s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d2 5s2"
     },
+    "description": { "ru": "Прочный серый переходный металл; высоко коррозионностойкий, распространён в огнеупорах.", "en": "A strong, gray transition metal; highly resistant to corrosion and common in refractory materials.", "zh": "强韧灰色过渡金属；高度耐腐蚀，常见于耐火材料。" },
+    "applications": { "ru": "Ядерные реакторы, керамика, биоимпланты", "en": "Nuclear reactors, ceramics, bio-implants", "zh": "核反应堆、陶瓷、生物植入物" },
     "properties": {
       "atomicMass": "91.2236427905792",
       "density": "6.52",
@@ -4571,7 +4690,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "cn" },
       { "country": "mz" },
       { "country": "id" }
-    ]
+    ],
+    "productionNote": { "ru": "Цирконий встречается вместе с гафнием в циркониевой руде; Австралия и ЮАР лидируют в добыче циркониевых концентратов, за ними следуют Китай, Мозамбик и Индонезия.", "en": "Zirconium occurs together with hafnium in zircon ore; Australia and South Africa lead zircon mineral-concentrate mining, followed by China, Mozambique and Indonesia.", "zh": "锆与铪共生于锆石矿中；澳大利亚和南非在锆精矿开采中领先，其次是中国、莫桑比克和印度尼西亚。" }
   },
   "Nb": {
     "overview": {
@@ -4579,7 +4699,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Niobium",
       "discoveryYear": "1801",
       "casNumber": "CAS7440-03-1",
-      "discoverer": "33",
+      "discoverer": { "ru": "Чарльз Хэтчетт", "en": "Charles Hatchett", "zh": "Charles Hatchett" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#8FA4B4" },
       "electronShellConfig": "K2-L8-M18-N12-O1-P0-Q0-R0",
@@ -4590,6 +4710,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 4d4 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d4 5s1"
     },
+    "description": { "ru": "Серый ковкий переходный металл; сверхпроводник при низких температурах, устойчив к кислотам.", "en": "A gray, ductile transition metal; superconducting at low temperatures and resistant to acids.", "zh": "灰色韧性过渡金属；低温下超导，耐酸。" },
+    "applications": { "ru": "Суперсплавы, легированная сталь, сверхпроводники", "en": "Superalloys, alloy steel, superconductors", "zh": "高温合金、合金钢、超导体" },
     "properties": {
       "atomicMass": "92.9063732129128",
       "density": "8.57",
@@ -4680,7 +4802,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "ca", "share": "6.0" },
       { "country": "cd" },
       { "country": "rw" }
-    ]
+    ],
+    "productionNote": { "ru": "Бразилия доминирует в мировой добыче ниобия (около 90% мировой добычи), намного опережая Канаду.", "en": "Brazil dominates niobium mining (about 90% of world output), far ahead of Canada.", "zh": "巴西主导世界铌矿开采（约占世界产量的90%），远超加拿大。" }
   },
   "Mo": {
     "overview": {
@@ -4688,7 +4811,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Molybdenum",
       "discoveryYear": "1778",
       "casNumber": "CAS7439-98-7",
-      "discoverer": "10",
+      "discoverer": { "ru": "Карл Вильгельм Шееле", "en": "Carl Wilhelm Scheele", "zh": "Carl Wilhelm Scheele" },
       "discoveryCountry": "SE",
       "sampleColor": { "hex": "#808080" },
       "electronShellConfig": "K2-L8-M18-N13-O1-P0-Q0-R0",
@@ -4699,6 +4822,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 4d5 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d5 5s1"
     },
+    "description": { "ru": "Серебристый переходный металл; микроэлемент для живых организмов, важен для азотфиксации.", "en": "A silvery transition metal; essential trace nutrient and key to nitrogen fixation in biology.", "zh": "银白色过渡金属；必需微量元素，生物固氮的关键。" },
+    "applications": { "ru": "Суперсплавы, катализаторы, смазки, высокопрочная сталь", "en": "Superalloys, catalysts, lubricants, high-strength steel", "zh": "高温合金、催化剂、润滑剂、高强钢" },
     "properties": {
       "atomicMass": "95.9487770772113",
       "density": "10.28",
@@ -4817,7 +4942,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "cl", "share": "14.1" },
       { "country": "us", "share": "12.2" },
       { "country": "mx", "share": "6.3" }
-    ]
+    ],
+    "productionNote": { "ru": "Китай лидирует в добыче молибдена, за ним следуют Чили, Перу, США и Мексика — вместе они дают 93% мировой добычи.", "en": "China leads molybdenum mine production, followed by Chile, Peru, the US and Mexico, which together supply 93% of world output.", "zh": "中国在钼矿产量方面领先，其次是智利、秘鲁、美国和墨西哥，五国合计供应世界产量的93%。" }
   },
   "Tc": {
     "overview": {
@@ -4825,7 +4951,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Technetium",
       "discoveryYear": "1937",
       "casNumber": "CAS7440-26-8",
-      "discoverer": "46/47",
+      "discoverer": { "ru": "Эмилио Джино Сегре, Карло Перье", "en": "Emilio Gino Segrè, Carlo Perrier", "zh": "Emilio Gino Segrè, Carlo Perrier" },
       "discoveryCountry": "IT",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N13-O2-P0-Q0-R0",
@@ -4836,6 +4962,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 4d5 5s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d5 5s2"
     },
+    "description": { "ru": "Самый лёгкий радиоактивный элемент; серебристый, все изотопы нестабильны, первый искусственный элемент.", "en": "The lightest radioactive element; silvery, all isotopes unstable, first artificially produced element.", "zh": "最轻的放射性元素；银白色，所有同位素不稳定，首个人工合成元素。" },
+    "applications": { "ru": "Медицинская визуализация (⁹⁹ᵐTc), только искусственный", "en": "Medical imaging (⁹⁹ᵐTc), artificial only", "zh": "医学成像（⁹⁹ᵐTc），仅人工合成" },
     "properties": {
       "atomicMass": "97.4429222893571",
       "density": "11.5",
@@ -4921,7 +5049,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "za" },
       { "country": "au" },
       { "country": "ru" }
-    ]
+    ],
+    "productionNote": { "ru": "У технеция нет стабильных изотопов, он не добывается в виде руды; в природе встречается лишь в следовых количествах как продукт спонтанного деления урана, а промышленно производится в исследовательских реакторах (Канада, Нидерланды, Бельгия, ЮАР) для медицинских генераторов Tc-99m.", "en": "Technetium has no stable isotopes and isn't mined as an ore; it occurs naturally only in trace amounts from spontaneous uranium fission and is industrially produced in research reactors (Canada, the Netherlands, Belgium, South Africa) for medical Tc-99m generators.", "zh": "锝没有稳定同位素，不以矿石形式开采；它在自然界中仅以铀自发裂变产生的痕量存在，工业上在研究堆（加拿大、荷兰、比利时、南非）中生产，用于医用锝-99m发生器。" }
   },
   "Ru": {
     "overview": {
@@ -4929,7 +5058,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Ruthenium",
       "discoveryYear": "1844",
       "casNumber": "CAS7440-18-8",
-      "discoverer": "42",
+      "discoverer": { "ru": "Карл Карлович Клаус", "en": "Karl Ernst Claus", "zh": "Karl Ernst Claus" },
       "discoveryCountry": "RU",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N15-O1-P0-Q0-R0",
@@ -4940,6 +5069,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 4d7 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d7 5s1"
     },
+    "description": { "ru": "Твёрдый белый переходный металл; платиновая группа, редкий и не подвержен коррозии.", "en": "A hard, white transition metal; member of the platinum group, rare and corrosion-proof.", "zh": "硬而白色的过渡金属；铂族成员，稀有且抗腐蚀。" },
+    "applications": { "ru": "Катализаторы, электроника, ювелирные покрытия", "en": "Catalysts, electronics, jewelry coatings", "zh": "催化剂、电子、首饰镀层" },
     "properties": {
       "atomicMass": "101.064936840548",
       "density": "12.45",
@@ -5054,7 +5185,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "za" },
       { "country": "ru" },
       { "country": "zw" }
-    ]
+    ],
+    "productionNote": { "ru": "Рутений добывается совместно с платиной и другими металлами платиновой группы из одной руды и отдельно по странам не учитывается; ЮАР и Россия доминируют в добыче МПГ.", "en": "Ruthenium is co-produced with platinum and other PGMs from the same ore and is not separately tracked by country; South Africa and Russia dominate PGM mine output.", "zh": "钌与铂及其他铂族金属从同一矿石中联合生产，没有单独的国别统计；南非和俄罗斯主导铂族金属矿产量。" }
   },
   "Rh": {
     "overview": {
@@ -5062,7 +5194,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Rhodium",
       "discoveryYear": "1803",
       "casNumber": "CAS7440-16-6",
-      "discoverer": "35",
+      "discoverer": { "ru": "Уильям Хайд Волластон", "en": "William Hyde Wollaston", "zh": "William Hyde Wollaston" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N16-O1-P0-Q0-R0",
@@ -5073,6 +5205,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 4d8 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d8 5s1"
     },
+    "description": { "ru": "Серебристый твёрдый переходный металл; крайне редкий, зеркально блестящий, активный катализатор.", "en": "A silvery, hard transition metal; extremely rare, mirror-like, and catalytically active.", "zh": "银白色硬质过渡金属；极其稀有，光泽如镜面，催化活性高。" },
+    "applications": { "ru": "Автокатализаторы, химический синтез, отражающие покрытия", "en": "Auto catalysts, chemical synthesis, reflective coatings", "zh": "汽车催化剂、化学合成、反射涂层" },
     "properties": {
       "atomicMass": "102.905494087647",
       "density": "12.41",
@@ -5162,7 +5296,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "ru" },
       { "country": "zw" },
       { "country": "ca" }
-    ]
+    ],
+    "productionNote": { "ru": "Родий добывается совместно с платиной и другими металлами платиновой группы; ЮАР — ведущий источник, за ней следуют Россия, Зимбабве и Канада.", "en": "Rhodium is co-produced with platinum and other PGMs from the same ore; South Africa is the leading source, with Russia, Zimbabwe and Canada following.", "zh": "铑与铂及其他铂族金属联合生产；南非是主要来源，俄罗斯、津巴布韦和加拿大紧随其后。" }
   },
   "Pd": {
     "overview": {
@@ -5170,7 +5305,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Palladium",
       "discoveryYear": "1803",
       "casNumber": "CAS7440-05-3",
-      "discoverer": "35",
+      "discoverer": { "ru": "Уильям Хайд Волластон", "en": "William Hyde Wollaston", "zh": "William Hyde Wollaston" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N18-O0-P0-Q0-R0",
@@ -5181,6 +5316,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 4d10 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10"
     },
+    "description": { "ru": "Редкий серебристо-белый переходный металл; самый мягкий металл платиновой группы, отличный катализатор.", "en": "A rare, silvery-white transition metal; softest platinum-group metal and excellent catalyst.", "zh": "稀有银白色过渡金属；铂族中最软，优良催化剂。" },
+    "applications": { "ru": "Катализаторы, ювелирные изделия, электроника, водородная энергетика", "en": "Catalysts, jewelry, electronics, hydrogen economy", "zh": "催化剂、首饰、电子、氢能" },
     "properties": {
       "atomicMass": "106.415327899964",
       "density": "12.02",
@@ -5288,7 +5425,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "ca", "share": "7.9" },
       { "country": "zw", "share": "7.9" },
       { "country": "us", "share": "4.2" }
-    ]
+    ],
+    "productionNote": { "ru": "Россия — крупнейший производитель палладия, за ней следуют ЮАР, Канада, Зимбабве и США.", "en": "Russia is the world's leading palladium producer, followed closely by South Africa, then Canada, Zimbabwe and the United States.", "zh": "俄罗斯是世界领先的钯生产国，南非紧随其后，然后是加拿大、津巴布韦和美国。" }
   },
   "Ag": {
     "overview": {
@@ -5306,6 +5444,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 4d10 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s1"
     },
+    "description": { "ru": "Блестящий белый благородный металл; лучший проводник тепла и электричества среди элементов.", "en": "A lustrous white precious metal; best thermal and electrical conductor among elements.", "zh": "光亮的白色贵金属；所有元素中最佳的热电导体。" },
+    "applications": { "ru": "Ювелирные изделия, электроника, фотография, антибактериальные покрытия", "en": "Jewelry, electronics, photography, antibacterial coatings", "zh": "首饰、电子、摄影、抗菌涂层" },
     "properties": {
       "atomicMass": "107.868149833461",
       "density": "10.49",
@@ -5403,7 +5543,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "us", "share": "4.3" },
       { "country": "au", "share": "3.9" },
       { "country": "kz", "share": "3.9" }
-    ]
+    ],
+    "productionNote": { "ru": "Мексика — безусловный лидер по добыче серебра, за ней следуют Китай, Перу, Чили и Польша.", "en": "Mexico is by far the largest silver mine producer, followed by China, Peru, Chile and Poland.", "zh": "墨西哥是迄今为止最大的银矿生产国，其次是中国、秘鲁、智利和波兰。" }
   },
   "Cd": {
     "overview": {
@@ -5411,7 +5552,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Cadmium",
       "discoveryYear": "1817",
       "casNumber": "CAS7440-43-9",
-      "discoverer": "79/90",
+      "discoverer": { "ru": "Фридрих Штромейер, Карл Самуэль Леберехт Герман", "en": "Friedrich Stromeyer, Karl Samuel Leberecht Hermann", "zh": "Friedrich Stromeyer, Karl Samuel Leberecht Hermann" },
       "discoveryCountry": "DE",
       "sampleColor": { "hex": "#8FA4B4" },
       "electronShellConfig": "K2-L8-M18-N18-O2-P0-Q0-R0",
@@ -5422,6 +5563,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 4d10 5s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2"
     },
+    "description": { "ru": "Мягкий сине-белый переходный металл; токсичен в растворимой форме, используется в аккумуляторах.", "en": "A soft, bluish-white transition metal; toxic in soluble form and used in rechargeable batteries.", "zh": "柔软蓝白色过渡金属；可溶性形式有毒，用于充电电池。" },
+    "applications": { "ru": "Аккумуляторы Ni-Cd, пигменты, гальванические покрытия", "en": "Ni-Cd batteries, pigments, electroplating", "zh": "镍镉电池、颜料、电镀" },
     "properties": {
       "atomicMass": "112.413818634622",
       "density": "8.65",
@@ -5545,7 +5688,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "ca" },
       { "country": "jp" },
       { "country": "mx" }
-    ]
+    ],
+    "productionNote": { "ru": "Кадмий извлекается как побочный продукт переработки цинковых руд; Китай лидирует, за ним следуют Южная Корея, Канада, Япония и Мексика.", "en": "Cadmium is recovered as a byproduct of zinc refining; China leads world refined output, followed by South Korea, Canada, Japan and Mexico.", "zh": "镉作为锌精炼的副产品回收；中国精炼产量领先，其次是韩国、加拿大、日本和墨西哥。" }
   },
   "In": {
     "overview": {
@@ -5553,7 +5697,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Indium",
       "discoveryYear": "1863",
       "casNumber": "CAS7440-74-6",
-      "discoverer": "58/83",
+      "discoverer": { "ru": "Фердинанд Райх, Иероним Теодор Рихтер", "en": "Ferdinand Reich, Hieronymous Theodor Richter", "zh": "Ferdinand Reich, Hieronymous Theodor Richter" },
       "discoveryCountry": "DE",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N18-O3-P0-Q0-R0",
@@ -5564,6 +5708,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 4d10 5s2 5p1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p1"
     },
+    "description": { "ru": "Мягкий серебристый металл; оставляет след на бумаге, плавится при низкой температуре.", "en": "A soft, silvery post-transition metal; leaves a mark on paper and melts at low temperature.", "zh": "柔软银白色金属；可在纸上划痕，低熔点。" },
+    "applications": { "ru": "ЖК-дисплеи, полупроводники, припои", "en": "LCD displays, semiconductors, solders", "zh": "液晶显示、半导体、焊料" },
     "properties": {
       "atomicMass": "114.818266549865",
       "density": "7.31",
@@ -5656,7 +5802,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "kr", "share": "27" },
       { "country": "ca", "share": "9" },
       { "country": "jp", "share": "9" }
-    ]
+    ],
+    "productionNote": { "ru": "Индий, извлекаемый в основном как побочный продукт переработки цинковых руд, перерабатывается преимущественно в Китае, за ним следуют Южная Корея, Япония, Канада и Бельгия.", "en": "Indium, recovered mainly as a byproduct of zinc ore processing, is refined predominantly in China, followed by South Korea, Japan, Canada and Belgium.", "zh": "铟主要作为锌矿加工的副产品回收，主要在中国精炼，其次是韩国、日本、加拿大和比利时。" }
   },
   "Sn": {
     "overview": {
@@ -5674,6 +5821,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 4d10 5s2 5p2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p2"
     },
+    "description": { "ru": "Серебристый металл; известен с древности, устойчив к коррозии и легко легируется.", "en": "A silvery post-transition metal; known since antiquity, resistant to corrosion and easily alloyed.", "zh": "银白色金属；自古已知，耐腐蚀且易于合金化。" },
+    "applications": { "ru": "Припои, жесть, стекло, бронза", "en": "Solders, tinplate, glass, bronze", "zh": "焊料、镀锡铁皮、玻璃、青铜" },
     "properties": {
       "atomicMass": "118.71011319607",
       "density": "7.287",
@@ -5813,7 +5962,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "my", "share": "1.1" },
       { "country": "la", "share": "0.6" },
       { "country": "mm" }
-    ]
+    ],
+    "productionNote": { "ru": "Китай — ведущий добытчик олова, за ним следуют Мьянма, Индонезия, Перу и ДР Конго.", "en": "China is the leading tin mine producer, followed by Myanmar, Indonesia, Peru and the Democratic Republic of the Congo.", "zh": "中国是主要的锡矿生产国，其次是缅甸、印度尼西亚、秘鲁和刚果民主共和国。" }
   },
   "Sb": {
     "overview": {
@@ -5831,6 +5981,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 4d10 5s2 5p3 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p3"
     },
+    "description": { "ru": "Серебристый хрупкий металлоид; расширяется при застывании, образует огнезащитные соединения.", "en": "A silvery, brittle metalloid; expands on freezing and forms flame-retardant compounds.", "zh": "银白色脆性类金属；凝固时膨胀，形成阻燃化合物。" },
+    "applications": { "ru": "Пламегасители, аккумуляторы, полупроводники", "en": "Flame retardants, batteries, semiconductors", "zh": "阻燃剂、电池、半导体" },
     "properties": {
       "atomicMass": "121.759784168018",
       "density": "6.697",
@@ -5926,7 +6078,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "tj", "share": "18.5" },
       { "country": "mm", "share": "3.8" },
       { "country": "tr", "share": "2.5" }
-    ]
+    ],
+    "productionNote": { "ru": "Китай доминирует в добыче сурьмы (около 48% мировой добычи), за ним следуют Таджикистан, Турция, Мьянма и Россия.", "en": "China dominates antimony mine production (about 48% of world output), followed by Tajikistan, Turkey, Myanmar and Russia.", "zh": "中国主导锑矿产量（约占世界产量的48%），其次是塔吉克斯坦、土耳其、缅甸和俄罗斯。" }
   },
   "Te": {
     "overview": {
@@ -5944,6 +6097,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 4d10 5s2 5p4 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p4"
     },
+    "description": { "ru": "Хрупкий серебристый металлоид; полупроводник и термоэлектрик с металлическим блеском.", "en": "A brittle, silvery metalloid; semiconductor and thermoelectric material with a metallic luster.", "zh": "脆性银白色类金属；半导体和热电材料，具金属光泽。" },
+    "applications": { "ru": "Термоэлектрика, металлургия, солнечные панели", "en": "Thermoelectrics, metallurgy, solar panels", "zh": "热电、冶金、太阳能板" },
     "properties": {
       "atomicMass": "127.603126893528",
       "density": "6.24",
@@ -6062,7 +6217,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "se", "share": "3.1" },
       { "country": "ca", "share": "1.8" },
       { "country": "uz", "share": "0.9" }
-    ]
+    ],
+    "productionNote": { "ru": "Теллур, извлекаемый как побочный продукт переработки медных руд, перерабатывается в основном в Китае (около двух третей мирового производства), за ним следуют Россия, Япония, Канада и Швеция.", "en": "Tellurium, recovered as a byproduct of copper refining, is refined mainly in China (about two-thirds of world output), followed by Russia, Japan, Canada and Sweden.", "zh": "碲作为铜精炼的副产品回收，主要在中国精炼（约占世界产量的三分之二），其次是俄罗斯、日本、加拿大和瑞典。" }
   },
   "I": {
     "overview": {
@@ -6070,7 +6226,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Iodine",
       "discoveryYear": "1811",
       "casNumber": "CAS7553-56-2",
-      "discoverer": "78",
+      "discoverer": { "ru": "Бернар Куртуа", "en": "Bernard Courtois", "zh": "Bernard Courtois" },
       "discoveryCountry": "FR",
       "sampleColor": { "hex": "#940094", "finish": "glossy" },
       "electronShellConfig": "K2-L8-M18-N18-O7-P0-Q0-R0",
@@ -6081,6 +6237,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 4d10 5s2 5p5 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p5"
     },
+    "description": { "ru": "Фиолетово-чёрный неметалл; сублимирует в фиолетовый пар, необходим для гормонов щитовидной железы.", "en": "A violet-black nonmetal; sublimes to purple vapor and essential for thyroid hormones.", "zh": "紫黑色非金属；升华成紫色蒸气，甲状腺激素必需元素。" },
+    "applications": { "ru": "Антисептики, рентген-контраст, йодированная соль", "en": "Antiseptics, X-ray contrast, iodized salt", "zh": "消毒剂、X射线造影、加碘盐" },
     "properties": {
       "atomicMass": "126.904472825143",
       "density": "4.933",
@@ -6163,7 +6321,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "us" },
       { "country": "tm" },
       { "country": "ir" }
-    ]
+    ],
+    "productionNote": { "ru": "Чили — ведущий производитель йода из пустынных нитратных рассолов, за ней следуют Япония (рассолы газовых/нефтяных месторождений) и США (рассолы Оклахомы).", "en": "Chile is the world's leading iodine producer from desert nitrate-brine deposits, followed by Japan (gas/oil-field brines) and the United States (Oklahoma brines).", "zh": "智利是世界领先的碘生产国，产自沙漠硝酸盐卤水矿床，其次是日本（气田/油田卤水）和美国（俄克拉荷马州卤水）。" }
   },
   "Xe": {
     "overview": {
@@ -6171,7 +6330,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Xenon",
       "discoveryYear": "1898",
       "casNumber": "CAS7440-63-3",
-      "discoverer": "76/13",
+      "discoverer": { "ru": "Уильям Рамзай, Траверс, Морис Уильям", "en": "William Ramsey, Morris William Travers", "zh": "William Ramsey, Morris William Travers" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L8-M18-N18-O8-P0-Q0-R0",
@@ -6182,6 +6341,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Kr] 4d10 5s2 5p6 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p6"
     },
+    "description": { "ru": "Бесцветный благородный газ; инертен, используется в освещении, один из тяжёлых стабильных благородных газов.", "en": "A colorless noble gas; inert, used in lighting, and one of the heaviest stable noble gases.", "zh": "无色稀有气体；惰性，用于照明，是最重的稳定稀有气体之一。" },
+    "applications": { "ru": "Лампы, анестезия, ионные двигатели", "en": "Lighting, anesthesia, ion thrusters", "zh": "照明、麻醉、离子推进器" },
     "properties": {
       "atomicMass": "131.29277126863",
       "density": "0.005894",
@@ -6290,7 +6451,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "us" },
       { "country": "in" },
       { "country": "de" }
-    ]
+    ],
+    "productionNote": { "ru": "Ксенон добывается промышленно как побочный продукт крупномасштабного криогенного разделения воздуха, а не путём горной добычи; производство сосредоточено в немногих странах с развитой инфраструктурой промышленных газов, доля Украины (ранее около 30%) сильно снизилась из-за войны с 2022 года.", "en": "Xenon is extracted industrially as a byproduct of large-scale cryogenic air separation, not mined; production capacity is concentrated among a handful of countries with major industrial-gas infrastructure, and Ukraine's formerly large (~30%) share was largely knocked offline by the war since 2022.", "zh": "氙气是大规模低温空气分离的工业副产品，而非开采所得；生产能力集中在少数拥有大型工业气体基础设施的国家，乌克兰此前约30%的份额自2022年战争以来已大幅下降。" }
   },
   "Cs": {
     "overview": {
@@ -6298,7 +6460,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Caesium",
       "discoveryYear": "1860",
       "casNumber": "CAS7440-46-2",
-      "discoverer": "28/29",
+      "discoverer": { "ru": "Роберт Вильгельм Бунзен, Густав Кирхгоф", "en": "Robert Wilhelm Bunsen, Gustav Robert Kirchhoff", "zh": "Robert Wilhelm Bunsen, Gustav Robert Kirchhoff" },
       "discoveryCountry": "DE",
       "sampleColor": { "hex": "#D4B060" },
       "electronShellConfig": "K2-L8-M18-N18-O8-P1-Q0-R0",
@@ -6309,6 +6471,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 6s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p6 6s1"
     },
+    "description": { "ru": "Мягкий золотистый щелочной металл; самый электроположительный стабильный элемент, плавится около комнатной температуры.", "en": "A soft, golden alkali metal; most electropositive stable element and melts near room temperature.", "zh": "柔软金黄色碱金属；稳定元素中电正性最强，熔点接近室温。" },
+    "applications": { "ru": "Буровые жидкости, атомные часы, фотоумножители", "en": "Drilling fluids, atomic clocks, photomultipliers", "zh": "钻井液、原子钟、光电倍增管" },
     "properties": {
       "atomicMass": "132.905451958556",
       "density": "1.93",
@@ -6396,7 +6560,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "productionCountries": [
       { "country": "cn" },
       { "country": "ca" }
-    ]
+    ],
+    "productionNote": { "ru": "В 2023 году официально не сообщалось о добыче цезия нигде в мире — прежние поллуцитовые месторождения в Зимбабве, Намибии и Австралии истощены или закрыты; только Китай и Канада (рудник Танко, эпизодически) вели недавнюю добычу, спрос покрывается в основном за счёт запасов.", "en": "No official cesium mine production was reported anywhere in 2023 — the main historic pollucite-ore mines in Zimbabwe, Namibia and Australia are depleted or closed; only China and Canada (Tanco mine, intermittent) had any recent extraction, with existing stockpiles supplying most current demand.", "zh": "2023年全球没有官方报告的铯矿开采——津巴布韦、纳米比亚和澳大利亚的主要历史铯榴石矿已枯竭或关闭；只有中国和加拿大（坦科矿，间歇性）有近期开采，现有库存供应了当前大部分需求。" }
   },
   "Ba": {
     "overview": {
@@ -6404,7 +6569,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Barium",
       "discoveryYear": "1808",
       "casNumber": "CAS7440-39-3",
-      "discoverer": "7",
+      "discoverer": { "ru": "Гемфри Дэви", "en": "Humphry Davy", "zh": "Humphry Davy" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#D0C8A0" },
       "electronShellConfig": "K2-L8-M18-N18-O8-P2-Q0-R0",
@@ -6415,6 +6580,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p6 6s2"
     },
+    "description": { "ru": "Мягкий серебристый щелочноземельный металл; активный, придаёт фейерверкам зелёный цвет.", "en": "A soft, silvery alkaline-earth metal; reactive and gives fireworks a green color.", "zh": "柔软银白色碱土金属；反应活泼，烟花呈绿色。" },
+    "applications": { "ru": "Рентген-контраст, фейерверки, стекло, нефтедобыча", "en": "X-ray contrast, fireworks, glass, oil drilling", "zh": "X射线造影、烟花、玻璃、石油钻井" },
     "properties": {
       "atomicMass": "137.32667172235",
       "density": "3.62",
@@ -6528,7 +6695,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "ma", "share": "12" },
       { "country": "kz", "share": "8" },
       { "country": "la" }
-    ]
+    ],
+    "productionNote": { "ru": "Барий добывают как баритовую руду; Индия и Китай — ведущие производители, за ними следуют Марокко, Казахстан и Лаос.", "en": "Barium is mined as barite ore; India and China are the leading producers, followed by Morocco, Kazakhstan and Laos.", "zh": "钡以重晶石矿的形式开采；印度和中国是主要生产国，其次是摩洛哥、哈萨克斯坦和老挝。" }
   },
   "La": {
     "overview": {
@@ -6536,7 +6704,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Lanthanum",
       "discoveryYear": "1839",
       "casNumber": "CAS7439-91-0",
-      "discoverer": "45",
+      "discoverer": { "ru": "Карл Густав Мосандер", "en": "Carl Gustaf Mosander", "zh": "Carl Gustaf Mosander" },
       "discoveryCountry": "SE",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N18-O9-P2-Q0-R0",
@@ -6547,6 +6715,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 5d1 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p6 5d1 6s2"
     },
+    "description": { "ru": "Мягкий серебристый лантаноид; начало ряда редкоземельных элементов, активнее большинства лантаноидов.", "en": "A soft, silvery lanthanide; starts the rare-earth series and is more reactive than most lanthanides.", "zh": "柔软银白色镧系元素；稀土系列的开端，比多数镧系更活泼。" },
+    "applications": { "ru": "Катализаторы НПЗ, оптика, NiMH-аккумуляторы", "en": "Oil refining catalysts, optics, NiMH batteries", "zh": "炼油催化剂、光学、镍氢电池" },
     "properties": {
       "atomicMass": "138.90547548286",
       "density": "6.146",
@@ -6647,7 +6817,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "in", "share": "0.7" },
       { "country": "th" },
       { "country": "vn" }
-    ]
+    ],
+    "productionNote": { "ru": "USGS учитывает добычу редкоземельных металлов как одну общую цифру; Китай доминирует в мировой добыче, за ним следуют США, Мьянма, Австралия и Таиланд.", "en": "USGS reports rare-earth mine production as one combined figure; China dominates world output, followed by the United States, Myanmar, Australia and Thailand.", "zh": "美国地质调查局将稀土矿产量作为一个合并数字统计；中国主导世界产量，其次是美国、缅甸、澳大利亚和泰国。" }
   },
   "Ce": {
     "overview": {
@@ -6655,7 +6826,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Cerium",
       "discoveryYear": "1803",
       "casNumber": "CAS7440-45-1",
-      "discoverer": "32/16/91",
+      "discoverer": { "ru": "Мартин Генрих Клапрот, Йёнс Якоб Берцелиус, Вильгельм Хисингер", "en": "Martin Heinrich Klaproth, Jöns Jakob Berzelius, Wilhelm Hisinger", "zh": "Martin Heinrich Klaproth, Jöns Jakob Berzelius, Wilhelm Hisinger" },
       "discoveryCountry": "DE, SE",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N19-O9-P2-Q0-R0",
@@ -6666,6 +6837,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f1 5d1 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f2 5s2 5p6 6s2"
     },
+    "description": { "ru": "Серебристый лантаноид; самый распространённый редкозем, легко окисляется, соединения бледно-жёлтые.", "en": "A silvery lanthanide; most abundant rare earth, easily oxidizes and forms pale yellow compounds.", "zh": "银白色镧系元素；最丰富的稀土，易氧化，化合物呈淡黄色。" },
+    "applications": { "ru": "Автокатализаторы, полировка стекла, люминофоры", "en": "Auto catalysts, glass polishing, phosphors", "zh": "汽车催化剂、玻璃抛光、荧光粉" },
     "properties": {
       "atomicMass": "140.115695483639",
       "density": "6.77",
@@ -6774,7 +6947,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "in", "share": "0.7" },
       { "country": "th" },
       { "country": "vn" }
-    ]
+    ],
+    "productionNote": { "ru": "Церий добывают вместе с другими редкоземельными металлами; Китай доминирует в мировой добыче, за ним следуют США, Мьянма, Австралия и Таиланд.", "en": "Cerium is extracted alongside other rare earths; China dominates world rare-earth mine production, followed by the United States, Myanmar, Australia and Thailand.", "zh": "铈与其他稀土元素一同提取；中国主导世界稀土矿产量，其次是美国、缅甸、澳大利亚和泰国。" }
   },
   "Pr": {
     "overview": {
@@ -6782,7 +6956,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Praseodymium",
       "discoveryYear": "1885",
       "casNumber": "CAS7440-10-0",
-      "discoverer": "71",
+      "discoverer": { "ru": "Карл Ауэр фон Вельсбах", "en": "Carl Auer von Welsbach", "zh": "Carl Auer von Welsbach" },
       "discoveryCountry": "AT",
       "sampleColor": { "hex": "#9A9A96" },
       "electronShellConfig": "K2-L8-M18-N21-O8-P2-Q0-R0",
@@ -6793,6 +6967,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f3 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f3 5s2 5p6 6s2"
     },
+    "description": { "ru": "Мягкий серебристый лантаноид; покрывается зелёной оксидной плёнкой на воздухе.", "en": "A soft, silvery lanthanide; develops a green oxide coating in air.", "zh": "柔软银白色镧系元素；在空气中形成绿色氧化层。" },
+    "applications": { "ru": "Магниты, оптическое стекло, катализаторы", "en": "Magnets, optical glass, catalysts", "zh": "磁铁、光学玻璃、催化剂" },
     "properties": {
       "atomicMass": "140.907659640811",
       "density": "6.77",
@@ -6887,7 +7063,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "in", "share": "0.7" },
       { "country": "th" },
       { "country": "vn" }
-    ]
+    ],
+    "productionNote": { "ru": "Празеодим добывают вместе с другими редкоземельными металлами; Китай доминирует в мировой добыче, за ним следуют США, Мьянма, Австралия и Таиланд.", "en": "Praseodymium is extracted alongside other rare earths; China dominates world rare-earth mine production, followed by the United States, Myanmar, Australia and Thailand.", "zh": "镨与其他稀土元素一同提取；中国主导世界稀土矿产量，其次是美国、缅甸、澳大利亚和泰国。" }
   },
   "Nd": {
     "overview": {
@@ -6895,7 +7072,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Neodymium",
       "discoveryYear": "1885",
       "casNumber": "CAS7440-00-8",
-      "discoverer": "71",
+      "discoverer": { "ru": "Карл Ауэр фон Вельсбах", "en": "Carl Auer von Welsbach", "zh": "Carl Auer von Welsbach" },
       "discoveryCountry": "AT",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N22-O8-P2-Q0-R0",
@@ -6906,6 +7083,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f4 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f4 5s2 5p6 6s2"
     },
+    "description": { "ru": "Серебристый лантаноид; быстро реагирует с кислородом, основа мощнейших постоянных магнитов (сплав NdFeB).", "en": "A silvery lanthanide; reacts quickly with oxygen, the basis of the strongest permanent magnets (NdFeB alloy).", "zh": "银白色镧系元素；与氧反应迅速，是最强永磁体的核心成分（钕铁硼合金）。" },
+    "applications": { "ru": "Неодимовые магниты, лазеры, оптическое стекло", "en": "Neodymium magnets, lasers, optical glass", "zh": "钕磁铁、激光、光学玻璃" },
     "properties": {
       "atomicMass": "144.241585785245",
       "density": "7.01",
@@ -7025,7 +7204,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "in", "share": "0.7" },
       { "country": "th" },
       { "country": "vn" }
-    ]
+    ],
+    "productionNote": { "ru": "Неодим добывают вместе с другими редкоземельными металлами; Китай доминирует в мировой добыче, за ним следуют США, Мьянма, Австралия и Таиланд.", "en": "Neodymium is extracted alongside other rare earths; China dominates world rare-earth mine production, followed by the United States, Myanmar, Australia and Thailand.", "zh": "钕与其他稀土元素一同提取；中国主导世界稀土矿产量，其次是美国、缅甸、澳大利亚和泰国。" }
   },
   "Pm": {
     "overview": {
@@ -7033,7 +7213,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Promethium",
       "discoveryYear": "1945",
       "casNumber": "CAS7440-12-2",
-      "discoverer": "92/93/94",
+      "discoverer": { "ru": "Джейкоб Маринский, Лоуренс Гленденин, Чарльз Кориелл", "en": "Jacob A. Marinsky, Lawrence E. Glendenin, Charles D. Coryell", "zh": "Jacob A. Marinsky, Lawrence E. Glendenin, Charles D. Coryell" },
       "discoveryCountry": "US",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N23-O8-P2-Q0-R0",
@@ -7044,6 +7224,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f5 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f5 5s2 5p6 6s2"
     },
+    "description": { "ru": "Радиоактивный лантаноид; все изотопы нестабильны, некоторые соединения слабо светятся голубым.", "en": "A radioactive lanthanide; all isotopes unstable, glows faintly blue in some compounds.", "zh": "放射性镧系元素；所有同位素不稳定，某些化合物发微弱蓝光。" },
+    "applications": { "ru": "Ядерные батареи, люминесцентные краски", "en": "Nuclear batteries, luminous paint", "zh": "核电池、发光涂料" },
     "properties": {
       "atomicMass": "145.229483134757",
       "density": "7.26",
@@ -7123,7 +7305,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "productionCountries": [
       { "country": "us" },
       { "country": "ru" }
-    ]
+    ],
+    "productionNote": { "ru": "У прометия нет стабильных изотопов, он не добывается в виде руды; в природе встречается лишь в следовых количествах как продукт деления урана, промышленно производится в реакторах — Национальная лаборатория Ок-Ридж (США) возобновила заметное производство в 2024 году, Россия также нарабатывает его в исследовательских реакторах.", "en": "Promethium has no stable isotopes and isn't mined as an ore; it occurs in nature only in trace amounts from uranium fission, and is produced in reactors — Oak Ridge National Laboratory (US) resumed meaningful production in 2024, and Russia also produces it in research reactors.", "zh": "钷没有稳定同位素，不以矿石形式开采；它在自然界中仅以铀裂变产生的痕量存在，在反应堆中生产——美国橡树岭国家实验室于2024年恢复了有意义的产量，俄罗斯也在研究堆中生产钷。" }
   },
   "Sm": {
     "overview": {
@@ -7131,7 +7314,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Samarium",
       "discoveryYear": "1879",
       "casNumber": "CAS7440-19-9",
-      "discoverer": "37",
+      "discoverer": { "ru": "Поль Эмиль Лекок де Буабодран", "en": "Paul Emile Lecoq de Boisbaudran", "zh": "Paul Emile Lecoq de Boisbaudran" },
       "discoveryCountry": "FR",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N24-O8-P2-Q0-R0",
@@ -7142,6 +7325,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f6 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f6 5s2 5p6 6s2"
     },
+    "description": { "ru": "Серебристый лантаноид; умеренно твёрдый, используется в магнитах и стержнях управления реакторами.", "en": "A silvery lanthanide; moderately hard and used in magnets and reactor control rods.", "zh": "银白色镧系元素；中等硬度，用于磁体和反应堆控制棒。" },
+    "applications": { "ru": "Магниты, контроль ядерных реакторов, лазеры", "en": "Magnets, reactor control, lasers", "zh": "磁铁、反应堆控制、激光" },
     "properties": {
       "atomicMass": "150.364653219894",
       "density": "7.52",
@@ -7261,7 +7446,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "in", "share": "0.7" },
       { "country": "th" },
       { "country": "vn" }
-    ]
+    ],
+    "productionNote": { "ru": "Самарий добывают вместе с другими редкоземельными металлами; Китай доминирует в мировой добыче, за ним следуют США, Мьянма, Австралия и Таиланд.", "en": "Samarium is extracted alongside other rare earths; China dominates world rare-earth mine production, followed by the United States, Myanmar, Australia and Thailand.", "zh": "钐与其他稀土元素一同提取；中国主导世界稀土矿产量，其次是美国、缅甸、澳大利亚和泰国。" }
   },
   "Eu": {
     "overview": {
@@ -7269,7 +7455,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Europium",
       "discoveryYear": "1901",
       "casNumber": "CAS7440-53-1",
-      "discoverer": "39",
+      "discoverer": { "ru": "Демарсе Эжен Анатоль", "en": "Eugène-Anatole Demarçay", "zh": "Eugène-Anatole Demarçay" },
       "discoveryCountry": "FR",
       "sampleColor": { "hex": "#D0C8A0" },
       "electronShellConfig": "K2-L8-M18-N25-O8-P2-Q0-R0",
@@ -7280,6 +7466,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f7 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f7 5s2 5p6 6s2"
     },
+    "description": { "ru": "Мягкий серебристый лантаноид; самый активный из редкоземельных, быстро покрывается патиной.", "en": "A soft, silvery lanthanide; most reactive of the rare earths, tarnishes quickly in air.", "zh": "柔软银白色镧系元素；稀土中最活泼，在空气中迅速失光。" },
+    "applications": { "ru": "Люминофоры дисплеев, люминесцентные лампы", "en": "Display phosphors, fluorescent lamps", "zh": "显示荧光粉、荧光灯" },
     "properties": {
       "atomicMass": "151.964376904171",
       "density": "5.244",
@@ -7375,7 +7563,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "in", "share": "0.7" },
       { "country": "th" },
       { "country": "vn" }
-    ]
+    ],
+    "productionNote": { "ru": "Европий добывают вместе с другими редкоземельными металлами; Китай доминирует в мировой добыче, за ним следуют США, Мьянма, Австралия и Таиланд.", "en": "Europium is extracted alongside other rare earths; China dominates world rare-earth mine production, followed by the United States, Myanmar, Australia and Thailand.", "zh": "铕与其他稀土元素一同提取；中国主导世界稀土矿产量，其次是美国、缅甸、澳大利亚和泰国。" }
   },
   "Gd": {
     "overview": {
@@ -7383,7 +7572,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Gadolinium",
       "discoveryYear": "1880",
       "casNumber": "CAS7440-54-2",
-      "discoverer": "38",
+      "discoverer": { "ru": "Жан Шарль Галиссар де Мариньяк", "en": "Jean Charles Galissard de Marignac", "zh": "Jean Charles Galissard de Marignac" },
       "discoveryCountry": "CH",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N25-O9-P2-Q0-R0",
@@ -7394,6 +7583,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f7 5d1 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f7 5s2 5p6 5d1 6s2"
     },
+    "description": { "ru": "Серебристо-белый лантаноид; ферромагнитен, применяется в контрастных средствах для МРТ.", "en": "A silvery-white lanthanide; ferromagnetic and used in MRI contrast agents.", "zh": "银白色镧系元素；铁磁性，用于MRI造影剂。" },
+    "applications": { "ru": "МРТ-контраст, ядерные реакторы, магниты", "en": "MRI contrast, nuclear reactors, magnets", "zh": "核磁共振造影、核反应堆、磁铁" },
     "properties": {
       "atomicMass": "157.252129498784",
       "density": "7.90",
@@ -7509,7 +7700,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "in", "share": "0.7" },
       { "country": "th" },
       { "country": "vn" }
-    ]
+    ],
+    "productionNote": { "ru": "Гадолиний добывают вместе с другими редкоземельными металлами; Китай доминирует в мировой добыче, за ним следуют США, Мьянма, Австралия и Таиланд.", "en": "Gadolinium is extracted alongside other rare earths; China dominates world rare-earth mine production, followed by the United States, Myanmar, Australia and Thailand.", "zh": "钆与其他稀土元素一同提取；中国主导世界稀土矿产量，其次是美国、缅甸、澳大利亚和泰国。" }
   },
   "Tb": {
     "overview": {
@@ -7517,7 +7709,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Terbium",
       "discoveryYear": "1843",
       "casNumber": "CAS7440-27-9",
-      "discoverer": "45",
+      "discoverer": { "ru": "Карл Густав Мосандер", "en": "Carl Gustaf Mosander", "zh": "Carl Gustaf Mosander" },
       "discoveryCountry": "SE",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N27-O8-P2-Q0-R0",
@@ -7528,6 +7720,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f9 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f8 5s2 5p6 5d1 6s2"
     },
+    "description": { "ru": "Серебристый лантаноид; ковкий, умеренно активный, используется в зелёных люминофорах.", "en": "A silvery lanthanide; malleable, moderately reactive, and used in green phosphors.", "zh": "银白色镧系元素；有延展性，中等活泼，用于绿色荧光粉。" },
+    "applications": { "ru": "Люминофоры, магнитострикционные сплавы, лазеры", "en": "Phosphors, magnetostrictive alloys, lasers", "zh": "荧光粉、磁致伸缩合金、激光" },
     "properties": {
       "atomicMass": "158.925353687351",
       "density": "8.23",
@@ -7622,7 +7816,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "in", "share": "0.7" },
       { "country": "th" },
       { "country": "vn" }
-    ]
+    ],
+    "productionNote": { "ru": "Тербий — тяжёлый редкоземельный элемент, сосредоточенный в ионно-адсорбционных глинах Китая; Мьянма — крупный дополнительный источник руды для китайских переработчиков.", "en": "Terbium is a heavy rare earth concentrated in China's ion-adsorption clay deposits, with Myanmar a major supplementary ore source feeding Chinese processors.", "zh": "铽是一种重稀土元素，集中于中国的离子吸附型粘土矿床，缅甸是供应中国加工商的重要补充矿石来源。" }
   },
   "Dy": {
     "overview": {
@@ -7630,7 +7825,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Dysprosium",
       "discoveryYear": "1886",
       "casNumber": "CAS7429-91-6",
-      "discoverer": "37",
+      "discoverer": { "ru": "Поль Эмиль Лекок де Буабодран", "en": "Paul Emile Lecoq de Boisbaudran", "zh": "Paul Emile Lecoq de Boisbaudran" },
       "discoveryCountry": "FR",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N28-O8-P2-Q0-R0",
@@ -7641,6 +7836,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f10 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f10 5s2 5p6 6s2"
     },
+    "description": { "ru": "Серебристый лантаноид; обладает одним из самых высоких магнитных моментов среди природных элементов.", "en": "A silvery lanthanide; has one of the highest magnetic moments among naturally occurring elements.", "zh": "银白色镧系元素；天然元素中磁矩最大之一。" },
+    "applications": { "ru": "Магниты, лазеры, ядерная физика", "en": "Magnets, lasers, nuclear physics", "zh": "磁铁、激光、核物理" },
     "properties": {
       "atomicMass": "162.49947173356",
       "density": "8.54",
@@ -7759,7 +7956,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "in", "share": "0.7" },
       { "country": "th" },
       { "country": "vn" }
-    ]
+    ],
+    "productionNote": { "ru": "Диспрозий — тяжёлый редкоземельный элемент, сосредоточенный в ионно-адсорбционных глинах Китая; Мьянма — крупный дополнительный источник руды для китайских переработчиков.", "en": "Dysprosium is a heavy rare earth concentrated in China's ion-adsorption clay deposits, with Myanmar a major supplementary ore source feeding Chinese processors.", "zh": "镝是一种重稀土元素，集中于中国的离子吸附型粘土矿床，缅甸是供应中国加工商的重要补充矿石来源。" }
   },
   "Ho": {
     "overview": {
@@ -7767,7 +7965,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Holmium",
       "discoveryYear": "1878",
       "casNumber": "CAS7440-60-0",
-      "discoverer": "72/84/95",
+      "discoverer": { "ru": "Пер Теодор Клеве, Луи Соре, Марк Делафонтен", "en": "Per Teodor Cleve, Louis Soret, Marc Delafontaine", "zh": "Per Teodor Cleve, Louis Soret, Marc Delafontaine" },
       "discoveryCountry": "SE, CH",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N29-O8-P2-Q0-R0",
@@ -7778,6 +7976,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f11 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f11 5s2 5p6 6s2"
     },
+    "description": { "ru": "Серебристый лантаноид; относительно устойчив на воздухе по сравнению с другими редкоземами.", "en": "A silvery lanthanide; relatively stable in air compared with other rare earths.", "zh": "银白色镧系元素；相比其他稀土在空气中较稳定。" },
+    "applications": { "ru": "Лазеры, магниты, калибровка спектрометров", "en": "Lasers, magnets, spectrometer calibration", "zh": "激光、磁铁、光谱仪校准" },
     "properties": {
       "atomicMass": "164.930329134847",
       "density": "8.79",
@@ -7871,7 +8071,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "in", "share": "0.7" },
       { "country": "th" },
       { "country": "vn" }
-    ]
+    ],
+    "productionNote": { "ru": "Гольмий добывают вместе с другими редкоземельными металлами; Китай доминирует в мировой добыче, за ним следуют США, Мьянма, Австралия и Таиланд.", "en": "Holmium is extracted alongside other rare earths; China dominates world rare-earth mine production, followed by the United States, Myanmar, Australia and Thailand.", "zh": "钬与其他稀土元素一同提取；中国主导世界稀土矿产量，其次是美国、缅甸、澳大利亚和泰国。" }
   },
   "Er": {
     "overview": {
@@ -7879,7 +8080,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Erbium",
       "discoveryYear": "1843",
       "casNumber": "CAS7440-52-0",
-      "discoverer": "45",
+      "discoverer": { "ru": "Карл Густав Мосандер", "en": "Carl Gustaf Mosander", "zh": "Carl Gustaf Mosander" },
       "discoveryCountry": "SE",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N30-O8-P2-Q0-R0",
@@ -7890,6 +8091,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f12 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f12 5s2 5p6 6s2"
     },
+    "description": { "ru": "Серебристый лантаноид; ионы Er³⁺ розового цвета используются в лазерах и оптоволокне.", "en": "A silvery lanthanide; pink-colored Er³⁺ ions are used in lasers and fiber optics.", "zh": "银白色镧系元素；Er³⁺离子呈粉红色，用于激光和光纤。" },
+    "applications": { "ru": "Оптоволокно, лазеры, металлургия", "en": "Fiber optics, lasers, metallurgy", "zh": "光纤、激光、冶金" },
     "properties": {
       "atomicMass": "167.259084222944",
       "density": "9.066",
@@ -8004,7 +8207,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "in", "share": "0.7" },
       { "country": "th" },
       { "country": "vn" }
-    ]
+    ],
+    "productionNote": { "ru": "Эрбий добывают вместе с другими редкоземельными металлами; Китай доминирует в мировой добыче, за ним следуют США, Мьянма, Австралия и Таиланд.", "en": "Erbium is extracted alongside other rare earths; China dominates world rare-earth mine production, followed by the United States, Myanmar, Australia and Thailand.", "zh": "铒与其他稀土元素一同提取；中国主导世界稀土矿产量，其次是美国、缅甸、澳大利亚和泰国。" }
   },
   "Tm": {
     "overview": {
@@ -8012,7 +8216,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Thulium",
       "discoveryYear": "1879",
       "casNumber": "CAS7440-30-4",
-      "discoverer": "72",
+      "discoverer": { "ru": "Пер Теодор Клеве", "en": "Per Teodor Cleve", "zh": "Per Teodor Cleve" },
       "discoveryCountry": "SE",
       "sampleColor": { "hex": "#808080" },
       "electronShellConfig": "K2-L8-M18-N31-O8-P2-Q0-R0",
@@ -8023,6 +8227,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f13 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f13 5s2 5p6 6s2"
     },
+    "description": { "ru": "Мягкий серебристый лантаноид; самый мягкий и ковкий редкоземельный металл.", "en": "A soft, silvery lanthanide; the softest and most malleable rare earth metal.", "zh": "柔软银白色镧系元素；最软、最具延展性的稀土金属。" },
+    "applications": { "ru": "Лазеры, рентгеновские источники", "en": "Lasers, X-ray sources", "zh": "激光、X射线源" },
     "properties": {
       "atomicMass": "168.934218907193",
       "density": "9.32",
@@ -8116,7 +8322,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "in", "share": "0.7" },
       { "country": "th" },
       { "country": "vn" }
-    ]
+    ],
+    "productionNote": { "ru": "Тулий добывают вместе с другими редкоземельными металлами; Китай доминирует в мировой добыче, за ним следуют США, Мьянма, Австралия и Таиланд.", "en": "Thulium is extracted alongside other rare earths; China dominates world rare-earth mine production, followed by the United States, Myanmar, Australia and Thailand.", "zh": "铥与其他稀土元素一同提取；中国主导世界稀土矿产量，其次是美国、缅甸、澳大利亚和泰国。" }
   },
   "Yb": {
     "overview": {
@@ -8124,7 +8331,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Ytterbium",
       "discoveryYear": "1878",
       "casNumber": "CAS7440-64-4",
-      "discoverer": "38",
+      "discoverer": { "ru": "Жан Шарль Галиссар де Мариньяк", "en": "Jean Charles Galissard de Marignac", "zh": "Jean Charles Galissard de Marignac" },
       "discoveryCountry": "CH",
       "sampleColor": { "hex": "#D0C8A0" },
       "electronShellConfig": "K2-L8-M18-N32-O8-P2-Q0-R0",
@@ -8135,6 +8342,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f14 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 6s2"
     },
+    "description": { "ru": "Серебристый лантаноид; большой атомный радиус и повышенная реакционноспособность из-за состояния Yb²⁺.", "en": "A silvery lanthanide; large atomic radius and elevated reactivity due to its Yb2+ state.", "zh": "银白色镧系元素；因Yb²⁺状态而原子半径较大、反应性较强。" },
+    "applications": { "ru": "Лазеры, атомные часы, оптоволокно", "en": "Lasers, atomic clocks, fiber optics", "zh": "激光、原子钟、光纤" },
     "properties": {
       "atomicMass": "173.045",
       "density": "6.9",
@@ -8252,7 +8461,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "in", "share": "0.7" },
       { "country": "th" },
       { "country": "vn" }
-    ]
+    ],
+    "productionNote": { "ru": "Иттербий добывают вместе с другими редкоземельными металлами; Китай доминирует в мировой добыче, за ним следуют США, Мьянма, Австралия и Таиланд.", "en": "Ytterbium is extracted alongside other rare earths; China dominates world rare-earth mine production, followed by the United States, Myanmar, Australia and Thailand.", "zh": "镱与其他稀土元素一同提取；中国主导世界稀土矿产量，其次是美国、缅甸、澳大利亚和泰国。" }
   },
   "Lu": {
     "overview": {
@@ -8260,7 +8470,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Lutetium",
       "discoveryYear": "1906",
       "casNumber": "CAS7439-94-3",
-      "discoverer": "96/71",
+      "discoverer": { "ru": "Жорж Урбен, Карл Ауэр фон Вельсбах", "en": "Georges Urbain, Carl Auer von Welsbach", "zh": "Georges Urbain, Carl Auer von Welsbach" },
       "discoveryCountry": "FR, AT",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O9-P2-Q0-R0",
@@ -8271,6 +8481,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f14 5d1 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d1 5f1 6s2"
     },
+    "description": { "ru": "Серебристый лантаноид; последний в ряду, плотнее и твёрже большинства редкоземельных металлов.", "en": "A silvery lanthanide; last of the series, denser and harder than most rare earths.", "zh": "银白色镧系元素；系列末尾，比多数稀土更密更硬。" },
+    "applications": { "ru": "ПЭТ-сканирование, катализаторы", "en": "PET scanning, catalysts", "zh": "PET扫描、催化剂" },
     "properties": {
       "atomicMass": "174.96669",
       "density": "9.84",
@@ -8368,7 +8580,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "in", "share": "0.7" },
       { "country": "th" },
       { "country": "vn" }
-    ]
+    ],
+    "productionNote": { "ru": "Лютеций — самый редкий тяжёлый редкоземельный элемент, сосредоточенный в ионно-адсорбционных глинах Китая; Мьянма — крупный дополнительный источник руды.", "en": "Lutetium is the rarest heavy rare earth, concentrated in China's ion-adsorption clay deposits, with Myanmar a major supplementary ore source.", "zh": "镥是最稀有的重稀土元素，集中于中国的离子吸附型粘土矿床，缅甸是重要的补充矿石来源。" }
   },
   "Hf": {
     "overview": {
@@ -8376,7 +8589,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Hafnium",
       "discoveryYear": "1923",
       "casNumber": "CAS7440-58-6",
-      "discoverer": "97/98",
+      "discoverer": { "ru": "Дирк Костер, Дьёрдь де Хевеши", "en": "Dirk Coster, George de Hevesy", "zh": "Dirk Coster, George de Hevesy" },
       "discoveryCountry": "DK",
       "sampleColor": { "hex": "#6A7078" },
       "electronShellConfig": "K2-L8-M18-N32-O10-P2-Q0-R0",
@@ -8387,6 +8600,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f14 5d2 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d2 6s2"
     },
+    "description": { "ru": "Блестящий серебристый переходный металл; коррозионностойкий, применяется в стержнях управления реакторами.", "en": "A lustrous, silvery transition metal; corrosion-resistant and used in nuclear control rods.", "zh": "有光泽的银白色过渡金属；耐腐蚀，用于核反应堆控制棒。" },
+    "applications": { "ru": "Ядерная энергетика, суперсплавы, полупроводники", "en": "Nuclear power, superalloys, semiconductors", "zh": "核电、高温合金、半导体" },
     "properties": {
       "atomicMass": "178.484981221495",
       "density": "13.31",
@@ -8498,7 +8713,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "de", "share": "10" },
       { "country": "be", "share": "7" },
       { "country": "cn", "share": "4" }
-    ]
+    ],
+    "productionNote": { "ru": "Гафний встречается вместе с цирконием в циркониевой руде в соотношении примерно 1:36 и отдельно не добывается; Австралия и ЮАР лидируют в добыче циркониевых концентратов, за ними следуют Китай, Мозамбик и Индонезия.", "en": "Hafnium occurs with zirconium in zircon ore at roughly a 1:36 ratio and is not mined separately; Australia and South Africa lead zircon mineral-concentrate mining, followed by China, Mozambique and Indonesia.", "zh": "铪与锆共生于锆石矿中，比例约为1:36，不单独开采；澳大利亚和南非在锆精矿开采中领先，其次是中国、莫桑比克和印度尼西亚。" }
   },
   "Ta": {
     "overview": {
@@ -8506,7 +8722,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Tantalum",
       "discoveryYear": "1802",
       "casNumber": "CAS7440-25-7",
-      "discoverer": "81",
+      "discoverer": { "ru": "Андерс Густав Экеберг", "en": "Anders Gustaf Ekeberg", "zh": "Anders Gustaf Ekeberg" },
       "discoveryCountry": "SE",
       "sampleColor": { "hex": "#8FA4B4" },
       "electronShellConfig": "K2-L8-M18-N32-O11-P2-Q0-R0",
@@ -8517,6 +8733,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f14 5d3 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d3 6s2"
     },
+    "description": { "ru": "Твёрдый сине-серый переходный металл; плотный, ковкий, устойчив к кислотам.", "en": "A hard, blue-gray transition metal; dense, ductile, and resistant to corrosion by acids.", "zh": "硬而蓝灰色的过渡金属；密度大、韧性好、耐酸。" },
+    "applications": { "ru": "Конденсаторы, импланты, суперсплавы", "en": "Capacitors, implants, superalloys", "zh": "电容器、植入物、高温合金" },
     "properties": {
       "atomicMass": "180.947878335825",
       "density": "16.69",
@@ -8616,7 +8834,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "mz", "share": "2.6" },
       { "country": "au", "share": "2.5" },
       { "country": "et", "share": "1.9" }
-    ]
+    ],
+    "productionNote": { "ru": "ДР Конго — ведущий добытчик тантала, за ней следуют Руанда, Бразилия, Нигерия и Китай.", "en": "The Democratic Republic of the Congo is the leading tantalum mine producer, followed by Rwanda, Brazil, Nigeria and China.", "zh": "刚果民主共和国是主要的钽矿生产国，其次是卢旺达、巴西、尼日利亚和中国。" }
   },
   "W": {
     "overview": {
@@ -8624,7 +8843,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Tungsten",
       "discoveryYear": "1783",
       "casNumber": "CAS7440-33-7",
-      "discoverer": "85/86",
+      "discoverer": { "ru": "Хуан Хосе Эльуар, Фаусто Эльуар", "en": "Juan José Elhuyar, Fausto Elhuyar", "zh": "Juan José Elhuyar, Fausto Elhuyar" },
       "discoveryCountry": "ES",
       "sampleColor": { "hex": "#6A7078" },
       "electronShellConfig": "K2-L8-M18-N32-O12-P2-Q0-R0",
@@ -8635,6 +8854,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f14 5d4 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d4 6s2"
     },
+    "description": { "ru": "Стально-серый переходный металл; наивысшая температура плавления среди металлов, очень твёрдый.", "en": "A steel-gray transition metal; highest melting point of all metals and extremely hard.", "zh": "钢灰色过渡金属；所有金属中熔点最高，极硬。" },
+    "applications": { "ru": "Нити накаливания, режущий инструмент, броня, легирование стали", "en": "Filament wire, cutting tools, armor, steel alloying", "zh": "灯丝、切削工具、装甲、钢材合金化" },
     "properties": {
       "atomicMass": "183.841779591731",
       "density": "19.25",
@@ -8746,7 +8967,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "kp", "share": "2.0" },
       { "country": "rw", "share": "1.0" },
       { "country": "es", "share": "0.9" }
-    ]
+    ],
+    "productionNote": { "ru": "Китай доминирует в мировой добыче вольфрама (более 80% мировой добычи), за ним следуют Вьетнам, Россия, КНДР и Боливия.", "en": "China dominates world tungsten mine production (over 80% of output), followed by Vietnam, Russia, North Korea and Bolivia.", "zh": "中国主导世界钨矿产量（超过80%的产量），其次是越南、俄罗斯、朝鲜和玻利维亚。" }
   },
   "Re": {
     "overview": {
@@ -8754,7 +8976,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Rhenium",
       "discoveryYear": "1925",
       "casNumber": "CAS7440-15-5",
-      "discoverer": "99/100/101",
+      "discoverer": { "ru": "Вальтер Ноддак, Ида Такке, Отто Берг", "en": "Walter Noddack, Ida Tacke, Otto Berg", "zh": "Walter Noddack, Ida Tacke, Otto Berg" },
       "discoveryCountry": "DE",
       "sampleColor": { "hex": "#6A7078" },
       "electronShellConfig": "K2-L8-M18-N32-O13-P2-Q0-R0",
@@ -8765,6 +8987,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f14 5d5 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d5 6s2"
     },
+    "description": { "ru": "Серебристо-белый переходный металл; один из самых плотных элементов, устойчив к большинству кислот.", "en": "A silvery-white transition metal; one of the densest elements and resists most acids.", "zh": "银白色过渡金属；密度最高的元素之一，耐大多数酸。" },
+    "applications": { "ru": "Нефтепереработка, суперсплавы, термопары", "en": "Oil refining, superalloys, thermocouples", "zh": "石油炼制、高温合金、热电偶" },
     "properties": {
       "atomicMass": "186.206707351458",
       "density": "21.02",
@@ -8862,7 +9086,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "pl" },
       { "country": "uz" },
       { "country": "kr" }
-    ]
+    ],
+    "productionNote": { "ru": "Рений, извлекаемый как побочный продукт добычи медно-молибденовых руд, лидирует Чили, за ней следуют США, Польша, Узбекистан и Южная Корея.", "en": "Rhenium, recovered as a byproduct of copper-molybdenum mining, is led by Chile, followed by the United States, Poland, Uzbekistan and South Korea.", "zh": "铼作为铜钼矿开采的副产品回收，智利领先，其次是美国、波兰、乌兹别克斯坦和韩国。" }
   },
   "Os": {
     "overview": {
@@ -8870,7 +9095,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Osmium",
       "discoveryYear": "1803",
       "casNumber": "CAS7440-04-2",
-      "discoverer": "52",
+      "discoverer": { "ru": "Смитсон Теннант", "en": "Smithson Tennant", "zh": "Smithson Tennant" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#8FA4B4" },
       "electronShellConfig": "K2-L8-M18-N32-O14-P2-Q0-R0",
@@ -8881,6 +9106,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f14 5d6 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d6 6s2"
     },
+    "description": { "ru": "Твёрдый хрупкий сине-белый переходный металл; самый плотный природный элемент.", "en": "A hard, brittle, bluish-white transition metal; densest naturally occurring element.", "zh": "硬而脆的蓝白色过渡金属；天然元素中密度最大。" },
+    "applications": { "ru": "Шарикоподшипники, электрические контакты, катализаторы", "en": "Ball bearings, electrical contacts, catalysts", "zh": "轴承、电触点、催化剂" },
     "properties": {
       "atomicMass": "190.22486145925",
       "density": "22.59",
@@ -8995,7 +9222,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "ca" },
       { "country": "ru" },
       { "country": "za" }
-    ]
+    ],
+    "productionNote": { "ru": "Осмий добывается совместно с платиной и другими металлами платиновой группы и отдельно по странам не учитывается; ЮАР и Россия доминируют в добыче МПГ.", "en": "Osmium is co-produced with platinum and other PGMs from the same ore and is not separately tracked by country; South Africa and Russia dominate PGM mine output.", "zh": "锇与铂及其他铂族金属联合生产，没有单独的国别统计；南非和俄罗斯主导铂族金属矿产量。" }
   },
   "Ir": {
     "overview": {
@@ -9003,7 +9231,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Iridium",
       "discoveryYear": "1803",
       "casNumber": "CAS7439-88-5",
-      "discoverer": "52",
+      "discoverer": { "ru": "Смитсон Теннант", "en": "Smithson Tennant", "zh": "Smithson Tennant" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O15-P2-Q0-R0",
@@ -9014,6 +9242,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f14 5d7 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d7 6s2"
     },
+    "description": { "ru": "Плотный серебристо-белый переходный металл; наиболее коррозионностойкий, платиновая группа.", "en": "A dense, silvery-white transition metal; most corrosion-resistant metal and member of the platinum group.", "zh": "致密银白色过渡金属；最耐腐蚀的金属，铂族元素。" },
+    "applications": { "ru": "Свечи зажигания, катализаторы, электроды", "en": "Spark plugs, catalysts, electrodes", "zh": "火花塞、催化剂、电极" },
     "properties": {
       "atomicMass": "192.216053820407",
       "density": "22.56",
@@ -9106,7 +9336,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "za" },
       { "country": "ca" },
       { "country": "ru" }
-    ]
+    ],
+    "productionNote": { "ru": "Иридий добывается совместно с платиной и другими металлами платиновой группы и отдельно по странам не учитывается; ЮАР и Россия доминируют в добыче МПГ.", "en": "Iridium is co-produced with platinum and other PGMs from the same ore and is not separately tracked by country; South Africa and Russia dominate PGM mine output.", "zh": "铱与铂及其他铂族金属联合生产，没有单独的国别统计；南非和俄罗斯主导铂族金属矿产量。" }
   },
   "Pt": {
     "overview": {
@@ -9114,7 +9345,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Platinum",
       "discoveryYear": "1735",
       "casNumber": "CAS7440-06-4",
-      "discoverer": "50",
+      "discoverer": { "ru": "Антонио де Ульоа", "en": "Antonio de Ulloa", "zh": "Antonio de Ulloa" },
       "discoveryCountry": "PE",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O17-P1-Q0-R0",
@@ -9125,6 +9356,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f14 5d9 6s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d9 6s1"
     },
+    "description": { "ru": "Плотный ковкий благородный металл; мало реагирует, блестящий, один из самых редких стабильных металлов в земной коре.", "en": "A dense, malleable precious metal; unreactive, lustrous, and one of the rarest stable metals in Earth's crust.", "zh": "致密韧性贵金属；反应性低，光泽夺目，是地壳中最稀有的稳定金属之一。" },
+    "applications": { "ru": "Автокатализаторы, ювелирные изделия, электроды, химический синтез", "en": "Auto catalysts, jewelry, electrodes, chemical synthesis", "zh": "汽车催化剂、首饰、电极、化学合成" },
     "properties": {
       "atomicMass": "195.084429339468",
       "density": "21.45",
@@ -9232,7 +9465,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "zw", "share": "8.0" },
       { "country": "ca", "share": "3.2" },
       { "country": "us", "share": "1.8" }
-    ]
+    ],
+    "productionNote": { "ru": "ЮАР — безусловный лидер по добыче платины (около двух третей мировой добычи), за ней следуют Россия, Зимбабве, Канада и США.", "en": "South Africa is by far the leading platinum producer (about two-thirds of world output), followed by Russia, Zimbabwe, Canada and the United States.", "zh": "南非是迄今为止最大的铂生产国（约占世界产量的三分之二），其次是俄罗斯、津巴布韦、加拿大和美国。" }
   },
   "Au": {
     "overview": {
@@ -9250,6 +9484,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f14 5d10 6s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s1"
     },
+    "description": { "ru": "Мягкий плотный жёлтый благородный металл; химически инертен, отличный проводник.", "en": "A soft, dense, yellow precious metal; chemically inert and excellent conductor.", "zh": "柔软致密黄色贵金属；化学惰性，优良导体。" },
+    "applications": { "ru": "Ювелирные изделия, электроника, стоматология, инвестиции", "en": "Jewelry, electronics, dentistry, investment", "zh": "首饰、电子、牙科、投资" },
     "properties": {
       "atomicMass": "196.966570051362",
       "density": "19.32",
@@ -9350,7 +9586,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "br", "share": "2.3" },
       { "country": "co", "share": "1.8" },
       { "country": "pg", "share": "1.4" }
-    ]
+    ],
+    "productionNote": { "ru": "Китай — ведущий добытчик золота, за ним почти вплотную следуют Австралия и Россия, затем Канада и США.", "en": "China is the leading gold mine producer, followed closely by Australia and Russia, then Canada and the United States.", "zh": "中国是主要的黄金生产国，澳大利亚和俄罗斯紧随其后，然后是加拿大和美国。" }
   },
   "Hg": {
     "overview": {
@@ -9368,6 +9605,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f14 5d10 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2"
     },
+    "description": { "ru": "Тяжёлый серебристый жидкий металл; единственный жидкий металл при комнатной температуре, токсичен парами.", "en": "A heavy, silvery liquid metal; only metal liquid at room temperature and toxic in vapor form.", "zh": "沉重银白色液态金属；室温下唯一液态金属，蒸气有毒。" },
+    "applications": { "ru": "Люминесцентные лампы (истор.), хлорщелочное производство (истор.)", "en": "Fluorescent lamps (legacy), chlor-alkali (legacy)", "zh": "荧光灯（传统）、氯碱工业（传统）" },
     "properties": {
       "atomicMass": "200.592560642052",
       "density": "13.5336",
@@ -9484,7 +9723,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "pe" },
       { "country": "no" },
       { "country": "kg" }
-    ]
+    ],
+    "productionNote": { "ru": "На долю Китая приходится основная часть заявленной мировой добычи ртути, Таджикистан, Перу, Норвегия и Киргизия — гораздо меньшие источники.", "en": "China accounts for the large majority of reported mercury mine production, with Tajikistan, Peru, Norway and Kyrgyzstan as much smaller sources.", "zh": "中国占已报告汞矿产量的绝大部分，塔吉克斯坦、秘鲁、挪威和吉尔吉斯斯坦是规模小得多的来源。" }
   },
   "Tl": {
     "overview": {
@@ -9492,7 +9732,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Thallium",
       "discoveryYear": "1861",
       "casNumber": "CAS7440-28-0",
-      "discoverer": "66",
+      "discoverer": { "ru": "Уильям Крукс", "en": "William Crookes", "zh": "William Crookes" },
       "discoveryCountry": "GB",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P3-Q0-R0",
@@ -9503,6 +9743,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p1"
     },
+    "description": { "ru": "Мягкий серый металл; тяжёлый, низкоплавкий, имеет два стабильных изотопа.", "en": "A soft, gray post-transition metal; heavy, low-melting, and has two stable isotopes.", "zh": "柔软灰色金属；重、低熔点，有两个稳定同位素。" },
+    "applications": { "ru": "Оптоволокно, специальное стекло, фармацевтика (ограниченно)", "en": "Fiber optics, specialty glass, pharmaceuticals (limited)", "zh": "光纤、特种玻璃、医药（有限）" },
     "properties": {
       "atomicMass": "204.383512460528",
       "density": "11.85",
@@ -9602,7 +9844,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "ru" },
       { "country": "pe" },
       { "country": "br" }
-    ]
+    ],
+    "productionNote": { "ru": "Таллий извлекается только как побочный продукт переработки цинковых, свинцовых и медных руд, Китай — доминирующий производитель.", "en": "Thallium is recovered only as a byproduct of zinc, lead and copper ore smelting, with China the dominant producer.", "zh": "铊仅作为锌、铅和铜矿冶炼的副产品回收，中国是主要生产国。" }
   },
   "Pb": {
     "overview": {
@@ -9620,6 +9863,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p2"
     },
+    "description": { "ru": "Мягкий плотный металл; сине-серый, токсичен, известен с древних времён.", "en": "A soft, dense post-transition metal; bluish-gray, toxic, and known since ancient times.", "zh": "柔软致密金属；蓝灰色，有毒，自古已知。" },
+    "applications": { "ru": "Свинцово-кислотные аккумуляторы, экранирование, припои, боеприпасы", "en": "Lead-acid batteries, radiation shielding, solders, ammunition", "zh": "铅酸电池、辐射屏蔽、焊料、弹药" },
     "properties": {
       "atomicMass": "207.216907578328",
       "density": "11.34",
@@ -9733,7 +9978,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "ir", "share": "1.3" },
       { "country": "bo", "share": "1.3" },
       { "country": "tj", "share": "0.9" }
-    ]
+    ],
+    "productionNote": { "ru": "Крупнейшие страны-добытчики свинцовой руды (2024).", "en": "Top lead mining countries by 2024 mine output.", "zh": "2024年铅矿产量最高的国家。" }
   },
   "Bi": {
     "overview": {
@@ -9741,7 +9987,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Bismuth",
       "discoveryYear": "1753",
       "casNumber": "CAS7440-69-9",
-      "discoverer": "40",
+      "discoverer": { "ru": "Клод Франсуа Жоффруа", "en": "Claude Francois Geoffrey", "zh": "Claude Francois Geoffrey" },
       "discoveryCountry": "FR",
       "sampleColor": { "hex": "#8A7D72" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P5-Q0-R0",
@@ -9752,6 +9998,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p3 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p3"
     },
+    "description": { "ru": "Хрупкий металл; розоватый оттенок, слабо радиоактивен из-за распада ²⁰⁹Bi.", "en": "A brittle post-transition metal; pinkish tint, weakly radioactive due to long-lived ²⁰⁹Bi decay.", "zh": "脆性金属；带粉红色调，因²⁰⁹Bi衰变而弱放射性。" },
+    "applications": { "ru": "Низкотемпературные припои, косметика, фармацевтика", "en": "Low-melting solders, cosmetics, pharmaceuticals", "zh": "低熔点焊料、化妆品、医药" },
     "properties": {
       "atomicMass": "208.980398587653",
       "density": "9.78",
@@ -9847,7 +10095,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "kr", "share": "5.6" },
       { "country": "jp" },
       { "country": "kz" }
-    ]
+    ],
+    "productionNote": { "ru": "Висмут производится почти исключительно как побочный продукт переработки свинцовых, вольфрамовых и цинковых руд; крупнейшие страны-производители (2024).", "en": "Bismuth is produced almost entirely as a byproduct of lead, tungsten and zinc ore smelting; top refinery-production countries by 2024 output.", "zh": "铋几乎完全作为铅、钨和锌矿冶炼的副产品生产；2024年主要精炼生产国。" }
   },
   "Po": {
     "overview": {
@@ -9855,7 +10104,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Polonium",
       "discoveryYear": "1898",
       "casNumber": "CAS7440-08-6",
-      "discoverer": "43/44",
+      "discoverer": { "ru": "Пьер Кюри, Мария Склодовская-Кюри", "en": "Pierre Curie, Marie Skłodowska Curie", "zh": "Pierre Curie, Marie Skłodowska Curie" },
       "discoveryCountry": "FR",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P6-Q0-R0",
@@ -9866,6 +10115,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p4 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p4"
     },
+    "description": { "ru": "Редкий серебристый радиоактивный металлоид; все изотопы нестабильны, открыт Марией Кюри.", "en": "A rare, silvery radioactive metalloid; all isotopes unstable, discovered by Marie Curie.", "zh": "稀有银白色放射性类金属；所有同位素不稳定，由居里夫人发现。" },
+    "applications": { "ru": "Источники нейтронов, антистатические устройства", "en": "Neutron sources, antistatic devices", "zh": "中子源、防静电装置" },
     "properties": {
       "atomicMass": "208.962006199874",
       "density": "9.196",
@@ -9938,7 +10189,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "youtube": "https://www.youtube.com/watch?v=qaOos4Kruf0",
     "productionCountries": [
       { "country": "ru" }
-    ]
+    ],
+    "productionNote": { "ru": "В природе встречается только в следовых количествах как продукт распада урановых руд, не добывается; коммерческий Po-210 синтезируется нейтронным облучением висмута-209, почти весь объём — на одном реакторном производстве в России.", "en": "Occurs naturally only in trace amounts as a uranium ore decay product, not mined; commercial Po-210 is synthesized by neutron irradiation of bismuth-209, produced almost entirely at a single reactor facility in Russia.", "zh": "在自然界中仅以铀矿衰变产物的痕量形式存在，不进行开采；商用钋-210通过中子辐照铋-209合成，几乎全部产自俄罗斯的一处反应堆设施。" }
   },
   "At": {
     "overview": {
@@ -9946,7 +10198,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Astatine",
       "discoveryYear": "1940",
       "casNumber": "CAS7440-68-8",
-      "discoverer": "87/88/89",
+      "discoverer": { "ru": "Дейл Корсон, Кеннет Маккензи, Эмилио Сегре", "en": "Dale R. Corson, Kenneth Ross MacKenzie, Emilio Segrè", "zh": "Dale R. Corson, Kenneth Ross MacKenzie, Emilio Segrè" },
       "discoveryCountry": "US",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P7-Q0-R0",
@@ -9957,6 +10209,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p5 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p5"
     },
+    "description": { "ru": "Радиоактивный галоген; летуч и редок, все изотопы недолговечны.", "en": "A radioactive halogen; volatile and rare, all isotopes short-lived.", "zh": "放射性卤素；挥发且稀有，所有同位素寿命短。" },
+    "applications": { "ru": "Исследования в ядерной медицине", "en": "Nuclear medicine research", "zh": "核医学研究" },
     "properties": {
       "atomicMass": "209.602075361333",
       "density": "~7",
@@ -10010,7 +10264,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "productionCountries": [
       { "country": "us" },
       { "country": "jp" }
-    ]
+    ],
+    "productionNote": { "ru": "Самый редкий природный элемент на Земле, в природе присутствует лишь в следовых количествах в цепочках распада, не добывается; для терапии рака At-211 нарабатывают на медицинских циклотронах — несколько центров в США и в Японии (RCNP Осакского университета, RIKEN).", "en": "The rarest naturally occurring element on Earth, present only in trace decay-chain amounts, not mined; for cancer therapy, At-211 is produced on medical cyclotrons at a handful of centers in the US and in Japan (Osaka University's RCNP, RIKEN).", "zh": "地球上天然存在的最稀有元素，仅以衰变链的痕量存在，不进行开采；用于癌症治疗的砹-211在少数医用回旋加速器中心生产，包括美国的多个中心和日本（大阪大学RCNP、理化学研究所RIKEN）。" }
   },
   "Rn": {
     "overview": {
@@ -10018,7 +10273,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Radon",
       "discoveryYear": "1900",
       "casNumber": "CAS10043-92-2",
-      "discoverer": "68",
+      "discoverer": { "ru": "Фридрих Эрнст Дорн", "en": "Friedrich Ernst Dorn", "zh": "Friedrich Ernst Dorn" },
       "discoveryCountry": "DE",
       "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P8-Q0-R0",
@@ -10029,6 +10284,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p6 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p6"
     },
+    "description": { "ru": "Бесцветный радиоактивный благородный газ; самый тяжёлый из природных благородных газов, образуется при распаде радия.", "en": "A colorless radioactive noble gas; heaviest naturally occurring noble gas, formed by radium decay.", "zh": "无色放射性稀有气体；天然存在的最重稀有气体，由镭衰变产生。" },
+    "applications": { "ru": "Радоновый мониторинг зданий (ограниченное применение)", "en": "Building radon monitoring (limited use)", "zh": "建筑氡监测（有限用途）" },
     "properties": {
       "atomicMass": "222.018",
       "density": "0.00973",
@@ -10097,7 +10354,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "at" },
       { "country": "cz" },
       { "country": "ru" }
-    ]
+    ],
+    "productionNote": { "ru": "Не добывается и не производится как товар — радиоактивный газ, продукт распада урана/тория; в лечебных целях его получают на месте из радиевых источников на радоновых курортах, известных прежде всего в Австрии (Бад-Гаштайн), Чехии (Яхимов) и России.", "en": "Not mined or produced as a commodity — a radioactive decay-product gas generated on-site from radium sources for therapeutic use at radon spas, most famously in Austria (Bad Gastein), the Czech Republic (Jáchymov) and Russia.", "zh": "不作为商品开采或生产——一种放射性衰变产物气体，在氡疗养地由镭源现场产生用于治疗，最著名的是奥地利（巴德加斯坦）、捷克（亚希莫夫）和俄罗斯。" }
   },
   "Fr": {
     "overview": {
@@ -10105,7 +10363,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Francium",
       "discoveryYear": "1939",
       "casNumber": "CAS7440-73-5",
-      "discoverer": "60",
+      "discoverer": { "ru": "Маргарита Перей", "en": "Marguerite Perey", "zh": "Marguerite Perey" },
       "discoveryCountry": "FR",
       "sampleColor": { "hex": "#D4B060" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P8-Q1-R0",
@@ -10116,6 +10374,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 7s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p6 7s1"
     },
+    "description": { "ru": "Крайне радиоактивный щелочной металл; все изотопы нестабильны, самый тяжёлый щелочной элемент.", "en": "An extremely radioactive alkali metal; all isotopes unstable, heaviest alkali element.", "zh": "极强放射性碱金属；所有同位素不稳定，最重的碱金属。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "223.01973",
       "density": "~2.458",
@@ -10173,7 +10433,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "productionCountries": [
       { "country": "fr" },
       { "country": "us" }
-    ]
+    ],
+    "productionNote": { "ru": "Не добывается и не производится как товар (существует лишь мимолётные следы в урановых рудах) — открыт во Франции (Маргарита Пере, Институт Кюри, 1939), сегодня несколько атомов за раз получают и изучают в лазерных ловушках в лабораториях США (Стоуни-Брук).", "en": "Not mined or produced as a commodity (only fleeting trace amounts occur in uranium ores) — discovered in France (Marguerite Perey, Curie Institute, 1939), today a few atoms at a time are made and studied in laser traps at US labs (Stony Brook).", "zh": "不作为商品开采或生产（仅以铀矿中转瞬即逝的痕量存在）——于1939年在法国发现（玛格丽特·佩雷，居里研究所），如今在美国实验室（石溪大学）的激光阱中一次制备并研究几个原子。" }
   },
   "Ra": {
     "overview": {
@@ -10181,7 +10442,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Radium",
       "discoveryYear": "1898",
       "casNumber": "CAS7440-14-4",
-      "discoverer": "43/44",
+      "discoverer": { "ru": "Пьер Кюри, Мария Склодовская-Кюри", "en": "Pierre Curie, Marie Skłodowska Curie", "zh": "Pierre Curie, Marie Skłodowska Curie" },
       "discoveryCountry": "FR",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P8-Q2-R0",
@@ -10192,6 +10453,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Rn] 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p6 7s2"
     },
+    "description": { "ru": "Серебристо-белый щелочноземельный металл; сильно радиоактивен, все изотопы распадаются.", "en": "A silvery-white alkaline-earth metal; highly radioactive, and all isotopes decay.", "zh": "银白色碱土金属；强放射性，所有同位素都会衰变。" },
+    "applications": { "ru": "Исторически люминесцентные краски, научные исследования", "en": "Historical luminous paint, scientific research", "zh": "历史发光涂料、科学研究" },
     "properties": {
       "atomicMass": "226.032494020223",
       "density": "5.50",
@@ -10268,7 +10531,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "youtube": "https://www.youtube.com/watch?v=l1i0vYO4lvg",
     "productionCountries": [
       { "country": "no" }
-    ]
+    ],
+    "productionNote": { "ru": "Исторически извлекался из урановой руды (уранинита) в Конго и Канаде, но сегодня горной добычи нет; единственная в мире площадка коммерческого производства Ra-223 (препарат Xofigo) — в Норвегии (IFE, Кьеллер), где его выделяют из Ac-227, поставляемого Национальной лабораторией Ок-Ридж (США).", "en": "Historically extracted from pitchblende ore in the Congo and Canada, but there's no mining today; the world's only commercial Ra-223 production site (for the drug Xofigo) is in Norway (IFE, Kjeller), which extracts it from Ac-227 supplied by Oak Ridge National Laboratory (US).", "zh": "历史上从刚果和加拿大的沥青铀矿中提取，但如今没有矿山开采；世界上唯一的镭-223商业生产基地（用于Xofigo药物）位于挪威（IFE，谢勒），从美国橡树岭国家实验室供应的锕-227中提取。" }
   },
   "Ac": {
     "overview": {
@@ -10276,7 +10540,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Actinium",
       "discoveryYear": "1899",
       "casNumber": "CAS7440-34-8",
-      "discoverer": "34",
+      "discoverer": { "ru": "Андре-Луи Дебьерн", "en": "André-Louis Debierne", "zh": "André-Louis Debierne" },
       "discoveryCountry": "FR",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P9-Q2-R0",
@@ -10287,6 +10551,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Rn] 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p6 6d1 7s2"
     },
+    "description": { "ru": "Серебристый радиоактивный актинид; начало ряда актинидов, светится голубым в темноте.", "en": "A silvery radioactive actinide; starts the actinide series and glows blue in the dark.", "zh": "银白色放射性锕系元素；锕系开端，在暗处发蓝光。" },
+    "applications": { "ru": "Исследования, нейтронные источники", "en": "Research, neutron sources", "zh": "科研、中子源" },
     "properties": {
       "atomicMass": "227.025111462183",
       "density": "10.07",
@@ -10356,7 +10622,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "de" },
       { "country": "ru" },
       { "country": "ca" }
-    ]
+    ],
+    "productionNote": { "ru": "В природе встречается лишь в следовых количествах в урановых рудах, не добывается; практически весь актиний (Ac-225 для терапии рака) производят из генераторов Th-229 в США, Германии и России, а также на ускорителях в Канаде (TRIUMF).", "en": "Occurs naturally only in trace amounts in uranium ores, not mined; virtually all actinium (Ac-225 for cancer therapy) comes from Th-229 generators in the US, Germany and Russia, plus accelerator production in Canada (TRIUMF).", "zh": "在自然界中仅以痕量形式存在于铀矿中，不进行开采；几乎所有的锕（用于癌症治疗的锕-225）都产自美国、德国和俄罗斯的钍-229发生器，以及加拿大（TRIUMF）的加速器生产。" }
   },
   "Th": {
     "overview": {
@@ -10364,7 +10631,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Thorium",
       "discoveryYear": "1829",
       "casNumber": "CAS7440-29-1",
-      "discoverer": "16",
+      "discoverer": { "ru": "Йёнс Якоб Берцелиус", "en": "Jöns Jakob Berzelius", "zh": "Jöns Jakob Berzelius" },
       "discoveryCountry": "SE",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P10-Q2-R0",
@@ -10375,6 +10642,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Rn] 6d2 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p6 6d2 7s2"
     },
+    "description": { "ru": "Слабо радиоактивный актинид; плотный, серебристый, в коре встречается чаще урана.", "en": "A weakly radioactive actinide; dense, silvery, and more abundant than uranium in Earth's crust.", "zh": "弱放射性锕系元素；致密银白色，地壳中比铀更丰富。" },
+    "applications": { "ru": "Потенциальное ядерное топливо, газовые фонари (истор.), линзы", "en": "Potential nuclear fuel, gas mantles (legacy), lenses", "zh": "潜在核燃料、气灯罩（传统）、透镜" },
     "properties": {
       "atomicMass": "232.038041097472",
       "density": "11.72",
@@ -10471,7 +10740,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "br" },
       { "country": "my" },
       { "country": "vn" }
-    ]
+    ],
+    "productionNote": { "ru": "У тория нет отдельных месторождений — он извлекается только как побочный продукт добычи монацитовых (редкоземельных) песков, главным образом в Индии, Китае, Бразилии, Малайзии и Вьетнаме.", "en": "Thorium has no dedicated mines; it is recovered only as a byproduct of monazite (rare-earth sand) mining, chiefly in India, China, Brazil, Malaysia and Vietnam.", "zh": "钍没有专门的矿山；它仅作为独居石（稀土砂）开采的副产品回收，主要在印度、中国、巴西、马来西亚和越南。" }
   },
   "Pa": {
     "overview": {
@@ -10479,7 +10749,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Protactinium",
       "discoveryYear": "1918",
       "casNumber": "CAS7440-13-3",
-      "discoverer": "73/74/75/108",
+      "discoverer": { "ru": "Отто Ган, Лиза Мейтнер, Фредерик Содди, Джон Крэнстон", "en": "Otto Hahn, Lise Meitner, Frederick Soddy, John Cranston", "zh": "Otto Hahn, Lise Meitner, Frederick Soddy, John Cranston" },
       "discoveryCountry": "DE, GB",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O20-P9-Q2-R0",
@@ -10490,6 +10760,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Rn] 5f2 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s2 4f14 5d10 6p6 5f2 6d1 7s2"
     },
+    "description": { "ru": "Плотный серебристо-серый актинид; радиоактивен, парамагнитен, содержится в урановых рудах.", "en": "A dense, silvery-gray actinide; radioactive, paramagnetic, and found in uranium ores.", "zh": "致密银灰色锕系元素；放射性、顺磁性，存在于铀矿中。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "231.03588529293",
       "density": "15.37",
@@ -10569,7 +10841,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "productionCountries": [
       { "country": "gb" }
-    ]
+    ],
+    "productionNote": { "ru": "В природе встречается лишь в крайне редких следовых количествах в урановых рудах, не добывается; единственная в истории крупная партия (127 г, 1961 год) была выделена в Великобритании (Харуэлл) из 60 тонн отходов переработки урана и десятилетиями оставалась единственным мировым запасом для исследований.", "en": "Occurs naturally only in extremely rare trace amounts in uranium ores, not mined; the only sizeable batch ever made (127g, 1961) was extracted in the United Kingdom (Harwell) from 60 tons of uranium-processing waste and remained the world's sole research supply for decades.", "zh": "在自然界中仅以极其稀少的痕量形式存在于铀矿中，不进行开采；历史上唯一一批可观数量的镤（127克，1961年）在英国（哈韦尔）从60吨铀加工废料中提取，几十年来一直是世界上唯一的研究用储备。" }
   },
   "U": {
     "overview": {
@@ -10577,7 +10850,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Uranium",
       "discoveryYear": "1789",
       "casNumber": "CAS7440-61-1",
-      "discoverer": "32",
+      "discoverer": { "ru": "Мартин Генрих Клапрот", "en": "Martin Heinrich Klaproth", "zh": "Martin Heinrich Klaproth" },
       "discoveryCountry": "DE",
       "sampleColor": { "hex": "#808080" },
       "electronShellConfig": "K2-L8-M18-N32-O21-P9-Q2-R0",
@@ -10588,6 +10861,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Rn] 5f3 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s2 4f14 5d10 6p6 5f3 6d1 7s2"
     },
+    "description": { "ru": "Плотный серебристый актинид; слабо радиоактивен, самый тяжёлый элемент в значимых природных количествах.", "en": "A dense, silvery actinide; weakly radioactive, heaviest element found in significant natural abundance.", "zh": "致密银白色锕系元素；弱放射性，自然界中含量最丰富的高Z元素。" },
+    "applications": { "ru": "Ядерная энергетика, броня, противовесы", "en": "Nuclear power, armor, counterweights", "zh": "核电、装甲、配重" },
     "properties": {
       "atomicMass": "238.028908960606",
       "density": "19.1",
@@ -10698,7 +10973,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "cn", "share": "2.66" },
       { "country": "ne", "share": "1.60" },
       { "country": "in", "share": "0.83" }
-    ]
+    ],
+    "productionNote": { "ru": "Крупнейшие страны-добытчики урана (2024).", "en": "Top uranium mining countries by 2024 output.", "zh": "2024年铀矿产量最高的国家。" }
   },
   "Np": {
     "overview": {
@@ -10706,7 +10982,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Neptunium",
       "discoveryYear": "1940",
       "casNumber": "CAS7439-99-8",
-      "discoverer": "102/103",
+      "discoverer": { "ru": "Эдвин Макмиллан, Филип Эйбелсон", "en": "Edwin McMillan, Philip Abelson", "zh": "Edwin McMillan, Philip Abelson" },
       "discoveryCountry": "US",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O22-P9-Q2-R0",
@@ -10717,6 +10993,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f4 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s2 4f14 5d10 6p6 5f4 6d1 7s2"
     },
+    "description": { "ru": "Первый трансурановый элемент; серебристый, радиоактивный, получают в реакторах.", "en": "The first transuranium element; silvery, radioactive, and produced artificially in reactors.", "zh": "第一个超铀元素；银白色、放射性，在反应堆中人工制备。" },
+    "applications": { "ru": "Научные исследования, детекторы излучения", "en": "Scientific research, radiation detectors", "zh": "科学研究、辐射探测器" },
     "properties": {
       "atomicMass": "236.981455438519",
       "density": "20.45",
@@ -10784,7 +11062,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "fr" },
       { "country": "ru" },
       { "country": "gb" }
-    ]
+    ],
+    "productionNote": { "ru": "Природное содержание пренебрежимо мало, не добывается; нептуний извлекается как побочный продукт переработки отработавшего ядерного топлива, крупные мощности переработки — во Франции, России и исторически в Великобритании.", "en": "Natural occurrence is negligible, not mined; neptunium is recovered as a byproduct of civilian nuclear fuel reprocessing, with major reprocessing capacity in France, Russia and historically the UK.", "zh": "天然存在量可忽略不计，不进行开采；镎作为民用核燃料后处理的副产品回收，主要后处理能力在法国、俄罗斯，历史上也包括英国。" }
   },
   "Pu": {
     "overview": {
@@ -10792,7 +11071,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Plutonium",
       "discoveryYear": "1940",
       "casNumber": "CAS7440-07-5",
-      "discoverer": "49/104/105/102",
+      "discoverer": { "ru": "Гленн Теодор Сиборг, Артур Валь, Джозеф Кеннеди, Эдвин Макмиллан", "en": "Glenn Theodore Seaborg, Arthur Wahl, Joseph Kennedy, Edwin McMillan", "zh": "Glenn Theodore Seaborg, Arthur Wahl, Joseph Kennedy, Edwin McMillan" },
       "discoveryCountry": "US",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O24-P8-Q2-R0",
@@ -10803,6 +11082,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Rn] 5f6 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f6 6s2 6p6 7s2"
     },
+    "description": { "ru": "Серебристый актинид; радиоактивен, токсичен, связан с историей ядерной энергетики.", "en": "A silvery actinide; radioactive, toxic, and notable for nuclear energy and weapons history.", "zh": "银白色锕系元素；放射性、有毒，与核能历史密切相关。" },
+    "applications": { "ru": "Ядерное топливо, ТВЭЛы, научные исследования", "en": "Nuclear fuel, reactor fuel rods, research", "zh": "核燃料、反应堆燃料棒、科研" },
     "properties": {
       "atomicMass": "244.053191747051",
       "density": "19.84",
@@ -10881,7 +11162,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       { "country": "ru" },
       { "country": "fr" },
       { "country": "gb" }
-    ]
+    ],
+    "productionNote": { "ru": "Не добывается; практически весь плутоний производится в ядерных реакторах и выделяется при переработке топлива, крупные производственные мощности — в США, России, Франции и Великобритании.", "en": "Not mined; virtually all plutonium is produced in nuclear reactors and separated during fuel reprocessing, with major production capacity in the US, Russia, France and the UK.", "zh": "不进行开采；几乎所有的钚都在核反应堆中生产，并在燃料后处理过程中分离，主要生产能力在美国、俄罗斯、法国和英国。" }
   },
   "Am": {
     "overview": {
@@ -10889,7 +11171,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Americium",
       "discoveryYear": "1944",
       "casNumber": "CAS7440-35-9",
-      "discoverer": "49/106/107/36",
+      "discoverer": { "ru": "Гленн Теодор Сиборг, Ральф Джеймс, Леон Морган, Альберт Гиорсо", "en": "Glenn Theodore Seaborg, Ralph James, Leon Morgan, Albert Ghiorso", "zh": "Glenn Theodore Seaborg, Ralph James, Leon Morgan, Albert Ghiorso" },
       "discoveryCountry": "US",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O25-P8-Q2-R0",
@@ -10900,6 +11182,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Rn] 5f7 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f7 6s2 6p6 7s2"
     },
+    "description": { "ru": "Серебристый актинид; радиоактивный синтетический элемент, назван в честь Америки.", "en": "A silvery actinide; radioactive, synthetic, and named after America; used in smoke detectors.", "zh": "银白色锕系元素；放射性人造元素，以美洲命名。" },
+    "applications": { "ru": "Дымовые детекторы, источники альфа-излучения", "en": "Smoke detectors, alpha sources", "zh": "烟雾探测器、α放射源" },
     "properties": {
       "atomicMass": "242.934108985274",
       "density": "13.67",
@@ -10974,7 +11258,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "productionCountries": [
       { "country": "us" },
       { "country": "ru" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался; для дымовых извещателей его нарабатывают в реакторах — Лос-Аламосская национальная лаборатория (США, единственный отечественный поставщик с 2020 года) и Россия.", "en": "Synthetic, never mined; produced in reactors for smoke detectors — Los Alamos National Laboratory (US, the sole domestic supplier since 2020) and Russia.", "zh": "合成元素，从未被开采过；在反应堆中生产用于烟雾探测器——美国洛斯阿拉莫斯国家实验室（自2020年起为美国国内唯一供应商）和俄罗斯。" }
   },
   "Cm": {
     "overview": {
@@ -10982,7 +11267,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Curium",
       "discoveryYear": "1944",
       "casNumber": "CAS7440-51-9",
-      "discoverer": "49/106/36",
+      "discoverer": { "ru": "Гленн Теодор Сиборг, Ральф Джеймс, Альберт Гиорсо", "en": "Glenn Theodore Seaborg, Ralph James, Albert Ghiorso", "zh": "Glenn Theodore Seaborg, Ralph James, Albert Ghiorso" },
       "discoveryCountry": "US",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O25-P9-Q2-R0",
@@ -10993,6 +11278,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Rn] 5f7 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f7 6s2 6p6 6d1 7s2"
     },
+    "description": { "ru": "Серебристый актинид; радиоактивен, синтетический; кюрий слабо светится фиолетовым от собственного излучения.", "en": "A silvery actinide; radioactive and synthetic; curium glows purple in the dark due to self-irradiation.", "zh": "银白色锕系元素；放射性人造元素；锔因自身辐射而发紫光。" },
+    "applications": { "ru": "Научные исследования, космические источники питания", "en": "Scientific research, space power sources", "zh": "科学研究、太空电源" },
     "properties": {
       "atomicMass": "247.092408999006",
       "density": "13.51",
@@ -11055,7 +11342,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "productionCountries": [
       { "country": "us" },
       { "country": "ru" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — производится только в следовых количествах в ядерных реакторах, в частности в Национальной лаборатории Ок-Ридж (США) и в России.", "en": "Synthetic, never mined — produced only in trace quantities in nuclear reactors, notably at Oak Ridge National Laboratory (US) and in Russia.", "zh": "合成元素，从未被开采过——仅在核反应堆中微量生产，主要产自美国橡树岭国家实验室和俄罗斯。" }
   },
   "Bk": {
     "overview": {
@@ -11063,7 +11351,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Berkelium",
       "discoveryYear": "1949",
       "casNumber": "CAS7440-40-6",
-      "discoverer": "49/36/109",
+      "discoverer": { "ru": "Гленн Теодор Сиборг, Альберт Гиорсо, Стэнли Томпсон", "en": "Glenn Theodore Seaborg, Albert Ghiorso, Stanley G. Thompson", "zh": "Glenn Theodore Seaborg, Albert Ghiorso, Stanley G. Thompson" },
       "discoveryCountry": "US",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O27-P8-Q2-R0",
@@ -11074,6 +11362,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Rn] 5f9 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f9 6s2 6p6 7s2"
     },
+    "description": { "ru": "Радиоактивный актинид; серебристый, синтетический, назван в честь Беркли, высокотоксичен.", "en": "A radioactive actinide; silvery, synthetic, and named after Berkeley; highly toxic.", "zh": "放射性锕系元素；银白色人造元素，以伯克利命名，高毒。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "247.07806947346",
       "density": "14.78",
@@ -11134,7 +11424,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "productionCountries": [
       { "country": "us" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — производится только в миллиграммовых количествах в Национальной лаборатории Ок-Ридж (США), единственном в мире источнике.", "en": "Synthetic, never mined — produced only in milligram quantities at Oak Ridge National Laboratory (US), the world's sole source.", "zh": "合成元素，从未被开采过——仅在美国橡树岭国家实验室以毫克级数量生产，是世界上唯一的来源。" }
   },
   "Cf": {
     "overview": {
@@ -11142,7 +11433,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Californium",
       "discoveryYear": "1950",
       "casNumber": "CAS7440-71-3",
-      "discoverer": "49/109/110/36",
+      "discoverer": { "ru": "Гленн Теодор Сиборг, Стэнли Томпсон, Кеннет Стрит-младший, Альберт Гиорсо", "en": "Glenn Theodore Seaborg, Stanley G. Thompson, Kenneth Street Jr., Albert Ghiorso", "zh": "Glenn Theodore Seaborg, Stanley G. Thompson, Kenneth Street Jr., Albert Ghiorso" },
       "discoveryCountry": "US",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O28-P8-Q2-R0",
@@ -11153,6 +11444,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": true,
       "electronConfiguration": "[Rn] 5f10 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f10 6s2 6p6 7s2"
     },
+    "description": { "ru": "Серебристый актинид; радиоактивен, синтетический, впервые получен в 1950 году.", "en": "A silvery actinide; radioactive, synthetic, and first produced in microscopic quantities in 1950.", "zh": "银白色锕系元素；放射性人造元素，1950年首次制得。" },
+    "applications": { "ru": "Промышленные нейтронные источники, научные исследования", "en": "Industrial neutron sources, research", "zh": "工业中子源、科研" },
     "properties": {
       "atomicMass": "251.079587",
       "density": "15.1",
@@ -11208,7 +11501,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "productionCountries": [
       { "country": "us" },
       { "country": "ru" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — как источник нейтронов производится в миллиграммовых количествах в Национальной лаборатории Ок-Ридж (США, единственный производитель в западном мире) и в России.", "en": "Synthetic, never mined — produced in milligram quantities as a neutron source material at Oak Ridge National Laboratory (US, the only producer in the Western world) and in Russia.", "zh": "合成元素，从未被开采过——作为中子源材料以毫克级数量生产，产自美国橡树岭国家实验室（西方世界唯一的生产者）和俄罗斯。" }
   },
   "Es": {
     "overview": {
@@ -11216,7 +11510,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Einsteinium",
       "discoveryYear": "1952",
       "casNumber": "CAS7429-92-7",
-      "discoverer": "36/111/112/109/49",
+      "discoverer": { "ru": "Альберт Гиорсо, Грегори Чоппин, Бернард Харви, Стэнли Томпсон, Гленн Теодор Сиборг", "en": "Albert Ghiorso, Gregory Choppin, Bernard Harvey, Stanley G. Thompson, Glenn Theodore Seaborg", "zh": "Albert Ghiorso, Gregory Choppin, Bernard Harvey, Stanley G. Thompson, Glenn Theodore Seaborg" },
       "discoveryCountry": "US",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O29-P8-Q2-R0",
@@ -11227,6 +11521,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f11 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f11 6s2 6p6 7s2"
     },
+    "description": { "ru": "Серебристый актинид; синтетический и радиоактивный, назван в честь Эйнштейна, стабильных изотопов нет.", "en": "A silvery actinide; synthetic and radioactive; named after Einstein; no stable isotopes.", "zh": "银白色锕系元素；人造放射性元素，以爱因斯坦命名，无稳定同位素。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "252.082980",
       "density": "~8.84",
@@ -11276,7 +11572,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "productionCountries": [
       { "country": "us" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые обнаружен в продуктах американского термоядерного испытания 1952 года; сегодня лишь изредка нарабатывается в следовых количествах в национальных лабораториях США.", "en": "Synthetic, never mined — first identified in debris from a 1952 US thermonuclear test; today only occasionally made in trace quantities at US national laboratories.", "zh": "合成元素，从未被开采过——首次在1952年美国热核试验的残留物中发现；如今仅偶尔在美国国家实验室中微量制备。" }
   },
   "Fm": {
     "overview": {
@@ -11284,7 +11581,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Fermium",
       "discoveryYear": "1952",
       "casNumber": "CAS7440-72-4",
-      "discoverer": "49/36/109",
+      "discoverer": { "ru": "Гленн Теодор Сиборг, Альберт Гиорсо, Стэнли Томпсон", "en": "Glenn Theodore Seaborg, Albert Ghiorso, Stanley G. Thompson", "zh": "Glenn Theodore Seaborg, Albert Ghiorso, Stanley G. Thompson" },
       "discoveryCountry": "US",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O30-P8-Q2-R0",
@@ -11295,6 +11592,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f12 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f11 6s2 6p6 7s2"
     },
+    "description": { "ru": "Серебристый актинид; синтетический, радиоактивный, назван в честь Ферми, крайне редок.", "en": "A silvery actinide; synthetic, radioactive, and named after Fermi; extremely rare.", "zh": "银白色锕系元素；人造放射性元素，以费米命名，极其稀少。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "257.095105",
       "density": "~9.7",
@@ -11342,7 +11641,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "productionCountries": [
       { "country": "us" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые обнаружен в продуктах американского термоядерного испытания, производится лишь в количестве отдельных атомов в национальных лабораториях США.", "en": "Synthetic, never mined — first identified in US thermonuclear test debris, produced only in atom quantities at US national laboratories.", "zh": "合成元素，从未被开采过——首次在美国热核试验残留物中发现，仅在美国国家实验室以单个原子级别的数量生产。" }
   },
   "Md": {
     "overview": {
@@ -11350,7 +11650,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Mendelevium",
       "discoveryYear": "1955",
       "casNumber": "CAS7440-11-1",
-      "discoverer": "49/36/111/112/109",
+      "discoverer": { "ru": "Гленн Теодор Сиборг, Альберт Гиорсо, Грегори Чоппин, Бернард Харви, Стэнли Томпсон", "en": "Glenn Theodore Seaborg, Albert Ghiorso, Gregory Choppin, Bernard Harvey, Stanley G. Thompson", "zh": "Glenn Theodore Seaborg, Albert Ghiorso, Gregory Choppin, Bernard Harvey, Stanley G. Thompson" },
       "discoveryCountry": "US",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O31-P8-Q2-R0",
@@ -11361,6 +11661,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f13 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f13 6s2 6p6 7s2"
     },
+    "description": { "ru": "Радиоактивный актинид; синтетический, назван в честь Менделеева, получен в 1955 году.", "en": "A radioactive actinide; synthetic, named after Mendeleev; first produced in 1955.", "zh": "放射性锕系元素；人造元素，以门捷列夫命名，1955年制得。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "258.098434",
       "density": "~10.3",
@@ -11407,7 +11709,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "productionCountries": [
       { "country": "us" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен бомбардировкой на циклотроне в Беркли (США), до сих пор производится лишь по несколько атомов за раз.", "en": "Synthetic, never mined — first produced by cyclotron bombardment at Berkeley (US) and still made only a few atoms at a time.", "zh": "合成元素，从未被开采过——首次通过美国伯克利的回旋加速器轰击制得，至今仍每次仅能制备几个原子。" }
   },
   "No": {
     "overview": {
@@ -11415,7 +11718,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Nobelium",
       "discoveryYear": "1966",
       "casNumber": "CAS10028-14-5",
-      "discoverer": "53/54",
+      "discoverer": { "ru": "Георгий Николаевич Флёров, Объединённый институт ядерных исследований (ОИЯИ)", "en": "Georgiy Flerov, Joint Institute for Nuclear Research (JINR)", "zh": "Georgiy Flerov, Joint Institute for Nuclear Research (JINR)" },
       "discoveryCountry": "RU",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P8-Q2-R0",
@@ -11426,6 +11729,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f14 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 7s2"
     },
+    "description": { "ru": "Радиоактивный актинид; синтетический, назван в честь Нобеля, изотопы очень недолговечны.", "en": "A radioactive actinide; synthetic, named after Nobel; extremely short-lived isotopes.", "zh": "放射性锕系元素；人造元素，以诺贝尔命名，同位素寿命极短。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "259.100998",
       "density": "~9.9",
@@ -11473,7 +11778,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "productionCountries": [
       { "country": "ru" },
       { "country": "us" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен на ускорителях частиц в Дубне (Россия) и Беркли (США), производится лишь в количестве отдельных атомов.", "en": "Synthetic, never mined — first produced via particle accelerators at Dubna (Russia) and Berkeley (US), made only in atom quantities.", "zh": "合成元素，从未被开采过——首次通过俄罗斯杜布纳和美国伯克利的粒子加速器制得，仅以单个原子级别的数量生产。" }
   },
   "Lr": {
     "overview": {
@@ -11481,7 +11787,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Lawrencium",
       "discoveryYear": "1961",
       "casNumber": "CAS22537-19-5",
-      "discoverer": "36/53",
+      "discoverer": { "ru": "Альберт Гиорсо, Георгий Николаевич Флёров", "en": "Albert Ghiorso, Georgiy Flerov", "zh": "Albert Ghiorso, Georgiy Flerov" },
       "discoveryCountry": "US, RU",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P8-Q3-R0",
@@ -11492,6 +11798,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f14 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d1 7s2"
     },
+    "description": { "ru": "Радиоактивный актинид; синтетический, назван в честь Лоуренса, последний актинид в ряду.", "en": "A radioactive actinide; synthetic, named after Lawrence; last actinide and heaviest element in the row.", "zh": "放射性锕系元素；人造元素，以劳伦斯命名，锕系最后一个。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "264.862022387989",
       "density": "~15.6",
@@ -11541,7 +11849,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "productionCountries": [
       { "country": "us" },
       { "country": "ru" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен в Беркли (США) и Дубне (Россия), производится лишь в количестве отдельных атомов.", "en": "Synthetic, never mined — first produced at Berkeley (US) and Dubna (Russia), made only in atom quantities.", "zh": "合成元素，从未被开采过——首次在美国伯克利和俄罗斯杜布纳制得，仅以单个原子级别的数量生产。" }
   },
   "Rf": {
     "overview": {
@@ -11549,7 +11858,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Rutherfordium",
       "discoveryYear": "1969",
       "casNumber": "CAS53850-36-5",
-      "discoverer": "53/36",
+      "discoverer": { "ru": "Георгий Николаевич Флёров, Альберт Гиорсо", "en": "Georgiy Flerov, Albert Ghiorso", "zh": "Georgiy Flerov, Albert Ghiorso" },
       "discoveryCountry": "RU, US",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P10-Q2-R0",
@@ -11560,6 +11869,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f14 6d2 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d2 7s2"
     },
+    "description": { "ru": "Синтетический переходный металл; радиоактивен, первый трансактинид, изотопы очень недолговечны.", "en": "A synthetic transition metal; radioactive, first transactinide, extremely short-lived.", "zh": "人造过渡金属；放射性，第一个超锕元素，同位素极不稳定。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "266.32341341081",
       "density": "~17",
@@ -11602,7 +11913,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "productionCountries": [
       { "country": "ru" },
       { "country": "us" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен в Дубне (Россия) и Беркли (США) на ускорителях частиц, производится лишь в количестве отдельных атомов.", "en": "Synthetic, never mined — first produced at Dubna (Russia) and Berkeley (US) via particle accelerators, made only in atom quantities.", "zh": "合成元素，从未被开采过——首次通过俄罗斯杜布纳和美国伯克利的粒子加速器制得，仅以单个原子级别的数量生产。" }
   },
   "Db": {
     "overview": {
@@ -11610,7 +11922,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Dubnium",
       "discoveryYear": "1970",
       "casNumber": "CAS53850-35-4",
-      "discoverer": "53/36",
+      "discoverer": { "ru": "Георгий Николаевич Флёров, Альберт Гиорсо", "en": "Georgiy Flerov, Albert Ghiorso", "zh": "Georgiy Flerov, Albert Ghiorso" },
       "discoveryCountry": "RU, US",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P11-Q2-R0",
@@ -11621,6 +11933,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f14 6d3 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d3 7s2"
     },
+    "description": { "ru": "Синтетический элемент; радиоактивен, назван в честь Дубны, известен лишь в исследовательских количествах.", "en": "A synthetic transition element; radioactive, named after Dubna; known only in research quantities.", "zh": "人造元素；放射性，以杜布纳命名，仅研究量级。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "268.142818454282",
       "density": "~21.6",
@@ -11663,7 +11977,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "productionCountries": [
       { "country": "ru" },
       { "country": "us" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен в Дубне (Россия) и Беркли (США), производится лишь в количестве отдельных атомов.", "en": "Synthetic, never mined — first produced at Dubna (Russia) and Berkeley (US), made only in atom quantities.", "zh": "合成元素，从未被开采过——首次在俄罗斯杜布纳和美国伯克利制得，仅以单个原子级别的数量生产。" }
   },
   "Sg": {
     "overview": {
@@ -11671,7 +11986,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Seaborgium",
       "discoveryYear": "1974",
       "casNumber": "CAS54038-81-2",
-      "discoverer": "36/49",
+      "discoverer": { "ru": "Альберт Гиорсо, Гленн Теодор Сиборг", "en": "Albert Ghiorso, Glenn Theodore Seaborg", "zh": "Albert Ghiorso, Glenn Theodore Seaborg" },
       "discoveryCountry": "US",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P12-Q2-R0",
@@ -11682,6 +11997,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f14 6d4 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d4 7s2"
     },
+    "description": { "ru": "Синтетический элемент; радиоактивен, назван в честь Сиборга, получают по одному атому в ускорителях.", "en": "A synthetic element; radioactive, named after Seaborg; produced atom by atom in accelerators.", "zh": "人造元素；放射性，以西博格命名，在加速器中逐个原子合成。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "270.486936755388",
       "density": "~23.2",
@@ -11724,7 +12041,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "productionCountries": [
       { "country": "us" },
       { "country": "ru" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен в Беркли (США) и Дубне (Россия), производится лишь в количестве отдельных атомов.", "en": "Synthetic, never mined — first produced at Berkeley (US) and Dubna (Russia), made only in atom quantities.", "zh": "合成元素，从未被开采过——首次在美国伯克利和俄罗斯杜布纳制得，仅以单个原子级别的数量生产。" }
   },
   "Bh": {
     "overview": {
@@ -11732,7 +12050,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Bohrium",
       "discoveryYear": "1981",
       "casNumber": "CAS54037-14-8",
-      "discoverer": "64/65",
+      "discoverer": { "ru": "Питер Армбрустер, Готфрид Мюнценберг", "en": "Peter Armbruster, Gottfried Münzenberg", "zh": "Peter Armbruster, Gottfried Münzenberg" },
       "discoveryCountry": "DE",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P13-Q2-R0",
@@ -11743,6 +12061,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f14 6d5 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d5 7s2"
     },
+    "description": { "ru": "Синтетический элемент; радиоактивен, назван в честь Бора, существует лишь мгновения.", "en": "A synthetic element; radioactive, named after Bohr; exists only as fleeting atoms.", "zh": "人造元素；放射性，以玻尔命名，仅存在极短时间。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "270.929231154427",
       "meltingPoint": "**",
@@ -11783,7 +12103,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "productionCountries": [
       { "country": "de" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен в GSI Дармштадт (Германия) на ускорителях частиц, производится лишь в количестве отдельных атомов.", "en": "Synthetic, never mined — first produced at GSI Darmstadt (Germany), made only in atom quantities via particle accelerators.", "zh": "合成元素，从未被开采过——首次在德国达姆施塔特重离子研究中心（GSI）制得，仅以单个原子级别的数量生产。" }
   },
   "Hs": {
     "overview": {
@@ -11791,7 +12112,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Hassium",
       "discoveryYear": "1984",
       "casNumber": "CAS54037-57-9",
-      "discoverer": "64/65",
+      "discoverer": { "ru": "Питер Армбрустер, Готфрид Мюнценберг", "en": "Peter Armbruster, Gottfried Münzenberg", "zh": "Peter Armbruster, Gottfried Münzenberg" },
       "discoveryCountry": "DE",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P14-Q2-R0",
@@ -11802,6 +12123,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f14 6d6 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d6 7s2"
     },
+    "description": { "ru": "Синтетический элемент; радиоактивен, назван в честь Гессена, один из первых сверхтяжёлых элементов, полученных наукой.", "en": "A synthetic element; radioactive, named after Hesse; one of the first superheavy elements ever produced.", "zh": "人造元素；放射性，以黑森命名，是最早合成的超重元素之一。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "275.381591197533",
       "density": "~29.3",
@@ -11844,7 +12167,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "youtube": "https://www.youtube.com/watch?v=URrKWQHfAoE",
     "productionCountries": [
       { "country": "de" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен в GSI Дармштадт (Германия), производится лишь в количестве отдельных атомов.", "en": "Synthetic, never mined — first produced at GSI Darmstadt (Germany), made only in atom quantities.", "zh": "合成元素，从未被开采过——首次在德国达姆施塔特重离子研究中心（GSI）制得，仅以单个原子级别的数量生产。" }
   },
   "Mt": {
     "overview": {
@@ -11852,7 +12176,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Meitnerium",
       "discoveryYear": "1982",
       "casNumber": "CAS54038-01-6",
-      "discoverer": "64/65",
+      "discoverer": { "ru": "Питер Армбрустер, Готфрид Мюнценберг", "en": "Peter Armbruster, Gottfried Münzenberg", "zh": "Peter Armbruster, Gottfried Münzenberg" },
       "discoveryCountry": "DE",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P15-Q2-R0",
@@ -11863,6 +12187,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f14 6d7 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d7 7s2"
     },
+    "description": { "ru": "Синтетический элемент; радиоактивен, назван в честь Мейтнер, одно из редчайших веществ на Земле.", "en": "A synthetic element; radioactive, named after Meitner; one of the rarest substances on Earth.", "zh": "人造元素；放射性，以迈特纳命名，地球上最稀有的物质之一。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "278.130923401647",
       "meltingPoint": "**",
@@ -11906,7 +12232,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "productionCountries": [
       { "country": "de" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен в GSI Дармштадт (Германия), производится лишь в количестве отдельных атомов.", "en": "Synthetic, never mined — first produced at GSI Darmstadt (Germany), made only in atom quantities.", "zh": "合成元素，从未被开采过——首次在德国达姆施塔特重离子研究中心（GSI）制得，仅以单个原子级别的数量生产。" }
   },
   "Ds": {
     "overview": {
@@ -11914,7 +12241,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Darmstadtium",
       "discoveryYear": "1994",
       "casNumber": "CAS54083-77-1",
-      "discoverer": "57",
+      "discoverer": { "ru": "GSI (Институт тяжёлых ионов)", "en": "GSI (Helmholtzzentrum für Schwerionenforschung)", "zh": "GSI (Helmholtzzentrum für Schwerionenforschung)" },
       "discoveryCountry": "DE",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P17-Q1-R0",
@@ -11925,6 +12252,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f14 6d8 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d8 7s2"
     },
+    "description": { "ru": "Синтетический элемент; радиоактивен, крайне нестабилен, известен лишь по нескольким атомам.", "en": "A synthetic element; radioactive, extremely unstable, known only from a handful of atoms.", "zh": "人造元素；放射性，极不稳定，仅知少数原子。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "282.575485574983",
       "meltingPoint": "**",
@@ -11966,7 +12295,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "productionCountries": [
       { "country": "de" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен в GSI Дармштадт (Германия), производится лишь в количестве отдельных атомов.", "en": "Synthetic, never mined — first produced at GSI Darmstadt (Germany), made only in atom quantities.", "zh": "合成元素，从未被开采过——首次在德国达姆施塔特重离子研究中心（GSI）制得，仅以单个原子级别的数量生产。" }
   },
   "Rg": {
     "overview": {
@@ -11974,7 +12304,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Roentgenium",
       "discoveryYear": "1994",
       "casNumber": "CAS54386-24-2",
-      "discoverer": "57",
+      "discoverer": { "ru": "GSI (Институт тяжёлых ионов)", "en": "GSI (Helmholtzzentrum für Schwerionenforschung)", "zh": "GSI (Helmholtzzentrum für Schwerionenforschung)" },
       "discoveryCountry": "DE",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q1-R0",
@@ -11985,6 +12315,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f14 6d9 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d9 7s2"
     },
+    "description": { "ru": "Синтетический элемент; радиоактивен, возможно металл, назван в честь Рентгена, макрообразцов нет.", "en": "A synthetic element; radioactive, possibly metallic, named after Roentgen; no macroscopic samples.", "zh": "人造元素；放射性，可能为金属，以伦琴命名，无宏观样品。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "283.085549304907",
       "meltingPoint": "**",
@@ -12028,7 +12360,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "productionCountries": [
       { "country": "de" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен в GSI Дармштадт (Германия), производится лишь в количестве отдельных атомов.", "en": "Synthetic, never mined — first produced at GSI Darmstadt (Germany), made only in atom quantities.", "zh": "合成元素，从未被开采过——首次在德国达姆施塔特重离子研究中心（GSI）制得，仅以单个原子级别的数量生产。" }
   },
   "Cn": {
     "overview": {
@@ -12036,7 +12369,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Copernicium",
       "discoveryYear": "1996",
       "casNumber": "CAS54084-26-3",
-      "discoverer": "57",
+      "discoverer": { "ru": "GSI (Институт тяжёлых ионов)", "en": "GSI (Helmholtzzentrum für Schwerionenforschung)", "zh": "GSI (Helmholtzzentrum für Schwerionenforschung)" },
       "discoveryCountry": "DE",
       "sampleColor": { "hex": "#B8B8C8" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q2-R0",
@@ -12047,6 +12380,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f14 6d10 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2"
     },
+    "description": { "ru": "Синтетический элемент; радиоактивен, возможно летучий металл, назван в честь Коперника.", "en": "A synthetic element; radioactive, possibly volatile metal, named after Copernicus.", "zh": "人造元素；放射性，可能为挥发性金属，以哥白尼命名。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "286.093635599278",
       "meltingPoint": "10.0",
@@ -12091,7 +12426,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "youtube": "https://www.youtube.com/watch?v=D3-WOnG5eRM",
     "productionCountries": [
       { "country": "de" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен в GSI Дармштадт (Германия), производится лишь в количестве отдельных атомов.", "en": "Synthetic, never mined — first produced at GSI Darmstadt (Germany), made only in atom quantities.", "zh": "合成元素，从未被开采过——首次在德国达姆施塔特重离子研究中心（GSI）制得，仅以单个原子级别的数量生产。" }
   },
   "Nh": {
     "overview": {
@@ -12099,7 +12435,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Nihonium",
       "discoveryYear": "2004",
       "casNumber": "CAS54084-70-7",
-      "discoverer": "56",
+      "discoverer": { "ru": "RIKEN (理研)", "en": "RIKEN (理研)", "zh": "RIKEN (理研)" },
       "discoveryCountry": "JP",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q3-R0",
@@ -12110,6 +12446,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p1"
     },
+    "description": { "ru": "Синтетический элемент; радиоактивен, возможно металл, впервые получен в Японии.", "en": "A synthetic element; radioactive, possibly post-transition metal, first made in Japan.", "zh": "人造元素；放射性，可能为金属，首次在日本合成。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "287.998233477411",
       "meltingPoint": "430.0",
@@ -12157,7 +12495,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "youtube": "https://www.youtube.com/watch?v=_fveV0EDygQ",
     "productionCountries": [
       { "country": "jp" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен в RIKEN (Япония) на ускорителях частиц, производится лишь в количестве отдельных атомов.", "en": "Synthetic, never mined — first produced at RIKEN (Japan) via particle accelerators, made only in atom quantities.", "zh": "合成元素，从未被开采过——首次通过日本理化学研究所（RIKEN）的粒子加速器制得，仅以单个原子级别的数量生产。" }
   },
   "Fl": {
     "overview": {
@@ -12165,7 +12504,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Flerovium",
       "discoveryYear": "1998",
       "casNumber": "CAS54085-16-4",
-      "discoverer": "54/55",
+      "discoverer": { "ru": "Объединённый институт ядерных исследований (ОИЯИ), Ливерморская национальная лаборатория им. Э.Лоуренса", "en": "Joint Institute for Nuclear Research (JINR), Lawrence Livermore National Laboratory (LLNL)", "zh": "Joint Institute for Nuclear Research (JINR), Lawrence Livermore National Laboratory (LLNL)" },
       "discoveryCountry": "RU, US",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q4-R0",
@@ -12176,6 +12515,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p2"
     },
+    "description": { "ru": "Синтетический элемент; радиоактивен, возможно тяжёлый летучий металл углеродной группы.", "en": "A synthetic element; radioactive, possibly a heavy, volatile metal in the carbon group.", "zh": "人造元素；放射性，可能为碳族易挥发重金属。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "290.217148623513",
       "meltingPoint": "**",
@@ -12221,7 +12562,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "productionCountries": [
       { "country": "ru" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен в Объединённом институте ядерных исследований в Дубне (Россия), производится лишь в количестве отдельных атомов.", "en": "Synthetic, never mined — first produced at the Joint Institute for Nuclear Research, Dubna (Russia), made only in atom quantities.", "zh": "合成元素，从未被开采过——首次在俄罗斯杜布纳联合核研究所制得，仅以单个原子级别的数量生产。" }
   },
   "Mc": {
     "overview": {
@@ -12229,7 +12571,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Moscovium",
       "discoveryYear": "2003",
       "casNumber": "CAS54085-64-2",
-      "discoverer": "54/55",
+      "discoverer": { "ru": "Объединённый институт ядерных исследований (ОИЯИ), Ливерморская национальная лаборатория им. Э.Лоуренса", "en": "Joint Institute for Nuclear Research (JINR), Lawrence Livermore National Laboratory (LLNL)", "zh": "Joint Institute for Nuclear Research (JINR), Lawrence Livermore National Laboratory (LLNL)" },
       "discoveryCountry": "RU, US",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q5-R0",
@@ -12240,6 +12582,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p3 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p3"
     },
+    "description": { "ru": "Синтетический элемент; радиоактивен, возможно металл, назван в честь Подмосковья.", "en": "A synthetic element; radioactive, possibly post-transition metal, named after Moscow region.", "zh": "人造元素；放射性，可能为金属，以莫斯科州命名。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "291.542045471157",
       "meltingPoint": "400.0",
@@ -12285,7 +12629,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "productionCountries": [
       { "country": "ru" },
       { "country": "us" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен в Дубне (Россия) совместно с Национальной лабораторией Ок-Ридж (США), производится лишь в количестве отдельных атомов.", "en": "Synthetic, never mined — first produced at Dubna (Russia) in collaboration with Oak Ridge National Laboratory (US), made only in atom quantities.", "zh": "合成元素，从未被开采过——首次由俄罗斯杜布纳与美国橡树岭国家实验室合作制得，仅以单个原子级别的数量生产。" }
   },
   "Lv": {
     "overview": {
@@ -12293,7 +12638,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Livermorium",
       "discoveryYear": "2000",
       "casNumber": "CAS54100-71-9",
-      "discoverer": "54/55",
+      "discoverer": { "ru": "Объединённый институт ядерных исследований (ОИЯИ), Ливерморская национальная лаборатория им. Э.Лоуренса", "en": "Joint Institute for Nuclear Research (JINR), Lawrence Livermore National Laboratory (LLNL)", "zh": "Joint Institute for Nuclear Research (JINR), Lawrence Livermore National Laboratory (LLNL)" },
       "discoveryCountry": "RU, US",
       "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q6-R0",
@@ -12304,6 +12649,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p4 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p4"
     },
+    "description": { "ru": "Синтетический элемент; радиоактивен, возможно близок к халькогенам, назван в честь Ливермора.", "en": "A synthetic element; radioactive, possibly chalcogen-like, named after Livermore.", "zh": "人造元素；放射性，可能类似硫族元素，以利弗莫尔命名。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "292.470799589671",
       "meltingPoint": "435.5",
@@ -12349,7 +12696,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "productionCountries": [
       { "country": "ru" },
       { "country": "us" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен в Дубне (Россия) совместно с Ливерморской национальной лабораторией (США), производится лишь в количестве отдельных атомов.", "en": "Synthetic, never mined — first produced at Dubna (Russia) in collaboration with Lawrence Livermore National Laboratory (US), made only in atom quantities.", "zh": "合成元素，从未被开采过——首次由俄罗斯杜布纳与美国劳伦斯利弗莫尔国家实验室合作制得，仅以单个原子级别的数量生产。" }
   },
   "Ts": {
     "overview": {
@@ -12357,7 +12705,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Tennessine",
       "discoveryYear": "2010",
       "casNumber": "CAS87658-56-8",
-      "discoverer": "54/55",
+      "discoverer": { "ru": "Объединённый институт ядерных исследований (ОИЯИ), Ливерморская национальная лаборатория им. Э.Лоуренса", "en": "Joint Institute for Nuclear Research (JINR), Lawrence Livermore National Laboratory (LLNL)", "zh": "Joint Institute for Nuclear Research (JINR), Lawrence Livermore National Laboratory (LLNL)" },
       "discoveryCountry": "RU, US",
       "sampleColor": { "hex": "#E8E2B0", "finish": "subtle" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q7-R0",
@@ -12368,6 +12716,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p5 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p5"
     },
+    "description": { "ru": "Синтетический элемент; радиоактивен, возможно галоген, крайне редок, назван в честь Теннесси.", "en": "A synthetic element; radioactive, possibly a halogen, extremely rare, named after Tennessee.", "zh": "人造元素；放射性，可能为卤素，极其稀有，以田纳西命名。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "293.73334018093",
       "meltingPoint": "450.0",
@@ -12411,7 +12761,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "productionCountries": [
       { "country": "ru" },
       { "country": "us" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен в Дубне (Россия) совместно с Национальной лабораторией Ок-Ридж (США), производится лишь в количестве отдельных атомов.", "en": "Synthetic, never mined — first produced at Dubna (Russia) in collaboration with Oak Ridge National Laboratory (US), made only in atom quantities.", "zh": "合成元素，从未被开采过——首次由俄罗斯杜布纳与美国橡树岭国家实验室合作制得，仅以单个原子级别的数量生产。" }
   },
   "Og": {
     "overview": {
@@ -12419,7 +12770,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "englishName": "Oganesson",
       "discoveryYear": "2002",
       "casNumber": "CAS54144-19-3",
-      "discoverer": "54/55",
+      "discoverer": { "ru": "Объединённый институт ядерных исследований (ОИЯИ), Ливерморская национальная лаборатория им. Э.Лоуренса", "en": "Joint Institute for Nuclear Research (JINR), Lawrence Livermore National Laboratory (LLNL)", "zh": "Joint Institute for Nuclear Research (JINR), Lawrence Livermore National Laboratory (LLNL)" },
       "discoveryCountry": "RU, US",
       "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q8-R0",
@@ -12430,6 +12781,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "hasSpectre": false,
       "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p6 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p6"
     },
+    "description": { "ru": "Синтетический элемент 18-й группы; радиоактивен, по расчётам не ведёт себя как типичный благородный газ, самый тяжёлый известный элемент, синтезирован в 2002 году.", "en": "A synthetic group-18 element; radioactive, predicted not to behave like a typical noble gas, heaviest known element, first synthesized in 2002.", "zh": "第18族人造元素；放射性，预计不具备典型稀有气体的性质，已知最重元素，2002年首次合成。" },
+    "applications": { "ru": "Только научные исследования", "en": "Scientific research only", "zh": "仅科学研究" },
     "properties": {
       "atomicMass": "295.212212582275",
       "density": "7.2",
@@ -12478,6 +12831,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "productionCountries": [
       { "country": "ru" },
       { "country": "us" }
-    ]
+    ],
+    "productionNote": { "ru": "Синтетический, никогда не добывался — впервые получен в Дубне (Россия) совместно с Ливерморской национальной лабораторией (США), производится лишь по несколько атомов за раз.", "en": "Synthetic, never mined — first produced at Dubna (Russia) in collaboration with Lawrence Livermore National Laboratory (US), made only a few atoms at a time.", "zh": "合成元素，从未被开采过——首次由俄罗斯杜布纳与美国劳伦斯利弗莫尔国家实验室合作制得，每次仅能制备几个原子。" }
   }
 }

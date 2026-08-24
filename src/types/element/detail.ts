@@ -2,6 +2,7 @@ import type { DecayModeKey } from '../../locales/types'
 import type { GhsPictogramId } from './ghs'
 import type { RadiacodeIsotopeRef } from '../collection/spectrum'
 import type { ElementSampleColorFinish } from './element'
+import type { LocalizedLabel } from '../../utils/localizedLabel'
 
 export interface SampleColor {
   hex: string
@@ -14,7 +15,7 @@ export interface Overview {
   englishName?: string | null
   discoveryYear?: string | null
   casNumber?: string | null
-  discoverer?: string | null
+  discoverer?: LocalizedLabel | null
   discoveryCountry?: string | null
   sampleColor?: SampleColor | null
   electronShellConfig?: string | null
@@ -137,6 +138,8 @@ export interface ElementDetail {
   symbol: string
   name: string
   overview?: Overview
+  description?: LocalizedLabel | null
+  applications?: LocalizedLabel | null
   properties?: Properties
   thermo?: Thermo
   atomic?: Atomic
@@ -153,6 +156,7 @@ export interface ElementDetail {
   youtube?: string
   /** See the "mining" section in CLAUDE.md */
   productionCountries?: ProductionCountryEntry[]
+  productionNote?: LocalizedLabel | null
 }
 
 /** On-disk shape: number/symbol come from elements/elements.ts, name from overview.englishName. */

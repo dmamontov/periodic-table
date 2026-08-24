@@ -34,10 +34,7 @@ import {
   formatCollectionPurity,
   formatCollectionWeight,
 } from '../collection/labels'
-import {
-  formatIonChargeHtml,
-  formatOpener,
-} from './formatters'
+import { formatIonChargeHtml } from './formatters'
 import { getPubChemUrl } from '../external-links/pubchem'
 import { SECTION_COLORS } from '../../theme/colors'
 import {
@@ -47,7 +44,6 @@ import {
   formatMainIsotopesHtml,
 } from './isotopes'
 import { formatNucleusDurationDisplay } from '../heatmap'
-import { getElementApplications, getElementDescription, getElementProductionNote } from '../../locales'
 import { collectionName } from '../../data/collection'
 import { resolveLocalizedLabel } from '../localizedLabel'
 
@@ -388,7 +384,7 @@ function buildOverviewSection(ctx: SectionBuildContext): DetailSection {
       prop(s.props.latinName, fmt(o?.latinName)),
       prop(s.props.englishName, fmt(o?.englishName)),
       prop(s.props.discoveryYear, fmt(o?.discoveryYear)),
-      prop(s.props.discoveryOpener, formatOpener(o?.discoverer, locale)),
+      prop(s.props.discoveryOpener, fmt(resolveLocalizedLabel(o?.discoverer, locale))),
       prop(s.props.discoveryCountry, countryLabel(o?.discoveryCountry, messages)),
       ...(discoveryCountries.length > 0 ? [propCountryMap(discoveryCountries)] : []),
       prop(s.props.casNumber, fmt(o?.casNumber)),
@@ -495,7 +491,7 @@ function buildApplicationsSection(ctx: SectionBuildContext): DetailSection {
     id: 'applications',
     title: s.sections.applications,
     color: SECTION_COLORS.applications,
-    items: [prop('', getElementApplications(detail.number, locale))],
+    items: [prop('', resolveLocalizedLabel(detail.applications, locale))],
   }
 }
 
@@ -505,7 +501,7 @@ function buildDescriptionSection(ctx: SectionBuildContext): DetailSection {
     id: 'description',
     title: s.sections.description,
     color: SECTION_COLORS.description,
-    items: [prop('', getElementDescription(detail.number, locale))],
+    items: [prop('', resolveLocalizedLabel(detail.description, locale))],
   }
 }
 
@@ -517,7 +513,7 @@ function buildMiningSection(ctx: SectionBuildContext): DetailSection {
     color: SECTION_COLORS.mining,
     items: [],
     miningCountries: getElementProductionCountries(detail.number),
-    miningNote: getElementProductionNote(detail.number, locale),
+    miningNote: resolveLocalizedLabel(detail.productionNote, locale),
   }
 }
 

@@ -3,18 +3,6 @@ import { localeMessages } from '../../locales'
 import { getElementGhsPictograms } from '../../data'
 import type { GhsDisplayItem } from '../../types/element/ghs'
 
-export function formatOpener(
-  raw: string | null | undefined,
-  locale: Locale,
-): string {
-  if (!raw) return '----'
-  const table = localeMessages[locale].openers
-  return raw
-    .split('/')
-    .map((id) => table[id.trim()] ?? id.trim())
-    .join(', ')
-}
-
 export function formatElementSymbol(symbol: string): string {
   if (symbol.length < 2) return symbol
   const first = symbol[0]

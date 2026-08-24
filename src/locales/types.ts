@@ -279,7 +279,6 @@ export interface LocaleMessages {
     miniTableAria: string
     sourceTypes: Record<'primary' | 'secondary', string>
   }
-  openers: Record<string, string>
   nfpa: {
     nfpa1: Record<string, string>
     nfpa2: Record<string, string>
@@ -299,9 +298,6 @@ export interface LocaleMessages {
     string
   >
   decay: Record<DecayModeKey, string>
-  applications: Record<string, string>
-  descriptions: Record<string, string>
-  production: Record<string, string>
   legend: Record<LegendKey, string>
   elements: Record<string, string>
   seo: {
