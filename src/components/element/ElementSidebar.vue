@@ -69,7 +69,7 @@ const spectrumOriginHtml = computed(() => {
 
 const elementMass = computed(() => {
   if (!props.element) return ''
-  const mass = detail.value?.properties?.elementMasse ?? props.element.mass
+  const mass = detail.value?.properties?.atomicMass ?? props.element.mass
   void locale.value
   return formatMass(mass)
 })
@@ -92,7 +92,7 @@ const isWeaklyRadioactive = computed(() =>
 const isInCollection = computed(() => props.element?.inCollection ?? false)
 
 function gridSectionImageUrl(section: DetailSection): string | null {
-  return getGridStructureImageUrlByNum(section.gridStructureNum)
+  return getGridStructureImageUrlByNum(section.structureCode)
 }
 
 const nfpaDisplay = computed(() => {
@@ -264,10 +264,10 @@ function applyDefaultCollapsedSections(): void {
           nfpaDisplay: nfpaDisplay.value,
           ghsDisplay: ghsDisplay.value,
           oxidationStates: oxidationStates.value,
-          elementShell: overview.value?.elementShell,
-          elementE: overview.value?.elementE,
-          elementP: overview.value?.elementP,
-          elementN: overview.value?.elementN,
+          electronShellConfig: overview.value?.electronShellConfig,
+          electronCount: overview.value?.electronCount,
+          protonCount: overview.value?.protonCount,
+          neutronCount: overview.value?.neutronCount,
         }),
       )
       .map((section) => section.sectionKey ?? section.id),
@@ -571,11 +571,11 @@ function toggleSection(sectionKey: string): void {
 
             <ElementSidebarOverviewSection
               v-if="section.id === 'overview'"
-              :shell="overview?.elementShell"
+              :shell="overview?.electronShellConfig"
               :accent-color="element.color"
-              :electrons="overview?.elementE"
-              :protons="overview?.elementP"
-              :neutrons="overview?.elementN"
+              :electrons="overview?.electronCount"
+              :protons="overview?.protonCount"
+              :neutrons="overview?.neutronCount"
             />
 
             <ElementSidebarMiningSection

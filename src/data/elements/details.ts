@@ -5,28 +5,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Hydrogenium",
       "englishName": "Hydrogen",
-      "elementOpenedYear": "1766",
+      "discoveryYear": "1766",
       "casNumber": "CAS1333-74-0",
-      "elementOpener": "0",
-      "countryOpener": "GB",
-      "elementShell": "K1-L0-M0-N0-O0-P0-Q0-R0",
-      "elementE": "1",
-      "elementP": "1",
-      "elementN": "0",
+      "discoverer": "0",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K1-L0-M0-N0-O0-P0-Q0-R0",
+      "electronCount": "1",
+      "protonCount": "1",
+      "neutronCount": "0",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "1s1",
-      "elementPrice": "2.3",
-      "elementRadioactivity": false
+      "electronConfiguration": "1s1"
     },
     "properties": {
-      "elementMasse": "1.00797094202593",
-      "elementDensity": "0.00008988",
-      "elementMeltingPoint": "-259.16",
-      "elementBoilingPoint": "-252.879",
-      "elValence": "1",
-      "elementGroup": "1/I+",
-      "elementBlock": "s",
+      "atomicMass": "1.00797094202593",
+      "density": "0.00008988",
+      "meltingPoint": "-259.16",
+      "boilingPoint": "-252.879",
+      "valence": "1",
+      "group": "1/I+",
+      "block": "s",
       "aggregationState": "gas"
     },
     "thermo": {
@@ -43,31 +41,30 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "120"
     },
     "electromagnetic": {
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-2.23 ⋅ 10<sup><small>-9</small></sup>",
-      "es_umvospr": "-2.48 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "-4.999 ⋅ 10<sup><small>-11</small></sup>"
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-2.23 ⋅ 10<sup><small>-9</small></sup>",
+      "massMagneticSusceptibility": "-2.48 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "-4.999 ⋅ 10<sup><small>-11</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "1",
+      "structureCode": "1",
       "gridParams": "a=3.780 Å; c=6.167 Å",
-      "ratio": "1.631",
+      "axialRatio": "1.631",
       "debyeTemperature": "119",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "0",
-      "numberCID": "CID783",
-      "numberRTEC": "RTECSMW8900000",
-      "molarValue": "0.01121",
+      "pubchemCid": "CID783",
+      "rtecsNumber": "RTECSMW8900000",
+      "molarVolume": "0.01121",
       "soundSpeed": "1310.0",
       "refractiveIndex": "1.000132",
       "thermalConductivity": "0.1805"
     },
     "reactivity": {
       "electronegativity": "2.2",
-      "atomElectronEnergy": "72.769"
+      "electronAffinity": "72.769"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -76,12 +73,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "4,3,0,-"
     },
     "prevalence": {
-      "prevalence1": "75.0",
-      "prevalence2": "71.0",
-      "prevalence3": "11.0",
-      "prevalence4": "9.98774236967546",
-      "prevalence5": "0.14",
-      "prevalence6": "2.4"
+      "universe": "75.0",
+      "sun": "71.0",
+      "ocean": "11.0",
+      "humanBody": "9.98774236967546",
+      "crust": "0.14",
+      "meteorites": "2.4"
     },
     "colorIndex": 0,
     "ghs": [
@@ -112,28 +109,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Helium",
       "englishName": "Helium",
-      "elementOpenedYear": "1868",
+      "discoveryYear": "1868",
       "casNumber": "CAS7440-59-7",
-      "elementOpener": "1/2",
-      "countryOpener": "FR, GB",
-      "elementShell": "K2-L0-M0-N0-O0-P0-Q0-R0",
-      "elementE": "2",
-      "elementP": "2",
-      "elementN": "2",
+      "discoverer": "1/2",
+      "discoveryCountry": "FR, GB",
+      "electronShellConfig": "K2-L0-M0-N0-O0-P0-Q0-R0",
+      "electronCount": "2",
+      "protonCount": "2",
+      "neutronCount": "2",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "1s2",
-      "elementPrice": "2.5",
-      "elementRadioactivity": false
+      "electronConfiguration": "1s2"
     },
     "properties": {
-      "elementMasse": "4.00260128098301",
-      "elementDensity": "0.0001785",
-      "elementMeltingPoint": "-273.15",
-      "elementBoilingPoint": "-268.928",
-      "elValence": "0",
-      "elementGroup": "1/VIII+",
-      "elementBlock": "s",
+      "atomicMass": "4.00260128098301",
+      "density": "0.0001785",
+      "meltingPoint": "-273.15",
+      "boilingPoint": "-268.928",
+      "valence": "0",
+      "group": "1/VIII+",
+      "block": "s",
       "aggregationState": "gas"
     },
     "thermo": {
@@ -149,29 +144,28 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "140"
     },
     "electromagnetic": {
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-1.05 ⋅ 10<sup><small>-9</small></sup>",
-      "es_umvospr": "-5.9 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-2.36 ⋅ 10<sup><small>-11</small></sup>"
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-1.05 ⋅ 10<sup><small>-9</small></sup>",
+      "massMagneticSusceptibility": "-5.9 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-2.36 ⋅ 10<sup><small>-11</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "2 | 7",
+      "structureCode": "2 | 7",
       "gridParams": "a=3.570 Å; c=5.84 Å | 0",
-      "ratio": "1.633 | 0",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "axialRatio": "1.633 | 0",
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "0",
-      "numberCID": "CID23987",
-      "numberRTEC": "RTECSMH6520000",
-      "molarValue": "0.022424",
+      "pubchemCid": "CID23987",
+      "rtecsNumber": "RTECSMH6520000",
+      "molarVolume": "0.022424",
       "soundSpeed": "965.0",
       "refractiveIndex": "1.000035",
       "thermalConductivity": "0.1513"
     },
     "reactivity": {
-      "atomElectronEnergy": "0"
+      "electronAffinity": "0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -180,10 +174,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,0,0,SA"
     },
     "prevalence": {
-      "prevalence1": "23.0",
-      "prevalence2": "27.1",
-      "prevalence3": "7.2 ⋅ 10<sup><small>-10</small></sup>",
-      "prevalence5": "8.0 ⋅ 10<sup><small>-7</small></sup>"
+      "universe": "23.0",
+      "sun": "27.1",
+      "ocean": "7.2 ⋅ 10<sup><small>-10</small></sup>",
+      "crust": "8.0 ⋅ 10<sup><small>-7</small></sup>"
     },
     "colorIndex": 0,
     "ghs": [
@@ -215,28 +209,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Lithium",
       "englishName": "Lithium",
-      "elementOpenedYear": "1817",
+      "discoveryYear": "1817",
       "casNumber": "CAS7439-93-2",
-      "elementOpener": "3",
-      "countryOpener": "SE",
-      "elementShell": "K2-L1-M0-N0-O0-P0-Q0-R0",
-      "elementE": "3",
-      "elementP": "3",
-      "elementN": "4",
+      "discoverer": "3",
+      "discoveryCountry": "SE",
+      "electronShellConfig": "K2-L1-M0-N0-O0-P0-Q0-R0",
+      "electronCount": "3",
+      "protonCount": "3",
+      "neutronCount": "4",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "1s2 2s1",
-      "elementPrice": "1.75",
-      "elementRadioactivity": false
+      "electronConfiguration": "1s2 2s1"
     },
     "properties": {
-      "elementMasse": "6.941765353712",
-      "elementDensity": "0.534",
-      "elementMeltingPoint": "180.5",
-      "elementBoilingPoint": "1342.0",
-      "elValence": "1",
-      "elementGroup": "2/I+",
-      "elementBlock": "s",
+      "atomicMass": "6.941765353712",
+      "density": "0.534",
+      "meltingPoint": "180.5",
+      "boilingPoint": "1342.0",
+      "valence": "1",
+      "group": "2/I+",
+      "block": "s",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -254,38 +246,37 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "182"
     },
     "electromagnetic": {
-      "es_electro": "10775862.0689655",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "1.37 ⋅ 10<sup><small>-9</small></sup>",
-      "es_umvospr": "2.56 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "1.78 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "9.28 ⋅ 10<sup><small>-8</small></sup>"
+      "electricalConductivity": "10775862.0689655",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "1.37 ⋅ 10<sup><small>-9</small></sup>",
+      "massMagneticSusceptibility": "2.56 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "1.78 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "9.28 ⋅ 10<sup><small>-8</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "3 | 2",
+      "structureCode": "3 | 2",
       "gridParams": "3.490 Å | a=3.080 Å; c=4.82 Å",
       "debyeTemperature": "344",
-      "space1": "Im_ 3m",
-      "space2": "229"
+      "spaceGroup": "Im_ 3m",
+      "spaceGroupNumber": "229"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID3028194",
-      "numberRTEC": "RTECSOJ5540000",
+      "pubchemCid": "CID3028194",
+      "rtecsNumber": "RTECSOJ5540000",
       "brinellHardness": "5.0",
       "mohsHardness": "0.6",
       "bulkModulus": "11.0",
       "youngModulus": "4.9",
       "liquidDensity": "0.512",
-      "molarValue": "0.00001297",
+      "molarVolume": "0.00001297",
       "shearModulus": "4.2",
       "soundSpeed": "6000.0",
       "thermalConductivity": "84.8"
     },
     "reactivity": {
       "electronegativity": "0.98",
-      "atomElectronEnergy": "59.6326"
+      "electronAffinity": "59.6326"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -294,12 +285,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,3,2,W"
     },
     "prevalence": {
-      "prevalence1": "6 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "6 ⋅ 10<sup><small>-9</small></sup>",
-      "prevalence3": "1.8 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence4": "3 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence5": "0.002",
-      "prevalence6": "0.00017"
+      "universe": "6 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "6 ⋅ 10<sup><small>-9</small></sup>",
+      "ocean": "1.8 ⋅ 10<sup><small>-5</small></sup>",
+      "humanBody": "3 ⋅ 10<sup><small>-6</small></sup>",
+      "crust": "0.002",
+      "meteorites": "0.00017"
     },
     "colorIndex": 1,
     "ghs": [
@@ -335,28 +326,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Beryllium",
       "englishName": "Beryllium",
-      "elementOpenedYear": "1798",
+      "discoveryYear": "1798",
       "casNumber": "CAS7440-41-7",
-      "elementOpener": "4",
-      "countryOpener": "FR",
-      "elementShell": "K2-L2-M0-N0-O0-P0-Q0-R0",
-      "elementE": "4",
-      "elementP": "4",
-      "elementN": "5",
+      "discoverer": "4",
+      "discoveryCountry": "FR",
+      "electronShellConfig": "K2-L2-M0-N0-O0-P0-Q0-R0",
+      "electronCount": "4",
+      "protonCount": "4",
+      "neutronCount": "5",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "1s2 2s2",
-      "elementPrice": "1300",
-      "elementRadioactivity": false
+      "electronConfiguration": "1s2 2s2"
     },
     "properties": {
-      "elementMasse": "9.01218306156802",
-      "elementDensity": "1.85",
-      "elementMeltingPoint": "1287.0",
-      "elementBoilingPoint": "2469.0",
-      "elValence": "2",
-      "elementGroup": "2/II+",
-      "elementBlock": "s",
+      "atomicMass": "9.01218306156802",
+      "density": "1.85",
+      "meltingPoint": "1287.0",
+      "boilingPoint": "2469.0",
+      "valence": "2",
+      "group": "2/II+",
+      "block": "s",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -374,33 +363,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "153"
     },
     "electromagnetic": {
-      "es_electro": "28089887.6404494",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-2.328 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-1.26 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "-1.136 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "3.56 ⋅ 10<sup><small>-8</small></sup>",
-      "es_temp": "0.026"
+      "electricalConductivity": "28089887.6404494",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-2.328 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-1.26 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "-1.136 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "3.56 ⋅ 10<sup><small>-8</small></sup>",
+      "superconductingTemperature": "0.026"
     },
     "grid": {
-      "gridStructureNum": "2 | 3",
+      "structureCode": "2 | 3",
       "gridParams": "a=2.286 Å; c=3.584 Å; z = 2 | a = 2.5515 Å",
       "debyeTemperature": "1160",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5460467",
-      "numberRTEC": "RTECSDS1750000",
+      "pubchemCid": "CID5460467",
+      "rtecsNumber": "RTECSDS1750000",
       "brinellHardness": "600.0",
       "mohsHardness": "5.5",
       "vickersHardness": "1670.0",
       "bulkModulus": "130.0",
       "youngModulus": "287.0",
       "liquidDensity": "1.69",
-      "molarValue": "0.0000048767",
+      "molarVolume": "0.0000048767",
       "poissonRatio": "0.032",
       "shearModulus": "132.0",
       "soundSpeed": "12870.0",
@@ -408,7 +396,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.57",
-      "atomElectronEnergy": "0"
+      "electronAffinity": "0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -417,12 +405,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,3,0,-"
     },
     "prevalence": {
-      "prevalence1": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "1 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence3": "6 ⋅ 10<sup><small>-11</small></sup>",
-      "prevalence4": "5.136553 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence5": "2.8 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence6": "2.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "1 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "1 ⋅ 10<sup><small>-8</small></sup>",
+      "ocean": "6 ⋅ 10<sup><small>-11</small></sup>",
+      "humanBody": "5.136553 ⋅ 10<sup><small>-8</small></sup>",
+      "crust": "2.8 ⋅ 10<sup><small>-4</small></sup>",
+      "meteorites": "2.9 ⋅ 10<sup><small>-6</small></sup>"
     },
     "colorIndex": 3,
     "ghs": [
@@ -449,28 +437,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Borum",
       "englishName": "Boron",
-      "elementOpenedYear": "1808",
+      "discoveryYear": "1808",
       "casNumber": "CAS7440-42-8",
-      "elementOpener": "5/6/7",
-      "countryOpener": "FR, GB",
-      "elementShell": "K2-L3-M0-N0-O0-P0-Q0-R0",
-      "elementE": "5",
-      "elementP": "5",
-      "elementN": "6",
+      "discoverer": "5/6/7",
+      "discoveryCountry": "FR, GB",
+      "electronShellConfig": "K2-L3-M0-N0-O0-P0-Q0-R0",
+      "electronCount": "5",
+      "protonCount": "5",
+      "neutronCount": "6",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "1s2 2s2 2p1",
-      "elementPrice": "2.8",
-      "elementRadioactivity": false
+      "electronConfiguration": "1s2 2s2 2p1"
     },
     "properties": {
-      "elementMasse": "10.8135187949825",
-      "elementDensity": "2.34",
-      "elementMeltingPoint": "2076.0",
-      "elementBoilingPoint": "3927.0",
-      "elValence": "3",
-      "elementGroup": "2/III+",
-      "elementBlock": "p",
+      "atomicMass": "10.8135187949825",
+      "density": "2.34",
+      "meltingPoint": "2076.0",
+      "boilingPoint": "3927.0",
+      "valence": "3",
+      "group": "2/III+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -487,37 +473,36 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "192"
     },
     "electromagnetic": {
-      "es_electro": "6.66666666666667e-05",
-      "es_etype": "2",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-2.14 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-8.7 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-9.41 ⋅ 10<sup><small>-11</small></sup>",
-      "es_udel": "15000.0"
+      "electricalConductivity": "6.66666666666667e-05",
+      "electricalType": "2",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-2.14 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-8.7 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-9.41 ⋅ 10<sup><small>-11</small></sup>",
+      "electricalResistivity": "15000.0"
     },
     "grid": {
-      "gridStructureNum": "5",
+      "structureCode": "5",
       "gridParams": "a=10.17; α=65.18 Å",
-      "ratio": "0.576",
+      "axialRatio": "0.576",
       "debyeTemperature": "1480",
-      "space1": "R_ 3m",
-      "space2": "166"
+      "spaceGroup": "R_ 3m",
+      "spaceGroupNumber": "166"
     },
     "additional": {
-      "elementColor": "2",
-      "numberCID": "CID5462311",
-      "numberRTEC": "RTECSED7350000",
+      "pubchemCid": "CID5462311",
+      "rtecsNumber": "RTECSED7350000",
       "mohsHardness": "9.5",
       "vickersHardness": "49000.0",
       "bulkModulus": "185.0",
       "liquidDensity": "02.08",
-      "molarValue": "0.0000043943",
+      "molarVolume": "0.0000043943",
       "soundSpeed": "16200.0",
       "thermalConductivity": "27.4"
     },
     "reactivity": {
       "electronegativity": "2.04",
-      "atomElectronEnergy": "26.989"
+      "electronAffinity": "26.989"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -526,12 +511,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,2,0,-"
     },
     "prevalence": {
-      "prevalence1": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "4.4 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence4": "7 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence5": "0.001",
-      "prevalence6": "0.00016"
+      "universe": "1 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "4.4 ⋅ 10<sup><small>-4</small></sup>",
+      "humanBody": "7 ⋅ 10<sup><small>-5</small></sup>",
+      "crust": "0.001",
+      "meteorites": "0.00016"
     },
     "colorIndex": 16,
     "isotopes": {
@@ -560,28 +545,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Сarbonium (Carboneum)",
       "englishName": "Carbon",
-      "elementOpenedYear": "3750 BC",
+      "discoveryYear": "3750 BC",
       "casNumber": "CAS7440-44-0",
-      "elementOpener": "77",
-      "countryOpener": "Middle",
-      "elementShell": "K2-L4-M0-N0-O0-P0-Q0-R0",
-      "elementE": "6",
-      "elementP": "6",
-      "elementN": "6",
+      "discoverer": "77",
+      "discoveryCountry": "Middle",
+      "electronShellConfig": "K2-L4-M0-N0-O0-P0-Q0-R0",
+      "electronCount": "6",
+      "protonCount": "6",
+      "neutronCount": "6",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "1s2 2s2 2p2",
-      "elementPrice": "2.5",
-      "elementRadioactivity": false
+      "electronConfiguration": "1s2 2s2 2p2"
     },
     "properties": {
-      "elementMasse": "12.0106355612542",
-      "elementDensity": "2.267",
-      "elementMeltingPoint": "3527.0",
-      "elementBoilingPoint": "3915.0",
-      "elValence": "2, 4",
-      "elementGroup": "2/IV+",
-      "elementBlock": "p",
+      "atomicMass": "12.0106355612542",
+      "density": "2.267",
+      "meltingPoint": "3527.0",
+      "boilingPoint": "3915.0",
+      "valence": "2, 4",
+      "group": "2/IV+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -598,36 +581,35 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "170"
     },
     "electromagnetic": {
-      "es_electro": "72727.2727272727",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-1.4 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-6.2 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-7.45 ⋅ 10<sup><small>-11</small></sup>",
-      "es_udel": "1.375 ⋅ 10<sup><small>-5</small></sup>"
+      "electricalConductivity": "72727.2727272727",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-1.4 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-6.2 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-7.45 ⋅ 10<sup><small>-11</small></sup>",
+      "electricalResistivity": "1.375 ⋅ 10<sup><small>-5</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "6 | 8",
+      "structureCode": "6 | 8",
       "gridParams": "a=2.46; c=6.71; а=3.567 | а=3.567",
-      "ratio": "2.73 | 0",
+      "axialRatio": "2.73 | 0",
       "debyeTemperature": "413 | 2200",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "2",
-      "numberCID": "CID5462310",
-      "numberRTEC": "RTECSHL4158550",
+      "pubchemCid": "CID5462310",
+      "rtecsNumber": "RTECSHL4158550",
       "mohsHardness": "0.5",
       "bulkModulus": "33.0",
-      "molarValue": "0.0000053146",
+      "molarVolume": "0.0000053146",
       "soundSpeed": "18350.0",
       "refractiveIndex": "2.417",
       "thermalConductivity": "140.0"
     },
     "reactivity": {
       "electronegativity": "2.55",
-      "atomElectronEnergy": "121.7763"
+      "electronAffinity": "121.7763"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -636,12 +618,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,0,0,-"
     },
     "prevalence": {
-      "prevalence1": "0.5",
-      "prevalence2": "0.4",
-      "prevalence3": "0.0028",
-      "prevalence4": "22.829125416401",
-      "prevalence5": "0.02",
-      "prevalence6": "1.5"
+      "universe": "0.5",
+      "sun": "0.4",
+      "ocean": "0.0028",
+      "humanBody": "22.829125416401",
+      "crust": "0.02",
+      "meteorites": "1.5"
     },
     "colorIndex": 16,
     "isotopes": {
@@ -669,28 +651,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Nitrogenium",
       "englishName": "Nitrogen",
-      "elementOpenedYear": "1772",
+      "discoveryYear": "1772",
       "casNumber": "CAS7727-37-9",
-      "elementOpener": "8",
-      "countryOpener": "GB",
-      "elementShell": "K2-L5-M0-N0-O0-P0-Q0-R0",
-      "elementE": "7",
-      "elementP": "7",
-      "elementN": "7",
+      "discoverer": "8",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L5-M0-N0-O0-P0-Q0-R0",
+      "electronCount": "7",
+      "protonCount": "7",
+      "neutronCount": "7",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "1s2 2s2 2p3",
-      "elementPrice": "0.70",
-      "elementRadioactivity": false
+      "electronConfiguration": "1s2 2s2 2p3"
     },
     "properties": {
-      "elementMasse": "14.0068577516411",
-      "elementDensity": "0.001251",
-      "elementMeltingPoint": "-210.0",
-      "elementBoilingPoint": "-195.795",
-      "elValence": "1, 2, 3, 4, 5",
-      "elementGroup": "2/V+",
-      "elementBlock": "p",
+      "atomicMass": "14.0068577516411",
+      "density": "0.001251",
+      "meltingPoint": "-210.0",
+      "boilingPoint": "-195.795",
+      "valence": "1, 2, 3, 4, 5",
+      "group": "2/V+",
+      "block": "p",
       "aggregationState": "gas"
     },
     "thermo": {
@@ -707,29 +687,28 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "155"
     },
     "electromagnetic": {
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-6.8 ⋅ 10<sup><small>-9</small></sup>",
-      "es_umvospr": "-5.4 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-1.5 ⋅ 10<sup><small>-10</small></sup>"
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-6.8 ⋅ 10<sup><small>-9</small></sup>",
+      "massMagneticSusceptibility": "-5.4 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-1.5 ⋅ 10<sup><small>-10</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "1 | 7",
+      "structureCode": "1 | 7",
       "gridParams": "5.661 Å | a=4.116 Å; c=6.734 Å",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "0",
-      "numberCID": "CID947",
-      "numberRTEC": "RTECSQW9700000",
-      "molarValue": "0.011197",
+      "pubchemCid": "CID947",
+      "rtecsNumber": "RTECSQW9700000",
+      "molarVolume": "0.011197",
       "soundSpeed": "353.0",
       "refractiveIndex": "1.000298",
       "thermalConductivity": "0.02583"
     },
     "reactivity": {
       "electronegativity": "3.04",
-      "atomElectronEnergy": "-6.8"
+      "electronAffinity": "-6.8"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -738,12 +717,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,0,0,SA"
     },
     "prevalence": {
-      "prevalence1": "0.1",
-      "prevalence2": "0.1",
-      "prevalence3": "5.0 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence4": "2.56827660934512",
-      "prevalence5": "0.0019",
-      "prevalence6": "0.14"
+      "universe": "0.1",
+      "sun": "0.1",
+      "ocean": "5.0 ⋅ 10<sup><small>-5</small></sup>",
+      "humanBody": "2.56827660934512",
+      "crust": "0.0019",
+      "meteorites": "0.14"
     },
     "colorIndex": 0,
     "ghs": [
@@ -774,28 +753,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Oxygenium",
       "englishName": "Oxygen",
-      "elementOpenedYear": "1771",
+      "discoveryYear": "1771",
       "casNumber": "CAS7782-44-7",
-      "elementOpener": "9/10",
-      "countryOpener": "SE, GB",
-      "elementShell": "K2-L6-M0-N0-O0-P0-Q0-R0",
-      "elementE": "8",
-      "elementP": "8",
-      "elementN": "8",
+      "discoverer": "9/10",
+      "discoveryCountry": "SE, GB",
+      "electronShellConfig": "K2-L6-M0-N0-O0-P0-Q0-R0",
+      "electronCount": "8",
+      "protonCount": "8",
+      "neutronCount": "8",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "1s2 2s2 2p4",
-      "elementPrice": "1.5",
-      "elementRadioactivity": false
+      "electronConfiguration": "1s2 2s2 2p4"
     },
     "properties": {
-      "elementMasse": "15.9994049240801",
-      "elementDensity": "0.001429",
-      "elementMeltingPoint": "-218.79",
-      "elementBoilingPoint": "-182.962",
-      "elValence": "2",
-      "elementGroup": "2/VI+",
-      "elementBlock": "p",
+      "atomicMass": "15.9994049240801",
+      "density": "0.001429",
+      "meltingPoint": "-218.79",
+      "boilingPoint": "-182.962",
+      "valence": "2",
+      "group": "2/VI+",
+      "block": "p",
       "aggregationState": "gas"
     },
     "thermo": {
@@ -812,30 +789,29 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "152"
     },
     "electromagnetic": {
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "1.90772 ⋅ 10<sup><small>-6</small></sup>",
-      "es_umvospr": "1.335 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "4.27184 ⋅ 10<sup><small>-8</small></sup>"
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "1.90772 ⋅ 10<sup><small>-6</small></sup>",
+      "massMagneticSusceptibility": "1.335 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "4.27184 ⋅ 10<sup><small>-8</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "7",
+      "structureCode": "7",
       "gridParams": "a=5.403 Å; b=3.429 Å; c=5.086 Å; β=132.53°",
       "debyeTemperature": "104",
-      "space1": "C12/m1",
-      "space2": "12"
+      "spaceGroup": "C12/m1",
+      "spaceGroupNumber": "12"
     },
     "additional": {
-      "elementColor": "0",
-      "numberCID": "CID977",
-      "numberRTEC": "RTECSRS2060000",
-      "molarValue": "0.011196",
+      "pubchemCid": "CID977",
+      "rtecsNumber": "RTECSRS2060000",
+      "molarVolume": "0.011196",
       "soundSpeed": "330.0",
       "refractiveIndex": "1.000271",
       "thermalConductivity": "0.02658"
     },
     "reactivity": {
       "electronegativity": "3.44",
-      "atomElectronEnergy": "140.976"
+      "electronAffinity": "140.976"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -844,12 +820,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,3,2,OX"
     },
     "prevalence": {
-      "prevalence1": "1",
-      "prevalence2": "0.97",
-      "prevalence3": "86.0",
-      "prevalence4": "61.3532745565778",
-      "prevalence5": "46.1",
-      "prevalence6": "40.0"
+      "universe": "1",
+      "sun": "0.97",
+      "ocean": "86.0",
+      "humanBody": "61.3532745565778",
+      "crust": "46.1",
+      "meteorites": "40.0"
     },
     "colorIndex": 0,
     "ghs": [
@@ -884,28 +860,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Fluorum",
       "englishName": "Fluorine",
-      "elementOpenedYear": "1886",
+      "discoveryYear": "1886",
       "casNumber": "CAS7782-41-4",
-      "elementOpener": "11",
-      "countryOpener": "FR",
-      "elementShell": "K2-L7-M0-N0-O0-P0-Q0-R0",
-      "elementE": "9",
-      "elementP": "9",
-      "elementN": "10",
+      "discoverer": "11",
+      "discoveryCountry": "FR",
+      "electronShellConfig": "K2-L7-M0-N0-O0-P0-Q0-R0",
+      "electronCount": "9",
+      "protonCount": "9",
+      "neutronCount": "10",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "1s2 2s2 2p5",
-      "elementPrice": "45",
-      "elementRadioactivity": false
+      "electronConfiguration": "1s2 2s2 2p5"
     },
     "properties": {
-      "elementMasse": "18.9984031620854",
-      "elementDensity": "0.001696",
-      "elementMeltingPoint": "-219.67",
-      "elementBoilingPoint": "-188.11",
-      "elValence": "1",
-      "elementGroup": "2/VII+",
-      "elementBlock": "p",
+      "atomicMass": "18.9984031620854",
+      "density": "0.001696",
+      "meltingPoint": "-219.67",
+      "boilingPoint": "-188.11",
+      "valence": "1",
+      "group": "2/VII+",
+      "block": "p",
       "aggregationState": "gas"
     },
     "thermo": {
@@ -922,25 +896,24 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "135"
     },
     "electromagnetic": {
-      "es_mtype": "diamagnetic"
+      "magneticType": "diamagnetic"
     },
     "grid": {
-      "gridStructureNum": "12 | 7",
+      "structureCode": "12 | 7",
       "gridParams": "β = 102.088°; a = 5.4780 Å; b = 3.2701 Å; c = 7.28",
-      "space1": "C12/c1",
-      "space2": "15"
+      "spaceGroup": "C12/c1",
+      "spaceGroupNumber": "15"
     },
     "additional": {
-      "elementColor": "10",
-      "numberCID": "CID24524",
-      "numberRTEC": "RTECSLM6475000",
-      "molarValue": "0.011202",
+      "pubchemCid": "CID24524",
+      "rtecsNumber": "RTECSLM6475000",
+      "molarVolume": "0.011202",
       "refractiveIndex": "1.000195",
       "thermalConductivity": "0.0277"
     },
     "reactivity": {
       "electronegativity": "3.98",
-      "atomElectronEnergy": "328.1649"
+      "electronAffinity": "328.1649"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -949,12 +922,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,4,4,OX"
     },
     "prevalence": {
-      "prevalence1": "4 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence2": "5 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence3": "1.3 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence4": "0.00370973288017",
-      "prevalence5": "0.0585",
-      "prevalence6": "0.0087"
+      "universe": "4 ⋅ 10<sup><small>-5</small></sup>",
+      "sun": "5 ⋅ 10<sup><small>-5</small></sup>",
+      "ocean": "1.3 ⋅ 10<sup><small>-4</small></sup>",
+      "humanBody": "0.00370973288017",
+      "crust": "0.0585",
+      "meteorites": "0.0087"
     },
     "colorIndex": 21,
     "ghs": [
@@ -984,28 +957,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Neon",
       "englishName": "Neon",
-      "elementOpenedYear": "1898",
+      "discoveryYear": "1898",
       "casNumber": "CAS7440-01-9",
-      "elementOpener": "12/13",
-      "countryOpener": "GB",
-      "elementShell": "K2-L8-M0-N0-O0-P0-Q0-R0",
-      "elementE": "10",
-      "elementP": "10",
-      "elementN": "10",
+      "discoverer": "12/13",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L8-M0-N0-O0-P0-Q0-R0",
+      "electronCount": "10",
+      "protonCount": "10",
+      "neutronCount": "10",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "1s2 2s2 2p6",
-      "elementPrice": "7.54",
-      "elementRadioactivity": false
+      "electronConfiguration": "1s2 2s2 2p6"
     },
     "properties": {
-      "elementMasse": "20.1800463795723",
-      "elementDensity": "0.000900",
-      "elementMeltingPoint": "-248.59",
-      "elementBoilingPoint": "-246.046",
-      "elValence": "0",
-      "elementGroup": "2/VIII+",
-      "elementBlock": "p",
+      "atomicMass": "20.1800463795723",
+      "density": "0.000900",
+      "meltingPoint": "-248.59",
+      "boilingPoint": "-246.046",
+      "valence": "0",
+      "group": "2/VIII+",
+      "block": "p",
       "aggregationState": "gas"
     },
     "thermo": {
@@ -1021,30 +992,29 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "154"
     },
     "electromagnetic": {
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-3.69 ⋅ 10<sup><small>-9</small></sup>",
-      "es_umvospr": "-4.1 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-8.27 ⋅ 10<sup><small>-11</small></sup>"
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-3.69 ⋅ 10<sup><small>-9</small></sup>",
+      "massMagneticSusceptibility": "-4.1 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-8.27 ⋅ 10<sup><small>-11</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "4.430 Å",
       "debyeTemperature": "74.6",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "0",
-      "numberCID": "CID23935",
-      "numberRTEC": "RTECSQP4450000",
+      "pubchemCid": "CID23935",
+      "rtecsNumber": "RTECSQP4450000",
       "bulkModulus": "654",
-      "molarValue": "0.02242",
+      "molarVolume": "0.02242",
       "soundSpeed": "435.0",
       "refractiveIndex": "1.000067",
       "thermalConductivity": "0.0491"
     },
     "reactivity": {
-      "atomElectronEnergy": "0"
+      "electronAffinity": "0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -1053,10 +1023,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,0,0,SA"
     },
     "prevalence": {
-      "prevalence1": "0.13",
-      "prevalence2": "0.058",
-      "prevalence3": "1.2 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence5": "5.0 ⋅ 10<sup><small>-7</small></sup>"
+      "universe": "0.13",
+      "sun": "0.058",
+      "ocean": "1.2 ⋅ 10<sup><small>-8</small></sup>",
+      "crust": "5.0 ⋅ 10<sup><small>-7</small></sup>"
     },
     "colorIndex": 0,
     "ghs": [
@@ -1091,28 +1061,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Natrium",
       "englishName": "Sodium",
-      "elementOpenedYear": "1807",
+      "discoveryYear": "1807",
       "casNumber": "CAS7440-23-5",
-      "elementOpener": "7",
-      "countryOpener": "GB",
-      "elementShell": "K2-L8-M1-N0-O0-P0-Q0-R0",
-      "elementE": "11",
-      "elementP": "11",
-      "elementN": "12",
+      "discoverer": "7",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L8-M1-N0-O0-P0-Q0-R0",
+      "electronCount": "11",
+      "protonCount": "11",
+      "neutronCount": "12",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ne] 3s1 = 1s2 2s2 2p6 3s1",
-      "elementPrice": "12.5",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ne] 3s1 = 1s2 2s2 2p6 3s1"
     },
     "properties": {
-      "elementMasse": "22.9897692819791",
-      "elementDensity": "0.968",
-      "elementMeltingPoint": "97.794",
-      "elementBoilingPoint": "882.94",
-      "elValence": "1",
-      "elementGroup": "3/I+",
-      "elementBlock": "s",
+      "atomicMass": "22.9897692819791",
+      "density": "0.968",
+      "meltingPoint": "97.794",
+      "boilingPoint": "882.94",
+      "valence": "1",
+      "group": "3/I+",
+      "block": "s",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -1130,38 +1098,37 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "227"
     },
     "electromagnetic": {
-      "es_electro": "20964360.5870021",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "8.6 ⋅ 10<sup><small>-6</small></sup>",
-      "es_umvospr": "8.8 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "2 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "4.77 ⋅ 10<sup><small>-8</small></sup>"
+      "electricalConductivity": "20964360.5870021",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "8.6 ⋅ 10<sup><small>-6</small></sup>",
+      "massMagneticSusceptibility": "8.8 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "2 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "4.77 ⋅ 10<sup><small>-8</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "3 | 1",
+      "structureCode": "3 | 1",
       "gridParams": "4.2820 Å | a=3.767 Å; c=6.154 Å",
       "debyeTemperature": "158",
-      "space1": "Im_ 3m",
-      "space2": "229"
+      "spaceGroup": "Im_ 3m",
+      "spaceGroupNumber": "229"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5360545",
-      "numberRTEC": "RTECSVY0686000",
+      "pubchemCid": "CID5360545",
+      "rtecsNumber": "RTECSVY0686000",
       "brinellHardness": "0.69",
       "mohsHardness": "0.5",
       "bulkModulus": "6.3",
       "youngModulus": "10.0",
       "liquidDensity": "0.927",
-      "molarValue": "0.00002375",
+      "molarVolume": "0.00002375",
       "shearModulus": "3.3",
       "soundSpeed": "3200.0",
       "thermalConductivity": "142.0"
     },
     "reactivity": {
       "electronegativity": "0.93",
-      "atomElectronEnergy": "52.867"
+      "electronAffinity": "52.867"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -1170,12 +1137,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,3,2,W"
     },
     "prevalence": {
-      "prevalence1": "0.002",
-      "prevalence2": "0.004",
-      "prevalence3": "1.1",
-      "prevalence4": "0.14268203385251",
-      "prevalence5": "2.36",
-      "prevalence6": "0.55"
+      "universe": "0.002",
+      "sun": "0.004",
+      "ocean": "1.1",
+      "humanBody": "0.14268203385251",
+      "crust": "2.36",
+      "meteorites": "0.55"
     },
     "colorIndex": 1,
     "ghs": [
@@ -1206,28 +1173,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Magnesium",
       "englishName": "Magnesium",
-      "elementOpenedYear": "1755",
+      "discoveryYear": "1755",
       "casNumber": "CAS7439-95-4",
-      "elementOpener": "69/7",
-      "countryOpener": "GB",
-      "elementShell": "K2-L8-M2-N0-O0-P0-Q0-R0",
-      "elementE": "12",
-      "elementP": "12",
-      "elementN": "12",
+      "discoverer": "69/7",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L8-M2-N0-O0-P0-Q0-R0",
+      "electronCount": "12",
+      "protonCount": "12",
+      "neutronCount": "12",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ne] 3s2 = 1s2 2s2 2p6 3s2",
-      "elementPrice": "8.5",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ne] 3s2 = 1s2 2s2 2p6 3s2"
     },
     "properties": {
-      "elementMasse": "24.3050516136388",
-      "elementDensity": "1.738",
-      "elementMeltingPoint": "650.0",
-      "elementBoilingPoint": "1090.0",
-      "elValence": "2",
-      "elementGroup": "3/II+",
-      "elementBlock": "s",
+      "atomicMass": "24.3050516136388",
+      "density": "1.738",
+      "meltingPoint": "650.0",
+      "boilingPoint": "1090.0",
+      "valence": "2",
+      "group": "3/II+",
+      "block": "s",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -1245,31 +1210,30 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "173"
     },
     "electromagnetic": {
-      "es_electro": "22779043.2801822",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "1.2 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "6.9 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "1.68 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "4.39 ⋅ 10<sup><small>-8</small></sup>"
+      "electricalConductivity": "22779043.2801822",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "1.2 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "6.9 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "1.68 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "4.39 ⋅ 10<sup><small>-8</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "2",
+      "structureCode": "2",
       "gridParams": "a=3.2091 Å; c=5.2103 Å",
-      "ratio": "1.624",
+      "axialRatio": "1.624",
       "debyeTemperature": "406",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5462224",
+      "pubchemCid": "CID5462224",
       "brinellHardness": "260.0",
       "mohsHardness": "2.5",
       "bulkModulus": "45.0",
       "youngModulus": "45.0",
       "liquidDensity": "1.584",
-      "molarValue": "0.000013984",
+      "molarVolume": "0.000013984",
       "poissonRatio": "0.29",
       "shearModulus": "17.0",
       "soundSpeed": "4940.0",
@@ -1277,7 +1241,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.31",
-      "atomElectronEnergy": "0"
+      "electronAffinity": "0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -1286,12 +1250,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,0,1,-"
     },
     "prevalence": {
-      "prevalence1": "0.06",
-      "prevalence2": "0.076",
-      "prevalence3": "0.13",
-      "prevalence4": "0.02710958643198",
-      "prevalence5": "2.33",
-      "prevalence6": "12.0"
+      "universe": "0.06",
+      "sun": "0.076",
+      "ocean": "0.13",
+      "humanBody": "0.02710958643198",
+      "crust": "2.33",
+      "meteorites": "12.0"
     },
     "colorIndex": 4,
     "isotopes": {
@@ -1326,28 +1290,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Aluminium",
       "englishName": "Aluminum",
-      "elementOpenedYear": "1825",
+      "discoveryYear": "1825",
       "casNumber": "CAS7429-90-5",
-      "elementOpener": "15",
-      "countryOpener": "DK",
-      "elementShell": "K2-L8-M3-N0-O0-P0-Q0-R0",
-      "elementE": "13",
-      "elementP": "13",
-      "elementN": "14",
+      "discoverer": "15",
+      "discoveryCountry": "DK",
+      "electronShellConfig": "K2-L8-M3-N0-O0-P0-Q0-R0",
+      "electronCount": "13",
+      "protonCount": "13",
+      "neutronCount": "14",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ne] 3s2 3p1 = 1s2 2s2 2p6 3s2 3p1",
-      "elementPrice": "2",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ne] 3s2 3p1 = 1s2 2s2 2p6 3s2 3p1"
     },
     "properties": {
-      "elementMasse": "26.9815384123685",
-      "elementDensity": "2.7",
-      "elementMeltingPoint": "660.32",
-      "elementBoilingPoint": "2519.0",
-      "elValence": "3, 1",
-      "elementGroup": "3/III+",
-      "elementBlock": "p",
+      "atomicMass": "26.9815384123685",
+      "density": "2.7",
+      "meltingPoint": "660.32",
+      "boilingPoint": "2519.0",
+      "valence": "3, 1",
+      "group": "3/III+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -1365,33 +1327,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "184"
     },
     "electromagnetic": {
-      "es_electro": "37735849.0566038",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "2.11 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "7.8 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "2.1 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "2.65 ⋅ 10<sup><small>-8</small></sup>",
-      "es_temp": "1.18"
+      "electricalConductivity": "37735849.0566038",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "2.11 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "7.8 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "2.1 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "2.65 ⋅ 10<sup><small>-8</small></sup>",
+      "superconductingTemperature": "1.18"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "4.050 Å",
       "debyeTemperature": "426",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5359268",
-      "numberRTEC": "RTECSBD0330000",
+      "pubchemCid": "CID5359268",
+      "rtecsNumber": "RTECSBD0330000",
       "brinellHardness": "245.0",
       "mohsHardness": "2.75",
       "vickersHardness": "167.0",
       "bulkModulus": "76.0",
       "youngModulus": "70.0",
       "liquidDensity": "2.375",
-      "molarValue": "0.00000999",
+      "molarVolume": "0.00000999",
       "poissonRatio": "0.35",
       "shearModulus": "26.0",
       "soundSpeed": "5000.0",
@@ -1399,7 +1360,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.61",
-      "atomElectronEnergy": "41.762"
+      "electronAffinity": "41.762"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -1408,12 +1369,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,0,1,-"
     },
     "prevalence": {
-      "prevalence1": "0.005",
-      "prevalence2": "0.006",
-      "prevalence3": "5 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "8.560922031 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence5": "8.23",
-      "prevalence6": "0.9"
+      "universe": "0.005",
+      "sun": "0.006",
+      "ocean": "5 ⋅ 10<sup><small>-7</small></sup>",
+      "humanBody": "8.560922031 ⋅ 10<sup><small>-5</small></sup>",
+      "crust": "8.23",
+      "meteorites": "0.9"
     },
     "colorIndex": 1,
     "isotopes": {
@@ -1446,28 +1407,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Silicium",
       "englishName": "Silicon",
-      "elementOpenedYear": "1824",
+      "discoveryYear": "1824",
       "casNumber": "CAS7440-21-3",
-      "elementOpener": "16",
-      "countryOpener": "SE",
-      "elementShell": "K2-L8-M4-N0-O0-P0-Q0-R0",
-      "elementE": "14",
-      "elementP": "14",
-      "elementN": "14",
+      "discoverer": "16",
+      "discoveryCountry": "SE",
+      "electronShellConfig": "K2-L8-M4-N0-O0-P0-Q0-R0",
+      "electronCount": "14",
+      "protonCount": "14",
+      "neutronCount": "14",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ne] 3s2 3p2 = 1s2 2s2 2p6 3s2 3p2",
-      "elementPrice": "7.4",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ne] 3s2 3p2 = 1s2 2s2 2p6 3s2 3p2"
     },
     "properties": {
-      "elementMasse": "28.0849993456101",
-      "elementDensity": "2.3296",
-      "elementMeltingPoint": "1414.0",
-      "elementBoilingPoint": "3265.0",
-      "elValence": "2, 4",
-      "elementGroup": "3/IV+",
-      "elementBlock": "p",
+      "atomicMass": "28.0849993456101",
+      "density": "2.3296",
+      "meltingPoint": "1414.0",
+      "boilingPoint": "3265.0",
+      "valence": "2, 4",
+      "group": "3/IV+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -1484,36 +1443,35 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "210"
     },
     "electromagnetic": {
-      "es_electro": "1000.0",
-      "es_etype": "3",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-2.73 ⋅ 10<sup><small>-6</small></sup>",
-      "es_umvospr": "-1.6 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-4.49 ⋅ 10<sup><small>-11</small></sup>",
-      "es_udel": "0.001"
+      "electricalConductivity": "1000.0",
+      "electricalType": "3",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-2.73 ⋅ 10<sup><small>-6</small></sup>",
+      "massMagneticSusceptibility": "-1.6 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-4.49 ⋅ 10<sup><small>-11</small></sup>",
+      "electricalResistivity": "0.001"
     },
     "grid": {
-      "gridStructureNum": "8 | 10 | 7 | 1",
+      "structureCode": "8 | 10 | 7 | 1",
       "gridParams": "5.4307 Å | a=4.686 Å; c=2.585 Å | a=6.44 Å | a=3.80 Å; c=6.28 Å",
       "debyeTemperature": "645",
-      "space1": "Fd_ 3m",
-      "space2": "227"
+      "spaceGroup": "Fd_ 3m",
+      "spaceGroupNumber": "227"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5461123",
-      "numberRTEC": "RTECSVW0400000",
+      "pubchemCid": "CID5461123",
+      "rtecsNumber": "RTECSVW0400000",
       "mohsHardness": "6.5",
       "vickersHardness": "9630.13",
       "bulkModulus": "100.0",
       "youngModulus": "47.0",
       "liquidDensity": "2.57",
-      "molarValue": "0.000012054",
+      "molarVolume": "0.000012054",
       "thermalConductivity": "149.0"
     },
     "reactivity": {
       "electronegativity": "1.9",
-      "atomElectronEnergy": "134.0684"
+      "electronAffinity": "134.0684"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -1522,12 +1480,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "0.07",
-      "prevalence2": "0.099",
-      "prevalence3": "1.0 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence4": "0.026",
-      "prevalence5": "28.3",
-      "prevalence6": "14.0"
+      "universe": "0.07",
+      "sun": "0.099",
+      "ocean": "1.0 ⋅ 10<sup><small>-4</small></sup>",
+      "humanBody": "0.026",
+      "crust": "28.3",
+      "meteorites": "14.0"
     },
     "colorIndex": 5,
     "isotopes": {
@@ -1560,28 +1518,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Phosphorus",
       "englishName": "Phosphorus",
-      "elementOpenedYear": "1669",
+      "discoveryYear": "1669",
       "casNumber": "CAS7723-14-0",
-      "elementOpener": "17",
-      "countryOpener": "DE",
-      "elementShell": "K2-L8-M5-N0-O0-P0-Q0-R0",
-      "elementE": "15",
-      "elementP": "15",
-      "elementN": "16",
+      "discoverer": "17",
+      "discoveryCountry": "DE",
+      "electronShellConfig": "K2-L8-M5-N0-O0-P0-Q0-R0",
+      "electronCount": "15",
+      "protonCount": "15",
+      "neutronCount": "16",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ne] 3s2 3p3 = 1s2 2s2 2p6 3s2 3p3",
-      "elementPrice": "14",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ne] 3s2 3p3 = 1s2 2s2 2p6 3s2 3p3"
     },
     "properties": {
-      "elementMasse": "30.9737619977018",
-      "elementDensity": "1.823",
-      "elementMeltingPoint": "44.15",
-      "elementBoilingPoint": "277.0",
-      "elValence": "3, 5",
-      "elementGroup": "3/V+",
-      "elementBlock": "p",
+      "atomicMass": "30.9737619977018",
+      "density": "1.823",
+      "meltingPoint": "44.15",
+      "boilingPoint": "277.0",
+      "valence": "3, 5",
+      "group": "3/V+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -1598,32 +1554,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "180"
     },
     "electromagnetic": {
-      "es_electro": "10000000.0",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-2.06 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-1.13 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "-3.5 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "1 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "10000000.0",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-2.06 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-1.13 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "-3.5 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "1 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "3",
+      "structureCode": "3",
       "gridParams": "18.800 Å",
-      "space1": "I-43m",
-      "space2": "217"
+      "spaceGroup": "I-43m",
+      "spaceGroupNumber": "217"
     },
     "additional": {
-      "elementColor": "6",
-      "numberCID": "CID5462309",
-      "numberRTEC": "RTECSTH3495000",
+      "pubchemCid": "CID5462309",
+      "rtecsNumber": "RTECSTH3495000",
       "bulkModulus": "11.0",
-      "molarValue": "0.000016991",
+      "molarVolume": "0.000016991",
       "refractiveIndex": "1.001212",
       "thermalConductivity": "0.236"
     },
     "reactivity": {
       "electronegativity": "2.19",
-      "atomElectronEnergy": "72.037"
+      "electronAffinity": "72.037"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -1632,12 +1587,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "4,4,2,-"
     },
     "prevalence": {
-      "prevalence1": "0.0007",
-      "prevalence2": "0.0007",
-      "prevalence3": "7 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence4": "1.11291986404955",
-      "prevalence5": "0.105",
-      "prevalence6": "0.11"
+      "universe": "0.0007",
+      "sun": "0.0007",
+      "ocean": "7 ⋅ 10<sup><small>-6</small></sup>",
+      "humanBody": "1.11291986404955",
+      "crust": "0.105",
+      "meteorites": "0.11"
     },
     "colorIndex": 20,
     "ghs": [
@@ -1667,27 +1622,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Sulphuris",
       "englishName": "Sulfur",
-      "elementOpenedYear": "2000 BC",
+      "discoveryYear": "2000 BC",
       "casNumber": "CAS7704-34-9",
-      "countryOpener": "MiddleEast",
-      "elementShell": "K2-L8-M6-N0-O0-P0-Q0-R0",
-      "elementE": "16",
-      "elementP": "16",
-      "elementN": "16",
+      "discoveryCountry": "MiddleEast",
+      "electronShellConfig": "K2-L8-M6-N0-O0-P0-Q0-R0",
+      "electronCount": "16",
+      "protonCount": "16",
+      "neutronCount": "16",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ne] 3s2 3p4 = 1s2 2s2 2p6 3s2 3p4",
-      "elementPrice": "1.45",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ne] 3s2 3p4 = 1s2 2s2 2p6 3s2 3p4"
     },
     "properties": {
-      "elementMasse": "32.0647874056212",
-      "elementDensity": "2.07",
-      "elementMeltingPoint": "115.21",
-      "elementBoilingPoint": "444.6",
-      "elValence": "2, 4, 6",
-      "elementGroup": "3/VI+",
-      "elementBlock": "p",
+      "atomicMass": "32.0647874056212",
+      "density": "2.07",
+      "meltingPoint": "115.21",
+      "boilingPoint": "444.6",
+      "valence": "2, 4, 6",
+      "group": "3/VI+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -1704,34 +1657,33 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "180"
     },
     "electromagnetic": {
-      "es_electro": "5.0e-16",
-      "es_etype": "2",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-1.22 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-6.2 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-1.99 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "2<sup><small>15</small></sup>"
+      "electricalConductivity": "5.0e-16",
+      "electricalType": "2",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-1.22 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-6.2 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-1.99 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "2<sup><small>15</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "9",
+      "structureCode": "9",
       "gridParams": "a=10.437 Å; b=12.845 Å; c=24.369 Å",
-      "space1": "Fddd",
-      "space2": "70"
+      "spaceGroup": "Fddd",
+      "spaceGroupNumber": "70"
     },
     "additional": {
-      "elementColor": "3",
-      "numberCID": "CID5362487",
-      "numberRTEC": "RTECSWS4250000",
+      "pubchemCid": "CID5362487",
+      "rtecsNumber": "RTECSWS4250000",
       "mohsHardness": "2.0",
       "bulkModulus": "7.7",
       "liquidDensity": "1.819",
-      "molarValue": "0.000016357",
+      "molarVolume": "0.000016357",
       "refractiveIndex": "1.001111",
       "thermalConductivity": "0.205"
     },
     "reactivity": {
       "electronegativity": "2.58",
-      "atomElectronEnergy": "200.4101"
+      "electronAffinity": "200.4101"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -1740,12 +1692,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,2,0,-"
     },
     "prevalence": {
-      "prevalence1": "0.05",
-      "prevalence2": "0.04",
-      "prevalence3": "0.093",
-      "prevalence4": "0.19975484739351",
-      "prevalence5": "0.035",
-      "prevalence6": "4.0"
+      "universe": "0.05",
+      "sun": "0.04",
+      "ocean": "0.093",
+      "humanBody": "0.19975484739351",
+      "crust": "0.035",
+      "meteorites": "4.0"
     },
     "colorIndex": 12,
     "ghs": [
@@ -1784,28 +1736,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Сhlorum",
       "englishName": "Chlorine",
-      "elementOpenedYear": "1774",
+      "discoveryYear": "1774",
       "casNumber": "CAS7782-50-5",
-      "elementOpener": "10",
-      "countryOpener": "SE",
-      "elementShell": "K2-L8-M7-N0-O0-P0-Q0-R0",
-      "elementE": "17",
-      "elementP": "17",
-      "elementN": "18",
+      "discoverer": "10",
+      "discoveryCountry": "SE",
+      "electronShellConfig": "K2-L8-M7-N0-O0-P0-Q0-R0",
+      "electronCount": "17",
+      "protonCount": "17",
+      "neutronCount": "18",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ne] 3s2 3p5 = 1s2 2s2 2p6 3s2 3p5",
-      "elementPrice": "1.8",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ne] 3s2 3p5 = 1s2 2s2 2p6 3s2 3p5"
     },
     "properties": {
-      "elementMasse": "35.4521387667802",
-      "elementDensity": "0.00321",
-      "elementMeltingPoint": "-101.5",
-      "elementBoilingPoint": "-34.04",
-      "elValence": "1, 2, 3, 4, 5, 7",
-      "elementGroup": "3/VII+",
-      "elementBlock": "p",
+      "atomicMass": "35.4521387667802",
+      "density": "0.00321",
+      "meltingPoint": "-101.5",
+      "boilingPoint": "-34.04",
+      "valence": "1, 2, 3, 4, 5, 7",
+      "group": "3/VII+",
+      "block": "p",
       "aggregationState": "gas"
     },
     "thermo": {
@@ -1822,33 +1772,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "175"
     },
     "electromagnetic": {
-      "es_electro": "0.1",
-      "es_etype": "2",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-2.31 ⋅ 10<sup><small>-8</small></sup>",
-      "es_umvospr": "-7.2 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-5.11 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "10.0"
+      "electricalConductivity": "0.1",
+      "electricalType": "2",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-2.31 ⋅ 10<sup><small>-8</small></sup>",
+      "massMagneticSusceptibility": "-7.2 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-5.11 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "10.0"
     },
     "grid": {
-      "gridStructureNum": "9",
+      "structureCode": "9",
       "gridParams": "a=6.29 Å; b=4.50 Å; c=8.21 Å",
-      "space1": "Cmca",
-      "space2": "64"
+      "spaceGroup": "Cmca",
+      "spaceGroupNumber": "64"
     },
     "additional": {
-      "elementColor": "3",
-      "numberCID": "CID24526",
-      "numberRTEC": "RTECSFO2100000",
+      "pubchemCid": "CID24526",
+      "rtecsNumber": "RTECSFO2100000",
       "bulkModulus": "1.1",
-      "molarValue": "0.01103",
+      "molarVolume": "0.01103",
       "soundSpeed": "206.0",
       "refractiveIndex": "1.000773",
       "thermalConductivity": "0.0089"
     },
     "reactivity": {
       "electronegativity": "3.16",
-      "atomElectronEnergy": "348.575"
+      "electronAffinity": "348.575"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -1857,12 +1806,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,4,0,OX"
     },
     "prevalence": {
-      "prevalence1": "0.0001",
-      "prevalence2": "0.0008",
-      "prevalence3": "2.0",
-      "prevalence4": "0.13554793215988",
-      "prevalence5": "0.0145",
-      "prevalence6": "0.037"
+      "universe": "0.0001",
+      "sun": "0.0008",
+      "ocean": "2.0",
+      "humanBody": "0.13554793215988",
+      "crust": "0.0145",
+      "meteorites": "0.037"
     },
     "colorIndex": 22,
     "ghs": [
@@ -1896,28 +1845,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Argon",
       "englishName": "Argon",
-      "elementOpenedYear": "1894",
+      "discoveryYear": "1894",
       "casNumber": "CAS7440-37-1",
-      "elementOpener": "82/12",
-      "countryOpener": "GB",
-      "elementShell": "K2-L8-M8-N0-O0-P0-Q0-R0",
-      "elementE": "18",
-      "elementP": "18",
-      "elementN": "22",
+      "discoverer": "82/12",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L8-M8-N0-O0-P0-Q0-R0",
+      "electronCount": "18",
+      "protonCount": "18",
+      "neutronCount": "22",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ne] 3s2 3p6 = 1s2 2s2 2p6 3s2 3p6",
-      "elementPrice": "1.5",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ne] 3s2 3p6 = 1s2 2s2 2p6 3s2 3p6"
     },
     "properties": {
-      "elementMasse": "39.9477985618953",
-      "elementDensity": "0.001784",
-      "elementMeltingPoint": "-189.34",
-      "elementBoilingPoint": "-185.848",
-      "elValence": "0",
-      "elementGroup": "3/VIII+",
-      "elementBlock": "p",
+      "atomicMass": "39.9477985618953",
+      "density": "0.001784",
+      "meltingPoint": "-189.34",
+      "boilingPoint": "-185.848",
+      "valence": "0",
+      "group": "3/VIII+",
+      "block": "p",
       "aggregationState": "gas"
     },
     "thermo": {
@@ -1933,29 +1880,28 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "188"
     },
     "electromagnetic": {
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-1.07 ⋅ 10<sup><small>-8</small></sup>",
-      "es_umvospr": "-6 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-2.4 ⋅ 10<sup><small>-10</small></sup>"
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-1.07 ⋅ 10<sup><small>-8</small></sup>",
+      "massMagneticSusceptibility": "-6 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-2.4 ⋅ 10<sup><small>-10</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "5.260 Å",
       "debyeTemperature": "92",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "0",
-      "numberCID": "CID23968",
-      "numberRTEC": "RTECSCF2300000",
-      "molarValue": "0.022392",
+      "pubchemCid": "CID23968",
+      "rtecsNumber": "RTECSCF2300000",
+      "molarVolume": "0.022392",
       "soundSpeed": "323.0",
       "refractiveIndex": "1.000281",
       "thermalConductivity": "0.01772"
     },
     "reactivity": {
-      "atomElectronEnergy": "0"
+      "electronAffinity": "0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -1964,10 +1910,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,0,0,SA"
     },
     "prevalence": {
-      "prevalence1": "0.02",
-      "prevalence2": "0.007",
-      "prevalence3": "4.5 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence5": "3.5 ⋅ 10<sup><small>-4</small></sup>"
+      "universe": "0.02",
+      "sun": "0.007",
+      "ocean": "4.5 ⋅ 10<sup><small>-5</small></sup>",
+      "crust": "3.5 ⋅ 10<sup><small>-4</small></sup>"
     },
     "colorIndex": 0,
     "ghs": [
@@ -2003,28 +1949,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Kalium",
       "englishName": "Potassium",
-      "elementOpenedYear": "1807",
+      "discoveryYear": "1807",
       "casNumber": "CAS7440-09-7",
-      "elementOpener": "7",
-      "countryOpener": "GB",
-      "elementShell": "K2-L8-M8-N1-O0-P0-Q0-R0",
-      "elementE": "19",
-      "elementP": "19",
-      "elementN": "20",
+      "discoverer": "7",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L8-M8-N1-O0-P0-Q0-R0",
+      "electronCount": "19",
+      "protonCount": "19",
+      "neutronCount": "20",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 4s1 = 1s2 2s2 2p6 3s2 3p6 4s1",
-      "elementPrice": "2.36",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 4s1 = 1s2 2s2 2p6 3s2 3p6 4s1"
     },
     "properties": {
-      "elementMasse": "39.0983009088233",
-      "elementDensity": "0.862",
-      "elementMeltingPoint": "63.5",
-      "elementBoilingPoint": "759.0",
-      "elValence": "1",
-      "elementGroup": "4/I+",
-      "elementBlock": "s",
+      "atomicMass": "39.0983009088233",
+      "density": "0.862",
+      "meltingPoint": "63.5",
+      "boilingPoint": "759.0",
+      "valence": "1",
+      "group": "4/I+",
+      "block": "s",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -2042,37 +1986,36 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "275"
     },
     "electromagnetic": {
-      "es_electro": "13888888.8888889",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "5.74 ⋅ 10<sup><small>-6</small></sup>",
-      "es_umvospr": "6.7 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "2.62 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "7.26 ⋅ 10<sup><small>-8</small></sup>"
+      "electricalConductivity": "13888888.8888889",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "5.74 ⋅ 10<sup><small>-6</small></sup>",
+      "massMagneticSusceptibility": "6.7 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "2.62 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "7.26 ⋅ 10<sup><small>-8</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "3",
+      "structureCode": "3",
       "gridParams": "5.332 Å",
       "debyeTemperature": "91",
-      "space1": "Im_ 3m",
-      "space2": "229"
+      "spaceGroup": "Im_ 3m",
+      "spaceGroupNumber": "229"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5462222",
-      "numberRTEC": "RTECSTS6460000",
+      "pubchemCid": "CID5462222",
+      "rtecsNumber": "RTECSTS6460000",
       "brinellHardness": "0.36",
       "mohsHardness": "0.4",
       "bulkModulus": "3.1",
       "liquidDensity": "0.828",
-      "molarValue": "0.00004568",
+      "molarVolume": "0.00004568",
       "shearModulus": "1.3",
       "soundSpeed": "2000.0",
       "thermalConductivity": "102.5"
     },
     "reactivity": {
       "electronegativity": "0.82",
-      "atomElectronEnergy": "48.383"
+      "electronAffinity": "48.383"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -2081,12 +2024,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,3,2,W"
     },
     "prevalence": {
-      "prevalence1": "0.0003",
-      "prevalence2": "0.0004",
-      "prevalence3": "0.042",
-      "prevalence4": "0.19975484739351",
-      "prevalence5": "2.09",
-      "prevalence6": "0.07"
+      "universe": "0.0003",
+      "sun": "0.0004",
+      "ocean": "0.042",
+      "humanBody": "0.19975484739351",
+      "crust": "2.09",
+      "meteorites": "0.07"
     },
     "colorIndex": 1,
     "ghs": [
@@ -2124,28 +2067,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Сalcium",
       "englishName": "Calcium",
-      "elementOpenedYear": "1808",
+      "discoveryYear": "1808",
       "casNumber": "CAS7440-70-2",
-      "elementOpener": "7",
-      "countryOpener": "GB",
-      "elementShell": "K2-L8-M8-N2-O0-P0-Q0-R0",
-      "elementE": "20",
-      "elementP": "20",
-      "elementN": "20",
+      "discoverer": "7",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L8-M8-N2-O0-P0-Q0-R0",
+      "electronCount": "20",
+      "protonCount": "20",
+      "neutronCount": "20",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 4s2 = 1s2 2s2 2p6 3s2 3p6 4s2",
-      "elementPrice": "4",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 4s2 = 1s2 2s2 2p6 3s2 3p6 4s2"
     },
     "properties": {
-      "elementMasse": "40.0780224976209",
-      "elementDensity": "1.54",
-      "elementMeltingPoint": "842.0",
-      "elementBoilingPoint": "1484.0",
-      "elValence": "2",
-      "elementGroup": "4/II+",
-      "elementBlock": "s",
+      "atomicMass": "40.0780224976209",
+      "density": "1.54",
+      "meltingPoint": "842.0",
+      "boilingPoint": "1484.0",
+      "valence": "2",
+      "group": "4/II+",
+      "block": "s",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -2163,30 +2104,29 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "231"
     },
     "electromagnetic": {
-      "es_electro": "29761904.7619048",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "2.139 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "1.38 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "5.531 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "3.36 ⋅ 10<sup><small>-8</small></sup>"
+      "electricalConductivity": "29761904.7619048",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "2.139 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "1.38 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "5.531 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "3.36 ⋅ 10<sup><small>-8</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "4 | 3",
+      "structureCode": "4 | 3",
       "gridParams": "5.580 Å | a=4.48 Å",
       "debyeTemperature": "229",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5460341",
+      "pubchemCid": "CID5460341",
       "brinellHardness": "167.0",
       "mohsHardness": "1.75",
       "bulkModulus": "17.0",
       "youngModulus": "20.0",
       "liquidDensity": "1.378",
-      "molarValue": "0.000025857",
+      "molarVolume": "0.000025857",
       "poissonRatio": "0.31",
       "shearModulus": "7.4",
       "soundSpeed": "3810.0",
@@ -2194,7 +2134,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1",
-      "atomElectronEnergy": "2.37"
+      "electronAffinity": "2.37"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -2203,12 +2143,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,3,2,W"
     },
     "prevalence": {
-      "prevalence1": "0.007",
-      "prevalence2": "0.007",
-      "prevalence3": "0.042",
-      "prevalence4": "1.42682033852507",
-      "prevalence5": "4.15",
-      "prevalence6": "1.1"
+      "universe": "0.007",
+      "sun": "0.007",
+      "ocean": "0.042",
+      "humanBody": "1.42682033852507",
+      "crust": "4.15",
+      "meteorites": "1.1"
     },
     "colorIndex": 9,
     "ghs": [
@@ -2253,28 +2193,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Scandium",
       "englishName": "Scandium",
-      "elementOpenedYear": "1879",
+      "discoveryYear": "1879",
       "casNumber": "CAS7440-20-2",
-      "elementOpener": "18",
-      "countryOpener": "SE",
-      "elementShell": "K2-L8-M9-N2-O0-P0-Q0-R0",
-      "elementE": "21",
-      "elementP": "21",
-      "elementN": "24",
+      "discoverer": "18",
+      "discoveryCountry": "SE",
+      "electronShellConfig": "K2-L8-M9-N2-O0-P0-Q0-R0",
+      "electronCount": "21",
+      "protonCount": "21",
+      "neutronCount": "24",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 3d1 4s2 = 1s2 2s2 2p6 3s2 3p6 3d1 4s2",
-      "elementPrice": "220",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 3d1 4s2 = 1s2 2s2 2p6 3s2 3p6 3d1 4s2"
     },
     "properties": {
-      "elementMasse": "44.9559070745661",
-      "elementDensity": "2.985",
-      "elementMeltingPoint": "1541.0",
-      "elementBoilingPoint": "2836.0",
-      "elValence": "3",
-      "elementGroup": "4/III-",
-      "elementBlock": "d",
+      "atomicMass": "44.9559070745661",
+      "density": "2.985",
+      "meltingPoint": "1541.0",
+      "boilingPoint": "2836.0",
+      "valence": "3",
+      "group": "4/III-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -2292,38 +2230,37 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "211"
     },
     "electromagnetic": {
-      "es_electro": "1779359.43060498",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "2.627 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "8.8 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "3.956 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "5.62 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "0.05"
+      "electricalConductivity": "1779359.43060498",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "2.627 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "8.8 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "3.956 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "5.62 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "0.05"
     },
     "grid": {
-      "gridStructureNum": "2 | 3",
+      "structureCode": "2 | 3",
       "gridParams": "a=3.309 Å; c=5.268 Å",
-      "ratio": "1.592",
+      "axialRatio": "1.592",
       "debyeTemperature": "346",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23952",
+      "pubchemCid": "CID23952",
       "brinellHardness": "750.0",
       "bulkModulus": "56.6",
       "youngModulus": "74.4",
       "liquidDensity": "2.8",
-      "molarValue": "0.000015061",
+      "molarVolume": "0.000015061",
       "poissonRatio": "0.28",
       "shearModulus": "29.1",
       "thermalConductivity": "15.8"
     },
     "reactivity": {
       "electronegativity": "1.36",
-      "atomElectronEnergy": "18.0"
+      "electronAffinity": "18.0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -2332,12 +2269,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "3 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence2": "4 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence3": "1.5 ⋅ 10<sup><small>-10</small></sup>",
-      "prevalence4": "2 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence5": "0.0022",
-      "prevalence6": "0.00064"
+      "universe": "3 ⋅ 10<sup><small>-6</small></sup>",
+      "sun": "4 ⋅ 10<sup><small>-6</small></sup>",
+      "ocean": "1.5 ⋅ 10<sup><small>-10</small></sup>",
+      "humanBody": "2 ⋅ 10<sup><small>-5</small></sup>",
+      "crust": "0.0022",
+      "meteorites": "0.00064"
     },
     "colorIndex": 1,
     "ghs": [
@@ -2363,28 +2300,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Titanium",
       "englishName": "Titanium",
-      "elementOpenedYear": "1791",
+      "discoveryYear": "1791",
       "casNumber": "CAS7440-32-6",
-      "elementOpener": "61",
-      "countryOpener": "GB",
-      "elementShell": "K2-L8-M10-N2-O0-P0-Q0-R0",
-      "elementE": "22",
-      "elementP": "22",
-      "elementN": "26",
+      "discoverer": "61",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L8-M10-N2-O0-P0-Q0-R0",
+      "electronCount": "22",
+      "protonCount": "22",
+      "neutronCount": "26",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 3d2 4s2 = 1s2 2s2 2p6 3s2 3p6 3d2 4s2",
-      "elementPrice": "35",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 3d2 4s2 = 1s2 2s2 2p6 3s2 3p6 3d2 4s2"
     },
     "properties": {
-      "elementMasse": "47.8667436596202",
-      "elementDensity": "4.506",
-      "elementMeltingPoint": "1668.0",
-      "elementBoilingPoint": "3287.0",
-      "elValence": "2, 3, 4",
-      "elementGroup": "4/IV-",
-      "elementBlock": "d",
+      "atomicMass": "47.8667436596202",
+      "density": "4.506",
+      "meltingPoint": "1668.0",
+      "boilingPoint": "3287.0",
+      "valence": "2, 3, 4",
+      "group": "4/IV-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -2402,33 +2337,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "187"
     },
     "electromagnetic": {
-      "es_electro": "2380952.38095238",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "1.807 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "4.01 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "1.919 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "4.2 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "0.4"
+      "electricalConductivity": "2380952.38095238",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "1.807 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "4.01 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "1.919 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "4.2 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "0.4"
     },
     "grid": {
-      "gridStructureNum": "2 | 3",
+      "structureCode": "2 | 3",
       "gridParams": "a=2.951 Å; с=4.697 Å | a=3.269 Å",
-      "ratio": "1.587 | 3260",
+      "axialRatio": "1.587 | 3260",
       "debyeTemperature": "420",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23963",
+      "pubchemCid": "CID23963",
       "brinellHardness": "715.0",
       "mohsHardness": "6.0",
       "vickersHardness": "970.0",
       "bulkModulus": "110.0",
       "youngModulus": "116.0",
       "liquidDensity": "4.11",
-      "molarValue": "0.000010621",
+      "molarVolume": "0.000010621",
       "poissonRatio": "0.32",
       "shearModulus": "44.0",
       "soundSpeed": "5090.0",
@@ -2436,7 +2370,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.54",
-      "atomElectronEnergy": "7.289"
+      "electronAffinity": "7.289"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -2445,12 +2379,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,2,-"
     },
     "prevalence": {
-      "prevalence1": "0.0003",
-      "prevalence2": "4 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence3": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "2.853640677 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence5": "0.565",
-      "prevalence6": "0.054"
+      "universe": "0.0003",
+      "sun": "4 ⋅ 10<sup><small>-4</small></sup>",
+      "ocean": "1 ⋅ 10<sup><small>-7</small></sup>",
+      "humanBody": "2.853640677 ⋅ 10<sup><small>-5</small></sup>",
+      "crust": "0.565",
+      "meteorites": "0.054"
     },
     "colorIndex": 1,
     "ghs": [
@@ -2494,28 +2428,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Vanadium",
       "englishName": "Vanadium",
-      "elementOpenedYear": "1801",
+      "discoveryYear": "1801",
       "casNumber": "CAS7440-62-2",
-      "elementOpener": "19",
-      "countryOpener": "MX",
-      "elementShell": "K2-L8-M11-N2-O0-P0-Q0-R0",
-      "elementE": "23",
-      "elementP": "23",
-      "elementN": "28",
+      "discoverer": "19",
+      "discoveryCountry": "MX",
+      "electronShellConfig": "K2-L8-M11-N2-O0-P0-Q0-R0",
+      "electronCount": "23",
+      "protonCount": "23",
+      "neutronCount": "28",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 3d3 4s2 = 1s2 2s2 2p6 3s2 3p6 3d3 4s2",
-      "elementPrice": "55",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 3d3 4s2 = 1s2 2s2 2p6 3s2 3p6 3d3 4s2"
     },
     "properties": {
-      "elementMasse": "50.9414656566912",
-      "elementDensity": "6.11",
-      "elementMeltingPoint": "1910.0",
-      "elementBoilingPoint": "3407.0",
-      "elValence": "2, 3, 4, 5",
-      "elementGroup": "4/V-",
-      "elementBlock": "d",
+      "atomicMass": "50.9414656566912",
+      "density": "6.11",
+      "meltingPoint": "1910.0",
+      "boilingPoint": "3407.0",
+      "valence": "2, 3, 4, 5",
+      "group": "4/V-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -2533,32 +2465,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "179"
     },
     "electromagnetic": {
-      "es_electro": "5076142.1319797",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "3.837 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "5.28 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "3.199 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "1.97 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "5.4"
+      "electricalConductivity": "5076142.1319797",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "3.837 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "5.28 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "3.199 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "1.97 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "5.4"
     },
     "grid": {
-      "gridStructureNum": "3",
+      "structureCode": "3",
       "gridParams": "3.024 Å",
       "debyeTemperature": "399",
-      "space1": "Im_ 3m",
-      "space2": "229"
+      "spaceGroup": "Im_ 3m",
+      "spaceGroupNumber": "229"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23990",
+      "pubchemCid": "CID23990",
       "brinellHardness": "628.0",
       "mohsHardness": "7.0",
       "vickersHardness": "628.0",
       "bulkModulus": "160.0",
       "youngModulus": "128.0",
       "liquidDensity": "5.5",
-      "molarValue": "0.0000083374",
+      "molarVolume": "0.0000083374",
       "poissonRatio": "0.37",
       "shearModulus": "47.0",
       "soundSpeed": "4560.0",
@@ -2566,7 +2497,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.63",
-      "atomElectronEnergy": "50.911"
+      "electronAffinity": "50.911"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -2575,12 +2506,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,2,0,-"
     },
     "prevalence": {
-      "prevalence1": "0.0001",
-      "prevalence2": "4 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence3": "1.5 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "3 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence5": "0.012",
-      "prevalence6": "0.0061"
+      "universe": "0.0001",
+      "sun": "4 ⋅ 10<sup><small>-5</small></sup>",
+      "ocean": "1.5 ⋅ 10<sup><small>-7</small></sup>",
+      "humanBody": "3 ⋅ 10<sup><small>-6</small></sup>",
+      "crust": "0.012",
+      "meteorites": "0.0061"
     },
     "colorIndex": 8,
     "ghs": [
@@ -2611,28 +2542,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Chromium",
       "englishName": "Chromium",
-      "elementOpenedYear": "1797",
+      "discoveryYear": "1797",
       "casNumber": "CAS7440-47-3",
-      "elementOpener": "4",
-      "countryOpener": "FR",
-      "elementShell": "K2-L8-M13-N1-O0-P0-Q0-R0",
-      "elementE": "24",
-      "elementP": "24",
-      "elementN": "28",
+      "discoverer": "4",
+      "discoveryCountry": "FR",
+      "electronShellConfig": "K2-L8-M13-N1-O0-P0-Q0-R0",
+      "electronCount": "24",
+      "protonCount": "24",
+      "neutronCount": "28",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 3d5 4s1 = 1s2 2s2 2p6 3s2 3p6 3d5 4s1",
-      "elementPrice": "12.7",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 3d5 4s1 = 1s2 2s2 2p6 3s2 3p6 3d5 4s1"
     },
     "properties": {
-      "elementMasse": "51.9961302818614",
-      "elementDensity": "7.15",
-      "elementMeltingPoint": "1907.0",
-      "elementBoilingPoint": "2671.0",
-      "elValence": "2, 3, 6",
-      "elementGroup": "4/VI-",
-      "elementBlock": "d",
+      "atomicMass": "51.9961302818614",
+      "density": "7.15",
+      "meltingPoint": "1907.0",
+      "boilingPoint": "2671.0",
+      "valence": "2, 3, 6",
+      "group": "4/VI-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -2650,32 +2579,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "189"
     },
     "electromagnetic": {
-      "es_electro": "8000000.0",
-      "es_etype": "1",
-      "es_mtype": "antiferromagnetic",
-      "es_omvospr": "3.177 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "4.45 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "2.314 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "1.25 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "8000000.0",
+      "electricalType": "1",
+      "magneticType": "antiferromagnetic",
+      "volumeMagneticSusceptibility": "3.177 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "4.45 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "2.314 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "1.25 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "3",
+      "structureCode": "3",
       "gridParams": "2.885 Å",
       "debyeTemperature": "610",
-      "space1": "Im_ 3m",
-      "space2": "229"
+      "spaceGroup": "Im_ 3m",
+      "spaceGroupNumber": "229"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23976",
-      "numberRTEC": "RTECSGB4200000",
+      "pubchemCid": "CID23976",
+      "rtecsNumber": "RTECSGB4200000",
       "brinellHardness": "1120.0",
       "mohsHardness": "8.5",
       "vickersHardness": "1060.0",
       "bulkModulus": "160.0",
       "youngModulus": "279.0",
       "liquidDensity": "6.3",
-      "molarValue": "0.0000072317",
+      "molarVolume": "0.0000072317",
       "poissonRatio": "0.21",
       "shearModulus": "115.0",
       "soundSpeed": "5940.0",
@@ -2683,7 +2611,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.66",
-      "atomElectronEnergy": "65.21"
+      "electronAffinity": "65.21"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -2692,12 +2620,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,2,1,-"
     },
     "prevalence": {
-      "prevalence1": "0.0015",
-      "prevalence2": "0.002",
-      "prevalence3": "6 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence4": "3 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence5": "0.0102",
-      "prevalence6": "0.3"
+      "universe": "0.0015",
+      "sun": "0.002",
+      "ocean": "6 ⋅ 10<sup><small>-8</small></sup>",
+      "humanBody": "3 ⋅ 10<sup><small>-6</small></sup>",
+      "crust": "0.0102",
+      "meteorites": "0.3"
     },
     "colorIndex": 1,
     "ghs": [
@@ -2736,28 +2664,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Manganum",
       "englishName": "Manganese",
-      "elementOpenedYear": "1774",
+      "discoveryYear": "1774",
       "casNumber": "CAS7439-96-5",
-      "elementOpener": "20/21",
-      "countryOpener": "SE",
-      "elementShell": "K2-L8-M13-N2-O0-P0-Q0-R0",
-      "elementE": "25",
-      "elementP": "25",
-      "elementN": "30",
+      "discoverer": "20/21",
+      "discoveryCountry": "SE",
+      "electronShellConfig": "K2-L8-M13-N2-O0-P0-Q0-R0",
+      "electronCount": "25",
+      "protonCount": "25",
+      "neutronCount": "30",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 3d5 4s2 = 1s2 2s2 2p6 3s2 3p6 3d5 4s2",
-      "elementPrice": "3.76",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 3d5 4s2 = 1s2 2s2 2p6 3s2 3p6 3d5 4s2"
     },
     "properties": {
-      "elementMasse": "54.9380430430528",
-      "elementDensity": "7.3",
-      "elementMeltingPoint": "1246.0",
-      "elementBoilingPoint": "2061.0",
-      "elValence": "2, 3, 4, 6, 7",
-      "elementGroup": "4/VII-",
-      "elementBlock": "d",
+      "atomicMass": "54.9380430430528",
+      "density": "7.3",
+      "meltingPoint": "1246.0",
+      "boilingPoint": "2061.0",
+      "valence": "2, 3, 4, 6, 7",
+      "group": "4/VII-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -2775,36 +2701,35 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "197"
     },
     "electromagnetic": {
-      "es_electro": "694444.444444444",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "9.0387 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "1.21 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "6.6475 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "1.44 ⋅ 10<sup><small>-6</small></sup>"
+      "electricalConductivity": "694444.444444444",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "9.0387 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "1.21 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "6.6475 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "1.44 ⋅ 10<sup><small>-6</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "3",
+      "structureCode": "3",
       "gridParams": "8.890 Å",
       "debyeTemperature": "409",
-      "space1": "I_ 43m",
-      "space2": "217"
+      "spaceGroup": "I_ 43m",
+      "spaceGroupNumber": "217"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23930",
+      "pubchemCid": "CID23930",
       "brinellHardness": "196.0",
       "mohsHardness": "6.0",
       "bulkModulus": "120.0",
       "youngModulus": "198.0",
       "liquidDensity": "5.95",
-      "molarValue": "0.0000073545",
+      "molarVolume": "0.0000073545",
       "soundSpeed": "5150.0",
       "thermalConductivity": "7.81"
     },
     "reactivity": {
       "electronegativity": "1.55",
-      "atomElectronEnergy": "0"
+      "electronAffinity": "0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -2813,12 +2738,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "0.0008",
-      "prevalence2": "0.001",
-      "prevalence3": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "1.712184406 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence5": "0.095",
-      "prevalence6": "0.27"
+      "universe": "0.0008",
+      "sun": "0.001",
+      "ocean": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "humanBody": "1.712184406 ⋅ 10<sup><small>-5</small></sup>",
+      "crust": "0.095",
+      "meteorites": "0.27"
     },
     "colorIndex": 1,
     "ghs": [
@@ -2848,27 +2773,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Ferrum",
       "englishName": "Iron",
-      "elementOpenedYear": "~3500 BC",
+      "discoveryYear": "~3500 BC",
       "casNumber": "CAS7439-89-6",
-      "countryOpener": "MiddleEast",
-      "elementShell": "K2-L8-M14-N2-O0-P0-Q0-R0",
-      "elementE": "26",
-      "elementP": "26",
-      "elementN": "30",
+      "discoveryCountry": "MiddleEast",
+      "electronShellConfig": "K2-L8-M14-N2-O0-P0-Q0-R0",
+      "electronCount": "26",
+      "protonCount": "26",
+      "neutronCount": "30",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 3d6 4s2 = 1s2 2s2 2p6 3s2 3p6 3d6 4s2",
-      "elementPrice": "2.45",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 3d6 4s2 = 1s2 2s2 2p6 3s2 3p6 3d6 4s2"
     },
     "properties": {
-      "elementMasse": "55.8451436425238",
-      "elementDensity": "7.874",
-      "elementMeltingPoint": "1538.0",
-      "elementBoilingPoint": "2861.0",
-      "elValence": "2, 3, 4, 6",
-      "elementGroup": "4/VIII-",
-      "elementBlock": "d",
+      "atomicMass": "55.8451436425238",
+      "density": "7.874",
+      "meltingPoint": "1538.0",
+      "boilingPoint": "2861.0",
+      "valence": "2, 3, 4, 6",
+      "group": "4/VIII-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -2886,29 +2809,28 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "194"
     },
     "electromagnetic": {
-      "es_electro": "10405827.2632674",
-      "es_etype": "1",
-      "es_mtype": "ferromagnetic",
-      "es_udel": "9.7 ⋅ 10<sup><small>-8</small></sup>"
+      "electricalConductivity": "10405827.2632674",
+      "electricalType": "1",
+      "magneticType": "ferromagnetic",
+      "electricalResistivity": "9.7 ⋅ 10<sup><small>-8</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "3 | 4 | 3",
+      "structureCode": "3 | 4 | 3",
       "gridParams": "2.866 Å | a=3.656 Å | a=2.93",
       "debyeTemperature": "464 | 349 | 464",
-      "space1": "Im_ 3m",
-      "space2": "229"
+      "spaceGroup": "Im_ 3m",
+      "spaceGroupNumber": "229"
     },
     "additional": {
-      "elementColor": "4",
-      "numberCID": "CID23925",
-      "numberRTEC": "RTECSNO4565500",
+      "pubchemCid": "CID23925",
+      "rtecsNumber": "RTECSNO4565500",
       "brinellHardness": "490.0",
       "mohsHardness": "4.0",
       "vickersHardness": "608.0",
       "bulkModulus": "170.0",
       "youngModulus": "211.0",
       "liquidDensity": "6.98",
-      "molarValue": "0.0000070923",
+      "molarVolume": "0.0000070923",
       "poissonRatio": "0.29",
       "shearModulus": "82.0",
       "soundSpeed": "5120.0",
@@ -2916,7 +2838,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.83",
-      "atomElectronEnergy": "14.785"
+      "electronAffinity": "14.785"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -2925,12 +2847,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "0.11",
-      "prevalence2": "0.14",
-      "prevalence3": "3 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "0.00599264542181",
-      "prevalence5": "5.63",
-      "prevalence6": "22.0"
+      "universe": "0.11",
+      "sun": "0.14",
+      "ocean": "3 ⋅ 10<sup><small>-7</small></sup>",
+      "humanBody": "0.00599264542181",
+      "crust": "5.63",
+      "meteorites": "22.0"
     },
     "colorIndex": 5,
     "ghs": [
@@ -2985,28 +2907,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Cobaltum",
       "englishName": "Cobalt",
-      "elementOpenedYear": "1739",
+      "discoveryYear": "1739",
       "casNumber": "CAS7440-48-4",
-      "elementOpener": "22",
-      "countryOpener": "SE",
-      "elementShell": "K2-L8-M15-N2-O0-P0-Q0-R0",
-      "elementE": "27",
-      "elementP": "27",
-      "elementN": "32",
+      "discoverer": "22",
+      "discoveryCountry": "SE",
+      "electronShellConfig": "K2-L8-M15-N2-O0-P0-Q0-R0",
+      "electronCount": "27",
+      "protonCount": "27",
+      "neutronCount": "32",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 3d7 4s2 = 1s2 2s2 2p6 3s2 3p6 3d7 4s2",
-      "elementPrice": "29.1",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 3d7 4s2 = 1s2 2s2 2p6 3s2 3p6 3d7 4s2"
     },
     "properties": {
-      "elementMasse": "58.9331935652212",
-      "elementDensity": "8.86",
-      "elementMeltingPoint": "1495.0",
-      "elementBoilingPoint": "2927.0",
-      "elValence": "2, 3",
-      "elementGroup": "4/VIII-",
-      "elementBlock": "d",
+      "atomicMass": "58.9331935652212",
+      "density": "8.86",
+      "meltingPoint": "1495.0",
+      "boilingPoint": "2927.0",
+      "valence": "2, 3",
+      "group": "4/VIII-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -3024,30 +2944,29 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "192"
     },
     "electromagnetic": {
-      "es_electro": "16025641.025641",
-      "es_etype": "1",
-      "es_mtype": "ferromagnetic",
-      "es_udel": "6.24 ⋅ 10<sup><small>-8</small></sup>"
+      "electricalConductivity": "16025641.025641",
+      "electricalType": "1",
+      "magneticType": "ferromagnetic",
+      "electricalResistivity": "6.24 ⋅ 10<sup><small>-8</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "2 | 4",
+      "structureCode": "2 | 4",
       "gridParams": "a=2.505 Å; c=4.070 Å | a=3.5370 Å",
-      "ratio": "1.632",
+      "axialRatio": "1.632",
       "debyeTemperature": "460",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "4",
-      "numberCID": "CID104730",
-      "numberRTEC": "RTECSGF8750000",
+      "pubchemCid": "CID104730",
+      "rtecsNumber": "RTECSGF8750000",
       "brinellHardness": "700.0",
       "mohsHardness": "5.0",
       "vickersHardness": "1043.0",
       "bulkModulus": "180.0",
       "youngModulus": "209.0",
       "liquidDensity": "7.75",
-      "molarValue": "0.00000662",
+      "molarVolume": "0.00000662",
       "poissonRatio": "0.31",
       "shearModulus": "75.0",
       "soundSpeed": "4720.0",
@@ -3055,7 +2974,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.88",
-      "atomElectronEnergy": "63.898"
+      "electronAffinity": "63.898"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -3064,12 +2983,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "0.0003",
-      "prevalence2": "0.0004",
-      "prevalence3": "8 ⋅ 10<sup><small>-9</small></sup>",
-      "prevalence4": "2 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence5": "0.0025",
-      "prevalence6": "0.059"
+      "universe": "0.0003",
+      "sun": "0.0004",
+      "ocean": "8 ⋅ 10<sup><small>-9</small></sup>",
+      "humanBody": "2 ⋅ 10<sup><small>-6</small></sup>",
+      "crust": "0.0025",
+      "meteorites": "0.059"
     },
     "colorIndex": 5,
     "ghs": [
@@ -3103,28 +3022,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Niccolum",
       "englishName": "Nickel",
-      "elementOpenedYear": "1751",
+      "discoveryYear": "1751",
       "casNumber": "CAS7440-02-0",
-      "elementOpener": "23",
-      "countryOpener": "SE",
-      "elementShell": "K2-L8-M16-N2-O0-P0-Q0-R0",
-      "elementE": "28",
-      "elementP": "28",
-      "elementN": "31",
+      "discoverer": "23",
+      "discoveryCountry": "SE",
+      "electronShellConfig": "K2-L8-M16-N2-O0-P0-Q0-R0",
+      "electronCount": "28",
+      "protonCount": "28",
+      "neutronCount": "31",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 3d8 4s2 = 1s2 2s2 2p6 3s2 3p6 3d8 4s2",
-      "elementPrice": "3.33",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 3d8 4s2 = 1s2 2s2 2p6 3s2 3p6 3d8 4s2"
     },
     "properties": {
-      "elementMasse": "58.6933503482247",
-      "elementDensity": "8.908",
-      "elementMeltingPoint": "1455.0",
-      "elementBoilingPoint": "2730.0",
-      "elValence": "2, 3",
-      "elementGroup": "4/VIII-",
-      "elementBlock": "d",
+      "atomicMass": "58.6933503482247",
+      "density": "8.908",
+      "meltingPoint": "1455.0",
+      "boilingPoint": "2730.0",
+      "valence": "2, 3",
+      "group": "4/VIII-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -3142,29 +3059,28 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "163"
     },
     "electromagnetic": {
-      "es_electro": "14430014.4300144",
-      "es_etype": "1",
-      "es_mtype": "ferromagnetic",
-      "es_udel": "6.93 ⋅ 10<sup><small>-8</small></sup>"
+      "electricalConductivity": "14430014.4300144",
+      "electricalType": "1",
+      "magneticType": "ferromagnetic",
+      "electricalResistivity": "6.93 ⋅ 10<sup><small>-8</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "3.524 Å",
       "debyeTemperature": "440",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "4",
-      "numberCID": "CID935",
-      "numberRTEC": "RTECSQR5950000",
+      "pubchemCid": "CID935",
+      "rtecsNumber": "RTECSQR5950000",
       "brinellHardness": "700.0",
       "mohsHardness": "4.0",
       "vickersHardness": "638.0",
       "bulkModulus": "180.0",
       "youngModulus": "200.0",
       "liquidDensity": "7.81",
-      "molarValue": "0.0000065888",
+      "molarVolume": "0.0000065888",
       "poissonRatio": "0.31",
       "shearModulus": "76.0",
       "soundSpeed": "4900.0",
@@ -3172,7 +3088,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.91",
-      "atomElectronEnergy": "111.65"
+      "electronAffinity": "111.65"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -3181,12 +3097,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "4,2,1,-"
     },
     "prevalence": {
-      "prevalence1": "0.006",
-      "prevalence2": "0.008",
-      "prevalence3": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "1 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence5": "0.0084",
-      "prevalence6": "1.3"
+      "universe": "0.006",
+      "sun": "0.008",
+      "ocean": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "humanBody": "1 ⋅ 10<sup><small>-5</small></sup>",
+      "crust": "0.0084",
+      "meteorites": "1.3"
     },
     "colorIndex": 5,
     "ghs": [
@@ -3236,27 +3152,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Cuprum",
       "englishName": "Copper",
-      "elementOpenedYear": "9000 BC",
+      "discoveryYear": "9000 BC",
       "casNumber": "CAS7440-50-8",
-      "countryOpener": "Anatolia",
-      "elementShell": "K2-L8-M18-N1-O0-P0-Q0-R0",
-      "elementE": "29",
-      "elementP": "29",
-      "elementN": "35",
+      "discoveryCountry": "Anatolia",
+      "electronShellConfig": "K2-L8-M18-N1-O0-P0-Q0-R0",
+      "electronCount": "29",
+      "protonCount": "29",
+      "neutronCount": "35",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 3d10 4s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s1",
-      "elementPrice": "5.76",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 3d10 4s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s1"
     },
     "properties": {
-      "elementMasse": "63.5460394301709",
-      "elementDensity": "8.96",
-      "elementMeltingPoint": "1084.62",
-      "elementBoilingPoint": "2562.0",
-      "elValence": "1, 2",
-      "elementGroup": "4/I-",
-      "elementBlock": "d",
+      "atomicMass": "63.5460394301709",
+      "density": "8.96",
+      "meltingPoint": "1084.62",
+      "boilingPoint": "2562.0",
+      "valence": "1, 2",
+      "group": "4/I-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -3274,32 +3188,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "140"
     },
     "electromagnetic": {
-      "es_electro": "59594755.6615018",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-9.63 ⋅ 10<sup><small>-6</small></sup>",
-      "es_umvospr": "-1.08 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-6.86 ⋅ 10<sup><small>-11</small></sup>",
-      "es_udel": "1.678 ⋅ 10<sup><small>-8</small></sup>"
+      "electricalConductivity": "59594755.6615018",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-9.63 ⋅ 10<sup><small>-6</small></sup>",
+      "massMagneticSusceptibility": "-1.08 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-6.86 ⋅ 10<sup><small>-11</small></sup>",
+      "electricalResistivity": "1.678 ⋅ 10<sup><small>-8</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "3.615 Å",
       "debyeTemperature": "345",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "5",
-      "numberCID": "CID23978",
-      "numberRTEC": "RTECSGL5325000",
+      "pubchemCid": "CID23978",
+      "rtecsNumber": "RTECSGL5325000",
       "brinellHardness": "874.0",
       "mohsHardness": "3.0",
       "vickersHardness": "369.0",
       "bulkModulus": "140.0",
       "youngModulus": "130.0",
       "liquidDensity": "08.02",
-      "molarValue": "0.0000070922",
+      "molarVolume": "0.0000070922",
       "poissonRatio": "0.34",
       "shearModulus": "48.0",
       "soundSpeed": "3810.0",
@@ -3307,7 +3220,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.9",
-      "atomElectronEnergy": "119.235"
+      "electronAffinity": "119.235"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -3316,12 +3229,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "6 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence2": "7 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence3": "3 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "0.00010273106437",
-      "prevalence5": "0.006",
-      "prevalence6": "0.011"
+      "universe": "6 ⋅ 10<sup><small>-6</small></sup>",
+      "sun": "7 ⋅ 10<sup><small>-5</small></sup>",
+      "ocean": "3 ⋅ 10<sup><small>-7</small></sup>",
+      "humanBody": "0.00010273106437",
+      "crust": "0.006",
+      "meteorites": "0.011"
     },
     "colorIndex": 10,
     "ghs": [
@@ -3367,28 +3280,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Zincum",
       "englishName": "Zinc",
-      "elementOpenedYear": "1000 BC",
+      "discoveryYear": "1000 BC",
       "casNumber": "CAS7440-66-6",
-      "elementOpener": "63",
-      "countryOpener": "IndiaContinent",
-      "elementShell": "K2-L8-M18-N2-O0-P0-Q0-R0",
-      "elementE": "30",
-      "elementP": "30",
-      "elementN": "35",
+      "discoverer": "63",
+      "discoveryCountry": "IndiaContinent",
+      "electronShellConfig": "K2-L8-M18-N2-O0-P0-Q0-R0",
+      "electronCount": "30",
+      "protonCount": "30",
+      "neutronCount": "35",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 3d10 4s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2",
-      "elementPrice": "1.90",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 3d10 4s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2"
     },
     "properties": {
-      "elementMasse": "65.3777823033184",
-      "elementDensity": "7.134",
-      "elementMeltingPoint": "419.53",
-      "elementBoilingPoint": "907.0",
-      "elValence": "2",
-      "elementGroup": "4/II-",
-      "elementBlock": "d",
+      "atomicMass": "65.3777823033184",
+      "density": "7.134",
+      "meltingPoint": "419.53",
+      "boilingPoint": "907.0",
+      "valence": "2",
+      "group": "4/II-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -3406,33 +3317,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "139"
     },
     "electromagnetic": {
-      "es_electro": "16949152.5423729",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-1.58 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-2.21 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-1.45 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "5.9 ⋅ 10<sup><small>-8</small></sup>",
-      "es_temp": "0.85"
+      "electricalConductivity": "16949152.5423729",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-1.58 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-2.21 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-1.45 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "5.9 ⋅ 10<sup><small>-8</small></sup>",
+      "superconductingTemperature": "0.85"
     },
     "grid": {
-      "gridStructureNum": "2",
+      "structureCode": "2",
       "gridParams": "a=2.6648 Å; c=4.9468 Å",
-      "ratio": "1.856",
+      "axialRatio": "1.856",
       "debyeTemperature": "300",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23994",
-      "numberRTEC": "RTECSZG8600000",
+      "pubchemCid": "CID23994",
+      "rtecsNumber": "RTECSZG8600000",
       "brinellHardness": "412.0",
       "mohsHardness": "2.5",
       "bulkModulus": "70.0",
       "youngModulus": "108.0",
       "liquidDensity": "6.57",
-      "molarValue": "0.000009157",
+      "molarVolume": "0.000009157",
       "poissonRatio": "0.25",
       "shearModulus": "43.0",
       "soundSpeed": "3850.0",
@@ -3441,7 +3351,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.65",
-      "atomElectronEnergy": "0"
+      "electronAffinity": "0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -3450,12 +3360,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,1,2,W"
     },
     "prevalence": {
-      "prevalence1": "3 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence2": "0.0002",
-      "prevalence3": "5 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "0.00328168677861",
-      "prevalence5": "0.007",
-      "prevalence6": "0.018"
+      "universe": "3 ⋅ 10<sup><small>-5</small></sup>",
+      "sun": "0.0002",
+      "ocean": "5 ⋅ 10<sup><small>-7</small></sup>",
+      "humanBody": "0.00328168677861",
+      "crust": "0.007",
+      "meteorites": "0.018"
     },
     "colorIndex": 8,
     "ghs": [
@@ -3506,28 +3416,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Gallium",
       "englishName": "Gallium",
-      "elementOpenedYear": "1875",
+      "discoveryYear": "1875",
       "casNumber": "CAS7440-55-3",
-      "elementOpener": "24",
-      "countryOpener": "FR",
-      "elementShell": "K2-L8-M18-N3-O0-P0-Q0-R0",
-      "elementE": "31",
-      "elementP": "31",
-      "elementN": "39",
+      "discoverer": "24",
+      "discoveryCountry": "FR",
+      "electronShellConfig": "K2-L8-M18-N3-O0-P0-Q0-R0",
+      "electronCount": "31",
+      "protonCount": "31",
+      "neutronCount": "39",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 3d10 4s2 4p1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p1",
-      "elementPrice": "1300",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 3d10 4s2 4p1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p1"
     },
     "properties": {
-      "elementMasse": "69.7230661032944",
-      "elementDensity": "5.91",
-      "elementMeltingPoint": "29.7646",
-      "elementBoilingPoint": "2400.0",
-      "elValence": "2, 3",
-      "elementGroup": "4/III+",
-      "elementBlock": "p",
+      "atomicMass": "69.7230661032944",
+      "density": "5.91",
+      "meltingPoint": "29.7646",
+      "boilingPoint": "2400.0",
+      "valence": "2, 3",
+      "group": "4/III+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -3545,37 +3453,36 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "187"
     },
     "electromagnetic": {
-      "es_electro": "7352941.17647059",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-1.77 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-3 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-2.09 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "1.36 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "1.083"
+      "electricalConductivity": "7352941.17647059",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-1.77 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-3 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-2.09 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "1.36 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "1.083"
     },
     "grid": {
-      "gridStructureNum": "9",
+      "structureCode": "9",
       "gridParams": "a=4.519 Å; b=7.658 Å; c=4.526 Å",
       "debyeTemperature": "325",
-      "space1": "Cmca",
-      "space2": "64"
+      "spaceGroup": "Cmca",
+      "spaceGroupNumber": "64"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5360835",
-      "numberRTEC": "RTECSLW8600000",
+      "pubchemCid": "CID5360835",
+      "rtecsNumber": "RTECSLW8600000",
       "brinellHardness": "60.0",
       "mohsHardness": "1.5",
       "bulkModulus": "56.0",
       "liquidDensity": "6.095",
-      "molarValue": "0.000011809",
+      "molarVolume": "0.000011809",
       "soundSpeed": "2740.0",
       "thermalConductivity": "40.6"
     },
     "reactivity": {
       "electronegativity": "1.81",
-      "atomElectronEnergy": "29.061"
+      "electronAffinity": "29.061"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -3584,11 +3491,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "1 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence2": "4 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence3": "3 ⋅ 10<sup><small>-9</small></sup>",
-      "prevalence5": "0.0019",
-      "prevalence6": "7.6 ⋅ 10<sup><small>-4</small></sup>"
+      "universe": "1 ⋅ 10<sup><small>-6</small></sup>",
+      "sun": "4 ⋅ 10<sup><small>-6</small></sup>",
+      "ocean": "3 ⋅ 10<sup><small>-9</small></sup>",
+      "crust": "0.0019",
+      "meteorites": "7.6 ⋅ 10<sup><small>-4</small></sup>"
     },
     "colorIndex": 8,
     "ghs": [
@@ -3619,28 +3526,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Germanium",
       "englishName": "Germanium",
-      "elementOpenedYear": "1886",
+      "discoveryYear": "1886",
       "casNumber": "CAS7440-56-4",
-      "elementOpener": "25",
-      "countryOpener": "DE",
-      "elementShell": "K2-L8-M18-N4-O0-P0-Q0-R0",
-      "elementE": "32",
-      "elementP": "32",
-      "elementN": "41",
+      "discoverer": "25",
+      "discoveryCountry": "DE",
+      "electronShellConfig": "K2-L8-M18-N4-O0-P0-Q0-R0",
+      "electronCount": "32",
+      "protonCount": "32",
+      "neutronCount": "41",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 3d10 4s2 4p2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p2",
-      "elementPrice": "89",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 3d10 4s2 4p2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p2"
     },
     "properties": {
-      "elementMasse": "72.6298488671316",
-      "elementDensity": "5.323",
-      "elementMeltingPoint": "938.25",
-      "elementBoilingPoint": "2833.0",
-      "elValence": "2, 4",
-      "elementGroup": "4/IV+",
-      "elementBlock": "p",
+      "atomicMass": "72.6298488671316",
+      "density": "5.323",
+      "meltingPoint": "938.25",
+      "boilingPoint": "2833.0",
+      "valence": "2, 4",
+      "group": "4/IV+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -3658,37 +3563,36 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "211"
     },
     "electromagnetic": {
-      "es_electro": "1886.79245283019",
-      "es_etype": "3",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-7.98 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-1.5 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-1.09 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "0.00053"
+      "electricalConductivity": "1886.79245283019",
+      "electricalType": "3",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-7.98 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-1.5 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-1.09 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "0.00053"
     },
     "grid": {
-      "gridStructureNum": "8",
+      "structureCode": "8",
       "gridParams": "5.660 Å",
       "debyeTemperature": "370",
-      "space1": "Fd_ 3m",
-      "space2": "227"
+      "spaceGroup": "Fd_ 3m",
+      "spaceGroupNumber": "227"
     },
     "additional": {
-      "elementColor": "4",
-      "numberCID": "CID6326954",
-      "numberRTEC": "RTECSLY5200000",
+      "pubchemCid": "CID6326954",
+      "rtecsNumber": "RTECSLY5200000",
       "brinellHardness": "7273.4",
       "mohsHardness": "6.0",
       "vickersHardness": "8012.03",
       "bulkModulus": "75.8",
       "liquidDensity": "5.6",
-      "molarValue": "0.000013645",
+      "molarVolume": "0.000013645",
       "soundSpeed": "5400.0",
       "thermalConductivity": "60.2"
     },
     "reactivity": {
       "electronegativity": "2.01",
-      "atomElectronEnergy": "118.9352"
+      "electronAffinity": "118.9352"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -3697,11 +3601,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "2 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence2": "2 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence3": "6 ⋅ 10<sup><small>-9</small></sup>",
-      "prevalence5": "1.5 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence6": "0.0021"
+      "universe": "2 ⋅ 10<sup><small>-5</small></sup>",
+      "sun": "2 ⋅ 10<sup><small>-5</small></sup>",
+      "ocean": "6 ⋅ 10<sup><small>-9</small></sup>",
+      "crust": "1.5 ⋅ 10<sup><small>-4</small></sup>",
+      "meteorites": "0.0021"
     },
     "colorIndex": 7,
     "ghs": [
@@ -3747,28 +3651,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Arsenicum",
       "englishName": "Arsenic",
-      "elementOpenedYear": "~1250",
+      "discoveryYear": "~1250",
       "casNumber": "CAS7440-38-2",
-      "elementOpener": "80",
-      "countryOpener": "DE",
-      "elementShell": "K2-L8-M18-N5-O0-P0-Q0-R0",
-      "elementE": "33",
-      "elementP": "33",
-      "elementN": "42",
+      "discoverer": "80",
+      "discoveryCountry": "DE",
+      "electronShellConfig": "K2-L8-M18-N5-O0-P0-Q0-R0",
+      "electronCount": "33",
+      "protonCount": "33",
+      "neutronCount": "42",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 3d10 4s2 4p3 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p3",
-      "elementPrice": "43",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 3d10 4s2 4p3 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p3"
     },
     "properties": {
-      "elementMasse": "74.921594565322",
-      "elementDensity": "5.727",
-      "elementMeltingPoint": "817.0",
-      "elementBoilingPoint": "614.0",
-      "elValence": "2, 3, 5",
-      "elementGroup": "4/V+",
-      "elementBlock": "p",
+      "atomicMass": "74.921594565322",
+      "density": "5.727",
+      "meltingPoint": "817.0",
+      "boilingPoint": "614.0",
+      "valence": "2, 3, 5",
+      "group": "4/V+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -3786,38 +3688,37 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "185"
     },
     "electromagnetic": {
-      "es_electro": "3003003.003003",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "-2.23 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-3.9 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-2.92 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "3.33 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "3003003.003003",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "-2.23 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-3.9 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-2.92 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "3.33 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "5",
+      "structureCode": "5",
       "gridParams": "a=4.1315 Å; α=54.17°",
       "debyeTemperature": "282",
-      "space1": "R_ 3m",
-      "space2": "166"
+      "spaceGroup": "R_ 3m",
+      "spaceGroupNumber": "166"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5359596",
-      "numberRTEC": "RTECSCG0525000",
+      "pubchemCid": "CID5359596",
+      "rtecsNumber": "RTECSCG0525000",
       "brinellHardness": "1440.0",
       "mohsHardness": "3.5",
       "vickersHardness": "1510.0",
       "bulkModulus": "22.0",
       "youngModulus": "8.0",
       "liquidDensity": "5.22",
-      "molarValue": "0.000013082",
+      "molarVolume": "0.000013082",
       "refractiveIndex": "1.001552",
       "thermalConductivity": "50.2"
     },
     "reactivity": {
       "electronegativity": "2.18",
-      "atomElectronEnergy": "77.65"
+      "electronAffinity": "77.65"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -3826,11 +3727,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,3,0,-"
     },
     "prevalence": {
-      "prevalence1": "8 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "2.3 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "9.98774237 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence5": "1.8 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence6": "1.8 ⋅ 10<sup><small>-4</small></sup>"
+      "universe": "8 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "2.3 ⋅ 10<sup><small>-7</small></sup>",
+      "humanBody": "9.98774237 ⋅ 10<sup><small>-6</small></sup>",
+      "crust": "1.8 ⋅ 10<sup><small>-4</small></sup>",
+      "meteorites": "1.8 ⋅ 10<sup><small>-4</small></sup>"
     },
     "colorIndex": 7,
     "ghs": [
@@ -3856,28 +3757,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Selenium",
       "englishName": "Selenium",
-      "elementOpenedYear": "1817",
+      "discoveryYear": "1817",
       "casNumber": "CAS7782-49-2",
-      "elementOpener": "16",
-      "countryOpener": "SE",
-      "elementShell": "K2-L8-M18-N6-O0-P0-Q0-R0",
-      "elementE": "34",
-      "elementP": "34",
-      "elementN": "45",
+      "discoverer": "16",
+      "discoveryCountry": "SE",
+      "electronShellConfig": "K2-L8-M18-N6-O0-P0-Q0-R0",
+      "electronCount": "34",
+      "protonCount": "34",
+      "neutronCount": "45",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 3d10 4s2 4p4 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p4",
-      "elementPrice": "28",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 3d10 4s2 4p4 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p4"
     },
     "properties": {
-      "elementMasse": "78.9710814817005",
-      "elementDensity": "4.81",
-      "elementMeltingPoint": "221.0",
-      "elementBoilingPoint": "685.0",
-      "elValence": "2, 4, 6",
-      "elementGroup": "4/VI+",
-      "elementBlock": "p",
+      "atomicMass": "78.9710814817005",
+      "density": "4.81",
+      "meltingPoint": "221.0",
+      "boilingPoint": "685.0",
+      "valence": "2, 4, 6",
+      "group": "4/VI+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -3895,31 +3794,30 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "190"
     },
     "electromagnetic": {
-      "es_electro": "83333333.3333333",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-1.93 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-4 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-3.16 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "1.2 ⋅ 10<sup><small>10</small></sup>"
+      "electricalConductivity": "83333333.3333333",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-1.93 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-4 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-3.16 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "1.2 ⋅ 10<sup><small>10</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "1",
+      "structureCode": "1",
       "gridParams": "a=4.364 Å; c=4.959 Å",
-      "ratio": "1.136",
+      "axialRatio": "1.136",
       "debyeTemperature": "90",
-      "space1": "P3<sub><small>1</small></sub>21",
-      "space2": "152"
+      "spaceGroup": "P3<sub><small>1</small></sub>21",
+      "spaceGroupNumber": "152"
     },
     "additional": {
-      "elementColor": "4",
-      "numberCID": "CID6326970",
-      "numberRTEC": "RTECSVS7700000",
+      "pubchemCid": "CID6326970",
+      "rtecsNumber": "RTECSVS7700000",
       "brinellHardness": "736.0",
       "mohsHardness": "2.0",
       "bulkModulus": "8.3",
       "youngModulus": "10.0",
       "liquidDensity": "3.99",
-      "molarValue": "0.000016387",
+      "molarVolume": "0.000016387",
       "poissonRatio": "0.33",
       "shearModulus": "3.7",
       "soundSpeed": "3350.0",
@@ -3928,7 +3826,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "2.55",
-      "atomElectronEnergy": "194.9587"
+      "electronAffinity": "194.9587"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -3937,11 +3835,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,2,0,-"
     },
     "prevalence": {
-      "prevalence1": "3 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence3": "4.5 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence4": "5 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence5": "5.0⋅ 10<sup><small>-6</small></sup>",
-      "prevalence6": "0.0013"
+      "universe": "3 ⋅ 10<sup><small>-6</small></sup>",
+      "ocean": "4.5 ⋅ 10<sup><small>-8</small></sup>",
+      "humanBody": "5 ⋅ 10<sup><small>-6</small></sup>",
+      "crust": "5.0⋅ 10<sup><small>-6</small></sup>",
+      "meteorites": "0.0013"
     },
     "colorIndex": 5,
     "ghs": [
@@ -3989,28 +3887,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Bromum",
       "englishName": "Bromine",
-      "elementOpenedYear": "1826",
+      "discoveryYear": "1826",
       "casNumber": "CAS7726-95-6",
-      "elementOpener": "26/27",
-      "countryOpener": "FR, DE",
-      "elementShell": "K2-L8-M18-N7-O0-P0-Q0-R0",
-      "elementE": "35",
-      "elementP": "35",
-      "elementN": "45",
+      "discoverer": "26/27",
+      "discoveryCountry": "FR, DE",
+      "electronShellConfig": "K2-L8-M18-N7-O0-P0-Q0-R0",
+      "electronCount": "35",
+      "protonCount": "35",
+      "neutronCount": "45",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 3d10 4s2 4p5 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p5",
-      "elementPrice": "45",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 3d10 4s2 4p5 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p5"
     },
     "properties": {
-      "elementMasse": "79.9043261630963",
-      "elementDensity": "3.102",
-      "elementMeltingPoint": "-7.3",
-      "elementBoilingPoint": "58.8",
-      "elValence": "1, 3, 4, 5",
-      "elementGroup": "4/VII+",
-      "elementBlock": "p",
+      "atomicMass": "79.9043261630963",
+      "density": "3.102",
+      "meltingPoint": "-7.3",
+      "boilingPoint": "58.8",
+      "valence": "1, 3, 4, 5",
+      "group": "4/VII+",
+      "block": "p",
       "aggregationState": "liquid"
     },
     "thermo": {
@@ -4027,33 +3923,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "183"
     },
     "electromagnetic": {
-      "es_electro": "1.28205128205128e-11",
-      "es_etype": "2",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-1.53 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-4.9 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-7.83 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "78000000000.0"
+      "electricalConductivity": "1.28205128205128e-11",
+      "electricalType": "2",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-1.53 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-4.9 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-7.83 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "78000000000.0"
     },
     "grid": {
-      "gridStructureNum": "9",
+      "structureCode": "9",
       "gridParams": "a=6.67 Å; b=4.48 Å; c=8.72 Å",
-      "space1": "Cmca",
-      "space2": "64"
+      "spaceGroup": "Cmca",
+      "spaceGroupNumber": "64"
     },
     "additional": {
-      "elementColor": "6",
-      "numberCID": "CID24408",
-      "numberRTEC": "RTECSEF9100000",
+      "pubchemCid": "CID24408",
+      "rtecsNumber": "RTECSEF9100000",
       "bulkModulus": "1.9",
       "liquidDensity": "3.12",
-      "molarValue": "0.00002561",
+      "molarVolume": "0.00002561",
       "refractiveIndex": "1.001132",
       "thermalConductivity": "0.122"
     },
     "reactivity": {
       "electronegativity": "2.96",
-      "atomElectronEnergy": "324.5369"
+      "electronAffinity": "324.5369"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -4062,11 +3957,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,3,0,OX"
     },
     "prevalence": {
-      "prevalence1": "7 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "0.0066",
-      "prevalence4": "0.00037097328802",
-      "prevalence5": "2.4 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence6": "1.2 ⋅ 10<sup><small>-4</small></sup>"
+      "universe": "7 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "0.0066",
+      "humanBody": "0.00037097328802",
+      "crust": "2.4 ⋅ 10<sup><small>-4</small></sup>",
+      "meteorites": "1.2 ⋅ 10<sup><small>-4</small></sup>"
     },
     "colorIndex": 14,
     "ghs": [
@@ -4099,28 +3994,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Krypton",
       "englishName": "Krypton",
-      "elementOpenedYear": "1898",
+      "discoveryYear": "1898",
       "casNumber": "CAS7439-90-9",
-      "elementOpener": "12/13",
-      "countryOpener": "GB",
-      "elementShell": "K2-L8-M18-N8-O0-P0-Q0-R0",
-      "elementE": "36",
-      "elementP": "36",
-      "elementN": "48",
+      "discoverer": "12/13",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L8-M18-N8-O0-P0-Q0-R0",
+      "electronCount": "36",
+      "protonCount": "36",
+      "neutronCount": "48",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Ar] 3d10 4s2 4p6 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6",
-      "elementPrice": "33",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Ar] 3d10 4s2 4p6 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6"
     },
     "properties": {
-      "elementMasse": "83.7979997384043",
-      "elementDensity": "0.003749",
-      "elementMeltingPoint": "-157.37",
-      "elementBoilingPoint": "-153.415",
-      "elValence": "0",
-      "elementGroup": "4/VIII+",
-      "elementBlock": "p",
+      "atomicMass": "83.7979997384043",
+      "density": "0.003749",
+      "meltingPoint": "-157.37",
+      "boilingPoint": "-153.415",
+      "valence": "0",
+      "group": "4/VIII+",
+      "block": "p",
       "aggregationState": "gas"
     },
     "thermo": {
@@ -4136,30 +4029,29 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "202"
     },
     "electromagnetic": {
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-1.65 ⋅ 10<sup><small>-8</small></sup>",
-      "es_umvospr": "-4.4 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-3.69 ⋅ 10<sup><small>-10</small></sup>"
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-1.65 ⋅ 10<sup><small>-8</small></sup>",
+      "massMagneticSusceptibility": "-4.4 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-3.69 ⋅ 10<sup><small>-10</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "5.638 Å",
       "debyeTemperature": "72",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "0",
-      "numberCID": "CID5416",
-      "numberRTEC": "RTECSOC6772500",
-      "molarValue": "0.02235",
+      "pubchemCid": "CID5416",
+      "rtecsNumber": "RTECSOC6772500",
+      "molarVolume": "0.02235",
       "soundSpeed": "221.0",
       "refractiveIndex": "1.000427",
       "thermalConductivity": "0.00943"
     },
     "reactivity": {
       "electronegativity": "3",
-      "atomElectronEnergy": "0"
+      "electronAffinity": "0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -4168,9 +4060,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,0,0,SA"
     },
     "prevalence": {
-      "prevalence1": "4 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence3": "2.1 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence5": "1.0 ⋅ 10<sup><small>-8</small></sup>"
+      "universe": "4 ⋅ 10<sup><small>-6</small></sup>",
+      "ocean": "2.1 ⋅ 10<sup><small>-8</small></sup>",
+      "crust": "1.0 ⋅ 10<sup><small>-8</small></sup>"
     },
     "colorIndex": 0,
     "ghs": [
@@ -4217,28 +4109,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Rubidium",
       "englishName": "Rubidium",
-      "elementOpenedYear": "1861",
+      "discoveryYear": "1861",
       "casNumber": "CAS7440-17-7",
-      "elementOpener": "28/29",
-      "countryOpener": "DE",
-      "elementShell": "K2-L8-M18-N8-O1-P0-Q0-R0",
-      "elementE": "37",
-      "elementP": "37",
-      "elementN": "48",
+      "discoverer": "28/29",
+      "discoveryCountry": "DE",
+      "electronShellConfig": "K2-L8-M18-N8-O1-P0-Q0-R0",
+      "electronCount": "37",
+      "protonCount": "37",
+      "neutronCount": "48",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 5s1",
-      "elementPrice": "390",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Kr] 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 5s1"
     },
     "properties": {
-      "elementMasse": "85.4676635933375",
-      "elementDensity": "1.532",
-      "elementMeltingPoint": "39.3",
-      "elementBoilingPoint": "688.0",
-      "elValence": "1",
-      "elementGroup": "5/I+",
-      "elementBlock": "s",
+      "atomicMass": "85.4676635933375",
+      "density": "1.532",
+      "meltingPoint": "39.3",
+      "boilingPoint": "688.0",
+      "valence": "1",
+      "group": "5/I+",
+      "block": "s",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -4255,37 +4145,36 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "303"
     },
     "electromagnetic": {
-      "es_electro": "7812500.0",
-      "es_etype": "1",
-      "es_omvospr": "0.00000398",
-      "es_umvospr": "2.6 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "2.22 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "1.28 ⋅ 10<sup><small>-7</small></sup>",
-      "es_mtype": "paramagnetic"
+      "electricalConductivity": "7812500.0",
+      "electricalType": "1",
+      "volumeMagneticSusceptibility": "0.00000398",
+      "massMagneticSusceptibility": "2.6 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "2.22 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "1.28 ⋅ 10<sup><small>-7</small></sup>",
+      "magneticType": "paramagnetic"
     },
     "grid": {
-      "gridStructureNum": "3",
+      "structureCode": "3",
       "gridParams": "5.710 Å",
       "debyeTemperature": "56.5",
-      "space1": "Im_ 3m",
-      "space2": "229"
+      "spaceGroup": "Im_ 3m",
+      "spaceGroupNumber": "229"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5357696",
-      "numberRTEC": "RTECSVL8500000",
+      "pubchemCid": "CID5357696",
+      "rtecsNumber": "RTECSVL8500000",
       "brinellHardness": "0.22",
       "mohsHardness": "0.3",
       "bulkModulus": "2.5",
       "youngModulus": "2.4",
       "liquidDensity": "1.46",
-      "molarValue": "0.000055788",
+      "molarVolume": "0.000055788",
       "soundSpeed": "1300.0",
       "thermalConductivity": "58.2"
     },
     "reactivity": {
       "electronegativity": "0.82",
-      "atomElectronEnergy": "46.884"
+      "electronAffinity": "46.884"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -4294,12 +4183,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,2,2,W"
     },
     "prevalence": {
-      "prevalence1": "1 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence2": "3 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence3": "1.2 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence4": "0.00046",
-      "prevalence5": "0.009",
-      "prevalence6": "3.2 ⋅ 10<sup><small>-4</small></sup>"
+      "universe": "1 ⋅ 10<sup><small>-6</small></sup>",
+      "sun": "3 ⋅ 10<sup><small>-6</small></sup>",
+      "ocean": "1.2 ⋅ 10<sup><small>-5</small></sup>",
+      "humanBody": "0.00046",
+      "crust": "0.009",
+      "meteorites": "3.2 ⋅ 10<sup><small>-4</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -4329,28 +4218,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Strontium",
       "englishName": "Strontium",
-      "elementOpenedYear": "1790",
+      "discoveryYear": "1790",
       "casNumber": "CAS7440-24-6",
-      "elementOpener": "30",
-      "countryOpener": "GB",
-      "elementShell": "K2-L8-M18-N8-O2-P0-Q0-R0",
-      "elementE": "38",
-      "elementP": "38",
-      "elementN": "50",
+      "discoverer": "30",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L8-M18-N8-O2-P0-Q0-R0",
+      "electronCount": "38",
+      "protonCount": "38",
+      "neutronCount": "50",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 5s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 5s2",
-      "elementPrice": "19.6",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Kr] 5s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 5s2"
     },
     "properties": {
-      "elementMasse": "87.6166442781531",
-      "elementDensity": "2.63",
-      "elementMeltingPoint": "777.0",
-      "elementBoilingPoint": "1382.0",
-      "elValence": "2",
-      "elementGroup": "5/II+",
-      "elementBlock": "s",
+      "atomicMass": "87.6166442781531",
+      "density": "2.63",
+      "meltingPoint": "777.0",
+      "boilingPoint": "1382.0",
+      "valence": "2",
+      "group": "5/II+",
+      "block": "s",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -4368,34 +4255,33 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "249"
     },
     "electromagnetic": {
-      "es_electro": "7575757.57575758",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "-3.47 ⋅ 10<sup><small>-6</small></sup>",
-      "es_umvospr": "1.32 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "1.16 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "1.32 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "7575757.57575758",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "-3.47 ⋅ 10<sup><small>-6</small></sup>",
+      "massMagneticSusceptibility": "1.32 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "1.16 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "1.32 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "4 | 6 | 3",
+      "structureCode": "4 | 6 | 3",
       "gridParams": "6.080 Å | a=4.31 Å; c=7.05 Å | a=4.85 Å",
       "debyeTemperature": "147",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5359327",
+      "pubchemCid": "CID5359327",
       "mohsHardness": "1.5",
       "liquidDensity": "2.375",
-      "molarValue": "0.000033316",
+      "molarVolume": "0.000033316",
       "poissonRatio": "0.28",
       "shearModulus": "6.1",
       "thermalConductivity": "35.4"
     },
     "reactivity": {
       "electronegativity": "0.95",
-      "atomElectronEnergy": "5.023"
+      "electronAffinity": "5.023"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -4404,12 +4290,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,3,2,W"
     },
     "prevalence": {
-      "prevalence1": "4 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence2": "5 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence3": "8.0 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence4": "0.00045658250833",
-      "prevalence5": "0.037",
-      "prevalence6": "8.6 ⋅ 10<sup><small>-4</small></sup>"
+      "universe": "4 ⋅ 10<sup><small>-6</small></sup>",
+      "sun": "5 ⋅ 10<sup><small>-6</small></sup>",
+      "ocean": "8.0 ⋅ 10<sup><small>-4</small></sup>",
+      "humanBody": "0.00045658250833",
+      "crust": "0.037",
+      "meteorites": "8.6 ⋅ 10<sup><small>-4</small></sup>"
     },
     "colorIndex": 9,
     "ghs": [
@@ -4450,28 +4336,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Yttrium",
       "englishName": "Yttrium",
-      "elementOpenedYear": "1794",
+      "discoveryYear": "1794",
       "casNumber": "CAS7440-65-5",
-      "elementOpener": "31",
-      "countryOpener": "FI",
-      "elementShell": "K2-L8-M18-N9-O2-P0-Q0-R0",
-      "elementE": "39",
-      "elementP": "39",
-      "elementN": "50",
+      "discoverer": "31",
+      "discoveryCountry": "FI",
+      "electronShellConfig": "K2-L8-M18-N9-O2-P0-Q0-R0",
+      "electronCount": "39",
+      "protonCount": "39",
+      "neutronCount": "50",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 4d1 5s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d1 5s2",
-      "elementPrice": "850",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Kr] 4d1 5s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d1 5s2"
     },
     "properties": {
-      "elementMasse": "88.9058381585322",
-      "elementDensity": "4.472",
-      "elementMeltingPoint": "1526.0",
-      "elementBoilingPoint": "2930.0",
-      "elValence": "3",
-      "elementGroup": "5/III-",
-      "elementBlock": "d",
+      "atomicMass": "88.9058381585322",
+      "density": "4.472",
+      "meltingPoint": "1526.0",
+      "boilingPoint": "2930.0",
+      "valence": "3",
+      "group": "5/III-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -4489,32 +4373,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "219"
     },
     "electromagnetic": {
-      "es_electro": "1677852.34899329",
-      "es_etype": "1",
-      "es_omvospr": "2.978 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "6.66 ⋅ 10<sup><small>-98/small></sup>",
-      "es_mmvospr": "5.921 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "5.96 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "1.3",
-      "es_mtype": "paramagnetic"
+      "electricalConductivity": "1677852.34899329",
+      "electricalType": "1",
+      "volumeMagneticSusceptibility": "2.978 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "6.66 ⋅ 10<sup><small>-98/small></sup>",
+      "molarMagneticSusceptibility": "5.921 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "5.96 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "1.3",
+      "magneticType": "paramagnetic"
     },
     "grid": {
-      "gridStructureNum": "2 | 7",
+      "structureCode": "2 | 7",
       "gridParams": "a=3.647 Å; c=5.731 Å | a=4.08 Å",
-      "ratio": "1.571",
+      "axialRatio": "1.571",
       "debyeTemperature": "248",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23993",
-      "numberRTEC": "RTECSZG2980000",
+      "pubchemCid": "CID23993",
+      "rtecsNumber": "RTECSZG2980000",
       "brinellHardness": "588.0",
       "bulkModulus": "41.2",
       "youngModulus": "63.5",
       "liquidDensity": "4.24",
-      "molarValue": "0.000019881",
+      "molarVolume": "0.000019881",
       "poissonRatio": "0.24",
       "shearModulus": "25.6",
       "soundSpeed": "3300.0",
@@ -4522,7 +4405,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.22",
-      "atomElectronEnergy": "29.6"
+      "electronAffinity": "29.6"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -4531,11 +4414,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,2,0,-"
     },
     "prevalence": {
-      "prevalence1": "7 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "9.9 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "1.3 ⋅ 10<sup><small>-9</small></sup>",
-      "prevalence5": "0.0033",
-      "prevalence6": "1.9 ⋅ 10<sup><small>-4</small></sup>"
+      "universe": "7 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "9.9 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "1.3 ⋅ 10<sup><small>-9</small></sup>",
+      "crust": "0.0033",
+      "meteorites": "1.9 ⋅ 10<sup><small>-4</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -4566,28 +4449,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Zirconium",
       "englishName": "Zirconium",
-      "elementOpenedYear": "1789",
+      "discoveryYear": "1789",
       "casNumber": "CAS7440-67-7",
-      "elementOpener": "32",
-      "countryOpener": "DE",
-      "elementShell": "K2-L8-M18-N10-O2-P0-Q0-R0",
-      "elementE": "40",
-      "elementP": "40",
-      "elementN": "51",
+      "discoverer": "32",
+      "discoveryCountry": "DE",
+      "electronShellConfig": "K2-L8-M18-N10-O2-P0-Q0-R0",
+      "electronCount": "40",
+      "protonCount": "40",
+      "neutronCount": "51",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 4d2 5s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d2 5s2",
-      "elementPrice": "230",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Kr] 4d2 5s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d2 5s2"
     },
     "properties": {
-      "elementMasse": "91.2236427905792",
-      "elementDensity": "6.52",
-      "elementMeltingPoint": "1855.0",
-      "elementBoilingPoint": "4377.0",
-      "elValence": "2, 3, 4",
-      "elementGroup": "5/IV-",
-      "elementBlock": "d",
+      "atomicMass": "91.2236427905792",
+      "density": "6.52",
+      "meltingPoint": "1855.0",
+      "boilingPoint": "4377.0",
+      "valence": "2, 3, 4",
+      "group": "5/IV-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -4605,33 +4486,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "186"
     },
     "electromagnetic": {
-      "es_electro": "2375296.91211401",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "1.081 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "1.68 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "1.53 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "4.21 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "0.61"
+      "electricalConductivity": "2375296.91211401",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "1.081 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "1.68 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "1.53 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "4.21 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "0.61"
     },
     "grid": {
-      "gridStructureNum": "2 | 7",
+      "structureCode": "2 | 7",
       "gridParams": "a=3.231 Å; c=5.148 Å | a=3.61 Å",
-      "ratio": "1.593",
+      "axialRatio": "1.593",
       "debyeTemperature": "291",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23995",
+      "pubchemCid": "CID23995",
       "brinellHardness": "650.0",
       "mohsHardness": "5.0",
       "vickersHardness": "904.0",
       "bulkModulus": "91.1",
       "youngModulus": "68.0",
       "liquidDensity": "5.8",
-      "molarValue": "0.000014011",
+      "molarVolume": "0.000014011",
       "poissonRatio": "0.34",
       "shearModulus": "33.0",
       "soundSpeed": "3800.0",
@@ -4639,7 +4519,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.33",
-      "atomElectronEnergy": "41.806"
+      "electronAffinity": "41.806"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -4648,12 +4528,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "5 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence2": "4 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence3": "2.6 ⋅ 10<sup><small>-9</small></sup>",
-      "prevalence4": "5 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence5": "0.0165",
-      "prevalence6": "6.6 ⋅ 10<sup><small>-4</small></sup>"
+      "universe": "5 ⋅ 10<sup><small>-6</small></sup>",
+      "sun": "4 ⋅ 10<sup><small>-6</small></sup>",
+      "ocean": "2.6 ⋅ 10<sup><small>-9</small></sup>",
+      "humanBody": "5 ⋅ 10<sup><small>-6</small></sup>",
+      "crust": "0.0165",
+      "meteorites": "6.6 ⋅ 10<sup><small>-4</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -4697,28 +4577,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Niobium",
       "englishName": "Niobium",
-      "elementOpenedYear": "1801",
+      "discoveryYear": "1801",
       "casNumber": "CAS7440-03-1",
-      "elementOpener": "33",
-      "countryOpener": "GB",
-      "elementShell": "K2-L8-M18-N12-O1-P0-Q0-R0",
-      "elementE": "41",
-      "elementP": "41",
-      "elementN": "52",
+      "discoverer": "33",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L8-M18-N12-O1-P0-Q0-R0",
+      "electronCount": "41",
+      "protonCount": "41",
+      "neutronCount": "52",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 4d4 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d4 5s1",
-      "elementPrice": "73.4",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Kr] 4d4 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d4 5s1"
     },
     "properties": {
-      "elementMasse": "92.9063732129128",
-      "elementDensity": "8.57",
-      "elementMeltingPoint": "2477.0",
-      "elementBoilingPoint": "4744.0",
-      "elValence": "2, 3, 4, 5",
-      "elementGroup": "5/V-",
-      "elementBlock": "d",
+      "atomicMass": "92.9063732129128",
+      "density": "8.57",
+      "meltingPoint": "2477.0",
+      "boilingPoint": "4744.0",
+      "valence": "2, 3, 4, 5",
+      "group": "5/V-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -4736,32 +4614,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "207"
     },
     "electromagnetic": {
-      "es_electro": "6578947.36842105",
-      "es_etype": "1",
-      "es_omvospr": "2.408 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "2.76 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "2.56 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "1.52 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "9.25",
-      "es_mtype": "paramagnetic"
+      "electricalConductivity": "6578947.36842105",
+      "electricalType": "1",
+      "volumeMagneticSusceptibility": "2.408 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "2.76 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "2.56 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "1.52 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "9.25",
+      "magneticType": "paramagnetic"
     },
     "grid": {
-      "gridStructureNum": "3",
+      "structureCode": "3",
       "gridParams": "3.301 Å",
       "debyeTemperature": "320",
-      "space1": "Im_ 3m",
-      "space2": "229"
+      "spaceGroup": "Im_ 3m",
+      "spaceGroupNumber": "229"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23936",
-      "numberRTEC": "RTECSQT9900000",
+      "pubchemCid": "CID23936",
+      "rtecsNumber": "RTECSQT9900000",
       "brinellHardness": "736.0",
       "mohsHardness": "6.0",
       "vickersHardness": "1320.0",
       "bulkModulus": "170",
       "youngModulus": "105.0",
-      "molarValue": "0.000010841",
+      "molarVolume": "0.000010841",
       "poissonRatio": "0.4",
       "shearModulus": "38.0",
       "soundSpeed": "3480.0",
@@ -4769,7 +4646,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.6",
-      "atomElectronEnergy": "88.516"
+      "electronAffinity": "88.516"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -4778,11 +4655,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "4 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "1.0 ⋅ 10<sup><small>-10</small></sup>",
-      "prevalence5": "0.002",
-      "prevalence6": "1.9 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "4 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "1.0 ⋅ 10<sup><small>-10</small></sup>",
+      "crust": "0.002",
+      "meteorites": "1.9 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 8,
     "ghs": [
@@ -4809,28 +4686,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Molybdaenum",
       "englishName": "Molybdenum",
-      "elementOpenedYear": "1778",
+      "discoveryYear": "1778",
       "casNumber": "CAS7439-98-7",
-      "elementOpener": "10",
-      "countryOpener": "SE",
-      "elementShell": "K2-L8-M18-N13-O1-P0-Q0-R0",
-      "elementE": "42",
-      "elementP": "42",
-      "elementN": "54",
+      "discoverer": "10",
+      "discoveryCountry": "SE",
+      "electronShellConfig": "K2-L8-M18-N13-O1-P0-Q0-R0",
+      "electronCount": "42",
+      "protonCount": "42",
+      "neutronCount": "54",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 4d5 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d5 5s1",
-      "elementPrice": "44",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Kr] 4d5 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d5 5s1"
     },
     "properties": {
-      "elementMasse": "95.9487770772113",
-      "elementDensity": "10.28",
-      "elementMeltingPoint": "2623.0",
-      "elementBoilingPoint": "4639.0",
-      "elValence": "2, 3, 4, 5, 6",
-      "elementGroup": "5/VI-",
-      "elementBlock": "d",
+      "atomicMass": "95.9487770772113",
+      "density": "10.28",
+      "meltingPoint": "2623.0",
+      "boilingPoint": "4639.0",
+      "valence": "2, 3, 4, 5, 6",
+      "group": "5/VI-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -4848,33 +4723,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "209"
     },
     "electromagnetic": {
-      "es_electro": "18726591.7602996",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "1.203 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "1.17 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "1.122 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "5.34 ⋅ 10<sup><small>-8</small></sup>",
-      "es_temp": "0.915"
+      "electricalConductivity": "18726591.7602996",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "1.203 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "1.17 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "1.122 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "5.34 ⋅ 10<sup><small>-8</small></sup>",
+      "superconductingTemperature": "0.915"
     },
     "grid": {
-      "gridStructureNum": "3",
+      "structureCode": "3",
       "gridParams": "3.147 Å",
       "debyeTemperature": "476",
-      "space1": "Im_ 3m",
-      "space2": "229"
+      "spaceGroup": "Im_ 3m",
+      "spaceGroupNumber": "229"
     },
     "additional": {
-      "elementColor": "4",
-      "numberCID": "CID23932",
-      "numberRTEC": "RTECSQA4680000",
+      "pubchemCid": "CID23932",
+      "rtecsNumber": "RTECSQA4680000",
       "brinellHardness": "1500.0",
       "mohsHardness": "5.5",
       "vickersHardness": "1530.0",
       "bulkModulus": "230",
       "youngModulus": "329.0",
       "liquidDensity": "9.33",
-      "molarValue": "0.000009334",
+      "molarVolume": "0.000009334",
       "poissonRatio": "0.31",
       "shearModulus": "120.0",
       "soundSpeed": "5400.0",
@@ -4882,7 +4756,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "2.16",
-      "atomElectronEnergy": "72.1"
+      "electronAffinity": "72.1"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -4891,12 +4765,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "5 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "9 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "9.9 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "7.13410169 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence5": "0.00012",
-      "prevalence6": "1.2 ⋅ 10<sup><small>-4</small></sup>"
+      "universe": "5 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "9 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "9.9 ⋅ 10<sup><small>-7</small></sup>",
+      "humanBody": "7.13410169 ⋅ 10<sup><small>-6</small></sup>",
+      "crust": "0.00012",
+      "meteorites": "1.2 ⋅ 10<sup><small>-4</small></sup>"
     },
     "colorIndex": 5,
     "ghs": [
@@ -4949,28 +4823,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Technetium",
       "englishName": "Technetium",
-      "elementOpenedYear": "1937",
+      "discoveryYear": "1937",
       "casNumber": "CAS7440-26-8",
-      "elementOpener": "46/47",
-      "countryOpener": "IT",
-      "elementShell": "K2-L8-M18-N13-O2-P0-Q0-R0",
-      "elementE": "43",
-      "elementP": "43",
-      "elementN": "55",
+      "discoverer": "46/47",
+      "discoveryCountry": "IT",
+      "electronShellConfig": "K2-L8-M18-N13-O2-P0-Q0-R0",
+      "electronCount": "43",
+      "protonCount": "43",
+      "neutronCount": "55",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 4d5 5s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d5 5s2",
-      "elementPrice": "10000+",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Kr] 4d5 5s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d5 5s2"
     },
     "properties": {
-      "elementMasse": "97.4429222893571",
-      "elementDensity": "11.5",
-      "elementMeltingPoint": "2157.0",
-      "elementBoilingPoint": "4265.0",
-      "elValence": "6",
-      "elementGroup": "5/VII-",
-      "elementBlock": "d",
+      "atomicMass": "97.4429222893571",
+      "density": "11.5",
+      "meltingPoint": "2157.0",
+      "boilingPoint": "4265.0",
+      "valence": "6",
+      "group": "5/VII-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -4987,31 +4859,30 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "209"
     },
     "electromagnetic": {
-      "es_electro": "5000000.0",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "3.933 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "3.42 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "3.352 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "7.8"
+      "electricalConductivity": "5000000.0",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "3.933 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "3.42 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "3.352 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "7.8"
     },
     "grid": {
-      "gridStructureNum": "2",
+      "structureCode": "2",
       "gridParams": "a=2.737 Å; c=4.391 Å",
-      "ratio": "1.602",
+      "axialRatio": "1.602",
       "debyeTemperature": "453",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "molarValue": "0.000008434782608696",
+      "molarVolume": "0.000008434782608696",
       "thermalConductivity": "50.6"
     },
     "reactivity": {
       "electronegativity": "1.9",
-      "atomElectronEnergy": "53.0"
+      "electronAffinity": "53.0"
     },
     "nucleus": {
       "halfLife": "211100/1",
@@ -5056,28 +4927,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Ruthenium",
       "englishName": "Ruthenium",
-      "elementOpenedYear": "1844",
+      "discoveryYear": "1844",
       "casNumber": "CAS7440-18-8",
-      "elementOpener": "42",
-      "countryOpener": "RU",
-      "elementShell": "K2-L8-M18-N15-O1-P0-Q0-R0",
-      "elementE": "44",
-      "elementP": "44",
-      "elementN": "57",
+      "discoverer": "42",
+      "discoveryCountry": "RU",
+      "electronShellConfig": "K2-L8-M18-N15-O1-P0-Q0-R0",
+      "electronCount": "44",
+      "protonCount": "44",
+      "neutronCount": "57",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 4d7 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d7 5s1",
-      "elementPrice": "668",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Kr] 4d7 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d7 5s1"
     },
     "properties": {
-      "elementMasse": "101.064936840548",
-      "elementDensity": "12.45",
-      "elementMeltingPoint": "2334.0",
-      "elementBoilingPoint": "4150.0",
-      "elValence": "2, 3, 4, 6, 7, 8",
-      "elementGroup": "5/VIII-",
-      "elementBlock": "d",
+      "atomicMass": "101.064936840548",
+      "density": "12.45",
+      "meltingPoint": "2334.0",
+      "boilingPoint": "4150.0",
+      "valence": "2, 3, 4, 6, 7, 8",
+      "group": "5/VIII-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -5095,33 +4964,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "207"
     },
     "electromagnetic": {
-      "es_electro": "14084507.0422535",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "6.7 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "5.42 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "5.48 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "7.1 ⋅ 10<sup><small>-8</small></sup>",
-      "es_temp": "0.49"
+      "electricalConductivity": "14084507.0422535",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "6.7 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "5.42 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "5.48 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "7.1 ⋅ 10<sup><small>-8</small></sup>",
+      "superconductingTemperature": "0.49"
     },
     "grid": {
-      "gridStructureNum": "2",
+      "structureCode": "2",
       "gridParams": "a=2.706 Å; c=4.282 Å",
-      "ratio": "1.582",
+      "axialRatio": "1.582",
       "debyeTemperature": "555",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23950",
+      "pubchemCid": "CID23950",
       "brinellHardness": "2160.0",
       "mohsHardness": "6.5",
       "vickersHardness": "2298.14",
       "bulkModulus": "220.0",
       "youngModulus": "447.0",
       "liquidDensity": "10.65",
-      "molarValue": "0.0000081706",
+      "molarVolume": "0.0000081706",
       "poissonRatio": "0.3",
       "shearModulus": "173.0",
       "soundSpeed": "5970.0",
@@ -5129,7 +4997,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "2.2",
-      "atomElectronEnergy": "100.96"
+      "electronAffinity": "100.96"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -5138,11 +5006,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "4 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "5 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "7.0 ⋅ 10<sup><small>-11</small></sup>",
-      "prevalence5": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence6": "8.1 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "4 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "5 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "7.0 ⋅ 10<sup><small>-11</small></sup>",
+      "crust": "1 ⋅ 10<sup><small>-7</small></sup>",
+      "meteorites": "8.1 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -5192,28 +5060,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Rhodium",
       "englishName": "Rhodium",
-      "elementOpenedYear": "1803",
+      "discoveryYear": "1803",
       "casNumber": "CAS7440-16-6",
-      "elementOpener": "35",
-      "countryOpener": "GB",
-      "elementShell": "K2-L8-M18-N16-O1-P0-Q0-R0",
-      "elementE": "45",
-      "elementP": "45",
-      "elementN": "58",
+      "discoverer": "35",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L8-M18-N16-O1-P0-Q0-R0",
+      "electronCount": "45",
+      "protonCount": "45",
+      "neutronCount": "58",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 4d8 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d8 5s1",
-      "elementPrice": "12300",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Kr] 4d8 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d8 5s1"
     },
     "properties": {
-      "elementMasse": "102.905494087647",
-      "elementDensity": "12.41",
-      "elementMeltingPoint": "1964.0",
-      "elementBoilingPoint": "3695.0",
-      "elValence": "2, 3, 4, 6",
-      "elementGroup": "5/VIII-",
-      "elementBlock": "d",
+      "atomicMass": "102.905494087647",
+      "density": "12.41",
+      "meltingPoint": "1964.0",
+      "boilingPoint": "3695.0",
+      "valence": "2, 3, 4, 6",
+      "group": "5/VIII-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -5231,32 +5097,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "195"
     },
     "electromagnetic": {
-      "es_electro": "23094688.221709",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "1.643 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "1.36 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "1.4 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "4.33 ⋅ 10<sup><small>-8</small></sup>"
+      "electricalConductivity": "23094688.221709",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "1.643 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "1.36 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "1.4 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "4.33 ⋅ 10<sup><small>-8</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "a=3.803 Å",
       "debyeTemperature": "478",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23948",
-      "numberRTEC": "RTECSVI9069000",
+      "pubchemCid": "CID23948",
+      "rtecsNumber": "RTECSVI9069000",
       "brinellHardness": "1100.0",
       "mohsHardness": "6.0",
       "vickersHardness": "1246.0",
       "bulkModulus": "380.0",
       "youngModulus": "275.0",
       "liquidDensity": "10.7",
-      "molarValue": "0.0000082655",
+      "molarVolume": "0.0000082655",
       "poissonRatio": "0.26",
       "shearModulus": "150.0",
       "soundSpeed": "4700.0",
@@ -5264,7 +5129,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "2.28",
-      "atomElectronEnergy": "110.27"
+      "electronAffinity": "110.27"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -5273,10 +5138,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "6 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence2": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence5": "7 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence6": "1.8 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "6 ⋅ 10<sup><small>-8</small></sup>",
+      "sun": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "crust": "7 ⋅ 10<sup><small>-8</small></sup>",
+      "meteorites": "1.8 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -5303,28 +5168,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Palladium",
       "englishName": "Palladium",
-      "elementOpenedYear": "1803",
+      "discoveryYear": "1803",
       "casNumber": "CAS7440-05-3",
-      "elementOpener": "35",
-      "countryOpener": "GB",
-      "elementShell": "K2-L8-M18-N18-O0-P0-Q0-R0",
-      "elementE": "46",
-      "elementP": "46",
-      "elementN": "60",
+      "discoverer": "35",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L8-M18-N18-O0-P0-Q0-R0",
+      "electronCount": "46",
+      "protonCount": "46",
+      "neutronCount": "60",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 4d10 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10",
-      "elementPrice": "1350",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Kr] 4d10 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10"
     },
     "properties": {
-      "elementMasse": "106.415327899964",
-      "elementDensity": "12.02",
-      "elementMeltingPoint": "1554.9",
-      "elementBoilingPoint": "2963.0",
-      "elValence": "2, 4, 6",
-      "elementGroup": "5/VIII-",
-      "elementBlock": "d",
+      "atomicMass": "106.415327899964",
+      "density": "12.02",
+      "meltingPoint": "1554.9",
+      "boilingPoint": "2963.0",
+      "valence": "2, 4, 6",
+      "group": "5/VIII-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -5342,32 +5205,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "163"
     },
     "electromagnetic": {
-      "es_electro": "9487666.0341556",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "7.899 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "6.57 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "6.992 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "1.054 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "9487666.0341556",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "7.899 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "6.57 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "6.992 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "1.054 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "3.890 Å",
       "debyeTemperature": "274",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23938",
-      "numberRTEC": "RTECSRT3480500",
+      "pubchemCid": "CID23938",
+      "rtecsNumber": "RTECSRT3480500",
       "brinellHardness": "37.2",
       "mohsHardness": "4.75",
       "vickersHardness": "461.0",
       "bulkModulus": "180.0",
       "youngModulus": "121.0",
       "liquidDensity": "10.38",
-      "molarValue": "0.0000088514",
+      "molarVolume": "0.0000088514",
       "poissonRatio": "0.39",
       "shearModulus": "44.0",
       "soundSpeed": "3070.0",
@@ -5375,7 +5237,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "2.2",
-      "atomElectronEnergy": "54.24"
+      "electronAffinity": "54.24"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -5384,10 +5246,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "3 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence5": "6.3 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence6": "6.5 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "3 ⋅ 10<sup><small>-7</small></sup>",
+      "crust": "6.3 ⋅ 10<sup><small>-7</small></sup>",
+      "meteorites": "6.5 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 1,
     "isotopes": {
@@ -5432,27 +5294,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Argentum",
       "englishName": "Silver",
-      "elementOpenedYear": "5000 BC",
+      "discoveryYear": "5000 BC",
       "casNumber": "CAS7440-22-4",
-      "countryOpener": "AsiaMinor",
-      "elementShell": "K2-L8-M18-N18-O1-P0-Q0-R0",
-      "elementE": "47",
-      "elementP": "47",
-      "elementN": "61",
+      "discoveryCountry": "AsiaMinor",
+      "electronShellConfig": "K2-L8-M18-N18-O1-P0-Q0-R0",
+      "electronCount": "47",
+      "protonCount": "47",
+      "neutronCount": "61",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 4d10 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s1",
-      "elementPrice": "65",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Kr] 4d10 5s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s1"
     },
     "properties": {
-      "elementMasse": "107.868149833461",
-      "elementDensity": "10.49",
-      "elementMeltingPoint": "961.78",
-      "elementBoilingPoint": "2162.0",
-      "elValence": "1, 2, 3",
-      "elementGroup": "5/I-",
-      "elementBlock": "d",
+      "atomicMass": "107.868149833461",
+      "density": "10.49",
+      "meltingPoint": "961.78",
+      "boilingPoint": "2162.0",
+      "valence": "1, 2, 3",
+      "group": "5/I-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -5470,32 +5330,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "172"
     },
     "electromagnetic": {
-      "es_electro": "63011972.2747322",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "2.41 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-2.27 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-2.45 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "1.587 ⋅ 10<sup><small>-8</small></sup>"
+      "electricalConductivity": "63011972.2747322",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "2.41 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-2.27 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-2.45 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "1.587 ⋅ 10<sup><small>-8</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "4.086 Å",
       "debyeTemperature": "225",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23954",
-      "numberRTEC": "RTECSVW3500000",
+      "pubchemCid": "CID23954",
+      "rtecsNumber": "RTECSVW3500000",
       "brinellHardness": "24.5",
       "mohsHardness": "2.5",
       "vickersHardness": "251.0",
       "bulkModulus": "100.0",
       "youngModulus": "83.0",
       "liquidDensity": "9.32",
-      "molarValue": "0.000010283",
+      "molarVolume": "0.000010283",
       "poissonRatio": "0.37",
       "shearModulus": "30.0",
       "soundSpeed": "2680.0",
@@ -5503,7 +5362,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.93",
-      "atomElectronEnergy": "125.862"
+      "electronAffinity": "125.862"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -5512,11 +5371,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "6 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence2": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "1.0 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence5": "7.5 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence6": "1.4 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "6 ⋅ 10<sup><small>-8</small></sup>",
+      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "1.0 ⋅ 10<sup><small>-8</small></sup>",
+      "crust": "7.5 ⋅ 10<sup><small>-6</small></sup>",
+      "meteorites": "1.4 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 1,
     "isotopes": {
@@ -5550,28 +5409,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Cadmium",
       "englishName": "Cadmium",
-      "elementOpenedYear": "1817",
+      "discoveryYear": "1817",
       "casNumber": "CAS7440-43-9",
-      "elementOpener": "79/90",
-      "countryOpener": "DE",
-      "elementShell": "K2-L8-M18-N18-O2-P0-Q0-R0",
-      "elementE": "48",
-      "elementP": "48",
-      "elementN": "64",
+      "discoverer": "79/90",
+      "discoveryCountry": "DE",
+      "electronShellConfig": "K2-L8-M18-N18-O2-P0-Q0-R0",
+      "electronCount": "48",
+      "protonCount": "48",
+      "neutronCount": "64",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 4d10 5s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2",
-      "elementPrice": "35.8",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Kr] 4d10 5s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2"
     },
     "properties": {
-      "elementMasse": "112.413818634622",
-      "elementDensity": "8.65",
-      "elementMeltingPoint": "321.07",
-      "elementBoilingPoint": "767.0",
-      "elValence": "1, 2",
-      "elementGroup": "5/II-",
-      "elementBlock": "d",
+      "atomicMass": "112.413818634622",
+      "density": "8.65",
+      "meltingPoint": "321.07",
+      "boilingPoint": "767.0",
+      "valence": "1, 2",
+      "group": "5/II-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -5589,33 +5446,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "158"
     },
     "electromagnetic": {
-      "es_electro": "13755158.1843191",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-1.99 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-2.3 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-2.59 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "7.27 ⋅ 10<sup><small>-8</small></sup>",
-      "es_temp": "0.517"
+      "electricalConductivity": "13755158.1843191",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-1.99 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-2.3 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-2.59 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "7.27 ⋅ 10<sup><small>-8</small></sup>",
+      "superconductingTemperature": "0.517"
     },
     "grid": {
-      "gridStructureNum": "2",
+      "structureCode": "2",
       "gridParams": "a=2.979 Å; c=5.618 Å",
-      "ratio": "1.886",
+      "axialRatio": "1.886",
       "debyeTemperature": "209",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23973",
-      "numberRTEC": "RTECSEU9800000",
+      "pubchemCid": "CID23973",
+      "rtecsNumber": "RTECSEU9800000",
       "brinellHardness": "203.0",
       "mohsHardness": "2.0",
       "bulkModulus": "42.0",
       "youngModulus": "50.0",
       "liquidDensity": "7.996",
-      "molarValue": "0.000012996",
+      "molarVolume": "0.000012996",
       "poissonRatio": "0.3",
       "shearModulus": "19.0",
       "soundSpeed": "2310.0",
@@ -5623,7 +5479,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.69",
-      "atomElectronEnergy": "-68.0"
+      "electronAffinity": "-68.0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -5632,12 +5488,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,2,0,-"
     },
     "prevalence": {
-      "prevalence1": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "6 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "5 ⋅ 10<sup><small>-9</small></sup>",
-      "prevalence4": "7.134101693 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence5": "1.5 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence6": "4.4 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "6 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "5 ⋅ 10<sup><small>-9</small></sup>",
+      "humanBody": "7.134101693 ⋅ 10<sup><small>-5</small></sup>",
+      "crust": "1.5 ⋅ 10<sup><small>-5</small></sup>",
+      "meteorites": "4.4 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 8,
     "ghs": [
@@ -5695,28 +5551,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Indium",
       "englishName": "Indium",
-      "elementOpenedYear": "1863",
+      "discoveryYear": "1863",
       "casNumber": "CAS7440-74-6",
-      "elementOpener": "58/83",
-      "countryOpener": "DE",
-      "elementShell": "K2-L8-M18-N18-O3-P0-Q0-R0",
-      "elementE": "49",
-      "elementP": "49",
-      "elementN": "66",
+      "discoverer": "58/83",
+      "discoveryCountry": "DE",
+      "electronShellConfig": "K2-L8-M18-N18-O3-P0-Q0-R0",
+      "electronCount": "49",
+      "protonCount": "49",
+      "neutronCount": "66",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 4d10 5s2 5p1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p1",
-      "elementPrice": "130",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Kr] 4d10 5s2 5p1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p1"
     },
     "properties": {
-      "elementMasse": "114.818266549865",
-      "elementDensity": "7.31",
-      "elementMeltingPoint": "156.6",
-      "elementBoilingPoint": "2072.0",
-      "elValence": "1, 2, 3",
-      "elementGroup": "5/III+",
-      "elementBlock": "p",
+      "atomicMass": "114.818266549865",
+      "density": "7.31",
+      "meltingPoint": "156.6",
+      "boilingPoint": "2072.0",
+      "valence": "1, 2, 3",
+      "group": "5/III+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -5734,38 +5588,37 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "193"
     },
     "electromagnetic": {
-      "es_electro": "11947431.30227",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-1.02 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-1.4 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-1.61 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "8.37 ⋅ 10<sup><small>-8</small></sup>",
-      "es_temp": "3.41"
+      "electricalConductivity": "11947431.30227",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-1.02 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-1.4 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-1.61 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "8.37 ⋅ 10<sup><small>-8</small></sup>",
+      "superconductingTemperature": "3.41"
     },
     "grid": {
-      "gridStructureNum": "10",
+      "structureCode": "10",
       "gridParams": "a=3.252 Å; c=4.946 Å",
-      "ratio": "1.52",
+      "axialRatio": "1.52",
       "debyeTemperature": "109",
-      "space1": "I4/mmm",
-      "space2": "139"
+      "spaceGroup": "I4/mmm",
+      "spaceGroupNumber": "139"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5359967",
-      "numberRTEC": "RTECSNL1050000",
+      "pubchemCid": "CID5359967",
+      "rtecsNumber": "RTECSNL1050000",
       "brinellHardness": "8.83",
       "mohsHardness": "1.2",
       "youngModulus": "11.0",
       "liquidDensity": "07.02",
-      "molarValue": "0.000015707",
+      "molarVolume": "0.000015707",
       "soundSpeed": "1215.0",
       "thermalConductivity": "81.8"
     },
     "reactivity": {
       "electronegativity": "1.78",
-      "atomElectronEnergy": "37.043"
+      "electronAffinity": "37.043"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -5774,11 +5627,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "3 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence2": "4 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "1.0 ⋅ 10<sup><small>-11</small></sup>",
-      "prevalence5": "2.5 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence6": "4.4 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "3 ⋅ 10<sup><small>-8</small></sup>",
+      "sun": "4 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "1.0 ⋅ 10<sup><small>-11</small></sup>",
+      "crust": "2.5 ⋅ 10<sup><small>-5</small></sup>",
+      "meteorites": "4.4 ⋅ 10<sup><small>-6</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -5809,27 +5662,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Stannum",
       "englishName": "Tin",
-      "elementOpenedYear": "3500 BC",
+      "discoveryYear": "3500 BC",
       "casNumber": "CAS7440-31-5",
-      "countryOpener": "Kestel",
-      "elementShell": "K2-L8-M18-N18-O4-P0-Q0-R0",
-      "elementE": "50",
-      "elementP": "50",
-      "elementN": "69",
+      "discoveryCountry": "Kestel",
+      "electronShellConfig": "K2-L8-M18-N18-O4-P0-Q0-R0",
+      "electronCount": "50",
+      "protonCount": "50",
+      "neutronCount": "69",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 4d10 5s2 5p2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p2",
-      "elementPrice": "13.5",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Kr] 4d10 5s2 5p2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p2"
     },
     "properties": {
-      "elementMasse": "118.71011319607",
-      "elementDensity": "7.287",
-      "elementMeltingPoint": "231.93",
-      "elementBoilingPoint": "2602.0",
-      "elValence": "2, 4",
-      "elementGroup": "5/IV+",
-      "elementBlock": "p",
+      "atomicMass": "118.71011319607",
+      "density": "7.287",
+      "meltingPoint": "231.93",
+      "boilingPoint": "2602.0",
+      "valence": "2, 4",
+      "group": "5/IV+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -5847,33 +5698,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "217"
     },
     "electromagnetic": {
-      "es_electro": "8695652.17391304",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "-2.27 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-3.1 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-3.68 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "1.15 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "3.72"
+      "electricalConductivity": "8695652.17391304",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "-2.27 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-3.1 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-3.68 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "1.15 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "3.72"
     },
     "grid": {
-      "gridStructureNum": "10",
+      "structureCode": "10",
       "gridParams": "a=5.831 Å; c=3.181 Å",
-      "ratio": "0.546",
+      "axialRatio": "0.546",
       "debyeTemperature": "195",
-      "space1": "I4<sub><small>1</small></sub>/amd",
-      "space2": "141"
+      "spaceGroup": "I4<sub><small>1</small></sub>/amd",
+      "spaceGroupNumber": "141"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5352426",
-      "numberRTEC": "RTECSXP7320000",
+      "pubchemCid": "CID5352426",
+      "rtecsNumber": "RTECSXP7320000",
       "brinellHardness": "51.0",
       "mohsHardness": "1.5",
       "bulkModulus": "58.0",
       "youngModulus": "50.0",
       "liquidDensity": "6.99",
-      "molarValue": "0.000016239",
+      "molarVolume": "0.000016239",
       "poissonRatio": "0.36",
       "shearModulus": "18.0",
       "soundSpeed": "2730.0",
@@ -5881,7 +5731,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.96",
-      "atomElectronEnergy": "107.2984"
+      "electronAffinity": "107.2984"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -5890,12 +5740,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,1,3,-"
     },
     "prevalence": {
-      "prevalence1": "4 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "9 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "9.9 ⋅ 10<sup><small>-10</small></sup>",
-      "prevalence4": "2.853640677 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence5": "0.00023",
-      "prevalence6": "1.2 ⋅ 10<sup><small>-4</small></sup>"
+      "universe": "4 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "9 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "9.9 ⋅ 10<sup><small>-10</small></sup>",
+      "humanBody": "2.853640677 ⋅ 10<sup><small>-5</small></sup>",
+      "crust": "0.00023",
+      "meteorites": "1.2 ⋅ 10<sup><small>-4</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -5969,27 +5819,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Stibium",
       "englishName": "Antimony",
-      "elementOpenedYear": "~1600 BC",
+      "discoveryYear": "~1600 BC",
       "casNumber": "CAS7440-36-0",
-      "countryOpener": "MiddleEast",
-      "elementShell": "K2-L8-M18-N18-O5-P0-Q0-R0",
-      "elementE": "51",
-      "elementP": "51",
-      "elementN": "71",
+      "discoveryCountry": "MiddleEast",
+      "electronShellConfig": "K2-L8-M18-N18-O5-P0-Q0-R0",
+      "electronCount": "51",
+      "protonCount": "51",
+      "neutronCount": "71",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 4d10 5s2 5p3 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p3",
-      "elementPrice": "12",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Kr] 4d10 5s2 5p3 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p3"
     },
     "properties": {
-      "elementMasse": "121.759784168018",
-      "elementDensity": "6.697",
-      "elementMeltingPoint": "630.63",
-      "elementBoilingPoint": "1635.0",
-      "elValence": "3, 4, 5",
-      "elementGroup": "5/V+",
-      "elementBlock": "p",
+      "atomicMass": "121.759784168018",
+      "density": "6.697",
+      "meltingPoint": "630.63",
+      "boilingPoint": "1635.0",
+      "valence": "3, 4, 5",
+      "group": "5/V+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -6007,39 +5855,38 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "206"
     },
     "electromagnetic": {
-      "es_electro": "2398081.53477218",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-7.3 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-1.09 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-1.327 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "4.17 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "2398081.53477218",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-7.3 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-1.09 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-1.327 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "4.17 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "5",
+      "structureCode": "5",
       "gridParams": "a(hex)=4.307 Å; c(hex)=11.27 Å",
-      "ratio": "2.62",
+      "axialRatio": "2.62",
       "debyeTemperature": "220",
-      "space1": "R_ 3m",
-      "space2": "166"
+      "spaceGroup": "R_ 3m",
+      "spaceGroupNumber": "166"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5354495",
-      "numberRTEC": "RTECSCC4025000",
+      "pubchemCid": "CID5354495",
+      "rtecsNumber": "RTECSCC4025000",
       "brinellHardness": "294.0",
       "mohsHardness": "3.0",
       "bulkModulus": "42.0",
       "youngModulus": "55.0",
       "liquidDensity": "6.53",
-      "molarValue": "0.000018181",
+      "molarVolume": "0.000018181",
       "shearModulus": "20.0",
       "soundSpeed": "3420.0",
       "thermalConductivity": "24.4"
     },
     "reactivity": {
       "electronegativity": "2.05",
-      "atomElectronEnergy": "101.059"
+      "electronAffinity": "101.059"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -6048,12 +5895,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "4 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence2": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "2.0 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence4": "1.1 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence5": "2.0 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence6": "1.2 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "4 ⋅ 10<sup><small>-8</small></sup>",
+      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "2.0 ⋅ 10<sup><small>-8</small></sup>",
+      "humanBody": "1.1 ⋅ 10<sup><small>-5</small></sup>",
+      "crust": "2.0 ⋅ 10<sup><small>-5</small></sup>",
+      "meteorites": "1.2 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 7,
     "ghs": [
@@ -6085,27 +5932,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Tellurium",
       "englishName": "Tellurium",
-      "elementOpenedYear": "1782",
+      "discoveryYear": "1782",
       "casNumber": "CAS13494-80-9",
-      "countryOpener": "RO",
-      "elementShell": "K2-L8-M18-N18-O6-P0-Q0-R0",
-      "elementE": "52",
-      "elementP": "52",
-      "elementN": "76",
+      "discoveryCountry": "RO",
+      "electronShellConfig": "K2-L8-M18-N18-O6-P0-Q0-R0",
+      "electronCount": "52",
+      "protonCount": "52",
+      "neutronCount": "76",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 4d10 5s2 5p4 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p4",
-      "elementPrice": "33.3",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Kr] 4d10 5s2 5p4 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p4"
     },
     "properties": {
-      "elementMasse": "127.603126893528",
-      "elementDensity": "6.24",
-      "elementMeltingPoint": "449.51",
-      "elementBoilingPoint": "988.0",
-      "elValence": "2, 4, 6",
-      "elementGroup": "5/VI+",
-      "elementBlock": "p",
+      "atomicMass": "127.603126893528",
+      "density": "6.24",
+      "meltingPoint": "449.51",
+      "boilingPoint": "988.0",
+      "valence": "2, 4, 6",
+      "group": "5/VI+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -6122,32 +5967,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "206"
     },
     "electromagnetic": {
-      "es_electro": "10000.0",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-2.43 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-3.9 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-4.98 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "0.0001"
+      "electricalConductivity": "10000.0",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-2.43 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-3.9 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-4.98 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "0.0001"
     },
     "grid": {
-      "gridStructureNum": "1 | 5",
+      "structureCode": "1 | 5",
       "gridParams": "a=4.457 Å; c=5.929",
-      "ratio": "1.330",
+      "axialRatio": "1.330",
       "debyeTemperature": "152",
-      "space1": "P3<sub><small>1</small></sub>21",
-      "space2": "152"
+      "spaceGroup": "P3<sub><small>1</small></sub>21",
+      "spaceGroupNumber": "152"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID6327182",
-      "numberRTEC": "RTECSWY2625000",
+      "pubchemCid": "CID6327182",
+      "rtecsNumber": "RTECSWY2625000",
       "brinellHardness": "180.0",
       "mohsHardness": "2.25",
       "bulkModulus": "65.0",
       "youngModulus": "43.0",
       "liquidDensity": "5.7",
-      "molarValue": "0.000020449",
+      "molarVolume": "0.000020449",
       "shearModulus": "16.0",
       "soundSpeed": "2610.0",
       "refractiveIndex": "1.000991",
@@ -6155,7 +5999,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "2.1",
-      "atomElectronEnergy": "190.161"
+      "electronAffinity": "190.161"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -6164,10 +6008,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,2,0,-"
     },
     "prevalence": {
-      "prevalence1": "9 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "1.2 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence5": "1.0 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence6": "2.1 ⋅ 10<sup><small>-4</small></sup>"
+      "universe": "9 ⋅ 10<sup><small>-7</small></sup>",
+      "humanBody": "1.2 ⋅ 10<sup><small>-5</small></sup>",
+      "crust": "1.0 ⋅ 10<sup><small>-7</small></sup>",
+      "meteorites": "2.1 ⋅ 10<sup><small>-4</small></sup>"
     },
     "colorIndex": 7,
     "ghs": [
@@ -6224,28 +6068,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Iodium",
       "englishName": "Iodine",
-      "elementOpenedYear": "1811",
+      "discoveryYear": "1811",
       "casNumber": "CAS7553-56-2",
-      "elementOpener": "78",
-      "countryOpener": "FR",
-      "elementShell": "K2-L8-M18-N18-O7-P0-Q0-R0",
-      "elementE": "53",
-      "elementP": "53",
-      "elementN": "74",
+      "discoverer": "78",
+      "discoveryCountry": "FR",
+      "electronShellConfig": "K2-L8-M18-N18-O7-P0-Q0-R0",
+      "electronCount": "53",
+      "protonCount": "53",
+      "neutronCount": "74",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 4d10 5s2 5p5 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p5",
-      "elementPrice": "20.3",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Kr] 4d10 5s2 5p5 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p5"
     },
     "properties": {
-      "elementMasse": "126.904472825143",
-      "elementDensity": "4.933",
-      "elementMeltingPoint": "113.7",
-      "elementBoilingPoint": "184.3",
-      "elValence": "1, 3, 4, 5, 7",
-      "elementGroup": "5/VII+",
-      "elementBlock": "p",
+      "atomicMass": "126.904472825143",
+      "density": "4.933",
+      "meltingPoint": "113.7",
+      "boilingPoint": "184.3",
+      "valence": "1, 3, 4, 5, 7",
+      "group": "5/VII+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -6262,31 +6104,30 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "198"
     },
     "electromagnetic": {
-      "es_electro": "7.69230769230769e-08",
-      "es_etype": "2",
-      "es_omvospr": "-2.22 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-4.5 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-1.14 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "13000000.0"
+      "electricalConductivity": "7.69230769230769e-08",
+      "electricalType": "2",
+      "volumeMagneticSusceptibility": "-2.22 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-4.5 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-1.14 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "13000000.0"
     },
     "grid": {
-      "gridStructureNum": "9 | 6",
+      "structureCode": "9 | 6",
       "gridParams": "a=7.18 Å; b=4.71 Å; c=9.81 Å",
       "debyeTemperature": "109",
-      "space1": "Cmca",
-      "space2": "64"
+      "spaceGroup": "Cmca",
+      "spaceGroupNumber": "64"
     },
     "additional": {
-      "elementColor": "9",
-      "numberCID": "CID807",
-      "numberRTEC": "RTECSNN1575000",
+      "pubchemCid": "CID807",
+      "rtecsNumber": "RTECSNN1575000",
       "bulkModulus": "7.7",
-      "molarValue": "0.000025689",
+      "molarVolume": "0.000025689",
       "thermalConductivity": "0.449"
     },
     "reactivity": {
       "electronegativity": "2.66",
-      "atomElectronEnergy": "295.1531"
+      "electronAffinity": "295.1531"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -6295,11 +6136,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,3,0,-"
     },
     "prevalence": {
-      "prevalence1": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "6 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence4": "2.853640677 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence5": "4.5 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence6": "2.5 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "1 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "6 ⋅ 10<sup><small>-6</small></sup>",
+      "humanBody": "2.853640677 ⋅ 10<sup><small>-5</small></sup>",
+      "crust": "4.5 ⋅ 10<sup><small>-5</small></sup>",
+      "meteorites": "2.5 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 15,
     "ghs": [
@@ -6328,28 +6169,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Xenon",
       "englishName": "Xenon",
-      "elementOpenedYear": "1898",
+      "discoveryYear": "1898",
       "casNumber": "CAS7440-63-3",
-      "elementOpener": "76/13",
-      "countryOpener": "GB",
-      "elementShell": "K2-L8-M18-N18-O8-P0-Q0-R0",
-      "elementE": "54",
-      "elementP": "54",
-      "elementN": "77",
+      "discoverer": "76/13",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L8-M18-N18-O8-P0-Q0-R0",
+      "electronCount": "54",
+      "protonCount": "54",
+      "neutronCount": "77",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Kr] 4d10 5s2 5p6 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p6",
-      "elementPrice": "180",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Kr] 4d10 5s2 5p6 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p6"
     },
     "properties": {
-      "elementMasse": "131.29277126863",
-      "elementDensity": "0.005894",
-      "elementMeltingPoint": "-111.75",
-      "elementBoilingPoint": "-108.099",
-      "elValence": "0",
-      "elementGroup": "5/VIII+",
-      "elementBlock": "p",
+      "atomicMass": "131.29277126863",
+      "density": "0.005894",
+      "meltingPoint": "-111.75",
+      "boilingPoint": "-108.099",
+      "valence": "0",
+      "group": "5/VIII+",
+      "block": "p",
       "aggregationState": "gas"
     },
     "thermo": {
@@ -6365,29 +6204,28 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "216"
     },
     "electromagnetic": {
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-2.54 ⋅ 10<sup><small>-8</small></sup>",
-      "es_umvospr": "-4.3 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-5.65 ⋅ 10<sup><small>-10</small></sup>"
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-2.54 ⋅ 10<sup><small>-8</small></sup>",
+      "massMagneticSusceptibility": "-4.3 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-5.65 ⋅ 10<sup><small>-10</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "6.200 Å",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "0",
-      "numberCID": "CID23991",
-      "numberRTEC": "RTECSZE1280000",
-      "molarValue": "0.0223",
+      "pubchemCid": "CID23991",
+      "rtecsNumber": "RTECSZE1280000",
+      "molarVolume": "0.0223",
       "soundSpeed": "178.0",
       "refractiveIndex": "1.000702",
       "thermalConductivity": "0.00565"
     },
     "reactivity": {
       "electronegativity": "2.6",
-      "atomElectronEnergy": "-77.0"
+      "electronAffinity": "-77.0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -6396,9 +6234,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,0,0,SA"
     },
     "prevalence": {
-      "prevalence1": "1 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence3": "5 ⋅ 10<sup><small>-10</small></sup>",
-      "prevalence5": "3.0 ⋅ 10<sup><small>-9</small></sup>"
+      "universe": "1 ⋅ 10<sup><small>-6</small></sup>",
+      "ocean": "5 ⋅ 10<sup><small>-10</small></sup>",
+      "crust": "3.0 ⋅ 10<sup><small>-9</small></sup>"
     },
     "colorIndex": 0,
     "ghs": [
@@ -6458,28 +6296,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Caesium",
       "englishName": "Caesium",
-      "elementOpenedYear": "1860",
+      "discoveryYear": "1860",
       "casNumber": "CAS7440-46-2",
-      "elementOpener": "28/29",
-      "countryOpener": "DE",
-      "elementShell": "K2-L8-M18-N18-O8-P1-Q0-R0",
-      "elementE": "55",
-      "elementP": "55",
-      "elementN": "78",
+      "discoverer": "28/29",
+      "discoveryCountry": "DE",
+      "electronShellConfig": "K2-L8-M18-N18-O8-P1-Q0-R0",
+      "electronCount": "55",
+      "protonCount": "55",
+      "neutronCount": "78",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 6s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p6 6s1",
-      "elementPrice": "165",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 6s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p6 6s1"
     },
     "properties": {
-      "elementMasse": "132.905451958556",
-      "elementDensity": "1.93",
-      "elementMeltingPoint": "28.5",
-      "elementBoilingPoint": "671.0",
-      "elValence": "1",
-      "elementGroup": "6/I+",
-      "elementBlock": "s",
+      "atomicMass": "132.905451958556",
+      "density": "1.93",
+      "meltingPoint": "28.5",
+      "boilingPoint": "671.0",
+      "valence": "1",
+      "group": "6/I+",
+      "block": "s",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -6497,36 +6333,35 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "343"
     },
     "electromagnetic": {
-      "es_electro": "4878048.7804878",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "-5.26 ⋅ 10<sup><small>-6</small></sup>",
-      "es_umvospr": "2.8 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "3.72 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "2.05 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "4878048.7804878",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "-5.26 ⋅ 10<sup><small>-6</small></sup>",
+      "massMagneticSusceptibility": "2.8 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "3.72 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "2.05 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "3",
+      "structureCode": "3",
       "gridParams": "6.140 Å",
       "debyeTemperature": "40.5",
-      "space1": "Im_ 3m",
-      "space2": "229"
+      "spaceGroup": "Im_ 3m",
+      "spaceGroupNumber": "229"
     },
     "additional": {
-      "elementColor": "8",
-      "numberCID": "CID5354618",
-      "numberRTEC": "RTECSFK9225000",
+      "pubchemCid": "CID5354618",
+      "rtecsNumber": "RTECSFK9225000",
       "brinellHardness": "0.15",
       "mohsHardness": "0.2",
       "bulkModulus": "1.6",
       "youngModulus": "1.7",
       "liquidDensity": "1.843",
-      "molarValue": "0.000070732",
+      "molarVolume": "0.000070732",
       "thermalConductivity": "35.9"
     },
     "reactivity": {
       "electronegativity": "0.79",
-      "atomElectronEnergy": "45.505"
+      "electronAffinity": "45.505"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -6535,12 +6370,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,3,2,W"
     },
     "prevalence": {
-      "prevalence1": "8 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence2": "8 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "5 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence4": "2 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence5": "0.0003",
-      "prevalence6": "1.4 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "8 ⋅ 10<sup><small>-8</small></sup>",
+      "sun": "8 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "5 ⋅ 10<sup><small>-8</small></sup>",
+      "humanBody": "2 ⋅ 10<sup><small>-6</small></sup>",
+      "crust": "0.0003",
+      "meteorites": "1.4 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 2,
     "ghs": [
@@ -6567,28 +6402,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Barium",
       "englishName": "Barium",
-      "elementOpenedYear": "1808",
+      "discoveryYear": "1808",
       "casNumber": "CAS7440-39-3",
-      "elementOpener": "7",
-      "countryOpener": "GB",
-      "elementShell": "K2-L8-M18-N18-O8-P2-Q0-R0",
-      "elementE": "56",
-      "elementP": "56",
-      "elementN": "81",
+      "discoverer": "7",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L8-M18-N18-O8-P2-Q0-R0",
+      "electronCount": "56",
+      "protonCount": "56",
+      "neutronCount": "81",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p6 6s2",
-      "elementPrice": "12",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p6 6s2"
     },
     "properties": {
-      "elementMasse": "137.32667172235",
-      "elementDensity": "3.62",
-      "elementMeltingPoint": "727.0",
-      "elementBoilingPoint": "1845.0",
-      "elValence": "2",
-      "elementGroup": "6/II+",
-      "elementBlock": "s",
+      "atomicMass": "137.32667172235",
+      "density": "3.62",
+      "meltingPoint": "727.0",
+      "boilingPoint": "1845.0",
+      "valence": "2",
+      "group": "6/II+",
+      "block": "s",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -6606,36 +6439,35 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "268"
     },
     "electromagnetic": {
-      "es_electro": "3012048.19277108",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "3.966 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "1.13 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "1.552 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "3.32 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "3012048.19277108",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "3.966 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "1.13 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "1.552 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "3.32 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "3",
+      "structureCode": "3",
       "gridParams": "5.020 Å",
-      "space1": "Im_ 3m",
-      "space2": "229"
+      "spaceGroup": "Im_ 3m",
+      "spaceGroupNumber": "229"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5355457",
-      "numberRTEC": "RTECSCQ8370000",
+      "pubchemCid": "CID5355457",
+      "rtecsNumber": "RTECSCQ8370000",
       "mohsHardness": "1.25",
       "bulkModulus": "9.6",
       "youngModulus": "13.0",
       "liquidDensity": "3.338",
-      "molarValue": "0.000039125",
+      "molarVolume": "0.000039125",
       "shearModulus": "4.9",
       "soundSpeed": "1620.0",
       "thermalConductivity": "18.4"
     },
     "reactivity": {
       "electronegativity": "0.89",
-      "atomElectronEnergy": "13.954"
+      "electronAffinity": "13.954"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -6644,12 +6476,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,2,2,W"
     },
     "prevalence": {
-      "prevalence1": "1 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence2": "9.9 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "3 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence4": "3.139004745 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence5": "0.0425",
-      "prevalence6": "2.7 ⋅ 10<sup><small>-4</small></sup>"
+      "universe": "1 ⋅ 10<sup><small>-6</small></sup>",
+      "sun": "9.9 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "3 ⋅ 10<sup><small>-6</small></sup>",
+      "humanBody": "3.139004745 ⋅ 10<sup><small>-5</small></sup>",
+      "crust": "0.0425",
+      "meteorites": "2.7 ⋅ 10<sup><small>-4</small></sup>"
     },
     "colorIndex": 9,
     "ghs": [
@@ -6702,28 +6534,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Lanthanum",
       "englishName": "Lanthanum",
-      "elementOpenedYear": "1839",
+      "discoveryYear": "1839",
       "casNumber": "CAS7439-91-0",
-      "elementOpener": "45",
-      "countryOpener": "SE",
-      "elementShell": "K2-L8-M18-N18-O9-P2-Q0-R0",
-      "elementE": "57",
-      "elementP": "57",
-      "elementN": "82",
+      "discoverer": "45",
+      "discoveryCountry": "SE",
+      "electronShellConfig": "K2-L8-M18-N18-O9-P2-Q0-R0",
+      "electronCount": "57",
+      "protonCount": "57",
+      "neutronCount": "82",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 5d1 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p6 5d1 6s2",
-      "elementPrice": "95",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 5d1 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p6 5d1 6s2"
     },
     "properties": {
-      "elementMasse": "138.90547548286",
-      "elementDensity": "6.146",
-      "elementMeltingPoint": "920.0",
-      "elementBoilingPoint": "3464.0",
-      "elValence": "3",
-      "elementGroup": "6/III-",
-      "elementBlock": "d",
+      "atomicMass": "138.90547548286",
+      "density": "6.146",
+      "meltingPoint": "920.0",
+      "boilingPoint": "3464.0",
+      "valence": "3",
+      "group": "6/III-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -6741,33 +6571,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "240"
     },
     "electromagnetic": {
-      "es_electro": "1626016.2601626",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "6.761 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "1.1 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "1.528 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "6.15 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "4.88"
+      "electricalConductivity": "1626016.2601626",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "6.761 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "1.1 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "1.528 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "6.15 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "4.88"
     },
     "grid": {
-      "gridStructureNum": "11",
+      "structureCode": "11",
       "gridParams": "a=3.772 Å; c=12.14 Å",
-      "ratio": "3.22",
+      "axialRatio": "3.22",
       "debyeTemperature": "135",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23926",
+      "pubchemCid": "CID23926",
       "brinellHardness": "363.0",
       "mohsHardness": "2.5",
       "vickersHardness": "491.0",
       "bulkModulus": "27.9",
       "youngModulus": "36.6",
       "liquidDensity": "5.94",
-      "molarValue": "0.000022601",
+      "molarVolume": "0.000022601",
       "poissonRatio": "0.28",
       "shearModulus": "14.3",
       "soundSpeed": "2475.0",
@@ -6775,7 +6604,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.1",
-      "atomElectronEnergy": "53.795"
+      "electronAffinity": "53.795"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -6784,12 +6613,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "prevalence1": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "3.4 ⋅ 10<sup><small>-10</small></sup>",
-      "prevalence4": "1.37 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence5": "0.0039",
-      "prevalence6": "2.8 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "3.4 ⋅ 10<sup><small>-10</small></sup>",
+      "humanBody": "1.37 ⋅ 10<sup><small>-4</small></sup>",
+      "crust": "0.0039",
+      "meteorites": "2.8 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -6824,28 +6653,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Cerium",
       "englishName": "Cerium",
-      "elementOpenedYear": "1803",
+      "discoveryYear": "1803",
       "casNumber": "CAS7440-45-1",
-      "elementOpener": "32/16/91",
-      "countryOpener": "DE, SE",
-      "elementShell": "K2-L8-M18-N19-O9-P2-Q0-R0",
-      "elementE": "58",
-      "elementP": "58",
-      "elementN": "82",
+      "discoverer": "32/16/91",
+      "discoveryCountry": "DE, SE",
+      "electronShellConfig": "K2-L8-M18-N19-O9-P2-Q0-R0",
+      "electronCount": "58",
+      "protonCount": "58",
+      "neutronCount": "82",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f1 5d1 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f2 5s2 5p6 6s2",
-      "elementPrice": "38",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f1 5d1 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f2 5s2 5p6 6s2"
     },
     "properties": {
-      "elementMasse": "140.115695483639",
-      "elementDensity": "6.77",
-      "elementMeltingPoint": "795.0",
-      "elementBoilingPoint": "3443.0",
-      "elValence": "3, 4",
-      "elementGroup": "6/III-",
-      "elementBlock": "f",
+      "atomicMass": "140.115695483639",
+      "density": "6.77",
+      "meltingPoint": "795.0",
+      "boilingPoint": "3443.0",
+      "valence": "3, 4",
+      "group": "6/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -6863,32 +6690,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "235"
     },
     "electromagnetic": {
-      "es_electro": "1207729.46859903",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "0.0014716",
-      "es_umvospr": "2.2 ⋅ 10<sup><small>-7</small></sup>",
-      "es_mmvospr": "3.0826 ⋅ 10<sup><small>-8</small></sup>",
-      "es_udel": "8.28 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "0.022"
+      "electricalConductivity": "1207729.46859903",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "0.0014716",
+      "massMagneticSusceptibility": "2.2 ⋅ 10<sup><small>-7</small></sup>",
+      "molarMagneticSusceptibility": "3.0826 ⋅ 10<sup><small>-8</small></sup>",
+      "electricalResistivity": "8.28 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "0.022"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "5.160 Å",
       "debyeTemperature": "138",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23974",
+      "pubchemCid": "CID23974",
       "brinellHardness": "412.0",
       "mohsHardness": "2.5",
       "vickersHardness": "270.0",
       "bulkModulus": "21.5",
       "youngModulus": "33.6",
       "liquidDensity": "6.55",
-      "molarValue": "0.000020947",
+      "molarVolume": "0.000020947",
       "poissonRatio": "0.24",
       "shearModulus": "13.5",
       "soundSpeed": "2100.0",
@@ -6896,7 +6722,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.12",
-      "atomElectronEnergy": "55.0"
+      "electronAffinity": "55.0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -6905,12 +6731,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,2,2,-"
     },
     "prevalence": {
-      "prevalence1": "1 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence2": "4 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "1.2 ⋅ 10<sup><small>-10</small></sup>",
-      "prevalence4": "5.707281354 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence5": "0.00665",
-      "prevalence6": "7.5 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "1 ⋅ 10<sup><small>-6</small></sup>",
+      "sun": "4 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "1.2 ⋅ 10<sup><small>-10</small></sup>",
+      "humanBody": "5.707281354 ⋅ 10<sup><small>-5</small></sup>",
+      "crust": "0.00665",
+      "meteorites": "7.5 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -6954,28 +6780,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Praseodymium",
       "englishName": "Praseodymium",
-      "elementOpenedYear": "1885",
+      "discoveryYear": "1885",
       "casNumber": "CAS7440-10-0",
-      "elementOpener": "71",
-      "countryOpener": "AT",
-      "elementShell": "K2-L8-M18-N21-O8-P2-Q0-R0",
-      "elementE": "59",
-      "elementP": "59",
-      "elementN": "82",
+      "discoverer": "71",
+      "discoveryCountry": "AT",
+      "electronShellConfig": "K2-L8-M18-N21-O8-P2-Q0-R0",
+      "electronCount": "59",
+      "protonCount": "59",
+      "neutronCount": "82",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f3 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f3 5s2 5p6 6s2",
-      "elementPrice": "265",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f3 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f3 5s2 5p6 6s2"
     },
     "properties": {
-      "elementMasse": "140.907659640811",
-      "elementDensity": "6.77",
-      "elementMeltingPoint": "935.0",
-      "elementBoilingPoint": "3130.0",
-      "elValence": "3",
-      "elementGroup": "6/III-",
-      "elementBlock": "f",
+      "atomicMass": "140.907659640811",
+      "density": "6.77",
+      "meltingPoint": "935.0",
+      "boilingPoint": "3130.0",
+      "valence": "3",
+      "group": "6/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -6993,32 +6817,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "239"
     },
     "electromagnetic": {
-      "es_electro": "1428571.42857143",
-      "es_etype": "2",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "0.0028087",
-      "es_umvospr": "4.23 ⋅ 10<sup><small>-7</small></sup>",
-      "es_mmvospr": "5.9604 ⋅ 10<sup><small>-8</small></sup>",
-      "es_udel": "7 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "1428571.42857143",
+      "electricalType": "2",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "0.0028087",
+      "massMagneticSusceptibility": "4.23 ⋅ 10<sup><small>-7</small></sup>",
+      "molarMagneticSusceptibility": "5.9604 ⋅ 10<sup><small>-8</small></sup>",
+      "electricalResistivity": "7 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "11",
+      "structureCode": "11",
       "gridParams": "a=3.673 Å; c=11.84 Å",
-      "ratio": "3.22",
+      "axialRatio": "3.22",
       "debyeTemperature": "152",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23942",
+      "pubchemCid": "CID23942",
       "brinellHardness": "481.0",
       "mohsHardness": "1.41",
       "vickersHardness": "400.0",
       "bulkModulus": "28.8",
       "youngModulus": "37.3",
       "liquidDensity": "6.5",
-      "molarValue": "0.000021221",
+      "molarVolume": "0.000021221",
       "poissonRatio": "0.28",
       "shearModulus": "14.8",
       "soundSpeed": "2280.0",
@@ -7026,7 +6849,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.13",
-      "atomElectronEnergy": "10.539"
+      "electronAffinity": "10.539"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -7035,11 +6858,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "prevalence1": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "6.0 ⋅ 10<sup><small>-11</small></sup>",
-      "prevalence5": "0.00092",
-      "prevalence6": "9.8 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "6.0 ⋅ 10<sup><small>-11</small></sup>",
+      "crust": "0.00092",
+      "meteorites": "9.8 ⋅ 10<sup><small>-6</small></sup>"
     },
     "colorIndex": 7,
     "ghs": [
@@ -7070,28 +6893,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Neodymium",
       "englishName": "Neodymium",
-      "elementOpenedYear": "1885",
+      "discoveryYear": "1885",
       "casNumber": "CAS7440-00-8",
-      "elementOpener": "71",
-      "countryOpener": "AT",
-      "elementShell": "K2-L8-M18-N22-O8-P2-Q0-R0",
-      "elementE": "60",
-      "elementP": "60",
-      "elementN": "84",
+      "discoverer": "71",
+      "discoveryCountry": "AT",
+      "electronShellConfig": "K2-L8-M18-N22-O8-P2-Q0-R0",
+      "electronCount": "60",
+      "protonCount": "60",
+      "neutronCount": "84",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f4 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f4 5s2 5p6 6s2",
-      "elementPrice": "145",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f4 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f4 5s2 5p6 6s2"
     },
     "properties": {
-      "elementMasse": "144.241585785245",
-      "elementDensity": "7.01",
-      "elementMeltingPoint": "1024.0",
-      "elementBoilingPoint": "3074.0",
-      "elValence": "3, 4",
-      "elementGroup": "6/III-",
-      "elementBlock": "f",
+      "atomicMass": "144.241585785245",
+      "density": "7.01",
+      "meltingPoint": "1024.0",
+      "boilingPoint": "3074.0",
+      "valence": "3, 4",
+      "group": "6/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -7109,33 +6930,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "229"
     },
     "electromagnetic": {
-      "es_electro": "1555209.9533437",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "0.0033648",
-      "es_umvospr": "4.8 ⋅ 10<sup><small>-7</small></sup>",
-      "es_mmvospr": "6.9235 ⋅ 10<sup><small>-8</small></sup>",
-      "es_udel": "6.43 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "1555209.9533437",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "0.0033648",
+      "massMagneticSusceptibility": "4.8 ⋅ 10<sup><small>-7</small></sup>",
+      "molarMagneticSusceptibility": "6.9235 ⋅ 10<sup><small>-8</small></sup>",
+      "electricalResistivity": "6.43 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "11",
+      "structureCode": "11",
       "gridParams": "a=3.658 Å; c=11.80 Å",
-      "ratio": "3.23",
+      "axialRatio": "3.23",
       "debyeTemperature": "163",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23934",
-      "numberRTEC": "RTECSQO8575000",
+      "pubchemCid": "CID23934",
+      "rtecsNumber": "RTECSQO8575000",
       "brinellHardness": "265.0",
       "mohsHardness": "1.23",
       "vickersHardness": "343.0",
       "bulkModulus": "31.8",
       "youngModulus": "41.4",
       "liquidDensity": "6.89",
-      "molarValue": "0.000020577",
+      "molarVolume": "0.000020577",
       "poissonRatio": "0.28",
       "shearModulus": "16.3",
       "soundSpeed": "2330.0",
@@ -7143,7 +6963,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.14",
-      "atomElectronEnergy": "9.406"
+      "electronAffinity": "9.406"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -7152,11 +6972,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "prevalence1": "1 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence2": "3 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "2.8 ⋅ 10<sup><small>-10</small></sup>",
-      "prevalence5": "0.00415",
-      "prevalence6": "5.0 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "1 ⋅ 10<sup><small>-6</small></sup>",
+      "sun": "3 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "2.8 ⋅ 10<sup><small>-10</small></sup>",
+      "crust": "0.00415",
+      "meteorites": "5.0 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -7211,28 +7031,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Promethium",
       "englishName": "Promethium",
-      "elementOpenedYear": "1945",
+      "discoveryYear": "1945",
       "casNumber": "CAS7440-12-2",
-      "elementOpener": "92/93/94",
-      "countryOpener": "US",
-      "elementShell": "K2-L8-M18-N23-O8-P2-Q0-R0",
-      "elementE": "61",
-      "elementP": "61",
-      "elementN": "84",
+      "discoverer": "92/93/94",
+      "discoveryCountry": "US",
+      "electronShellConfig": "K2-L8-M18-N23-O8-P2-Q0-R0",
+      "electronCount": "61",
+      "protonCount": "61",
+      "neutronCount": "84",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f5 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f5 5s2 5p6 6s2",
-      "elementPrice": "280",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Xe] 4f5 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f5 5s2 5p6 6s2"
     },
     "properties": {
-      "elementMasse": "145.229483134757",
-      "elementDensity": "7.26",
-      "elementMeltingPoint": "1042.0",
-      "elementBoilingPoint": "3000.0",
-      "elValence": "3",
-      "elementGroup": "6/III-",
-      "elementBlock": "f",
+      "atomicMass": "145.229483134757",
+      "density": "7.26",
+      "meltingPoint": "1042.0",
+      "boilingPoint": "3000.0",
+      "valence": "3",
+      "group": "6/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -7249,31 +7067,30 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "236"
     },
     "electromagnetic": {
-      "es_electro": "1333333.33333333",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_udel": "7.5 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "1333333.33333333",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "electricalResistivity": "7.5 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "11",
+      "structureCode": "11",
       "gridParams": "a=3.65 Å; c=11.65 Å",
-      "ratio": "3.19",
+      "axialRatio": "3.19",
       "debyeTemperature": "163",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
       "bulkModulus": "33.0",
       "youngModulus": "46.0",
-      "molarValue": "1.996145374449e-05",
+      "molarVolume": "1.996145374449e-05",
       "poissonRatio": "0.28",
       "shearModulus": "18.0",
       "thermalConductivity": "17.9"
     },
     "reactivity": {
       "electronegativity": "1.13",
-      "atomElectronEnergy": "12.45"
+      "electronAffinity": "12.45"
     },
     "nucleus": {
       "halfLife": "2.6234/1",
@@ -7312,28 +7129,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Samarium",
       "englishName": "Samarium",
-      "elementOpenedYear": "1879",
+      "discoveryYear": "1879",
       "casNumber": "CAS7440-19-9",
-      "elementOpener": "37",
-      "countryOpener": "FR",
-      "elementShell": "K2-L8-M18-N24-O8-P2-Q0-R0",
-      "elementE": "62",
-      "elementP": "62",
-      "elementN": "88",
+      "discoverer": "37",
+      "discoveryCountry": "FR",
+      "electronShellConfig": "K2-L8-M18-N24-O8-P2-Q0-R0",
+      "electronCount": "62",
+      "protonCount": "62",
+      "neutronCount": "88",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f6 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f6 5s2 5p6 6s2",
-      "elementPrice": "443",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f6 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f6 5s2 5p6 6s2"
     },
     "properties": {
-      "elementMasse": "150.364653219894",
-      "elementDensity": "7.52",
-      "elementMeltingPoint": "1072.0",
-      "elementBoilingPoint": "1794.0",
-      "elValence": "2, 3",
-      "elementGroup": "6/III-",
-      "elementBlock": "f",
+      "atomicMass": "150.364653219894",
+      "density": "7.52",
+      "meltingPoint": "1072.0",
+      "boilingPoint": "1794.0",
+      "valence": "2, 3",
+      "group": "6/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -7351,32 +7166,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "229"
     },
     "electromagnetic": {
-      "es_electro": "1063829.78723404",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "8.1618 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "1.11 ⋅ 10<sup><small>-7</small></sup>",
-      "es_mmvospr": "1.669 ⋅ 10<sup><small>-8</small></sup>",
-      "es_udel": "9.4 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "1063829.78723404",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "8.1618 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "1.11 ⋅ 10<sup><small>-7</small></sup>",
+      "molarMagneticSusceptibility": "1.669 ⋅ 10<sup><small>-8</small></sup>",
+      "electricalResistivity": "9.4 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "5",
+      "structureCode": "5",
       "gridParams": "a(H)=3.621 Å; c(H)=26.25 Å",
-      "ratio": "7.25",
+      "axialRatio": "7.25",
       "debyeTemperature": "169",
-      "space1": "R_ 3m",
-      "space2": "166"
+      "spaceGroup": "R_ 3m",
+      "spaceGroupNumber": "166"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23951",
+      "pubchemCid": "CID23951",
       "brinellHardness": "441.0",
       "mohsHardness": "1.44",
       "vickersHardness": "412.0",
       "bulkModulus": "37.8",
       "youngModulus": "49.7",
       "liquidDensity": "7.16",
-      "molarValue": "0.000020449",
+      "molarVolume": "0.000020449",
       "poissonRatio": "0.27",
       "shearModulus": "19.5",
       "soundSpeed": "2130.0",
@@ -7384,7 +7198,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.17",
-      "atomElectronEnergy": "15.63"
+      "electronAffinity": "15.63"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -7393,12 +7207,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "prevalence1": "5 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "4.5 ⋅ 10<sup><small>-11</small></sup>",
-      "prevalence4": "7.134102 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence5": "6.0 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence6": "1.7 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "5 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "4.5 ⋅ 10<sup><small>-11</small></sup>",
+      "humanBody": "7.134102 ⋅ 10<sup><small>-8</small></sup>",
+      "crust": "6.0 ⋅ 10<sup><small>-4</small></sup>",
+      "meteorites": "1.7 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -7453,28 +7267,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Europium",
       "englishName": "Europium",
-      "elementOpenedYear": "1901",
+      "discoveryYear": "1901",
       "casNumber": "CAS7440-53-1",
-      "elementOpener": "39",
-      "countryOpener": "FR",
-      "elementShell": "K2-L8-M18-N25-O8-P2-Q0-R0",
-      "elementE": "63",
-      "elementP": "63",
-      "elementN": "89",
+      "discoverer": "39",
+      "discoveryCountry": "FR",
+      "electronShellConfig": "K2-L8-M18-N25-O8-P2-Q0-R0",
+      "electronCount": "63",
+      "protonCount": "63",
+      "neutronCount": "89",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f7 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f7 5s2 5p6 6s2",
-      "elementPrice": "165",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f7 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f7 5s2 5p6 6s2"
     },
     "properties": {
-      "elementMasse": "151.964376904171",
-      "elementDensity": "5.244",
-      "elementMeltingPoint": "822.0",
-      "elementBoilingPoint": "1529.0",
-      "elValence": "2, 3",
-      "elementGroup": "6/III-",
-      "elementBlock": "f",
+      "atomicMass": "151.964376904171",
+      "density": "5.244",
+      "meltingPoint": "822.0",
+      "boilingPoint": "1529.0",
+      "valence": "2, 3",
+      "group": "6/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -7492,37 +7304,36 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "233"
     },
     "electromagnetic": {
-      "es_electro": "1111111.11111111",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "0.0014473",
-      "es_umvospr": "2.76 ⋅ 10<sup><small>-7</small></sup>",
-      "es_mmvospr": "4.1942 ⋅ 10<sup><small>-8</small></sup>",
-      "es_udel": "9 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "1111111.11111111",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "0.0014473",
+      "massMagneticSusceptibility": "2.76 ⋅ 10<sup><small>-7</small></sup>",
+      "molarMagneticSusceptibility": "4.1942 ⋅ 10<sup><small>-8</small></sup>",
+      "electricalResistivity": "9 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "3",
+      "structureCode": "3",
       "gridParams": "4.581 Å",
       "debyeTemperature": "118",
-      "space1": "Im_ 3m",
-      "space2": "229"
+      "spaceGroup": "Im_ 3m",
+      "spaceGroupNumber": "229"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23981",
+      "pubchemCid": "CID23981",
       "mohsHardness": "3.07",
       "vickersHardness": "167.0",
       "bulkModulus": "8.3",
       "youngModulus": "18.2",
       "liquidDensity": "5.13",
-      "molarValue": "0.000028979",
+      "molarVolume": "0.000028979",
       "poissonRatio": "0.15",
       "shearModulus": "7.9",
       "thermalConductivity": "13.9"
     },
     "reactivity": {
       "electronegativity": "1.20",
-      "atomElectronEnergy": "11.2"
+      "electronAffinity": "11.2"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -7531,11 +7342,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "prevalence1": "5 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence2": "5 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence3": "1.3 ⋅ 10<sup><small>-11</small></sup>",
-      "prevalence5": "2.0 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence6": "5.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "5 ⋅ 10<sup><small>-8</small></sup>",
+      "sun": "5 ⋅ 10<sup><small>-8</small></sup>",
+      "ocean": "1.3 ⋅ 10<sup><small>-11</small></sup>",
+      "crust": "2.0 ⋅ 10<sup><small>-4</small></sup>",
+      "meteorites": "5.9 ⋅ 10<sup><small>-6</small></sup>"
     },
     "colorIndex": 9,
     "ghs": [
@@ -7570,28 +7381,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Gadolinium",
       "englishName": "Gadolinium",
-      "elementOpenedYear": "1880",
+      "discoveryYear": "1880",
       "casNumber": "CAS7440-54-2",
-      "elementOpener": "38",
-      "countryOpener": "CH",
-      "elementShell": "K2-L8-M18-N25-O9-P2-Q0-R0",
-      "elementE": "64",
-      "elementP": "64",
-      "elementN": "93",
+      "discoverer": "38",
+      "discoveryCountry": "CH",
+      "electronShellConfig": "K2-L8-M18-N25-O9-P2-Q0-R0",
+      "electronCount": "64",
+      "protonCount": "64",
+      "neutronCount": "93",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f7 5d1 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f7 5s2 5p6 5d1 6s2",
-      "elementPrice": "420",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f7 5d1 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f7 5s2 5p6 5d1 6s2"
     },
     "properties": {
-      "elementMasse": "157.252129498784",
-      "elementDensity": "7.90",
-      "elementMeltingPoint": "1312.0",
-      "elementBoilingPoint": "3273.0",
-      "elValence": "3",
-      "elementGroup": "6/III-",
-      "elementBlock": "f",
+      "atomicMass": "157.252129498784",
+      "density": "7.90",
+      "meltingPoint": "1312.0",
+      "boilingPoint": "3273.0",
+      "valence": "3",
+      "group": "6/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -7609,29 +7418,28 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "237"
     },
     "electromagnetic": {
-      "es_electro": "763358.778625954",
-      "es_etype": "1",
-      "es_mtype": "ferromagnetic",
-      "es_udel": "1.31 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "763358.778625954",
+      "electricalType": "1",
+      "magneticType": "ferromagnetic",
+      "electricalResistivity": "1.31 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "2",
+      "structureCode": "2",
       "gridParams": "a=3.636 Å; c=5.783 Å",
-      "ratio": "1.590",
+      "axialRatio": "1.590",
       "debyeTemperature": "182",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23982",
-      "numberRTEC": "RTECSLW3850000",
+      "pubchemCid": "CID23982",
+      "rtecsNumber": "RTECSLW3850000",
       "mohsHardness": "5.13",
       "vickersHardness": "570.0",
       "bulkModulus": "37.9",
       "youngModulus": "54.8",
       "liquidDensity": "7.4",
-      "molarValue": "0.000019903",
+      "molarVolume": "0.000019903",
       "poissonRatio": "0.26",
       "shearModulus": "21.8",
       "soundSpeed": "2680.0",
@@ -7639,7 +7447,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.2",
-      "atomElectronEnergy": "13.22"
+      "electronAffinity": "13.22"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -7648,11 +7456,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "prevalence1": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "7 ⋅ 10<sup><small>-11</small></sup>",
-      "prevalence5": "6.2 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence6": "2.3 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "7 ⋅ 10<sup><small>-11</small></sup>",
+      "crust": "6.2 ⋅ 10<sup><small>-4</small></sup>",
+      "meteorites": "2.3 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -7707,28 +7515,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Terbium",
       "englishName": "Terbium",
-      "elementOpenedYear": "1843",
+      "discoveryYear": "1843",
       "casNumber": "CAS7440-27-9",
-      "elementOpener": "45",
-      "countryOpener": "SE",
-      "elementShell": "K2-L8-M18-N27-O8-P2-Q0-R0",
-      "elementE": "65",
-      "elementP": "65",
-      "elementN": "94",
+      "discoverer": "45",
+      "discoveryCountry": "SE",
+      "electronShellConfig": "K2-L8-M18-N27-O8-P2-Q0-R0",
+      "electronCount": "65",
+      "protonCount": "65",
+      "neutronCount": "94",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f9 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f8 5s2 5p6 5d1 6s2",
-      "elementPrice": "356",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f9 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f8 5s2 5p6 5d1 6s2"
     },
     "properties": {
-      "elementMasse": "158.925353687351",
-      "elementDensity": "8.23",
-      "elementMeltingPoint": "1356.0",
-      "elementBoilingPoint": "3230.0",
-      "elValence": "3, 4",
-      "elementGroup": "6/III-",
-      "elementBlock": "f",
+      "atomicMass": "158.925353687351",
+      "density": "8.23",
+      "meltingPoint": "1356.0",
+      "boilingPoint": "3230.0",
+      "valence": "3, 4",
+      "group": "6/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -7746,32 +7552,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "221"
     },
     "electromagnetic": {
-      "es_electro": "869565.217391304",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "0.1117784",
-      "es_umvospr": "1.36 ⋅ 10<sup><small>-5</small></sup>",
-      "es_mmvospr": "2.161385 ⋅ 10<sup><small>-6</small></sup>",
-      "es_udel": "1.15 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "869565.217391304",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "0.1117784",
+      "massMagneticSusceptibility": "1.36 ⋅ 10<sup><small>-5</small></sup>",
+      "molarMagneticSusceptibility": "2.161385 ⋅ 10<sup><small>-6</small></sup>",
+      "electricalResistivity": "1.15 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "2",
+      "structureCode": "2",
       "gridParams": "a=3.600 Å; c=5.694 Å",
-      "ratio": "1.582",
+      "axialRatio": "1.582",
       "debyeTemperature": "176",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23958",
+      "pubchemCid": "CID23958",
       "brinellHardness": "677.0",
       "mohsHardness": "2.33",
       "vickersHardness": "863.0",
       "bulkModulus": "38.7",
       "youngModulus": "55.7",
       "liquidDensity": "7.65",
-      "molarValue": "0.000019336",
+      "molarVolume": "0.000019336",
       "poissonRatio": "0.26",
       "shearModulus": "22.1",
       "soundSpeed": "2620.0",
@@ -7779,7 +7584,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.2",
-      "atomElectronEnergy": "12.67"
+      "electronAffinity": "12.67"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -7788,11 +7593,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "prevalence1": "5 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence2": "1 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence3": "1.4 ⋅ 10<sup><small>-11</small></sup>",
-      "prevalence5": "1.2 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence6": "3.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "5 ⋅ 10<sup><small>-8</small></sup>",
+      "sun": "1 ⋅ 10<sup><small>-8</small></sup>",
+      "ocean": "1.4 ⋅ 10<sup><small>-11</small></sup>",
+      "crust": "1.2 ⋅ 10<sup><small>-4</small></sup>",
+      "meteorites": "3.9 ⋅ 10<sup><small>-6</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -7823,28 +7628,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Dysprosium",
       "englishName": "Dysprosium",
-      "elementOpenedYear": "1886",
+      "discoveryYear": "1886",
       "casNumber": "CAS7429-91-6",
-      "elementOpener": "37",
-      "countryOpener": "FR",
-      "elementShell": "K2-L8-M18-N28-O8-P2-Q0-R0",
-      "elementE": "66",
-      "elementP": "66",
-      "elementN": "96",
+      "discoverer": "37",
+      "discoveryCountry": "FR",
+      "electronShellConfig": "K2-L8-M18-N28-O8-P2-Q0-R0",
+      "electronCount": "66",
+      "protonCount": "66",
+      "neutronCount": "96",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f10 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f10 5s2 5p6 6s2",
-      "elementPrice": "500",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f10 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f10 5s2 5p6 6s2"
     },
     "properties": {
-      "elementMasse": "162.49947173356",
-      "elementDensity": "8.54",
-      "elementMeltingPoint": "1407.0",
-      "elementBoilingPoint": "2567.0",
-      "elValence": "3",
-      "elementGroup": "6/III-",
-      "elementBlock": "f",
+      "atomicMass": "162.49947173356",
+      "density": "8.54",
+      "meltingPoint": "1407.0",
+      "boilingPoint": "2567.0",
+      "valence": "3",
+      "group": "6/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -7862,32 +7665,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "229"
     },
     "electromagnetic": {
-      "es_electro": "1079913.60691145",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "0.046603",
-      "es_umvospr": "5.45 ⋅ 10<sup><small>-6</small></sup>",
-      "es_mmvospr": "8.85625 ⋅ 10<sup><small>-7</small></sup>",
-      "es_udel": "9.26 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "1079913.60691145",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "0.046603",
+      "massMagneticSusceptibility": "5.45 ⋅ 10<sup><small>-6</small></sup>",
+      "molarMagneticSusceptibility": "8.85625 ⋅ 10<sup><small>-7</small></sup>",
+      "electricalResistivity": "9.26 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "2",
+      "structureCode": "2",
       "gridParams": "a=3.593 Å; c=5.654 Å",
-      "ratio": "1.574",
+      "axialRatio": "1.574",
       "debyeTemperature": "183",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23912",
+      "pubchemCid": "CID23912",
       "brinellHardness": "500.0",
       "mohsHardness": "1.8",
       "vickersHardness": "540.0",
       "bulkModulus": "40.5",
       "youngModulus": "61.4",
       "liquidDensity": "8.37",
-      "molarValue": "0.000019004",
+      "molarVolume": "0.000019004",
       "poissonRatio": "0.25",
       "shearModulus": "24.7",
       "soundSpeed": "2710.0",
@@ -7895,7 +7697,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.22",
-      "atomElectronEnergy": "33.96"
+      "electronAffinity": "33.96"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -7904,11 +7706,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "prevalence1": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "9.1 ⋅ 10<sup><small>-11</small></sup>",
-      "prevalence5": "5.2 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence6": "2.7 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "9.1 ⋅ 10<sup><small>-11</small></sup>",
+      "crust": "5.2 ⋅ 10<sup><small>-4</small></sup>",
+      "meteorites": "2.7 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -7963,28 +7765,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Holmium",
       "englishName": "Holmium",
-      "elementOpenedYear": "1878",
+      "discoveryYear": "1878",
       "casNumber": "CAS7440-60-0",
-      "elementOpener": "72/84/95",
-      "countryOpener": "SE, CH",
-      "elementShell": "K2-L8-M18-N29-O8-P2-Q0-R0",
-      "elementE": "67",
-      "elementP": "67",
-      "elementN": "98",
+      "discoverer": "72/84/95",
+      "discoveryCountry": "SE, CH",
+      "electronShellConfig": "K2-L8-M18-N29-O8-P2-Q0-R0",
+      "electronCount": "67",
+      "protonCount": "67",
+      "neutronCount": "98",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f11 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f11 5s2 5p6 6s2",
-      "elementPrice": "790",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f11 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f11 5s2 5p6 6s2"
     },
     "properties": {
-      "elementMasse": "164.930329134847",
-      "elementDensity": "8.79",
-      "elementMeltingPoint": "1472.0",
-      "elementBoilingPoint": "2700.0",
-      "elValence": "3",
-      "elementGroup": "6/III-",
-      "elementBlock": "f",
+      "atomicMass": "164.930329134847",
+      "density": "8.79",
+      "meltingPoint": "1472.0",
+      "boilingPoint": "2700.0",
+      "valence": "3",
+      "group": "6/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -8002,32 +7802,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "216"
     },
     "electromagnetic": {
-      "es_electro": "1228501.22850123",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "0.0482845",
-      "es_umvospr": "5.49 ⋅ 10<sup><small>-6</small></sup>",
-      "es_mmvospr": "9.05467 ⋅ 10<sup><small>-7</small></sup>",
-      "es_udel": "8.14 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "1228501.22850123",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "0.0482845",
+      "massMagneticSusceptibility": "5.49 ⋅ 10<sup><small>-6</small></sup>",
+      "molarMagneticSusceptibility": "9.05467 ⋅ 10<sup><small>-7</small></sup>",
+      "electricalResistivity": "8.14 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "2",
+      "structureCode": "2",
       "gridParams": "a=3.577 Å; c=5.616 Å",
-      "ratio": "1.570",
+      "axialRatio": "1.570",
       "debyeTemperature": "190",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23988",
+      "pubchemCid": "CID23988",
       "brinellHardness": "746.0",
       "mohsHardness": "1.65",
       "vickersHardness": "481.0",
       "bulkModulus": "40.2",
       "youngModulus": "64.8",
       "liquidDensity": "8.34",
-      "molarValue": "0.000018753",
+      "molarVolume": "0.000018753",
       "poissonRatio": "0.23",
       "shearModulus": "26.3",
       "soundSpeed": "2760.0",
@@ -8035,7 +7834,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.23",
-      "atomElectronEnergy": "32.61"
+      "electronAffinity": "32.61"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -8044,10 +7843,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "prevalence1": "5 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence3": "2.2 ⋅ 10<sup><small>-11</small></sup>",
-      "prevalence5": "1.3 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence6": "5.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "5 ⋅ 10<sup><small>-8</small></sup>",
+      "ocean": "2.2 ⋅ 10<sup><small>-11</small></sup>",
+      "crust": "1.3 ⋅ 10<sup><small>-4</small></sup>",
+      "meteorites": "5.9 ⋅ 10<sup><small>-6</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -8078,28 +7877,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Erbium",
       "englishName": "Erbium",
-      "elementOpenedYear": "1843",
+      "discoveryYear": "1843",
       "casNumber": "CAS7440-52-0",
-      "elementOpener": "45",
-      "countryOpener": "SE",
-      "elementShell": "K2-L8-M18-N30-O8-P2-Q0-R0",
-      "elementE": "68",
-      "elementP": "68",
-      "elementN": "99",
+      "discoverer": "45",
+      "discoveryCountry": "SE",
+      "electronShellConfig": "K2-L8-M18-N30-O8-P2-Q0-R0",
+      "electronCount": "68",
+      "protonCount": "68",
+      "neutronCount": "99",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f12 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f12 5s2 5p6 6s2",
-      "elementPrice": "238",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f12 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f12 5s2 5p6 6s2"
     },
     "properties": {
-      "elementMasse": "167.259084222944",
-      "elementDensity": "9.066",
-      "elementMeltingPoint": "1529.0",
-      "elementBoilingPoint": "2868.0",
-      "elValence": "3",
-      "elementGroup": "6/III-",
-      "elementBlock": "f",
+      "atomicMass": "167.259084222944",
+      "density": "9.066",
+      "meltingPoint": "1529.0",
+      "boilingPoint": "2868.0",
+      "valence": "3",
+      "group": "6/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -8117,32 +7914,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "235"
     },
     "electromagnetic": {
-      "es_electro": "1162790.69767442",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "0.0341788",
-      "es_umvospr": "3.77 ⋅ 10<sup><small>-6</small></sup>",
-      "es_mmvospr": "6.30566 ⋅ 10<sup><small>-7</small></sup>",
-      "es_udel": "8.6 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "1162790.69767442",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "0.0341788",
+      "massMagneticSusceptibility": "3.77 ⋅ 10<sup><small>-6</small></sup>",
+      "molarMagneticSusceptibility": "6.30566 ⋅ 10<sup><small>-7</small></sup>",
+      "electricalResistivity": "8.6 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "2",
+      "structureCode": "2",
       "gridParams": "a=3.560 Å; c=5.587 Å",
-      "ratio": "1.570",
+      "axialRatio": "1.570",
       "debyeTemperature": "188",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23980",
+      "pubchemCid": "CID23980",
       "brinellHardness": "814.0",
       "mohsHardness": "1.97",
       "vickersHardness": "430–700",
       "bulkModulus": "44.4",
       "youngModulus": "69.9",
       "liquidDensity": "8.86",
-      "molarValue": "0.000018449",
+      "molarVolume": "0.000018449",
       "poissonRatio": "0.24",
       "shearModulus": "28.3",
       "soundSpeed": "2830.0",
@@ -8150,7 +7946,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.24",
-      "atomElectronEnergy": "30.1"
+      "electronAffinity": "30.1"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -8159,11 +7955,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "prevalence1": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "9.0 ⋅ 10<sup><small>-11</small></sup>",
-      "prevalence5": "3.5 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence6": "1.8 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "9.0 ⋅ 10<sup><small>-11</small></sup>",
+      "crust": "3.5 ⋅ 10<sup><small>-4</small></sup>",
+      "meteorites": "1.8 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -8214,28 +8010,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Thulium",
       "englishName": "Thulium",
-      "elementOpenedYear": "1879",
+      "discoveryYear": "1879",
       "casNumber": "CAS7440-30-4",
-      "elementOpener": "72",
-      "countryOpener": "SE",
-      "elementShell": "K2-L8-M18-N31-O8-P2-Q0-R0",
-      "elementE": "69",
-      "elementP": "69",
-      "elementN": "100",
+      "discoverer": "72",
+      "discoveryCountry": "SE",
+      "electronShellConfig": "K2-L8-M18-N31-O8-P2-Q0-R0",
+      "electronCount": "69",
+      "protonCount": "69",
+      "neutronCount": "100",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f13 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f13 5s2 5p6 6s2",
-      "elementPrice": "550",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f13 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f13 5s2 5p6 6s2"
     },
     "properties": {
-      "elementMasse": "168.934218907193",
-      "elementDensity": "9.32",
-      "elementMeltingPoint": "1545.0",
-      "elementBoilingPoint": "1950.0",
-      "elValence": "2, 3",
-      "elementGroup": "6/III-",
-      "elementBlock": "f",
+      "atomicMass": "168.934218907193",
+      "density": "9.32",
+      "meltingPoint": "1545.0",
+      "boilingPoint": "1950.0",
+      "valence": "2, 3",
+      "group": "6/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -8253,39 +8047,38 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "222"
     },
     "electromagnetic": {
-      "es_electro": "1479289.9408284",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "0.0185488",
-      "es_umvospr": "1.99 ⋅ 10<sup><small>-6</small></sup>",
-      "es_mmvospr": "3.36179 ⋅ 10<sup><small>-7</small></sup>",
-      "es_udel": "6.76 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "1479289.9408284",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "0.0185488",
+      "massMagneticSusceptibility": "1.99 ⋅ 10<sup><small>-6</small></sup>",
+      "molarMagneticSusceptibility": "3.36179 ⋅ 10<sup><small>-7</small></sup>",
+      "electricalResistivity": "6.76 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "2",
+      "structureCode": "2",
       "gridParams": "a=3.540 Å; c=5.56 Å",
-      "ratio": "1.570",
+      "axialRatio": "1.570",
       "debyeTemperature": "200",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23961",
+      "pubchemCid": "CID23961",
       "brinellHardness": "471.0",
       "mohsHardness": "1.77",
       "vickersHardness": "520.0",
       "bulkModulus": "44.5",
       "youngModulus": "74.0",
       "liquidDensity": "8.56",
-      "molarValue": "0.000018126",
+      "molarVolume": "0.000018126",
       "poissonRatio": "0.21",
       "shearModulus": "30.5",
       "thermalConductivity": "16.9"
     },
     "reactivity": {
       "electronegativity": "1.25",
-      "atomElectronEnergy": "99.0"
+      "electronAffinity": "99.0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -8294,11 +8087,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "prevalence1": "1 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence2": "2 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence3": "2.0 ⋅ 10<sup><small>-11</small></sup>",
-      "prevalence5": "5.2 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence6": "2.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "1 ⋅ 10<sup><small>-8</small></sup>",
+      "sun": "2 ⋅ 10<sup><small>-8</small></sup>",
+      "ocean": "2.0 ⋅ 10<sup><small>-11</small></sup>",
+      "crust": "5.2 ⋅ 10<sup><small>-5</small></sup>",
+      "meteorites": "2.9 ⋅ 10<sup><small>-6</small></sup>"
     },
     "colorIndex": 5,
     "ghs": [
@@ -8329,28 +8122,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Ytterbium",
       "englishName": "Ytterbium",
-      "elementOpenedYear": "1878",
+      "discoveryYear": "1878",
       "casNumber": "CAS7440-64-4",
-      "elementOpener": "38",
-      "countryOpener": "CH",
-      "elementShell": "K2-L8-M18-N32-O8-P2-Q0-R0",
-      "elementE": "70",
-      "elementP": "70",
-      "elementN": "103",
+      "discoverer": "38",
+      "discoveryCountry": "CH",
+      "electronShellConfig": "K2-L8-M18-N32-O8-P2-Q0-R0",
+      "electronCount": "70",
+      "protonCount": "70",
+      "neutronCount": "103",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f14 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 6s2",
-      "elementPrice": "340",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f14 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 6s2"
     },
     "properties": {
-      "elementMasse": "173.045",
-      "elementDensity": "6.9",
-      "elementMeltingPoint": "824.0",
-      "elementBoilingPoint": "1196.0",
-      "elValence": "2, 3",
-      "elementGroup": "6/III-",
-      "elementBlock": "f",
+      "atomicMass": "173.045",
+      "density": "6.9",
+      "meltingPoint": "824.0",
+      "boilingPoint": "1196.0",
+      "valence": "2, 3",
+      "group": "6/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -8368,31 +8159,30 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "242"
     },
     "electromagnetic": {
-      "es_electro": "4000000.0",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "3.88 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "5.9 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "1.02 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "2.5 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "4000000.0",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "3.88 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "5.9 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "1.02 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "2.5 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "5.490 Å",
       "debyeTemperature": "118",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23992",
-      "numberRTEC": "RTECSZG1925000",
+      "pubchemCid": "CID23992",
+      "rtecsNumber": "RTECSZG1925000",
       "brinellHardness": "343.0",
       "vickersHardness": "206.0",
       "bulkModulus": "30.5",
       "youngModulus": "23.9",
       "liquidDensity": "6.21",
-      "molarValue": "0.000026339",
+      "molarVolume": "0.000026339",
       "poissonRatio": "0.21",
       "shearModulus": "9.9",
       "soundSpeed": "1590.0",
@@ -8400,7 +8190,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.1",
-      "atomElectronEnergy": "-1.93"
+      "electronAffinity": "-1.93"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -8409,11 +8199,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "prevalence1": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "8.0 ⋅ 10<sup><small>-11</small></sup>",
-      "prevalence5": "2.8 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence6": "1.8 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "8.0 ⋅ 10<sup><small>-11</small></sup>",
+      "crust": "2.8 ⋅ 10<sup><small>-4</small></sup>",
+      "meteorites": "1.8 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 9,
     "ghs": [
@@ -8468,27 +8258,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Lutetium",
       "englishName": "Lutetium",
-      "elementOpenedYear": "1906",
+      "discoveryYear": "1906",
       "casNumber": "CAS7439-94-3",
-      "elementOpener": "96/71",
-      "countryOpener": "FR, AT",
-      "elementShell": "K2-L8-M18-N32-O9-P2-Q0-R0",
-      "elementE": "71",
-      "elementP": "71",
-      "elementN": "104",
+      "discoverer": "96/71",
+      "discoveryCountry": "FR, AT",
+      "electronShellConfig": "K2-L8-M18-N32-O9-P2-Q0-R0",
+      "electronCount": "71",
+      "protonCount": "71",
+      "neutronCount": "104",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f14 5d1 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d1 5f1 6s2",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f14 5d1 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d1 5f1 6s2"
     },
     "properties": {
-      "elementMasse": "174.96669",
-      "elementDensity": "9.84",
-      "elementMeltingPoint": "1663.0",
-      "elementBoilingPoint": "3402.0",
-      "elValence": "3",
-      "elementGroup": "6/III-",
-      "elementBlock": "d",
+      "atomicMass": "174.96669",
+      "density": "9.84",
+      "meltingPoint": "1663.0",
+      "boilingPoint": "3402.0",
+      "valence": "3",
+      "group": "6/III-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -8506,39 +8295,38 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "258"
     },
     "electromagnetic": {
-      "es_electro": "1718213.05841924",
-      "es_etype": "1",
-      "es_omvospr": "1.18 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "1.2 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "2.1 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "5.82 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "0.1"
+      "electricalConductivity": "1718213.05841924",
+      "electricalType": "1",
+      "volumeMagneticSusceptibility": "1.18 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "1.2 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "2.1 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "5.82 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "0.1"
     },
     "grid": {
-      "gridStructureNum": "2",
+      "structureCode": "2",
       "gridParams": "a=3.503 Å; c=5.551 Å",
-      "ratio": "1.585",
+      "axialRatio": "1.585",
       "debyeTemperature": "183",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23929",
+      "pubchemCid": "CID23929",
       "brinellHardness": "893.0",
       "mohsHardness": "2.6",
       "vickersHardness": "1160.0",
       "bulkModulus": "47.6",
       "youngModulus": "68.6",
       "liquidDensity": "9.3",
-      "molarValue": "0.000017779",
+      "molarVolume": "0.000017779",
       "poissonRatio": "0.26",
       "shearModulus": "27.2",
       "thermalConductivity": "16.4"
     },
     "reactivity": {
       "electronegativity": "1.27",
-      "atomElectronEnergy": "23.04"
+      "electronAffinity": "23.04"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -8547,11 +8335,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,1,-"
     },
     "prevalence": {
-      "prevalence1": "1 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence2": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "1.5 ⋅ 10<sup><small>-11</small></sup>",
-      "prevalence5": "8.0 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence6": "2.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "1 ⋅ 10<sup><small>-8</small></sup>",
+      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "1.5 ⋅ 10<sup><small>-11</small></sup>",
+      "crust": "8.0 ⋅ 10<sup><small>-5</small></sup>",
+      "meteorites": "2.9 ⋅ 10<sup><small>-6</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -8586,28 +8374,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Hafnium",
       "englishName": "Hafnium",
-      "elementOpenedYear": "1923",
+      "discoveryYear": "1923",
       "casNumber": "CAS7440-58-6",
-      "elementOpener": "97/98",
-      "countryOpener": "DK",
-      "elementShell": "K2-L8-M18-N32-O10-P2-Q0-R0",
-      "elementE": "72",
-      "elementP": "72",
-      "elementN": "106",
+      "discoverer": "97/98",
+      "discoveryCountry": "DK",
+      "electronShellConfig": "K2-L8-M18-N32-O10-P2-Q0-R0",
+      "electronCount": "72",
+      "protonCount": "72",
+      "neutronCount": "106",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f14 5d2 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d2 6s2",
-      "elementPrice": "450",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f14 5d2 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d2 6s2"
     },
     "properties": {
-      "elementMasse": "178.484981221495",
-      "elementDensity": "13.31",
-      "elementMeltingPoint": "2233.0",
-      "elementBoilingPoint": "4603.0",
-      "elValence": "4",
-      "elementGroup": "6/IV-",
-      "elementBlock": "d",
+      "atomicMass": "178.484981221495",
+      "density": "13.31",
+      "meltingPoint": "2233.0",
+      "boilingPoint": "4603.0",
+      "valence": "4",
+      "group": "6/IV-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -8625,33 +8411,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "263"
     },
     "electromagnetic": {
-      "es_electro": "3021148.03625378",
-      "es_etype": "1",
-      "es_omvospr": "7.05 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "5.3 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "9.46 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "3.31 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "0.128"
+      "electricalConductivity": "3021148.03625378",
+      "electricalType": "1",
+      "volumeMagneticSusceptibility": "7.05 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "5.3 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "9.46 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "3.31 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "0.128"
     },
     "grid": {
-      "gridStructureNum": "2 | 3",
+      "structureCode": "2 | 3",
       "gridParams": "a=3.196 Å; c=5.051 Å | a=3.60 Å",
-      "ratio": "1.580",
+      "axialRatio": "1.580",
       "debyeTemperature": "252",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "4",
-      "numberCID": "CID23986",
-      "numberRTEC": "RTECSMG4600000",
+      "pubchemCid": "CID23986",
+      "rtecsNumber": "RTECSMG4600000",
       "brinellHardness": "1700.0",
       "mohsHardness": "5.5",
       "vickersHardness": "1760.0",
       "bulkModulus": "110.0",
       "youngModulus": "78.0",
       "liquidDensity": "12.0",
-      "molarValue": "0.0000134102",
+      "molarVolume": "0.0000134102",
       "poissonRatio": "0.37",
       "shearModulus": "30.0",
       "soundSpeed": "3010.0",
@@ -8659,7 +8444,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.3",
-      "atomElectronEnergy": "17.18"
+      "electronAffinity": "17.18"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -8668,11 +8453,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "7 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence2": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "8.0 ⋅ 10<sup><small>-10</small></sup>",
-      "prevalence5": "3.0 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence6": "1.7 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "7 ⋅ 10<sup><small>-8</small></sup>",
+      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "8.0 ⋅ 10<sup><small>-10</small></sup>",
+      "crust": "3.0 ⋅ 10<sup><small>-4</small></sup>",
+      "meteorites": "1.7 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 6,
     "ghs": [
@@ -8719,28 +8504,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Tantalum",
       "englishName": "Tantalum",
-      "elementOpenedYear": "1802",
+      "discoveryYear": "1802",
       "casNumber": "CAS7440-25-7",
-      "elementOpener": "81",
-      "countryOpener": "SE",
-      "elementShell": "K2-L8-M18-N32-O11-P2-Q0-R0",
-      "elementE": "73",
-      "elementP": "73",
-      "elementN": "108",
+      "discoverer": "81",
+      "discoveryCountry": "SE",
+      "electronShellConfig": "K2-L8-M18-N32-O11-P2-Q0-R0",
+      "electronCount": "73",
+      "protonCount": "73",
+      "neutronCount": "108",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f14 5d3 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d3 6s2",
-      "elementPrice": "95",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f14 5d3 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d3 6s2"
     },
     "properties": {
-      "elementMasse": "180.947878335825",
-      "elementDensity": "16.69",
-      "elementMeltingPoint": "3017.0",
-      "elementBoilingPoint": "5458.0",
-      "elValence": "3, 4, 5",
-      "elementGroup": "6/V-",
-      "elementBlock": "d",
+      "atomicMass": "180.947878335825",
+      "density": "16.69",
+      "meltingPoint": "3017.0",
+      "boilingPoint": "5458.0",
+      "valence": "3, 4, 5",
+      "group": "6/V-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -8758,33 +8541,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "217"
     },
     "electromagnetic": {
-      "es_electro": "7633587.78625954",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "1.782 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "1.07 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "1.936 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "1.31 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "4.47"
+      "electricalConductivity": "7633587.78625954",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "1.782 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "1.07 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "1.936 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "1.31 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "4.47"
     },
     "grid": {
-      "gridStructureNum": "3",
+      "structureCode": "3",
       "gridParams": "3.310 Å",
       "debyeTemperature": "250",
-      "space1": "Im_ 3m",
-      "space2": "229"
+      "spaceGroup": "Im_ 3m",
+      "spaceGroupNumber": "229"
     },
     "additional": {
-      "elementColor": "4",
-      "numberCID": "CID23956",
-      "numberRTEC": "RTECSWW5505000",
+      "pubchemCid": "CID23956",
+      "rtecsNumber": "RTECSWW5505000",
       "brinellHardness": "800.0",
       "mohsHardness": "6.5",
       "vickersHardness": "873.0",
       "bulkModulus": "200.0",
       "youngModulus": "186.0",
       "liquidDensity": "15.0",
-      "molarValue": "0.0000108677",
+      "molarVolume": "0.0000108677",
       "poissonRatio": "0.34",
       "shearModulus": "69.0",
       "soundSpeed": "3400.0",
@@ -8792,7 +8574,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.5",
-      "atomElectronEnergy": "31.0"
+      "electronAffinity": "31.0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -8801,11 +8583,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "8 ⋅ 10<sup><small>-9</small></sup>",
-      "prevalence3": "2.0 ⋅ 10<sup><small>-10</small></sup>",
-      "prevalence4": "2.8536407 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence5": "2.0 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence6": "2.0 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "8 ⋅ 10<sup><small>-9</small></sup>",
+      "ocean": "2.0 ⋅ 10<sup><small>-10</small></sup>",
+      "humanBody": "2.8536407 ⋅ 10<sup><small>-7</small></sup>",
+      "crust": "2.0 ⋅ 10<sup><small>-4</small></sup>",
+      "meteorites": "2.0 ⋅ 10<sup><small>-6</small></sup>"
     },
     "colorIndex": 8,
     "ghs": [
@@ -8840,28 +8622,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Wolframium",
       "englishName": "Tungsten",
-      "elementOpenedYear": "1783",
+      "discoveryYear": "1783",
       "casNumber": "CAS7440-33-7",
-      "elementOpener": "85/86",
-      "countryOpener": "ES",
-      "elementShell": "K2-L8-M18-N32-O12-P2-Q0-R0",
-      "elementE": "74",
-      "elementP": "74",
-      "elementN": "110",
+      "discoverer": "85/86",
+      "discoveryCountry": "ES",
+      "electronShellConfig": "K2-L8-M18-N32-O12-P2-Q0-R0",
+      "electronCount": "74",
+      "protonCount": "74",
+      "neutronCount": "110",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f14 5d4 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d4 6s2",
-      "elementPrice": "44",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f14 5d4 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d4 6s2"
     },
     "properties": {
-      "elementMasse": "183.841779591731",
-      "elementDensity": "19.25",
-      "elementMeltingPoint": "3422.0",
-      "elementBoilingPoint": "5555.0",
-      "elValence": "2, 3, 4, 5, 6",
-      "elementGroup": "6/VI-",
-      "elementBlock": "d",
+      "atomicMass": "183.841779591731",
+      "density": "19.25",
+      "meltingPoint": "3422.0",
+      "boilingPoint": "5555.0",
+      "valence": "2, 3, 4, 5, 6",
+      "group": "6/VI-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -8879,33 +8659,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "210"
     },
     "electromagnetic": {
-      "es_electro": "18939393.9393939",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "7.51 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "4.59 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "8.44 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "5.28 ⋅ 10<sup><small>-8</small></sup>",
-      "es_temp": "0.015"
+      "electricalConductivity": "18939393.9393939",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "7.51 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "4.59 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "8.44 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "5.28 ⋅ 10<sup><small>-8</small></sup>",
+      "superconductingTemperature": "0.015"
     },
     "grid": {
-      "gridStructureNum": "3 | 7",
+      "structureCode": "3 | 7",
       "gridParams": "3.160 Å | z=8",
       "debyeTemperature": "383",
-      "space1": "Im_ 3m",
-      "space2": "229"
+      "spaceGroup": "Im_ 3m",
+      "spaceGroupNumber": "229"
     },
     "additional": {
-      "elementColor": "4",
-      "numberCID": "CID23964",
-      "numberRTEC": "RTECSYO7175000",
+      "pubchemCid": "CID23964",
+      "rtecsNumber": "RTECSYO7175000",
       "brinellHardness": "2570.0",
       "mohsHardness": "7.5",
       "vickersHardness": "3430.0",
       "bulkModulus": "310.0",
       "youngModulus": "411.0",
       "liquidDensity": "17.6",
-      "molarValue": "0.0000095501",
+      "molarVolume": "0.0000095501",
       "poissonRatio": "0.28",
       "shearModulus": "161.0",
       "soundSpeed": "4620.0",
@@ -8913,7 +8692,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "2.36",
-      "atomElectronEnergy": "78.76"
+      "electronAffinity": "78.76"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -8922,12 +8701,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,1,1,-"
     },
     "prevalence": {
-      "prevalence1": "5 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence2": "4 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "1.2 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence4": "2.853641 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence5": "1.25 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence6": "1.2 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "5 ⋅ 10<sup><small>-8</small></sup>",
+      "sun": "4 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "1.2 ⋅ 10<sup><small>-8</small></sup>",
+      "humanBody": "2.853641 ⋅ 10<sup><small>-8</small></sup>",
+      "crust": "1.25 ⋅ 10<sup><small>-4</small></sup>",
+      "meteorites": "1.2 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 6,
     "ghs": [
@@ -8973,28 +8752,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Rhenium",
       "englishName": "Rhenium",
-      "elementOpenedYear": "1925",
+      "discoveryYear": "1925",
       "casNumber": "CAS7440-15-5",
-      "elementOpener": "99/100/101",
-      "countryOpener": "DE",
-      "elementShell": "K2-L8-M18-N32-O13-P2-Q0-R0",
-      "elementE": "75",
-      "elementP": "75",
-      "elementN": "111",
+      "discoverer": "99/100/101",
+      "discoveryCountry": "DE",
+      "electronShellConfig": "K2-L8-M18-N32-O13-P2-Q0-R0",
+      "electronCount": "75",
+      "protonCount": "75",
+      "neutronCount": "111",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f14 5d5 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d5 6s2",
-      "elementPrice": "300",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Xe] 4f14 5d5 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d5 6s2"
     },
     "properties": {
-      "elementMasse": "186.206707351458",
-      "elementDensity": "21.02",
-      "elementMeltingPoint": "3186.0",
-      "elementBoilingPoint": "5596.0",
-      "elValence": "1, 2, 3, 4, 5, 6, 7",
-      "elementGroup": "6/VII-",
-      "elementBlock": "d",
+      "atomicMass": "186.206707351458",
+      "density": "21.02",
+      "meltingPoint": "3186.0",
+      "boilingPoint": "5596.0",
+      "valence": "1, 2, 3, 4, 5, 6, 7",
+      "group": "6/VII-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -9012,34 +8789,33 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "217"
     },
     "electromagnetic": {
-      "es_electro": "5181347.15025907",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "9.59 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "4.56 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "8.49 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "1.93 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "1.7"
+      "electricalConductivity": "5181347.15025907",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "9.59 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "4.56 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "8.49 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "1.93 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "1.7"
     },
     "grid": {
-      "gridStructureNum": "2",
+      "structureCode": "2",
       "gridParams": "a=2.761 Å; c=4.456 Å",
-      "ratio": "1.614",
+      "axialRatio": "1.614",
       "debyeTemperature": "416",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "4",
-      "numberCID": "CID23947",
-      "numberRTEC": "RTECSVI0780000",
+      "pubchemCid": "CID23947",
+      "rtecsNumber": "RTECSVI0780000",
       "brinellHardness": "1320.0",
       "mohsHardness": "7.0",
       "vickersHardness": "2450.0",
       "bulkModulus": "370.0",
       "youngModulus": "463.0",
       "liquidDensity": "18.9",
-      "molarValue": "0.00000885856",
+      "molarVolume": "0.00000885856",
       "poissonRatio": "0.3",
       "shearModulus": "178.0",
       "soundSpeed": "4700.0",
@@ -9047,7 +8823,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.9",
-      "atomElectronEnergy": "5.8273"
+      "electronAffinity": "5.8273"
     },
     "nucleus": {
       "halfLife": "41577000000/1",
@@ -9056,11 +8832,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "2 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence2": "1 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence3": "1.0 ⋅ 10<sup><small>-10</small></sup>",
-      "prevalence5": "7.0 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence6": "4.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "2 ⋅ 10<sup><small>-8</small></sup>",
+      "sun": "1 ⋅ 10<sup><small>-8</small></sup>",
+      "ocean": "1.0 ⋅ 10<sup><small>-10</small></sup>",
+      "crust": "7.0 ⋅ 10<sup><small>-8</small></sup>",
+      "meteorites": "4.9 ⋅ 10<sup><small>-6</small></sup>"
     },
     "colorIndex": 6,
     "ghs": [
@@ -9092,28 +8868,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Osmium",
       "englishName": "Osmium",
-      "elementOpenedYear": "1803",
+      "discoveryYear": "1803",
       "casNumber": "CAS7440-04-2",
-      "elementOpener": "52",
-      "countryOpener": "GB",
-      "elementShell": "K2-L8-M18-N32-O14-P2-Q0-R0",
-      "elementE": "76",
-      "elementP": "76",
-      "elementN": "114",
+      "discoverer": "52",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L8-M18-N32-O14-P2-Q0-R0",
+      "electronCount": "76",
+      "protonCount": "76",
+      "neutronCount": "114",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f14 5d6 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d6 6s2",
-      "elementPrice": "650",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f14 5d6 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d6 6s2"
     },
     "properties": {
-      "elementMasse": "190.22486145925",
-      "elementDensity": "22.59",
-      "elementMeltingPoint": "3033.0",
-      "elementBoilingPoint": "5012.0",
-      "elValence": "2, 3, 4, 6, 8",
-      "elementGroup": "6/VIII-",
-      "elementBlock": "d",
+      "atomicMass": "190.22486145925",
+      "density": "22.59",
+      "meltingPoint": "3033.0",
+      "boilingPoint": "5012.0",
+      "valence": "2, 3, 4, 6, 8",
+      "group": "6/VIII-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -9131,33 +8905,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "216"
     },
     "electromagnetic": {
-      "es_electro": "12315270.9359606",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "1.4 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "6.0 ⋅ 10<sup><small>-10</small></sup>",
-      "es_mmvospr": "1.1 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "8.12 ⋅ 10<sup><small>-8</small></sup>",
-      "es_temp": "0.66"
+      "electricalConductivity": "12315270.9359606",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "1.4 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "6.0 ⋅ 10<sup><small>-10</small></sup>",
+      "molarMagneticSusceptibility": "1.1 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "8.12 ⋅ 10<sup><small>-8</small></sup>",
+      "superconductingTemperature": "0.66"
     },
     "grid": {
-      "gridStructureNum": "2",
+      "structureCode": "2",
       "gridParams": "a=2.734 Å; c=4.317 Å",
-      "ratio": "1.579",
+      "axialRatio": "1.579",
       "debyeTemperature": "467",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23937",
-      "numberRTEC": "RTECSRN1100000",
+      "pubchemCid": "CID23937",
+      "rtecsNumber": "RTECSRN1100000",
       "brinellHardness": "3920.0",
       "mohsHardness": "7.0",
       "vickersHardness": "4137.06",
       "bulkModulus": "462.0",
       "liquidDensity": "20.0",
-      "molarValue": "0.000008421",
+      "molarVolume": "0.000008421",
       "poissonRatio": "0.25",
       "shearModulus": "222.0",
       "soundSpeed": "4940.0",
@@ -9165,7 +8938,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "2.2",
-      "atomElectronEnergy": "103.99"
+      "electronAffinity": "103.99"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -9174,10 +8947,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "3,3,1,W"
     },
     "prevalence": {
-      "prevalence1": "3 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence5": "1.5 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence6": "6.5 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "3 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "crust": "1.5 ⋅ 10<sup><small>-7</small></sup>",
+      "meteorites": "6.5 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 8,
     "ghs": [
@@ -9228,28 +9001,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Iridium",
       "englishName": "Iridium",
-      "elementOpenedYear": "1803",
+      "discoveryYear": "1803",
       "casNumber": "CAS7439-88-5",
-      "elementOpener": "52",
-      "countryOpener": "GB",
-      "elementShell": "K2-L8-M18-N32-O15-P2-Q0-R0",
-      "elementE": "77",
-      "elementP": "77",
-      "elementN": "115",
+      "discoverer": "52",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L8-M18-N32-O15-P2-Q0-R0",
+      "electronCount": "77",
+      "protonCount": "77",
+      "neutronCount": "115",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f14 5d7 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d7 6s2",
-      "elementPrice": "1800",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f14 5d7 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d7 6s2"
     },
     "properties": {
-      "elementMasse": "192.216053820407",
-      "elementDensity": "22.56",
-      "elementMeltingPoint": "2446.0",
-      "elementBoilingPoint": "4130.0",
-      "elValence": "1, 2, 3, 4, 6",
-      "elementGroup": "6/VIII-",
-      "elementBlock": "d",
+      "atomicMass": "192.216053820407",
+      "density": "22.56",
+      "meltingPoint": "2446.0",
+      "boilingPoint": "4130.0",
+      "valence": "1, 2, 3, 4, 6",
+      "group": "6/VIII-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -9267,32 +9038,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "202"
     },
     "electromagnetic": {
-      "es_electro": "21231422.5053079",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "3.77 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "1.67 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "3.21 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "4.71 ⋅ 10<sup><small>-8</small></sup>",
-      "es_temp": "0.11"
+      "electricalConductivity": "21231422.5053079",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "3.77 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "1.67 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "3.21 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "4.71 ⋅ 10<sup><small>-8</small></sup>",
+      "superconductingTemperature": "0.11"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "3.840 Å",
       "debyeTemperature": "420",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23924",
+      "pubchemCid": "CID23924",
       "brinellHardness": "1670.0",
       "mohsHardness": "6.5",
       "vickersHardness": "1760.0",
       "bulkModulus": "320.0",
       "youngModulus": "528.0",
       "liquidDensity": "19.0",
-      "molarValue": "0.0000085203",
+      "molarVolume": "0.0000085203",
       "poissonRatio": "0.26",
       "shearModulus": "210.0",
       "soundSpeed": "4825.0",
@@ -9300,7 +9070,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "2.2",
-      "atomElectronEnergy": "150.94"
+      "electronAffinity": "150.94"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -9309,10 +9079,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "2 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence5": "1.0 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence6": "5.4 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "2 ⋅ 10<sup><small>-7</small></sup>",
+      "crust": "1.0 ⋅ 10<sup><small>-7</small></sup>",
+      "meteorites": "5.4 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -9342,28 +9112,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Platinum",
       "englishName": "Platinum",
-      "elementOpenedYear": "1735",
+      "discoveryYear": "1735",
       "casNumber": "CAS7440-06-4",
-      "elementOpener": "50",
-      "countryOpener": "PE",
-      "elementShell": "K2-L8-M18-N32-O17-P1-Q0-R0",
-      "elementE": "78",
-      "elementP": "78",
-      "elementN": "117",
+      "discoverer": "50",
+      "discoveryCountry": "PE",
+      "electronShellConfig": "K2-L8-M18-N32-O17-P1-Q0-R0",
+      "electronCount": "78",
+      "protonCount": "78",
+      "neutronCount": "117",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f14 5d9 6s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d9 6s1",
-      "elementPrice": "1750",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Xe] 4f14 5d9 6s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d9 6s1"
     },
     "properties": {
-      "elementMasse": "195.084429339468",
-      "elementDensity": "21.45",
-      "elementMeltingPoint": "1768.3",
-      "elementBoilingPoint": "3825.0",
-      "elValence": "2, 4",
-      "elementGroup": "6/VIII-",
-      "elementBlock": "d",
+      "atomicMass": "195.084429339468",
+      "density": "21.45",
+      "meltingPoint": "1768.3",
+      "boilingPoint": "3825.0",
+      "valence": "2, 4",
+      "group": "6/VIII-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -9381,32 +9149,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "175"
     },
     "electromagnetic": {
-      "es_electro": "9523809.52380952",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "2.573 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "1.22 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "2.38 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "1.05 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "9523809.52380952",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "2.573 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "1.22 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "2.38 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "1.05 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "3.920 Å",
       "debyeTemperature": "240",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "4",
-      "numberCID": "CID23939",
-      "numberRTEC": "RTECSTP2160000",
+      "pubchemCid": "CID23939",
+      "rtecsNumber": "RTECSTP2160000",
       "brinellHardness": "300–500",
       "mohsHardness": "3.5",
       "vickersHardness": "549.0",
       "bulkModulus": "230.0",
       "youngModulus": "168.0",
       "liquidDensity": "19.77",
-      "molarValue": "0.0000090948",
+      "molarVolume": "0.0000090948",
       "poissonRatio": "0.38",
       "shearModulus": "61.0",
       "soundSpeed": "2800.0",
@@ -9414,7 +9181,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "2.28",
-      "atomElectronEnergy": "205.041"
+      "electronAffinity": "205.041"
     },
     "nucleus": {
       "halfLife": "497000000000/1",
@@ -9423,10 +9190,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,0,0,-"
     },
     "prevalence": {
-      "prevalence1": "5 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "9 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence5": "5.0 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence6": "9.8 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "5 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "9 ⋅ 10<sup><small>-7</small></sup>",
+      "crust": "5.0 ⋅ 10<sup><small>-7</small></sup>",
+      "meteorites": "9.8 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 1,
     "isotopes": {
@@ -9471,27 +9238,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Aurum",
       "englishName": "Gold",
-      "elementOpenedYear": "~4000 BC",
+      "discoveryYear": "~4000 BC",
       "casNumber": "CAS7440-57-5",
-      "countryOpener": "NahalQana",
-      "elementShell": "K2-L8-M18-N32-O18-P1-Q0-R0",
-      "elementE": "79",
-      "elementP": "79",
-      "elementN": "118",
+      "discoveryCountry": "NahalQana",
+      "electronShellConfig": "K2-L8-M18-N32-O18-P1-Q0-R0",
+      "electronCount": "79",
+      "protonCount": "79",
+      "neutronCount": "118",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f14 5d10 6s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s1",
-      "elementPrice": "6279",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f14 5d10 6s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s1"
     },
     "properties": {
-      "elementMasse": "196.966570051362",
-      "elementDensity": "19.32",
-      "elementMeltingPoint": "1064.18",
-      "elementBoilingPoint": "2970.0",
-      "elValence": "1, 3, 2",
-      "elementGroup": "6/I-",
-      "elementBlock": "d",
+      "atomicMass": "196.966570051362",
+      "density": "19.32",
+      "meltingPoint": "1064.18",
+      "boilingPoint": "2970.0",
+      "valence": "1, 3, 2",
+      "group": "6/I-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -9509,33 +9274,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "166"
     },
     "electromagnetic": {
-      "es_electro": "45167118.33785",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-3.44 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-1.78 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-3.51 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "2.214 ⋅ 10<sup><small>-8</small></sup>"
+      "electricalConductivity": "45167118.33785",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-3.44 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-1.78 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-3.51 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "2.214 ⋅ 10<sup><small>-8</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "4.0781 Å",
-      "ratio": "1",
+      "axialRatio": "1",
       "debyeTemperature": "165",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "7",
-      "numberCID": "CID23985",
-      "numberRTEC": "RTECSMD5070000",
+      "pubchemCid": "CID23985",
+      "rtecsNumber": "RTECSMD5070000",
       "brinellHardness": "2450.0",
       "mohsHardness": "2.5",
       "vickersHardness": "216.0",
       "bulkModulus": "180.0",
       "youngModulus": "78.0",
       "liquidDensity": "17.31",
-      "molarValue": "0.00001021",
+      "molarVolume": "0.00001021",
       "poissonRatio": "0.44",
       "shearModulus": "27.0",
       "soundSpeed": "2030.0",
@@ -9543,7 +9307,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "2.54",
-      "atomElectronEnergy": "222.747"
+      "electronAffinity": "222.747"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -9552,12 +9316,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,0,0,-"
     },
     "prevalence": {
-      "prevalence1": "6 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence2": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "5.0 ⋅ 10<sup><small>-9</small></sup>",
-      "prevalence4": "2.8536407 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence5": "4.0 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence6": "1.7 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "6 ⋅ 10<sup><small>-8</small></sup>",
+      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "5.0 ⋅ 10<sup><small>-9</small></sup>",
+      "humanBody": "2.8536407 ⋅ 10<sup><small>-7</small></sup>",
+      "crust": "4.0 ⋅ 10<sup><small>-7</small></sup>",
+      "meteorites": "1.7 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 11,
     "isotopes": {
@@ -9592,27 +9356,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Hydrargyrum",
       "englishName": "Mercury",
-      "elementOpenedYear": "1500 BC",
+      "discoveryYear": "1500 BC",
       "casNumber": "CAS7439-97-6",
-      "countryOpener": "EG",
-      "elementShell": "K2-L8-M18-N32-O18-P2-Q0-R0",
-      "elementE": "80",
-      "elementP": "80",
-      "elementN": "120",
+      "discoveryCountry": "EG",
+      "electronShellConfig": "K2-L8-M18-N32-O18-P2-Q0-R0",
+      "electronCount": "80",
+      "protonCount": "80",
+      "neutronCount": "120",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f14 5d10 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2",
-      "elementPrice": "65",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f14 5d10 6s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2"
     },
     "properties": {
-      "elementMasse": "200.592560642052",
-      "elementDensity": "13.5336",
-      "elementMeltingPoint": "-38.83",
-      "elementBoilingPoint": "356.73",
-      "elValence": "1, 2",
-      "elementGroup": "6/II-",
-      "elementBlock": "d",
+      "atomicMass": "200.592560642052",
+      "density": "13.5336",
+      "meltingPoint": "-38.83",
+      "boilingPoint": "356.73",
+      "valence": "1, 2",
+      "group": "6/II-",
+      "block": "d",
       "aggregationState": "liquid"
     },
     "thermo": {
@@ -9630,37 +9392,36 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "155"
     },
     "electromagnetic": {
-      "es_electro": "1040582.72632674",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-2.84 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-2.1 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-4.21 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "9.61 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "4.154"
+      "electricalConductivity": "1040582.72632674",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-2.84 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-2.1 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-4.21 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "9.61 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "4.154"
     },
     "grid": {
-      "gridStructureNum": "5 | 3",
+      "structureCode": "5 | 3",
       "gridParams": "a(hex)=3.464 Å; с(hex)=6.708 Å | a=3.995 Å; с=2.825 Å",
-      "ratio": "1.94",
+      "axialRatio": "1.94",
       "debyeTemperature": "72",
-      "space1": "R_ 3m",
-      "space2": "166"
+      "spaceGroup": "R_ 3m",
+      "spaceGroupNumber": "166"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23931",
-      "numberRTEC": "RTECSOV4550000",
+      "pubchemCid": "CID23931",
+      "rtecsNumber": "RTECSOV4550000",
       "bulkModulus": "25.0",
       "liquidDensity": "13.534",
-      "molarValue": "0.0000148213",
+      "molarVolume": "0.0000148213",
       "soundSpeed": "1451.4",
       "refractiveIndex": "1.000933",
       "thermalConductivity": "8.3"
     },
     "reactivity": {
       "electronegativity": "2",
-      "atomElectronEnergy": "0"
+      "electronAffinity": "0"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -9669,12 +9430,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,3,0,-"
     },
     "prevalence": {
-      "prevalence1": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence2": "2 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence3": "5.0 ⋅ 10<sup><small>-9</small></sup>",
-      "prevalence4": "8.56092203 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence5": "8.5 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence6": "2.5 ⋅ 10<sup><small>-5</small></sup>"
+      "universe": "1 ⋅ 10<sup><small>-7</small></sup>",
+      "sun": "2 ⋅ 10<sup><small>-6</small></sup>",
+      "ocean": "5.0 ⋅ 10<sup><small>-9</small></sup>",
+      "humanBody": "8.56092203 ⋅ 10<sup><small>-6</small></sup>",
+      "crust": "8.5 ⋅ 10<sup><small>-6</small></sup>",
+      "meteorites": "2.5 ⋅ 10<sup><small>-5</small></sup>"
     },
     "colorIndex": 18,
     "ghs": [
@@ -9729,28 +9490,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Thallium",
       "englishName": "Thallium",
-      "elementOpenedYear": "1861",
+      "discoveryYear": "1861",
       "casNumber": "CAS7440-28-0",
-      "elementOpener": "66",
-      "countryOpener": "GB",
-      "elementShell": "K2-L8-M18-N32-O18-P3-Q0-R0",
-      "elementE": "81",
-      "elementP": "81",
-      "elementN": "123",
+      "discoverer": "66",
+      "discoveryCountry": "GB",
+      "electronShellConfig": "K2-L8-M18-N32-O18-P3-Q0-R0",
+      "electronCount": "81",
+      "protonCount": "81",
+      "neutronCount": "123",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f14 5d10 6s2 6p1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p1",
-      "elementPrice": "85",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p1"
     },
     "properties": {
-      "elementMasse": "204.383512460528",
-      "elementDensity": "11.85",
-      "elementMeltingPoint": "304.0",
-      "elementBoilingPoint": "1473.0",
-      "elValence": "1, 2, 3",
-      "elementGroup": "6/III+",
-      "elementBlock": "p",
+      "atomicMass": "204.383512460528",
+      "density": "11.85",
+      "meltingPoint": "304.0",
+      "boilingPoint": "1473.0",
+      "valence": "1, 2, 3",
+      "group": "6/III+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -9768,33 +9527,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "196"
     },
     "electromagnetic": {
-      "es_electro": "5555555.55555556",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-3.56 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-3.0 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-6.13 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "1.8 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "2.38"
+      "electricalConductivity": "5555555.55555556",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-3.56 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-3.0 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-6.13 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "1.8 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "2.38"
     },
     "grid": {
-      "gridStructureNum": "2",
+      "structureCode": "2",
       "gridParams": "a 3.456 c=5.525",
-      "ratio": "1.599",
+      "axialRatio": "1.599",
       "debyeTemperature": "78.5",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5359464",
-      "numberRTEC": "RTECSXG3425000",
+      "pubchemCid": "CID5359464",
+      "rtecsNumber": "RTECSXG3425000",
       "brinellHardness": "26.4",
       "mohsHardness": "1.2",
       "bulkModulus": "43.0",
       "youngModulus": "8.0",
       "liquidDensity": "11.22",
-      "molarValue": "0.0000172473",
+      "molarVolume": "0.0000172473",
       "poissonRatio": "0.45",
       "shearModulus": "2.8",
       "soundSpeed": "818.0",
@@ -9802,7 +9560,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.62",
-      "atomElectronEnergy": "30.8804"
+      "electronAffinity": "30.8804"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -9811,12 +9569,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,2,0,-"
     },
     "prevalence": {
-      "prevalence1": "5 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence2": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "1.0 ⋅ 10<sup><small>-10</small></sup>",
-      "prevalence4": "7.1341017 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence5": "8.5 ⋅ 10<sup><small>-5</small></sup>",
-      "prevalence6": "7.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "5 ⋅ 10<sup><small>-8</small></sup>",
+      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "1.0 ⋅ 10<sup><small>-10</small></sup>",
+      "humanBody": "7.1341017 ⋅ 10<sup><small>-7</small></sup>",
+      "crust": "8.5 ⋅ 10<sup><small>-5</small></sup>",
+      "meteorites": "7.9 ⋅ 10<sup><small>-6</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -9850,27 +9608,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Plumbum",
       "englishName": "Lead",
-      "elementOpenedYear": "7000 BC",
+      "discoveryYear": "7000 BC",
       "casNumber": "CAS7439-92-1",
-      "countryOpener": "TR",
-      "elementShell": "K2-L8-M18-N32-O18-P4-Q0-R0",
-      "elementE": "82",
-      "elementP": "82",
-      "elementN": "125",
+      "discoveryCountry": "TR",
+      "electronShellConfig": "K2-L8-M18-N32-O18-P4-Q0-R0",
+      "electronCount": "82",
+      "protonCount": "82",
+      "neutronCount": "125",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f14 5d10 6s2 6p2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p2",
-      "elementPrice": "1.35",
-      "elementRadioactivity": false
+      "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p2"
     },
     "properties": {
-      "elementMasse": "207.216907578328",
-      "elementDensity": "11.34",
-      "elementMeltingPoint": "327.46",
-      "elementBoilingPoint": "1749.0",
-      "elValence": "2, 4",
-      "elementGroup": "6/IV+",
-      "elementBlock": "p",
+      "atomicMass": "207.216907578328",
+      "density": "11.34",
+      "meltingPoint": "327.46",
+      "boilingPoint": "1749.0",
+      "valence": "2, 4",
+      "group": "6/IV+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -9888,32 +9644,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "202"
     },
     "electromagnetic": {
-      "es_electro": "4807692.30769231",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-1.7 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "-1.5 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "-3.11 ⋅ 10<sup><small>-10</small></sup>",
-      "es_udel": "2.08 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "7.2"
+      "electricalConductivity": "4807692.30769231",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-1.7 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "-1.5 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "-3.11 ⋅ 10<sup><small>-10</small></sup>",
+      "electricalResistivity": "2.08 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "7.2"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "4.950 Å",
       "debyeTemperature": "105",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5352425",
-      "numberRTEC": "RTECSOF7525000",
+      "pubchemCid": "CID5352425",
+      "rtecsNumber": "RTECSOF7525000",
       "brinellHardness": "38.3",
       "mohsHardness": "1.5",
       "bulkModulus": "46.0",
       "youngModulus": "16.0",
       "liquidDensity": "10.66",
-      "molarValue": "0.000018272",
+      "molarVolume": "0.000018272",
       "poissonRatio": "0.44",
       "shearModulus": "5.6",
       "soundSpeed": "1190.0",
@@ -9921,7 +9676,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.8",
-      "atomElectronEnergy": "34.4183"
+      "electronAffinity": "34.4183"
     },
     "nucleus": {
       "halfLife": "∞",
@@ -9930,12 +9685,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,2,0,-"
     },
     "prevalence": {
-      "prevalence1": "1 ⋅ 10<sup><small>-6</small></sup>",
-      "prevalence2": "9.9 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "3.0 ⋅ 10<sup><small>-9</small></sup>",
-      "prevalence4": "0.00017121844062",
-      "prevalence5": "0.0014",
-      "prevalence6": "1.4 ⋅ 10<sup><small>-4</small></sup>"
+      "universe": "1 ⋅ 10<sup><small>-6</small></sup>",
+      "sun": "9.9 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "3.0 ⋅ 10<sup><small>-9</small></sup>",
+      "humanBody": "0.00017121844062",
+      "crust": "0.0014",
+      "meteorites": "1.4 ⋅ 10<sup><small>-4</small></sup>"
     },
     "colorIndex": 19,
     "ghs": [
@@ -9984,28 +9739,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Bisemutum (Bismuthum, Bismutum)",
       "englishName": "Bismuth",
-      "elementOpenedYear": "1753",
+      "discoveryYear": "1753",
       "casNumber": "CAS7440-69-9",
-      "elementOpener": "40",
-      "countryOpener": "FR",
-      "elementShell": "K2-L8-M18-N32-O18-P5-Q0-R0",
-      "elementE": "83",
-      "elementP": "83",
-      "elementN": "126",
+      "discoverer": "40",
+      "discoveryCountry": "FR",
+      "electronShellConfig": "K2-L8-M18-N32-O18-P5-Q0-R0",
+      "electronCount": "83",
+      "protonCount": "83",
+      "neutronCount": "126",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f14 5d10 6s2 6p3 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p3",
-      "elementPrice": "33",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p3 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p3"
     },
     "properties": {
-      "elementMasse": "208.980398587653",
-      "elementDensity": "9.78",
-      "elementMeltingPoint": "271.5",
-      "elementBoilingPoint": "1564.0",
-      "elValence": "2, 3, 4, 5",
-      "elementGroup": "6/V+",
-      "elementBlock": "p",
+      "atomicMass": "208.980398587653",
+      "density": "9.78",
+      "meltingPoint": "271.5",
+      "boilingPoint": "1564.0",
+      "valence": "2, 3, 4, 5",
+      "group": "6/V+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -10023,31 +9776,30 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "207"
     },
     "electromagnetic": {
-      "es_electro": "775193.798449612",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_omvospr": "-1.7 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "-1.7 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "-3.6 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "1.29 ⋅ 10<sup><small>-6</small></sup>"
+      "electricalConductivity": "775193.798449612",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "volumeMagneticSusceptibility": "-1.7 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "-1.7 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "-3.6 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "1.29 ⋅ 10<sup><small>-6</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "5",
+      "structureCode": "5",
       "gridParams": "a=4.746 Å; α=57.23°",
       "debyeTemperature": "120",
-      "space1": "R_ 3m",
-      "space2": "166"
+      "spaceGroup": "R_ 3m",
+      "spaceGroupNumber": "166"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID5359367",
-      "numberRTEC": "RTECSEB2600000",
+      "pubchemCid": "CID5359367",
+      "rtecsNumber": "RTECSEB2600000",
       "brinellHardness": "94.2",
       "mohsHardness": "2.25",
       "bulkModulus": "31.0",
       "youngModulus": "32.0",
       "liquidDensity": "10.05",
-      "molarValue": "0.000021368",
+      "molarVolume": "0.000021368",
       "poissonRatio": "0.33",
       "shearModulus": "12.0",
       "soundSpeed": "1790.0",
@@ -10055,7 +9807,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "2.02",
-      "atomElectronEnergy": "90.924"
+      "electronAffinity": "90.924"
     },
     "nucleus": {
       "halfLife": "20100000000000000000/1",
@@ -10064,12 +9816,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,1,0,-"
     },
     "prevalence": {
-      "prevalence1": "7 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence2": "9.9 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "2.0 ⋅ 10<sup><small>-9</small></sup>",
-      "prevalence4": "7.1341017 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence5": "8.5 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence6": "6.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "7 ⋅ 10<sup><small>-8</small></sup>",
+      "sun": "9.9 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "2.0 ⋅ 10<sup><small>-9</small></sup>",
+      "humanBody": "7.1341017 ⋅ 10<sup><small>-7</small></sup>",
+      "crust": "8.5 ⋅ 10<sup><small>-7</small></sup>",
+      "meteorites": "6.9 ⋅ 10<sup><small>-6</small></sup>"
     },
     "colorIndex": 17,
     "ghs": [
@@ -10101,27 +9853,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Polonium",
       "englishName": "Polonium",
-      "elementOpenedYear": "1898",
+      "discoveryYear": "1898",
       "casNumber": "CAS7440-08-6",
-      "elementOpener": "43/44",
-      "countryOpener": "FR",
-      "elementShell": "K2-L8-M18-N32-O18-P6-Q0-R0",
-      "elementE": "84",
-      "elementP": "84",
-      "elementN": "125",
+      "discoverer": "43/44",
+      "discoveryCountry": "FR",
+      "electronShellConfig": "K2-L8-M18-N32-O18-P6-Q0-R0",
+      "electronCount": "84",
+      "protonCount": "84",
+      "neutronCount": "125",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f14 5d10 6s2 6p4 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p4",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p4 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p4"
     },
     "properties": {
-      "elementMasse": "208.962006199874",
-      "elementDensity": "9.196",
-      "elementMeltingPoint": "254.0",
-      "elementBoilingPoint": "962.0",
-      "elValence": "2, 4, 6",
-      "elementGroup": "6/VI+",
-      "elementBlock": "p",
+      "atomicMass": "208.962006199874",
+      "density": "9.196",
+      "meltingPoint": "254.0",
+      "boilingPoint": "962.0",
+      "valence": "2, 4, 6",
+      "group": "6/VI+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -10139,24 +9890,23 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "197"
     },
     "electromagnetic": {
-      "es_electro": "2500000.0",
-      "es_mtype": "diamagnetic",
-      "es_udel": "4.3 ⋅ 10<sup><small>-7</small></sup>"
+      "electricalConductivity": "2500000.0",
+      "magneticType": "diamagnetic",
+      "electricalResistivity": "4.3 ⋅ 10<sup><small>-7</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "7",
+      "structureCode": "7",
       "gridParams": "3.35 Å",
-      "space1": "Pm-3m",
-      "space2": "221"
+      "spaceGroup": "Pm-3m",
+      "spaceGroupNumber": "221"
     },
     "additional": {
-      "elementColor": "1",
-      "molarValue": "0.000022727272727",
+      "molarVolume": "0.000022727272727",
       "thermalConductivity": "0.2"
     },
     "reactivity": {
       "electronegativity": "2",
-      "atomElectronEnergy": "136.0"
+      "electronAffinity": "136.0"
     },
     "nucleus": {
       "halfLife": "0.3790/1",
@@ -10165,8 +9915,8 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {
-      "prevalence3": "2 ⋅ 10<sup><small>-18</small></sup>",
-      "prevalence5": "2.0 ⋅ 10<sup><small>-14</small></sup>"
+      "ocean": "2 ⋅ 10<sup><small>-18</small></sup>",
+      "crust": "2.0 ⋅ 10<sup><small>-14</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -10194,27 +9944,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Astatum",
       "englishName": "Astatine",
-      "elementOpenedYear": "1940",
+      "discoveryYear": "1940",
       "casNumber": "CAS7440-68-8",
-      "elementOpener": "87/88/89",
-      "countryOpener": "US",
-      "elementShell": "K2-L8-M18-N32-O18-P7-Q0-R0",
-      "elementE": "85",
-      "elementP": "85",
-      "elementN": "125",
+      "discoverer": "87/88/89",
+      "discoveryCountry": "US",
+      "electronShellConfig": "K2-L8-M18-N32-O18-P7-Q0-R0",
+      "electronCount": "85",
+      "protonCount": "85",
+      "neutronCount": "125",
       "hasImage": true,
       "hasSpectre": false,
-      "elementConfiguration": "[Xe] 4f14 5d10 6s2 6p5 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p5",
-      "elementPrice": "7500",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p5 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p5"
     },
     "properties": {
-      "elementMasse": "209.602075361333",
-      "elementDensity": "~7",
-      "elementMeltingPoint": "302.0",
-      "elementBoilingPoint": "336.8",
-      "elementGroup": "6/VII+",
-      "elementBlock": "p",
+      "atomicMass": "209.602075361333",
+      "density": "~7",
+      "meltingPoint": "302.0",
+      "boilingPoint": "336.8",
+      "group": "6/VII+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -10231,15 +9979,14 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "4"
+      "structureCode": "4"
     },
     "additional": {
-      "elementColor": "1",
       "thermalConductivity": "1.7"
     },
     "reactivity": {
       "electronegativity": "2.2",
-      "atomElectronEnergy": "233.087"
+      "electronAffinity": "233.087"
     },
     "nucleus": {
       "halfLife": "8.1/3",
@@ -10269,27 +10016,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Radon",
       "englishName": "Radon",
-      "elementOpenedYear": "1900",
+      "discoveryYear": "1900",
       "casNumber": "CAS10043-92-2",
-      "elementOpener": "68",
-      "countryOpener": "DE",
-      "elementShell": "K2-L8-M18-N32-O18-P8-Q0-R0",
-      "elementE": "86",
-      "elementP": "86",
-      "elementN": "136",
+      "discoverer": "68",
+      "discoveryCountry": "DE",
+      "electronShellConfig": "K2-L8-M18-N32-O18-P8-Q0-R0",
+      "electronCount": "86",
+      "protonCount": "86",
+      "neutronCount": "136",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Xe] 4f14 5d10 6s2 6p6 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p6",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p6 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p6"
     },
     "properties": {
-      "elementMasse": "222.018",
-      "elementDensity": "0.00973",
-      "elementMeltingPoint": "-71.0",
-      "elementBoilingPoint": "-61.7",
-      "elValence": "0",
-      "elementGroup": "6/VIII+",
-      "elementBlock": "p",
+      "atomicMass": "222.018",
+      "density": "0.00973",
+      "meltingPoint": "-71.0",
+      "boilingPoint": "-61.7",
+      "valence": "0",
+      "group": "6/VIII+",
+      "block": "p",
       "aggregationState": "gas"
     },
     "thermo": {
@@ -10305,20 +10051,19 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "220"
     },
     "electromagnetic": {
-      "es_mtype": "diamagnetic"
+      "magneticType": "diamagnetic"
     },
     "grid": {
-      "gridStructureNum": "4"
+      "structureCode": "4"
     },
     "additional": {
-      "elementColor": "0",
-      "numberCID": "CID24857",
-      "numberRTEC": "RTECSVE3750000",
-      "molarValue": "0.02281603288798",
+      "pubchemCid": "CID24857",
+      "rtecsNumber": "RTECSVE3750000",
+      "molarVolume": "0.02281603288798",
       "thermalConductivity": "0.00361"
     },
     "reactivity": {
-      "atomElectronEnergy": "-68.0"
+      "electronAffinity": "-68.0"
     },
     "nucleus": {
       "halfLife": "3.8235/2",
@@ -10327,7 +10072,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,4,0,RAD"
     },
     "prevalence": {
-      "prevalence3": "6 ⋅ 10<sup><small>-20</small></sup>"
+      "ocean": "6 ⋅ 10<sup><small>-20</small></sup>"
     },
     "colorIndex": 0,
     "ghs": [
@@ -10358,26 +10103,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Francium",
       "englishName": "Francium",
-      "elementOpenedYear": "1939",
+      "discoveryYear": "1939",
       "casNumber": "CAS7440-73-5",
-      "elementOpener": "60",
-      "countryOpener": "FR",
-      "elementShell": "K2-L8-M18-N32-O18-P8-Q1-R0",
-      "elementE": "87",
-      "elementP": "87",
-      "elementN": "136",
+      "discoverer": "60",
+      "discoveryCountry": "FR",
+      "electronShellConfig": "K2-L8-M18-N32-O18-P8-Q1-R0",
+      "electronCount": "87",
+      "protonCount": "87",
+      "neutronCount": "136",
       "hasImage": true,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 7s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p6 7s1",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 7s1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p6 7s1"
     },
     "properties": {
-      "elementMasse": "223.01973",
-      "elementDensity": "~2.458",
-      "elementMeltingPoint": "27.0",
-      "elementBoilingPoint": "677.0",
-      "elementGroup": "7/I+",
-      "elementBlock": "s",
+      "atomicMass": "223.01973",
+      "density": "~2.458",
+      "meltingPoint": "27.0",
+      "boilingPoint": "677.0",
+      "group": "7/I+",
+      "block": "s",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -10392,19 +10136,18 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "348"
     },
     "electromagnetic": {
-      "es_mtype": "paramagnetic"
+      "magneticType": "paramagnetic"
     },
     "grid": {
-      "gridStructureNum": "3",
+      "structureCode": "3",
       "gridParams": "a=6.704 Å",
       "debyeTemperature": "39"
     },
     "additional": {
-      "elementColor": "1"
     },
     "reactivity": {
       "electronegativity": "0.7",
-      "atomElectronEnergy": "46.89"
+      "electronAffinity": "46.89"
     },
     "nucleus": {
       "halfLife": "22/4",
@@ -10436,27 +10179,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Radium",
       "englishName": "Radium",
-      "elementOpenedYear": "1898",
+      "discoveryYear": "1898",
       "casNumber": "CAS7440-14-4",
-      "elementOpener": "43/44",
-      "countryOpener": "FR",
-      "elementShell": "K2-L8-M18-N32-O18-P8-Q2-R0",
-      "elementE": "88",
-      "elementP": "88",
-      "elementN": "138",
+      "discoverer": "43/44",
+      "discoveryCountry": "FR",
+      "electronShellConfig": "K2-L8-M18-N32-O18-P8-Q2-R0",
+      "electronCount": "88",
+      "protonCount": "88",
+      "neutronCount": "138",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Rn] 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p6 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p6 7s2"
     },
     "properties": {
-      "elementMasse": "226.032494020223",
-      "elementDensity": "5.50",
-      "elementMeltingPoint": "700.0",
-      "elementBoilingPoint": "1737.0",
-      "elValence": "2",
-      "elementGroup": "7/II+",
-      "elementBlock": "s",
+      "atomicMass": "226.032494020223",
+      "density": "5.50",
+      "meltingPoint": "700.0",
+      "boilingPoint": "1737.0",
+      "valence": "2",
+      "group": "7/II+",
+      "block": "s",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -10473,27 +10215,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "283"
     },
     "electromagnetic": {
-      "es_electro": "1000000.0",
-      "es_etype": "1",
-      "es_mtype": "diamagnetic",
-      "es_udel": "1 ⋅ 10<sup><small>-6</small></sup>"
+      "electricalConductivity": "1000000.0",
+      "electricalType": "1",
+      "magneticType": "diamagnetic",
+      "electricalResistivity": "1 ⋅ 10<sup><small>-6</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "3",
+      "structureCode": "3",
       "gridParams": "a=5.148 Å",
       "debyeTemperature": "89",
-      "space1": "Im_ 3m",
-      "space2": "229"
+      "spaceGroup": "Im_ 3m",
+      "spaceGroupNumber": "229"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID6328144",
-      "molarValue": "0.0000452",
+      "pubchemCid": "CID6328144",
+      "molarVolume": "0.0000452",
       "thermalConductivity": "18.6"
     },
     "reactivity": {
       "electronegativity": "0.9",
-      "atomElectronEnergy": "0"
+      "electronAffinity": "0"
     },
     "nucleus": {
       "halfLife": "1600/1",
@@ -10502,9 +10243,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,W+RAD"
     },
     "prevalence": {
-      "prevalence3": "1.0 ⋅ 10<sup><small>-15</small></sup>",
-      "prevalence4": "4.0 ⋅ 10<sup><small>-14</small></sup>",
-      "prevalence5": "9.0 ⋅ 10<sup><small>-11</small></sup>"
+      "ocean": "1.0 ⋅ 10<sup><small>-15</small></sup>",
+      "humanBody": "4.0 ⋅ 10<sup><small>-14</small></sup>",
+      "crust": "9.0 ⋅ 10<sup><small>-11</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -10533,27 +10274,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Actinium",
       "englishName": "Actinium",
-      "elementOpenedYear": "1899",
+      "discoveryYear": "1899",
       "casNumber": "CAS7440-34-8",
-      "elementOpener": "34",
-      "countryOpener": "FR",
-      "elementShell": "K2-L8-M18-N32-O18-P9-Q2-R0",
-      "elementE": "89",
-      "elementP": "89",
-      "elementN": "138",
+      "discoverer": "34",
+      "discoveryCountry": "FR",
+      "electronShellConfig": "K2-L8-M18-N32-O18-P9-Q2-R0",
+      "electronCount": "89",
+      "protonCount": "89",
+      "neutronCount": "138",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Rn] 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p6 6d1 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p6 6d1 7s2"
     },
     "properties": {
-      "elementMasse": "227.025111462183",
-      "elementDensity": "10.07",
-      "elementMeltingPoint": "1050.0",
-      "elementBoilingPoint": "3198.0",
-      "elValence": "3",
-      "elementGroup": "7/III-",
-      "elementBlock": "f",
+      "atomicMass": "227.025111462183",
+      "density": "10.07",
+      "meltingPoint": "1050.0",
+      "boilingPoint": "3198.0",
+      "valence": "3",
+      "group": "7/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -10571,19 +10311,18 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "5.315 Å",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "1",
-      "molarValue": "0.00002254220456802",
+      "molarVolume": "0.00002254220456802",
       "thermalConductivity": "12.0"
     },
     "reactivity": {
       "electronegativity": "1.1",
-      "atomElectronEnergy": "33.77"
+      "electronAffinity": "33.77"
     },
     "nucleus": {
       "halfLife": "21.772/1",
@@ -10592,7 +10331,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,W+RAD"
     },
     "prevalence": {
-      "prevalence5": "6.0 ⋅ 10<sup><small>-14</small></sup>"
+      "crust": "6.0 ⋅ 10<sup><small>-14</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -10623,28 +10362,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Thorium",
       "englishName": "Thorium",
-      "elementOpenedYear": "1829",
+      "discoveryYear": "1829",
       "casNumber": "CAS7440-29-1",
-      "elementOpener": "16",
-      "countryOpener": "SE",
-      "elementShell": "K2-L8-M18-N32-O18-P10-Q2-R0",
-      "elementE": "90",
-      "elementP": "90",
-      "elementN": "142",
+      "discoverer": "16",
+      "discoveryCountry": "SE",
+      "electronShellConfig": "K2-L8-M18-N32-O18-P10-Q2-R0",
+      "electronCount": "90",
+      "protonCount": "90",
+      "neutronCount": "142",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Rn] 6d2 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p6 6d2 7s2",
-      "elementPrice": "400",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 6d2 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p6 6d2 7s2"
     },
     "properties": {
-      "elementMasse": "232.038041097472",
-      "elementDensity": "11.72",
-      "elementMeltingPoint": "1750.0",
-      "elementBoilingPoint": "4788.0",
-      "elValence": "4",
-      "elementGroup": "7/III-",
-      "elementBlock": "f",
+      "atomicMass": "232.038041097472",
+      "density": "11.72",
+      "meltingPoint": "1750.0",
+      "boilingPoint": "4788.0",
+      "valence": "4",
+      "group": "7/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -10662,32 +10399,31 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "237"
     },
     "electromagnetic": {
-      "es_electro": "6802721.08843537",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "8.4 ⋅ 10<sup><small>-5</small></sup>",
-      "es_umvospr": "7.2 ⋅ 10<sup><small>-9</small></sup>",
-      "es_mmvospr": "1.7 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "1.47 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "1.38"
+      "electricalConductivity": "6802721.08843537",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "8.4 ⋅ 10<sup><small>-5</small></sup>",
+      "massMagneticSusceptibility": "7.2 ⋅ 10<sup><small>-9</small></sup>",
+      "molarMagneticSusceptibility": "1.7 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "1.47 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "1.38"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "5.080 Å",
       "debyeTemperature": "163",
-      "space1": "Fm_ 3m",
-      "space2": "225"
+      "spaceGroup": "Fm_ 3m",
+      "spaceGroupNumber": "225"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23960",
-      "numberRTEC": "RTECSXO6400000",
+      "pubchemCid": "CID23960",
+      "rtecsNumber": "RTECSXO6400000",
       "brinellHardness": "400.0",
       "mohsHardness": "3.0",
       "vickersHardness": "350.0",
       "bulkModulus": "54.0",
       "youngModulus": "79.0",
-      "molarValue": "0.0000197917",
+      "molarVolume": "0.0000197917",
       "poissonRatio": "0.27",
       "shearModulus": "31.0",
       "soundSpeed": "2490.0",
@@ -10695,7 +10431,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.3",
-      "atomElectronEnergy": "112.72"
+      "electronAffinity": "112.72"
     },
     "nucleus": {
       "halfLife": "14050000000/1",
@@ -10704,12 +10440,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,1,RAD"
     },
     "prevalence": {
-      "prevalence1": "4 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence2": "3 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence3": "4.0 ⋅ 10<sup><small>-12</small></sup>",
-      "prevalence4": "1.4268203 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence5": "9.6 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence6": "3.9 ⋅ 10<sup><small>-6</small></sup>"
+      "universe": "4 ⋅ 10<sup><small>-8</small></sup>",
+      "sun": "3 ⋅ 10<sup><small>-8</small></sup>",
+      "ocean": "4.0 ⋅ 10<sup><small>-12</small></sup>",
+      "humanBody": "1.4268203 ⋅ 10<sup><small>-7</small></sup>",
+      "crust": "9.6 ⋅ 10<sup><small>-4</small></sup>",
+      "meteorites": "3.9 ⋅ 10<sup><small>-6</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -10741,28 +10477,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Protactinium",
       "englishName": "Protactinium",
-      "elementOpenedYear": "1918",
+      "discoveryYear": "1918",
       "casNumber": "CAS7440-13-3",
-      "elementOpener": "73/74/75/108",
-      "countryOpener": "DE, GB",
-      "elementShell": "K2-L8-M18-N32-O20-P9-Q2-R0",
-      "elementE": "91",
-      "elementP": "91",
-      "elementN": "140",
+      "discoverer": "73/74/75/108",
+      "discoveryCountry": "DE, GB",
+      "electronShellConfig": "K2-L8-M18-N32-O20-P9-Q2-R0",
+      "electronCount": "91",
+      "protonCount": "91",
+      "neutronCount": "140",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Rn] 5f2 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s2 4f14 5d10 6p6 5f2 6d1 7s2",
-      "elementPrice": "28000",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f2 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s2 4f14 5d10 6p6 5f2 6d1 7s2"
     },
     "properties": {
-      "elementMasse": "231.03588529293",
-      "elementDensity": "15.37",
-      "elementMeltingPoint": "1568.0",
-      "elementBoilingPoint": "4027.0",
-      "elValence": "5",
-      "elementGroup": "7/III-",
-      "elementBlock": "f",
+      "atomicMass": "231.03588529293",
+      "density": "15.37",
+      "meltingPoint": "1568.0",
+      "boilingPoint": "4027.0",
+      "valence": "5",
+      "group": "7/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -10780,31 +10514,30 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "243"
     },
     "electromagnetic": {
-      "es_electro": "5649717.51412429",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "4.995 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "3.25 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "7.509 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "1.77 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "1.4"
+      "electricalConductivity": "5649717.51412429",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "4.995 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "3.25 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "7.509 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "1.77 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "1.4"
     },
     "grid": {
-      "gridStructureNum": "10",
+      "structureCode": "10",
       "gridParams": "a=3.925 Å; c=3.238 Å",
-      "ratio": "0.82",
+      "axialRatio": "0.82",
       "debyeTemperature": "185",
-      "space1": "I4/mmm",
-      "space2": "139"
+      "spaceGroup": "I4/mmm",
+      "spaceGroupNumber": "139"
     },
     "additional": {
-      "elementColor": "1",
-      "molarValue": "0.0000150316",
+      "molarVolume": "0.0000150316",
       "thermalConductivity": "47.0"
     },
     "reactivity": {
       "electronegativity": "1.5",
-      "atomElectronEnergy": "53.03"
+      "electronAffinity": "53.03"
     },
     "nucleus": {
       "halfLife": "32570/1",
@@ -10813,9 +10546,9 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {
-      "prevalence1": "2 ⋅ 10<sup><small>-8</small></sup>",
-      "prevalence3": "2 ⋅ 10<sup><small>-23</small></sup>",
-      "prevalence5": "1.4 ⋅ 10<sup><small>-10</small></sup>"
+      "universe": "2 ⋅ 10<sup><small>-8</small></sup>",
+      "ocean": "2 ⋅ 10<sup><small>-23</small></sup>",
+      "crust": "1.4 ⋅ 10<sup><small>-10</small></sup>"
     },
     "colorIndex": 1,
     "ghs": [
@@ -10842,28 +10575,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Uranium",
       "englishName": "Uranium",
-      "elementOpenedYear": "1789",
+      "discoveryYear": "1789",
       "casNumber": "CAS7440-61-1",
-      "elementOpener": "32",
-      "countryOpener": "DE",
-      "elementShell": "K2-L8-M18-N32-O21-P9-Q2-R0",
-      "elementE": "92",
-      "elementP": "92",
-      "elementN": "146",
+      "discoverer": "32",
+      "discoveryCountry": "DE",
+      "electronShellConfig": "K2-L8-M18-N32-O21-P9-Q2-R0",
+      "electronCount": "92",
+      "protonCount": "92",
+      "neutronCount": "146",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Rn] 5f3 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s2 4f14 5d10 6p6 5f3 6d1 7s2",
-      "elementPrice": "191",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f3 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s2 4f14 5d10 6p6 5f3 6d1 7s2"
     },
     "properties": {
-      "elementMasse": "238.028908960606",
-      "elementDensity": "19.1",
-      "elementMeltingPoint": "1132.2",
-      "elementBoilingPoint": "4131.0",
-      "elValence": "2, 3, 4, 5, 6",
-      "elementGroup": "7/III-",
-      "elementBlock": "f",
+      "atomicMass": "238.028908960606",
+      "density": "19.1",
+      "meltingPoint": "1132.2",
+      "boilingPoint": "4131.0",
+      "valence": "2, 3, 4, 5, 6",
+      "group": "7/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -10881,33 +10612,32 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "186"
     },
     "electromagnetic": {
-      "es_electro": "3571428.57142857",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "4.11 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "2.16 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "5.14 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "2.8 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "0.69"
+      "electricalConductivity": "3571428.57142857",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "4.11 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "2.16 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "5.14 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "2.8 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "0.69"
     },
     "grid": {
-      "gridStructureNum": "9",
+      "structureCode": "9",
       "gridParams": "a=2.854 Å; b=5.870 Å; c=4.955 Å",
       "debyeTemperature": "248",
-      "space1": "Cmcm",
-      "space2": "63"
+      "spaceGroup": "Cmcm",
+      "spaceGroupNumber": "63"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23989",
-      "numberRTEC": "RTECSYR3490000",
+      "pubchemCid": "CID23989",
+      "rtecsNumber": "RTECSYR3490000",
       "brinellHardness": "2400.0",
       "mohsHardness": "6.0",
       "vickersHardness": "1960.0",
       "bulkModulus": "100.0",
       "youngModulus": "208.0",
       "liquidDensity": "17.3",
-      "molarValue": "0.000012495",
+      "molarVolume": "0.000012495",
       "poissonRatio": "0.23",
       "shearModulus": "111.0",
       "soundSpeed": "3155.0",
@@ -10915,7 +10645,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.38",
-      "atomElectronEnergy": "30.39"
+      "electronAffinity": "30.39"
     },
     "nucleus": {
       "halfLife": "4468000000/1",
@@ -10924,11 +10654,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,1,RAD"
     },
     "prevalence": {
-      "prevalence2": "1 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence3": "3.3 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence4": "1.4268203 ⋅ 10<sup><small>-7</small></sup>",
-      "prevalence5": "2.7 ⋅ 10<sup><small>-4</small></sup>",
-      "prevalence6": "9.8 ⋅ 10<sup><small>-7</small></sup>"
+      "sun": "1 ⋅ 10<sup><small>-7</small></sup>",
+      "ocean": "3.3 ⋅ 10<sup><small>-7</small></sup>",
+      "humanBody": "1.4268203 ⋅ 10<sup><small>-7</small></sup>",
+      "crust": "2.7 ⋅ 10<sup><small>-4</small></sup>",
+      "meteorites": "9.8 ⋅ 10<sup><small>-7</small></sup>"
     },
     "colorIndex": 5,
     "ghs": [
@@ -10974,27 +10704,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Neptunium",
       "englishName": "Neptunium",
-      "elementOpenedYear": "1940",
+      "discoveryYear": "1940",
       "casNumber": "CAS7439-99-8",
-      "elementOpener": "102/103",
-      "countryOpener": "US",
-      "elementShell": "K2-L8-M18-N32-O22-P9-Q2-R0",
-      "elementE": "93",
-      "elementP": "93",
-      "elementN": "144",
+      "discoverer": "102/103",
+      "discoveryCountry": "US",
+      "electronShellConfig": "K2-L8-M18-N32-O22-P9-Q2-R0",
+      "electronCount": "93",
+      "protonCount": "93",
+      "neutronCount": "144",
       "hasImage": true,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f4 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s2 4f14 5d10 6p6 5f4 6d1 7s2",
-      "elementPrice": "66000",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f4 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s2 4f14 5d10 6p6 5f4 6d1 7s2"
     },
     "properties": {
-      "elementMasse": "236.981455438519",
-      "elementDensity": "20.45",
-      "elementMeltingPoint": "644.0",
-      "elementBoilingPoint": "3902.0",
-      "elementGroup": "7/III-",
-      "elementBlock": "f",
+      "atomicMass": "236.981455438519",
+      "density": "20.45",
+      "meltingPoint": "644.0",
+      "boilingPoint": "3902.0",
+      "group": "7/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -11011,27 +10739,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "221"
     },
     "electromagnetic": {
-      "es_electro": "819672.131147541",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_udel": "1.22 ⋅ 10<sup><small>-6</small></sup>"
+      "electricalConductivity": "819672.131147541",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "electricalResistivity": "1.22 ⋅ 10<sup><small>-6</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "9",
+      "structureCode": "9",
       "gridParams": "a=6.663 Å; b=4.723 Å; c=4.887 Å",
       "debyeTemperature": "259",
-      "space1": "Pnma",
-      "space2": "62"
+      "spaceGroup": "Pnma",
+      "spaceGroupNumber": "62"
     },
     "additional": {
-      "elementColor": "1",
       "bulkModulus": "118",
-      "molarValue": "0.00001158924205379",
+      "molarVolume": "0.00001158924205379",
       "thermalConductivity": "6.3"
     },
     "reactivity": {
       "electronegativity": "1.36",
-      "atomElectronEnergy": "45.85"
+      "electronAffinity": "45.85"
     },
     "nucleus": {
       "halfLife": "2144000/1",
@@ -11063,27 +10790,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Plutonium",
       "englishName": "Plutonium",
-      "elementOpenedYear": "1940",
+      "discoveryYear": "1940",
       "casNumber": "CAS7440-07-5",
-      "elementOpener": "49/104/105/102",
-      "countryOpener": "US",
-      "elementShell": "K2-L8-M18-N32-O24-P8-Q2-R0",
-      "elementE": "94",
-      "elementP": "94",
-      "elementN": "150",
+      "discoverer": "49/104/105/102",
+      "discoveryCountry": "US",
+      "electronShellConfig": "K2-L8-M18-N32-O24-P8-Q2-R0",
+      "electronCount": "94",
+      "protonCount": "94",
+      "neutronCount": "150",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Rn] 5f6 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f6 6s2 6p6 7s2",
-      "elementPrice": "649000",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f6 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f6 6s2 6p6 7s2"
     },
     "properties": {
-      "elementMasse": "244.053191747051",
-      "elementDensity": "19.84",
-      "elementMeltingPoint": "639.4",
-      "elementBoilingPoint": "3228.0",
-      "elementGroup": "7/III-",
-      "elementBlock": "f",
+      "atomicMass": "244.053191747051",
+      "density": "19.84",
+      "meltingPoint": "639.4",
+      "boilingPoint": "3228.0",
+      "group": "7/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -11101,27 +10826,26 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "243"
     },
     "electromagnetic": {
-      "es_electro": "684931.506849315",
-      "es_etype": "1",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "6.222 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "3.17 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "7.735 ⋅ 10<sup><small>-9</small></sup>",
-      "es_udel": "1.46 ⋅ 10<sup><small>-6</small></sup>"
+      "electricalConductivity": "684931.506849315",
+      "electricalType": "1",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "6.222 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "3.17 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "7.735 ⋅ 10<sup><small>-9</small></sup>",
+      "electricalResistivity": "1.46 ⋅ 10<sup><small>-6</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "12",
+      "structureCode": "12",
       "gridParams": "a=6.183 Å; b=4.822 Å; c=10.963 Å; β=101.8°",
       "debyeTemperature": "206",
-      "space1": "P12<sub><small>1</small></sub>/m1",
-      "space2": "11"
+      "spaceGroup": "P12<sub><small>1</small></sub>/m1",
+      "spaceGroupNumber": "11"
     },
     "additional": {
-      "elementColor": "1",
-      "numberCID": "CID23940",
+      "pubchemCid": "CID23940",
       "youngModulus": "96.0",
       "liquidDensity": "16.63",
-      "molarValue": "0.00001231328219621",
+      "molarVolume": "0.00001231328219621",
       "poissonRatio": "0.21",
       "shearModulus": "43.0",
       "soundSpeed": "2260.0",
@@ -11129,7 +10853,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "reactivity": {
       "electronegativity": "1.28",
-      "atomElectronEnergy": "-48.33"
+      "electronAffinity": "-48.33"
     },
     "nucleus": {
       "halfLife": "81300000/1",
@@ -11163,27 +10887,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Americium",
       "englishName": "Americium",
-      "elementOpenedYear": "1944",
+      "discoveryYear": "1944",
       "casNumber": "CAS7440-35-9",
-      "elementOpener": "49/106/107/36",
-      "countryOpener": "US",
-      "elementShell": "K2-L8-M18-N32-O25-P8-Q2-R0",
-      "elementE": "95",
-      "elementP": "95",
-      "elementN": "148",
+      "discoverer": "49/106/107/36",
+      "discoveryCountry": "US",
+      "electronShellConfig": "K2-L8-M18-N32-O25-P8-Q2-R0",
+      "electronCount": "95",
+      "protonCount": "95",
+      "neutronCount": "148",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Rn] 5f7 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f7 6s2 6p6 7s2",
-      "elementPrice": "150000",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f7 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f7 6s2 6p6 7s2"
     },
     "properties": {
-      "elementMasse": "242.934108985274",
-      "elementDensity": "13.67",
-      "elementMeltingPoint": "1176.0",
-      "elementBoilingPoint": "2011.0",
-      "elementGroup": "7/III-",
-      "elementBlock": "f",
+      "atomicMass": "242.934108985274",
+      "density": "13.67",
+      "meltingPoint": "1176.0",
+      "boilingPoint": "2011.0",
+      "group": "7/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -11200,30 +10922,29 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "244"
     },
     "electromagnetic": {
-      "es_electro": "1451378.80986938",
-      "es_mtype": "paramagnetic",
-      "es_omvospr": "7.04 ⋅ 10<sup><small>-4</small></sup>",
-      "es_umvospr": "5.15 ⋅ 10<sup><small>-8</small></sup>",
-      "es_mmvospr": "1.251 ⋅ 10<sup><small>-8</small></sup>",
-      "es_udel": "6.89 ⋅ 10<sup><small>-7</small></sup>",
-      "es_temp": "0.6"
+      "electricalConductivity": "1451378.80986938",
+      "magneticType": "paramagnetic",
+      "volumeMagneticSusceptibility": "7.04 ⋅ 10<sup><small>-4</small></sup>",
+      "massMagneticSusceptibility": "5.15 ⋅ 10<sup><small>-8</small></sup>",
+      "molarMagneticSusceptibility": "1.251 ⋅ 10<sup><small>-8</small></sup>",
+      "electricalResistivity": "6.89 ⋅ 10<sup><small>-7</small></sup>",
+      "superconductingTemperature": "0.6"
     },
     "grid": {
-      "gridStructureNum": "11",
+      "structureCode": "11",
       "gridParams": "a=3.468 Å; c=11.24 Å",
-      "ratio": "3.24",
+      "axialRatio": "3.24",
       "debyeTemperature": "121",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "molarValue": "0.00001777615215801",
+      "molarVolume": "0.00001777615215801",
       "thermalConductivity": "10.0"
     },
     "reactivity": {
       "electronegativity": "1.3",
-      "atomElectronEnergy": "9.93"
+      "electronAffinity": "9.93"
     },
     "nucleus": {
       "halfLife": "7370/1",
@@ -11259,27 +10980,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Curium",
       "englishName": "Curium",
-      "elementOpenedYear": "1944",
+      "discoveryYear": "1944",
       "casNumber": "CAS7440-51-9",
-      "elementOpener": "49/106/36",
-      "countryOpener": "US",
-      "elementShell": "K2-L8-M18-N32-O25-P9-Q2-R0",
-      "elementE": "96",
-      "elementP": "96",
-      "elementN": "151",
+      "discoverer": "49/106/36",
+      "discoveryCountry": "US",
+      "electronShellConfig": "K2-L8-M18-N32-O25-P9-Q2-R0",
+      "electronCount": "96",
+      "protonCount": "96",
+      "neutronCount": "151",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Rn] 5f7 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f7 6s2 6p6 6d1 7s2",
-      "elementPrice": "200000",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f7 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f7 6s2 6p6 6d1 7s2"
     },
     "properties": {
-      "elementMasse": "247.092408999006",
-      "elementDensity": "13.51",
-      "elementMeltingPoint": "1340.0",
-      "elementBoilingPoint": "3110.0",
-      "elementGroup": "7/III-",
-      "elementBlock": "f",
+      "atomicMass": "247.092408999006",
+      "density": "13.51",
+      "meltingPoint": "1340.0",
+      "boilingPoint": "3110.0",
+      "group": "7/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -11294,25 +11013,24 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "245"
     },
     "electromagnetic": {
-      "es_electro": "800000.0",
-      "es_mtype": "paramagnetic",
-      "es_udel": "1.25 ⋅ 10<sup><small>-6</small></sup>"
+      "electricalConductivity": "800000.0",
+      "magneticType": "paramagnetic",
+      "electricalResistivity": "1.25 ⋅ 10<sup><small>-6</small></sup>"
     },
     "grid": {
-      "gridStructureNum": "11",
+      "structureCode": "11",
       "gridParams": "a=3.496 Å; c=11.33 Å",
-      "ratio": "3.24",
+      "axialRatio": "3.24",
       "debyeTemperature": "123",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "1",
-      "molarValue": "0.00001828275351591"
+      "molarVolume": "0.00001828275351591"
     },
     "reactivity": {
       "electronegativity": "1.3",
-      "atomElectronEnergy": "27.17"
+      "electronAffinity": "27.17"
     },
     "nucleus": {
       "halfLife": "15600000/1",
@@ -11343,26 +11061,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Berkelium",
       "englishName": "Berkelium",
-      "elementOpenedYear": "1949",
+      "discoveryYear": "1949",
       "casNumber": "CAS7440-40-6",
-      "elementOpener": "49/36/109",
-      "countryOpener": "US",
-      "elementShell": "K2-L8-M18-N32-O27-P8-Q2-R0",
-      "elementE": "97",
-      "elementP": "97",
-      "elementN": "150",
+      "discoverer": "49/36/109",
+      "discoveryCountry": "US",
+      "electronShellConfig": "K2-L8-M18-N32-O27-P8-Q2-R0",
+      "electronCount": "97",
+      "protonCount": "97",
+      "neutronCount": "150",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Rn] 5f9 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f9 6s2 6p6 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f9 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f9 6s2 6p6 7s2"
     },
     "properties": {
-      "elementMasse": "247.07806947346",
-      "elementDensity": "14.78",
-      "elementMeltingPoint": "986.0",
-      "elementBoilingPoint": "2627.0",
-      "elementGroup": "7/III-",
-      "elementBlock": "f",
+      "atomicMass": "247.07806947346",
+      "density": "14.78",
+      "meltingPoint": "986.0",
+      "boilingPoint": "2627.0",
+      "group": "7/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -11377,24 +11094,23 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "244"
     },
     "electromagnetic": {
-      "es_mtype": "paramagnetic"
+      "magneticType": "paramagnetic"
     },
     "grid": {
-      "gridStructureNum": "11",
+      "structureCode": "11",
       "gridParams": "a=3.416 Å; c=11.07 Å",
-      "ratio": "3.24",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "axialRatio": "3.24",
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "0",
-      "numberCID": "CID23971",
-      "molarValue": "0.00001671177266576",
+      "pubchemCid": "CID23971",
+      "molarVolume": "0.00001671177266576",
       "thermalConductivity": "10.0"
     },
     "reactivity": {
       "electronegativity": "1.3",
-      "atomElectronEnergy": "-165.24"
+      "electronAffinity": "-165.24"
     },
     "nucleus": {
       "halfLife": "1380/1",
@@ -11424,26 +11140,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Californium",
       "englishName": "Californium",
-      "elementOpenedYear": "1950",
+      "discoveryYear": "1950",
       "casNumber": "CAS7440-71-3",
-      "elementOpener": "49/109/110/36",
-      "countryOpener": "US",
-      "elementShell": "K2-L8-M18-N32-O28-P8-Q2-R0",
-      "elementE": "98",
-      "elementP": "98",
-      "elementN": "153",
+      "discoverer": "49/109/110/36",
+      "discoveryCountry": "US",
+      "electronShellConfig": "K2-L8-M18-N32-O28-P8-Q2-R0",
+      "electronCount": "98",
+      "protonCount": "98",
+      "neutronCount": "153",
       "hasImage": true,
       "hasSpectre": true,
-      "elementConfiguration": "[Rn] 5f10 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f10 6s2 6p6 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f10 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f10 6s2 6p6 7s2"
     },
     "properties": {
-      "elementMasse": "251.079587",
-      "elementDensity": "15.1",
-      "elementMeltingPoint": "900.0",
-      "elementBoilingPoint": "1472.0",
-      "elementGroup": "7/III-",
-      "elementBlock": "f",
+      "atomicMass": "251.079587",
+      "density": "15.1",
+      "meltingPoint": "900.0",
+      "boilingPoint": "1472.0",
+      "group": "7/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {},
@@ -11456,19 +11171,18 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "11",
+      "structureCode": "11",
       "gridParams": "a=3.38 Å; c=11.03 Å",
-      "ratio": "3.26",
-      "space1": "P6<sub><small>3</small></sub>/mmc",
-      "space2": "194"
+      "axialRatio": "3.26",
+      "spaceGroup": "P6<sub><small>3</small></sub>/mmc",
+      "spaceGroupNumber": "194"
     },
     "additional": {
-      "elementColor": "0",
-      "molarValue": "0.00001662251655629"
+      "molarVolume": "0.00001662251655629"
     },
     "reactivity": {
       "electronegativity": "1.3",
-      "atomElectronEnergy": "-97.31"
+      "electronAffinity": "-97.31"
     },
     "nucleus": {
       "halfLife": "900/1",
@@ -11500,26 +11214,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Einsteinium",
       "englishName": "Einsteinium",
-      "elementOpenedYear": "1952",
+      "discoveryYear": "1952",
       "casNumber": "CAS7429-92-7",
-      "elementOpener": "36/111/112/109/49",
-      "countryOpener": "US",
-      "elementShell": "K2-L8-M18-N32-O29-P8-Q2-R0",
-      "elementE": "99",
-      "elementP": "99",
-      "elementN": "153",
+      "discoverer": "36/111/112/109/49",
+      "discoveryCountry": "US",
+      "electronShellConfig": "K2-L8-M18-N32-O29-P8-Q2-R0",
+      "electronCount": "99",
+      "protonCount": "99",
+      "neutronCount": "153",
       "hasImage": true,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f11 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f11 6s2 6p6 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f11 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f11 6s2 6p6 7s2"
     },
     "properties": {
-      "elementMasse": "252.082980",
-      "elementDensity": "~8.84",
-      "elementMeltingPoint": "860.0",
-      "elementBoilingPoint": "996.0",
-      "elementGroup": "7/III-",
-      "elementBlock": "f",
+      "atomicMass": "252.082980",
+      "density": "~8.84",
+      "meltingPoint": "860.0",
+      "boilingPoint": "996.0",
+      "group": "7/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {},
@@ -11531,16 +11244,16 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "vanDerWaalsRadius": "245"
     },
     "electromagnetic": {
-      "es_mtype": "paramagnetic"
+      "magneticType": "paramagnetic"
     },
     "grid": {
-      "gridStructureNum": "4",
+      "structureCode": "4",
       "gridParams": "5.75 Å"
     },
     "additional": {},
     "reactivity": {
       "electronegativity": "1.3",
-      "atomElectronEnergy": "-28.6"
+      "electronAffinity": "-28.6"
     },
     "nucleus": {
       "halfLife": "275.7/2",
@@ -11569,26 +11282,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Fermium",
       "englishName": "Fermium",
-      "elementOpenedYear": "1952",
+      "discoveryYear": "1952",
       "casNumber": "CAS7440-72-4",
-      "elementOpener": "49/36/109",
-      "countryOpener": "US",
-      "elementShell": "K2-L8-M18-N32-O30-P8-Q2-R0",
-      "elementE": "100",
-      "elementP": "100",
-      "elementN": "157",
+      "discoverer": "49/36/109",
+      "discoveryCountry": "US",
+      "electronShellConfig": "K2-L8-M18-N32-O30-P8-Q2-R0",
+      "electronCount": "100",
+      "protonCount": "100",
+      "neutronCount": "157",
       "hasImage": true,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f12 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f11 6s2 6p6 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f12 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f11 6s2 6p6 7s2"
     },
     "properties": {
-      "elementMasse": "257.095105",
-      "elementDensity": "~9.7",
-      "elementMeltingPoint": "1527.0",
-      "elementBoilingPoint": "**",
-      "elementGroup": "7/III-",
-      "elementBlock": "f",
+      "atomicMass": "257.095105",
+      "density": "~9.7",
+      "meltingPoint": "1527.0",
+      "boilingPoint": "**",
+      "group": "7/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {},
@@ -11601,12 +11313,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "4"
+      "structureCode": "4"
     },
     "additional": {},
     "reactivity": {
       "electronegativity": "1.3",
-      "atomElectronEnergy": "33.96"
+      "electronAffinity": "33.96"
     },
     "nucleus": {
       "halfLife": "100.5/2",
@@ -11636,26 +11348,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Mendelevium",
       "englishName": "Mendelevium",
-      "elementOpenedYear": "1955",
+      "discoveryYear": "1955",
       "casNumber": "CAS7440-11-1",
-      "elementOpener": "49/36/111/112/109",
-      "countryOpener": "US",
-      "elementShell": "K2-L8-M18-N32-O31-P8-Q2-R0",
-      "elementE": "101",
-      "elementP": "101",
-      "elementN": "157",
+      "discoverer": "49/36/111/112/109",
+      "discoveryCountry": "US",
+      "electronShellConfig": "K2-L8-M18-N32-O31-P8-Q2-R0",
+      "electronCount": "101",
+      "protonCount": "101",
+      "neutronCount": "157",
       "hasImage": false,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f13 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f13 6s2 6p6 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f13 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f13 6s2 6p6 7s2"
     },
     "properties": {
-      "elementMasse": "258.098434",
-      "elementDensity": "~10.3",
-      "elementMeltingPoint": "827.0",
-      "elementBoilingPoint": "**",
-      "elementGroup": "7/III-",
-      "elementBlock": "f",
+      "atomicMass": "258.098434",
+      "density": "~10.3",
+      "meltingPoint": "827.0",
+      "boilingPoint": "**",
+      "group": "7/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {},
@@ -11668,12 +11379,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "4"
+      "structureCode": "4"
     },
     "additional": {},
     "reactivity": {
       "electronegativity": "1.3",
-      "atomElectronEnergy": "93.91"
+      "electronAffinity": "93.91"
     },
     "nucleus": {
       "halfLife": "51.5/2",
@@ -11702,26 +11413,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Nobelium",
       "englishName": "Nobelium",
-      "elementOpenedYear": "1966",
+      "discoveryYear": "1966",
       "casNumber": "CAS10028-14-5",
-      "elementOpener": "53/54",
-      "countryOpener": "RU",
-      "elementShell": "K2-L8-M18-N32-O32-P8-Q2-R0",
-      "elementE": "102",
-      "elementP": "102",
-      "elementN": "157",
+      "discoverer": "53/54",
+      "discoveryCountry": "RU",
+      "electronShellConfig": "K2-L8-M18-N32-O32-P8-Q2-R0",
+      "electronCount": "102",
+      "protonCount": "102",
+      "neutronCount": "157",
       "hasImage": true,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f14 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f14 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 7s2"
     },
     "properties": {
-      "elementMasse": "259.100998",
-      "elementDensity": "~9.9",
-      "elementMeltingPoint": "827.0",
-      "elementBoilingPoint": "**",
-      "elementGroup": "7/III-",
-      "elementBlock": "f",
+      "atomicMass": "259.100998",
+      "density": "~9.9",
+      "meltingPoint": "827.0",
+      "boilingPoint": "**",
+      "group": "7/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {},
@@ -11734,12 +11444,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "4"
+      "structureCode": "4"
     },
     "additional": {},
     "reactivity": {
       "electronegativity": "1.3",
-      "atomElectronEnergy": "-223.22"
+      "electronAffinity": "-223.22"
     },
     "nucleus": {
       "halfLife": "58.4/4",
@@ -11769,26 +11479,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Lawrencium",
       "englishName": "Lawrencium",
-      "elementOpenedYear": "1961",
+      "discoveryYear": "1961",
       "casNumber": "CAS22537-19-5",
-      "elementOpener": "36/53",
-      "countryOpener": "US, RU",
-      "elementShell": "K2-L8-M18-N32-O32-P8-Q3-R0",
-      "elementE": "103",
-      "elementP": "103",
-      "elementN": "163",
+      "discoverer": "36/53",
+      "discoveryCountry": "US, RU",
+      "electronShellConfig": "K2-L8-M18-N32-O32-P8-Q3-R0",
+      "electronCount": "103",
+      "protonCount": "103",
+      "neutronCount": "163",
       "hasImage": true,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f14 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d1 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f14 6d1 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d1 7s2"
     },
     "properties": {
-      "elementMasse": "264.862022387989",
-      "elementDensity": "~15.6",
-      "elementMeltingPoint": "1627.0",
-      "elementBoilingPoint": "**",
-      "elementGroup": "7/III-",
-      "elementBlock": "f",
+      "atomicMass": "264.862022387989",
+      "density": "~15.6",
+      "meltingPoint": "1627.0",
+      "boilingPoint": "**",
+      "group": "7/III-",
+      "block": "f",
       "aggregationState": "solid"
     },
     "thermo": {},
@@ -11802,12 +11511,12 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "2"
+      "structureCode": "2"
     },
     "additional": {},
     "reactivity": {
       "electronegativity": "1.3",
-      "atomElectronEnergy": "-30.04"
+      "electronAffinity": "-30.04"
     },
     "nucleus": {
       "halfLife": "11/3",
@@ -11838,26 +11547,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Rutherfordium",
       "englishName": "Rutherfordium",
-      "elementOpenedYear": "1969",
+      "discoveryYear": "1969",
       "casNumber": "CAS53850-36-5",
-      "elementOpener": "53/36",
-      "countryOpener": "RU, US",
-      "elementShell": "K2-L8-M18-N32-O32-P10-Q2-R0",
-      "elementE": "104",
-      "elementP": "104",
-      "elementN": "157",
+      "discoverer": "53/36",
+      "discoveryCountry": "RU, US",
+      "electronShellConfig": "K2-L8-M18-N32-O32-P10-Q2-R0",
+      "electronCount": "104",
+      "protonCount": "104",
+      "neutronCount": "157",
       "hasImage": true,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f14 6d2 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d2 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f14 6d2 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d2 7s2"
     },
     "properties": {
-      "elementMasse": "266.32341341081",
-      "elementDensity": "~17",
-      "elementMeltingPoint": "2100.0",
-      "elementBoilingPoint": "**",
-      "elementGroup": "7/IV-",
-      "elementBlock": "d",
+      "atomicMass": "266.32341341081",
+      "density": "~17",
+      "meltingPoint": "2100.0",
+      "boilingPoint": "**",
+      "group": "7/IV-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {},
@@ -11868,7 +11576,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "2"
+      "structureCode": "2"
     },
     "additional": {},
     "reactivity": {},
@@ -11900,26 +11608,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Dubnium",
       "englishName": "Dubnium",
-      "elementOpenedYear": "1970",
+      "discoveryYear": "1970",
       "casNumber": "CAS53850-35-4",
-      "elementOpener": "53/36",
-      "countryOpener": "RU, US",
-      "elementShell": "K2-L8-M18-N32-O32-P11-Q2-R0",
-      "elementE": "105",
-      "elementP": "105",
-      "elementN": "157",
+      "discoverer": "53/36",
+      "discoveryCountry": "RU, US",
+      "electronShellConfig": "K2-L8-M18-N32-O32-P11-Q2-R0",
+      "electronCount": "105",
+      "protonCount": "105",
+      "neutronCount": "157",
       "hasImage": false,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f14 6d3 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d3 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f14 6d3 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d3 7s2"
     },
     "properties": {
-      "elementMasse": "268.142818454282",
-      "elementDensity": "~21.6",
-      "elementMeltingPoint": "**",
-      "elementBoilingPoint": "**",
-      "elementGroup": "7/V-",
-      "elementBlock": "d",
+      "atomicMass": "268.142818454282",
+      "density": "~21.6",
+      "meltingPoint": "**",
+      "boilingPoint": "**",
+      "group": "7/V-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {},
@@ -11930,7 +11637,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "3"
+      "structureCode": "3"
     },
     "additional": {},
     "reactivity": {},
@@ -11962,26 +11669,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Seaborgium",
       "englishName": "Seaborgium",
-      "elementOpenedYear": "1974",
+      "discoveryYear": "1974",
       "casNumber": "CAS54038-81-2",
-      "elementOpener": "36/49",
-      "countryOpener": "US",
-      "elementShell": "K2-L8-M18-N32-O32-P12-Q2-R0",
-      "elementE": "106",
-      "elementP": "106",
-      "elementN": "163",
+      "discoverer": "36/49",
+      "discoveryCountry": "US",
+      "electronShellConfig": "K2-L8-M18-N32-O32-P12-Q2-R0",
+      "electronCount": "106",
+      "protonCount": "106",
+      "neutronCount": "163",
       "hasImage": false,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f14 6d4 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d4 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f14 6d4 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d4 7s2"
     },
     "properties": {
-      "elementMasse": "270.486936755388",
-      "elementDensity": "~23.2",
-      "elementMeltingPoint": "**",
-      "elementBoilingPoint": "**",
-      "elementGroup": "7/VI-",
-      "elementBlock": "d",
+      "atomicMass": "270.486936755388",
+      "density": "~23.2",
+      "meltingPoint": "**",
+      "boilingPoint": "**",
+      "group": "7/VI-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {},
@@ -11992,7 +11698,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "3"
+      "structureCode": "3"
     },
     "additional": {},
     "reactivity": {},
@@ -12024,25 +11730,24 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Bohrium",
       "englishName": "Bohrium",
-      "elementOpenedYear": "1981",
+      "discoveryYear": "1981",
       "casNumber": "CAS54037-14-8",
-      "elementOpener": "64/65",
-      "countryOpener": "DE",
-      "elementShell": "K2-L8-M18-N32-O32-P13-Q2-R0",
-      "elementE": "107",
-      "elementP": "107",
-      "elementN": "160",
+      "discoverer": "64/65",
+      "discoveryCountry": "DE",
+      "electronShellConfig": "K2-L8-M18-N32-O32-P13-Q2-R0",
+      "electronCount": "107",
+      "protonCount": "107",
+      "neutronCount": "160",
       "hasImage": false,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f14 6d5 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d5 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f14 6d5 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d5 7s2"
     },
     "properties": {
-      "elementMasse": "270.929231154427",
-      "elementMeltingPoint": "**",
-      "elementBoilingPoint": "**",
-      "elementGroup": "7/VII-",
-      "elementBlock": "d",
+      "atomicMass": "270.929231154427",
+      "meltingPoint": "**",
+      "boilingPoint": "**",
+      "group": "7/VII-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {},
@@ -12053,7 +11758,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "2"
+      "structureCode": "2"
     },
     "additional": {},
     "reactivity": {},
@@ -12084,26 +11789,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Hassium",
       "englishName": "Hassium",
-      "elementOpenedYear": "1984",
+      "discoveryYear": "1984",
       "casNumber": "CAS54037-57-9",
-      "elementOpener": "64/65",
-      "countryOpener": "DE",
-      "elementShell": "K2-L8-M18-N32-O32-P14-Q2-R0",
-      "elementE": "108",
-      "elementP": "108",
-      "elementN": "161",
+      "discoverer": "64/65",
+      "discoveryCountry": "DE",
+      "electronShellConfig": "K2-L8-M18-N32-O32-P14-Q2-R0",
+      "electronCount": "108",
+      "protonCount": "108",
+      "neutronCount": "161",
       "hasImage": false,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f14 6d6 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d6 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f14 6d6 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d6 7s2"
     },
     "properties": {
-      "elementMasse": "275.381591197533",
-      "elementDensity": "~29.3",
-      "elementMeltingPoint": "**",
-      "elementBoilingPoint": "**",
-      "elementGroup": "7/VIII-",
-      "elementBlock": "d",
+      "atomicMass": "275.381591197533",
+      "density": "~29.3",
+      "meltingPoint": "**",
+      "boilingPoint": "**",
+      "group": "7/VIII-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {},
@@ -12114,7 +11818,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "2"
+      "structureCode": "2"
     },
     "additional": {},
     "reactivity": {},
@@ -12146,25 +11850,24 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Meitnerium",
       "englishName": "Meitnerium",
-      "elementOpenedYear": "1982",
+      "discoveryYear": "1982",
       "casNumber": "CAS54038-01-6",
-      "elementOpener": "64/65",
-      "countryOpener": "DE",
-      "elementShell": "K2-L8-M18-N32-O32-P15-Q2-R0",
-      "elementE": "109",
-      "elementP": "109",
-      "elementN": "169",
+      "discoverer": "64/65",
+      "discoveryCountry": "DE",
+      "electronShellConfig": "K2-L8-M18-N32-O32-P15-Q2-R0",
+      "electronCount": "109",
+      "protonCount": "109",
+      "neutronCount": "169",
       "hasImage": false,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f14 6d7 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d7 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f14 6d7 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d7 7s2"
     },
     "properties": {
-      "elementMasse": "278.130923401647",
-      "elementMeltingPoint": "**",
-      "elementBoilingPoint": "**",
-      "elementGroup": "7/VIII-",
-      "elementBlock": "d",
+      "atomicMass": "278.130923401647",
+      "meltingPoint": "**",
+      "boilingPoint": "**",
+      "group": "7/VIII-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {},
@@ -12175,10 +11878,10 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "covalentRadius": "129"
     },
     "electromagnetic": {
-      "es_mtype": "paramagnetic"
+      "magneticType": "paramagnetic"
     },
     "grid": {
-      "gridStructureNum": "4"
+      "structureCode": "4"
     },
     "additional": {},
     "reactivity": {},
@@ -12209,25 +11912,24 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Darmstadtium",
       "englishName": "Darmstadtium",
-      "elementOpenedYear": "1994",
+      "discoveryYear": "1994",
       "casNumber": "CAS54083-77-1",
-      "elementOpener": "57",
-      "countryOpener": "DE",
-      "elementShell": "K2-L8-M18-N32-O32-P17-Q1-R0",
-      "elementE": "110",
-      "elementP": "110",
-      "elementN": "171",
+      "discoverer": "57",
+      "discoveryCountry": "DE",
+      "electronShellConfig": "K2-L8-M18-N32-O32-P17-Q1-R0",
+      "electronCount": "110",
+      "protonCount": "110",
+      "neutronCount": "171",
       "hasImage": false,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f14 6d8 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d8 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f14 6d8 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d8 7s2"
     },
     "properties": {
-      "elementMasse": "282.575485574983",
-      "elementMeltingPoint": "**",
-      "elementBoilingPoint": "**",
-      "elementGroup": "7/VIII-",
-      "elementBlock": "d",
+      "atomicMass": "282.575485574983",
+      "meltingPoint": "**",
+      "boilingPoint": "**",
+      "group": "7/VIII-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {},
@@ -12239,7 +11941,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "3"
+      "structureCode": "3"
     },
     "additional": {},
     "reactivity": {},
@@ -12270,25 +11972,24 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Roentgenium",
       "englishName": "Roentgenium",
-      "elementOpenedYear": "1994",
+      "discoveryYear": "1994",
       "casNumber": "CAS54386-24-2",
-      "elementOpener": "57",
-      "countryOpener": "DE",
-      "elementShell": "K2-L8-M18-N32-O32-P18-Q1-R0",
-      "elementE": "111",
-      "elementP": "111",
-      "elementN": "171",
+      "discoverer": "57",
+      "discoveryCountry": "DE",
+      "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q1-R0",
+      "electronCount": "111",
+      "protonCount": "111",
+      "neutronCount": "171",
       "hasImage": false,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f14 6d9 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d9 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f14 6d9 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d9 7s2"
     },
     "properties": {
-      "elementMasse": "283.085549304907",
-      "elementMeltingPoint": "**",
-      "elementBoilingPoint": "**",
-      "elementGroup": "7/I-",
-      "elementBlock": "d",
+      "atomicMass": "283.085549304907",
+      "meltingPoint": "**",
+      "boilingPoint": "**",
+      "group": "7/I-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {},
@@ -12300,11 +12001,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "3"
+      "structureCode": "3"
     },
     "additional": {},
     "reactivity": {
-      "atomElectronEnergy": "151.0"
+      "electronAffinity": "151.0"
     },
     "nucleus": {
       "halfLife": "100/5",
@@ -12333,25 +12034,24 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Copernicium",
       "englishName": "Copernicium",
-      "elementOpenedYear": "1996",
+      "discoveryYear": "1996",
       "casNumber": "CAS54084-26-3",
-      "elementOpener": "57",
-      "countryOpener": "DE",
-      "elementShell": "K2-L8-M18-N32-O32-P18-Q2-R0",
-      "elementE": "112",
-      "elementP": "112",
-      "elementN": "173",
+      "discoverer": "57",
+      "discoveryCountry": "DE",
+      "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q2-R0",
+      "electronCount": "112",
+      "protonCount": "112",
+      "neutronCount": "173",
       "hasImage": false,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f14 6d10 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f14 6d10 7s2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2"
     },
     "properties": {
-      "elementMasse": "286.093635599278",
-      "elementMeltingPoint": "10.0",
-      "elementBoilingPoint": "67.0",
-      "elementGroup": "7/II-",
-      "elementBlock": "d",
+      "atomicMass": "286.093635599278",
+      "meltingPoint": "10.0",
+      "boilingPoint": "67.0",
+      "group": "7/II-",
+      "block": "d",
       "aggregationState": "solid"
     },
     "thermo": {},
@@ -12363,11 +12063,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "3"
+      "structureCode": "3"
     },
     "additional": {},
     "reactivity": {
-      "atomElectronEnergy": "0"
+      "electronAffinity": "0"
     },
     "nucleus": {
       "halfLife": "33/5",
@@ -12397,25 +12097,24 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Nihonium",
       "englishName": "Nihonium",
-      "elementOpenedYear": "2004",
+      "discoveryYear": "2004",
       "casNumber": "CAS54084-70-7",
-      "elementOpener": "56",
-      "countryOpener": "JP",
-      "elementShell": "K2-L8-M18-N32-O32-P18-Q3-R0",
-      "elementE": "113",
-      "elementP": "113",
-      "elementN": "173",
+      "discoverer": "56",
+      "discoveryCountry": "JP",
+      "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q3-R0",
+      "electronCount": "113",
+      "protonCount": "113",
+      "neutronCount": "173",
       "hasImage": false,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f14 6d10 7s2 7p1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p1",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p1 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p1"
     },
     "properties": {
-      "elementMasse": "287.998233477411",
-      "elementMeltingPoint": "430.0",
-      "elementBoilingPoint": "1130.0",
-      "elementGroup": "7/III+",
-      "elementBlock": "p",
+      "atomicMass": "287.998233477411",
+      "meltingPoint": "430.0",
+      "boilingPoint": "1130.0",
+      "group": "7/III+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -12430,11 +12129,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "2"
+      "structureCode": "2"
     },
     "additional": {},
     "reactivity": {
-      "atomElectronEnergy": "66.6"
+      "electronAffinity": "66.6"
     },
     "nucleus": {
       "halfLife": "9.5/5",
@@ -12464,25 +12163,24 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Flerovium",
       "englishName": "Flerovium",
-      "elementOpenedYear": "1998",
+      "discoveryYear": "1998",
       "casNumber": "CAS54085-16-4",
-      "elementOpener": "54/55",
-      "countryOpener": "RU, US",
-      "elementShell": "K2-L8-M18-N32-O32-P18-Q4-R0",
-      "elementE": "114",
-      "elementP": "114",
-      "elementN": "175",
+      "discoverer": "54/55",
+      "discoveryCountry": "RU, US",
+      "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q4-R0",
+      "electronCount": "114",
+      "protonCount": "114",
+      "neutronCount": "175",
       "hasImage": false,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f14 6d10 7s2 7p2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p2",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p2 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p2"
     },
     "properties": {
-      "elementMasse": "290.217148623513",
-      "elementMeltingPoint": "**",
-      "elementBoilingPoint": "**",
-      "elementGroup": "7/IV+",
-      "elementBlock": "p",
+      "atomicMass": "290.217148623513",
+      "meltingPoint": "**",
+      "boilingPoint": "**",
+      "group": "7/IV+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -12496,11 +12194,11 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "4"
+      "structureCode": "4"
     },
     "additional": {},
     "reactivity": {
-      "atomElectronEnergy": "0"
+      "electronAffinity": "0"
     },
     "nucleus": {
       "halfLife": "2.4/5",
@@ -12529,25 +12227,24 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Moscovium",
       "englishName": "Moscovium",
-      "elementOpenedYear": "2003",
+      "discoveryYear": "2003",
       "casNumber": "CAS54085-64-2",
-      "elementOpener": "54/55",
-      "countryOpener": "RU, US",
-      "elementShell": "K2-L8-M18-N32-O32-P18-Q5-R0",
-      "elementE": "115",
-      "elementP": "115",
-      "elementN": "173",
+      "discoverer": "54/55",
+      "discoveryCountry": "RU, US",
+      "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q5-R0",
+      "electronCount": "115",
+      "protonCount": "115",
+      "neutronCount": "173",
       "hasImage": false,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f14 6d10 7s2 7p3 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p3",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p3 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p3"
     },
     "properties": {
-      "elementMasse": "291.542045471157",
-      "elementMeltingPoint": "400.0",
-      "elementBoilingPoint": "1100.0",
-      "elementGroup": "7/V+",
-      "elementBlock": "p",
+      "atomicMass": "291.542045471157",
+      "meltingPoint": "400.0",
+      "boilingPoint": "1100.0",
+      "group": "7/V+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -12564,7 +12261,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "grid": {},
     "additional": {},
     "reactivity": {
-      "atomElectronEnergy": "35.3"
+      "electronAffinity": "35.3"
     },
     "nucleus": {
       "halfLife": "0.65/5",
@@ -12594,25 +12291,24 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Livermorium",
       "englishName": "Livermorium",
-      "elementOpenedYear": "2000",
+      "discoveryYear": "2000",
       "casNumber": "CAS54100-71-9",
-      "elementOpener": "54/55",
-      "countryOpener": "RU, US",
-      "elementShell": "K2-L8-M18-N32-O32-P18-Q6-R0",
-      "elementE": "116",
-      "elementP": "116",
-      "elementN": "177",
+      "discoverer": "54/55",
+      "discoveryCountry": "RU, US",
+      "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q6-R0",
+      "electronCount": "116",
+      "protonCount": "116",
+      "neutronCount": "177",
       "hasImage": false,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f14 6d10 7s2 7p4 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p4",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p4 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p4"
     },
     "properties": {
-      "elementMasse": "292.470799589671",
-      "elementMeltingPoint": "435.5",
-      "elementBoilingPoint": "812.0",
-      "elementGroup": "7/VI+",
-      "elementBlock": "p",
+      "atomicMass": "292.470799589671",
+      "meltingPoint": "435.5",
+      "boilingPoint": "812.0",
+      "group": "7/VI+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {
@@ -12629,7 +12325,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "grid": {},
     "additional": {},
     "reactivity": {
-      "atomElectronEnergy": "74.9"
+      "electronAffinity": "74.9"
     },
     "nucleus": {
       "halfLife": "0.095/5",
@@ -12659,25 +12355,24 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Tennessine",
       "englishName": "Tennessine",
-      "elementOpenedYear": "2010",
+      "discoveryYear": "2010",
       "casNumber": "CAS87658-56-8",
-      "elementOpener": "54/55",
-      "countryOpener": "RU, US",
-      "elementShell": "K2-L8-M18-N32-O32-P18-Q7-R0",
-      "elementE": "117",
-      "elementP": "117",
-      "elementN": "177",
+      "discoverer": "54/55",
+      "discoveryCountry": "RU, US",
+      "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q7-R0",
+      "electronCount": "117",
+      "protonCount": "117",
+      "neutronCount": "177",
       "hasImage": false,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f14 6d10 7s2 7p5 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p5",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p5 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p5"
     },
     "properties": {
-      "elementMasse": "293.73334018093",
-      "elementMeltingPoint": "450.0",
-      "elementBoilingPoint": "610.0",
-      "elementGroup": "7/VII+",
-      "elementBlock": "p",
+      "atomicMass": "293.73334018093",
+      "meltingPoint": "450.0",
+      "boilingPoint": "610.0",
+      "group": "7/VII+",
+      "block": "p",
       "aggregationState": "solid"
     },
     "thermo": {},
@@ -12691,7 +12386,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "grid": {},
     "additional": {},
     "reactivity": {
-      "atomElectronEnergy": "165.9"
+      "electronAffinity": "165.9"
     },
     "nucleus": {
       "halfLife": "0.051/5",
@@ -12722,26 +12417,25 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "overview": {
       "latinName": "Oganesson",
       "englishName": "Oganesson",
-      "elementOpenedYear": "2002",
+      "discoveryYear": "2002",
       "casNumber": "CAS54144-19-3",
-      "elementOpener": "54/55",
-      "countryOpener": "RU, US",
-      "elementShell": "K2-L8-M18-N32-O32-P18-Q8-R0",
-      "elementE": "118",
-      "elementP": "118",
-      "elementN": "176",
+      "discoverer": "54/55",
+      "discoveryCountry": "RU, US",
+      "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q8-R0",
+      "electronCount": "118",
+      "protonCount": "118",
+      "neutronCount": "176",
       "hasImage": false,
       "hasSpectre": false,
-      "elementConfiguration": "[Rn] 5f14 6d10 7s2 7p6 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p6",
-      "elementRadioactivity": true
+      "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p6 = 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 5f14 6s2 6p6 6d10 7s2 7p6"
     },
     "properties": {
-      "elementMasse": "295.212212582275",
-      "elementDensity": "7.2",
-      "elementMeltingPoint": "52.0",
-      "elementBoilingPoint": "177.0",
-      "elementGroup": "7/VIII+",
-      "elementBlock": "p",
+      "atomicMass": "295.212212582275",
+      "density": "7.2",
+      "meltingPoint": "52.0",
+      "boilingPoint": "177.0",
+      "group": "7/VIII+",
+      "block": "p",
       "aggregationState": "gas"
     },
     "thermo": {},
@@ -12753,14 +12447,14 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     },
     "electromagnetic": {},
     "grid": {
-      "gridStructureNum": "4"
+      "structureCode": "4"
     },
     "additional": {
       "liquidDensity": "6.6",
-      "molarValue": "0.0000410"
+      "molarVolume": "0.0000410"
     },
     "reactivity": {
-      "atomElectronEnergy": "7.72"
+      "electronAffinity": "7.72"
     },
     "nucleus": {
       "halfLife": "0.00058/5",

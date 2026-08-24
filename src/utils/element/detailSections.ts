@@ -288,9 +288,9 @@ function buildGridSections(
   s: LocaleMessages['sidebar'],
   u: LocaleMessages['sidebar']['units'],
 ): DetailSection[] {
-  const structureNums = splitGridField(g?.gridStructureNum)
+  const structureNums = splitGridField(g?.structureCode)
   const params = splitGridField(g?.gridParams)
-  const ratios = splitGridField(g?.ratio)
+  const ratios = splitGridField(g?.axialRatio)
   const debyeTemps = splitGridField(g?.debyeTemperature)
 
   if (structureNums.length === 0) {
@@ -299,7 +299,7 @@ function buildGridSections(
       sectionKey: 'grid',
       title: s.sections.grid,
       color: SECTION_COLORS.grid,
-      gridStructureNum: null,
+      structureCode: null,
       items: [
         prop(s.props.gridStructure, EMPTY),
         prop(s.props.gridParams, EMPTY),
@@ -325,11 +325,11 @@ function buildGridSections(
     ]
 
     if (index === 0) {
-      if (g?.space1) {
-        items.push(prop(s.props.spaceGroup, fmt(g.space1), true))
+      if (g?.spaceGroup) {
+        items.push(prop(s.props.spaceGroup, fmt(g.spaceGroup), true))
       }
-      if (g?.space2) {
-        items.push(prop(s.props.spaceGroupNumber, fmt(g.space2)))
+      if (g?.spaceGroupNumber) {
+        items.push(prop(s.props.spaceGroupNumber, fmt(g.spaceGroupNumber)))
       }
     }
 
@@ -340,7 +340,7 @@ function buildGridSections(
         ? s.sections.gridNumbered.replace('{{n}}', String(variant))
         : s.sections.grid,
       color: SECTION_COLORS.grid,
-      gridStructureNum: Number.isFinite(structureNum) ? structureNum : null,
+      structureCode: Number.isFinite(structureNum) ? structureNum : null,
       items,
     }
   })
@@ -381,7 +381,7 @@ interface SectionBuildContext {
 
 function buildOverviewSection(ctx: SectionBuildContext): DetailSection {
   const { detail, messages, locale, s, o } = ctx
-  const discoveryCountries = discoveryMapCountries(o?.countryOpener)
+  const discoveryCountries = discoveryMapCountries(o?.discoveryCountry)
   return {
     id: 'overview',
     title: s.sections.overview,
@@ -389,9 +389,9 @@ function buildOverviewSection(ctx: SectionBuildContext): DetailSection {
     items: [
       prop(s.props.latinName, fmt(o?.latinName)),
       prop(s.props.englishName, fmt(o?.englishName)),
-      prop(s.props.discoveryYear, fmt(o?.elementOpenedYear)),
-      prop(s.props.discoveryOpener, formatOpener(o?.elementOpener, locale)),
-      prop(s.props.discoveryCountry, countryLabel(o?.countryOpener, messages)),
+      prop(s.props.discoveryYear, fmt(o?.discoveryYear)),
+      prop(s.props.discoveryOpener, formatOpener(o?.discoverer, locale)),
+      prop(s.props.discoveryCountry, countryLabel(o?.discoveryCountry, messages)),
       ...(discoveryCountries.length > 0 ? [propCountryMap(discoveryCountries)] : []),
       prop(s.props.casNumber, fmt(o?.casNumber)),
       propColor(
@@ -399,7 +399,7 @@ function buildOverviewSection(ctx: SectionBuildContext): DetailSection {
         getElementSampleColorHex(detail.number),
         getElementSampleColorFinish(detail.number),
       ),
-      prop(s.props.electronShell, fmt(o?.elementShell)),
+      prop(s.props.electronShell, fmt(o?.electronShellConfig)),
     ],
   }
 }
@@ -531,14 +531,14 @@ function buildPropertiesSection(ctx: SectionBuildContext): DetailSection {
     color: SECTION_COLORS.properties,
     items: [
       prop(s.props.atomicNumber, String(detail.number)),
-      prop(s.props.atomicMass, withUnit(p?.elementMasse, u.gPerMol)),
-      prop(s.props.density, withUnit(p?.elementDensity, u.gPerCm3)),
-      prop(s.props.meltingPoint, fmtTemp(p?.elementMeltingPoint, u)),
-      prop(s.props.boilingPoint, fmtTemp(p?.elementBoilingPoint, u)),
-      prop(s.props.valence, fmt(p?.elValence)),
+      prop(s.props.atomicMass, withUnit(p?.atomicMass, u.gPerMol)),
+      prop(s.props.density, withUnit(p?.density, u.gPerCm3)),
+      prop(s.props.meltingPoint, fmtTemp(p?.meltingPoint, u)),
+      prop(s.props.boilingPoint, fmtTemp(p?.boilingPoint, u)),
+      prop(s.props.valence, fmt(p?.valence)),
       prop(s.props.period, String(period)),
-      prop(s.props.group, fmt(p?.elementGroup)),
-      prop(s.props.block, blockLabel(p?.elementBlock, messages)),
+      prop(s.props.group, fmt(p?.group)),
+      prop(s.props.block, blockLabel(p?.block, messages)),
       propMiniTable(),
       propImage(s.props.emissionSpectrum, getElementSpectrumUrl(detail.number)),
     ],
@@ -552,7 +552,7 @@ function buildAtomicSection(ctx: SectionBuildContext): DetailSection {
     title: s.sections.atomic,
     color: SECTION_COLORS.atomic,
     items: [
-      prop(s.props.electronConfig, fmt(o?.elementConfiguration)),
+      prop(s.props.electronConfig, fmt(o?.electronConfiguration)),
       prop(
         s.props.ionCharge,
         formatIonChargeHtml(element.symbol, a?.ionCharge),
@@ -574,8 +574,8 @@ function buildReactivitySection(ctx: SectionBuildContext): DetailSection {
     color: SECTION_COLORS.reactivity,
     items: [
       prop(s.props.electronegativity, fmt(r?.electronegativity)),
-      prop(s.props.valence, fmt(p?.elValence)),
-      prop(s.props.electronAffinity, withUnit(r?.atomElectronEnergy, u.kjPerMol)),
+      prop(s.props.valence, fmt(p?.valence)),
+      prop(s.props.electronAffinity, withUnit(r?.electronAffinity, u.kjPerMol)),
     ],
   }
 }
@@ -603,14 +603,14 @@ function buildElectromagneticSection(ctx: SectionBuildContext): DetailSection {
     title: s.sections.electromagnetic,
     color: SECTION_COLORS.electromagnetic,
     items: [
-      prop(s.props.electroConductivity, fmt(e?.es_electro)),
-      prop(s.props.electricType, fmt(e?.es_etype)),
-      prop(s.props.magneticType, magneticLabel(e?.es_mtype, messages)),
-      prop(s.props.volumeMagneticSusceptibility, fmt(e?.es_omvospr), true),
-      prop(s.props.massMagneticSusceptibility, fmt(e?.es_umvospr), true),
-      prop(s.props.molarMagneticSusceptibility, fmt(e?.es_mmvospr), true),
-      prop(s.props.resistivity, fmt(e?.es_udel)),
-      prop(s.props.superconductivityTemp, fmt(e?.es_temp)),
+      prop(s.props.electroConductivity, fmt(e?.electricalConductivity)),
+      prop(s.props.electricType, fmt(e?.electricalType)),
+      prop(s.props.magneticType, magneticLabel(e?.magneticType, messages)),
+      prop(s.props.volumeMagneticSusceptibility, fmt(e?.volumeMagneticSusceptibility), true),
+      prop(s.props.massMagneticSusceptibility, fmt(e?.massMagneticSusceptibility), true),
+      prop(s.props.molarMagneticSusceptibility, fmt(e?.molarMagneticSusceptibility), true),
+      prop(s.props.resistivity, fmt(e?.electricalResistivity)),
+      prop(s.props.superconductivityTemp, fmt(e?.superconductingTemperature)),
     ],
   }
 }
@@ -622,15 +622,15 @@ function buildAdditionalSection(ctx: SectionBuildContext): DetailSection {
     title: s.sections.additional,
     color: SECTION_COLORS.additional,
     items: [
-      propLink(s.props.cid, fmt(add?.numberCID), getPubChemUrl(add?.numberCID)),
-      prop(s.props.rtec, fmt(add?.numberRTEC)),
+      propLink(s.props.cid, fmt(add?.pubchemCid), getPubChemUrl(add?.pubchemCid)),
+      prop(s.props.rtec, fmt(add?.rtecsNumber)),
       prop(s.props.brinellHardness, fmt(add?.brinellHardness)),
       prop(s.props.mohsHardness, fmt(add?.mohsHardness)),
       prop(s.props.vickersHardness, fmt(add?.vickersHardness)),
       prop(s.props.bulkModulus, fmt(add?.bulkModulus)),
       prop(s.props.youngModulus, fmt(add?.youngModulus)),
       prop(s.props.liquidDensity, fmt(add?.liquidDensity)),
-      prop(s.props.molarVolume, withUnit(add?.molarValue, u.cm3PerMol)),
+      prop(s.props.molarVolume, withUnit(add?.molarVolume, u.cm3PerMol)),
       prop(s.props.poissonRatio, fmt(add?.poissonRatio)),
       prop(s.props.shearModulus, fmt(add?.shearModulus)),
       prop(s.props.soundSpeed, withUnit(add?.soundSpeed, u.mPerS)),
@@ -704,12 +704,12 @@ function buildPrevalenceSection(ctx: SectionBuildContext): DetailSection {
     title: s.sections.prevalence,
     color: SECTION_COLORS.prevalence,
     items: [
-      prop(s.prevalence.universe.replace('%s', elementName), pr?.prevalence1 ? `${pr.prevalence1}%` : EMPTY),
-      prop(s.prevalence.sun.replace('%s', elementName), pr?.prevalence2 ? `${pr.prevalence2}%` : EMPTY),
-      prop(s.prevalence.ocean.replace('%s', elementName), pr?.prevalence3 ? `${pr.prevalence3}%` : EMPTY),
-      prop(s.prevalence.human.replace('%s', elementName), pr?.prevalence4 ? `${pr.prevalence4}%` : EMPTY),
-      prop(s.prevalence.crust.replace('%s', elementName), pr?.prevalence5 ? `${pr.prevalence5}%` : EMPTY),
-      prop(s.prevalence.meteorites.replace('%s', elementName), pr?.prevalence6 ? `${pr.prevalence6}%` : EMPTY),
+      prop(s.prevalence.universe.replace('%s', elementName), pr?.universe ? `${pr.universe}%` : EMPTY),
+      prop(s.prevalence.sun.replace('%s', elementName), pr?.sun ? `${pr.sun}%` : EMPTY),
+      prop(s.prevalence.ocean.replace('%s', elementName), pr?.ocean ? `${pr.ocean}%` : EMPTY),
+      prop(s.prevalence.human.replace('%s', elementName), pr?.humanBody ? `${pr.humanBody}%` : EMPTY),
+      prop(s.prevalence.crust.replace('%s', elementName), pr?.crust ? `${pr.crust}%` : EMPTY),
+      prop(s.prevalence.meteorites.replace('%s', elementName), pr?.meteorites ? `${pr.meteorites}%` : EMPTY),
     ],
   }
 }
@@ -768,10 +768,10 @@ export interface SectionEmptyContext {
   nfpaDisplay: unknown
   ghsDisplay: unknown[]
   oxidationStates: OxidationStateRows | null
-  elementShell?: string | null
-  elementE?: string | null
-  elementP?: string | null
-  elementN?: string | null
+  electronShellConfig?: string | null
+  electronCount?: string | null
+  protonCount?: string | null
+  neutronCount?: string | null
 }
 
 function hasOxidationContent(rows: OxidationStateRows | null): boolean {
@@ -788,16 +788,16 @@ export function isSectionEmpty(section: DetailSection, context: SectionEmptyCont
     case 'ghs':
       return !context.ghsDisplay?.length
     case 'grid':
-      return section.items.every((item) => item.empty) && !section.gridStructureNum
+      return section.items.every((item) => item.empty) && !section.structureCode
     case 'atomic':
       return section.items.every((item) => item.empty) && !hasOxidationContent(context.oxidationStates)
     case 'overview':
       return (
         section.items.every((item) => item.empty) &&
-        !context.elementShell &&
-        !context.elementE &&
-        !context.elementP &&
-        !context.elementN
+        !context.electronShellConfig &&
+        !context.electronCount &&
+        !context.protonCount &&
+        !context.neutronCount
       )
     case 'applications':
     case 'description':

@@ -149,12 +149,12 @@ function extractGlobalRarityValue(detail: StoredElementDetail | null): number | 
   if (!pr) return null
 
   const abundances = [
-    pr.prevalence1,
-    pr.prevalence2,
-    pr.prevalence3,
-    pr.prevalence4,
-    pr.prevalence5,
-    pr.prevalence6,
+    pr.universe,
+    pr.sun,
+    pr.ocean,
+    pr.humanBody,
+    pr.crust,
+    pr.meteorites,
   ]
     .map(parseDetailNumeric)
     .filter((value): value is number => value != null && value > 0)
@@ -191,15 +191,15 @@ function extractHeatmapValue(
     case 'ionizationEnergy':
       return parseDetailNumeric(detail.atomic?.ionizationPotential)
     case 'electronAffinity':
-      return parseDetailNumeric(detail.reactivity?.atomElectronEnergy)
+      return parseDetailNumeric(detail.reactivity?.electronAffinity)
     case 'density':
-      return parseDetailNumeric(detail.properties?.elementDensity)
+      return parseDetailNumeric(detail.properties?.density)
     case 'meltingPoint':
-      return parseDetailNumeric(detail.properties?.elementMeltingPoint)
+      return parseDetailNumeric(detail.properties?.meltingPoint)
     case 'boilingPoint':
-      return parseDetailNumeric(detail.properties?.elementBoilingPoint)
+      return parseDetailNumeric(detail.properties?.boilingPoint)
     case 'atomicMass':
-      return parseDetailNumeric(detail.properties?.elementMasse) ?? parseAtomicMass(atomicMass)
+      return parseDetailNumeric(detail.properties?.atomicMass) ?? parseAtomicMass(atomicMass)
     case 'covalentRadius':
       return parseDetailNumeric(detail.atomic?.covalentRadius)
     case 'halfLife':
@@ -209,9 +209,9 @@ function extractHeatmapValue(
     case 'decayMode':
       return getDecayModeScore(number)
     case 'earthAbundance':
-      return extractPrevalenceValue(detail, 'prevalence5')
+      return extractPrevalenceValue(detail, 'crust')
     case 'meteoriteAbundance':
-      return extractPrevalenceValue(detail, 'prevalence6')
+      return extractPrevalenceValue(detail, 'meteorites')
     case 'rarity':
       return extractGlobalRarityValue(detail)
     default:

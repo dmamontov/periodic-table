@@ -5,31 +5,29 @@ import type { RadiacodeIsotopeRef } from '../collection/spectrum'
 export interface Overview {
   latinName?: string | null
   englishName?: string | null
-  elementOpenedYear?: string | null
+  discoveryYear?: string | null
   casNumber?: string | null
-  elementOpener?: string | null
-  countryOpener?: string | null
-  elementShell?: string | null
-  elementE?: string | null
-  elementP?: string | null
-  elementN?: string | null
+  discoverer?: string | null
+  discoveryCountry?: string | null
+  electronShellConfig?: string | null
+  electronCount?: string | null
+  protonCount?: string | null
+  neutronCount?: string | null
   hasImage?: boolean
   hasSpectre?: boolean
-  elementConfiguration?: string | null
-  elementPrice?: string | null
-  elementRadioactivity?: boolean
+  electronConfiguration?: string | null
 }
 
 export type AggregationState = 'gas' | 'solid' | 'liquid' | 'unknown'
 
 export interface Properties {
-  elementMasse?: string | null
-  elementDensity?: string | null
-  elementMeltingPoint?: string | null
-  elementBoilingPoint?: string | null
-  elValence?: string | null
-  elementGroup?: string | null
-  elementBlock?: string | null
+  atomicMass?: string | null
+  density?: string | null
+  meltingPoint?: string | null
+  boilingPoint?: string | null
+  valence?: string | null
+  group?: string | null
+  block?: string | null
   aggregationState?: AggregationState | null
 }
 
@@ -52,36 +50,35 @@ export interface Atomic {
 export type MagneticType = 'none' | 'diamagnetic' | 'paramagnetic' | 'antiferromagnetic' | 'ferromagnetic'
 
 export interface Electromagnetic {
-  es_electro?: string | null
-  es_etype?: string | null
-  es_mtype?: MagneticType | null
-  es_omvospr?: string | null
-  es_umvospr?: string | null
-  es_mmvospr?: string | null
-  es_udel?: string | null
-  es_temp?: string | null
+  electricalConductivity?: string | null
+  electricalType?: string | null
+  magneticType?: MagneticType | null
+  volumeMagneticSusceptibility?: string | null
+  massMagneticSusceptibility?: string | null
+  molarMagneticSusceptibility?: string | null
+  electricalResistivity?: string | null
+  superconductingTemperature?: string | null
 }
 
 export interface Grid {
-  gridStructureNum?: string | null
+  structureCode?: string | null
   gridParams?: string | null
-  ratio?: string | null
+  axialRatio?: string | null
   debyeTemperature?: string | null
-  space1?: string | null
-  space2?: string | null
+  spaceGroup?: string | null
+  spaceGroupNumber?: string | null
 }
 
 export interface Additional {
-  elementColor?: string | null
-  numberCID?: string | null
-  numberRTEC?: string | null
+  pubchemCid?: string | null
+  rtecsNumber?: string | null
   brinellHardness?: string | null
   mohsHardness?: string | null
   vickersHardness?: string | null
   bulkModulus?: string | null
   youngModulus?: string | null
   liquidDensity?: string | null
-  molarValue?: string | null
+  molarVolume?: string | null
   poissonRatio?: string | null
   shearModulus?: string | null
   soundSpeed?: string | null
@@ -91,7 +88,7 @@ export interface Additional {
 
 export interface Reactivity {
   electronegativity?: string | null
-  atomElectronEnergy?: string | null
+  electronAffinity?: string | null
 }
 
 export interface Nucleus {
@@ -102,12 +99,12 @@ export interface Nucleus {
 }
 
 export interface Prevalence {
-  prevalence1?: string | null
-  prevalence2?: string | null
-  prevalence3?: string | null
-  prevalence4?: string | null
-  prevalence5?: string | null
-  prevalence6?: string | null
+  universe?: string | null
+  sun?: string | null
+  ocean?: string | null
+  humanBody?: string | null
+  crust?: string | null
+  meteorites?: string | null
 }
 
 export interface ElementIsotopeEntry {

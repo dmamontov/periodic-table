@@ -275,10 +275,10 @@ export function parseGridStructureNum(value: string | null | undefined): number 
 }
 
 export function getPrimaryGridStructureNum(
-  gridStructureNum: string | null | undefined,
+  structureCode: string | null | undefined,
 ): number | null {
-  if (!gridStructureNum) return null
-  const first = gridStructureNum.split('|')[0]?.trim()
+  if (!structureCode) return null
+  const first = structureCode.split('|')[0]?.trim()
   return parseGridStructureNum(first)
 }
 
@@ -288,9 +288,9 @@ export function getGridStructureImageUrlByNum(num: number | null | undefined): s
 }
 
 export function getGridStructureImageUrl(
-  gridStructureNum: string | null | undefined,
+  structureCode: string | null | undefined,
 ): string | null {
-  return getGridStructureImageUrlByNum(getPrimaryGridStructureNum(gridStructureNum))
+  return getGridStructureImageUrlByNum(getPrimaryGridStructureNum(structureCode))
 }
 
 /** Lazy-loaded by spectrum id so a spectrum's data only enters the bundle once its element is opened. */

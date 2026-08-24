@@ -39,7 +39,7 @@ export interface DetailSection {
   title: string
   color: string
   items: DetailProp[]
-  gridStructureNum?: number | null
+  structureCode?: number | null
   miningCountries?: ProductionCountryEntry[]
   miningNote?: string
 }
