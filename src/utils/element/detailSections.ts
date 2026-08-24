@@ -378,7 +378,7 @@ interface SectionBuildContext {
 }
 
 function buildOverviewSection(ctx: SectionBuildContext): DetailSection {
-  const { detail, messages, locale, s, o } = ctx
+  const { messages, locale, s, o } = ctx
   const discoveryCountries = discoveryMapCountries(o?.discoveryCountry)
   return {
     id: 'overview',
@@ -394,8 +394,8 @@ function buildOverviewSection(ctx: SectionBuildContext): DetailSection {
       prop(s.props.casNumber, fmt(o?.casNumber)),
       propColor(
         s.props.color,
-        detail.sampleColor?.hex ?? null,
-        detail.sampleColor?.finish ?? undefined,
+        o?.sampleColor?.hex ?? null,
+        o?.sampleColor?.finish ?? undefined,
       ),
       prop(s.props.electronShell, fmt(o?.electronShellConfig)),
     ],

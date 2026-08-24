@@ -16,6 +16,7 @@ export interface Overview {
   casNumber?: string | null
   discoverer?: string | null
   discoveryCountry?: string | null
+  sampleColor?: SampleColor | null
   electronShellConfig?: string | null
   electronCount?: string | null
   protonCount?: string | null
@@ -145,7 +146,6 @@ export interface ElementDetail {
   reactivity?: Reactivity
   nucleus?: Nucleus
   prevalence?: Prevalence
-  sampleColor?: SampleColor | null
   ghs?: GhsPictogramId[]
   radiacodeIsotope?: RadiacodeIsotopeRef
   isotopes?: ElementIsotopeRecord

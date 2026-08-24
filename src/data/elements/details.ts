@@ -9,6 +9,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS1333-74-0",
       "discoverer": "0",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K1-L0-M0-N0-O0-P0-Q0-R0",
       "electronCount": "1",
       "protonCount": "1",
@@ -80,7 +81,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.14",
       "meteorites": "2.4"
     },
-    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "flammable",
       "compressedGas"
@@ -113,6 +113,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-59-7",
       "discoverer": "1/2",
       "discoveryCountry": "FR, GB",
+      "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L0-M0-N0-O0-P0-Q0-R0",
       "electronCount": "2",
       "protonCount": "2",
@@ -179,7 +180,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ocean": "7.2 ⋅ 10⁻¹⁰",
       "crust": "8.0 ⋅ 10⁻⁷"
     },
-    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "compressedGas"
     ],
@@ -213,6 +213,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7439-93-2",
       "discoverer": "3",
       "discoveryCountry": "SE",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L1-M0-N0-O0-P0-Q0-R0",
       "electronCount": "3",
       "protonCount": "3",
@@ -292,7 +293,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.002",
       "meteorites": "0.00017"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "corrosive",
@@ -330,6 +330,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-41-7",
       "discoverer": "4",
       "discoveryCountry": "FR",
+      "sampleColor": { "hex": "#B5B5A8" },
       "electronShellConfig": "K2-L2-M0-N0-O0-P0-Q0-R0",
       "electronCount": "4",
       "protonCount": "4",
@@ -412,7 +413,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.8 ⋅ 10⁻⁴",
       "meteorites": "2.9 ⋅ 10⁻⁶"
     },
-    "sampleColor": { "hex": "#B5B5A8" },
     "ghs": [
       "healthHazard"
     ],
@@ -441,6 +441,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-42-8",
       "discoverer": "5/6/7",
       "discoveryCountry": "FR, GB",
+      "sampleColor": { "hex": "#1A1A1A", "finish": "matte" },
       "electronShellConfig": "K2-L3-M0-N0-O0-P0-Q0-R0",
       "electronCount": "5",
       "protonCount": "5",
@@ -518,7 +519,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.001",
       "meteorites": "0.00016"
     },
-    "sampleColor": { "hex": "#1A1A1A", "finish": "matte" },
     "isotopes": {
       "decay": "stable",
       "isotopes": [
@@ -549,6 +549,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-44-0",
       "discoverer": "77",
       "discoveryCountry": "Middle",
+      "sampleColor": { "hex": "#1A1A1A", "finish": "matte" },
       "electronShellConfig": "K2-L4-M0-N0-O0-P0-Q0-R0",
       "electronCount": "6",
       "protonCount": "6",
@@ -625,7 +626,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.02",
       "meteorites": "1.5"
     },
-    "sampleColor": { "hex": "#1A1A1A", "finish": "matte" },
     "isotopes": {
       "decay": "stable",
       "isotopes": [
@@ -655,6 +655,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7727-37-9",
       "discoverer": "8",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L5-M0-N0-O0-P0-Q0-R0",
       "electronCount": "7",
       "protonCount": "7",
@@ -724,7 +725,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0019",
       "meteorites": "0.14"
     },
-    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "compressedGas"
     ],
@@ -757,6 +757,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7782-44-7",
       "discoverer": "9/10",
       "discoveryCountry": "SE, GB",
+      "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L6-M0-N0-O0-P0-Q0-R0",
       "electronCount": "8",
       "protonCount": "8",
@@ -827,7 +828,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "46.1",
       "meteorites": "40.0"
     },
-    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "oxidizer",
       "compressedGas"
@@ -864,6 +864,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7782-41-4",
       "discoverer": "11",
       "discoveryCountry": "FR",
+      "sampleColor": { "hex": "#F5F0D8", "finish": "subtle" },
       "electronShellConfig": "K2-L7-M0-N0-O0-P0-Q0-R0",
       "electronCount": "9",
       "protonCount": "9",
@@ -929,7 +930,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0585",
       "meteorites": "0.0087"
     },
-    "sampleColor": { "hex": "#F5F0D8", "finish": "subtle" },
     "ghs": [
       "oxidizer",
       "compressedGas",
@@ -961,6 +961,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-01-9",
       "discoverer": "12/13",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L8-M0-N0-O0-P0-Q0-R0",
       "electronCount": "10",
       "protonCount": "10",
@@ -1028,7 +1029,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ocean": "1.2 ⋅ 10⁻⁸",
       "crust": "5.0 ⋅ 10⁻⁷"
     },
-    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "compressedGas"
     ],
@@ -1065,6 +1065,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-23-5",
       "discoverer": "7",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M1-N0-O0-P0-Q0-R0",
       "electronCount": "11",
       "protonCount": "11",
@@ -1144,7 +1145,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.36",
       "meteorites": "0.55"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "corrosive",
@@ -1177,6 +1177,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7439-95-4",
       "discoverer": "69/7",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#B0B0B0" },
       "electronShellConfig": "K2-L8-M2-N0-O0-P0-Q0-R0",
       "electronCount": "12",
       "protonCount": "12",
@@ -1257,7 +1258,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.33",
       "meteorites": "12.0"
     },
-    "sampleColor": { "hex": "#B0B0B0" },
     "isotopes": {
       "decay": "stable",
       "isotopes": [
@@ -1294,6 +1294,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7429-90-5",
       "discoverer": "15",
       "discoveryCountry": "DK",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M3-N0-O0-P0-Q0-R0",
       "electronCount": "13",
       "protonCount": "13",
@@ -1376,7 +1377,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "8.23",
       "meteorites": "0.9"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "isotopes": {
       "decay": "stable",
       "isotopes": [
@@ -1411,6 +1411,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-21-3",
       "discoverer": "16",
       "discoveryCountry": "SE",
+      "sampleColor": { "hex": "#808080" },
       "electronShellConfig": "K2-L8-M4-N0-O0-P0-Q0-R0",
       "electronCount": "14",
       "protonCount": "14",
@@ -1487,7 +1488,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "28.3",
       "meteorites": "14.0"
     },
-    "sampleColor": { "hex": "#808080" },
     "isotopes": {
       "decay": "stable",
       "isotopes": [
@@ -1522,6 +1522,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7723-14-0",
       "discoverer": "17",
       "discoveryCountry": "DE",
+      "sampleColor": { "hex": "#8C2A2A", "finish": "glossy" },
       "electronShellConfig": "K2-L8-M5-N0-O0-P0-Q0-R0",
       "electronCount": "15",
       "protonCount": "15",
@@ -1594,7 +1595,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.105",
       "meteorites": "0.11"
     },
-    "sampleColor": { "hex": "#8C2A2A", "finish": "glossy" },
     "ghs": [
       "flammable",
       "acuteToxicity"
@@ -1625,6 +1625,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "discoveryYear": "2000 BC",
       "casNumber": "CAS7704-34-9",
       "discoveryCountry": "MiddleEast",
+      "sampleColor": { "hex": "#FFF030", "finish": "glossy" },
       "electronShellConfig": "K2-L8-M6-N0-O0-P0-Q0-R0",
       "electronCount": "16",
       "protonCount": "16",
@@ -1699,7 +1700,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.035",
       "meteorites": "4.0"
     },
-    "sampleColor": { "hex": "#FFF030", "finish": "glossy" },
     "ghs": [
       "irritant"
     ],
@@ -1740,6 +1740,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7782-50-5",
       "discoverer": "10",
       "discoveryCountry": "SE",
+      "sampleColor": { "hex": "#E8E2B0", "finish": "subtle" },
       "electronShellConfig": "K2-L8-M7-N0-O0-P0-Q0-R0",
       "electronCount": "17",
       "protonCount": "17",
@@ -1813,7 +1814,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0145",
       "meteorites": "0.037"
     },
-    "sampleColor": { "hex": "#E8E2B0", "finish": "subtle" },
     "ghs": [
       "oxidizer",
       "compressedGas",
@@ -1849,6 +1849,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-37-1",
       "discoverer": "82/12",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L8-M8-N0-O0-P0-Q0-R0",
       "electronCount": "18",
       "protonCount": "18",
@@ -1915,7 +1916,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ocean": "4.5 ⋅ 10⁻⁵",
       "crust": "3.5 ⋅ 10⁻⁴"
     },
-    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "compressedGas"
     ],
@@ -1953,6 +1953,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-09-7",
       "discoverer": "7",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M8-N1-O0-P0-Q0-R0",
       "electronCount": "19",
       "protonCount": "19",
@@ -2031,7 +2032,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.09",
       "meteorites": "0.07"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "corrosive",
@@ -2071,6 +2071,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-70-2",
       "discoverer": "7",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#D0C8A0" },
       "electronShellConfig": "K2-L8-M8-N2-O0-P0-Q0-R0",
       "electronCount": "20",
       "protonCount": "20",
@@ -2150,7 +2151,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "4.15",
       "meteorites": "1.1"
     },
-    "sampleColor": { "hex": "#D0C8A0" },
     "ghs": [
       "flammable",
       "healthHazard"
@@ -2197,6 +2197,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-20-2",
       "discoverer": "18",
       "discoveryCountry": "SE",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M9-N2-O0-P0-Q0-R0",
       "electronCount": "21",
       "protonCount": "21",
@@ -2276,7 +2277,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0022",
       "meteorites": "0.00064"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -2304,6 +2304,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-32-6",
       "discoverer": "61",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M10-N2-O0-P0-Q0-R0",
       "electronCount": "22",
       "protonCount": "22",
@@ -2386,7 +2387,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.565",
       "meteorites": "0.054"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -2432,6 +2432,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-62-2",
       "discoverer": "19",
       "discoveryCountry": "MX",
+      "sampleColor": { "hex": "#8FA4B4" },
       "electronShellConfig": "K2-L8-M11-N2-O0-P0-Q0-R0",
       "electronCount": "23",
       "protonCount": "23",
@@ -2513,7 +2514,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.012",
       "meteorites": "0.0061"
     },
-    "sampleColor": { "hex": "#8FA4B4" },
     "ghs": [
       "irritant"
     ],
@@ -2546,6 +2546,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-47-3",
       "discoverer": "4",
       "discoveryCountry": "FR",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M13-N1-O0-P0-Q0-R0",
       "electronCount": "24",
       "protonCount": "24",
@@ -2627,7 +2628,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0102",
       "meteorites": "0.3"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -2668,6 +2668,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7439-96-5",
       "discoverer": "20/21",
       "discoveryCountry": "SE",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M13-N2-O0-P0-Q0-R0",
       "electronCount": "25",
       "protonCount": "25",
@@ -2745,7 +2746,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.095",
       "meteorites": "0.27"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -2776,6 +2776,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "discoveryYear": "~3500 BC",
       "casNumber": "CAS7439-89-6",
       "discoveryCountry": "MiddleEast",
+      "sampleColor": { "hex": "#808080" },
       "electronShellConfig": "K2-L8-M14-N2-O0-P0-Q0-R0",
       "electronCount": "26",
       "protonCount": "26",
@@ -2854,7 +2855,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "5.63",
       "meteorites": "22.0"
     },
-    "sampleColor": { "hex": "#808080" },
     "ghs": [
       "irritant"
     ],
@@ -2911,6 +2911,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-48-4",
       "discoverer": "22",
       "discoveryCountry": "SE",
+      "sampleColor": { "hex": "#808080" },
       "electronShellConfig": "K2-L8-M15-N2-O0-P0-Q0-R0",
       "electronCount": "27",
       "protonCount": "27",
@@ -2990,7 +2991,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0025",
       "meteorites": "0.059"
     },
-    "sampleColor": { "hex": "#808080" },
     "ghs": [
       "healthHazard",
       "irritant"
@@ -3026,6 +3026,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-02-0",
       "discoverer": "23",
       "discoveryCountry": "SE",
+      "sampleColor": { "hex": "#808080" },
       "electronShellConfig": "K2-L8-M16-N2-O0-P0-Q0-R0",
       "electronCount": "28",
       "protonCount": "28",
@@ -3104,7 +3105,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0084",
       "meteorites": "1.3"
     },
-    "sampleColor": { "hex": "#808080" },
     "ghs": [
       "flammable",
       "healthHazard",
@@ -3155,6 +3155,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "discoveryYear": "9000 BC",
       "casNumber": "CAS7440-50-8",
       "discoveryCountry": "Anatolia",
+      "sampleColor": { "hex": "#B87333" },
       "electronShellConfig": "K2-L8-M18-N1-O0-P0-Q0-R0",
       "electronCount": "29",
       "protonCount": "29",
@@ -3236,7 +3237,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.006",
       "meteorites": "0.011"
     },
-    "sampleColor": { "hex": "#B87333" },
     "ghs": [
       "irritant"
     ],
@@ -3284,6 +3284,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-66-6",
       "discoverer": "63",
       "discoveryCountry": "IndiaContinent",
+      "sampleColor": { "hex": "#8FA4B4" },
       "electronShellConfig": "K2-L8-M18-N2-O0-P0-Q0-R0",
       "electronCount": "30",
       "protonCount": "30",
@@ -3367,7 +3368,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.007",
       "meteorites": "0.018"
     },
-    "sampleColor": { "hex": "#8FA4B4" },
     "ghs": [
       "flammable",
       "irritant"
@@ -3420,6 +3420,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-55-3",
       "discoverer": "24",
       "discoveryCountry": "FR",
+      "sampleColor": { "hex": "#8FA4B4" },
       "electronShellConfig": "K2-L8-M18-N3-O0-P0-Q0-R0",
       "electronCount": "31",
       "protonCount": "31",
@@ -3497,7 +3498,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0019",
       "meteorites": "7.6 ⋅ 10⁻⁴"
     },
-    "sampleColor": { "hex": "#8FA4B4" },
     "ghs": [
       "irritant"
     ],
@@ -3530,6 +3530,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-56-4",
       "discoverer": "25",
       "discoveryCountry": "DE",
+      "sampleColor": { "hex": "#9A9A96" },
       "electronShellConfig": "K2-L8-M18-N4-O0-P0-Q0-R0",
       "electronCount": "32",
       "protonCount": "32",
@@ -3607,7 +3608,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.5 ⋅ 10⁻⁴",
       "meteorites": "0.0021"
     },
-    "sampleColor": { "hex": "#9A9A96" },
     "ghs": [
       "irritant"
     ],
@@ -3655,6 +3655,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-38-2",
       "discoverer": "80",
       "discoveryCountry": "DE",
+      "sampleColor": { "hex": "#9A9A96" },
       "electronShellConfig": "K2-L8-M18-N5-O0-P0-Q0-R0",
       "electronCount": "33",
       "protonCount": "33",
@@ -3733,7 +3734,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.8 ⋅ 10⁻⁴",
       "meteorites": "1.8 ⋅ 10⁻⁴"
     },
-    "sampleColor": { "hex": "#9A9A96" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -3761,6 +3761,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7782-49-2",
       "discoverer": "16",
       "discoveryCountry": "SE",
+      "sampleColor": { "hex": "#808080" },
       "electronShellConfig": "K2-L8-M18-N6-O0-P0-Q0-R0",
       "electronCount": "34",
       "protonCount": "34",
@@ -3841,7 +3842,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "5.0⋅ 10⁻⁶",
       "meteorites": "0.0013"
     },
-    "sampleColor": { "hex": "#808080" },
     "ghs": [
       "irritant"
     ],
@@ -3891,6 +3891,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7726-95-6",
       "discoverer": "26/27",
       "discoveryCountry": "FR, DE",
+      "sampleColor": { "hex": "#A62929", "finish": "glossy" },
       "electronShellConfig": "K2-L8-M18-N7-O0-P0-Q0-R0",
       "electronCount": "35",
       "protonCount": "35",
@@ -3963,7 +3964,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.4 ⋅ 10⁻⁴",
       "meteorites": "1.2 ⋅ 10⁻⁴"
     },
-    "sampleColor": { "hex": "#A62929", "finish": "glossy" },
     "ghs": [
       "oxidizer",
       "corrosive",
@@ -3998,6 +3998,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7439-90-9",
       "discoverer": "12/13",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L8-M18-N8-O0-P0-Q0-R0",
       "electronCount": "36",
       "protonCount": "36",
@@ -4064,7 +4065,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ocean": "2.1 ⋅ 10⁻⁸",
       "crust": "1.0 ⋅ 10⁻⁸"
     },
-    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "compressedGas"
     ],
@@ -4113,6 +4113,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-17-7",
       "discoverer": "28/29",
       "discoveryCountry": "DE",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N8-O1-P0-Q0-R0",
       "electronCount": "37",
       "protonCount": "37",
@@ -4190,7 +4191,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.009",
       "meteorites": "3.2 ⋅ 10⁻⁴"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "corrosive",
@@ -4222,6 +4222,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-24-6",
       "discoverer": "30",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#D0C8A0" },
       "electronShellConfig": "K2-L8-M18-N8-O2-P0-Q0-R0",
       "electronCount": "38",
       "protonCount": "38",
@@ -4297,7 +4298,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.037",
       "meteorites": "8.6 ⋅ 10⁻⁴"
     },
-    "sampleColor": { "hex": "#D0C8A0" },
     "ghs": [
       "flammable",
       "healthHazard"
@@ -4340,6 +4340,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-65-5",
       "discoverer": "31",
       "discoveryCountry": "FI",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N9-O2-P0-Q0-R0",
       "electronCount": "39",
       "protonCount": "39",
@@ -4420,7 +4421,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0033",
       "meteorites": "1.9 ⋅ 10⁻⁴"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -4453,6 +4453,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-67-7",
       "discoverer": "32",
       "discoveryCountry": "DE",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N10-O2-P0-Q0-R0",
       "electronCount": "40",
       "protonCount": "40",
@@ -4535,7 +4536,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0165",
       "meteorites": "6.6 ⋅ 10⁻⁴"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -4581,6 +4581,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-03-1",
       "discoverer": "33",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#8FA4B4" },
       "electronShellConfig": "K2-L8-M18-N12-O1-P0-Q0-R0",
       "electronCount": "41",
       "protonCount": "41",
@@ -4661,7 +4662,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.002",
       "meteorites": "1.9 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#8FA4B4" },
     "ghs": [
       "irritant"
     ],
@@ -4690,6 +4690,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7439-98-7",
       "discoverer": "10",
       "discoveryCountry": "SE",
+      "sampleColor": { "hex": "#808080" },
       "electronShellConfig": "K2-L8-M18-N13-O1-P0-Q0-R0",
       "electronCount": "42",
       "protonCount": "42",
@@ -4772,7 +4773,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.00012",
       "meteorites": "1.2 ⋅ 10⁻⁴"
     },
-    "sampleColor": { "hex": "#808080" },
     "ghs": [
       "flammable",
       "irritant"
@@ -4827,6 +4827,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-26-8",
       "discoverer": "46/47",
       "discoveryCountry": "IT",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N13-O2-P0-Q0-R0",
       "electronCount": "43",
       "protonCount": "43",
@@ -4891,7 +4892,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,1,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -4931,6 +4931,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-18-8",
       "discoverer": "42",
       "discoveryCountry": "RU",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N15-O1-P0-Q0-R0",
       "electronCount": "44",
       "protonCount": "44",
@@ -5012,7 +5013,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1 ⋅ 10⁻⁷",
       "meteorites": "8.1 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -5064,6 +5064,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-16-6",
       "discoverer": "35",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N16-O1-P0-Q0-R0",
       "electronCount": "45",
       "protonCount": "45",
@@ -5143,7 +5144,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "7 ⋅ 10⁻⁸",
       "meteorites": "1.8 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -5172,6 +5172,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-05-3",
       "discoverer": "35",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N18-O0-P0-Q0-R0",
       "electronCount": "46",
       "protonCount": "46",
@@ -5251,7 +5252,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "6.3 ⋅ 10⁻⁷",
       "meteorites": "6.5 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "isotopes": {
       "decay": "stable",
       "isotopes": [
@@ -5297,6 +5297,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "discoveryYear": "5000 BC",
       "casNumber": "CAS7440-22-4",
       "discoveryCountry": "AsiaMinor",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N18-O1-P0-Q0-R0",
       "electronCount": "47",
       "protonCount": "47",
@@ -5377,7 +5378,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "7.5 ⋅ 10⁻⁶",
       "meteorites": "1.4 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "isotopes": {
       "decay": "stable",
       "isotopes": [
@@ -5413,6 +5413,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-43-9",
       "discoverer": "79/90",
       "discoveryCountry": "DE",
+      "sampleColor": { "hex": "#8FA4B4" },
       "electronShellConfig": "K2-L8-M18-N18-O2-P0-Q0-R0",
       "electronCount": "48",
       "protonCount": "48",
@@ -5495,7 +5496,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.5 ⋅ 10⁻⁵",
       "meteorites": "4.4 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#8FA4B4" },
     "ghs": [
       "healthHazard",
       "irritant",
@@ -5555,6 +5555,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-74-6",
       "discoverer": "58/83",
       "discoveryCountry": "DE",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N18-O3-P0-Q0-R0",
       "electronCount": "49",
       "protonCount": "49",
@@ -5633,7 +5634,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.5 ⋅ 10⁻⁵",
       "meteorites": "4.4 ⋅ 10⁻⁶"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -5665,6 +5665,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "discoveryYear": "3500 BC",
       "casNumber": "CAS7440-31-5",
       "discoveryCountry": "Kestel",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N18-O4-P0-Q0-R0",
       "electronCount": "50",
       "protonCount": "50",
@@ -5747,7 +5748,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.00023",
       "meteorites": "1.2 ⋅ 10⁻⁴"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "irritant"
@@ -5822,6 +5822,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "discoveryYear": "~1600 BC",
       "casNumber": "CAS7440-36-0",
       "discoveryCountry": "MiddleEast",
+      "sampleColor": { "hex": "#9A9A96" },
       "electronShellConfig": "K2-L8-M18-N18-O5-P0-Q0-R0",
       "electronCount": "51",
       "protonCount": "51",
@@ -5902,7 +5903,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.0 ⋅ 10⁻⁵",
       "meteorites": "1.2 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#9A9A96" },
     "ghs": [
       "irritant"
     ],
@@ -5935,6 +5935,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "discoveryYear": "1782",
       "casNumber": "CAS13494-80-9",
       "discoveryCountry": "RO",
+      "sampleColor": { "hex": "#9A9A96" },
       "electronShellConfig": "K2-L8-M18-N18-O6-P0-Q0-R0",
       "electronCount": "52",
       "protonCount": "52",
@@ -6013,7 +6014,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.0 ⋅ 10⁻⁷",
       "meteorites": "2.1 ⋅ 10⁻⁴"
     },
-    "sampleColor": { "hex": "#9A9A96" },
     "ghs": [
       "irritant"
     ],
@@ -6072,6 +6072,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7553-56-2",
       "discoverer": "78",
       "discoveryCountry": "FR",
+      "sampleColor": { "hex": "#940094", "finish": "glossy" },
       "electronShellConfig": "K2-L8-M18-N18-O7-P0-Q0-R0",
       "electronCount": "53",
       "protonCount": "53",
@@ -6142,7 +6143,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "4.5 ⋅ 10⁻⁵",
       "meteorites": "2.5 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#940094", "finish": "glossy" },
     "ghs": [
       "corrosive",
       "irritant"
@@ -6173,6 +6173,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-63-3",
       "discoverer": "76/13",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L8-M18-N18-O8-P0-Q0-R0",
       "electronCount": "54",
       "protonCount": "54",
@@ -6238,7 +6239,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ocean": "5 ⋅ 10⁻¹⁰",
       "crust": "3.0 ⋅ 10⁻⁹"
     },
-    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "compressedGas"
     ],
@@ -6300,6 +6300,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-46-2",
       "discoverer": "28/29",
       "discoveryCountry": "DE",
+      "sampleColor": { "hex": "#D4B060" },
       "electronShellConfig": "K2-L8-M18-N18-O8-P1-Q0-R0",
       "electronCount": "55",
       "protonCount": "55",
@@ -6377,7 +6378,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0003",
       "meteorites": "1.4 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#D4B060" },
     "ghs": [
       "flammable",
       "corrosive",
@@ -6406,6 +6406,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-39-3",
       "discoverer": "7",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#D0C8A0" },
       "electronShellConfig": "K2-L8-M18-N18-O8-P2-Q0-R0",
       "electronCount": "56",
       "protonCount": "56",
@@ -6483,7 +6484,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0425",
       "meteorites": "2.7 ⋅ 10⁻⁴"
     },
-    "sampleColor": { "hex": "#D0C8A0" },
     "ghs": [
       "flammable",
       "irritant"
@@ -6538,6 +6538,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7439-91-0",
       "discoverer": "45",
       "discoveryCountry": "SE",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N18-O9-P2-Q0-R0",
       "electronCount": "57",
       "protonCount": "57",
@@ -6620,7 +6621,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0039",
       "meteorites": "2.8 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -6657,6 +6657,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-45-1",
       "discoverer": "32/16/91",
       "discoveryCountry": "DE, SE",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N19-O9-P2-Q0-R0",
       "electronCount": "58",
       "protonCount": "58",
@@ -6738,7 +6739,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.00665",
       "meteorites": "7.5 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "irritant"
@@ -6784,6 +6784,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-10-0",
       "discoverer": "71",
       "discoveryCountry": "AT",
+      "sampleColor": { "hex": "#9A9A96" },
       "electronShellConfig": "K2-L8-M18-N21-O8-P2-Q0-R0",
       "electronCount": "59",
       "protonCount": "59",
@@ -6864,7 +6865,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.00092",
       "meteorites": "9.8 ⋅ 10⁻⁶"
     },
-    "sampleColor": { "hex": "#9A9A96" },
     "ghs": [
       "irritant"
     ],
@@ -6897,6 +6897,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-00-8",
       "discoverer": "71",
       "discoveryCountry": "AT",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N22-O8-P2-Q0-R0",
       "electronCount": "60",
       "protonCount": "60",
@@ -6978,7 +6979,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.00415",
       "meteorites": "5.0 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -7035,6 +7035,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-12-2",
       "discoverer": "92/93/94",
       "discoveryCountry": "US",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N23-O8-P2-Q0-R0",
       "electronCount": "61",
       "protonCount": "61",
@@ -7099,7 +7100,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,W+RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "acuteToxicity",
@@ -7133,6 +7133,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-19-9",
       "discoverer": "37",
       "discoveryCountry": "FR",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N24-O8-P2-Q0-R0",
       "electronCount": "62",
       "protonCount": "62",
@@ -7214,7 +7215,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "6.0 ⋅ 10⁻⁴",
       "meteorites": "1.7 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -7271,6 +7271,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-53-1",
       "discoverer": "39",
       "discoveryCountry": "FR",
+      "sampleColor": { "hex": "#D0C8A0" },
       "electronShellConfig": "K2-L8-M18-N25-O8-P2-Q0-R0",
       "electronCount": "63",
       "protonCount": "63",
@@ -7348,7 +7349,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.0 ⋅ 10⁻⁴",
       "meteorites": "5.9 ⋅ 10⁻⁶"
     },
-    "sampleColor": { "hex": "#D0C8A0" },
     "ghs": [
       "irritant"
     ],
@@ -7385,6 +7385,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-54-2",
       "discoverer": "38",
       "discoveryCountry": "CH",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N25-O9-P2-Q0-R0",
       "electronCount": "64",
       "protonCount": "64",
@@ -7462,7 +7463,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "6.2 ⋅ 10⁻⁴",
       "meteorites": "2.3 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -7519,6 +7519,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-27-9",
       "discoverer": "45",
       "discoveryCountry": "SE",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N27-O8-P2-Q0-R0",
       "electronCount": "65",
       "protonCount": "65",
@@ -7599,7 +7600,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.2 ⋅ 10⁻⁴",
       "meteorites": "3.9 ⋅ 10⁻⁶"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -7632,6 +7632,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7429-91-6",
       "discoverer": "37",
       "discoveryCountry": "FR",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N28-O8-P2-Q0-R0",
       "electronCount": "66",
       "protonCount": "66",
@@ -7712,7 +7713,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "5.2 ⋅ 10⁻⁴",
       "meteorites": "2.7 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -7769,6 +7769,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-60-0",
       "discoverer": "72/84/95",
       "discoveryCountry": "SE, CH",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N29-O8-P2-Q0-R0",
       "electronCount": "67",
       "protonCount": "67",
@@ -7848,7 +7849,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.3 ⋅ 10⁻⁴",
       "meteorites": "5.9 ⋅ 10⁻⁶"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -7881,6 +7881,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-52-0",
       "discoverer": "45",
       "discoveryCountry": "SE",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N30-O8-P2-Q0-R0",
       "electronCount": "68",
       "protonCount": "68",
@@ -7961,7 +7962,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "3.5 ⋅ 10⁻⁴",
       "meteorites": "1.8 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -8014,6 +8014,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-30-4",
       "discoverer": "72",
       "discoveryCountry": "SE",
+      "sampleColor": { "hex": "#808080" },
       "electronShellConfig": "K2-L8-M18-N31-O8-P2-Q0-R0",
       "electronCount": "69",
       "protonCount": "69",
@@ -8093,7 +8094,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "5.2 ⋅ 10⁻⁵",
       "meteorites": "2.9 ⋅ 10⁻⁶"
     },
-    "sampleColor": { "hex": "#808080" },
     "ghs": [
       "irritant"
     ],
@@ -8126,6 +8126,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-64-4",
       "discoverer": "38",
       "discoveryCountry": "CH",
+      "sampleColor": { "hex": "#D0C8A0" },
       "electronShellConfig": "K2-L8-M18-N32-O8-P2-Q0-R0",
       "electronCount": "70",
       "protonCount": "70",
@@ -8205,7 +8206,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.8 ⋅ 10⁻⁴",
       "meteorites": "1.8 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#D0C8A0" },
     "ghs": [
       "irritant"
     ],
@@ -8262,6 +8262,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7439-94-3",
       "discoverer": "96/71",
       "discoveryCountry": "FR, AT",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O9-P2-Q0-R0",
       "electronCount": "71",
       "protonCount": "71",
@@ -8341,7 +8342,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "8.0 ⋅ 10⁻⁵",
       "meteorites": "2.9 ⋅ 10⁻⁶"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -8378,6 +8378,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-58-6",
       "discoverer": "97/98",
       "discoveryCountry": "DK",
+      "sampleColor": { "hex": "#6A7078" },
       "electronShellConfig": "K2-L8-M18-N32-O10-P2-Q0-R0",
       "electronCount": "72",
       "protonCount": "72",
@@ -8459,7 +8460,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "3.0 ⋅ 10⁻⁴",
       "meteorites": "1.7 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#6A7078" },
     "ghs": [
       "irritant"
     ],
@@ -8508,6 +8508,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-25-7",
       "discoverer": "81",
       "discoveryCountry": "SE",
+      "sampleColor": { "hex": "#8FA4B4" },
       "electronShellConfig": "K2-L8-M18-N32-O11-P2-Q0-R0",
       "electronCount": "73",
       "protonCount": "73",
@@ -8589,7 +8590,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.0 ⋅ 10⁻⁴",
       "meteorites": "2.0 ⋅ 10⁻⁶"
     },
-    "sampleColor": { "hex": "#8FA4B4" },
     "ghs": [
       "irritant"
     ],
@@ -8626,6 +8626,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-33-7",
       "discoverer": "85/86",
       "discoveryCountry": "ES",
+      "sampleColor": { "hex": "#6A7078" },
       "electronShellConfig": "K2-L8-M18-N32-O12-P2-Q0-R0",
       "electronCount": "74",
       "protonCount": "74",
@@ -8708,7 +8709,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.25 ⋅ 10⁻⁴",
       "meteorites": "1.2 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#6A7078" },
     "ghs": [
       "irritant"
     ],
@@ -8756,6 +8756,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-15-5",
       "discoverer": "99/100/101",
       "discoveryCountry": "DE",
+      "sampleColor": { "hex": "#6A7078" },
       "electronShellConfig": "K2-L8-M18-N32-O13-P2-Q0-R0",
       "electronCount": "75",
       "protonCount": "75",
@@ -8838,7 +8839,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "7.0 ⋅ 10⁻⁸",
       "meteorites": "4.9 ⋅ 10⁻⁶"
     },
-    "sampleColor": { "hex": "#6A7078" },
     "ghs": [
       "irritant"
     ],
@@ -8872,6 +8872,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-04-2",
       "discoverer": "52",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#8FA4B4" },
       "electronShellConfig": "K2-L8-M18-N32-O14-P2-Q0-R0",
       "electronCount": "76",
       "protonCount": "76",
@@ -8952,7 +8953,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.5 ⋅ 10⁻⁷",
       "meteorites": "6.5 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#8FA4B4" },
     "ghs": [
       "flammable",
       "healthHazard"
@@ -9005,6 +9005,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7439-88-5",
       "discoverer": "52",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O15-P2-Q0-R0",
       "electronCount": "77",
       "protonCount": "77",
@@ -9084,7 +9085,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "1.0 ⋅ 10⁻⁷",
       "meteorites": "5.4 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "irritant"
     ],
@@ -9116,6 +9116,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-06-4",
       "discoverer": "50",
       "discoveryCountry": "PE",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O17-P1-Q0-R0",
       "electronCount": "78",
       "protonCount": "78",
@@ -9195,7 +9196,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "5.0 ⋅ 10⁻⁷",
       "meteorites": "9.8 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "isotopes": {
       "decay": "alpha",
       "isotopes": [
@@ -9241,6 +9241,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "discoveryYear": "~4000 BC",
       "casNumber": "CAS7440-57-5",
       "discoveryCountry": "NahalQana",
+      "sampleColor": { "hex": "#FFD123" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P1-Q0-R0",
       "electronCount": "79",
       "protonCount": "79",
@@ -9323,7 +9324,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "4.0 ⋅ 10⁻⁷",
       "meteorites": "1.7 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#FFD123" },
     "isotopes": {
       "decay": "stable",
       "isotopes": [
@@ -9359,6 +9359,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "discoveryYear": "1500 BC",
       "casNumber": "CAS7439-97-6",
       "discoveryCountry": "EG",
+      "sampleColor": { "hex": "#B8B8C8" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P2-Q0-R0",
       "electronCount": "80",
       "protonCount": "80",
@@ -9437,7 +9438,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "8.5 ⋅ 10⁻⁶",
       "meteorites": "2.5 ⋅ 10⁻⁵"
     },
-    "sampleColor": { "hex": "#B8B8C8" },
     "ghs": [
       "acuteToxicity",
       "healthHazard",
@@ -9494,6 +9494,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-28-0",
       "discoverer": "66",
       "discoveryCountry": "GB",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P3-Q0-R0",
       "electronCount": "81",
       "protonCount": "81",
@@ -9576,7 +9577,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "8.5 ⋅ 10⁻⁵",
       "meteorites": "7.9 ⋅ 10⁻⁶"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard",
@@ -9611,6 +9611,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "discoveryYear": "7000 BC",
       "casNumber": "CAS7439-92-1",
       "discoveryCountry": "TR",
+      "sampleColor": { "hex": "#5C5C62" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P4-Q0-R0",
       "electronCount": "82",
       "protonCount": "82",
@@ -9692,7 +9693,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "0.0014",
       "meteorites": "1.4 ⋅ 10⁻⁴"
     },
-    "sampleColor": { "hex": "#5C5C62" },
     "ghs": [
       "healthHazard",
       "irritant",
@@ -9743,6 +9743,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-69-9",
       "discoverer": "40",
       "discoveryCountry": "FR",
+      "sampleColor": { "hex": "#8A7D72" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P5-Q0-R0",
       "electronCount": "83",
       "protonCount": "83",
@@ -9823,7 +9824,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "8.5 ⋅ 10⁻⁷",
       "meteorites": "6.9 ⋅ 10⁻⁶"
     },
-    "sampleColor": { "hex": "#8A7D72" },
     "ghs": [
       "irritant"
     ],
@@ -9857,6 +9857,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-08-6",
       "discoverer": "43/44",
       "discoveryCountry": "FR",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P6-Q0-R0",
       "electronCount": "84",
       "protonCount": "84",
@@ -9918,7 +9919,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ocean": "2 ⋅ 10⁻¹⁸",
       "crust": "2.0 ⋅ 10⁻¹⁴"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -9948,6 +9948,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-68-8",
       "discoverer": "87/88/89",
       "discoveryCountry": "US",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P7-Q0-R0",
       "electronCount": "85",
       "protonCount": "85",
@@ -9994,7 +9995,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "0,4,2,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -10020,6 +10020,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS10043-92-2",
       "discoverer": "68",
       "discoveryCountry": "DE",
+      "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P8-Q0-R0",
       "electronCount": "86",
       "protonCount": "86",
@@ -10074,7 +10075,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "ocean": "6 ⋅ 10⁻²⁰"
     },
-    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "compressedGas",
       "acuteToxicity",
@@ -10107,6 +10107,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-73-5",
       "discoverer": "60",
       "discoveryCountry": "FR",
+      "sampleColor": { "hex": "#D4B060" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P8-Q1-R0",
       "electronCount": "87",
       "protonCount": "87",
@@ -10155,7 +10156,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "4,4,3,W+RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#D4B060" },
     "ghs": [
       "flammable",
       "corrosive",
@@ -10183,6 +10183,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-14-4",
       "discoverer": "43/44",
       "discoveryCountry": "FR",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P8-Q2-R0",
       "electronCount": "88",
       "protonCount": "88",
@@ -10247,7 +10248,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "humanBody": "4.0 ⋅ 10⁻¹⁴",
       "crust": "9.0 ⋅ 10⁻¹¹"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "acuteToxicity",
@@ -10278,6 +10278,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-34-8",
       "discoverer": "34",
       "discoveryCountry": "FR",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P9-Q2-R0",
       "electronCount": "89",
       "protonCount": "89",
@@ -10333,7 +10334,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
     "prevalence": {
       "crust": "6.0 ⋅ 10⁻¹⁴"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "acuteToxicity",
@@ -10366,6 +10366,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-29-1",
       "discoverer": "16",
       "discoveryCountry": "SE",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O18-P10-Q2-R0",
       "electronCount": "90",
       "protonCount": "90",
@@ -10447,7 +10448,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "9.6 ⋅ 10⁻⁴",
       "meteorites": "3.9 ⋅ 10⁻⁶"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -10481,6 +10481,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-13-3",
       "discoverer": "73/74/75/108",
       "discoveryCountry": "DE, GB",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O20-P9-Q2-R0",
       "electronCount": "91",
       "protonCount": "91",
@@ -10550,7 +10551,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "ocean": "2 ⋅ 10⁻²³",
       "crust": "1.4 ⋅ 10⁻¹⁰"
     },
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -10579,6 +10579,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-61-1",
       "discoverer": "32",
       "discoveryCountry": "DE",
+      "sampleColor": { "hex": "#808080" },
       "electronShellConfig": "K2-L8-M18-N32-O21-P9-Q2-R0",
       "electronCount": "92",
       "protonCount": "92",
@@ -10660,7 +10661,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "crust": "2.7 ⋅ 10⁻⁴",
       "meteorites": "9.8 ⋅ 10⁻⁷"
     },
-    "sampleColor": { "hex": "#808080" },
     "ghs": [
       "acuteToxicity",
       "healthHazard",
@@ -10708,6 +10708,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7439-99-8",
       "discoverer": "102/103",
       "discoveryCountry": "US",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O22-P9-Q2-R0",
       "electronCount": "93",
       "protonCount": "93",
@@ -10767,7 +10768,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -10794,6 +10794,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-07-5",
       "discoverer": "49/104/105/102",
       "discoveryCountry": "US",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O24-P8-Q2-R0",
       "electronCount": "94",
       "protonCount": "94",
@@ -10862,7 +10863,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "2,4,2,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -10891,6 +10891,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-35-9",
       "discoverer": "49/106/107/36",
       "discoveryCountry": "US",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O25-P8-Q2-R0",
       "electronCount": "95",
       "protonCount": "95",
@@ -10953,7 +10954,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,1,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -10984,6 +10984,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-51-9",
       "discoverer": "49/106/36",
       "discoveryCountry": "US",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O25-P9-Q2-R0",
       "electronCount": "96",
       "protonCount": "96",
@@ -11039,7 +11040,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11065,6 +11065,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-40-6",
       "discoverer": "49/36/109",
       "discoveryCountry": "US",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O27-P8-Q2-R0",
       "electronCount": "97",
       "protonCount": "97",
@@ -11119,7 +11120,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11144,6 +11144,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-71-3",
       "discoverer": "49/109/110/36",
       "discoveryCountry": "US",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O28-P8-Q2-R0",
       "electronCount": "98",
       "protonCount": "98",
@@ -11191,7 +11192,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11218,6 +11218,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7429-92-7",
       "discoverer": "36/111/112/109/49",
       "discoveryCountry": "US",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O29-P8-Q2-R0",
       "electronCount": "99",
       "protonCount": "99",
@@ -11261,7 +11262,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11286,6 +11286,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-72-4",
       "discoverer": "49/36/109",
       "discoveryCountry": "US",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O30-P8-Q2-R0",
       "electronCount": "100",
       "protonCount": "100",
@@ -11327,7 +11328,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11352,6 +11352,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS7440-11-1",
       "discoverer": "49/36/111/112/109",
       "discoveryCountry": "US",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O31-P8-Q2-R0",
       "electronCount": "101",
       "protonCount": "101",
@@ -11392,7 +11393,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11417,6 +11417,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS10028-14-5",
       "discoverer": "53/54",
       "discoveryCountry": "RU",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P8-Q2-R0",
       "electronCount": "102",
       "protonCount": "102",
@@ -11457,7 +11458,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11483,6 +11483,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS22537-19-5",
       "discoverer": "36/53",
       "discoveryCountry": "US, RU",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P8-Q3-R0",
       "electronCount": "103",
       "protonCount": "103",
@@ -11524,7 +11525,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "1,4,2,W+RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "flammable",
       "acuteToxicity",
@@ -11551,6 +11551,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS53850-36-5",
       "discoverer": "53/36",
       "discoveryCountry": "RU, US",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P10-Q2-R0",
       "electronCount": "104",
       "protonCount": "104",
@@ -11586,7 +11587,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11612,6 +11612,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS53850-35-4",
       "discoverer": "53/36",
       "discoveryCountry": "RU, US",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P11-Q2-R0",
       "electronCount": "105",
       "protonCount": "105",
@@ -11647,7 +11648,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11673,6 +11673,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS54038-81-2",
       "discoverer": "36/49",
       "discoveryCountry": "US",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P12-Q2-R0",
       "electronCount": "106",
       "protonCount": "106",
@@ -11708,7 +11709,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11734,6 +11734,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS54037-14-8",
       "discoverer": "64/65",
       "discoveryCountry": "DE",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P13-Q2-R0",
       "electronCount": "107",
       "protonCount": "107",
@@ -11768,7 +11769,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11793,6 +11793,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS54037-57-9",
       "discoverer": "64/65",
       "discoveryCountry": "DE",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P14-Q2-R0",
       "electronCount": "108",
       "protonCount": "108",
@@ -11828,7 +11829,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11854,6 +11854,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS54038-01-6",
       "discoverer": "64/65",
       "discoveryCountry": "DE",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P15-Q2-R0",
       "electronCount": "109",
       "protonCount": "109",
@@ -11891,7 +11892,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11916,6 +11916,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS54083-77-1",
       "discoverer": "57",
       "discoveryCountry": "DE",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P17-Q1-R0",
       "electronCount": "110",
       "protonCount": "110",
@@ -11951,7 +11952,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -11976,6 +11976,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS54386-24-2",
       "discoverer": "57",
       "discoveryCountry": "DE",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q1-R0",
       "electronCount": "111",
       "protonCount": "111",
@@ -12013,7 +12014,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -12038,6 +12038,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS54084-26-3",
       "discoverer": "57",
       "discoveryCountry": "DE",
+      "sampleColor": { "hex": "#B8B8C8" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q2-R0",
       "electronCount": "112",
       "protonCount": "112",
@@ -12075,7 +12076,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#B8B8C8" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -12101,6 +12101,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS54084-70-7",
       "discoverer": "56",
       "discoveryCountry": "JP",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q3-R0",
       "electronCount": "113",
       "protonCount": "113",
@@ -12141,7 +12142,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -12167,6 +12167,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS54085-16-4",
       "discoverer": "54/55",
       "discoveryCountry": "RU, US",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q4-R0",
       "electronCount": "114",
       "protonCount": "114",
@@ -12206,7 +12207,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -12231,6 +12231,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS54085-64-2",
       "discoverer": "54/55",
       "discoveryCountry": "RU, US",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q5-R0",
       "electronCount": "115",
       "protonCount": "115",
@@ -12269,7 +12270,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -12295,6 +12295,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS54100-71-9",
       "discoverer": "54/55",
       "discoveryCountry": "RU, US",
+      "sampleColor": { "hex": "#C6C6C6" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q6-R0",
       "electronCount": "116",
       "protonCount": "116",
@@ -12333,7 +12334,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#C6C6C6" },
     "ghs": [
       "acuteToxicity",
       "healthHazard"
@@ -12359,6 +12359,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS87658-56-8",
       "discoverer": "54/55",
       "discoveryCountry": "RU, US",
+      "sampleColor": { "hex": "#E8E2B0", "finish": "subtle" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q7-R0",
       "electronCount": "117",
       "protonCount": "117",
@@ -12394,7 +12395,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#E8E2B0", "finish": "subtle" },
     "ghs": [
       "corrosive",
       "acuteToxicity",
@@ -12421,6 +12421,7 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "casNumber": "CAS54144-19-3",
       "discoverer": "54/55",
       "discoveryCountry": "RU, US",
+      "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
       "electronShellConfig": "K2-L8-M18-N32-O32-P18-Q8-R0",
       "electronCount": "118",
       "protonCount": "118",
@@ -12462,7 +12463,6 @@ export const elementDetails: Record<string, StoredElementDetail> = {
       "nfpaCube": "-,4,-,RAD"
     },
     "prevalence": {},
-    "sampleColor": { "hex": "#E8E8E8", "finish": "subtle" },
     "ghs": [
       "compressedGas",
       "healthHazard"
