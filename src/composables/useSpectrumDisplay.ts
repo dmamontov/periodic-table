@@ -19,11 +19,18 @@ export function useSpectrumDisplay(
   annotations: Ref<SpectrumAnnotation[] | null | undefined>,
   yScale?: Ref<SpectrumYScale>,
   smoothingRadius?: Ref<number>,
+  background?: Ref<CollectionSpectrumData | null>,
 ) {
   const { locale } = useLocale()
 
   const chart = computed(() =>
-    buildSpectrumChart(data.value, annotations.value, yScale?.value, smoothingRadius?.value),
+    buildSpectrumChart(
+      data.value,
+      annotations.value,
+      yScale?.value,
+      smoothingRadius?.value,
+      background?.value ?? null,
+    ),
   )
   const caption = computed(() => formatSpectrumCaption(data.value))
   const durationLabel = computed(() => formatSpectrumDurationLabel(data.value))

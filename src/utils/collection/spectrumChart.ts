@@ -88,6 +88,7 @@ export function buildSpectrumChart(
   annotations: SpectrumAnnotation[] | null | undefined,
   yScale: SpectrumYScale = 'linear',
   smoothingRadius: number = SPECTRUM_SMOOTHING_DEFAULT,
+  background: CollectionSpectrumData | null = null,
 ): GammaSpectrumChartData | null {
   if (!data) return null
 
@@ -131,6 +132,20 @@ export function buildSpectrumChart(
   }
   const lineCoords = stepCoords
 
+  // Same channel grid as the main spectrum — just time-scale the counts, no energy resample.
+  let backgroundLinePath: string | null = null
+  if (background && background.measurementTimeSec > 0) {
+    const timeScale = data.measurementTimeSec / background.measurementTimeSec
+    const bgSmoothed = smoothCounts(background.counts.slice(0, -1), smoothingRadius)
+    const bgCoords: string[] = []
+    for (const p of points) {
+      const scaled = (bgSmoothed[p.ch] ?? 0) * timeScale
+      const y = Math.max(pad.top, toY(scaled)).toFixed(1)
+      bgCoords.push(`${leftEdgeX(p.ch).toFixed(1)},${y}`, `${rightEdgeX(p.ch).toFixed(1)},${y}`)
+    }
+    backgroundLinePath = bgCoords.join(' ')
+  }
+
   const firstX = leftEdgeX(points[0]!.ch)
   const lastX = rightEdgeX(points[points.length - 1]!.ch)
   const areaPath = [
@@ -155,6 +170,7 @@ export function buildSpectrumChart(
     displayMaxEnergy,
     areaPath,
     linePath: lineCoords.join(' '),
+    backgroundLinePath,
     xTicks: xTicks.map((e) => ({
       energy: e,
       x: toX(e),

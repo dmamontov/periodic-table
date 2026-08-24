@@ -76,7 +76,7 @@ Fork 了本项目、想记录自己的元素收藏？需要修改的内容全部
 - `myElements` - 一个"元素符号 → 详情"的映射表。只要加上一个键就代表这个元素归你所有；空对象 `{}` 已经足够（"我有这个元素，细节以后再补"）。每条记录的字段按主题分组，均为可选：
   - `physical` - `sampleState`、`container`、`purity`、`weight`、`allotrope`、`description`、`acquiredDate`。
   - `radioactive` - `isotope`、`sourceType`、`decayParent`。非放射性元素可以整组省略。
-  - `spectrum` - `id`、`filename`、`annotations`。没有测量文件时可以整组省略。
+  - `spectrum` - `id`、`filename`、`annotations`、`backgroundSpectrumId`。没有测量文件时可以整组省略。
   - `history` - 该样品更早的版本，从旧到新排列，仅当样品曾经被实际更换过时才需要。每条记录的字段与上面相同，外加 `retained`（旧样品是否仍然保留）和 `reason`（更换原因，取自 `reasonLabels` 词汇表）。会以时间线的形式显示在模态框中，可通过收藏区块标题旁的时钟图标打开，也可以从收藏总览面板的「变更历史」区块打开。
 - 如果内置的 `sampleState`/`container`/`reason` 词汇表（在 [`src/locales/collection.ts`](src/locales/collection.ts) 中）不够用，你可以在那里添加新条目，也可以完全跳过词汇表，直接把现成的文字写进该元素的 `physical.description` 字段 - `collection.ts` 里的放射性元素就是这么做的，可以参考。`radioactive.sourceType` 固定取值为 `'primary'` 或 `'secondary'`。
 - `physical.weight` 是以克为单位的普通文本 - `1.85` 显示为「1.85 克」，`~1.85`（前面加波浪号）显示为「~1.85 克」，表示估算而非实测的重量。
@@ -84,7 +84,7 @@ Fork 了本项目、想记录自己的元素收藏？需要修改的内容全部
 - `physical.acquiredDate` 是 ISO `YYYY-MM-DD` 格式的日期 - 在元素卡片上显示为「收藏起始」。在 `history` 记录中则表示「这个更早的版本从何时起是当时的现状」。
 - 任何文本字段既可以写成一个普通字符串（在三种界面语言下都显示同一内容），也可以写成 `{ ru, en, zh }` 对象来分别翻译。
 
-伽马能谱（`spectrum.id`/`spectrum.filename` 字段）是可选的 - 只有当你确实有测量文件要放进 `src/data/spectra/` 时才需要填写。`spectrum.annotations` 字段在图表上标出参考伽马/X 射线谱线（能量单位 keV + 标签）- 只有当它既是该同位素的已记录发射线，又确实能在你自己的测量本底之上看到时，才值得添加，而不是直接照抄表格数值。
+伽马能谱（`spectrum.id`/`spectrum.filename` 字段）是可选的 - 只有当你确实有测量文件要放进 `src/data/spectra/` 时才需要填写。`spectrum.annotations` 字段在图表上标出参考伽马/X 射线谱线（能量单位 keV + 标签）- 只有当它既是该同位素的已记录发射线，又确实能在你自己的测量本底之上看到时，才值得添加，而不是直接照抄表格数值。`spectrum.backgroundSpectrumId` 会在图表上叠加一条天然本底测量曲线（用同样方式转换得到，例如在无样品的房间中测得）用于对比 - 它假定本底与样品是用同一台设备、同一套校准测得的，因为通道是按索引对齐、按测量时长缩放的，而不是按能量重新采样。
 
 ## 脚本命令
 

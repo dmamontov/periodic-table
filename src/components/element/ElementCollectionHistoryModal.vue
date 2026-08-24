@@ -232,6 +232,7 @@ function onKeydown(event: KeyboardEvent): void {
                 :element-name="elementName"
                 :annotations="entry.spectrum.annotations"
                 :lead-shielded="entry.spectrum.leadShielded"
+                :background-spectrum-id="entry.spectrum.backgroundSpectrumId"
               />
             </div>
           </div>

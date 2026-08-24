@@ -50,6 +50,12 @@ defineProps<{
       :fill="`url(#spectrum-fill-${spectrumId})`"
     />
     <polyline
+      v-if="chart.backgroundLinePath"
+      :points="chart.backgroundLinePath"
+      fill="none"
+      class="gamma-spectrum-svg__background-line"
+    />
+    <polyline
       :points="chart.linePath"
       fill="none"
       class="gamma-spectrum-svg__line"
@@ -139,6 +145,15 @@ defineProps<{
   stroke-width: 1;
   stroke-linejoin: round;
   stroke-linecap: round;
+}
+
+.gamma-spectrum-svg__background-line {
+  stroke: var(--color-chart-axis-muted);
+  stroke-width: 1;
+  stroke-dasharray: 2 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  opacity: 0.85;
 }
 
 .gamma-spectrum-svg__axis {

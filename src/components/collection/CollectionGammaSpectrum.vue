@@ -25,6 +25,7 @@ interface SpectrumSibling {
   originHtml?: string
   annotations?: SpectrumAnnotation[] | null
   leadShielded?: boolean | null
+  backgroundSpectrumId?: string | null
 }
 
 const props = defineProps<{
@@ -35,6 +36,7 @@ const props = defineProps<{
   originHtml?: string
   annotations?: SpectrumAnnotation[] | null
   leadShielded?: boolean | null
+  backgroundSpectrumId?: string | null
   /** Other spectra to page through in the zoom modal (e.g. the whole collection list) - omit for a single, non-navigable spectrum. */
   siblings?: SpectrumSibling[]
   siblingIndex?: number
@@ -63,6 +65,9 @@ const activeAnnotations = computed(() =>
 const activeLeadShielded = computed(() =>
   activeSibling.value ? activeSibling.value.leadShielded : props.leadShielded,
 )
+const activeBackgroundSpectrumId = computed(() =>
+  activeSibling.value ? activeSibling.value.backgroundSpectrumId : props.backgroundSpectrumId,
+)
 const accent = computed(() => props.accentColor ?? COLLECTION_COLOR)
 const modalAccent = computed(() => activeSibling.value?.color ?? accent.value)
 
@@ -82,7 +87,7 @@ function navigateNext() {
 // `modalSpectrum` is kept separate from `spectrum` so navigating siblings in the modal never changes the thumbnail.
 const isZoomed = ref(false)
 
-async function fetchSpectrum(id: string): Promise<CollectionSpectrumData | null> {
+async function fetchSpectrum(id: string | null | undefined): Promise<CollectionSpectrumData | null> {
   try {
     return await getCollectionSpectrum(id)
   } catch {
@@ -102,9 +107,19 @@ watch(
   { immediate: true },
 )
 
+const background = ref<CollectionSpectrumData | null>(null)
+watch(
+  () => props.backgroundSpectrumId,
+  async (id) => {
+    background.value = await fetchSpectrum(id)
+  },
+  { immediate: true },
+)
+
 // Fetches only while the modal is open, reusing the `spectrum` cache; `seq` drops stale responses from out-of-order navigation.
 let modalFetchSeq = 0
 const modalSpectrum = ref<CollectionSpectrumData | null>(null)
+const modalBackground = ref<CollectionSpectrumData | null>(null)
 watch(
   [activeSpectrumId, isZoomed],
   async ([id, zoomed]) => {
@@ -113,12 +128,15 @@ watch(
     if (!zoomed) return
     if (modalSpectrumCache.has(id)) {
       modalSpectrum.value = modalSpectrumCache.get(id) ?? null
-      return
+    } else {
+      modalSpectrum.value = null
+      const data = await fetchSpectrum(id)
+      modalSpectrumCache.set(id, data)
+      if (seq === modalFetchSeq) modalSpectrum.value = data
     }
-    modalSpectrum.value = null
-    const data = await fetchSpectrum(id)
-    modalSpectrumCache.set(id, data)
-    if (seq === modalFetchSeq) modalSpectrum.value = data
+
+    const bg = await fetchSpectrum(activeBackgroundSpectrumId.value)
+    if (seq === modalFetchSeq) modalBackground.value = bg
   },
   { immediate: true },
 )
@@ -133,6 +151,9 @@ const {
   spectrum,
   computed(() => props.spectrumId),
   computed(() => props.annotations),
+  undefined,
+  undefined,
+  background,
 )
 const modalYScale = ref<SpectrumYScale>('linear')
 const modalSmoothing = ref(SPECTRUM_SMOOTHING_DEFAULT)
@@ -142,7 +163,7 @@ const {
   durationLabel: modalDurationLabel,
   cpsLabel: modalCpsLabel,
   xmlDownload: modalXmlDownload,
-} = useSpectrumDisplay(modalSpectrum, activeSpectrumId, activeAnnotations, modalYScale, modalSmoothing)
+} = useSpectrumDisplay(modalSpectrum, activeSpectrumId, activeAnnotations, modalYScale, modalSmoothing, modalBackground)
 
 function openZoom() {
   activeIndex.value = props.siblingIndex ?? 0

@@ -76,7 +76,7 @@ Forked this to track your own elements? Everything you need to change lives in *
 - `myElements` - a `symbol → details` map. Add a key to mark an element as yours; `{}` alone is enough ("I have it, no details yet"). Each entry groups its fields by topic, all optional:
   - `physical` - `sampleState`, `container`, `purity`, `weight`, `allotrope`, `description`, `acquiredDate`.
   - `radioactive` - `isotope`, `sourceType`, `decayParent`. Omit the whole group for non-radioactive elements.
-  - `spectrum` - `id`, `filename`, `annotations`. Omit the whole group if you have no measurement file.
+  - `spectrum` - `id`, `filename`, `annotations`, `backgroundSpectrumId`. Omit the whole group if you have no measurement file.
   - `history` - earlier versions of this sample, oldest first, only if it was ever physically replaced. Each entry has the same shape as the fields above, plus `retained` (is the old sample still kept?) and `reason` (why it was replaced, from the `reasonLabels` vocabulary). Shown as a timeline in a modal, opened via the clock icon next to the Collection section header and from the collection overview panel's own History section.
 - If the built-in `sampleState`/`container`/`reason` vocabulary (in [`src/locales/collection.ts`](src/locales/collection.ts)) doesn't cover your sample, either add a new entry there, or skip it entirely and put ready-made text straight into an element's `physical.description` field - see the radioactive elements in `collection.ts` for an example. `radioactive.sourceType` is fixed to `'primary'` / `'secondary'`.
 - `physical.weight` is grams, plain text - `1.85` shows as "1.85 g", `~1.85` (leading tilde) shows as "~1.85 g" for an estimated rather than measured weight.
@@ -84,7 +84,7 @@ Forked this to track your own elements? Everything you need to change lives in *
 - `physical.acquiredDate` is an ISO `YYYY-MM-DD` date - shown as "In collection since" on the element card. On a `history` entry it means "since when this earlier version was current".
 - Every text field accepts either a plain string (shown in all three UI languages) or `{ ru, en, zh }` if you want it translated.
 
-Gamma spectra (the `spectrum.id`/`spectrum.filename` fields) are optional - only set them if you actually have measurement files to drop into `src/data/spectra/`. `spectrum.annotations` marks reference gamma/X-ray lines on the chart (energy in keV + a label) - only add a line once you've confirmed it's both a documented emission line and actually visible against the background in your own measurement, not just copied from a table.
+Gamma spectra (the `spectrum.id`/`spectrum.filename` fields) are optional - only set them if you actually have measurement files to drop into `src/data/spectra/`. `spectrum.annotations` marks reference gamma/X-ray lines on the chart (energy in keV + a label) - only add a line once you've confirmed it's both a documented emission line and actually visible against the background in your own measurement, not just copied from a table. `spectrum.backgroundSpectrumId` overlays a natural-background measurement (converted the same way, e.g. from an unshielded room measurement) on the chart for comparison - it assumes the background was measured on the same device/calibration as the sample, since counts are matched by channel index and scaled by measurement time, not resampled by energy.
 
 ## Scripts
 

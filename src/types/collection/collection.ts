@@ -50,6 +50,8 @@ export interface ElementCollectionSpectrum {
   annotations?: SpectrumAnnotation[] | null
   /** True if this measurement was taken inside a lead shield (background-suppressing enclosure) */
   leadShielded?: boolean | null
+  /** Natural-background spectrum ID from data/spectra/, overlaid on the chart. Assumes the same channel/calibration grid as this spectrum. */
+  backgroundSpectrumId?: string | null
 }
 
 /** A past version of this collection entry — same shape as ElementCollection minus its own `history`. Dated via its own `physical.acquiredDate`, same field as the live version. */
