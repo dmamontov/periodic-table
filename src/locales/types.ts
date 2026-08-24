@@ -274,7 +274,7 @@ export interface LocaleMessages {
     collectionSpectrumScale: string
     collectionSpectrumFilter: string
     collectionSpectrumLeadShielded: string
-    collectionSpectrumEvidence: string
+    collectionSpectrumNote: string
     collectionSpectrumScaleLinear: string
     collectionSpectrumScaleLog: string
     miniTableAria: string

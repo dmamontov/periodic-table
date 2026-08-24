@@ -540,7 +540,7 @@ export const myElements: Record<string, ElementCollection> = {
         { energy: 342.4, label: 'Pb-214' },
         { energy: 596.1, label: 'Bi-214' },
       ],
-      evidenceNote: { ru: 'Po-210 почти не даёт гамма-линий; видна собственная линия его предшественника Pb-210 (47 кэВ).', en: "Po-210 emits almost no gammas of its own; its precursor Pb-210's own line (47 keV) is visible.", zh: 'Po-210几乎不发出伽马射线；可见其前体Pb-210的自身特征峰（47 keV）。' },
+      note: { ru: 'Po-210 почти не даёт гамма-линий; видна собственная линия его предшественника Pb-210 (47 кэВ).', en: "Po-210 emits almost no gammas of its own; its precursor Pb-210's own line (47 keV) is visible.", zh: 'Po-210几乎不发出伽马射线；可见其前体Pb-210的自身特征峰（47 keV）。' },
     },
   },
   Rn: {
@@ -568,7 +568,7 @@ export const myElements: Record<string, ElementCollection> = {
         { energy: 342.4, label: 'Pb-214' },
         { energy: 593.5, label: 'Bi-214' },
       ],
-      evidenceNote: { ru: 'Радон гамма-неактивен; видна цепочка его продуктов распада.', en: 'Radon itself emits no useful gammas; its decay-product chain is visible.', zh: '氡本身无有效伽马射线；可见其衰变产物链。' },
+      note: { ru: 'Радон гамма-неактивен; видна цепочка его продуктов распада.', en: 'Radon itself emits no useful gammas; its decay-product chain is visible.', zh: '氡本身无有效伽马射线；可见其衰变产物链。' },
     },
   },
   Ra: {
@@ -593,7 +593,7 @@ export const myElements: Record<string, ElementCollection> = {
         { energy: 342.4, label: 'Pb-214' },
         { energy: 593.5, label: 'Bi-214' },
       ],
-      evidenceNote: { ru: 'Собственная линия Ra-226 (184 кэВ) и вся цепочка распада.', en: "Ra-226's own line (184 keV) plus the full decay chain.", zh: '可见Ra-226自身特征峰（184 keV）及完整衰变链。' },
+      note: { ru: 'Собственная линия Ra-226 (184 кэВ) и вся цепочка распада.', en: "Ra-226's own line (184 keV) plus the full decay chain.", zh: '可见Ra-226自身特征峰（184 keV）及完整衰变链。' },
     },
   },
   Th: {
@@ -623,7 +623,7 @@ export const myElements: Record<string, ElementCollection> = {
             { energy: 327.6, label: 'Ac-228' },
             { energy: 568, label: 'Tl-208' },
           ],
-          evidenceNote: { ru: 'Видны Pb-212 (238,6 кэВ) и Ac-228 (328 кэВ) — реальные продукты цепочки распада Th-232.', en: 'Pb-212 (238.6 keV) and Ac-228 (328 keV) are visible — real Th-232 decay-chain products.', zh: '可见Pb-212（238.6 keV）和Ac-228（328 keV）——真实的Th-232衰变链产物。' },
+          note: { ru: 'Видны Pb-212 (238,6 кэВ) и Ac-228 (328 кэВ) — реальные продукты цепочки распада Th-232.', en: 'Pb-212 (238.6 keV) and Ac-228 (328 keV) are visible — real Th-232 decay-chain products.', zh: '可见Pb-212（238.6 keV）和Ac-228（328 keV）——真实的Th-232衰变链产物。' },
         },
         retained: true,
         reason: 'betterSample',
@@ -643,7 +643,7 @@ export const myElements: Record<string, ElementCollection> = {
         { energy: 327.6, label: 'Ac-228' },
         { energy: 568, label: 'Tl-208' },
       ],
-      evidenceNote: { ru: 'Видны Pb-212 (238,6 кэВ) и Ac-228 (328 кэВ) — реальные продукты цепочки распада Th-232.', en: 'Pb-212 (238.6 keV) and Ac-228 (328 keV) are visible — real Th-232 decay-chain products.', zh: '可见Pb-212（238.6 keV）和Ac-228（328 keV）——真实的Th-232衰变链产物。' },
+      note: { ru: 'Видны Pb-212 (238,6 кэВ) и Ac-228 (328 кэВ) — реальные продукты цепочки распада Th-232.', en: 'Pb-212 (238.6 keV) and Ac-228 (328 keV) are visible — real Th-232 decay-chain products.', zh: '可见Pb-212（238.6 keV）和Ac-228（328 keV）——真实的Th-232衰变链产物。' },
     },
   },
   U: {
@@ -666,7 +666,7 @@ export const myElements: Record<string, ElementCollection> = {
         { energy: 92.6, label: 'Th-234' },
         { energy: 181.3, label: 'U-235' },
       ],
-      evidenceNote: { ru: 'Дублет Th-234 и линия U-235 — надёжное подтверждение природного урана.', en: "The Th-234 doublet plus U-235's own line reliably confirm natural uranium.", zh: 'Th-234双峰及U-235自身特征峰，可靠确认天然铀。' },
+      note: { ru: 'Дублет Th-234 и линия U-235 — надёжное подтверждение природного урана.', en: "The Th-234 doublet plus U-235's own line reliably confirm natural uranium.", zh: 'Th-234双峰及U-235自身特征峰，可靠确认天然铀。' },
     },
   },
   Np: {
@@ -690,7 +690,7 @@ export const myElements: Record<string, ElementCollection> = {
         { energy: 19.1, label: 'Np Lα (Am-241)' },
         { energy: 61.7, label: 'Am-241' },
       ],
-      evidenceNote: { ru: 'Видна только линия Am-241 (60 кэВ) — Np-237 нарастает из него, но из-за огромного периода полураспада его активность ничтожна и в спектре не проявляется.', en: "Only Am-241's line (60 keV) is visible — Np-237 grows in from it, but its huge half-life keeps its activity negligible, so it never shows up in the spectrum.", zh: '只能看到Am-241的谱线（60 keV）——Np-237由其衰变而来，但因半衰期极长，活度可忽略不计，谱图中不会显现。' },
+      note: { ru: 'Видна только линия Am-241 (60 кэВ) — Np-237 нарастает из него, но из-за огромного периода полураспада его активность ничтожна и в спектре не проявляется.', en: "Only Am-241's line (60 keV) is visible — Np-237 grows in from it, but its huge half-life keeps its activity negligible, so it never shows up in the spectrum.", zh: '只能看到Am-241的谱线（60 keV）——Np-237由其衰变而来，但因半衰期极长，活度可忽略不计，谱图中不会显现。' },
     },
   },
   Pu: {
@@ -711,7 +711,7 @@ export const myElements: Record<string, ElementCollection> = {
         { energy: 16.7, label: 'U Lα (Pu-239)' },
         { energy: 61.7, label: 'Am-241' },
       ],
-      evidenceNote: { ru: 'Доминирует Am-241 — реакторный Pu-239 содержит примесь Pu-241, которая за десятилетия распадается в Am-241 и забивает слабый сигнал самого Pu-239.', en: "Am-241 dominates — reactor-grade Pu-239 contains a Pu-241 impurity that decays into Am-241 over decades, swamping Pu-239's own weak signal.", zh: '谱图由Am-241主导——反应堆级Pu-239含有Pu-241杂质，数十年间衰变为Am-241，掩盖了Pu-239本身微弱的信号。' },
+      note: { ru: 'Доминирует Am-241 — реакторный Pu-239 содержит примесь Pu-241, которая за десятилетия распадается в Am-241 и забивает слабый сигнал самого Pu-239.', en: "Am-241 dominates — reactor-grade Pu-239 contains a Pu-241 impurity that decays into Am-241 over decades, swamping Pu-239's own weak signal.", zh: '谱图由Am-241主导——反应堆级Pu-239含有Pu-241杂质，数十年间衰变为Am-241，掩盖了Pu-239本身微弱的信号。' },
     },
   },
   Am: {
@@ -732,7 +732,7 @@ export const myElements: Record<string, ElementCollection> = {
         { energy: 19.1, label: 'Np Lα (Am-241)' },
         { energy: 61.7, label: 'Am-241' },
       ],
-      evidenceNote: { ru: 'Собственная линия Am-241 (60 кэВ) — однозначно.', en: "Am-241's own line (60 keV) — unambiguous.", zh: 'Am-241自身特征峰（60 keV）——明确无误。' },
+      note: { ru: 'Собственная линия Am-241 (60 кэВ) — однозначно.', en: "Am-241's own line (60 keV) — unambiguous.", zh: 'Am-241自身特征峰（60 keV）——明确无误。' },
     },
   },
 }

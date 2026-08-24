@@ -28,7 +28,7 @@ interface SpectrumSibling {
   annotations?: SpectrumAnnotation[] | null
   leadShielded?: boolean | null
   backgroundSpectrumId?: string | null
-  evidenceNote?: LocalizedLabel | null
+  note?: LocalizedLabel | null
 }
 
 const props = defineProps<{
@@ -40,7 +40,7 @@ const props = defineProps<{
   annotations?: SpectrumAnnotation[] | null
   leadShielded?: boolean | null
   backgroundSpectrumId?: string | null
-  evidenceNote?: LocalizedLabel | null
+  note?: LocalizedLabel | null
   /** Other spectra to page through in the zoom modal (e.g. the whole collection list) - omit for a single, non-navigable spectrum. */
   siblings?: SpectrumSibling[]
   siblingIndex?: number
@@ -72,8 +72,8 @@ const activeLeadShielded = computed(() =>
 const activeBackgroundSpectrumId = computed(() =>
   activeSibling.value ? activeSibling.value.backgroundSpectrumId : props.backgroundSpectrumId,
 )
-const activeEvidenceNote = computed(() => {
-  const note = activeSibling.value ? activeSibling.value.evidenceNote : props.evidenceNote
+const activeNote = computed(() => {
+  const note = activeSibling.value ? activeSibling.value.note : props.note
   return resolveLocalizedLabel(note, locale.value)
 })
 
@@ -270,9 +270,9 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
         {{ tSidebar('collectionSpectrumDownload') }}
       </a>
     </div>
-    <p v-if="activeEvidenceNote" class="collection-gamma-spectrum__evidence">
-      <span class="collection-gamma-spectrum__evidence-label">{{ tSidebar('collectionSpectrumEvidence') }}:</span>
-      {{ activeEvidenceNote }}
+    <p v-if="activeNote" class="collection-gamma-spectrum__note">
+      <span class="collection-gamma-spectrum__note-label">{{ tSidebar('collectionSpectrumNote') }}:</span>
+      {{ activeNote }}
     </p>
 
     <Teleport to="body">
@@ -443,9 +443,9 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
               {{ tSidebar('collectionSpectrumDownload') }}
             </a>
           </div>
-          <p v-if="activeEvidenceNote" class="collection-gamma-spectrum__evidence">
-            <span class="collection-gamma-spectrum__evidence-label">{{ tSidebar('collectionSpectrumEvidence') }}:</span>
-            {{ activeEvidenceNote }}
+          <p v-if="activeNote" class="collection-gamma-spectrum__note">
+            <span class="collection-gamma-spectrum__note-label">{{ tSidebar('collectionSpectrumNote') }}:</span>
+            {{ activeNote }}
           </p>
         </div>
       </Transition>
@@ -542,7 +542,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
   margin-top: 5px;
 }
 
-.collection-gamma-spectrum__evidence {
+.collection-gamma-spectrum__note {
   margin: 4px 0 0;
   font-size: 11px;
   font-weight: 500;
@@ -550,7 +550,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
   color: var(--color-text-secondary);
 }
 
-.collection-gamma-spectrum__evidence-label {
+.collection-gamma-spectrum__note-label {
   font-weight: 700;
   color: var(--color-chart-axis);
 }
@@ -760,7 +760,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
 
   .gamma-spectrum-modal__header,
   .gamma-spectrum-modal__footer,
-  .collection-gamma-spectrum__evidence {
+  .collection-gamma-spectrum__note {
     flex-shrink: 0;
   }
 

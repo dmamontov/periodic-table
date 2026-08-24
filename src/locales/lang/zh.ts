@@ -292,7 +292,7 @@ const messages: LocaleMessages = {
     "collectionSpectrumScale": "计数刻度",
     "collectionSpectrumFilter": "滤波",
     "collectionSpectrumLeadShielded": "在铅屏蔽室内测量",
-    "collectionSpectrumEvidence": "依据",
+    "collectionSpectrumNote": "备注",
     "collectionSpectrumScaleLinear": "lin",
     "collectionSpectrumScaleLog": "log",
     "miniTableAria": "元素周期表缩略图，所选元素已高亮",

@@ -233,7 +233,7 @@ function onKeydown(event: KeyboardEvent): void {
                 :annotations="entry.spectrum.annotations"
                 :lead-shielded="entry.spectrum.leadShielded"
                 :background-spectrum-id="entry.spectrum.backgroundSpectrumId"
-                :evidence-note="entry.spectrum.evidenceNote"
+                :note="entry.spectrum.note"
               />
             </div>
           </div>

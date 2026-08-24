@@ -292,7 +292,7 @@ const messages: LocaleMessages = {
     "collectionSpectrumScale": "Count scale",
     "collectionSpectrumFilter": "Filter",
     "collectionSpectrumLeadShielded": "Measured inside a lead shield",
-    "collectionSpectrumEvidence": "Evidence",
+    "collectionSpectrumNote": "Note",
     "collectionSpectrumScaleLinear": "lin",
     "collectionSpectrumScaleLog": "log",
     "miniTableAria": "Mini periodic table with the selected element highlighted",
