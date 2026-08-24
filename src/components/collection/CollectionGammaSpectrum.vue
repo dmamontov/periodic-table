@@ -513,6 +513,8 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
   position: fixed;
   z-index: 320;
   max-width: 240px;
+  /* `left` is the anchor's center, computed in useDismissibleTooltip - shift back by half of this bubble's own (variable) width so it stays centered regardless of how short/long its text is. */
+  transform: translateX(-50%);
   padding: 8px 10px;
   border-radius: 6px;
   background: var(--color-bg-elevated);

@@ -1,9 +1,10 @@
 import { onBeforeUnmount, onMounted, readonly, ref, type Ref } from 'vue'
 
 const VIEWPORT_MARGIN = 8
-const BUBBLE_WIDTH = 240
+// Mirrors the bubble's CSS `max-width` - a worst-case upper bound for clamping, not its actual rendered width (which varies with content and is unknown here).
+const MAX_BUBBLE_WIDTH = 240
 
-/** Click/tap-to-open tooltip bubble anchored to `rootEl`, positioned below it and clamped to the viewport — works on touch devices, unlike the native `title` attribute. Dismissed on outside click, Escape, resize, or scroll. */
+/** Click/tap-to-open tooltip bubble anchored to `rootEl`, positioned below it and clamped to the viewport — works on touch devices, unlike the native `title` attribute. Dismissed on outside click, Escape, resize, or scroll. Centers on the anchor via `left` + the consumer's own `transform: translateX(-50%)`, so it stays centered regardless of the bubble's actual rendered width. */
 export function useDismissibleTooltip(rootEl: Ref<HTMLElement | null>) {
   const isOpen = ref(false)
   const style = ref({ top: '0px', left: '0px' })
@@ -13,8 +14,8 @@ export function useDismissibleTooltip(rootEl: Ref<HTMLElement | null>) {
     if (!rect) return
 
     const left = Math.max(
-      VIEWPORT_MARGIN,
-      Math.min(rect.left + rect.width / 2 - BUBBLE_WIDTH / 2, window.innerWidth - BUBBLE_WIDTH - VIEWPORT_MARGIN),
+      VIEWPORT_MARGIN + MAX_BUBBLE_WIDTH / 2,
+      Math.min(rect.left + rect.width / 2, window.innerWidth - MAX_BUBBLE_WIDTH / 2 - VIEWPORT_MARGIN),
     )
     style.value = { top: `${rect.bottom + 6}px`, left: `${left}px` }
   }
