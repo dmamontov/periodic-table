@@ -99,7 +99,7 @@ export const myElements: Record<string, ElementCollection> = {
     history: [
       {
         physical: {
-          description: { ru: 'Газ F₂N₂', en: 'F₂N₂ gas', zh: 'F₂N₂ 气体' },
+          description: { ru: 'Смесь газов F₂/N₂', en: 'F₂/N₂ gas mixture', zh: 'F₂/N₂ 混合气体' },
           container: 'ampoule',
           purity: '50',
           acquiredDate: '2022-02-14',
