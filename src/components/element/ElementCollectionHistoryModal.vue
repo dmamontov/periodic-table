@@ -16,7 +16,7 @@ import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/iso
 import { resolveLocalizedLabel } from '../../utils/localizedLabel';
 import CollectionGammaSpectrum from '../collection/CollectionGammaSpectrum.vue';
 import CloseButton from '../common/CloseButton.vue';
-import { COLLECTION_COLOR } from '../../theme/colors';
+import { COLLECTION_COLOR, RETAINED_COLOR, NOT_RETAINED_COLOR } from '../../theme/colors';
 
 const props = defineProps<{
   element: Element;
@@ -28,9 +28,6 @@ const props = defineProps<{
 const { messages, locale, tSidebar } = useLocale();
 
 const accent = computed(() => props.accentColor ?? COLLECTION_COLOR);
-
-const RETAINED_COLOR = '#16a34a';
-const NOT_RETAINED_COLOR = '#dc2626';
 
 function pastMarkerColor(retained: boolean | null | undefined): string {
   return retained ? RETAINED_COLOR : NOT_RETAINED_COLOR;

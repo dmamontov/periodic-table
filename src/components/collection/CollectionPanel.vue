@@ -8,7 +8,13 @@ import { elements, getElementRouteSymbol } from '../../data';
 import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes';
 import { wishlist } from '../../data/collection';
 import type { Element } from '../../types/element/element';
-import type { ElementCollection, ElementCollectionHistoryEntry } from '../../types/collection/collection';
+import type {
+  ElementCollection,
+  ElementCollectionHistoryEntry,
+  ElementCollectionPhysical,
+  ElementCollectionRadioactive,
+  ElementCollectionSpectrum,
+} from '../../types/collection/collection';
 import CollapsibleSection from '../common/CollapsibleSection.vue';
 import DrawerShell from '../common/DrawerShell.vue';
 import CloseButton from '../common/CloseButton.vue';
@@ -36,28 +42,49 @@ const spectraCollapsed = ref(true);
 const historyCollapsed = ref(true);
 const wishlistCollapsed = ref(true);
 
+function buildSpectrumEntry(
+  el: Element,
+  physical: ElementCollectionPhysical | null | undefined,
+  radioactive: ElementCollectionRadioactive | null | undefined,
+  spectrum: ElementCollectionSpectrum,
+  past: { retained: boolean | null | undefined } | null,
+) {
+  const originHtml =
+    formatDecayChainHtml(el.symbol, radioactive?.isotope, radioactive?.decayParent) ||
+    formatIsotopeHtml(el.symbol, radioactive?.isotope);
+  return {
+    symbol: el.symbol,
+    routeSymbol: getElementRouteSymbol(el.symbol),
+    color: el.color,
+    spectrumId: spectrum.id,
+    originHtml,
+    sampleLabel: formatCollectionSampleLabel(physical, locale.value),
+    annotations: spectrum.annotations,
+    leadShielded: spectrum.leadShielded,
+    backgroundSpectrumId: spectrum.backgroundSpectrumId,
+    note: spectrum.note,
+    isPast: past !== null,
+    retained: past?.retained,
+  };
+}
+
 const spectrumElements = computed(() =>
   elements.flatMap((el) => {
-    const spectrumId = el.collection?.spectrum?.id;
-    if (!spectrumId) return [];
-    const radioactive = el.collection?.radioactive;
-    const originHtml =
-      formatDecayChainHtml(el.symbol, radioactive?.isotope, radioactive?.decayParent) ||
-      formatIsotopeHtml(el.symbol, radioactive?.isotope);
-    return [
-      {
-        symbol: el.symbol,
-        routeSymbol: getElementRouteSymbol(el.symbol),
-        color: el.color,
-        spectrumId,
-        originHtml,
-        sampleLabel: formatCollectionSampleLabel(el.collection?.physical, locale.value),
-        annotations: el.collection?.spectrum?.annotations,
-        leadShielded: el.collection?.spectrum?.leadShielded,
-        backgroundSpectrumId: el.collection?.spectrum?.backgroundSpectrumId,
-        note: el.collection?.spectrum?.note,
-      },
-    ];
+    const entries = [];
+    const liveSpectrum = el.collection?.spectrum;
+    if (liveSpectrum?.id) {
+      entries.push(buildSpectrumEntry(el, el.collection?.physical, el.collection?.radioactive, liveSpectrum, null));
+    }
+    for (const historyEntry of el.collection?.history ?? []) {
+      const pastSpectrum = historyEntry.spectrum;
+      if (!pastSpectrum?.id) continue;
+      entries.push(
+        buildSpectrumEntry(el, historyEntry.physical, historyEntry.radioactive, pastSpectrum, {
+          retained: historyEntry.retained,
+        }),
+      );
+    }
+    return entries;
   }),
 );
 
@@ -238,7 +265,11 @@ function openElement(symbol: string) {
           :accent-color="SPECTRA_COLOR"
         >
           <div class="collection-panel__spectra-list">
-            <div v-for="(item, index) in spectrumElements" :key="item.symbol" class="collection-panel__spectrum-card">
+            <div
+              v-for="(item, index) in spectrumElements"
+              :key="item.spectrumId"
+              class="collection-panel__spectrum-card"
+            >
               <button type="button" class="collection-panel__spectrum-header" @click="openElement(item.routeSymbol)">
                 <ElementSpectrumHeading
                   :symbol="item.symbol"
@@ -246,6 +277,8 @@ function openElement(symbol: string) {
                   :accent="item.color"
                   :origin-html="item.originHtml"
                   :sample-label="item.sampleLabel"
+                  :is-past="item.isPast"
+                  :retained="item.retained"
                   compact
                 />
               </button>

@@ -26,6 +26,8 @@ interface SpectrumSibling {
   spectrumId: string;
   originHtml?: string;
   sampleLabel?: string;
+  isPast?: boolean;
+  retained?: boolean | null;
   annotations?: SpectrumAnnotation[] | null;
   leadShielded?: boolean | null;
   backgroundSpectrumId?: string | null;
@@ -39,6 +41,8 @@ const props = defineProps<{
   elementName?: string;
   originHtml?: string;
   sampleLabel?: string;
+  isPast?: boolean;
+  retained?: boolean | null;
   annotations?: SpectrumAnnotation[] | null;
   leadShielded?: boolean | null;
   backgroundSpectrumId?: string | null;
@@ -64,6 +68,8 @@ const activeName = computed(() => {
 // Per-field `??` would leak this card's own origin/annotations onto a sibling that simply has none of its own.
 const activeOriginHtml = computed(() => (activeSibling.value ? activeSibling.value.originHtml : props.originHtml));
 const activeSampleLabel = computed(() => (activeSibling.value ? activeSibling.value.sampleLabel : props.sampleLabel));
+const activeIsPast = computed(() => (activeSibling.value ? activeSibling.value.isPast : props.isPast));
+const activeRetained = computed(() => (activeSibling.value ? activeSibling.value.retained : props.retained));
 const activeAnnotations = computed(() => (activeSibling.value ? activeSibling.value.annotations : props.annotations));
 const activeLeadShielded = computed(() =>
   activeSibling.value ? activeSibling.value.leadShielded : props.leadShielded,
@@ -300,6 +306,8 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
               :accent="modalAccent"
               :origin-html="activeOriginHtml"
               :sample-label="activeSampleLabel"
+              :is-past="activeIsPast"
+              :retained="activeRetained"
             />
             <CloseButton class="gamma-spectrum-modal__close" :aria-label="tSidebar('close')" @click="closeZoom" />
           </div>

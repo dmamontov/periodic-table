@@ -34,6 +34,10 @@ export const WEAK_RADIOACTIVE_COLOR = '#8a9aab';
 /** Wishlist "upgrade available" badge — a sold sample beats what's already in the collection. */
 export const WISHLIST_UPGRADE_COLOR = '#4a90a4';
 
+/** Whether an earlier (history) sample is still physically kept — used by the history timeline and by historical spectrum cards alike. */
+export const RETAINED_COLOR = '#16a34a';
+export const NOT_RETAINED_COLOR = '#dc2626';
+
 /** Subatomic particle color-coding — particle labels and the electron-shell diagram's default accent. */
 export const PARTICLE_COLORS = {
   electron: '#5b8def',
