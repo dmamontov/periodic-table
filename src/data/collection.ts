@@ -537,6 +537,7 @@ export const myElements: Record<string, ElementCollection> = {
       id: 'po-84-staticmaster',
       filename: { ru: 'Po-210 (Staticmaster).xml', en: 'Po-210 (Staticmaster).xml', zh: 'Po-210 (Staticmaster).xml' },
       leadShielded: true,
+      backgroundSpectrumId: 'bg-lead-shield',
       annotations: [
         { energy: 47.4, label: 'Pb-210' },
         { energy: 78.3, label: 'Pb Kα/Kβ' },
@@ -565,6 +566,7 @@ export const myElements: Record<string, ElementCollection> = {
       id: 'rn-86-spd',
       filename: { ru: 'Rn-222 (СПД).xml', en: 'Rn-222 (SPD).xml', zh: 'Rn-222 (SPD).xml' },
       leadShielded: true,
+      backgroundSpectrumId: 'bg-lead-shield',
       annotations: [
         { energy: 78.3, label: 'Pb Kα/Kβ' },
         { energy: 181.3, label: 'Ra-226' },
@@ -590,6 +592,7 @@ export const myElements: Record<string, ElementCollection> = {
       id: 'ra-88-spd',
       filename: { ru: 'Ra-226 (СПД).xml', en: 'Ra-226 (SPD).xml', zh: 'Ra-226 (SPD).xml' },
       leadShielded: true,
+      backgroundSpectrumId: 'bg-lead-shield',
       annotations: [
         { energy: 78.3, label: 'Pb Kα/Kβ' },
         { energy: 181.3, label: 'Ra-226' },
@@ -622,6 +625,7 @@ export const myElements: Record<string, ElementCollection> = {
           id: 'th-90-pendant',
           filename: { ru: 'Th-232 (Медальон).xml', en: 'Th-232 (Pendant).xml', zh: 'Th-232 (吊坠).xml' },
           leadShielded: true,
+          backgroundSpectrumId: 'bg-lead-shield',
           annotations: [
             { energy: 78.3, label: 'Pb Kα/Kβ' },
             { energy: 232.2, label: 'Pb-212' },
@@ -642,6 +646,7 @@ export const myElements: Record<string, ElementCollection> = {
       id: 'th-90-wt20',
       filename: { ru: 'Th-232 (WT-20).xml', en: 'Th-232 (WT-20).xml', zh: 'Th-232 (WT-20).xml' },
       leadShielded: true,
+      backgroundSpectrumId: 'bg-lead-shield',
       annotations: [
         { energy: 64, label: 'W Kα/Kβ' },
         { energy: 232.2, label: 'Pb-212' },
@@ -666,6 +671,7 @@ export const myElements: Record<string, ElementCollection> = {
       id: 'u-92-glass',
       filename: { ru: 'U-238 (Бисер из ураносодержащего стекла).xml', en: 'U-238 (Uranium glass beads).xml', zh: 'U-238（含铀玻璃珠）.xml' },
       leadShielded: true,
+      backgroundSpectrumId: 'bg-lead-shield',
       annotations: [
         { energy: 66.4, label: 'Th-234' },
         { energy: 92.6, label: 'Th-234' },
@@ -691,6 +697,7 @@ export const myElements: Record<string, ElementCollection> = {
       id: 'np-93-his07',
       filename: { ru: 'Np-237 (HIS-07).xml', en: 'Np-237 (HIS-07).xml', zh: 'Np-237 (HIS-07).xml' },
       leadShielded: true,
+      backgroundSpectrumId: 'bg-lead-shield',
       annotations: [
         { energy: 19.1, label: 'Np Lα (Am-241)' },
         { energy: 61.7, label: 'Am-241' },
@@ -712,6 +719,7 @@ export const myElements: Record<string, ElementCollection> = {
       id: 'pu-94-rid6m',
       filename: { ru: 'Pu-239 (РИД-6М).xml', en: 'Pu-239 (RID-6M).xml', zh: 'Pu-239 (RID-6M).xml' },
       leadShielded: true,
+      backgroundSpectrumId: 'bg-lead-shield',
       annotations: [
         { energy: 16.7, label: 'U Lα (Pu-239)' },
         { energy: 61.7, label: 'Am-241' },
@@ -733,6 +741,7 @@ export const myElements: Record<string, ElementCollection> = {
       id: 'am-95-his07',
       filename: { ru: 'Am-241 (HIS-07).xml', en: 'Am-241 (HIS-07).xml', zh: 'Am-241 (HIS-07).xml' },
       leadShielded: true,
+      backgroundSpectrumId: 'bg-lead-shield',
       annotations: [
         { energy: 19.1, label: 'Np Lα (Am-241)' },
         { energy: 61.7, label: 'Am-241' },

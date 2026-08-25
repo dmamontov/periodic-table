@@ -29,6 +29,8 @@ export interface GammaSpectrumChartData {
   linePath: string
   /** Time-scaled natural-background trace, same channel grid as the main spectrum — null when no background is attached */
   backgroundLinePath: string | null
+  /** Same trace as `backgroundLinePath`, closed against the baseline for its own fill */
+  backgroundAreaPath: string | null
   xTicks: { energy: number; x: number; label: string }[]
   yTicks: { value: number; y: number; label: string }[]
   markers: { x: number; label: string }[]

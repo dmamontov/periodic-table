@@ -132,8 +132,17 @@ export function buildSpectrumChart(
   }
   const lineCoords = stepCoords
 
+  const firstX = leftEdgeX(points[0]!.ch)
+  const lastX = rightEdgeX(points[points.length - 1]!.ch)
+  const areaPath = [
+    `M ${firstX.toFixed(1)},${baseY.toFixed(1)}`,
+    `L ${stepCoords.join(' L ')}`,
+    `L ${lastX.toFixed(1)},${baseY.toFixed(1)} Z`,
+  ].join(' ')
+
   // Same channel grid as the main spectrum — just time-scale the counts, no energy resample.
   let backgroundLinePath: string | null = null
+  let backgroundAreaPath: string | null = null
   if (background && background.measurementTimeSec > 0) {
     const timeScale = data.measurementTimeSec / background.measurementTimeSec
     const bgSmoothed = smoothCounts(background.counts.slice(0, -1), smoothingRadius)
@@ -144,15 +153,12 @@ export function buildSpectrumChart(
       bgCoords.push(`${leftEdgeX(p.ch).toFixed(1)},${y}`, `${rightEdgeX(p.ch).toFixed(1)},${y}`)
     }
     backgroundLinePath = bgCoords.join(' ')
+    backgroundAreaPath = [
+      `M ${firstX.toFixed(1)},${baseY.toFixed(1)}`,
+      `L ${bgCoords.join(' L ')}`,
+      `L ${lastX.toFixed(1)},${baseY.toFixed(1)} Z`,
+    ].join(' ')
   }
-
-  const firstX = leftEdgeX(points[0]!.ch)
-  const lastX = rightEdgeX(points[points.length - 1]!.ch)
-  const areaPath = [
-    `M ${firstX.toFixed(1)},${baseY.toFixed(1)}`,
-    `L ${stepCoords.join(' L ')}`,
-    `L ${lastX.toFixed(1)},${baseY.toFixed(1)} Z`,
-  ].join(' ')
 
   const xTicks = buildXTicks(displayMaxEnergy)
 
@@ -171,6 +177,7 @@ export function buildSpectrumChart(
     areaPath,
     linePath: lineCoords.join(' '),
     backgroundLinePath,
+    backgroundAreaPath,
     xTicks: xTicks.map((e) => ({
       energy: e,
       x: toX(e),

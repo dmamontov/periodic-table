@@ -24,6 +24,10 @@ defineProps<{
         <stop offset="0%" :stop-color="accent" stop-opacity="0.55" />
         <stop offset="100%" :stop-color="accent" stop-opacity="0.08" />
       </linearGradient>
+      <linearGradient :id="`spectrum-background-fill-${spectrumId}`" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="var(--color-chart-axis-muted)" stop-opacity="0.55" />
+        <stop offset="100%" stop-color="var(--color-chart-axis-muted)" stop-opacity="0.3" />
+      </linearGradient>
     </defs>
 
     <g v-for="(tick, i) in chart.yTicks" :key="`y-${i}`">
@@ -48,6 +52,12 @@ defineProps<{
     <path
       :d="chart.areaPath"
       :fill="`url(#spectrum-fill-${spectrumId})`"
+    />
+    <path
+      v-if="chart.backgroundAreaPath"
+      :d="chart.backgroundAreaPath"
+      :fill="`url(#spectrum-background-fill-${spectrumId})`"
+      class="gamma-spectrum-svg__background-area"
     />
     <polyline
       v-if="chart.backgroundLinePath"
