@@ -25,6 +25,7 @@ interface SpectrumSibling {
   color: string;
   spectrumId: string;
   originHtml?: string;
+  sampleLabel?: string;
   annotations?: SpectrumAnnotation[] | null;
   leadShielded?: boolean | null;
   backgroundSpectrumId?: string | null;
@@ -37,6 +38,7 @@ const props = defineProps<{
   elementSymbol?: string;
   elementName?: string;
   originHtml?: string;
+  sampleLabel?: string;
   annotations?: SpectrumAnnotation[] | null;
   leadShielded?: boolean | null;
   backgroundSpectrumId?: string | null;
@@ -61,6 +63,7 @@ const activeName = computed(() => {
 });
 // Per-field `??` would leak this card's own origin/annotations onto a sibling that simply has none of its own.
 const activeOriginHtml = computed(() => (activeSibling.value ? activeSibling.value.originHtml : props.originHtml));
+const activeSampleLabel = computed(() => (activeSibling.value ? activeSibling.value.sampleLabel : props.sampleLabel));
 const activeAnnotations = computed(() => (activeSibling.value ? activeSibling.value.annotations : props.annotations));
 const activeLeadShielded = computed(() =>
   activeSibling.value ? activeSibling.value.leadShielded : props.leadShielded,
@@ -296,6 +299,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
               :name="activeName ?? ''"
               :accent="modalAccent"
               :origin-html="activeOriginHtml"
+              :sample-label="activeSampleLabel"
             />
             <CloseButton class="gamma-spectrum-modal__close" :aria-label="tSidebar('close')" @click="closeZoom" />
           </div>

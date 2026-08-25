@@ -5,6 +5,7 @@ withDefaults(
     name: string;
     accent: string;
     originHtml?: string;
+    sampleLabel?: string;
     compact?: boolean;
   }>(),
   { compact: false },
@@ -16,6 +17,7 @@ withDefaults(
     <span class="element-spectrum-heading__symbol" :style="{ color: accent }">{{ symbol }}</span>
     <span class="element-spectrum-heading__name">{{ name }}</span>
     <span v-if="originHtml" class="element-spectrum-heading__origin" v-html="originHtml" />
+    <span v-if="sampleLabel" class="element-spectrum-heading__sample">{{ sampleLabel }}</span>
   </div>
 </template>
 
@@ -46,6 +48,13 @@ withDefaults(
   color: var(--color-text-tertiary);
 }
 
+.element-spectrum-heading__sample {
+  flex-basis: 100%;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--color-text-tertiary);
+}
+
 .element-spectrum-heading--compact {
   gap: 3px 7px;
 }
@@ -61,5 +70,9 @@ withDefaults(
 
 .element-spectrum-heading--compact .element-spectrum-heading__origin {
   font-size: 11px;
+}
+
+.element-spectrum-heading--compact .element-spectrum-heading__sample {
+  font-size: 10px;
 }
 </style>

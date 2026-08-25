@@ -3,12 +3,17 @@ import { computed, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useLocale } from '../../locales';
 import { computeCollectionStats } from '../../utils/collection/stats';
-import { formatCollectionAcquiredDate } from '../../utils/collection/labels';
+import {
+  formatCollectionAcquiredDate,
+  formatCollectionManufactureDate,
+  resolvePhysicalStateLabel,
+} from '../../utils/collection/labels';
 import { elements, getElementRouteSymbol } from '../../data';
 import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes';
 import { wishlist } from '../../data/collection';
 import type { Element } from '../../types/element/element';
 import type { ElementCollection, ElementCollectionHistoryEntry } from '../../types/collection/collection';
+import type { LocalizedLabel } from '../../utils/localizedLabel';
 import CollapsibleSection from '../common/CollapsibleSection.vue';
 import DrawerShell from '../common/DrawerShell.vue';
 import CloseButton from '../common/CloseButton.vue';
@@ -36,27 +41,44 @@ const spectraCollapsed = ref(true);
 const historyCollapsed = ref(true);
 const wishlistCollapsed = ref(true);
 
-const spectrumElements = elements.flatMap((el) => {
-  const spectrumId = el.collection?.spectrum?.id;
-  if (!spectrumId) return [];
-  const radioactive = el.collection?.radioactive;
-  const originHtml =
-    formatDecayChainHtml(el.symbol, radioactive?.isotope, radioactive?.decayParent) ||
-    formatIsotopeHtml(el.symbol, radioactive?.isotope);
-  return [
-    {
-      symbol: el.symbol,
-      routeSymbol: getElementRouteSymbol(el.symbol),
-      color: el.color,
-      spectrumId,
-      originHtml,
-      annotations: el.collection?.spectrum?.annotations,
-      leadShielded: el.collection?.spectrum?.leadShielded,
-      backgroundSpectrumId: el.collection?.spectrum?.backgroundSpectrumId,
-      note: el.collection?.spectrum?.note,
-    },
-  ];
-});
+/** "What this sample is" + its manufacture date if known, e.g. "Источник из антистатической щётки Staticmaster (июль 1951 г.)". */
+function sampleLabelFor(
+  physical: { description?: LocalizedLabel | null; sampleState?: string | null } | null | undefined,
+  manufactureDate: string | null | undefined,
+): string {
+  const stateLabel = resolvePhysicalStateLabel(
+    { description: physical?.description, sampleState: physical?.sampleState },
+    locale.value,
+  );
+  const dateLabel = formatCollectionManufactureDate(manufactureDate, locale.value);
+  if (!stateLabel) return '';
+  return dateLabel ? `${stateLabel} (${dateLabel})` : stateLabel;
+}
+
+const spectrumElements = computed(() =>
+  elements.flatMap((el) => {
+    const spectrumId = el.collection?.spectrum?.id;
+    if (!spectrumId) return [];
+    const radioactive = el.collection?.radioactive;
+    const originHtml =
+      formatDecayChainHtml(el.symbol, radioactive?.isotope, radioactive?.decayParent) ||
+      formatIsotopeHtml(el.symbol, radioactive?.isotope);
+    return [
+      {
+        symbol: el.symbol,
+        routeSymbol: getElementRouteSymbol(el.symbol),
+        color: el.color,
+        spectrumId,
+        originHtml,
+        sampleLabel: sampleLabelFor(el.collection?.physical, el.collection?.physical?.manufactureDate),
+        annotations: el.collection?.spectrum?.annotations,
+        leadShielded: el.collection?.spectrum?.leadShielded,
+        backgroundSpectrumId: el.collection?.spectrum?.backgroundSpectrumId,
+        note: el.collection?.spectrum?.note,
+      },
+    ];
+  }),
+);
 
 interface HistoryTimelineItem {
   key: string;
@@ -242,6 +264,7 @@ function openElement(symbol: string) {
                   :name="messages.elements[item.symbol] ?? ''"
                   :accent="item.color"
                   :origin-html="item.originHtml"
+                  :sample-label="item.sampleLabel"
                   compact
                 />
               </button>
@@ -251,6 +274,7 @@ function openElement(symbol: string) {
                 :element-symbol="item.symbol"
                 :element-name="messages.elements[item.symbol]"
                 :origin-html="item.originHtml"
+                :sample-label="item.sampleLabel"
                 :annotations="item.annotations"
                 :lead-shielded="item.leadShielded"
                 :background-spectrum-id="item.backgroundSpectrumId"
