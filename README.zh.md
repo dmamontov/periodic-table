@@ -74,13 +74,14 @@ Fork 了本项目、想记录自己的元素收藏？需要修改的内容全部
 
 - `collectionName` / `siteTitle` / `siteUrl` - 重命名收藏名称，并换成你自己的域名。
 - `myElements` - 一个"元素符号 → 详情"的映射表。只要加上一个键就代表这个元素归你所有；空对象 `{}` 已经足够（"我有这个元素，细节以后再补"）。每条记录的字段按主题分组，均为可选：
-  - `physical` - `sampleState`、`container`、`purity`、`weight`、`allotrope`、`description`、`acquiredDate`。
+  - `physical` - `sampleState`、`container`、`purity`、`weight`、`allotrope`、`description`、`manufactureDate`、`acquiredDate`。
   - `radioactive` - `isotope`、`sourceType`、`decayParent`。非放射性元素可以整组省略。
   - `spectrum` - `id`、`filename`、`annotations`、`backgroundSpectrumId`。没有测量文件时可以整组省略。
   - `history` - 该样品更早的版本，从旧到新排列，仅当样品曾经被实际更换过时才需要。每条记录的字段与上面相同，外加 `retained`（旧样品是否仍然保留）和 `reason`（更换原因，取自 `reasonLabels` 词汇表）。会以时间线的形式显示在模态框中，可通过收藏区块标题旁的时钟图标打开，也可以从收藏总览面板的「变更历史」区块打开。
 - 如果内置的 `sampleState`/`container`/`reason` 词汇表（在 [`src/locales/collection.ts`](src/locales/collection.ts) 中）不够用，你可以在那里添加新条目，也可以完全跳过词汇表，直接把现成的文字写进该元素的 `physical.description` 字段 - `collection.ts` 里的放射性元素就是这么做的，可以参考。`radioactive.sourceType` 固定取值为 `'primary'` 或 `'secondary'`。
 - `physical.weight` 是一个 `{ mg, approx? }` 对象 - `mg` 为毫克重量，`approx: true` 表示这是估算值而非实测值。前端显示时低于 1000 毫克按毫克显示，否则自动换算为克 - `{ mg: 60, approx: true }` 显示为「~60 毫克」，`{ mg: 1850, approx: true }` 显示为「~1.85 克」。
 - `physical.allotrope` 用于标明该元素若有多种同素异形体时样品的具体形态（例如磷的「红磷」、碳的「石墨」）- 作为独立一行显示在 `sampleState` 旁边，而非取代它。
+- `physical.manufactureDate` 是样品本身的制造/生产日期，而不是加入收藏的日期（后者见 `acquiredDate`）- 精度不限，知道多少写多少：`"2021"`、`"2021-07"` 或 `"2021-07-31"`。
 - `physical.acquiredDate` 是 ISO `YYYY-MM-DD` 格式的日期 - 在元素卡片上显示为「收藏起始」。在 `history` 记录中则表示「这个更早的版本从何时起是当时的现状」。
 - 任何文本字段既可以写成一个普通字符串（在三种界面语言下都显示同一内容），也可以写成 `{ ru, en, zh }` 对象来分别翻译。
 

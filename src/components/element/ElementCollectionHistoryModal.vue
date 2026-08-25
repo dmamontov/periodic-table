@@ -5,6 +5,7 @@ import type { Element } from '../../types/element/element';
 import type { ElementCollectionHistoryEntry } from '../../types/collection/collection';
 import {
   formatCollectionAcquiredDate,
+  formatCollectionManufactureDate,
   formatCollectionPurity,
   formatCollectionWeight,
   resolveCollectionLabel,
@@ -82,6 +83,10 @@ function weightLabel(entry: TimelineEntry): string {
     messages.value.sidebar.units.milligram,
     messages.value.sidebar.units.gram,
   );
+}
+
+function manufactureDateLabel(entry: TimelineEntry): string {
+  return formatCollectionManufactureDate(entry.physical?.manufactureDate, locale.value);
 }
 
 function isotopeHtml(entry: TimelineEntry): string {
@@ -229,6 +234,12 @@ function onKeydown(event: KeyboardEvent): void {
                     messages.sidebar.props.collectionContainer
                   }}</span>
                   <span class="collection-history-modal__fact-value">{{ containerLabel(entry) }}</span>
+                </li>
+                <li v-if="manufactureDateLabel(entry)" class="collection-history-modal__fact">
+                  <span class="collection-history-modal__fact-label">{{
+                    messages.sidebar.props.collectionManufactureDate
+                  }}</span>
+                  <span class="collection-history-modal__fact-value">{{ manufactureDateLabel(entry) }}</span>
                 </li>
                 <li v-if="isotopeHtml(entry)" class="collection-history-modal__fact">
                   <span class="collection-history-modal__fact-label">{{

@@ -230,6 +230,11 @@ async function askCollectionHistory(
     physical.container = await askEnum('Container', undefined, vocab.containerLabels);
     physical.purity = await askPurity(undefined);
     physical.weight = await askWeight(undefined);
+    physical.manufactureDate = await askText('Manufacture date (when the sample was made, not acquired)', undefined, {
+      placeholder: 'YYYY, YYYY-MM, or YYYY-MM-DD — whatever precision is known',
+      validate: (v) =>
+        !v.trim() || /^\d{4}(-\d{2}(-\d{2})?)?$/.test(v.trim()) ? undefined : 'Use YYYY, YYYY-MM, or YYYY-MM-DD',
+    });
     const wantDescription = await askConfirm('Use a ready-made description instead of sample state?', false);
     physical.description = wantDescription ? await askLocalizedLabel('Description', undefined) : undefined;
 
@@ -285,6 +290,15 @@ async function editWizard(
   physical.container = await askEnum('Container', existing?.physical?.container, vocab.containerLabels);
   physical.purity = await askPurity(existing?.physical?.purity);
   physical.weight = await askWeight(existing?.physical?.weight);
+  physical.manufactureDate = await askText(
+    'Manufacture date (when the sample was made, not acquired)',
+    existing?.physical?.manufactureDate,
+    {
+      placeholder: 'YYYY, YYYY-MM, or YYYY-MM-DD — whatever precision is known',
+      validate: (v) =>
+        !v.trim() || /^\d{4}(-\d{2}(-\d{2})?)?$/.test(v.trim()) ? undefined : 'Use YYYY, YYYY-MM, or YYYY-MM-DD',
+    },
+  );
   physical.acquiredDate = await askText('Acquired date', existing?.physical?.acquiredDate, {
     placeholder: 'YYYY-MM-DD, e.g. 2021-05-01',
     validate: (v) => (!v.trim() || /^\d{4}-\d{2}-\d{2}$/.test(v.trim()) ? undefined : 'Use YYYY-MM-DD format'),

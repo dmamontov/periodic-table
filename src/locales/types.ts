@@ -199,6 +199,7 @@ export interface LocaleMessages {
       collectionSampleState: string;
       collectionAllotrope: string;
       collectionContainer: string;
+      collectionManufactureDate: string;
       collectionAcquiredDate: string;
       collectionHistory: string;
       collectionHistoryReason: string;

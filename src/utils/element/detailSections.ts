@@ -32,6 +32,7 @@ import {
   resolveCollectionSampleState,
   resolveSourceType,
   formatCollectionAcquiredDate,
+  formatCollectionManufactureDate,
   formatCollectionPurity,
   formatCollectionWeight,
 } from '../collection/labels';
@@ -401,6 +402,12 @@ function buildCollectionSection(ctx: SectionBuildContext): DetailSection {
       fmt(resolveCollectionLabel(locale, 'containers', element.collection?.physical?.container)),
     ),
   );
+
+  const manufactureDate = prop(
+    s.props.collectionManufactureDate,
+    fmt(formatCollectionManufactureDate(element.collection?.physical?.manufactureDate, locale)),
+  );
+  if (!manufactureDate.empty) collectionItems.push(manufactureDate);
 
   const acquiredDate = prop(
     s.props.collectionAcquiredDate,

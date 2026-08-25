@@ -184,6 +184,7 @@ const messages: LocaleMessages = {
       collectionSampleState: 'Образец:',
       collectionAllotrope: 'Модификация:',
       collectionContainer: 'Контейнер:',
+      collectionManufactureDate: 'Дата изготовления:',
       collectionAcquiredDate: 'В коллекции с:',
       collectionHistory: 'История изменений',
       collectionHistoryReason: 'Причина замены:',

@@ -184,6 +184,7 @@ const messages: LocaleMessages = {
       collectionSampleState: '样品：',
       collectionAllotrope: '同素异形体：',
       collectionContainer: '容器：',
+      collectionManufactureDate: '制造日期：',
       collectionAcquiredDate: '收藏起始：',
       collectionHistory: '变更历史',
       collectionHistoryReason: '更换原因：',

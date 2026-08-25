@@ -52,6 +52,7 @@ function serializePhysical(physical: ElementCollectionPhysical | null | undefine
   if (physical.container) fields.push(['container', quoteString(physical.container)]);
   if (physical.purity) fields.push(['purity', serializePurity(physical.purity)]);
   if (physical.weight) fields.push(['weight', serializeWeight(physical.weight)]);
+  if (physical.manufactureDate) fields.push(['manufactureDate', quoteString(physical.manufactureDate)]);
   if (physical.acquiredDate) fields.push(['acquiredDate', quoteString(physical.acquiredDate)]);
   if (fields.length === 0) return null;
   if (!physical.description && !physical.allotrope) {

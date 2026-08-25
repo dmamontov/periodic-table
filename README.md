@@ -74,13 +74,14 @@ Forked this to track your own elements? Everything you need to change lives in *
 
 - `collectionName` / `siteTitle` / `siteUrl` - rename the collection and point it at your own domain.
 - `myElements` - a `symbol → details` map. Add a key to mark an element as yours; `{}` alone is enough ("I have it, no details yet"). Each entry groups its fields by topic, all optional:
-  - `physical` - `sampleState`, `container`, `purity`, `weight`, `allotrope`, `description`, `acquiredDate`.
+  - `physical` - `sampleState`, `container`, `purity`, `weight`, `allotrope`, `description`, `manufactureDate`, `acquiredDate`.
   - `radioactive` - `isotope`, `sourceType`, `decayParent`. Omit the whole group for non-radioactive elements.
   - `spectrum` - `id`, `filename`, `annotations`, `backgroundSpectrumId`. Omit the whole group if you have no measurement file.
   - `history` - earlier versions of this sample, oldest first, only if it was ever physically replaced. Each entry has the same shape as the fields above, plus `retained` (is the old sample still kept?) and `reason` (why it was replaced, from the `reasonLabels` vocabulary). Shown as a timeline in a modal, opened via the clock icon next to the Collection section header and from the collection overview panel's own History section.
 - If the built-in `sampleState`/`container`/`reason` vocabulary (in [`src/locales/collection.ts`](src/locales/collection.ts)) doesn't cover your sample, either add a new entry there, or skip it entirely and put ready-made text straight into an element's `physical.description` field - see the radioactive elements in `collection.ts` for an example. `radioactive.sourceType` is fixed to `'primary'` / `'secondary'`.
 - `physical.weight` is `{ mg, approx? }` - `mg` is the weight in milligrams, `approx: true` marks it as estimated rather than measured. Displayed in mg below 1000, switching to grams above - `{ mg: 60, approx: true }` shows as "~60 mg", `{ mg: 1850, approx: true }` shows as "~1.85 g".
 - `physical.allotrope` names the specific allotrope/modification when the sample is one of several the element can take (e.g. "Red phosphorus" for P, "Graphite" for C) - shown as its own row alongside `sampleState`, not instead of it.
+- `physical.manufactureDate` is when the sample itself was made/produced, not when it joined your collection (see `acquiredDate` for that) - variable precision, whatever you actually know: `"2021"`, `"2021-07"`, or `"2021-07-31"`.
 - `physical.acquiredDate` is an ISO `YYYY-MM-DD` date - shown as "In collection since" on the element card. On a `history` entry it means "since when this earlier version was current".
 - Every text field accepts either a plain string (shown in all three UI languages) or `{ ru, en, zh }` if you want it translated.
 

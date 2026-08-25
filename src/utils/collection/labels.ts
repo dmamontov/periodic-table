@@ -69,6 +69,24 @@ export function formatCollectionAcquiredDate(value: string | null | undefined, l
   });
 }
 
+/** Variable-precision date: "2021" → "2021"; "2021-07" → "июль 2021 г." (ru); "2021-07-31" → "31 июля 2021 г." */
+export function formatCollectionManufactureDate(value: string | null | undefined, locale: Locale): string {
+  if (!value) return '';
+  const intlLocale = locale === 'zh' ? 'zh-CN' : locale;
+
+  if (/^\d{4}$/.test(value)) return value;
+
+  if (/^\d{4}-\d{2}$/.test(value)) {
+    const date = new Date(`${value}-01T00:00:00`);
+    if (Number.isNaN(date.getTime())) return value;
+    return date.toLocaleDateString(intlLocale, { month: 'long', year: 'numeric' });
+  }
+
+  const date = new Date(`${value}T00:00:00`);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleDateString(intlLocale, { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
 /** { mg: 60 } → "60 мг"; { mg: 1850, approx: true } → "~1.85 г" — switches to grams at 1000 mg */
 export function formatCollectionWeight(
   weight: ElementCollectionWeight | null | undefined,

@@ -41,6 +41,8 @@ export interface ElementCollectionPhysical {
   container?: string | null;
   purity?: ElementCollectionPurity | null;
   weight?: ElementCollectionWeight | null;
+  /** When the sample itself was made/produced (not when it joined the collection — see acquiredDate for that). Variable precision, whatever is actually known: "YYYY", "YYYY-MM", or "YYYY-MM-DD". */
+  manufactureDate?: string | null;
   /** ISO YYYY-MM-DD — date this specific version (this object's own sampleState/description/etc.) became current. On a later replacement, archive this whole object into a new `history` entry and set a new acquiredDate here. */
   acquiredDate?: string | null;
 }
