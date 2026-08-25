@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { GhsDisplayItem } from '../../types/element/ghs'
-import GhsPictogram from './GhsPictogram.vue'
+import type { GhsDisplayItem } from '../../types/element/ghs';
+import GhsPictogram from './GhsPictogram.vue';
 
 defineProps<{
-  items: GhsDisplayItem[]
-}>()
+  items: GhsDisplayItem[];
+}>();
 </script>
 
 <template>

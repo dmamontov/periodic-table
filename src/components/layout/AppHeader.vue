@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import ElementSearch from './ElementSearch.vue'
-import LanguageSwitcher from './LanguageSwitcher.vue'
-import MainMenu from './MainMenu.vue'
-import OrnamentDivider from './OrnamentDivider.vue'
-import ThemeSwitcher from './ThemeSwitcher.vue'
-import { useLocale } from '../../locales'
+import { useLocale } from '../../locales';
+import ElementSearch from './ElementSearch.vue';
+import LanguageSwitcher from './LanguageSwitcher.vue';
+import MainMenu from './MainMenu.vue';
+import OrnamentDivider from './OrnamentDivider.vue';
+import ThemeSwitcher from './ThemeSwitcher.vue';
 
-const { messages } = useLocale()
+const { messages } = useLocale();
 </script>
 
 <template>
@@ -91,11 +91,7 @@ const { messages } = useLocale()
 
 @media (max-width: 900px) {
   .app-header {
-    padding:
-      8px
-      max(12px, env(safe-area-inset-right, 0px))
-      0
-      max(12px, env(safe-area-inset-left, 0px));
+    padding: 8px max(12px, env(safe-area-inset-right, 0px)) 0 max(12px, env(safe-area-inset-left, 0px));
   }
 
   .app-header__inner {
@@ -114,11 +110,7 @@ const { messages } = useLocale()
 
 @media (orientation: landscape) and (max-width: 960px) {
   .app-header {
-    padding:
-      6px
-      max(8px, env(safe-area-inset-right, 0px))
-      0
-      max(8px, env(safe-area-inset-left, 0px));
+    padding: 6px max(8px, env(safe-area-inset-right, 0px)) 0 max(8px, env(safe-area-inset-left, 0px));
   }
 
   .app-header__inner {

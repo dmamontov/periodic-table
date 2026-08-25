@@ -1,73 +1,69 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed } from 'vue';
 import {
   HEATMAP_DEFINITIONS,
   HEATMAP_GROUP_ORDER,
   formatHeatmapRangeValue,
   getHeatmapDataset,
-} from '../../utils/heatmap'
-import type { HeatmapGroupId, HeatmapId } from '../../types/heatmap'
-import { useLocale } from '../../locales'
+} from '../../utils/heatmap';
+import type { HeatmapGroupId, HeatmapId } from '../../types/heatmap';
+import { useLocale } from '../../locales';
 
-const selectedHeatmap = defineModel<HeatmapId | null>('selectedHeatmap', { default: null })
+const selectedHeatmap = defineModel<HeatmapId | null>('selectedHeatmap', { default: null });
 
-const { locale, messages } = useLocale()
+const { locale, messages } = useLocale();
 
 const selectValue = computed({
   get: () => selectedHeatmap.value ?? '',
   set: (value: string) => {
-    selectedHeatmap.value = value === '' ? null : (value as HeatmapId)
+    selectedHeatmap.value = value === '' ? null : (value as HeatmapId);
   },
-})
+});
 
 const activeDefinition = computed(() =>
-  selectedHeatmap.value
-    ? HEATMAP_DEFINITIONS.find((d) => d.id === selectedHeatmap.value) ?? null
-    : null,
-)
+  selectedHeatmap.value ? (HEATMAP_DEFINITIONS.find((d) => d.id === selectedHeatmap.value) ?? null) : null,
+);
 
-const activeDataset = computed(() =>
-  selectedHeatmap.value ? getHeatmapDataset(selectedHeatmap.value) : null,
-)
+const activeDataset = computed(() => (selectedHeatmap.value ? getHeatmapDataset(selectedHeatmap.value) : null));
 
 const legendMin = computed(() => {
-  if (!activeDataset.value || !selectedHeatmap.value) return ''
+  if (!activeDataset.value || !selectedHeatmap.value) return '';
   const formatted = formatHeatmapRangeValue(
     selectedHeatmap.value,
     activeDataset.value.min,
     locale.value,
     messages.value,
-  )
+  );
   if (selectedHeatmap.value === 'rarity') {
-    return `${formatted} · ${messages.value.heatmap.rarityLegend.rare}`
+    return `${formatted} · ${messages.value.heatmap.rarityLegend.rare}`;
   }
-  return formatted
-})
+  return formatted;
+});
 
 const legendMax = computed(() => {
-  if (!activeDataset.value || !selectedHeatmap.value) return ''
+  if (!activeDataset.value || !selectedHeatmap.value) return '';
   const formatted = formatHeatmapRangeValue(
     selectedHeatmap.value,
     activeDataset.value.max,
     locale.value,
     messages.value,
-  )
+  );
   if (selectedHeatmap.value === 'rarity') {
-    return `${formatted} · ${messages.value.heatmap.rarityLegend.common}`
+    return `${formatted} · ${messages.value.heatmap.rarityLegend.common}`;
   }
-  return formatted
-})
+  return formatted;
+});
 
-const legendInverted = computed(() => selectedHeatmap.value === 'rarity')
+const legendInverted = computed(() => selectedHeatmap.value === 'rarity');
 
 const unitLabel = computed(() => {
-  const def = activeDefinition.value
-  if (!def?.unitKey) return ''
-  return messages.value.sidebar.units[def.unitKey].replace(/[():]/g, '').trim()
-})
+  const def = activeDefinition.value;
+  if (!def?.unitKey) return '';
+  return messages.value.sidebar.units[def.unitKey].replace(/[():]/g, '').trim();
+});
 
 function labelFor(id: HeatmapId): string {
-  return messages.value.heatmap.maps[id]
+  return messages.value.heatmap.maps[id];
 }
 
 const heatmapGroups = computed(() =>
@@ -76,7 +72,7 @@ const heatmapGroups = computed(() =>
     label: messages.value.heatmap.groups[groupId],
     items: HEATMAP_DEFINITIONS.filter((def) => def.group === groupId),
   })),
-)
+);
 </script>
 
 <template>
@@ -84,21 +80,10 @@ const heatmapGroups = computed(() =>
     <label class="heatmap-bar__control">
       <span class="heatmap-bar__label">{{ messages.heatmap.title }}</span>
       <span class="heatmap-bar__select-wrap">
-        <select
-          v-model="selectValue"
-          class="heatmap-bar__select"
-        >
+        <select v-model="selectValue" class="heatmap-bar__select">
           <option value="">{{ messages.heatmap.off }}</option>
-          <optgroup
-            v-for="group in heatmapGroups"
-            :key="group.id"
-            :label="group.label"
-          >
-            <option
-              v-for="def in group.items"
-              :key="def.id"
-              :value="def.id"
-            >
+          <optgroup v-for="group in heatmapGroups" :key="group.id" :label="group.label">
+            <option v-for="def in group.items" :key="def.id" :value="def.id">
               {{ labelFor(def.id) }}
             </option>
           </optgroup>
@@ -115,7 +100,9 @@ const heatmapGroups = computed(() =>
       >
         <span class="heatmap-bar__bound">{{ legendMin }}</span>
         <span class="heatmap-bar__track" aria-hidden="true" />
-        <span class="heatmap-bar__bound">{{ legendMax }}<template v-if="unitLabel">&nbsp;{{ unitLabel }}</template></span>
+        <span class="heatmap-bar__bound"
+          >{{ legendMax }}<template v-if="unitLabel">&nbsp;{{ unitLabel }}</template></span
+        >
       </div>
     </Transition>
   </div>

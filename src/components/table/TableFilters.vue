@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import CategoryFilter from './CategoryFilter.vue'
+import CategoryFilter from './CategoryFilter.vue';
 
-const selectedCategory = defineModel<string>('selectedCategory', { default: 'all' })
+const selectedCategory = defineModel<string>('selectedCategory', { default: 'all' });
 </script>
 
 <template>

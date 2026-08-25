@@ -1,38 +1,38 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { PARTICLE_COLORS } from '../../theme/colors'
+import { computed } from 'vue';
+import { PARTICLE_COLORS } from '../../theme/colors';
 
 const props = defineProps<{
-  shell: string | null | undefined
-  accentColor?: string
-}>()
+  shell: string | null | undefined;
+  accentColor?: string;
+}>();
 
-const ELECTRON_RADIUS = [19, 34, 49, 64, 79, 94, 109, 124]
-const ORBIT_SIZES = [40, 70, 100, 130, 160, 190, 220, 250]
-const DURATIONS = [20, 19, 18, 17, 16, 15, 14, 13]
-const BORDER_OPACITY = [1, 0.99, 0.98, 0.5, 0.4, 0.3, 0.2, 0.2]
+const ELECTRON_RADIUS = [19, 34, 49, 64, 79, 94, 109, 124];
+const ORBIT_SIZES = [40, 70, 100, 130, 160, 190, 220, 250];
+const DURATIONS = [20, 19, 18, 17, 16, 15, 14, 13];
+const BORDER_OPACITY = [1, 0.99, 0.98, 0.5, 0.4, 0.3, 0.2, 0.2];
 
 const shellCounts = computed(() => {
-  if (!props.shell) return []
+  if (!props.shell) return [];
   const counts = props.shell.split('-').map((part) => {
-    const match = /\d+/.exec(part)
-    return match ? Number(match[0]) : 0
-  })
-  while (counts.length < 8) counts.push(0)
-  return counts.slice(0, 8)
-})
+    const match = /\d+/.exec(part);
+    return match ? Number(match[0]) : 0;
+  });
+  while (counts.length < 8) counts.push(0);
+  return counts.slice(0, 8);
+});
 
 function electronsForOrbit(count: number, radius: number) {
-  if (count <= 0) return []
+  if (count <= 0) return [];
   return Array.from({ length: count }, (_, index) => ({
     id: index,
     transform: `rotate(${(360 / count) * index}deg) translate(0, -${radius}px)`,
-  }))
+  }));
 }
 
 function orbitBorderColor(index: number) {
-  const mix = (BORDER_OPACITY[index] ?? 0) * 35
-  return `color-mix(in srgb, ${props.accentColor ?? PARTICLE_COLORS.electron} ${mix}%, var(--color-border-input))`
+  const mix = (BORDER_OPACITY[index] ?? 0) * 35;
+  return `color-mix(in srgb, ${props.accentColor ?? PARTICLE_COLORS.electron} ${mix}%, var(--color-border-input))`;
 }
 </script>
 

@@ -1,4 +1,4 @@
-import type { LocaleMessages } from '../locales/types'
+import type { LocaleMessages } from '../locales/types';
 
 export type HeatmapId =
   | 'electronegativity'
@@ -15,24 +15,24 @@ export type HeatmapId =
   | 'decayMode'
   | 'earthAbundance'
   | 'meteoriteAbundance'
-  | 'rarity'
+  | 'rarity';
 
-export type HeatmapGroupId = 'atomic' | 'trends' | 'physical' | 'nuclear' | 'other'
+export type HeatmapGroupId = 'atomic' | 'trends' | 'physical' | 'nuclear' | 'other';
 
 export interface HeatmapDefinition {
-  id: HeatmapId
-  group: HeatmapGroupId
-  labelKey: keyof LocaleMessages['heatmap']['maps']
-  unitKey?: keyof LocaleMessages['sidebar']['units']
-  accent: string
-  scale?: 'linear' | 'log'
+  id: HeatmapId;
+  group: HeatmapGroupId;
+  labelKey: keyof LocaleMessages['heatmap']['maps'];
+  unitKey?: keyof LocaleMessages['sidebar']['units'];
+  accent: string;
+  scale?: 'linear' | 'log';
   /** Lower raw value → higher cell brightness (e.g. rarity). */
-  invertIntensity?: boolean
+  invertIntensity?: boolean;
 }
 
 export interface HeatmapDataset {
-  values: Map<number, number | null>
-  min: number
-  max: number
-  withData: number
+  values: Map<number, number | null>;
+  min: number;
+  max: number;
+  withData: number;
 }

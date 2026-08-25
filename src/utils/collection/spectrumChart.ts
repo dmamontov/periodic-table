@@ -1,87 +1,82 @@
-import { channelToEnergy } from '../../data'
-import type { CollectionSpectrumData, GammaSpectrumChartData } from '../../types/collection/spectrum'
-import type { SpectrumAnnotation } from '../../types/collection/collection'
+import { channelToEnergy } from '../../data';
+import type { CollectionSpectrumData, GammaSpectrumChartData } from '../../types/collection/spectrum';
+import type { SpectrumAnnotation } from '../../types/collection/collection';
 
-const CHART_WIDTH = 640
-const CHART_HEIGHT = 260
+const CHART_WIDTH = 640;
+const CHART_HEIGHT = 260;
 
-function detectDisplayMaxEnergy(
-  counts: number[],
-  calibration: CollectionSpectrumData['calibration'],
-): number {
+function detectDisplayMaxEnergy(counts: number[], calibration: CollectionSpectrumData['calibration']): number {
   // Last channel is the device's overflow/pileup tally, not a real count — excluded so it doesn't stretch the range.
-  const spectralCounts = counts.slice(0, -1)
-  const maxCount = Math.max(...spectralCounts)
-  const threshold = Math.max(maxCount * 0.02, 6)
+  const spectralCounts = counts.slice(0, -1);
+  const maxCount = Math.max(...spectralCounts);
+  const threshold = Math.max(maxCount * 0.02, 6);
 
-  let lastChannel = 0
+  let lastChannel = 0;
   for (let ch = 0; ch < spectralCounts.length; ch++) {
-    if ((spectralCounts[ch] ?? 0) >= threshold) lastChannel = ch
+    if ((spectralCounts[ch] ?? 0) >= threshold) lastChannel = ch;
   }
 
-  let maxEnergy = channelToEnergy(lastChannel, calibration)
-  maxEnergy = Math.ceil((maxEnergy * 1.12) / 25) * 25
-  return Math.max(maxEnergy, 750)
+  let maxEnergy = channelToEnergy(lastChannel, calibration);
+  maxEnergy = Math.ceil((maxEnergy * 1.12) / 25) * 25;
+  return Math.max(maxEnergy, 750);
 }
 
 function buildXTicks(maxEnergy: number): number[] {
-  const candidates = [25, 50, 100, 200, 250, 500, 1000]
-  const step =
-    candidates.find((s) => maxEnergy / s <= 6) ??
-    candidates[candidates.length - 1]!
+  const candidates = [25, 50, 100, 200, 250, 500, 1000];
+  const step = candidates.find((s) => maxEnergy / s <= 6) ?? candidates[candidates.length - 1]!;
 
-  const ticks: number[] = []
+  const ticks: number[] = [];
   for (let e = 0; e <= maxEnergy + step * 0.01; e += step) {
-    ticks.push(Math.round(e))
+    ticks.push(Math.round(e));
   }
-  return ticks
+  return ticks;
 }
 
 /** "Nice" round-number ticks (1-2-5-10 pattern) for the linear count axis. */
 function buildYTicks(maxCount: number): number[] {
-  const roughStep = maxCount / 4
-  const magnitude = 10 ** Math.floor(Math.log10(roughStep || 1))
-  const residual = roughStep / magnitude
-  const niceResidual = residual >= 5 ? 10 : residual >= 2 ? 5 : residual >= 1 ? 2 : 1
-  const step = niceResidual * magnitude
+  const roughStep = maxCount / 4;
+  const magnitude = 10 ** Math.floor(Math.log10(roughStep || 1));
+  const residual = roughStep / magnitude;
+  const niceResidual = residual >= 5 ? 10 : residual >= 2 ? 5 : residual >= 1 ? 2 : 1;
+  const step = niceResidual * magnitude;
 
-  const ticks: number[] = []
-  for (let v = 0; v <= maxCount + step * 0.01; v += step) ticks.push(Math.round(v))
-  return ticks
+  const ticks: number[] = [];
+  for (let v = 0; v <= maxCount + step * 0.01; v += step) ticks.push(Math.round(v));
+  return ticks;
 }
 
 /** One tick per decade (0, 1, 10, 100, ...) for the log count axis, matching the log1p mapping in toY. */
 function buildYTicksLog(maxCount: number): number[] {
-  const ticks: number[] = [0]
-  for (let v = 1; v <= maxCount; v *= 10) ticks.push(v)
-  return ticks
+  const ticks: number[] = [0];
+  for (let v = 1; v <= maxCount; v *= 10) ticks.push(v);
+  return ticks;
 }
 
 function formatYTick(value: number): string {
-  if (value < 1000) return String(value)
-  const k = value / 1000
-  return `${Number.isInteger(k) ? k : k.toFixed(1)}k`
+  if (value < 1000) return String(value);
+  const k = value / 1000;
+  return `${Number.isInteger(k) ? k : k.toFixed(1)}k`;
 }
 
 /** Light moving average — tames single-channel Poisson spikes a log scale would blow up into fake peaks. */
 function smoothCounts(counts: number[], radius = 2): number[] {
-  const n = counts.length
-  const out = new Array<number>(n)
+  const n = counts.length;
+  const out = new Array<number>(n);
   for (let i = 0; i < n; i++) {
-    const lo = Math.max(0, i - radius)
-    const hi = Math.min(n - 1, i + radius)
-    let sum = 0
-    for (let j = lo; j <= hi; j++) sum += counts[j] ?? 0
-    out[i] = sum / (hi - lo + 1)
+    const lo = Math.max(0, i - radius);
+    const hi = Math.min(n - 1, i + radius);
+    let sum = 0;
+    for (let j = lo; j <= hi; j++) sum += counts[j] ?? 0;
+    out[i] = sum / (hi - lo + 1);
   }
-  return out
+  return out;
 }
 
-export type SpectrumYScale = 'linear' | 'log'
+export type SpectrumYScale = 'linear' | 'log';
 
 /** Moving-average radius, 0 (off) to 4 (max) — mirrors the RadiaCode app's own 0-4 spectrum filter slider. */
-export const SPECTRUM_SMOOTHING_MAX = 4
-export const SPECTRUM_SMOOTHING_DEFAULT = 2
+export const SPECTRUM_SMOOTHING_MAX = 4;
+export const SPECTRUM_SMOOTHING_DEFAULT = 2;
 
 export function buildSpectrumChart(
   data: CollectionSpectrumData | null,
@@ -90,81 +85,81 @@ export function buildSpectrumChart(
   smoothingRadius: number = SPECTRUM_SMOOTHING_DEFAULT,
   background: CollectionSpectrumData | null = null,
 ): GammaSpectrumChartData | null {
-  if (!data) return null
+  if (!data) return null;
 
-  const { counts, calibration } = data
-  const displayMaxEnergy = detectDisplayMaxEnergy(counts, calibration)
+  const { counts, calibration } = data;
+  const displayMaxEnergy = detectDisplayMaxEnergy(counts, calibration);
   // Drop the device's overflow tally in the last channel before smoothing/plotting.
-  const smoothed = smoothCounts(counts.slice(0, -1), smoothingRadius)
-  const points: { ch: number; count: number }[] = []
+  const smoothed = smoothCounts(counts.slice(0, -1), smoothingRadius);
+  const points: { ch: number; count: number }[] = [];
 
   for (let ch = 0; ch < smoothed.length; ch++) {
-    if (channelToEnergy(ch, calibration) > displayMaxEnergy) break
-    points.push({ ch, count: smoothed[ch] ?? 0 })
+    if (channelToEnergy(ch, calibration) > displayMaxEnergy) break;
+    points.push({ ch, count: smoothed[ch] ?? 0 });
   }
 
-  if (points.length === 0) return null
+  if (points.length === 0) return null;
 
-  const maxCount = Math.max(...points.map((p) => p.count), 1)
+  const maxCount = Math.max(...points.map((p) => p.count), 1);
 
-  const width = CHART_WIDTH
-  const height = CHART_HEIGHT
-  const pad = { left: 34, right: 8, top: 10, bottom: 26 }
-  const plotW = width - pad.left - pad.right
-  const plotH = height - pad.top - pad.bottom
-  const baseY = pad.top + plotH
+  const width = CHART_WIDTH;
+  const height = CHART_HEIGHT;
+  const pad = { left: 34, right: 8, top: 10, bottom: 26 };
+  const plotW = width - pad.left - pad.right;
+  const plotH = height - pad.top - pad.bottom;
+  const baseY = pad.top + plotH;
 
-  const toX = (energy: number) => pad.left + (energy / displayMaxEnergy) * plotW
+  const toX = (energy: number) => pad.left + (energy / displayMaxEnergy) * plotW;
   // log1p, not log — count=0 must still land on the baseline, same as in linear mode.
-  const logMax = Math.log10(maxCount + 1)
+  const logMax = Math.log10(maxCount + 1);
   const toY =
     yScale === 'log'
       ? (count: number) => pad.top + plotH - (Math.log10(count + 1) / logMax) * plotH
-      : (count: number) => pad.top + plotH - (count / maxCount) * plotH
+      : (count: number) => pad.top + plotH - (count / maxCount) * plotH;
   // Each channel's own bar edges — a spectrometer bins counts per channel, it doesn't interpolate a curve.
-  const leftEdgeX = (ch: number) => toX(channelToEnergy(ch - 0.5, calibration))
-  const rightEdgeX = (ch: number) => toX(channelToEnergy(ch + 0.5, calibration))
+  const leftEdgeX = (ch: number) => toX(channelToEnergy(ch - 0.5, calibration));
+  const rightEdgeX = (ch: number) => toX(channelToEnergy(ch + 0.5, calibration));
 
-  const stepCoords: string[] = []
+  const stepCoords: string[] = [];
   for (const p of points) {
-    const y = toY(p.count).toFixed(1)
-    stepCoords.push(`${leftEdgeX(p.ch).toFixed(1)},${y}`, `${rightEdgeX(p.ch).toFixed(1)},${y}`)
+    const y = toY(p.count).toFixed(1);
+    stepCoords.push(`${leftEdgeX(p.ch).toFixed(1)},${y}`, `${rightEdgeX(p.ch).toFixed(1)},${y}`);
   }
-  const lineCoords = stepCoords
+  const lineCoords = stepCoords;
 
-  const firstX = leftEdgeX(points[0]!.ch)
-  const lastX = rightEdgeX(points[points.length - 1]!.ch)
+  const firstX = leftEdgeX(points[0]!.ch);
+  const lastX = rightEdgeX(points[points.length - 1]!.ch);
   const areaPath = [
     `M ${firstX.toFixed(1)},${baseY.toFixed(1)}`,
     `L ${stepCoords.join(' L ')}`,
     `L ${lastX.toFixed(1)},${baseY.toFixed(1)} Z`,
-  ].join(' ')
+  ].join(' ');
 
   // Same channel grid as the main spectrum — just time-scale the counts, no energy resample.
-  let backgroundLinePath: string | null = null
-  let backgroundAreaPath: string | null = null
+  let backgroundLinePath: string | null = null;
+  let backgroundAreaPath: string | null = null;
   if (background && background.measurementTimeSec > 0) {
-    const timeScale = data.measurementTimeSec / background.measurementTimeSec
-    const bgSmoothed = smoothCounts(background.counts.slice(0, -1), smoothingRadius)
-    const bgCoords: string[] = []
+    const timeScale = data.measurementTimeSec / background.measurementTimeSec;
+    const bgSmoothed = smoothCounts(background.counts.slice(0, -1), smoothingRadius);
+    const bgCoords: string[] = [];
     for (const p of points) {
-      const scaled = (bgSmoothed[p.ch] ?? 0) * timeScale
-      const y = Math.max(pad.top, toY(scaled)).toFixed(1)
-      bgCoords.push(`${leftEdgeX(p.ch).toFixed(1)},${y}`, `${rightEdgeX(p.ch).toFixed(1)},${y}`)
+      const scaled = (bgSmoothed[p.ch] ?? 0) * timeScale;
+      const y = Math.max(pad.top, toY(scaled)).toFixed(1);
+      bgCoords.push(`${leftEdgeX(p.ch).toFixed(1)},${y}`, `${rightEdgeX(p.ch).toFixed(1)},${y}`);
     }
-    backgroundLinePath = bgCoords.join(' ')
+    backgroundLinePath = bgCoords.join(' ');
     backgroundAreaPath = [
       `M ${firstX.toFixed(1)},${baseY.toFixed(1)}`,
       `L ${bgCoords.join(' L ')}`,
       `L ${lastX.toFixed(1)},${baseY.toFixed(1)} Z`,
-    ].join(' ')
+    ].join(' ');
   }
 
-  const xTicks = buildXTicks(displayMaxEnergy)
+  const xTicks = buildXTicks(displayMaxEnergy);
 
   const markers = (annotations ?? [])
     .filter((a) => a.energy > 0 && a.energy <= displayMaxEnergy)
-    .map((a) => ({ x: toX(a.energy), label: a.label }))
+    .map((a) => ({ x: toX(a.energy), label: a.label }));
 
   return {
     width,
@@ -189,30 +184,30 @@ export function buildSpectrumChart(
       label: formatYTick(v),
     })),
     markers,
-  }
+  };
 }
 
 export function formatSpectrumCaption(data: CollectionSpectrumData | null): string {
-  return data?.device ?? ''
+  return data?.device ?? '';
 }
 
 function formatDuration(totalSeconds: number): string {
-  const h = Math.floor(totalSeconds / 3600)
-  const m = Math.floor((totalSeconds % 3600) / 60)
-  const s = Math.floor(totalSeconds % 60)
-  const pad = (n: number) => String(n).padStart(2, '0')
-  return `${pad(h)}:${pad(m)}:${pad(s)}`
+  const h = Math.floor(totalSeconds / 3600);
+  const m = Math.floor((totalSeconds % 3600) / 60);
+  const s = Math.floor(totalSeconds % 60);
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return `${pad(h)}:${pad(m)}:${pad(s)}`;
 }
 
 export function formatSpectrumDurationLabel(data: CollectionSpectrumData | null): string {
-  return data ? formatDuration(data.measurementTimeSec) : ''
+  return data ? formatDuration(data.measurementTimeSec) : '';
 }
 
 export function formatSpectrumCpsLabel(data: CollectionSpectrumData | null, locale: string): string {
-  if (!data) return ''
+  if (!data) return '';
   // Same overflow-tally exclusion as the chart.
-  const totalCounts = data.counts.slice(0, -1).reduce((sum, c) => sum + c, 0)
-  const cps = totalCounts / data.measurementTimeSec
-  const loc = locale === 'zh' ? 'zh-CN' : locale
-  return `${cps.toLocaleString(loc, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} cps`
+  const totalCounts = data.counts.slice(0, -1).reduce((sum, c) => sum + c, 0);
+  const cps = totalCounts / data.measurementTimeSec;
+  const loc = locale === 'zh' ? 'zh-CN' : locale;
+  return `${cps.toLocaleString(loc, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} cps`;
 }

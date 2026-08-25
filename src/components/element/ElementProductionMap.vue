@@ -1,53 +1,53 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { SvgMap } from 'vue-svg-map'
-import WorldMap from '@svg-maps/world'
-import type { Location } from 'vue-svg-map'
-import type { ProductionCountryEntry } from '../../types/element/detail'
-import { useDismissibleTooltip } from '../../composables/useDismissibleTooltip'
-import { useLocale } from '../../locales'
+import { ref } from 'vue';
+import { SvgMap } from 'vue-svg-map';
+import WorldMap from '@svg-maps/world';
+import type { Location } from 'vue-svg-map';
+import type { ProductionCountryEntry } from '../../types/element/detail';
+import { useDismissibleTooltip } from '../../composables/useDismissibleTooltip';
+import { useLocale } from '../../locales';
 
-const MIN_OPACITY = 0.3
+const MIN_OPACITY = 0.3;
 
 const props = defineProps<{
-  countries: ProductionCountryEntry[]
-  accentColor: string
-}>()
+  countries: ProductionCountryEntry[];
+  accentColor: string;
+}>();
 
 // Re-anchored to whichever country path is hovered/tapped right before each open() call - the composable just reads .value fresh each time.
-const hoveredEl = ref<HTMLElement | null>(null)
-const tooltip = useDismissibleTooltip(hoveredEl)
-const tooltipText = ref('')
+const hoveredEl = ref<HTMLElement | null>(null);
+const tooltip = useDismissibleTooltip(hoveredEl);
+const tooltipText = ref('');
 
-const { messages } = useLocale()
+const { messages } = useLocale();
 
 function countryName(location: Location): string {
-  return messages.value.sidebar.countries[location.id.toUpperCase()] ?? location.name ?? location.id
+  return messages.value.sidebar.countries[location.id.toUpperCase()] ?? location.name ?? location.id;
 }
 
 function showTooltip(event: Event, label: string) {
-  hoveredEl.value = event.currentTarget as HTMLElement
-  tooltipText.value = label
-  tooltip.open()
+  hoveredEl.value = event.currentTarget as HTMLElement;
+  tooltipText.value = label;
+  tooltip.open();
 }
 
 function toggleTooltip(event: Event, label: string) {
   if (tooltip.isOpen.value && hoveredEl.value === event.currentTarget) {
-    tooltip.close()
-    return
+    tooltip.close();
+    return;
   }
-  showTooltip(event, label)
+  showTooltip(event, label);
 }
 
 function locationAttributes(location: Location) {
-  const entry = props.countries.find((c) => c.country === location.id)
+  const entry = props.countries.find((c) => c.country === location.id);
   if (!entry) {
-    return { class: 'element-production-map__country' }
+    return { class: 'element-production-map__country' };
   }
-  const share = entry.share ? Number(entry.share) : null
-  const fillOpacity = share ? MIN_OPACITY + (share / 100) * (1 - MIN_OPACITY) : 1
-  const name = countryName(location)
-  const label = share ? `${name} — ${share}%` : name
+  const share = entry.share ? Number(entry.share) : null;
+  const fillOpacity = share ? MIN_OPACITY + (share / 100) * (1 - MIN_OPACITY) : 1;
+  const name = countryName(location);
+  const label = share ? `${name} — ${share}%` : name;
   return {
     class: 'element-production-map__country element-production-map__country--active',
     style: { fillOpacity },
@@ -55,7 +55,7 @@ function locationAttributes(location: Location) {
     onMouseenter: (event: MouseEvent) => showTooltip(event, label),
     onMouseleave: () => tooltip.close(),
     onClick: (event: MouseEvent) => toggleTooltip(event, label),
-  }
+  };
 }
 </script>
 

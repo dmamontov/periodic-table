@@ -1,25 +1,21 @@
 <script setup lang="ts">
 withDefaults(
   defineProps<{
-    symbol: string
-    name: string
-    accent: string
-    originHtml?: string
-    compact?: boolean
+    symbol: string;
+    name: string;
+    accent: string;
+    originHtml?: string;
+    compact?: boolean;
   }>(),
   { compact: false },
-)
+);
 </script>
 
 <template>
   <div class="element-spectrum-heading" :class="{ 'element-spectrum-heading--compact': compact }">
     <span class="element-spectrum-heading__symbol" :style="{ color: accent }">{{ symbol }}</span>
     <span class="element-spectrum-heading__name">{{ name }}</span>
-    <span
-      v-if="originHtml"
-      class="element-spectrum-heading__origin"
-      v-html="originHtml"
-    />
+    <span v-if="originHtml" class="element-spectrum-heading__origin" v-html="originHtml" />
   </div>
 </template>
 

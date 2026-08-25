@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import { computed, useTemplateRef } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { useLocale } from '../../locales'
-import FlyoutTrigger from '../common/FlyoutTrigger.vue'
+import { computed, useTemplateRef } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { useLocale } from '../../locales';
+import FlyoutTrigger from '../common/FlyoutTrigger.vue';
 
-const route = useRoute()
-const router = useRouter()
-const { messages } = useLocale()
+const route = useRoute();
+const router = useRouter();
+const { messages } = useLocale();
 
-const isCollectionActive = computed(() => route.name === 'collection')
+const isCollectionActive = computed(() => route.name === 'collection');
 
-const flyoutRef = useTemplateRef<InstanceType<typeof FlyoutTrigger>>('flyoutRef')
+const flyoutRef = useTemplateRef<InstanceType<typeof FlyoutTrigger>>('flyoutRef');
 
 function navigate(name: 'collection') {
-  void router.push({ name })
-  flyoutRef.value?.close()
+  void router.push({ name });
+  flyoutRef.value?.close();
 }
 </script>
 
@@ -79,7 +79,9 @@ function navigate(name: 'collection') {
   font-size: var(--pill-switcher-font-size);
   text-align: left;
   cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
 }
 
 .main-menu__item:hover {

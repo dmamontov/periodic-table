@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, defineAsyncComponent, ref, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import type { Element } from '../../types/element/element'
+import { computed, defineAsyncComponent, ref, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import type { Element } from '../../types/element/element';
 import {
   allCategories,
   fBlockElements,
@@ -11,220 +11,218 @@ import {
   getTopRowByCol,
   isColumnHead,
   mainElements,
-} from '../../data'
+} from '../../data';
 import {
   HEATMAP_DEFINITIONS,
   formatHeatmapCellDisplay,
   formatHeatmapElementValue,
   getHeatmapIntensity,
-} from '../../utils/heatmap'
-import type { HeatmapId } from '../../types/heatmap'
-import { readStorage, writeStorage } from '../../utils/storage'
-import { useSeo } from '../../composables/useSeo'
-import ElementCell from './ElementCell.vue'
-import EmptyCell from './EmptyCell.vue'
-import TableFilters from './TableFilters.vue'
-import HeatmapSelector from './HeatmapSelector.vue'
-import { useLocale } from '../../locales'
+} from '../../utils/heatmap';
+import type { HeatmapId } from '../../types/heatmap';
+import { readStorage, writeStorage } from '../../utils/storage';
+import { useSeo } from '../../composables/useSeo';
+import { useLocale } from '../../locales';
+import ElementCell from './ElementCell.vue';
+import EmptyCell from './EmptyCell.vue';
+import TableFilters from './TableFilters.vue';
+import HeatmapSelector from './HeatmapSelector.vue';
 
-const ElementSidebar = defineAsyncComponent(() => import('../element/ElementSidebar.vue'))
+const ElementSidebar = defineAsyncComponent(() => import('../element/ElementSidebar.vue'));
 
-const route = useRoute()
-const router = useRouter()
-const { locale, messages } = useLocale()
+const route = useRoute();
+const router = useRouter();
+const { locale, messages } = useLocale();
 
-const CATEGORY_STORAGE_KEY = 'periodic-table-category'
-const HEATMAP_STORAGE_KEY = 'periodic-table-heatmap'
+const CATEGORY_STORAGE_KEY = 'periodic-table-category';
+const HEATMAP_STORAGE_KEY = 'periodic-table-heatmap';
 
-const VALID_CATEGORY_VALUES = new Set<string>(['collection', ...allCategories.map((c) => c.id)])
-const VALID_HEATMAP_VALUES = new Set<string>(HEATMAP_DEFINITIONS.map((d) => d.id))
+const VALID_CATEGORY_VALUES = new Set<string>(['collection', ...allCategories.map((c) => c.id)]);
+const VALID_HEATMAP_VALUES = new Set<string>(HEATMAP_DEFINITIONS.map((d) => d.id));
 
 function isValidCategory(value: string): value is string {
-  return VALID_CATEGORY_VALUES.has(value)
+  return VALID_CATEGORY_VALUES.has(value);
 }
 
 function isValidHeatmap(value: string): value is HeatmapId {
-  return VALID_HEATMAP_VALUES.has(value)
+  return VALID_HEATMAP_VALUES.has(value);
 }
 
 function readStoredCategory(): string {
-  return readStorage(sessionStorage, CATEGORY_STORAGE_KEY, isValidCategory) ?? 'all'
+  return readStorage(sessionStorage, CATEGORY_STORAGE_KEY, isValidCategory) ?? 'all';
 }
 
 function readStoredHeatmap(): HeatmapId | null {
-  return readStorage(sessionStorage, HEATMAP_STORAGE_KEY, isValidHeatmap)
+  return readStorage(sessionStorage, HEATMAP_STORAGE_KEY, isValidHeatmap);
 }
 
 function persistCategory(value: string): void {
-  writeStorage(sessionStorage, CATEGORY_STORAGE_KEY, value === 'all' ? null : value)
+  writeStorage(sessionStorage, CATEGORY_STORAGE_KEY, value === 'all' ? null : value);
 }
 
 function persistHeatmap(value: HeatmapId | null): void {
-  writeStorage(sessionStorage, HEATMAP_STORAGE_KEY, value)
+  writeStorage(sessionStorage, HEATMAP_STORAGE_KEY, value);
 }
 
-const selectedCategory = ref(readStoredCategory())
-const selectedElement = ref<Element | null>(null)
-const selectedHeatmap = ref<HeatmapId | null>(readStoredHeatmap())
+const selectedCategory = ref(readStoredCategory());
+const selectedElement = ref<Element | null>(null);
+const selectedHeatmap = ref<HeatmapId | null>(readStoredHeatmap());
 
-watch(selectedCategory, persistCategory)
-watch(selectedHeatmap, persistHeatmap)
+watch(selectedCategory, persistCategory);
+watch(selectedHeatmap, persistHeatmap);
 
 watch(
   () => route.params.symbol,
   (symbol) => {
     if (typeof symbol !== 'string' || !symbol) {
-      selectedElement.value = null
-      return
+      selectedElement.value = null;
+      return;
     }
 
-    const element = getElementBySymbol(symbol)
+    const element = getElementBySymbol(symbol);
     if (!element) {
-      void router.replace({ name: 'home' })
-      selectedElement.value = null
-      return
+      void router.replace({ name: 'home' });
+      selectedElement.value = null;
+      return;
     }
 
-    const routeSymbol = getElementRouteSymbol(element.symbol)
+    const routeSymbol = getElementRouteSymbol(element.symbol);
     if (symbol !== routeSymbol) {
-      void router.replace({ name: 'element', params: { symbol: routeSymbol } })
-      return
+      void router.replace({ name: 'element', params: { symbol: routeSymbol } });
+      return;
     }
 
-    selectedElement.value = element
+    selectedElement.value = element;
   },
   { immediate: true },
-)
+);
 
 const selectedElementRouteSymbol = computed(() =>
   selectedElement.value ? getElementRouteSymbol(selectedElement.value.symbol) : undefined,
-)
+);
 
-useSeo(selectedElement, selectedElementRouteSymbol, messages, locale)
+useSeo(selectedElement, selectedElementRouteSymbol, messages, locale);
 
 const heatmapIntensityByNumber = computed(() => {
-  const id = selectedHeatmap.value
-  if (!id) return null
+  const id = selectedHeatmap.value;
+  if (!id) return null;
 
-  const map = new Map<number, number | null>()
+  const map = new Map<number, number | null>();
   for (const el of [...mainElements, ...fBlockElements]) {
-    map.set(el.number, getHeatmapIntensity(id, el.number))
+    map.set(el.number, getHeatmapIntensity(id, el.number));
   }
-  return map
-})
+  return map;
+});
 
-const heatmapActive = computed(() => selectedHeatmap.value != null)
+const heatmapActive = computed(() => selectedHeatmap.value != null);
 
-const lanthanides = fBlockElements.filter((el) => el.row === 8)
-const actinides = fBlockElements.filter((el) => el.row === 9)
-const topRowByCol = getTopRowByCol()
+const lanthanides = fBlockElements.filter((el) => el.row === 8);
+const actinides = fBlockElements.filter((el) => el.row === 9);
+const topRowByCol = getTopRowByCol();
 
 function elementMatchesCategory(el: Element, category: string): boolean {
-  if (category === 'all') return true
-  if (category === 'collection') return el.inCollection
-  return el.category === category
+  if (category === 'all') return true;
+  if (category === 'collection') return el.inCollection;
+  return el.category === category;
 }
 
 const highlightedMainPeriods = computed(() => {
-  const category = selectedCategory.value
-  if (category === 'all') return null
+  const category = selectedCategory.value;
+  if (category === 'all') return null;
 
-  const periods = new Set<number>()
+  const periods = new Set<number>();
   for (const el of mainElements) {
     if (elementMatchesCategory(el, category)) {
-      periods.add(el.row)
+      periods.add(el.row);
     }
   }
-  return periods
-})
+  return periods;
+});
 
 const highlightedFBlockPeriods = computed(() => {
-  const category = selectedCategory.value
-  if (category === 'all') return null
+  const category = selectedCategory.value;
+  if (category === 'all') return null;
 
-  const periods = new Set<number>()
+  const periods = new Set<number>();
   for (const el of fBlockElements) {
     if (elementMatchesCategory(el, category)) {
-      periods.add(getElementPeriod(el))
+      periods.add(getElementPeriod(el));
     }
   }
-  return periods
-})
+  return periods;
+});
 
 const highlightedGroups = computed(() => {
-  const category = selectedCategory.value
-  if (category === 'all') return null
+  const category = selectedCategory.value;
+  if (category === 'all') return null;
 
-  const groups = new Set<number>()
+  const groups = new Set<number>();
   for (const el of mainElements) {
     if (el.group != null && elementMatchesCategory(el, category)) {
-      groups.add(el.group)
+      groups.add(el.group);
     }
   }
-  return groups
-})
+  return groups;
+});
 
 function isMainPeriodHighlighted(element: Element): boolean {
-  if (!highlightedMainPeriods.value) return true
-  return highlightedMainPeriods.value.has(element.row)
+  if (!highlightedMainPeriods.value) return true;
+  return highlightedMainPeriods.value.has(element.row);
 }
 
 function isFBlockPeriodHighlighted(element: Element): boolean {
-  if (!highlightedFBlockPeriods.value) return true
-  return highlightedFBlockPeriods.value.has(getElementPeriod(element))
+  if (!highlightedFBlockPeriods.value) return true;
+  return highlightedFBlockPeriods.value.has(getElementPeriod(element));
 }
 
 function isGroupHighlighted(element: Element): boolean {
-  if (!highlightedGroups.value || element.group == null) return true
-  return highlightedGroups.value.has(element.group)
+  if (!highlightedGroups.value || element.group == null) return true;
+  return highlightedGroups.value.has(element.group);
 }
 
-const axisFilterActive = computed(() => selectedCategory.value !== 'all')
+const axisFilterActive = computed(() => selectedCategory.value !== 'all');
 
 const isFBlockGroupLabelHighlighted = computed(() => {
-  const category = selectedCategory.value
-  if (category === 'all') return true
+  const category = selectedCategory.value;
+  if (category === 'all') return true;
   return (
-    lanthanides.some((el) => elementMatchesCategory(el, category))
-    || actinides.some((el) => elementMatchesCategory(el, category))
-  )
-})
+    lanthanides.some((el) => elementMatchesCategory(el, category)) ||
+    actinides.some((el) => elementMatchesCategory(el, category))
+  );
+});
 
 function onSelectElement(element: Element) {
   if (selectedElement.value?.number === element.number) {
-    void router.push({ name: 'home' })
-    return
+    void router.push({ name: 'home' });
+    return;
   }
 
-  void router.push({ name: 'element', params: { symbol: getElementRouteSymbol(element.symbol) } })
+  void router.push({ name: 'element', params: { symbol: getElementRouteSymbol(element.symbol) } });
 }
 
 function closeSidebar() {
-  void router.push({ name: 'home' })
+  void router.push({ name: 'home' });
 }
 
 function heatmapHint(number: number): string | undefined {
-  const id = selectedHeatmap.value
-  if (!id) return undefined
+  const id = selectedHeatmap.value;
+  if (!id) return undefined;
 
-  const def = HEATMAP_DEFINITIONS.find((d) => d.id === id)
-  const label = def ? messages.value.heatmap.maps[def.labelKey] : id
-  const formatted = formatHeatmapElementValue(id, number, locale.value, messages.value)
+  const def = HEATMAP_DEFINITIONS.find((d) => d.id === id);
+  const label = def ? messages.value.heatmap.maps[def.labelKey] : id;
+  const formatted = formatHeatmapElementValue(id, number, locale.value, messages.value);
 
   if (!formatted) {
-    return `${label}: ${messages.value.heatmap.noData}`
+    return `${label}: ${messages.value.heatmap.noData}`;
   }
 
-  const unit = def?.unitKey
-    ? messages.value.sidebar.units[def.unitKey].replace(/[():]/g, '').trim()
-    : ''
-  return unit ? `${label}: ${formatted} ${unit}` : `${label}: ${formatted}`
+  const unit = def?.unitKey ? messages.value.sidebar.units[def.unitKey].replace(/[():]/g, '').trim() : '';
+  return unit ? `${label}: ${formatted} ${unit}` : `${label}: ${formatted}`;
 }
 
 function heatmapCellValue(number: number): string | undefined {
-  const id = selectedHeatmap.value
-  if (!id) return undefined
-  return formatHeatmapCellDisplay(id, number, locale.value, messages.value)
+  const id = selectedHeatmap.value;
+  if (!id) return undefined;
+  return formatHeatmapCellDisplay(id, number, locale.value, messages.value);
 }
 </script>
 
@@ -250,14 +248,8 @@ function heatmapCellValue(number: number): string | undefined {
           />
           <EmptyCell :row="6" />
           <EmptyCell :row="7" />
-          <HeatmapSelector
-            v-model:selected-heatmap="selectedHeatmap"
-            class="periodic-table__heatmap"
-          />
-          <TableFilters
-            v-model:selected-category="selectedCategory"
-            class="periodic-table__filters"
-          />
+          <HeatmapSelector v-model:selected-heatmap="selectedHeatmap" class="periodic-table__heatmap" />
+          <TableFilters v-model:selected-category="selectedCategory" class="periodic-table__filters" />
         </div>
 
         <div class="periodic-table__f-block">
@@ -305,19 +297,14 @@ function heatmapCellValue(number: number): string | undefined {
       </div>
     </div>
 
-    <ElementSidebar
-      :element="selectedElement"
-      @close="closeSidebar"
-    />
+    <ElementSidebar :element="selectedElement" @close="closeSidebar" />
   </div>
 </template>
 
 <style scoped>
 .periodic-table {
   /* Period labels extend left of column 1; 18.2 = 18 columns + 0.2 gutter */
-  --table-safe-width: calc(
-    100svw - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px)
-  );
+  --table-safe-width: calc(100svw - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px));
   --cell-size: min(76px, calc((var(--table-safe-width) - 32px) / 18.2));
   --cell-corner-radius: calc(var(--cell-size) * 0.09);
   --table-width: calc(var(--cell-size) * 18);
@@ -328,10 +315,7 @@ function heatmapCellValue(number: number): string | undefined {
   width: 100%;
   max-width: 1480px;
   margin: 0 auto;
-  padding:
-    var(--layout-section-gap)
-    max(16px, env(safe-area-inset-right, 0px))
-    var(--layout-section-gap)
+  padding: var(--layout-section-gap) max(16px, env(safe-area-inset-right, 0px)) var(--layout-section-gap)
     max(16px, env(safe-area-inset-left, 0px));
 }
 
@@ -435,10 +419,7 @@ function heatmapCellValue(number: number): string | undefined {
 
 @media (max-width: 900px) {
   .periodic-table {
-    padding:
-      var(--layout-section-gap)
-      max(8px, env(safe-area-inset-right, 0px))
-      var(--layout-section-gap)
+    padding: var(--layout-section-gap) max(8px, env(safe-area-inset-right, 0px)) var(--layout-section-gap)
       max(8px, env(safe-area-inset-left, 0px));
   }
 
@@ -478,11 +459,7 @@ function heatmapCellValue(number: number): string | undefined {
   .periodic-table {
     --cell-size: calc((var(--table-safe-width) - 8px) / 18.2);
     --table-width: calc(var(--cell-size) * 18);
-    padding:
-      4px
-      max(4px, env(safe-area-inset-right, 0px))
-      4px
-      max(4px, env(safe-area-inset-left, 0px));
+    padding: 4px max(4px, env(safe-area-inset-right, 0px)) 4px max(4px, env(safe-area-inset-left, 0px));
   }
 
   .periodic-table__viewport {

@@ -1,62 +1,59 @@
 <script setup lang="ts">
-import { defineAsyncComponent, ref } from 'vue'
-import { useLocale } from '../../locales'
-import type { Element } from '../../types/element/element'
-import type { DetailSection } from '../../types/element/section'
-import type { OxidationStateRows } from '../../utils/element/detailSections'
-import { useDismissibleTooltip } from '../../composables/useDismissibleTooltip'
-import CollectionGammaSpectrum from '../collection/CollectionGammaSpectrum.vue'
-import ElementMiniTable from '../table/ElementMiniTable.vue'
+import { defineAsyncComponent, ref } from 'vue';
+import { useLocale } from '../../locales';
+import type { Element } from '../../types/element/element';
+import type { DetailSection } from '../../types/element/section';
+import type { OxidationStateRows } from '../../utils/element/detailSections';
+import { useDismissibleTooltip } from '../../composables/useDismissibleTooltip';
+import CollectionGammaSpectrum from '../collection/CollectionGammaSpectrum.vue';
+import ElementMiniTable from '../table/ElementMiniTable.vue';
 
-const ElementProductionMap = defineAsyncComponent(() => import('./ElementProductionMap.vue'))
+const ElementProductionMap = defineAsyncComponent(() => import('./ElementProductionMap.vue'));
 
 defineProps<{
-  section: DetailSection
-  element: Element
-  displaySymbol: string
-  elementName: string
-  spectrumOriginHtml: string
-  oxidationStates: OxidationStateRows | null
-}>()
+  section: DetailSection;
+  element: Element;
+  displaySymbol: string;
+  elementName: string;
+  spectrumOriginHtml: string;
+  oxidationStates: OxidationStateRows | null;
+}>();
 
-const { tSidebar } = useLocale()
+const { tSidebar } = useLocale();
 
 // Re-anchored to whichever color segment is hovered/tapped right before each open() call - same pattern as ElementProductionMap's per-country tooltip.
-const hoveredColorEl = ref<HTMLElement | null>(null)
-const colorTooltip = useDismissibleTooltip(hoveredColorEl)
-const colorTooltipText = ref('')
+const hoveredColorEl = ref<HTMLElement | null>(null);
+const colorTooltip = useDismissibleTooltip(hoveredColorEl);
+const colorTooltipText = ref('');
 
 function showColorTooltip(event: Event, label: string | undefined) {
-  if (!label) return
-  hoveredColorEl.value = event.currentTarget as HTMLElement
-  colorTooltipText.value = label
-  colorTooltip.open()
+  if (!label) return;
+  hoveredColorEl.value = event.currentTarget as HTMLElement;
+  colorTooltipText.value = label;
+  colorTooltip.open();
 }
 
 function toggleColorTooltip(event: Event, label: string | undefined) {
-  if (!label) return
+  if (!label) return;
   if (colorTooltip.isOpen.value && hoveredColorEl.value === event.currentTarget) {
-    colorTooltip.close()
-    return
+    colorTooltip.close();
+    return;
   }
-  showColorTooltip(event, label)
+  showColorTooltip(event, label);
 }
 </script>
 
 <template>
   <ul class="element-sidebar__props">
     <template v-for="(item, idx) in section.items" :key="`${section.sectionKey ?? section.id}-${idx}`">
-      <li
-        v-if="item.kind === 'miniTable'"
-        class="element-sidebar__prop element-sidebar__prop--mini-table"
-      >
+      <li v-if="item.kind === 'miniTable'" class="element-sidebar__prop element-sidebar__prop--mini-table">
         <ElementMiniTable :selected-number="element.number" />
       </li>
-      <li
-        v-else-if="item.kind === 'countryMap'"
-        class="element-sidebar__prop element-sidebar__prop--country-map"
-      >
-        <ElementProductionMap :countries="(item.mapCountries ?? []).map((c) => ({ country: c }))" :accent-color="section.color" />
+      <li v-else-if="item.kind === 'countryMap'" class="element-sidebar__prop element-sidebar__prop--country-map">
+        <ElementProductionMap
+          :countries="(item.mapCountries ?? []).map((c) => ({ country: c }))"
+          :accent-color="section.color"
+        />
       </li>
       <li
         v-else
@@ -67,12 +64,7 @@ function toggleColorTooltip(event: Event, label: string | undefined) {
         }"
       >
         <span v-if="item.label" class="element-sidebar__prop-label">{{ item.label }}</span>
-        <img
-          v-if="item.imageUrl"
-          :src="item.imageUrl"
-          :alt="item.label"
-          class="element-sidebar__spectrum-image"
-        />
+        <img v-if="item.imageUrl" :src="item.imageUrl" :alt="item.label" class="element-sidebar__spectrum-image" />
         <CollectionGammaSpectrum
           v-else-if="item.collectionSpectrumId"
           :spectrum-id="item.collectionSpectrumId"
@@ -107,11 +99,7 @@ function toggleColorTooltip(event: Event, label: string | undefined) {
             @click.stop="toggleColorTooltip($event, c.label)"
           />
         </div>
-        <span
-          v-else-if="item.html"
-          class="element-sidebar__prop-value"
-          v-html="item.value"
-        />
+        <span v-else-if="item.html" class="element-sidebar__prop-value" v-html="item.value" />
         <a
           v-else-if="item.href"
           :href="item.href"
@@ -154,7 +142,12 @@ function toggleColorTooltip(event: Event, label: string | undefined) {
 
   <Teleport to="body">
     <Transition name="info-tooltip-fade">
-      <div v-if="colorTooltip.isOpen.value" class="info-tooltip__bubble" :style="colorTooltip.style.value" role="tooltip">
+      <div
+        v-if="colorTooltip.isOpen.value"
+        class="info-tooltip__bubble"
+        :style="colorTooltip.style.value"
+        role="tooltip"
+      >
         {{ colorTooltipText }}
       </div>
     </Transition>
@@ -337,13 +330,12 @@ function toggleColorTooltip(event: Event, label: string | undefined) {
 }
 
 .element-sidebar__color-swatch--metallic::before {
-  background:
-    radial-gradient(
-      ellipse 110% 70% at 50% -35%,
-      rgba(255, 255, 255, 0.75) 0%,
-      rgba(255, 255, 255, 0.28) 38%,
-      transparent 68%
-    );
+  background: radial-gradient(
+    ellipse 110% 70% at 50% -35%,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(255, 255, 255, 0.28) 38%,
+    transparent 68%
+  );
 }
 
 .element-sidebar__color-swatch--metallic::after {
@@ -373,19 +365,11 @@ function toggleColorTooltip(event: Event, label: string | undefined) {
 }
 
 .element-sidebar__color-swatch--glossy::before {
-  background: radial-gradient(
-    ellipse 100% 80% at 50% 0%,
-    rgba(255, 255, 255, 0.45) 0%,
-    transparent 65%
-  );
+  background: radial-gradient(ellipse 100% 80% at 50% 0%, rgba(255, 255, 255, 0.45) 0%, transparent 65%);
 }
 
 .element-sidebar__color-swatch--glossy::after {
-  background: linear-gradient(
-    180deg,
-    transparent 40%,
-    rgba(0, 0, 0, 0.15) 100%
-  );
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.15) 100%);
 }
 
 /* Gases: subtle top glint */
@@ -394,11 +378,7 @@ function toggleColorTooltip(event: Event, label: string | undefined) {
 }
 
 .element-sidebar__color-swatch--subtle::before {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.35) 0%,
-    transparent 45%
-  );
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, transparent 45%);
 }
 
 .element-sidebar__color-swatch--subtle::after {
@@ -415,12 +395,7 @@ function toggleColorTooltip(event: Event, label: string | undefined) {
 }
 
 .element-sidebar__color-swatch--matte::after {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.05) 0%,
-    transparent 35%,
-    rgba(0, 0, 0, 0.2) 100%
-  );
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 35%, rgba(0, 0, 0, 0.2) 100%);
 }
 
 .element-sidebar__oxidation {

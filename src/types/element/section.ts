@@ -1,5 +1,5 @@
-import type { ElementSampleColorFinish } from './element'
-import type { ProductionCountryEntry } from './detail'
+import type { ElementSampleColorFinish } from './element';
+import type { ProductionCountryEntry } from './detail';
 
 export type SectionId =
   | 'overview'
@@ -17,28 +17,28 @@ export type SectionId =
   | 'nfpa'
   | 'ghs'
   | 'prevalence'
-  | 'applications'
+  | 'applications';
 
 export interface DetailProp {
-  label: string
-  value: string
-  html?: boolean
-  href?: string | null
-  imageUrl?: string | null
-  colors?: { hex: string; finish?: ElementSampleColorFinish; label?: string }[] | null
-  collectionSpectrumId?: string | null
-  kind?: 'miniTable' | 'countryMap'
-  mapCountries?: string[]
-  empty?: boolean
+  label: string;
+  value: string;
+  html?: boolean;
+  href?: string | null;
+  imageUrl?: string | null;
+  colors?: { hex: string; finish?: ElementSampleColorFinish; label?: string }[] | null;
+  collectionSpectrumId?: string | null;
+  kind?: 'miniTable' | 'countryMap';
+  mapCountries?: string[];
+  empty?: boolean;
 }
 
 export interface DetailSection {
-  id: SectionId
-  sectionKey?: string
-  title: string
-  color: string
-  items: DetailProp[]
-  structureCode?: number | null
-  miningCountries?: ProductionCountryEntry[]
-  miningNote?: string
+  id: SectionId;
+  sectionKey?: string;
+  title: string;
+  color: string;
+  items: DetailProp[];
+  structureCode?: number | null;
+  miningCountries?: ProductionCountryEntry[];
+  miningNote?: string;
 }

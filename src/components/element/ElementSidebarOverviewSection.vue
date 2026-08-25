@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { useLocale } from '../../locales'
-import { PARTICLE_COLORS } from '../../theme/colors'
-import ElectronShell from './ElectronShell.vue'
+import { useLocale } from '../../locales';
+import { PARTICLE_COLORS } from '../../theme/colors';
+import ElectronShell from './ElectronShell.vue';
 
 defineProps<{
-  shell: string | null | undefined
-  accentColor: string
-  electrons: string | null | undefined
-  protons: string | null | undefined
-  neutrons: string | null | undefined
-}>()
+  shell: string | null | undefined;
+  accentColor: string;
+  electrons: string | null | undefined;
+  protons: string | null | undefined;
+  neutrons: string | null | undefined;
+}>();
 
-const { tSidebar } = useLocale()
+const { tSidebar } = useLocale();
 </script>
 
 <template>

@@ -1,6 +1,6 @@
-import type { LocaleMessages } from '../../locales/types'
-import type { Locale } from '../../locales/types'
-import type { Element } from '../../types/element/element'
+import type { LocaleMessages } from '../../locales/types';
+import type { Locale } from '../../locales/types';
+import type { Element } from '../../types/element/element';
 import type {
   Additional,
   AggregationState,
@@ -16,9 +16,9 @@ import type {
   Reactivity,
   SampleColor,
   Thermo,
-} from '../../types/element/detail'
-import type { DetailProp, DetailSection } from '../../types/element/section'
-import { getElementPeriod } from '../../data'
+} from '../../types/element/detail';
+import type { DetailProp, DetailSection } from '../../types/element/section';
+import { getElementPeriod } from '../../data';
 import {
   getElementProductionCountries,
   getElementRadiacodeIsotope,
@@ -26,7 +26,7 @@ import {
   getRadiacodeIsotopeUrl,
   isElementRadioactive,
   isElementWeaklyRadioactive,
-} from '../../data'
+} from '../../data';
 import {
   resolveCollectionLabel,
   resolveCollectionSampleState,
@@ -34,19 +34,14 @@ import {
   formatCollectionAcquiredDate,
   formatCollectionPurity,
   formatCollectionWeight,
-} from '../collection/labels'
-import { formatIonChargeHtml } from './formatters'
-import { getPubChemUrl } from '../external-links/pubchem'
-import { SECTION_COLORS } from '../../theme/colors'
-import {
-  formatDecayChainHtml,
-  formatDecayType,
-  formatIsotopeHtml,
-  formatMainIsotopesHtml,
-} from './isotopes'
-import { formatNucleusDurationDisplay } from '../heatmap'
-import { collectionName } from '../../data/collection'
-import { resolveLocalizedLabel } from '../localizedLabel'
+} from '../collection/labels';
+import { getPubChemUrl } from '../external-links/pubchem';
+import { SECTION_COLORS } from '../../theme/colors';
+import { formatNucleusDurationDisplay } from '../heatmap';
+import { collectionName } from '../../data/collection';
+import { resolveLocalizedLabel } from '../localizedLabel';
+import { formatDecayChainHtml, formatDecayType, formatIsotopeHtml, formatMainIsotopesHtml } from './isotopes';
+import { formatIonChargeHtml } from './formatters';
 
 const GRID_STRUCTURES: Record<string, keyof LocaleMessages['sidebar']['gridStructures']> = {
   '1': 'hexagonal',
@@ -61,7 +56,7 @@ const GRID_STRUCTURES: Record<string, keyof LocaleMessages['sidebar']['gridStruc
   '10': 'tetragonal',
   '11': 'doubleHcp',
   '12': 'monoclinic',
-}
+};
 
 const COUNTRY_FLAGS: Record<string, string> = {
   GB: '🇬🇧',
@@ -80,65 +75,65 @@ const COUNTRY_FLAGS: Record<string, string> = {
   RO: '🇷🇴',
   PE: '🇵🇪',
   EG: '🇪🇬',
-}
+};
 
-const EMPTY = '----'
+const EMPTY = '----';
 
-const HTML_TAG = /<\/?[a-z][\s\S]*?>/i
+const HTML_TAG = /<\/?[a-z][\s\S]*?>/i;
 
 function containsHtml(value: string): boolean {
-  return HTML_TAG.test(value)
+  return HTML_TAG.test(value);
 }
 
 function fmt(value: string | number | null | undefined): string {
-  if (value === null || value === undefined || value === '') return EMPTY
-  return String(value)
+  if (value === null || value === undefined || value === '') return EMPTY;
+  return String(value);
 }
 
 function fmtTemp(celsius: string | null | undefined, labels: LocaleMessages['sidebar']['units']): string {
-  if (!celsius || celsius === EMPTY) return EMPTY
-  const c = Number(celsius)
-  if (Number.isNaN(c)) return celsius
-  const f = c * 9 / 5 + 32
-  const k = c + 273.15
-  return `${celsius}${labels.celsius} = ${f.toFixed(2)}${labels.fahrenheit} = ${k.toFixed(2)}${labels.kelvin}`
+  if (!celsius || celsius === EMPTY) return EMPTY;
+  const c = Number(celsius);
+  if (Number.isNaN(c)) return celsius;
+  const f = (c * 9) / 5 + 32;
+  const k = c + 273.15;
+  return `${celsius}${labels.celsius} = ${f.toFixed(2)}${labels.fahrenheit} = ${k.toFixed(2)}${labels.kelvin}`;
 }
 
 function fmtDebyeTemp(kelvin: string | null | undefined, labels: LocaleMessages['sidebar']['units']): string {
-  if (!kelvin || kelvin === EMPTY) return EMPTY
-  const k = Number(kelvin)
-  if (Number.isNaN(k) || k === 0) return EMPTY
-  const c = k - 273.15
-  const f = c * 9 / 5 + 32
-  const kLabel = Number.isInteger(k) ? String(k) : kelvin
-  return `${kLabel}${labels.kelvin} = ${c.toFixed(2)}${labels.celsius} = ${f.toFixed(2)}${labels.fahrenheit}`
+  if (!kelvin || kelvin === EMPTY) return EMPTY;
+  const k = Number(kelvin);
+  if (Number.isNaN(k) || k === 0) return EMPTY;
+  const c = k - 273.15;
+  const f = (c * 9) / 5 + 32;
+  const kLabel = Number.isInteger(k) ? String(k) : kelvin;
+  return `${kLabel}${labels.kelvin} = ${c.toFixed(2)}${labels.celsius} = ${f.toFixed(2)}${labels.fahrenheit}`;
 }
 
 function pickDebyeTemp(values: string[], index: number): string | undefined {
-  const raw = pickGridField(values, index)
-  if (raw === undefined || raw === '0' || !raw.trim()) return undefined
-  return raw
+  const raw = pickGridField(values, index);
+  if (raw === undefined || raw === '0' || !raw.trim()) return undefined;
+  return raw;
 }
 
 function prop(label: string, value: string, html?: boolean): DetailProp {
-  const empty = !value || value === EMPTY
-  const rendered = empty ? EMPTY : value
+  const empty = !value || value === EMPTY;
+  const rendered = empty ? EMPTY : value;
   return {
     label,
     value: rendered,
     html: html ?? (!empty && containsHtml(rendered)),
     empty,
-  }
+  };
 }
 
 function propLink(label: string, value: string, href: string | null): DetailProp {
-  const empty = !value || value === EMPTY || !href
+  const empty = !value || value === EMPTY || !href;
   return {
     label,
     value: empty ? EMPTY : value,
     href: empty ? null : href,
     empty,
-  }
+  };
 }
 
 function propMiniTable(): DetailProp {
@@ -147,7 +142,7 @@ function propMiniTable(): DetailProp {
     value: '',
     kind: 'miniTable',
     empty: false,
-  }
+  };
 }
 
 function propCountryMap(countries: string[]): DetailProp {
@@ -157,36 +152,32 @@ function propCountryMap(countries: string[]): DetailProp {
     kind: 'countryMap',
     mapCountries: countries,
     empty: false,
-  }
+  };
 }
 
-const ISO_COUNTRY_CODE = /^[A-Z]{2}$/
+const ISO_COUNTRY_CODE = /^[A-Z]{2}$/;
 
 function discoveryMapCountries(code: string | null | undefined): string[] {
-  if (!code) return []
+  if (!code) return [];
   return code
     .split(',')
     .map((part) => part.trim())
     .filter((part) => ISO_COUNTRY_CODE.test(part))
-    .map((part) => part.toLowerCase())
+    .map((part) => part.toLowerCase());
 }
 
-function propColor(
-  label: string,
-  sampleColors: SampleColor[] | null | undefined,
-  locale: Locale,
-): DetailProp {
+function propColor(label: string, sampleColors: SampleColor[] | null | undefined, locale: Locale): DetailProp {
   const colors = (sampleColors ?? []).map((c) => ({
     hex: c.hex,
     finish: c.finish ?? undefined,
     label: resolveLocalizedLabel(c.label, locale) || undefined,
-  }))
+  }));
   return {
     label,
     value: EMPTY,
     colors,
     empty: colors.length === 0,
-  }
+  };
 }
 
 function propImage(label: string, imageUrl: string | null): DetailProp {
@@ -195,90 +186,72 @@ function propImage(label: string, imageUrl: string | null): DetailProp {
     value: EMPTY,
     imageUrl,
     empty: !imageUrl,
-  }
+  };
 }
 
-function propCollectionSpectrum(
-  label: string,
-  spectrumId: string | null | undefined,
-): DetailProp {
+function propCollectionSpectrum(label: string, spectrumId: string | null | undefined): DetailProp {
   return {
     label,
     value: EMPTY,
     collectionSpectrumId: spectrumId ?? null,
     empty: !spectrumId,
-  }
+  };
 }
 
-function blockLabel(
-  block: string | null | undefined,
-  messages: LocaleMessages,
-): string {
-  if (!block) return EMPTY
-  const key = block.toLowerCase() as keyof LocaleMessages['sidebar']['blocks']
-  return messages.sidebar.blocks[key] ?? `${block} - ${messages.sidebar.blockSuffix}`
+function blockLabel(block: string | null | undefined, messages: LocaleMessages): string {
+  if (!block) return EMPTY;
+  const key = block.toLowerCase() as keyof LocaleMessages['sidebar']['blocks'];
+  return messages.sidebar.blocks[key] ?? `${block} - ${messages.sidebar.blockSuffix}`;
 }
 
-function aggregationLabel(
-  state: AggregationState | null | undefined,
-  messages: LocaleMessages,
-): string {
-  if (!state) return EMPTY
-  return messages.sidebar.aggregationState[state] ?? EMPTY
+function aggregationLabel(state: AggregationState | null | undefined, messages: LocaleMessages): string {
+  if (!state) return EMPTY;
+  return messages.sidebar.aggregationState[state] ?? EMPTY;
 }
 
-function magneticLabel(
-  type: MagneticType | null | undefined,
-  messages: LocaleMessages,
-): string {
-  if (!type) return EMPTY
-  return messages.sidebar.magneticType[type] ?? type
+function magneticLabel(type: MagneticType | null | undefined, messages: LocaleMessages): string {
+  if (!type) return EMPTY;
+  return messages.sidebar.magneticType[type] ?? type;
 }
 
-function formatSingleCountry(
-  code: string,
-  messages: LocaleMessages,
-): string {
-  const flag = COUNTRY_FLAGS[code] ?? ''
-  const name = messages.sidebar.countries[code]
-  if (!name) return flag ? `${flag} — ${code}` : code
-  return flag ? `${flag} — ${name}` : name
+function formatSingleCountry(code: string, messages: LocaleMessages): string {
+  const flag = COUNTRY_FLAGS[code] ?? '';
+  const name = messages.sidebar.countries[code];
+  if (!name) return flag ? `${flag} — ${code}` : code;
+  return flag ? `${flag} — ${name}` : name;
 }
 
-function countryLabel(
-  code: string | null | undefined,
-  messages: LocaleMessages,
-): string {
-  if (!code) return EMPTY
-  const parts = code.split(',').map((part) => part.trim()).filter(Boolean)
-  if (parts.length === 0) return EMPTY
-  return parts.map((part) => formatSingleCountry(part, messages)).join(', ')
+function countryLabel(code: string | null | undefined, messages: LocaleMessages): string {
+  if (!code) return EMPTY;
+  const parts = code
+    .split(',')
+    .map((part) => part.trim())
+    .filter(Boolean);
+  if (parts.length === 0) return EMPTY;
+  return parts.map((part) => formatSingleCountry(part, messages)).join(', ');
 }
 
 function splitGridField(value: string | null | undefined): string[] {
-  if (!value?.trim()) return []
-  return value.split('|').map((part) => part.trim())
+  if (!value?.trim()) return [];
+  return value.split('|').map((part) => part.trim());
 }
 
 function fmtGridField(value: string | undefined): string {
-  if (!value || value === '0') return EMPTY
-  return value
+  if (!value || value === '0') return EMPTY;
+  return value;
 }
 
 function pickGridField(values: string[], index: number, singleFallback = false): string | undefined {
-  const raw = values[index]
-  if (raw?.trim()) return raw
-  if (singleFallback && values.length === 1 && values[0]?.trim()) return values[0]
-  return undefined
+  const raw = values[index];
+  if (raw?.trim()) return raw;
+  if (singleFallback && values.length === 1 && values[0]?.trim()) return values[0];
+  return undefined;
 }
 
-function gridStructureLabel(
-  num: string | null | undefined,
-  messages: LocaleMessages,
-): string {
-  if (!num) return EMPTY
-  const key = GRID_STRUCTURES[num.trim()]
-  return key ? messages.sidebar.gridStructures[key] : num
+function gridStructureLabel(num: string | null | undefined, messages: LocaleMessages): string {
+  if (!num) return EMPTY;
+  const key = GRID_STRUCTURES[num.trim()];
+  return key ? messages.sidebar.gridStructures[key] : num;
 }
 
 function buildGridSections(
@@ -287,100 +260,97 @@ function buildGridSections(
   s: LocaleMessages['sidebar'],
   u: LocaleMessages['sidebar']['units'],
 ): DetailSection[] {
-  const structureNums = splitGridField(g?.structureCode)
-  const params = splitGridField(g?.gridParams)
-  const ratios = splitGridField(g?.axialRatio)
-  const debyeTemps = splitGridField(g?.debyeTemperature)
+  const structureNums = splitGridField(g?.structureCode);
+  const params = splitGridField(g?.gridParams);
+  const ratios = splitGridField(g?.axialRatio);
+  const debyeTemps = splitGridField(g?.debyeTemperature);
 
   if (structureNums.length === 0) {
-    return [{
-      id: 'grid',
-      sectionKey: 'grid',
-      title: s.sections.grid,
-      color: SECTION_COLORS.grid,
-      structureCode: null,
-      items: [
-        prop(s.props.gridStructure, EMPTY),
-        prop(s.props.gridParams, EMPTY),
-        prop(s.props.gridRatio, EMPTY),
-        prop(s.props.debyeTemp, EMPTY),
-      ],
-    }]
+    return [
+      {
+        id: 'grid',
+        sectionKey: 'grid',
+        title: s.sections.grid,
+        color: SECTION_COLORS.grid,
+        structureCode: null,
+        items: [
+          prop(s.props.gridStructure, EMPTY),
+          prop(s.props.gridParams, EMPTY),
+          prop(s.props.gridRatio, EMPTY),
+          prop(s.props.debyeTemp, EMPTY),
+        ],
+      },
+    ];
   }
 
-  const multiple = structureNums.length > 1
+  const multiple = structureNums.length > 1;
 
   return structureNums.map((numStr, index) => {
-    const structureNum = Number(numStr)
-    const variant = index + 1
+    const structureNum = Number(numStr);
+    const variant = index + 1;
     const items: DetailProp[] = [
       prop(s.props.gridStructure, gridStructureLabel(numStr, messages)),
       prop(s.props.gridParams, fmtGridField(pickGridField(params, index, true))),
       prop(s.props.gridRatio, fmtGridField(pickGridField(ratios, index, true))),
-      prop(
-        s.props.debyeTemp,
-        fmtDebyeTemp(pickDebyeTemp(debyeTemps, index), u),
-      ),
-    ]
+      prop(s.props.debyeTemp, fmtDebyeTemp(pickDebyeTemp(debyeTemps, index), u)),
+    ];
 
     if (index === 0) {
       if (g?.spaceGroup) {
-        items.push(prop(s.props.spaceGroup, fmt(g.spaceGroup)))
+        items.push(prop(s.props.spaceGroup, fmt(g.spaceGroup)));
       }
       if (g?.spaceGroupNumber) {
-        items.push(prop(s.props.spaceGroupNumber, fmt(g.spaceGroupNumber)))
+        items.push(prop(s.props.spaceGroupNumber, fmt(g.spaceGroupNumber)));
       }
     }
 
     return {
       id: 'grid' as const,
       sectionKey: multiple ? `grid-${variant}` : 'grid',
-      title: multiple
-        ? s.sections.gridNumbered.replace('{{n}}', String(variant))
-        : s.sections.grid,
+      title: multiple ? s.sections.gridNumbered.replace('{{n}}', String(variant)) : s.sections.grid,
       color: SECTION_COLORS.grid,
       structureCode: Number.isFinite(structureNum) ? structureNum : null,
       items,
-    }
-  })
+    };
+  });
 }
 
 function withSectionKey(section: DetailSection): DetailSection {
   return {
     ...section,
     sectionKey: section.sectionKey ?? section.id,
-  }
+  };
 }
 
 function withUnit(value: string | null | undefined, unit: string): string {
-  const v = fmt(value)
-  return v === EMPTY ? EMPTY : `${v} ${unit}`
+  const v = fmt(value);
+  return v === EMPTY ? EMPTY : `${v} ${unit}`;
 }
 
 interface SectionBuildContext {
-  detail: ElementDetail
-  element: Element
-  messages: LocaleMessages
-  elementName: string
-  locale: Locale
-  s: LocaleMessages['sidebar']
-  u: LocaleMessages['sidebar']['units']
-  o?: Overview
-  p?: Properties
-  t?: Thermo
-  a?: Atomic
-  e?: Electromagnetic
-  g?: Grid
-  add?: Additional
-  r?: Reactivity
-  n?: Nucleus
-  pr?: Prevalence
-  period: number
+  detail: ElementDetail;
+  element: Element;
+  messages: LocaleMessages;
+  elementName: string;
+  locale: Locale;
+  s: LocaleMessages['sidebar'];
+  u: LocaleMessages['sidebar']['units'];
+  o?: Overview;
+  p?: Properties;
+  t?: Thermo;
+  a?: Atomic;
+  e?: Electromagnetic;
+  g?: Grid;
+  add?: Additional;
+  r?: Reactivity;
+  n?: Nucleus;
+  pr?: Prevalence;
+  period: number;
 }
 
 function buildOverviewSection(ctx: SectionBuildContext): DetailSection {
-  const { messages, locale, s, o } = ctx
-  const discoveryCountries = discoveryMapCountries(o?.discoveryCountry)
+  const { messages, locale, s, o } = ctx;
+  const discoveryCountries = discoveryMapCountries(o?.discoveryCountry);
   return {
     id: 'overview',
     title: s.sections.overview,
@@ -396,86 +366,68 @@ function buildOverviewSection(ctx: SectionBuildContext): DetailSection {
       propColor(s.props.color, o?.sampleColors, locale),
       prop(s.props.electronShell, fmt(o?.electronShellConfig)),
     ],
-  }
+  };
 }
 
 function buildCollectionSection(ctx: SectionBuildContext): DetailSection {
-  const { detail, element, locale, s, u } = ctx
+  const { detail, element, locale, s, u } = ctx;
   const showRadioactiveCollectionFields =
-    isElementRadioactive(detail.number) && !isElementWeaklyRadioactive(detail.number)
+    isElementRadioactive(detail.number) && !isElementWeaklyRadioactive(detail.number);
 
-  const collectionItems: DetailProp[] = []
+  const collectionItems: DetailProp[] = [];
 
-  const purity = prop(
-    s.props.collectionPurity,
-    fmt(formatCollectionPurity(element.collection?.physical?.purity)),
-  )
-  if (!purity.empty) collectionItems.push(purity)
+  const purity = prop(s.props.collectionPurity, fmt(formatCollectionPurity(element.collection?.physical?.purity)));
+  if (!purity.empty) collectionItems.push(purity);
 
   const weight = prop(
     s.props.collectionWeight,
     fmt(formatCollectionWeight(element.collection?.physical?.weight, u.milligram, u.gram)),
-  )
-  if (!weight.empty) collectionItems.push(weight)
+  );
+  if (!weight.empty) collectionItems.push(weight);
 
   collectionItems.push(
-    prop(
-      s.props.collectionSampleState,
-      fmt(resolveCollectionSampleState(locale, element.collection)),
-    ),
-  )
+    prop(s.props.collectionSampleState, fmt(resolveCollectionSampleState(locale, element.collection))),
+  );
 
   const allotrope = prop(
     s.props.collectionAllotrope,
     fmt(resolveLocalizedLabel(element.collection?.physical?.allotrope, locale)),
-  )
-  if (!allotrope.empty) collectionItems.push(allotrope)
+  );
+  if (!allotrope.empty) collectionItems.push(allotrope);
 
   collectionItems.push(
     prop(
       s.props.collectionContainer,
       fmt(resolveCollectionLabel(locale, 'containers', element.collection?.physical?.container)),
     ),
-  )
+  );
 
   const acquiredDate = prop(
     s.props.collectionAcquiredDate,
     fmt(formatCollectionAcquiredDate(element.collection?.physical?.acquiredDate, locale)),
-  )
-  if (!acquiredDate.empty) collectionItems.push(acquiredDate)
+  );
+  if (!acquiredDate.empty) collectionItems.push(acquiredDate);
 
   if (showRadioactiveCollectionFields) {
-    const radioactive = element.collection?.radioactive
+    const radioactive = element.collection?.radioactive;
 
     collectionItems.push(
-      prop(
-        s.props.collectionIsotope,
-        formatIsotopeHtml(element.symbol, radioactive?.isotope),
-        true,
-      ),
-    )
+      prop(s.props.collectionIsotope, formatIsotopeHtml(element.symbol, radioactive?.isotope), true),
+    );
 
     if (radioactive?.sourceType === 'secondary') {
-      collectionItems.push(
-        prop(
-          s.props.collectionSourceType,
-          fmt(resolveSourceType(locale, radioactive?.sourceType)),
-        ),
-      )
+      collectionItems.push(prop(s.props.collectionSourceType, fmt(resolveSourceType(locale, radioactive?.sourceType))));
     }
 
     const decayParent = prop(
       s.props.collectionDecayParent,
       formatDecayChainHtml(element.symbol, radioactive?.isotope, radioactive?.decayParent),
       true,
-    )
-    if (!decayParent.empty) collectionItems.push(decayParent)
+    );
+    if (!decayParent.empty) collectionItems.push(decayParent);
 
-    const spectrum = propCollectionSpectrum(
-      s.props.collectionSpectrum,
-      element.collection?.spectrum?.id,
-    )
-    if (!spectrum.empty) collectionItems.push(spectrum)
+    const spectrum = propCollectionSpectrum(s.props.collectionSpectrum, element.collection?.spectrum?.id);
+    if (!spectrum.empty) collectionItems.push(spectrum);
   }
 
   return {
@@ -483,31 +435,31 @@ function buildCollectionSection(ctx: SectionBuildContext): DetailSection {
     title: resolveLocalizedLabel(collectionName, locale),
     color: SECTION_COLORS.collection,
     items: collectionItems,
-  }
+  };
 }
 
 function buildApplicationsSection(ctx: SectionBuildContext): DetailSection {
-  const { detail, locale, s } = ctx
+  const { detail, locale, s } = ctx;
   return {
     id: 'applications',
     title: s.sections.applications,
     color: SECTION_COLORS.applications,
     items: [prop('', resolveLocalizedLabel(detail.applications, locale))],
-  }
+  };
 }
 
 function buildDescriptionSection(ctx: SectionBuildContext): DetailSection {
-  const { detail, locale, s } = ctx
+  const { detail, locale, s } = ctx;
   return {
     id: 'description',
     title: s.sections.description,
     color: SECTION_COLORS.description,
     items: [prop('', resolveLocalizedLabel(detail.description, locale))],
-  }
+  };
 }
 
 function buildMiningSection(ctx: SectionBuildContext): DetailSection {
-  const { detail, locale, s } = ctx
+  const { detail, locale, s } = ctx;
   return {
     id: 'mining',
     title: s.sections.mining,
@@ -515,11 +467,11 @@ function buildMiningSection(ctx: SectionBuildContext): DetailSection {
     items: [],
     miningCountries: getElementProductionCountries(detail.number),
     miningNote: resolveLocalizedLabel(detail.productionNote, locale),
-  }
+  };
 }
 
 function buildPropertiesSection(ctx: SectionBuildContext): DetailSection {
-  const { detail, messages, s, u, p, period } = ctx
+  const { detail, messages, s, u, p, period } = ctx;
   return {
     id: 'properties',
     title: s.sections.properties,
@@ -537,32 +489,28 @@ function buildPropertiesSection(ctx: SectionBuildContext): DetailSection {
       propMiniTable(),
       propImage(s.props.emissionSpectrum, getElementSpectrumUrl(detail.number)),
     ],
-  }
+  };
 }
 
 function buildAtomicSection(ctx: SectionBuildContext): DetailSection {
-  const { element, s, u, o, a } = ctx
+  const { element, s, u, o, a } = ctx;
   return {
     id: 'atomic',
     title: s.sections.atomic,
     color: SECTION_COLORS.atomic,
     items: [
       prop(s.props.electronConfig, fmt(o?.electronConfiguration)),
-      prop(
-        s.props.ionCharge,
-        formatIonChargeHtml(element.symbol, a?.ionCharge),
-        true,
-      ),
+      prop(s.props.ionCharge, formatIonChargeHtml(element.symbol, a?.ionCharge), true),
       prop(s.props.ionizationPotential, withUnit(a?.ionizationPotential, u.eV)),
       prop(s.props.atomicRadius, withUnit(a?.atomicRadius, u.pm)),
       prop(s.props.covalentRadius, withUnit(a?.covalentRadius, u.pm)),
       prop(s.props.vanDerWaalsRadius, withUnit(a?.vanDerWaalsRadius, u.pm)),
     ],
-  }
+  };
 }
 
 function buildReactivitySection(ctx: SectionBuildContext): DetailSection {
-  const { s, u, p, r } = ctx
+  const { s, u, p, r } = ctx;
   return {
     id: 'reactivity',
     title: s.sections.reactivity,
@@ -572,11 +520,11 @@ function buildReactivitySection(ctx: SectionBuildContext): DetailSection {
       prop(s.props.valence, fmt(p?.valence)),
       prop(s.props.electronAffinity, withUnit(r?.electronAffinity, u.kjPerMol)),
     ],
-  }
+  };
 }
 
 function buildThermodynamicSection(ctx: SectionBuildContext): DetailSection {
-  const { messages, s, u, p, t } = ctx
+  const { messages, s, u, p, t } = ctx;
   return {
     id: 'thermodynamic',
     title: s.sections.thermodynamic,
@@ -588,11 +536,11 @@ function buildThermodynamicSection(ctx: SectionBuildContext): DetailSection {
       prop(s.props.thermalExpansion, fmt(t?.thermalExpansion)),
       prop(s.props.vaporizationHeat, withUnit(t?.vaporizationHeat, u.kjPerMol)),
     ],
-  }
+  };
 }
 
 function buildElectromagneticSection(ctx: SectionBuildContext): DetailSection {
-  const { messages, s, e } = ctx
+  const { messages, s, e } = ctx;
   return {
     id: 'electromagnetic',
     title: s.sections.electromagnetic,
@@ -607,11 +555,11 @@ function buildElectromagneticSection(ctx: SectionBuildContext): DetailSection {
       prop(s.props.resistivity, fmt(e?.electricalResistivity)),
       prop(s.props.superconductivityTemp, fmt(e?.superconductingTemperature)),
     ],
-  }
+  };
 }
 
 function buildAdditionalSection(ctx: SectionBuildContext): DetailSection {
-  const { s, u, add } = ctx
+  const { s, u, add } = ctx;
   return {
     id: 'additional',
     title: s.sections.additional,
@@ -632,11 +580,11 @@ function buildAdditionalSection(ctx: SectionBuildContext): DetailSection {
       prop(s.props.refractiveIndex, fmt(add?.refractiveIndex)),
       prop(s.props.thermalConductivity, withUnit(add?.thermalConductivity, u.wPerMK)),
     ],
-  }
+  };
 }
 
 function buildNuclearSection(ctx: SectionBuildContext): DetailSection {
-  const { detail, element, messages, locale, s, n } = ctx
+  const { detail, element, messages, locale, s, n } = ctx;
   const nuclearItems: DetailProp[] = [
     prop(
       s.props.radioactive,
@@ -646,23 +594,17 @@ function buildNuclearSection(ctx: SectionBuildContext): DetailSection {
           ? messages.sidebar.yes
           : messages.sidebar.no,
     ),
-    prop(
-      s.props.mainIsotopes,
-      formatMainIsotopesHtml(element.symbol),
-      true,
-    ),
+    prop(s.props.mainIsotopes, formatMainIsotopesHtml(element.symbol), true),
     prop(s.props.decayType, formatDecayType(detail.number, locale)),
     prop(s.props.halfLife, formatNucleusDurationDisplay(n?.halfLife, locale, messages) || EMPTY),
     prop(s.props.lifetime, formatNucleusDurationDisplay(n?.lifetime, locale, messages) || EMPTY),
     prop(s.props.neutronCrossSection, n?.neutronCrossSection ? `${n.neutronCrossSection} (b)` : EMPTY),
-  ]
+  ];
 
   if (isElementRadioactive(detail.number)) {
-    const rc = getElementRadiacodeIsotope(detail.number)
+    const rc = getElementRadiacodeIsotope(detail.number);
     if (rc) {
-      nuclearItems.push(
-        propLink(s.props.spectrum, rc.isotope, getRadiacodeIsotopeUrl(rc.slug)),
-      )
+      nuclearItems.push(propLink(s.props.spectrum, rc.isotope, getRadiacodeIsotopeUrl(rc.slug)));
     }
   }
 
@@ -671,7 +613,7 @@ function buildNuclearSection(ctx: SectionBuildContext): DetailSection {
     title: s.sections.nuclear,
     color: SECTION_COLORS.nuclear,
     items: nuclearItems,
-  }
+  };
 }
 
 function buildNfpaSection(ctx: SectionBuildContext): DetailSection {
@@ -680,7 +622,7 @@ function buildNfpaSection(ctx: SectionBuildContext): DetailSection {
     title: ctx.s.sections.nfpa,
     color: SECTION_COLORS.nfpa,
     items: [],
-  }
+  };
 }
 
 function buildGhsSection(ctx: SectionBuildContext): DetailSection {
@@ -689,11 +631,11 @@ function buildGhsSection(ctx: SectionBuildContext): DetailSection {
     title: ctx.s.sections.ghs,
     color: SECTION_COLORS.ghs,
     items: [],
-  }
+  };
 }
 
 function buildPrevalenceSection(ctx: SectionBuildContext): DetailSection {
-  const { elementName, s, pr } = ctx
+  const { elementName, s, pr } = ctx;
   return {
     id: 'prevalence',
     title: s.sections.prevalence,
@@ -706,7 +648,7 @@ function buildPrevalenceSection(ctx: SectionBuildContext): DetailSection {
       prop(s.prevalence.crust.replace('%s', elementName), pr?.crust ? `${pr.crust}%` : EMPTY),
       prop(s.prevalence.meteorites.replace('%s', elementName), pr?.meteorites ? `${pr.meteorites}%` : EMPTY),
     ],
-  }
+  };
 }
 
 export function buildElementSections(
@@ -735,7 +677,7 @@ export function buildElementSections(
     n: detail.nucleus,
     pr: detail.prevalence,
     period: getElementPeriod(element),
-  }
+  };
 
   const sections: DetailSection[] = [
     ...(element.inCollection ? [buildCollectionSection(ctx)] : []),
@@ -754,38 +696,38 @@ export function buildElementSections(
     buildGhsSection(ctx),
     buildPrevalenceSection(ctx),
     buildMiningSection(ctx),
-  ]
+  ];
 
-  return sections.map(withSectionKey)
+  return sections.map(withSectionKey);
 }
 
 export interface SectionEmptyContext {
-  nfpaDisplay: unknown
-  ghsDisplay: unknown[]
-  oxidationStates: OxidationStateRows | null
-  electronShellConfig?: string | null
-  electronCount?: string | null
-  protonCount?: string | null
-  neutronCount?: string | null
+  nfpaDisplay: unknown;
+  ghsDisplay: unknown[];
+  oxidationStates: OxidationStateRows | null;
+  electronShellConfig?: string | null;
+  electronCount?: string | null;
+  protonCount?: string | null;
+  neutronCount?: string | null;
 }
 
 function hasOxidationContent(rows: OxidationStateRows | null): boolean {
-  if (!rows) return false
-  return [...rows.negative, ...rows.positive].some((cell) => cell.variant !== 'empty')
+  if (!rows) return false;
+  return [...rows.negative, ...rows.positive].some((cell) => cell.variant !== 'empty');
 }
 
 export function isSectionEmpty(section: DetailSection, context: SectionEmptyContext): boolean {
   switch (section.id) {
     case 'mining':
-      return false
+      return false;
     case 'nfpa':
-      return !context.nfpaDisplay
+      return !context.nfpaDisplay;
     case 'ghs':
-      return !context.ghsDisplay?.length
+      return !context.ghsDisplay?.length;
     case 'grid':
-      return section.items.every((item) => item.empty) && !section.structureCode
+      return section.items.every((item) => item.empty) && !section.structureCode;
     case 'atomic':
-      return section.items.every((item) => item.empty) && !hasOxidationContent(context.oxidationStates)
+      return section.items.every((item) => item.empty) && !hasOxidationContent(context.oxidationStates);
     case 'overview':
       return (
         section.items.every((item) => item.empty) &&
@@ -793,50 +735,50 @@ export function isSectionEmpty(section: DetailSection, context: SectionEmptyCont
         !context.electronCount &&
         !context.protonCount &&
         !context.neutronCount
-      )
+      );
     case 'applications':
     case 'description':
-      return section.items.every((item) => item.empty)
+      return section.items.every((item) => item.empty);
     default:
-      return section.items.every((item) => item.empty)
+      return section.items.every((item) => item.empty);
   }
 }
 
 export interface OxidationCell {
-  label: string
-  variant: 'empty' | 'zero' | 'negative' | 'positive'
+  label: string;
+  variant: 'empty' | 'zero' | 'negative' | 'positive';
 }
 
 export interface OxidationStateRows {
-  negative: OxidationCell[]
-  positive: OxidationCell[]
+  negative: OxidationCell[];
+  positive: OxidationCell[];
 }
 
 function negativeCellVariant(value: string): OxidationCell['variant'] {
-  if (value === '-') return 'empty'
-  if (value === '0') return 'zero'
-  return 'negative'
+  if (value === '-') return 'empty';
+  if (value === '0') return 'zero';
+  return 'negative';
 }
 
 function positiveCellVariant(value: string): OxidationCell['variant'] {
-  if (value === '-') return 'empty'
-  if (value === '0') return 'zero'
-  return 'positive'
+  if (value === '-') return 'empty';
+  if (value === '0') return 'zero';
+  return 'positive';
 }
 
 /** Laid out like on periodic-table.tech: 6 negative + 9 positive slots */
 export function parseOxidationStates(raw: string | null | undefined): OxidationStateRows | null {
-  if (!raw) return null
-  const parts = raw.split(',').map((s) => s.trim())
-  if (!parts.length) return null
+  if (!raw) return null;
+  const parts = raw.split(',').map((s) => s.trim());
+  if (!parts.length) return null;
 
-  const get = (index: number) => parts[index] ?? '-'
-  const c = get(0)
-  const s = get(1)
-  const l = get(2)
-  const i = get(3)
-  const r = get(4)
-  const a = get(5)
+  const get = (index: number) => parts[index] ?? '-';
+  const c = get(0);
+  const s = get(1);
+  const l = get(2);
+  const i = get(3);
+  const r = get(4);
+  const a = get(5);
 
   const negative: OxidationCell[] = [
     { label: a, variant: negativeCellVariant(a) },
@@ -845,15 +787,15 @@ export function parseOxidationStates(raw: string | null | undefined): OxidationS
     { label: l !== '-' ? `-${l}` : l, variant: negativeCellVariant(l) },
     { label: s !== '-' ? `-${s}` : s, variant: negativeCellVariant(s) },
     { label: c !== '-' ? `-${c}` : c, variant: negativeCellVariant(c) },
-  ]
+  ];
 
   const positive: OxidationCell[] = [6, 7, 8, 9, 10, 11, 12, 13, 14].map((index) => {
-    const value = get(index)
+    const value = get(index);
     return {
       label: value !== '-' ? `+${value}` : value,
       variant: positiveCellVariant(value),
-    }
-  })
+    };
+  });
 
-  return { negative, positive }
+  return { negative, positive };
 }

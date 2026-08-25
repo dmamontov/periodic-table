@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineProps<{
-  ariaLabel?: string
-}>()
+  ariaLabel?: string;
+}>();
 </script>
 
 <template>

@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import type { GammaSpectrumChartData } from '../../types/collection/spectrum'
+import type { GammaSpectrumChartData } from '../../types/collection/spectrum';
 
 defineProps<{
-  chart: GammaSpectrumChartData
-  spectrumId: string
-  accent: string
-  sampleLabel: string
-  durationLabel: string
-  cpsLabel: string
-}>()
+  chart: GammaSpectrumChartData;
+  spectrumId: string;
+  accent: string;
+  sampleLabel: string;
+  durationLabel: string;
+  cpsLabel: string;
+}>();
 </script>
 
 <template>
@@ -49,10 +49,7 @@ defineProps<{
       </text>
     </g>
 
-    <path
-      :d="chart.areaPath"
-      :fill="`url(#spectrum-fill-${spectrumId})`"
-    />
+    <path :d="chart.areaPath" :fill="`url(#spectrum-fill-${spectrumId})`" />
     <path
       v-if="chart.backgroundAreaPath"
       :d="chart.backgroundAreaPath"
@@ -65,11 +62,7 @@ defineProps<{
       fill="none"
       class="gamma-spectrum-svg__background-line"
     />
-    <polyline
-      :points="chart.linePath"
-      fill="none"
-      class="gamma-spectrum-svg__line"
-    />
+    <polyline :points="chart.linePath" fill="none" class="gamma-spectrum-svg__line" />
 
     <line
       :x1="chart.pad.left"
@@ -118,20 +111,10 @@ defineProps<{
       </text>
     </g>
 
-    <text
-      :x="chart.width - 8"
-      y="18"
-      class="gamma-spectrum-svg__readout"
-      text-anchor="end"
-    >
+    <text :x="chart.width - 8" y="18" class="gamma-spectrum-svg__readout" text-anchor="end">
       {{ durationLabel }}
     </text>
-    <text
-      :x="chart.width - 8"
-      y="32"
-      class="gamma-spectrum-svg__readout"
-      text-anchor="end"
-    >
+    <text :x="chart.width - 8" y="32" class="gamma-spectrum-svg__readout" text-anchor="end">
       {{ cpsLabel }}
     </text>
   </svg>

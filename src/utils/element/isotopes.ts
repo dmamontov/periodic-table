@@ -1,29 +1,26 @@
-import type { Locale } from '../../locales/types'
-import { localeMessages } from '../../locales'
-import { getSymbolByNumber, storedElementDetails } from '../../data'
-import { formatElementSymbol } from './formatters'
-import type { ElementCollectionDecayParent } from '../../types/collection/collection'
+import type { Locale } from '../../locales/types';
+import { localeMessages } from '../../locales';
+import { getSymbolByNumber, storedElementDetails } from '../../data';
+import type { ElementCollectionDecayParent } from '../../types/collection/collection';
+import { formatElementSymbol } from './formatters';
 
 /** HTML isotope notation with mass superscript before symbol. */
-export function formatIsotopeHtml(
-  symbol: string,
-  mass: string | number | null | undefined,
-): string {
-  if (mass === null || mass === undefined || mass === '') return ''
-  const sym = formatElementSymbol(symbol)
-  return `<sup class="collection-isotope-mass">${String(mass)}</sup>${sym}`
+export function formatIsotopeHtml(symbol: string, mass: string | number | null | undefined): string {
+  if (mass === null || mass === undefined || mass === '') return '';
+  const sym = formatElementSymbol(symbol);
+  return `<sup class="collection-isotope-mass">${String(mass)}</sup>${sym}`;
 }
 
 export function formatMainIsotopesHtml(symbol: string): string {
-  const record = storedElementDetails[symbol]?.isotopes
-  if (!record?.isotopes?.length) return ''
+  const record = storedElementDetails[symbol]?.isotopes;
+  if (!record?.isotopes?.length) return '';
 
   return record.isotopes
     .map(({ mass, abundance }) => {
-      const iso = formatIsotopeHtml(symbol, mass)
-      return abundance ? `${iso} (${abundance}%)` : iso
+      const iso = formatIsotopeHtml(symbol, mass);
+      return abundance ? `${iso} (${abundance}%)` : iso;
     })
-    .join(', ')
+    .join(', ');
 }
 
 /** Decay chain notation, e.g. "²¹⁰Pb → ²¹⁰Bi → ²¹⁰Po" — empty string if there's no chain. */
@@ -32,17 +29,17 @@ export function formatDecayChainHtml(
   currentIsotope: string | null | undefined,
   parents: ElementCollectionDecayParent[] | null | undefined,
 ): string {
-  if (!parents?.length) return ''
-  const chain = parents.filter((p) => p.symbol && p.isotope)
-  if (!chain.length) return ''
-  const labels = chain.map((p) => formatIsotopeHtml(p.symbol, p.isotope))
-  labels.push(formatIsotopeHtml(currentSymbol, currentIsotope))
-  return labels.join(' → ')
+  if (!parents?.length) return '';
+  const chain = parents.filter((p) => p.symbol && p.isotope);
+  if (!chain.length) return '';
+  const labels = chain.map((p) => formatIsotopeHtml(p.symbol, p.isotope));
+  labels.push(formatIsotopeHtml(currentSymbol, currentIsotope));
+  return labels.join(' → ');
 }
 
 export function formatDecayType(number: number, locale: Locale): string {
-  const symbol = getSymbolByNumber(number)
-  const key = symbol ? storedElementDetails[symbol]?.isotopes?.decay : undefined
-  if (!key) return ''
-  return localeMessages[locale].decay[key] ?? localeMessages.ru.decay[key] ?? ''
+  const symbol = getSymbolByNumber(number);
+  const key = symbol ? storedElementDetails[symbol]?.isotopes?.decay : undefined;
+  if (!key) return '';
+  return localeMessages[locale].decay[key] ?? localeMessages.ru.decay[key] ?? '';
 }

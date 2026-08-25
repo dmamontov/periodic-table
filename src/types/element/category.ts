@@ -8,4 +8,4 @@ export type CategoryId =
   | 'halogen'
   | 'noble-gas'
   | 'lanthanides'
-  | 'actinides'
+  | 'actinides';

@@ -1,97 +1,97 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import type { Element } from '../../types/element/element'
-import { getCellBorderRadius, getElementPeriod, isElementRadioactive, isElementWeaklyRadioactive } from '../../data'
-import { intensityToBrightness } from '../../utils/heatmap'
-import { useLocale } from '../../locales'
-import { formatElementSymbol } from '../../utils/element/formatters'
-import RadiationIcon from '../common/RadiationIcon.vue'
+import { computed } from 'vue';
+import type { Element } from '../../types/element/element';
+import { getCellBorderRadius, getElementPeriod, isElementRadioactive, isElementWeaklyRadioactive } from '../../data';
+import { intensityToBrightness } from '../../utils/heatmap';
+import { useLocale } from '../../locales';
+import { formatElementSymbol } from '../../utils/element/formatters';
+import RadiationIcon from '../common/RadiationIcon.vue';
 
-const { tElement, formatMass, tSidebar, locale } = useLocale()
+const { tElement, formatMass, tSidebar, locale } = useLocale();
 
 const props = withDefaults(
   defineProps<{
-    element: Element
-    showPeriod?: boolean
-    showGroup?: boolean
-    singleRow?: boolean
-    selectedCategory?: string
-    axisPeriodHighlighted?: boolean
-    axisGroupHighlighted?: boolean
-    active?: boolean
+    element: Element;
+    showPeriod?: boolean;
+    showGroup?: boolean;
+    singleRow?: boolean;
+    selectedCategory?: string;
+    axisPeriodHighlighted?: boolean;
+    axisGroupHighlighted?: boolean;
+    active?: boolean;
     /** 0–1 when heatmap has data; null when heatmap is on but value is missing; undefined when heatmap is off */
-    heatmapIntensity?: number | null
-    heatmapHint?: string
-    heatmapCellValue?: string
+    heatmapIntensity?: number | null;
+    heatmapHint?: string;
+    heatmapCellValue?: string;
   }>(),
   {
     axisPeriodHighlighted: true,
     axisGroupHighlighted: true,
   },
-)
+);
 
 const emit = defineEmits<{
-  select: [element: Element]
-}>()
+  select: [element: Element];
+}>();
 
 const gridStyle = computed(() => ({
   gridRow: props.singleRow ? 1 : props.element.row,
   gridColumn: props.singleRow ? props.element.col - 3 : props.element.col,
-}))
+}));
 
 const surfaceStyle = computed(() => ({
   backgroundColor: props.element.color,
   borderRadius: getCellBorderRadius(props.element, props.singleRow),
-}))
+}));
 
-const displaySymbol = computed(() => formatElementSymbol(props.element.symbol))
+const displaySymbol = computed(() => formatElementSymbol(props.element.symbol));
 
 const showPeriodLabel = computed(() => {
-  if (!props.showPeriod) return false
-  if (props.singleRow) return props.element.col === 4
-  return props.element.col === 1
-})
+  if (!props.showPeriod) return false;
+  if (props.singleRow) return props.element.col === 4;
+  return props.element.col === 1;
+});
 
-const periodNumber = computed(() => getElementPeriod(props.element))
+const periodNumber = computed(() => getElementPeriod(props.element));
 
 const elementName = computed(() => {
-  void locale.value
-  return tElement(props.element.number)
-})
+  void locale.value;
+  return tElement(props.element.number);
+});
 const elementMass = computed(() => {
-  void locale.value
-  return formatMass(props.element.mass)
-})
+  void locale.value;
+  return formatMass(props.element.mass);
+});
 
-const cellBottomValue = computed(() => props.heatmapCellValue ?? elementMass.value)
+const cellBottomValue = computed(() => props.heatmapCellValue ?? elementMass.value);
 
-const axisFilterActive = computed(() => (props.selectedCategory ?? 'all') !== 'all')
+const axisFilterActive = computed(() => (props.selectedCategory ?? 'all') !== 'all');
 
 const isDimmed = computed(() => {
-  const selected = props.selectedCategory ?? 'all'
-  if (selected === 'all') return false
-  if (selected === 'collection') return !props.element.inCollection
-  return props.element.category !== selected
-})
+  const selected = props.selectedCategory ?? 'all';
+  if (selected === 'all') return false;
+  if (selected === 'collection') return !props.element.inCollection;
+  return props.element.category !== selected;
+});
 
-const heatmapActive = computed(() => props.heatmapIntensity !== undefined)
+const heatmapActive = computed(() => props.heatmapIntensity !== undefined);
 
-const surfaceOpacity = computed(() => (isDimmed.value ? 0.22 : 1))
+const surfaceOpacity = computed(() => (isDimmed.value ? 0.22 : 1));
 
 const surfaceFilter = computed(() => {
-  if (props.heatmapIntensity === undefined) return undefined
-  if (props.heatmapIntensity === null) return 'brightness(0.52) saturate(0.42)'
-  return `brightness(${intensityToBrightness(props.heatmapIntensity)})`
-})
+  if (props.heatmapIntensity === undefined) return undefined;
+  if (props.heatmapIntensity === null) return 'brightness(0.52) saturate(0.42)';
+  return `brightness(${intensityToBrightness(props.heatmapIntensity)})`;
+});
 
 const cellTitle = computed(() => {
-  const base = `${elementName.value} (${displaySymbol.value})`
-  if (props.heatmapHint) return `${base}\n${props.heatmapHint}`
-  return base
-})
+  const base = `${elementName.value} (${displaySymbol.value})`;
+  if (props.heatmapHint) return `${base}\n${props.heatmapHint}`;
+  return base;
+});
 
-const isRadioactive = computed(() => isElementRadioactive(props.element.number))
-const isWeaklyRadioactive = computed(() => isElementWeaklyRadioactive(props.element.number))
+const isRadioactive = computed(() => isElementRadioactive(props.element.number));
+const isWeaklyRadioactive = computed(() => isElementWeaklyRadioactive(props.element.number));
 </script>
 
 <template>

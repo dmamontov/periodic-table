@@ -7,9 +7,9 @@ export type GhsPictogramId =
   | 'acuteToxicity'
   | 'irritant'
   | 'healthHazard'
-  | 'environment'
+  | 'environment';
 
 export interface GhsDisplayItem {
-  id: GhsPictogramId
-  label: string
+  id: GhsPictogramId;
+  label: string;
 }

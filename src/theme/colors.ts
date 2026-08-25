@@ -1,6 +1,6 @@
-import type { CategoryId } from '../types/element/category'
-import type { HeatmapId } from '../types/heatmap'
-import type { SectionId } from '../types/element/section'
+import type { CategoryId } from '../types/element/category';
+import type { HeatmapId } from '../types/heatmap';
+import type { SectionId } from '../types/element/section';
 
 /**
  * Configurable colors that carry meaning, not just UI chrome — element category
@@ -22,24 +22,24 @@ export const CATEGORY_COLORS: Record<CategoryId, string> = {
   'noble-gas': '#d45d8d',
   lanthanides: '#3aafb9',
   actinides: '#007c91',
-}
+};
 
 /** The collection's own accent — "you own this" badges, the collection filter dot, collection stats. */
-export const COLLECTION_COLOR = '#c9a227'
+export const COLLECTION_COLOR = '#c9a227';
 
 /** Radioactive-status badge (element detail sidebar) — full vs. weakly radioactive. */
-export const RADIOACTIVE_COLOR = '#d14a0f'
-export const WEAK_RADIOACTIVE_COLOR = '#8a9aab'
+export const RADIOACTIVE_COLOR = '#d14a0f';
+export const WEAK_RADIOACTIVE_COLOR = '#8a9aab';
 
 /** Wishlist "upgrade available" badge — a sold sample beats what's already in the collection. */
-export const WISHLIST_UPGRADE_COLOR = '#4a90a4'
+export const WISHLIST_UPGRADE_COLOR = '#4a90a4';
 
 /** Subatomic particle color-coding — particle labels and the electron-shell diagram's default accent. */
 export const PARTICLE_COLORS = {
   electron: '#5b8def',
   proton: '#e05a6f',
   neutron: '#5cad52',
-}
+};
 
 /** Accent color per element-detail sidebar section (left border, section title). */
 export const SECTION_COLORS: Record<SectionId, string> = {
@@ -59,7 +59,7 @@ export const SECTION_COLORS: Record<SectionId, string> = {
   ghs: '#c0392b',
   prevalence: '#0e63a5',
   applications: '#5b4b8a',
-}
+};
 
 /** Accent color per heatmap (property) — cell tint and legend scale. */
 export const HEATMAP_ACCENT_COLORS: Record<HeatmapId, string> = {
@@ -78,4 +78,4 @@ export const HEATMAP_ACCENT_COLORS: Record<HeatmapId, string> = {
   earthAbundance: '#1b4332',
   meteoriteAbundance: '#2d6a4f',
   rarity: '#40916c',
-}
+};

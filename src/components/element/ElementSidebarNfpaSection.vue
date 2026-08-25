@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { useLocale } from '../../locales'
-import { useTheme } from '../../theme'
-import type { NfpaDisplay } from '../../utils/element/formatters'
-import RadiationIcon from '../common/RadiationIcon.vue'
+import { useLocale } from '../../locales';
+import { useTheme } from '../../theme';
+import type { NfpaDisplay } from '../../utils/element/formatters';
+import RadiationIcon from '../common/RadiationIcon.vue';
 
 defineProps<{
-  nfpaView: NfpaDisplay
-  hasDiamond: boolean
-}>()
+  nfpaView: NfpaDisplay;
+  hasDiamond: boolean;
+}>();
 
-const { tSidebar } = useLocale()
-const { resolvedTheme } = useTheme()
+const { tSidebar } = useLocale();
+const { resolvedTheme } = useTheme();
 </script>
 
 <template>
@@ -67,7 +67,8 @@ const { resolvedTheme } = useTheme()
               <span
                 v-else
                 :class="{ 'element-sidebar__diamond-w-strike': nfpaView.whiteStrike && part.value === 'W' }"
-              >{{ part.value }}</span>
+                >{{ part.value }}</span
+              >
             </template>
           </span>
         </div>

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import OrnamentDivider from './OrnamentDivider.vue'
+import OrnamentDivider from './OrnamentDivider.vue';
 
-const LAUNCH_YEAR = 2026
-const currentYear = new Date().getFullYear()
-const year = currentYear > LAUNCH_YEAR ? `${LAUNCH_YEAR}–${currentYear}` : `${LAUNCH_YEAR}`
-const email = 'd@mamontov.tech'
-const githubUrl = 'https://github.com/dmamontov/periodic-table'
+const LAUNCH_YEAR = 2026;
+const currentYear = new Date().getFullYear();
+const year = currentYear > LAUNCH_YEAR ? `${LAUNCH_YEAR}–${currentYear}` : `${LAUNCH_YEAR}`;
+const email = 'd@mamontov.tech';
+const githubUrl = 'https://github.com/dmamontov/periodic-table';
 </script>
 
 <template>
@@ -13,12 +13,7 @@ const githubUrl = 'https://github.com/dmamontov/periodic-table'
     <OrnamentDivider class="app-footer__ornament" />
     <div class="app-footer__text">
       <p class="app-footer__links">
-        <a
-          class="app-footer__link"
-          :href="`mailto:${email}`"
-          :aria-label="`Email: ${email}`"
-          :title="email"
-        >
+        <a class="app-footer__link" :href="`mailto:${email}`" :aria-label="`Email: ${email}`" :title="email">
           <svg
             class="app-footer__icon"
             viewBox="0 0 24 24"
@@ -121,11 +116,7 @@ const githubUrl = 'https://github.com/dmamontov/periodic-table'
 @media (max-width: 900px) {
   .app-footer {
     gap: 8px;
-    padding:
-      0
-      max(12px, env(safe-area-inset-right, 0px))
-      16px
-      max(12px, env(safe-area-inset-left, 0px));
+    padding: 0 max(12px, env(safe-area-inset-right, 0px)) 16px max(12px, env(safe-area-inset-left, 0px));
   }
 
   .app-footer__text {
@@ -136,11 +127,7 @@ const githubUrl = 'https://github.com/dmamontov/periodic-table'
 @media (orientation: landscape) and (max-width: 960px) {
   .app-footer {
     gap: 6px;
-    padding:
-      0
-      max(4px, env(safe-area-inset-right, 0px))
-      8px
-      max(4px, env(safe-area-inset-left, 0px));
+    padding: 0 max(4px, env(safe-area-inset-right, 0px)) 8px max(4px, env(safe-area-inset-left, 0px));
   }
 
   .app-footer__text {

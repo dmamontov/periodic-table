@@ -1,10 +1,10 @@
 <script setup lang="ts">
 defineProps<{
-  title: string
-  accentColor?: string
-}>()
+  title: string;
+  accentColor?: string;
+}>();
 
-const collapsed = defineModel<boolean>('collapsed', { required: true })
+const collapsed = defineModel<boolean>('collapsed', { required: true });
 </script>
 
 <template>

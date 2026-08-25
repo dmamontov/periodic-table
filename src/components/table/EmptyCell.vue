@@ -1,16 +1,12 @@
 <script setup lang="ts">
 defineProps<{
-  row: number
-  col?: number
-}>()
+  row: number;
+  col?: number;
+}>();
 </script>
 
 <template>
-  <div
-    class="empty-cell"
-    :style="{ gridRow: row, gridColumn: col ?? 3 }"
-    aria-hidden="true"
-  />
+  <div class="empty-cell" :style="{ gridRow: row, gridColumn: col ?? 3 }" aria-hidden="true" />
 </template>
 
 <style scoped>

@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import ElementSpectrumHeading from './ElementSpectrumHeading.vue'
-import Badge from '../common/Badge.vue'
-import { useLocale } from '../../locales'
-import { COLLECTION_COLOR, WISHLIST_UPGRADE_COLOR } from '../../theme/colors'
-import type { WishlistLink } from '../../types/collection/collection'
+import Badge from '../common/Badge.vue';
+import { useLocale } from '../../locales';
+import { COLLECTION_COLOR, WISHLIST_UPGRADE_COLOR } from '../../theme/colors';
+import type { WishlistLink } from '../../types/collection/collection';
+import ElementSpectrumHeading from './ElementSpectrumHeading.vue';
 
 defineProps<{
-  symbol: string
-  name: string
-  color: string
-  originHtml: string
-  links: WishlistLink[]
-  upgrade?: boolean
-}>()
+  symbol: string;
+  name: string;
+  color: string;
+  originHtml: string;
+  links: WishlistLink[];
+  upgrade?: boolean;
+}>();
 
-const emit = defineEmits<{ open: [] }>()
-const { messages } = useLocale()
+const emit = defineEmits<{ open: [] }>();
+const { messages } = useLocale();
 </script>
 
 <template>
@@ -34,7 +34,8 @@ const { messages } = useLocale()
         :href="link.url"
         target="_blank"
         rel="noopener noreferrer"
-        >{{ link.label }} ↗</a>
+        >{{ link.label }} ↗</a
+      >
     </div>
   </div>
 </template>

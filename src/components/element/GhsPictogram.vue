@@ -1,21 +1,14 @@
 <script setup lang="ts">
-import type { GhsPictogramId } from '../../types/element/ghs'
-import { ghsPictogramSources } from '../../assets/ghs'
+import type { GhsPictogramId } from '../../types/element/ghs';
+import { ghsPictogramSources } from '../../assets/ghs';
 
 defineProps<{
-  id: GhsPictogramId
-}>()
+  id: GhsPictogramId;
+}>();
 </script>
 
 <template>
-  <img
-    :src="ghsPictogramSources[id]"
-    class="ghs-pictogram"
-    alt=""
-    width="72"
-    height="72"
-    decoding="async"
-  />
+  <img :src="ghsPictogramSources[id]" class="ghs-pictogram" alt="" width="72" height="72" decoding="async" />
 </template>
 
 <style scoped>

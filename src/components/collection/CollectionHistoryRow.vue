@@ -1,26 +1,37 @@
 <script setup lang="ts">
-import ElementCollectionHistoryModal from '../element/ElementCollectionHistoryModal.vue'
-import ElementSpectrumHeading from './ElementSpectrumHeading.vue'
-import Badge from '../common/Badge.vue'
-import type { Element } from '../../types/element/element'
+import ElementCollectionHistoryModal from '../element/ElementCollectionHistoryModal.vue';
+import Badge from '../common/Badge.vue';
+import type { Element } from '../../types/element/element';
+import ElementSpectrumHeading from './ElementSpectrumHeading.vue';
 
 defineProps<{
-  element: Element
-  name: string
-  color: string
-  date: string
-  badgeColor: string
-  badgeLabel: string
-}>()
+  element: Element;
+  name: string;
+  color: string;
+  date: string;
+  badgeColor: string;
+  badgeLabel: string;
+}>();
 </script>
 
 <template>
-  <ElementCollectionHistoryModal :element="element" :element-name="name" :display-symbol="element.symbol" :accent-color="color">
+  <ElementCollectionHistoryModal
+    :element="element"
+    :element-name="name"
+    :display-symbol="element.symbol"
+    :accent-color="color"
+  >
     <template #trigger="{ open }">
       <button type="button" class="collection-history-row" @click="open">
         <span class="collection-history-row__marker" :style="{ backgroundColor: color }" />
         <span class="collection-history-row__date">{{ date }}</span>
-        <ElementSpectrumHeading :symbol="element.symbol" :name="name" :accent="color" compact class="collection-history-row__heading" />
+        <ElementSpectrumHeading
+          :symbol="element.symbol"
+          :name="name"
+          :accent="color"
+          compact
+          class="collection-history-row__heading"
+        />
         <Badge :color="badgeColor" class="collection-history-row__badge">{{ badgeLabel }}</Badge>
       </button>
     </template>

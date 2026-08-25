@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { DetailSection } from '../../types/element/section'
+import type { DetailSection } from '../../types/element/section';
 
 defineProps<{
-  section: DetailSection
-  imageUrl: string | null
-}>()
+  section: DetailSection;
+  imageUrl: string | null;
+}>();
 </script>
 
 <template>
@@ -21,12 +21,7 @@ defineProps<{
         <span v-else class="element-sidebar__prop-value">{{ item.value }}</span>
       </li>
     </ul>
-    <img
-      v-if="imageUrl"
-      :src="imageUrl"
-      :alt="section.items[0]?.value ?? ''"
-      class="element-sidebar__grid-image"
-    />
+    <img v-if="imageUrl" :src="imageUrl" :alt="section.items[0]?.value ?? ''" class="element-sidebar__grid-image" />
   </div>
   <ul v-if="section.items.slice(3).length" class="element-sidebar__props">
     <li

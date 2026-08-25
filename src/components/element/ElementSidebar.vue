@@ -1,110 +1,109 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, ref, toRef, useTemplateRef, watch } from 'vue'
-import type { Element } from '../../types/element/element'
-import type { DetailSection } from '../../types/element/section'
-import { useLocale } from '../../locales'
-import { useTheme } from '../../theme'
-import { COLLECTION_COLOR, RADIOACTIVE_COLOR, WEAK_RADIOACTIVE_COLOR } from '../../theme/colors'
-import { useElementDetail } from '../../composables/useElementDetail'
-import { getElementImageUrl, getElementRouteSymbol, getGridStructureImageUrlByNum, hasElementImage, isElementRadioactive, isElementWeaklyRadioactive } from '../../data'
-import { siteTitle, siteUrl } from '../../data/collection'
-import { resolveLocalizedLabel } from '../../utils/localizedLabel'
+import { computed, nextTick, onBeforeUnmount, ref, toRef, useTemplateRef, watch } from 'vue';
+import type { Element } from '../../types/element/element';
+import type { DetailSection } from '../../types/element/section';
+import { useLocale } from '../../locales';
+import { useTheme } from '../../theme';
+import { COLLECTION_COLOR, RADIOACTIVE_COLOR, WEAK_RADIOACTIVE_COLOR } from '../../theme/colors';
+import { useElementDetail } from '../../composables/useElementDetail';
 import {
-  buildElementSections,
-  isSectionEmpty,
-  parseOxidationStates,
-} from '../../utils/element/detailSections'
-import { buildGhsDisplay, buildNfpaDisplay, formatElementSymbol } from '../../utils/element/formatters'
-import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes'
-import { getWikipediaUrl } from '../../utils/external-links/wikipedia'
-import { getYouTubeUrl } from '../../utils/external-links/youtube'
-import wikiIconWhite from '../../assets/wiki-icon.svg'
-import wikiIconDark from '../../assets/wiki-icon-dark.svg'
-import youtubeIcon from '../../assets/youtube-icon.svg'
-import youtubeIconWhite from '../../assets/youtube-icon-white.svg'
-import ElementSidebarPropList from './ElementSidebarPropList.vue'
-import ElementSidebarGridSection from './ElementSidebarGridSection.vue'
-import ElementSidebarNfpaSection from './ElementSidebarNfpaSection.vue'
-import ElementSidebarGhsSection from './ElementSidebarGhsSection.vue'
-import ElementSidebarOverviewSection from './ElementSidebarOverviewSection.vue'
-import ElementSidebarMiningSection from './ElementSidebarMiningSection.vue'
-import ElementCollectionHistoryModal from './ElementCollectionHistoryModal.vue'
-import CollapsibleSection from '../common/CollapsibleSection.vue'
-import DrawerShell from '../common/DrawerShell.vue'
-import Badge from '../common/Badge.vue'
+  getElementImageUrl,
+  getElementRouteSymbol,
+  getGridStructureImageUrlByNum,
+  hasElementImage,
+  isElementRadioactive,
+  isElementWeaklyRadioactive,
+} from '../../data';
+import { siteTitle, siteUrl } from '../../data/collection';
+import { resolveLocalizedLabel } from '../../utils/localizedLabel';
+import { buildElementSections, isSectionEmpty, parseOxidationStates } from '../../utils/element/detailSections';
+import { buildGhsDisplay, buildNfpaDisplay, formatElementSymbol } from '../../utils/element/formatters';
+import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes';
+import { getWikipediaUrl } from '../../utils/external-links/wikipedia';
+import { getYouTubeUrl } from '../../utils/external-links/youtube';
+import wikiIconWhite from '../../assets/wiki-icon.svg';
+import wikiIconDark from '../../assets/wiki-icon-dark.svg';
+import youtubeIcon from '../../assets/youtube-icon.svg';
+import youtubeIconWhite from '../../assets/youtube-icon-white.svg';
+import CollapsibleSection from '../common/CollapsibleSection.vue';
+import DrawerShell from '../common/DrawerShell.vue';
+import Badge from '../common/Badge.vue';
+import ElementSidebarPropList from './ElementSidebarPropList.vue';
+import ElementSidebarGridSection from './ElementSidebarGridSection.vue';
+import ElementSidebarNfpaSection from './ElementSidebarNfpaSection.vue';
+import ElementSidebarGhsSection from './ElementSidebarGhsSection.vue';
+import ElementSidebarOverviewSection from './ElementSidebarOverviewSection.vue';
+import ElementSidebarMiningSection from './ElementSidebarMiningSection.vue';
+import ElementCollectionHistoryModal from './ElementCollectionHistoryModal.vue';
 
 const props = defineProps<{
-  element: Element | null
-}>()
+  element: Element | null;
+}>();
 
 const emit = defineEmits<{
-  close: []
-}>()
+  close: [];
+}>();
 
-const { tElement, tLegend, tSidebar, formatMass, messages, locale } = useLocale()
-const { resolvedTheme } = useTheme()
-const { detail, error } = useElementDetail(toRef(props, 'element'))
+const { tElement, tLegend, tSidebar, formatMass, messages, locale } = useLocale();
+const { resolvedTheme } = useTheme();
+const { detail, error } = useElementDetail(toRef(props, 'element'));
 
-const isOpen = computed(() => props.element !== null)
+const isOpen = computed(() => props.element !== null);
 
 const displaySymbol = computed(() => {
-  if (!props.element) return ''
-  return formatElementSymbol(props.element.symbol)
-})
+  if (!props.element) return '';
+  return formatElementSymbol(props.element.symbol);
+});
 
 const elementName = computed(() => {
-  void locale.value
-  return props.element ? tElement(props.element.number) : ''
-})
+  void locale.value;
+  return props.element ? tElement(props.element.number) : '';
+});
 
 const spectrumOriginHtml = computed(() => {
-  const el = props.element
-  if (!el) return ''
-  const radioactive = el.collection?.radioactive
+  const el = props.element;
+  if (!el) return '';
+  const radioactive = el.collection?.radioactive;
   return (
     formatDecayChainHtml(el.symbol, radioactive?.isotope, radioactive?.decayParent) ||
     formatIsotopeHtml(el.symbol, radioactive?.isotope)
-  )
-})
+  );
+});
 
 const elementMass = computed(() => {
-  if (!props.element) return ''
-  const mass = detail.value?.properties?.atomicMass ?? props.element.mass
-  void locale.value
-  return formatMass(mass)
-})
+  if (!props.element) return '';
+  const mass = detail.value?.properties?.atomicMass ?? props.element.mass;
+  void locale.value;
+  return formatMass(mass);
+});
 
 const categoryLabel = computed(() => {
-  void locale.value
-  return props.element ? tLegend(props.element.category) : ''
-})
+  void locale.value;
+  return props.element ? tLegend(props.element.category) : '';
+});
 
-const overview = computed(() => detail.value?.overview)
+const overview = computed(() => detail.value?.overview);
 
-const isRadioactive = computed(() =>
-  props.element ? isElementRadioactive(props.element.number) : false,
-)
+const isRadioactive = computed(() => (props.element ? isElementRadioactive(props.element.number) : false));
 
-const isWeaklyRadioactive = computed(() =>
-  props.element ? isElementWeaklyRadioactive(props.element.number) : false,
-)
+const isWeaklyRadioactive = computed(() => (props.element ? isElementWeaklyRadioactive(props.element.number) : false));
 
-const isInCollection = computed(() => props.element?.inCollection ?? false)
+const isInCollection = computed(() => props.element?.inCollection ?? false);
 
 function gridSectionImageUrl(section: DetailSection): string | null {
-  return getGridStructureImageUrlByNum(section.structureCode)
+  return getGridStructureImageUrlByNum(section.structureCode);
 }
 
 const nfpaDisplay = computed(() => {
-  void locale.value
-  return buildNfpaDisplay(detail.value?.nucleus?.nfpaCube, locale.value)
-})
+  void locale.value;
+  return buildNfpaDisplay(detail.value?.nucleus?.nfpaCube, locale.value);
+});
 
 const ghsDisplay = computed(() => {
-  void locale.value
-  if (!props.element) return []
-  return buildGhsDisplay(props.element.number, locale.value)
-})
+  void locale.value;
+  if (!props.element) return [];
+  return buildGhsDisplay(props.element.number, locale.value);
+});
 
 const nfpaEmpty = {
   red: '',
@@ -118,144 +117,128 @@ const nfpaEmpty = {
   yellowLabel: '----',
   whiteLabel: '----',
   whiteStrike: false,
-}
+};
 
-const nfpaView = computed(() => nfpaDisplay.value ?? nfpaEmpty)
+const nfpaView = computed(() => nfpaDisplay.value ?? nfpaEmpty);
 
 const sections = computed(() => {
-  void locale.value
-  if (!detail.value || !props.element) return []
-  return buildElementSections(
-    detail.value,
-    props.element,
-    messages.value,
-    elementName.value,
-    locale.value,
-  )
-})
+  void locale.value;
+  if (!detail.value || !props.element) return [];
+  return buildElementSections(detail.value, props.element, messages.value, elementName.value, locale.value);
+});
 
-const oxidationStates = computed(() =>
-  parseOxidationStates(detail.value?.atomic?.oxidationState),
-)
+const oxidationStates = computed(() => parseOxidationStates(detail.value?.atomic?.oxidationState));
 
-const imageUrl = computed(() =>
-  props.element ? getElementImageUrl(props.element.number) : null,
-)
+const imageUrl = computed(() => (props.element ? getElementImageUrl(props.element.number) : null));
 
-const hasImage = computed(() =>
-  props.element ? hasElementImage(props.element.number) : false,
-)
+const hasImage = computed(() => (props.element ? hasElementImage(props.element.number) : false));
 
-const headerWikiIcon = computed(() =>
-  resolvedTheme.value === 'dark' ? wikiIconWhite : wikiIconDark,
-)
+const headerWikiIcon = computed(() => (resolvedTheme.value === 'dark' ? wikiIconWhite : wikiIconDark));
 
-const headerYoutubeIcon = computed(() =>
-  resolvedTheme.value === 'dark' ? youtubeIconWhite : youtubeIcon,
-)
+const headerYoutubeIcon = computed(() => (resolvedTheme.value === 'dark' ? youtubeIconWhite : youtubeIcon));
 
 const wikipediaUrl = computed(() => {
-  void locale.value
-  if (!props.element) return ''
-  return getWikipediaUrl(props.element.number, locale.value, detail.value)
-})
+  void locale.value;
+  if (!props.element) return '';
+  return getWikipediaUrl(props.element.number, locale.value, detail.value);
+});
 
 const youtubeUrl = computed(() => {
-  void locale.value
-  if (!props.element) return ''
-  return getYouTubeUrl(props.element.number, locale.value, detail.value)
-})
+  void locale.value;
+  if (!props.element) return '';
+  return getYouTubeUrl(props.element.number, locale.value, detail.value);
+});
 
-const shareIconColor = computed(() => (resolvedTheme.value === 'dark' ? '#ffffff' : '#2f2f2f'))
+const shareIconColor = computed(() => (resolvedTheme.value === 'dark' ? '#ffffff' : '#2f2f2f'));
 
 const shareUrl = computed(() => {
-  if (!props.element) return ''
-  return `${siteUrl}/element/${getElementRouteSymbol(props.element.symbol)}`
-})
+  if (!props.element) return '';
+  return `${siteUrl}/element/${getElementRouteSymbol(props.element.symbol)}`;
+});
 
-const shareCopied = ref(false)
-let shareCopiedTimeout: ReturnType<typeof setTimeout> | undefined
+const shareCopied = ref(false);
+let shareCopiedTimeout: ReturnType<typeof setTimeout> | undefined;
 
 async function share(): Promise<void> {
-  if (!props.element) return
-  const url = shareUrl.value
-  const title = `${elementName.value} (${displaySymbol.value}) — ${resolveLocalizedLabel(siteTitle, locale.value)}`
+  if (!props.element) return;
+  const url = shareUrl.value;
+  const title = `${elementName.value} (${displaySymbol.value}) — ${resolveLocalizedLabel(siteTitle, locale.value)}`;
 
   if (navigator.share) {
     try {
-      await navigator.share({ title, url })
+      await navigator.share({ title, url });
     } catch {
       // user dismissed the native share sheet — not an error
     }
-    return
+    return;
   }
 
   try {
-    await navigator.clipboard.writeText(url)
+    await navigator.clipboard.writeText(url);
   } catch {
-    return
+    return;
   }
-  shareCopied.value = true
-  clearTimeout(shareCopiedTimeout)
+  shareCopied.value = true;
+  clearTimeout(shareCopiedTimeout);
   shareCopiedTimeout = setTimeout(() => {
-    shareCopied.value = false
-  }, 1500)
+    shareCopied.value = false;
+  }, 1500);
 }
 
-onBeforeUnmount(() => clearTimeout(shareCopiedTimeout))
+onBeforeUnmount(() => clearTimeout(shareCopiedTimeout));
 
-const collapsedSections = ref<Set<string>>(new Set())
-let lastCollapsedForElement: number | undefined
+const collapsedSections = ref<Set<string>>(new Set());
+let lastCollapsedForElement: number | undefined;
 
-const containerRef = useTemplateRef<HTMLElement>('containerRef')
-const headerSentinelRef = useTemplateRef<HTMLElement>('headerSentinelRef')
-const showStickyNav = ref(false)
-let headerObserver: IntersectionObserver | null = null
+const containerRef = useTemplateRef<HTMLElement>('containerRef');
+const headerSentinelRef = useTemplateRef<HTMLElement>('headerSentinelRef');
+const showStickyNav = ref(false);
+let headerObserver: IntersectionObserver | null = null;
 
 function disconnectHeaderObserver(): void {
-  headerObserver?.disconnect()
-  headerObserver = null
+  headerObserver?.disconnect();
+  headerObserver = null;
 }
 
 function setupHeaderObserver(): void {
-  disconnectHeaderObserver()
-  showStickyNav.value = false
+  disconnectHeaderObserver();
+  showStickyNav.value = false;
 
-  const root = containerRef.value
-  const sentinel = headerSentinelRef.value
-  if (!root || !sentinel) return
+  const root = containerRef.value;
+  const sentinel = headerSentinelRef.value;
+  if (!root || !sentinel) return;
 
   headerObserver = new IntersectionObserver(
     ([entry]) => {
-      if (entry) showStickyNav.value = !entry.isIntersecting
+      if (entry) showStickyNav.value = !entry.isIntersecting;
     },
     { root, threshold: 0 },
-  )
-  headerObserver.observe(sentinel)
+  );
+  headerObserver.observe(sentinel);
 }
 
 watch(
   () => [props.element?.number, isOpen.value] as const,
   async ([num, open]) => {
     if (!open || !num) {
-      showStickyNav.value = false
-      disconnectHeaderObserver()
-      return
+      showStickyNav.value = false;
+      disconnectHeaderObserver();
+      return;
     }
-    await nextTick()
-    containerRef.value?.scrollTo(0, 0)
-    await nextTick(() => setupHeaderObserver())
+    await nextTick();
+    containerRef.value?.scrollTo(0, 0);
+    await nextTick(() => setupHeaderObserver());
   },
   { immediate: true },
-)
+);
 
 onBeforeUnmount(() => {
-  disconnectHeaderObserver()
-})
+  disconnectHeaderObserver();
+});
 
 function applyDefaultCollapsedSections(): void {
-  const num = props.element?.number
-  if (!num || !sections.value.length) return
+  const num = props.element?.number;
+  if (!num || !sections.value.length) return;
 
   collapsedSections.value = new Set(
     sections.value
@@ -271,159 +254,131 @@ function applyDefaultCollapsedSections(): void {
         }),
       )
       .map((section) => section.sectionKey ?? section.id),
-  )
+  );
 }
 
 watch(
   () => [props.element?.number, sections.value] as const,
   ([num, secs]) => {
     if (!num) {
-      lastCollapsedForElement = undefined
-      collapsedSections.value = new Set()
-      return
+      lastCollapsedForElement = undefined;
+      collapsedSections.value = new Set();
+      return;
     }
-    if (!secs.length) return
+    if (!secs.length) return;
     if (num !== lastCollapsedForElement) {
-      lastCollapsedForElement = num
-      applyDefaultCollapsedSections()
+      lastCollapsedForElement = num;
+      applyDefaultCollapsedSections();
     }
   },
   { immediate: true },
-)
+);
 
 function isSectionCollapsed(sectionKey: string): boolean {
-  return collapsedSections.value.has(sectionKey)
+  return collapsedSections.value.has(sectionKey);
 }
 
 function toggleSection(sectionKey: string): void {
-  const next = new Set(collapsedSections.value)
-  if (next.has(sectionKey)) next.delete(sectionKey)
-  else next.add(sectionKey)
-  collapsedSections.value = next
+  const next = new Set(collapsedSections.value);
+  if (next.has(sectionKey)) next.delete(sectionKey);
+  else next.add(sectionKey);
+  collapsedSections.value = next;
 }
 </script>
 
 <template>
-  <DrawerShell
-    panel-class="element-sidebar"
-    :is-open="isOpen"
-    :close-label="tSidebar('close')"
-    @close="emit('close')"
-  >
-      <div v-if="element" class="element-sidebar__shell">
-        <div
-          class="element-sidebar__sticky-nav"
-          :class="{ 'element-sidebar__sticky-nav--visible': showStickyNav }"
-          :style="{ backgroundColor: element.color }"
-        >
-          <button
-            type="button"
-            class="element-sidebar__back"
-            :aria-label="tSidebar('close')"
-            @click="emit('close')"
-          />
-          <div class="element-sidebar__sticky-identity">
-            <span class="element-sidebar__sticky-name">{{ elementName }}</span>
-            <div class="element-sidebar__sticky-symbol-row">
-              <span class="element-sidebar__sticky-symbol">{{ displaySymbol }}</span>
-              <span class="element-sidebar__sticky-number">{{ element.number }}</span>
-            </div>
-          </div>
-          <div
-            v-if="youtubeUrl || wikipediaUrl"
-            class="element-sidebar__header-links element-sidebar__sticky-links"
-          >
-            <a
-              v-if="youtubeUrl"
-              :href="youtubeUrl"
-              class="element-sidebar__header-link"
-              :aria-label="tSidebar('youtube')"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                class="element-sidebar__header-link-icon element-sidebar__header-link-icon--youtube"
-                :src="youtubeIconWhite"
-                alt=""
-              />
-            </a>
-            <a
-              v-if="wikipediaUrl"
-              :href="wikipediaUrl"
-              class="element-sidebar__header-link"
-              :aria-label="tSidebar('wikipedia')"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                class="element-sidebar__header-link-icon"
-                :src="wikiIconWhite"
-                alt=""
-              />
-            </a>
-            <button
-              type="button"
-              class="element-sidebar__header-link element-sidebar__header-link--share"
-              :aria-label="shareCopied ? tSidebar('shareCopied') : tSidebar('share')"
-              @click="share"
-            >
-              <svg
-                v-if="!shareCopied"
-                class="element-sidebar__header-link-icon element-sidebar__header-link-icon--share"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M12 2v13" />
-                <path d="m16 6-4-4-4 4" />
-                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-              </svg>
-              <svg
-                v-else
-                class="element-sidebar__header-link-icon element-sidebar__header-link-icon--share"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M4 12l5 5L20 6" />
-              </svg>
-            </button>
+  <DrawerShell panel-class="element-sidebar" :is-open="isOpen" :close-label="tSidebar('close')" @close="emit('close')">
+    <div v-if="element" class="element-sidebar__shell">
+      <div
+        class="element-sidebar__sticky-nav"
+        :class="{ 'element-sidebar__sticky-nav--visible': showStickyNav }"
+        :style="{ backgroundColor: element.color }"
+      >
+        <button type="button" class="element-sidebar__back" :aria-label="tSidebar('close')" @click="emit('close')" />
+        <div class="element-sidebar__sticky-identity">
+          <span class="element-sidebar__sticky-name">{{ elementName }}</span>
+          <div class="element-sidebar__sticky-symbol-row">
+            <span class="element-sidebar__sticky-symbol">{{ displaySymbol }}</span>
+            <span class="element-sidebar__sticky-number">{{ element.number }}</span>
           </div>
         </div>
+        <div v-if="youtubeUrl || wikipediaUrl" class="element-sidebar__header-links element-sidebar__sticky-links">
+          <a
+            v-if="youtubeUrl"
+            :href="youtubeUrl"
+            class="element-sidebar__header-link"
+            :aria-label="tSidebar('youtube')"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              class="element-sidebar__header-link-icon element-sidebar__header-link-icon--youtube"
+              :src="youtubeIconWhite"
+              alt=""
+            />
+          </a>
+          <a
+            v-if="wikipediaUrl"
+            :href="wikipediaUrl"
+            class="element-sidebar__header-link"
+            :aria-label="tSidebar('wikipedia')"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img class="element-sidebar__header-link-icon" :src="wikiIconWhite" alt="" />
+          </a>
+          <button
+            type="button"
+            class="element-sidebar__header-link element-sidebar__header-link--share"
+            :aria-label="shareCopied ? tSidebar('shareCopied') : tSidebar('share')"
+            @click="share"
+          >
+            <svg
+              v-if="!shareCopied"
+              class="element-sidebar__header-link-icon element-sidebar__header-link-icon--share"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 2v13" />
+              <path d="m16 6-4-4-4 4" />
+              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+            </svg>
+            <svg
+              v-else
+              class="element-sidebar__header-link-icon element-sidebar__header-link-icon--share"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+          </button>
+        </div>
+      </div>
 
-        <div class="element-sidebar__container" ref="containerRef">
-        <header
-          class="element-sidebar__header"
-          :class="{ 'element-sidebar__header--no-image': !hasImage }"
-        >
+      <div class="element-sidebar__container" ref="containerRef">
+        <header class="element-sidebar__header" :class="{ 'element-sidebar__header--no-image': !hasImage }">
           <div
             class="element-sidebar__header-media"
             :style="!hasImage ? { backgroundColor: element.color } : undefined"
           >
-            <img
-              v-if="imageUrl"
-              class="element-sidebar__image"
-              :src="imageUrl"
-              alt=""
-            />
+            <img v-if="imageUrl" class="element-sidebar__image" :src="imageUrl" alt="" />
             <button
               type="button"
               class="element-sidebar__back element-sidebar__back--on-image"
               :aria-label="tSidebar('close')"
               @click="emit('close')"
             />
-            <div
-              v-if="youtubeUrl || wikipediaUrl"
-              class="element-sidebar__header-links"
-            >
+            <div v-if="youtubeUrl || wikipediaUrl" class="element-sidebar__header-links">
               <a
                 v-if="youtubeUrl"
                 :href="youtubeUrl"
@@ -446,11 +401,7 @@ function toggleSection(sectionKey: string): void {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
-                  class="element-sidebar__header-link-icon"
-                  :src="headerWikiIcon"
-                  alt=""
-                />
+                <img class="element-sidebar__header-link-icon" :src="headerWikiIcon" alt="" />
               </a>
               <button
                 type="button"
@@ -494,10 +445,7 @@ function toggleSection(sectionKey: string): void {
 
           <div ref="headerSentinelRef" class="element-sidebar__header-sentinel" aria-hidden="true" />
 
-          <div
-            class="element-sidebar__header-info"
-            :style="{ '--accent': element.color }"
-          >
+          <div class="element-sidebar__header-info" :style="{ '--accent': element.color }">
             <div class="element-sidebar__header-main">
               <h2 class="element-sidebar__name">{{ elementName }}</h2>
               <div class="element-sidebar__symbol-row">
@@ -564,10 +512,7 @@ function toggleSection(sectionKey: string): void {
               :has-diamond="Boolean(nfpaDisplay)"
             />
 
-            <ElementSidebarGhsSection
-              v-if="section.id === 'ghs'"
-              :items="ghsDisplay"
-            />
+            <ElementSidebarGhsSection v-if="section.id === 'ghs'" :items="ghsDisplay" />
 
             <ElementSidebarOverviewSection
               v-if="section.id === 'overview'"
@@ -585,13 +530,12 @@ function toggleSection(sectionKey: string): void {
             />
           </CollapsibleSection>
         </div>
-        </div>
       </div>
+    </div>
   </DrawerShell>
 </template>
 
 <style scoped>
-
 .element-sidebar__sticky-nav {
   position: absolute;
   top: 0;
@@ -784,7 +728,9 @@ function toggleSection(sectionKey: string): void {
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 18l-6-6 6-6'/%3E%3C/svg%3E")
     center / 18px no-repeat;
   cursor: pointer;
-  transition: transform 0.15s ease, background-color 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease;
 }
 
 .element-sidebar__back--on-image {
@@ -799,8 +745,10 @@ function toggleSection(sectionKey: string): void {
   inset: 0;
   border-radius: 50%;
   background-color: var(--color-icon-on-surface);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 18l-6-6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 18l-6-6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 18l-6-6 6-6'/%3E%3C/svg%3E")
+    center / 18px no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 18l-6-6 6-6'/%3E%3C/svg%3E")
+    center / 18px no-repeat;
 }
 
 .element-sidebar__back:hover {
@@ -849,7 +797,9 @@ function toggleSection(sectionKey: string): void {
   box-shadow: none;
   font: inherit;
   cursor: pointer;
-  transition: transform 0.15s ease, background-color 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease;
 }
 
 .element-sidebar__header-link-icon {

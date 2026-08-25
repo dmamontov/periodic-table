@@ -1,4 +1,4 @@
-export type Locale = 'ru' | 'en' | 'zh'
+export type Locale = 'ru' | 'en' | 'zh';
 
 export type LegendKey =
   | 'alkali'
@@ -10,283 +10,276 @@ export type LegendKey =
   | 'halogen'
   | 'nobleGas'
   | 'lanthanides'
-  | 'actinides'
+  | 'actinides';
 
 export type DecayModeKey =
-  | 'stable'
-  | 'alpha'
-  | 'betaMinus'
-  | 'betaPlus'
-  | 'electronCapture'
-  | 'spontaneousFission'
-  | 'alphaBeta'
-  | 'isomeric'
+  'stable' | 'alpha' | 'betaMinus' | 'betaPlus' | 'electronCapture' | 'spontaneousFission' | 'alphaBeta' | 'isomeric';
 
 export interface LocaleMessages {
   siteHeading: {
-    line1: string
-    line2: string
-  }
-  language: string
+    line1: string;
+    line2: string;
+  };
+  language: string;
   search: {
-    label: string
-    placeholder: string
-    noResults: string
-  }
+    label: string;
+    placeholder: string;
+    noResults: string;
+  };
   menu: {
-    label: string
-    collection: string
-  }
+    label: string;
+    collection: string;
+  };
   collectionPanel: {
-    sectionTitle: string
-    spectraSectionTitle: string
-    historySectionTitle: string
-    historyNewBadge: string
-    historyReplacedBadge: string
-    wishlistSectionTitle: string
-    wishlistUpgradeBadge: string
-    close: string
-    statCollected: string
-    statRadioactive: string
-    collectibleNote: string
-  }
-  theme: string
-  themeLight: string
-  themeDark: string
-  themeAuto: string
+    sectionTitle: string;
+    spectraSectionTitle: string;
+    historySectionTitle: string;
+    historyNewBadge: string;
+    historyReplacedBadge: string;
+    wishlistSectionTitle: string;
+    wishlistUpgradeBadge: string;
+    close: string;
+    statCollected: string;
+    statRadioactive: string;
+    collectibleNote: string;
+  };
+  theme: string;
+  themeLight: string;
+  themeDark: string;
+  themeAuto: string;
   categories: {
-    all: string
-  }
+    all: string;
+  };
   heatmap: {
-    title: string
-    off: string
-    noData: string
-    stable: string
+    title: string;
+    off: string;
+    noData: string;
+    stable: string;
     maps: {
-      electronegativity: string
-      atomicRadius: string
-      ionizationEnergy: string
-      electronAffinity: string
-      density: string
-      meltingPoint: string
-      boilingPoint: string
-      atomicMass: string
-      covalentRadius: string
-      halfLife: string
-      lifetime: string
-      decayMode: string
-      earthAbundance: string
-      meteoriteAbundance: string
-      rarity: string
-    }
+      electronegativity: string;
+      atomicRadius: string;
+      ionizationEnergy: string;
+      electronAffinity: string;
+      density: string;
+      meltingPoint: string;
+      boilingPoint: string;
+      atomicMass: string;
+      covalentRadius: string;
+      halfLife: string;
+      lifetime: string;
+      decayMode: string;
+      earthAbundance: string;
+      meteoriteAbundance: string;
+      rarity: string;
+    };
     groups: {
-      atomic: string
-      trends: string
-      physical: string
-      nuclear: string
-      other: string
-    }
+      atomic: string;
+      trends: string;
+      physical: string;
+      nuclear: string;
+      other: string;
+    };
     rarityLegend: {
-      rare: string
-      common: string
-    }
+      rare: string;
+      common: string;
+    };
     durationUnits: {
-      billionYears: string
-      years: string
-      days: string
-      hours: string
-      minutes: string
-      seconds: string
-    }
-  }
+      billionYears: string;
+      years: string;
+      days: string;
+      hours: string;
+      minutes: string;
+      seconds: string;
+    };
+  };
   sidebar: {
-    close: string
-    wikipedia: string
-    youtube: string
-    share: string
-    shareCopied: string
-    massUnit: string
-    loading: string
-    error: string
-    yes: string
-    no: string
-    weakRadioactiveYes: string
-    electrons: string
-    protons: string
-    neutrons: string
-    blockSuffix: string
-    collectionHistorySince: string
-    collectionHistoryCurrent: string
-    collectionHistoryRetained: string
-    collectionHistoryNotRetained: string
+    close: string;
+    wikipedia: string;
+    youtube: string;
+    share: string;
+    shareCopied: string;
+    massUnit: string;
+    loading: string;
+    error: string;
+    yes: string;
+    no: string;
+    weakRadioactiveYes: string;
+    electrons: string;
+    protons: string;
+    neutrons: string;
+    blockSuffix: string;
+    collectionHistorySince: string;
+    collectionHistoryCurrent: string;
+    collectionHistoryRetained: string;
+    collectionHistoryNotRetained: string;
     sections: {
-      overview: string
-      mining: string
-      description: string
-      properties: string
-      thermodynamic: string
-      atomic: string
-      electromagnetic: string
-      grid: string
-      gridNumbered: string
-      additional: string
-      reactivity: string
-      nuclear: string
-      nfpa: string
-      ghs: string
-      prevalence: string
-      applications: string
-    }
+      overview: string;
+      mining: string;
+      description: string;
+      properties: string;
+      thermodynamic: string;
+      atomic: string;
+      electromagnetic: string;
+      grid: string;
+      gridNumbered: string;
+      additional: string;
+      reactivity: string;
+      nuclear: string;
+      nfpa: string;
+      ghs: string;
+      prevalence: string;
+      applications: string;
+    };
     props: {
-      latinName: string
-      englishName: string
-      discoveryYear: string
-      discoveryOpener: string
-      discoveryCountry: string
-      casNumber: string
-      electronShell: string
-      atomicNumber: string
-      atomicMass: string
-      density: string
-      meltingPoint: string
-      boilingPoint: string
-      valence: string
-      period: string
-      group: string
-      block: string
-      emissionSpectrum: string
-      aggregationState: string
-      fusionHeat: string
-      specificHeat: string
-      thermalExpansion: string
-      vaporizationHeat: string
-      electronConfig: string
-      ionCharge: string
-      ionizationPotential: string
-      atomicRadius: string
-      covalentRadius: string
-      vanDerWaalsRadius: string
-      electroConductivity: string
-      electricType: string
-      magneticType: string
-      volumeMagneticSusceptibility: string
-      massMagneticSusceptibility: string
-      molarMagneticSusceptibility: string
-      resistivity: string
-      superconductivityTemp: string
-      gridStructure: string
-      gridParams: string
-      gridRatio: string
-      debyeTemp: string
-      spaceGroup: string
-      spaceGroupNumber: string
-      cid: string
-      rtec: string
-      brinellHardness: string
-      mohsHardness: string
-      vickersHardness: string
-      bulkModulus: string
-      youngModulus: string
-      liquidDensity: string
-      molarVolume: string
-      poissonRatio: string
-      shearModulus: string
-      soundSpeed: string
-      refractiveIndex: string
-      thermalConductivity: string
-      electronegativity: string
-      electronAffinity: string
-      radioactive: string
-      mainIsotopes: string
-      decayType: string
-      halfLife: string
-      lifetime: string
-      neutronCrossSection: string
-      color: string
-      collectionSampleState: string
-      collectionAllotrope: string
-      collectionContainer: string
-      collectionAcquiredDate: string
-      collectionHistory: string
-      collectionHistoryReason: string
-      collectionIsotope: string
-      collectionSourceType: string
-      collectionDecayParent: string
-      collectionPurity: string
-      collectionWeight: string
-      collectionSpectrum: string
-      spectrum: string
-    }
+      latinName: string;
+      englishName: string;
+      discoveryYear: string;
+      discoveryOpener: string;
+      discoveryCountry: string;
+      casNumber: string;
+      electronShell: string;
+      atomicNumber: string;
+      atomicMass: string;
+      density: string;
+      meltingPoint: string;
+      boilingPoint: string;
+      valence: string;
+      period: string;
+      group: string;
+      block: string;
+      emissionSpectrum: string;
+      aggregationState: string;
+      fusionHeat: string;
+      specificHeat: string;
+      thermalExpansion: string;
+      vaporizationHeat: string;
+      electronConfig: string;
+      ionCharge: string;
+      ionizationPotential: string;
+      atomicRadius: string;
+      covalentRadius: string;
+      vanDerWaalsRadius: string;
+      electroConductivity: string;
+      electricType: string;
+      magneticType: string;
+      volumeMagneticSusceptibility: string;
+      massMagneticSusceptibility: string;
+      molarMagneticSusceptibility: string;
+      resistivity: string;
+      superconductivityTemp: string;
+      gridStructure: string;
+      gridParams: string;
+      gridRatio: string;
+      debyeTemp: string;
+      spaceGroup: string;
+      spaceGroupNumber: string;
+      cid: string;
+      rtec: string;
+      brinellHardness: string;
+      mohsHardness: string;
+      vickersHardness: string;
+      bulkModulus: string;
+      youngModulus: string;
+      liquidDensity: string;
+      molarVolume: string;
+      poissonRatio: string;
+      shearModulus: string;
+      soundSpeed: string;
+      refractiveIndex: string;
+      thermalConductivity: string;
+      electronegativity: string;
+      electronAffinity: string;
+      radioactive: string;
+      mainIsotopes: string;
+      decayType: string;
+      halfLife: string;
+      lifetime: string;
+      neutronCrossSection: string;
+      color: string;
+      collectionSampleState: string;
+      collectionAllotrope: string;
+      collectionContainer: string;
+      collectionAcquiredDate: string;
+      collectionHistory: string;
+      collectionHistoryReason: string;
+      collectionIsotope: string;
+      collectionSourceType: string;
+      collectionDecayParent: string;
+      collectionPurity: string;
+      collectionWeight: string;
+      collectionSpectrum: string;
+      spectrum: string;
+    };
     units: {
-      gPerMol: string
-      gPerCm3: string
-      celsius: string
-      fahrenheit: string
-      kelvin: string
-      kjPerMol: string
-      jPerKgK: string
-      eV: string
-      pm: string
-      cm3PerMol: string
-      mPerS: string
-      wPerMK: string
-      gram: string
-      milligram: string
-    }
-    aggregationState: Record<'gas' | 'solid' | 'liquid' | 'unknown', string>
-    magneticType: Record<'none' | 'diamagnetic' | 'paramagnetic' | 'antiferromagnetic' | 'ferromagnetic', string>
-    blocks: Record<'s' | 'p' | 'd' | 'f', string>
+      gPerMol: string;
+      gPerCm3: string;
+      celsius: string;
+      fahrenheit: string;
+      kelvin: string;
+      kjPerMol: string;
+      jPerKgK: string;
+      eV: string;
+      pm: string;
+      cm3PerMol: string;
+      mPerS: string;
+      wPerMK: string;
+      gram: string;
+      milligram: string;
+    };
+    aggregationState: Record<'gas' | 'solid' | 'liquid' | 'unknown', string>;
+    magneticType: Record<'none' | 'diamagnetic' | 'paramagnetic' | 'antiferromagnetic' | 'ferromagnetic', string>;
+    blocks: Record<'s' | 'p' | 'd' | 'f', string>;
     gridStructures: {
-      hexagonal: string
-      hcp: string
-      bcc: string
-      fcc: string
-      rhombohedral: string
-      simpleHexagonal: string
-      cubic: string
-      diamondCubic: string
-      orthorhombic: string
-      tetragonal: string
-      doubleHcp: string
-      monoclinic: string
-    }
-    countries: Record<string, string>
+      hexagonal: string;
+      hcp: string;
+      bcc: string;
+      fcc: string;
+      rhombohedral: string;
+      simpleHexagonal: string;
+      cubic: string;
+      diamondCubic: string;
+      orthorhombic: string;
+      tetragonal: string;
+      doubleHcp: string;
+      monoclinic: string;
+    };
+    countries: Record<string, string>;
     prevalence: {
-      universe: string
-      sun: string
-      ocean: string
-      human: string
-      crust: string
-      meteorites: string
-    }
-    oxidationStates: string
-    nfpaFire: string
-    nfpaHealth: string
-    nfpaReactivity: string
-    nfpaSpecial: string
-    nfpaDiamond: string
-    radioactiveBadge: string
-    weakRadioactiveBadge: string
-    collectionBadge: string
-    collectionSpectrumDownload: string
-    collectionSpectrumZoom: string
-    collectionSpectrumPrev: string
-    collectionSpectrumNext: string
-    collectionSpectrumScale: string
-    collectionSpectrumFilter: string
-    collectionSpectrumLeadShielded: string
-    collectionSpectrumNote: string
-    collectionSpectrumScaleLinear: string
-    collectionSpectrumScaleLog: string
-    miniTableAria: string
-    sourceTypes: Record<'primary' | 'secondary', string>
-  }
+      universe: string;
+      sun: string;
+      ocean: string;
+      human: string;
+      crust: string;
+      meteorites: string;
+    };
+    oxidationStates: string;
+    nfpaFire: string;
+    nfpaHealth: string;
+    nfpaReactivity: string;
+    nfpaSpecial: string;
+    nfpaDiamond: string;
+    radioactiveBadge: string;
+    weakRadioactiveBadge: string;
+    collectionBadge: string;
+    collectionSpectrumDownload: string;
+    collectionSpectrumZoom: string;
+    collectionSpectrumPrev: string;
+    collectionSpectrumNext: string;
+    collectionSpectrumScale: string;
+    collectionSpectrumFilter: string;
+    collectionSpectrumLeadShielded: string;
+    collectionSpectrumNote: string;
+    collectionSpectrumScaleLinear: string;
+    collectionSpectrumScaleLog: string;
+    miniTableAria: string;
+    sourceTypes: Record<'primary' | 'secondary', string>;
+  };
   nfpa: {
-    nfpa1: Record<string, string>
-    nfpa2: Record<string, string>
-    nfpa3: Record<string, string>
-    nfpa4: Record<string, string>
-  }
+    nfpa1: Record<string, string>;
+    nfpa2: Record<string, string>;
+    nfpa3: Record<string, string>;
+    nfpa4: Record<string, string>;
+  };
   ghs: Record<
     | 'explosive'
     | 'flammable'
@@ -298,12 +291,12 @@ export interface LocaleMessages {
     | 'healthHazard'
     | 'environment',
     string
-  >
-  decay: Record<DecayModeKey, string>
-  legend: Record<LegendKey, string>
-  elements: Record<string, string>
+  >;
+  decay: Record<DecayModeKey, string>;
+  legend: Record<LegendKey, string>;
+  elements: Record<string, string>;
   seo: {
-    description: string
-    elementDescription: string
-  }
+    description: string;
+    elementDescription: string;
+  };
 }

@@ -1,201 +1,198 @@
 <script setup lang="ts">
-import { computed, onUnmounted, ref, useTemplateRef, watch } from 'vue'
-import { getCollectionSpectrum } from '../../data'
-import { useLocale } from '../../locales'
-import { cyclicIndex } from '../../utils/cyclicIndex'
-import { resolveLocalizedLabel, type LocalizedLabel } from '../../utils/localizedLabel'
-import { useSpectrumDisplay } from '../../composables/useSpectrumDisplay'
-import { useDismissibleTooltip } from '../../composables/useDismissibleTooltip'
-import { COLLECTION_COLOR } from '../../theme/colors'
-import type { CollectionSpectrumData } from '../../types/collection/spectrum'
-import type { SpectrumAnnotation } from '../../types/collection/collection'
-import GammaSpectrumChartSvg from './GammaSpectrumChartSvg.vue'
-import ElementSpectrumHeading from './ElementSpectrumHeading.vue'
-import CloseButton from '../common/CloseButton.vue'
-import PillSwitcherGroup from '../common/PillSwitcherGroup.vue'
-import PillSwitcherButton from '../common/PillSwitcherButton.vue'
+import { computed, onUnmounted, ref, useTemplateRef, watch } from 'vue';
+import { getCollectionSpectrum } from '../../data';
+import { useLocale } from '../../locales';
+import { cyclicIndex } from '../../utils/cyclicIndex';
+import { resolveLocalizedLabel, type LocalizedLabel } from '../../utils/localizedLabel';
+import { useSpectrumDisplay } from '../../composables/useSpectrumDisplay';
+import { useDismissibleTooltip } from '../../composables/useDismissibleTooltip';
+import { COLLECTION_COLOR } from '../../theme/colors';
+import type { CollectionSpectrumData } from '../../types/collection/spectrum';
+import type { SpectrumAnnotation } from '../../types/collection/collection';
+import CloseButton from '../common/CloseButton.vue';
+import PillSwitcherGroup from '../common/PillSwitcherGroup.vue';
+import PillSwitcherButton from '../common/PillSwitcherButton.vue';
 import {
   SPECTRUM_SMOOTHING_DEFAULT,
   SPECTRUM_SMOOTHING_MAX,
   type SpectrumYScale,
-} from '../../utils/collection/spectrumChart'
+} from '../../utils/collection/spectrumChart';
+import ElementSpectrumHeading from './ElementSpectrumHeading.vue';
+import GammaSpectrumChartSvg from './GammaSpectrumChartSvg.vue';
 
 interface SpectrumSibling {
-  symbol: string
-  color: string
-  spectrumId: string
-  originHtml?: string
-  annotations?: SpectrumAnnotation[] | null
-  leadShielded?: boolean | null
-  backgroundSpectrumId?: string | null
-  note?: LocalizedLabel | null
+  symbol: string;
+  color: string;
+  spectrumId: string;
+  originHtml?: string;
+  annotations?: SpectrumAnnotation[] | null;
+  leadShielded?: boolean | null;
+  backgroundSpectrumId?: string | null;
+  note?: LocalizedLabel | null;
 }
 
 const props = defineProps<{
-  spectrumId: string
-  accentColor?: string
-  elementSymbol?: string
-  elementName?: string
-  originHtml?: string
-  annotations?: SpectrumAnnotation[] | null
-  leadShielded?: boolean | null
-  backgroundSpectrumId?: string | null
-  note?: LocalizedLabel | null
+  spectrumId: string;
+  accentColor?: string;
+  elementSymbol?: string;
+  elementName?: string;
+  originHtml?: string;
+  annotations?: SpectrumAnnotation[] | null;
+  leadShielded?: boolean | null;
+  backgroundSpectrumId?: string | null;
+  note?: LocalizedLabel | null;
   /** Other spectra to page through in the zoom modal (e.g. the whole collection list) - omit for a single, non-navigable spectrum. */
-  siblings?: SpectrumSibling[]
-  siblingIndex?: number
-}>()
+  siblings?: SpectrumSibling[];
+  siblingIndex?: number;
+}>();
 
-const { tSidebar, messages, locale } = useLocale()
+const { tSidebar, messages, locale } = useLocale();
 
-const activeIndex = ref(props.siblingIndex ?? 0)
-const siblingCount = computed(() => props.siblings?.length ?? 0)
-const canNavigate = computed(() => siblingCount.value > 1)
-const activeSibling = computed(() => props.siblings?.[activeIndex.value])
+const activeIndex = ref(props.siblingIndex ?? 0);
+const siblingCount = computed(() => props.siblings?.length ?? 0);
+const canNavigate = computed(() => siblingCount.value > 1);
+const activeSibling = computed(() => props.siblings?.[activeIndex.value]);
 
-const activeSpectrumId = computed(() => activeSibling.value?.spectrumId ?? props.spectrumId)
-const activeSymbol = computed(() => activeSibling.value?.symbol ?? props.elementSymbol)
+const activeSpectrumId = computed(() => activeSibling.value?.spectrumId ?? props.spectrumId);
+const activeSymbol = computed(() => activeSibling.value?.symbol ?? props.elementSymbol);
 const activeName = computed(() => {
-  const sibling = activeSibling.value
-  return sibling ? messages.value.elements[sibling.symbol] ?? '' : props.elementName
-})
+  const sibling = activeSibling.value;
+  return sibling ? (messages.value.elements[sibling.symbol] ?? '') : props.elementName;
+});
 // Per-field `??` would leak this card's own origin/annotations onto a sibling that simply has none of its own.
-const activeOriginHtml = computed(() =>
-  activeSibling.value ? activeSibling.value.originHtml : props.originHtml,
-)
-const activeAnnotations = computed(() =>
-  activeSibling.value ? activeSibling.value.annotations : props.annotations,
-)
+const activeOriginHtml = computed(() => (activeSibling.value ? activeSibling.value.originHtml : props.originHtml));
+const activeAnnotations = computed(() => (activeSibling.value ? activeSibling.value.annotations : props.annotations));
 const activeLeadShielded = computed(() =>
   activeSibling.value ? activeSibling.value.leadShielded : props.leadShielded,
-)
+);
 const activeBackgroundSpectrumId = computed(() =>
   activeSibling.value ? activeSibling.value.backgroundSpectrumId : props.backgroundSpectrumId,
-)
+);
 const activeNote = computed(() => {
-  const note = activeSibling.value ? activeSibling.value.note : props.note
-  return resolveLocalizedLabel(note, locale.value)
-})
+  const note = activeSibling.value ? activeSibling.value.note : props.note;
+  return resolveLocalizedLabel(note, locale.value);
+});
 
-const leadIconEl = useTemplateRef<HTMLElement>('leadIconEl')
-const leadTooltip = useDismissibleTooltip(leadIconEl)
-const modalLeadIconEl = useTemplateRef<HTMLElement>('modalLeadIconEl')
-const modalLeadTooltip = useDismissibleTooltip(modalLeadIconEl)
-const accent = computed(() => props.accentColor ?? COLLECTION_COLOR)
-const modalAccent = computed(() => activeSibling.value?.color ?? accent.value)
+const leadIconEl = useTemplateRef<HTMLElement>('leadIconEl');
+const leadTooltip = useDismissibleTooltip(leadIconEl);
+const modalLeadIconEl = useTemplateRef<HTMLElement>('modalLeadIconEl');
+const modalLeadTooltip = useDismissibleTooltip(modalLeadIconEl);
+const accent = computed(() => props.accentColor ?? COLLECTION_COLOR);
+const modalAccent = computed(() => activeSibling.value?.color ?? accent.value);
 
 function navigate(delta: number) {
-  if (!canNavigate.value) return
-  activeIndex.value = cyclicIndex(activeIndex.value, delta, siblingCount.value)
+  if (!canNavigate.value) return;
+  activeIndex.value = cyclicIndex(activeIndex.value, delta, siblingCount.value);
 }
 
 function navigatePrev() {
-  navigate(-1)
+  navigate(-1);
 }
 
 function navigateNext() {
-  navigate(1)
+  navigate(1);
 }
 
 // `modalSpectrum` is kept separate from `spectrum` so navigating siblings in the modal never changes the thumbnail.
-const isZoomed = ref(false)
+const isZoomed = ref(false);
 
 async function fetchSpectrum(id: string | null | undefined): Promise<CollectionSpectrumData | null> {
   try {
-    return await getCollectionSpectrum(id)
+    return await getCollectionSpectrum(id);
   } catch {
     // A chunk fetch can be aborted mid-flight; leave the chart unrendered rather than throw.
-    return null
+    return null;
   }
 }
 
-const spectrum = ref<CollectionSpectrumData | null>(null)
-const modalSpectrumCache = new Map<string, CollectionSpectrumData | null>()
+const spectrum = ref<CollectionSpectrumData | null>(null);
+const modalSpectrumCache = new Map<string, CollectionSpectrumData | null>();
 watch(
   () => props.spectrumId,
   async (id) => {
-    spectrum.value = await fetchSpectrum(id)
-    modalSpectrumCache.set(id, spectrum.value)
+    spectrum.value = await fetchSpectrum(id);
+    modalSpectrumCache.set(id, spectrum.value);
   },
   { immediate: true },
-)
+);
 
-const background = ref<CollectionSpectrumData | null>(null)
+const background = ref<CollectionSpectrumData | null>(null);
 watch(
   () => props.backgroundSpectrumId,
   async (id) => {
-    background.value = await fetchSpectrum(id)
+    background.value = await fetchSpectrum(id);
   },
   { immediate: true },
-)
+);
 
 // Fetches only while the modal is open, reusing the `spectrum` cache; `seq` drops stale responses from out-of-order navigation.
-let modalFetchSeq = 0
-const modalSpectrum = ref<CollectionSpectrumData | null>(null)
-const modalBackground = ref<CollectionSpectrumData | null>(null)
+let modalFetchSeq = 0;
+const modalSpectrum = ref<CollectionSpectrumData | null>(null);
+const modalBackground = ref<CollectionSpectrumData | null>(null);
 watch(
   [activeSpectrumId, isZoomed],
   async ([id, zoomed]) => {
     // Bumped unconditionally so a still-in-flight fetch from a previous invocation can't land late and clobber the display.
-    const seq = ++modalFetchSeq
-    if (!zoomed) return
+    const seq = ++modalFetchSeq;
+    if (!zoomed) return;
     if (modalSpectrumCache.has(id)) {
-      modalSpectrum.value = modalSpectrumCache.get(id) ?? null
+      modalSpectrum.value = modalSpectrumCache.get(id) ?? null;
     } else {
-      modalSpectrum.value = null
-      const data = await fetchSpectrum(id)
-      modalSpectrumCache.set(id, data)
-      if (seq === modalFetchSeq) modalSpectrum.value = data
+      modalSpectrum.value = null;
+      const data = await fetchSpectrum(id);
+      modalSpectrumCache.set(id, data);
+      if (seq === modalFetchSeq) modalSpectrum.value = data;
     }
 
-    const bg = await fetchSpectrum(activeBackgroundSpectrumId.value)
-    if (seq === modalFetchSeq) modalBackground.value = bg
+    const bg = await fetchSpectrum(activeBackgroundSpectrumId.value);
+    if (seq === modalFetchSeq) modalBackground.value = bg;
   },
   { immediate: true },
-)
+);
 
-const {
-  chart,
-  caption,
-  durationLabel,
-  cpsLabel,
-  xmlDownload,
-} = useSpectrumDisplay(
+const { chart, caption, durationLabel, cpsLabel, xmlDownload } = useSpectrumDisplay(
   spectrum,
   computed(() => props.spectrumId),
   computed(() => props.annotations),
   undefined,
   undefined,
   background,
-)
-const modalYScale = ref<SpectrumYScale>('linear')
-const modalSmoothing = ref(SPECTRUM_SMOOTHING_DEFAULT)
+);
+const modalYScale = ref<SpectrumYScale>('linear');
+const modalSmoothing = ref(SPECTRUM_SMOOTHING_DEFAULT);
 const {
   chart: modalChart,
   caption: modalCaption,
   durationLabel: modalDurationLabel,
   cpsLabel: modalCpsLabel,
   xmlDownload: modalXmlDownload,
-} = useSpectrumDisplay(modalSpectrum, activeSpectrumId, activeAnnotations, modalYScale, modalSmoothing, modalBackground)
+} = useSpectrumDisplay(
+  modalSpectrum,
+  activeSpectrumId,
+  activeAnnotations,
+  modalYScale,
+  modalSmoothing,
+  modalBackground,
+);
 
 function openZoom() {
-  activeIndex.value = props.siblingIndex ?? 0
-  isZoomed.value = true
-  document.addEventListener('keydown', onKeydown)
+  activeIndex.value = props.siblingIndex ?? 0;
+  isZoomed.value = true;
+  document.addEventListener('keydown', onKeydown);
 }
 
 function closeZoom() {
-  isZoomed.value = false
-  document.removeEventListener('keydown', onKeydown)
+  isZoomed.value = false;
+  document.removeEventListener('keydown', onKeydown);
 }
 
 function onKeydown(event: KeyboardEvent) {
-  if (event.key === 'Escape') closeZoom()
-  else if (event.key === 'ArrowLeft') navigatePrev()
-  else if (event.key === 'ArrowRight') navigateNext()
+  if (event.key === 'Escape') closeZoom();
+  else if (event.key === 'ArrowLeft') navigatePrev();
+  else if (event.key === 'ArrowRight') navigateNext();
 }
 
-onUnmounted(() => document.removeEventListener('keydown', onKeydown))
+onUnmounted(() => document.removeEventListener('keydown', onKeydown));
 </script>
 
 <template>
@@ -254,7 +251,12 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
           </button>
           <Teleport to="body">
             <Transition name="info-tooltip-fade">
-              <div v-if="leadTooltip.isOpen.value" class="info-tooltip__bubble" :style="leadTooltip.style.value" role="tooltip">
+              <div
+                v-if="leadTooltip.isOpen.value"
+                class="info-tooltip__bubble"
+                :style="leadTooltip.style.value"
+                role="tooltip"
+              >
                 {{ tSidebar('collectionSpectrumLeadShielded') }}
               </div>
             </Transition>
@@ -295,11 +297,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
               :accent="modalAccent"
               :origin-html="activeOriginHtml"
             />
-            <CloseButton
-              class="gamma-spectrum-modal__close"
-              :aria-label="tSidebar('close')"
-              @click="closeZoom"
-            />
+            <CloseButton class="gamma-spectrum-modal__close" :aria-label="tSidebar('close')" @click="closeZoom" />
           </div>
 
           <div class="gamma-spectrum-modal__chart-wrap">
@@ -405,7 +403,12 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
                   </button>
                   <Teleport to="body">
                     <Transition name="info-tooltip-fade">
-                      <div v-if="modalLeadTooltip.isOpen.value" class="info-tooltip__bubble" :style="modalLeadTooltip.style.value" role="tooltip">
+                      <div
+                        v-if="modalLeadTooltip.isOpen.value"
+                        class="info-tooltip__bubble"
+                        :style="modalLeadTooltip.style.value"
+                        role="tooltip"
+                      >
                         {{ tSidebar('collectionSpectrumLeadShielded') }}
                       </div>
                     </Transition>
@@ -606,7 +609,9 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
 
 .gamma-spectrum-modal-panel-enter-active,
 .gamma-spectrum-modal-panel-leave-active {
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .gamma-spectrum-modal-panel-enter-from,
@@ -658,7 +663,9 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
   color: var(--color-text-muted);
   cursor: pointer;
   box-shadow: 0 2px 8px var(--color-shadow-md);
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
   transform: translateY(-50%);
 }
 

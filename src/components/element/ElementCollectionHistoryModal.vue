@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { useLocale } from '../../locales'
-import type { Element } from '../../types/element/element'
-import type { ElementCollectionHistoryEntry } from '../../types/collection/collection'
+import { computed, ref } from 'vue';
+import { useLocale } from '../../locales';
+import type { Element } from '../../types/element/element';
+import type { ElementCollectionHistoryEntry } from '../../types/collection/collection';
 import {
   formatCollectionAcquiredDate,
   formatCollectionPurity,
@@ -10,38 +10,38 @@ import {
   resolveCollectionLabel,
   resolvePhysicalStateLabel,
   resolveSourceType,
-} from '../../utils/collection/labels'
-import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes'
-import { resolveLocalizedLabel } from '../../utils/localizedLabel'
-import CollectionGammaSpectrum from '../collection/CollectionGammaSpectrum.vue'
-import CloseButton from '../common/CloseButton.vue'
-import { COLLECTION_COLOR } from '../../theme/colors'
+} from '../../utils/collection/labels';
+import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes';
+import { resolveLocalizedLabel } from '../../utils/localizedLabel';
+import CollectionGammaSpectrum from '../collection/CollectionGammaSpectrum.vue';
+import CloseButton from '../common/CloseButton.vue';
+import { COLLECTION_COLOR } from '../../theme/colors';
 
 const props = defineProps<{
-  element: Element
-  elementName: string
-  displaySymbol: string
-  accentColor?: string
-}>()
+  element: Element;
+  elementName: string;
+  displaySymbol: string;
+  accentColor?: string;
+}>();
 
-const { messages, locale, tSidebar } = useLocale()
+const { messages, locale, tSidebar } = useLocale();
 
-const accent = computed(() => props.accentColor ?? COLLECTION_COLOR)
+const accent = computed(() => props.accentColor ?? COLLECTION_COLOR);
 
-const RETAINED_COLOR = '#16a34a'
-const NOT_RETAINED_COLOR = '#dc2626'
+const RETAINED_COLOR = '#16a34a';
+const NOT_RETAINED_COLOR = '#dc2626';
 
 function pastMarkerColor(retained: boolean | null | undefined): string {
-  return retained ? RETAINED_COLOR : NOT_RETAINED_COLOR
+  return retained ? RETAINED_COLOR : NOT_RETAINED_COLOR;
 }
 
 interface TimelineEntry extends ElementCollectionHistoryEntry {
-  isCurrent: boolean
-  markerColor: string
+  isCurrent: boolean;
+  markerColor: string;
 }
 
 const timeline = computed<TimelineEntry[]>(() => {
-  const collection = props.element.collection
+  const collection = props.element.collection;
   const past = (collection?.history ?? [])
     .slice()
     .reverse()
@@ -49,78 +49,84 @@ const timeline = computed<TimelineEntry[]>(() => {
       ...entry,
       isCurrent: false,
       markerColor: pastMarkerColor(entry.retained),
-    }))
+    }));
   const current: TimelineEntry = {
     physical: collection?.physical,
     radioactive: collection?.radioactive,
     spectrum: collection?.spectrum,
     isCurrent: true,
     markerColor: accent.value,
-  }
-  return [current, ...past]
-})
+  };
+  return [current, ...past];
+});
 
 function stateLabel(entry: TimelineEntry): string {
-  return resolvePhysicalStateLabel(entry.physical, locale.value)
+  return resolvePhysicalStateLabel(entry.physical, locale.value);
 }
 
 function containerLabel(entry: TimelineEntry): string {
-  return resolveCollectionLabel(locale.value, 'containers', entry.physical?.container)
+  return resolveCollectionLabel(locale.value, 'containers', entry.physical?.container);
 }
 
 function allotropeLabel(entry: TimelineEntry): string {
-  return resolveLocalizedLabel(entry.physical?.allotrope, locale.value)
+  return resolveLocalizedLabel(entry.physical?.allotrope, locale.value);
 }
 
 function purityLabel(entry: TimelineEntry): string {
-  return formatCollectionPurity(entry.physical?.purity)
+  return formatCollectionPurity(entry.physical?.purity);
 }
 
 function weightLabel(entry: TimelineEntry): string {
-  return formatCollectionWeight(entry.physical?.weight, messages.value.sidebar.units.milligram, messages.value.sidebar.units.gram)
+  return formatCollectionWeight(
+    entry.physical?.weight,
+    messages.value.sidebar.units.milligram,
+    messages.value.sidebar.units.gram,
+  );
 }
 
 function isotopeHtml(entry: TimelineEntry): string {
-  return formatIsotopeHtml(props.element.symbol, entry.radioactive?.isotope)
+  return formatIsotopeHtml(props.element.symbol, entry.radioactive?.isotope);
 }
 
 function sourceTypeLabel(entry: TimelineEntry): string {
-  if (entry.radioactive?.sourceType !== 'secondary') return ''
-  return resolveSourceType(locale.value, entry.radioactive?.sourceType)
+  if (entry.radioactive?.sourceType !== 'secondary') return '';
+  return resolveSourceType(locale.value, entry.radioactive?.sourceType);
 }
 
 function decayChainHtml(entry: TimelineEntry): string {
-  return formatDecayChainHtml(props.element.symbol, entry.radioactive?.isotope, entry.radioactive?.decayParent)
+  return formatDecayChainHtml(props.element.symbol, entry.radioactive?.isotope, entry.radioactive?.decayParent);
 }
 
 function reasonLabel(entry: TimelineEntry): string {
-  return resolveCollectionLabel(locale.value, 'reasons', entry.reason)
+  return resolveCollectionLabel(locale.value, 'reasons', entry.reason);
 }
 
 function dateLabel(entry: TimelineEntry): string {
-  const date = formatCollectionAcquiredDate(entry.physical?.acquiredDate, locale.value)
+  const date = formatCollectionAcquiredDate(entry.physical?.acquiredDate, locale.value);
   if (entry.isCurrent) {
-    return date ? `${tSidebar('collectionHistoryCurrent')} (${tSidebar('collectionHistorySince')} ${date})` : tSidebar('collectionHistoryCurrent')
+    return date
+      ? `${tSidebar('collectionHistoryCurrent')} (${tSidebar('collectionHistorySince')} ${date})`
+      : tSidebar('collectionHistoryCurrent');
   }
-  return date ? `${tSidebar('collectionHistorySince')} ${date}` : ''
+  return date ? `${tSidebar('collectionHistorySince')} ${date}` : '';
 }
 
-const isOpen = ref(false)
+const isOpen = ref(false);
 
 function open(): void {
-  isOpen.value = true
-  document.addEventListener('keydown', onKeydown)
+  isOpen.value = true;
+  document.addEventListener('keydown', onKeydown);
 }
 
 function close(): void {
-  isOpen.value = false
-  document.removeEventListener('keydown', onKeydown)
+  isOpen.value = false;
+  document.removeEventListener('keydown', onKeydown);
 }
 
 function onKeydown(event: KeyboardEvent): void {
-  if (event.key !== 'Escape') return
-  event.stopPropagation()
-  close()
+  if (event.key !== 'Escape') return;
+  event.stopPropagation();
+  close();
 }
 </script>
 
@@ -134,7 +140,15 @@ function onKeydown(event: KeyboardEvent): void {
       :title="messages.sidebar.props.collectionHistory"
       @click="open"
     >
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
         <path d="M10 2h4" />
         <path d="M12 14v-4" />
         <path d="M4 13a8 8 0 0 1 8-7 8 8 0 1 1-5.3 14L4 17.6" />
@@ -187,39 +201,57 @@ function onKeydown(event: KeyboardEvent): void {
               <div v-if="dateLabel(entry)" class="collection-history-modal__date">{{ dateLabel(entry) }}</div>
               <ul class="collection-history-modal__facts">
                 <li v-if="purityLabel(entry)" class="collection-history-modal__fact">
-                  <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionPurity }}</span>
+                  <span class="collection-history-modal__fact-label">{{
+                    messages.sidebar.props.collectionPurity
+                  }}</span>
                   <span class="collection-history-modal__fact-value">{{ purityLabel(entry) }}</span>
                 </li>
                 <li v-if="weightLabel(entry)" class="collection-history-modal__fact">
-                  <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionWeight }}</span>
+                  <span class="collection-history-modal__fact-label">{{
+                    messages.sidebar.props.collectionWeight
+                  }}</span>
                   <span class="collection-history-modal__fact-value">{{ weightLabel(entry) }}</span>
                 </li>
                 <li v-if="stateLabel(entry)" class="collection-history-modal__fact">
-                  <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionSampleState }}</span>
+                  <span class="collection-history-modal__fact-label">{{
+                    messages.sidebar.props.collectionSampleState
+                  }}</span>
                   <span class="collection-history-modal__fact-value">{{ stateLabel(entry) }}</span>
                 </li>
                 <li v-if="allotropeLabel(entry)" class="collection-history-modal__fact">
-                  <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionAllotrope }}</span>
+                  <span class="collection-history-modal__fact-label">{{
+                    messages.sidebar.props.collectionAllotrope
+                  }}</span>
                   <span class="collection-history-modal__fact-value">{{ allotropeLabel(entry) }}</span>
                 </li>
                 <li v-if="containerLabel(entry)" class="collection-history-modal__fact">
-                  <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionContainer }}</span>
+                  <span class="collection-history-modal__fact-label">{{
+                    messages.sidebar.props.collectionContainer
+                  }}</span>
                   <span class="collection-history-modal__fact-value">{{ containerLabel(entry) }}</span>
                 </li>
                 <li v-if="isotopeHtml(entry)" class="collection-history-modal__fact">
-                  <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionIsotope }}</span>
+                  <span class="collection-history-modal__fact-label">{{
+                    messages.sidebar.props.collectionIsotope
+                  }}</span>
                   <span class="collection-history-modal__fact-value" v-html="isotopeHtml(entry)" />
                 </li>
                 <li v-if="sourceTypeLabel(entry)" class="collection-history-modal__fact">
-                  <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionSourceType }}</span>
+                  <span class="collection-history-modal__fact-label">{{
+                    messages.sidebar.props.collectionSourceType
+                  }}</span>
                   <span class="collection-history-modal__fact-value">{{ sourceTypeLabel(entry) }}</span>
                 </li>
                 <li v-if="decayChainHtml(entry)" class="collection-history-modal__fact">
-                  <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionDecayParent }}</span>
+                  <span class="collection-history-modal__fact-label">{{
+                    messages.sidebar.props.collectionDecayParent
+                  }}</span>
                   <span class="collection-history-modal__fact-value" v-html="decayChainHtml(entry)" />
                 </li>
                 <li v-if="reasonLabel(entry)" class="collection-history-modal__fact">
-                  <span class="collection-history-modal__fact-label">{{ messages.sidebar.props.collectionHistoryReason }}</span>
+                  <span class="collection-history-modal__fact-label">{{
+                    messages.sidebar.props.collectionHistoryReason
+                  }}</span>
                   <span class="collection-history-modal__fact-value">{{ reasonLabel(entry) }}</span>
                 </li>
               </ul>
@@ -307,7 +339,9 @@ function onKeydown(event: KeyboardEvent): void {
 
 .collection-history-modal-panel-enter-active,
 .collection-history-modal-panel-leave-active {
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .collection-history-modal-panel-enter-from,

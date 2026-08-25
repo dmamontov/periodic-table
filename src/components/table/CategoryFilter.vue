@@ -1,36 +1,34 @@
 <script setup lang="ts">
-import { allCategories } from '../../data'
-import type { CategoryId } from '../../types/element/category'
-import { useLocale } from '../../locales'
-import { COLLECTION_COLOR } from '../../theme/colors'
+import { allCategories } from '../../data';
+import type { CategoryId } from '../../types/element/category';
+import { useLocale } from '../../locales';
+import { COLLECTION_COLOR } from '../../theme/colors';
 
-const ALL_COLOR = '#615f5f'
+const ALL_COLOR = '#615f5f';
 
-const COLLECTION_FILTER_ID = 'collection'
+const COLLECTION_FILTER_ID = 'collection';
 
 interface CategoryItem {
-  kind: 'category'
-  id: string
-  color: string
+  kind: 'category';
+  id: string;
+  color: string;
 }
 
 interface CollectionItem {
-  kind: 'collection'
-  color: string
+  kind: 'collection';
+  color: string;
 }
 
-type ColumnCell = CategoryItem | CollectionItem | null
+type ColumnCell = CategoryItem | CollectionItem | null;
 
-const selectedCategory = defineModel<string>({ default: 'all' })
+const selectedCategory = defineModel<string>({ default: 'all' });
 
-const { tLegend, tCategories, locale, collectionName } = useLocale()
+const { tLegend, tCategories, locale, collectionName } = useLocale();
 
-const categoryColor = Object.fromEntries(
-  allCategories.map((c) => [c.id, c.color]),
-) as Record<CategoryId, string>
+const categoryColor = Object.fromEntries(allCategories.map((c) => [c.id, c.color])) as Record<CategoryId, string>;
 
 function cat(id: CategoryId): CategoryItem {
-  return { kind: 'category', id, color: categoryColor[id] }
+  return { kind: 'category', id, color: categoryColor[id] };
 }
 
 const columns: ColumnCell[][] = [
@@ -40,53 +38,38 @@ const columns: ColumnCell[][] = [
     cat('alkali'),
     cat('alkaline-earth'),
   ],
-  [
-    cat('transition'),
-    cat('post-transition'),
-    cat('metalloid'),
-    cat('nonmetal'),
-  ],
-  [
-    cat('halogen'),
-    cat('noble-gas'),
-    cat('lanthanides'),
-    cat('actinides'),
-  ],
-]
+  [cat('transition'), cat('post-transition'), cat('metalloid'), cat('nonmetal')],
+  [cat('halogen'), cat('noble-gas'), cat('lanthanides'), cat('actinides')],
+];
 
 function categoryLabel(id: string) {
-  return id === 'all' ? tCategories('all') : tLegend(id)
+  return id === 'all' ? tCategories('all') : tLegend(id);
 }
 
 function isActive(item: CategoryItem | CollectionItem) {
-  if (item.kind === 'collection') return selectedCategory.value === COLLECTION_FILTER_ID
-  return selectedCategory.value === item.id
+  if (item.kind === 'collection') return selectedCategory.value === COLLECTION_FILTER_ID;
+  return selectedCategory.value === item.id;
 }
 
 function onItemClick(item: CategoryItem | CollectionItem) {
   if (item.kind === 'collection') {
-    selectedCategory.value =
-      selectedCategory.value === COLLECTION_FILTER_ID ? 'all' : COLLECTION_FILTER_ID
-    return
+    selectedCategory.value = selectedCategory.value === COLLECTION_FILTER_ID ? 'all' : COLLECTION_FILTER_ID;
+    return;
   }
   if (item.id === 'all') {
-    selectedCategory.value = 'all'
-    return
+    selectedCategory.value = 'all';
+    return;
   }
-  selectedCategory.value = selectedCategory.value === item.id ? 'all' : item.id
+  selectedCategory.value = selectedCategory.value === item.id ? 'all' : item.id;
 }
 </script>
 
 <template>
   <div class="category-filter" :key="locale">
-    <div
-      v-for="(column, colIndex) in columns"
-      :key="colIndex"
-      class="category-filter__column"
-    >
+    <div v-for="(column, colIndex) in columns" :key="colIndex" class="category-filter__column">
       <template
         v-for="(item, rowIndex) in column"
-        :key="item?.kind === 'collection' ? 'collection' : item?.id ?? `empty-${colIndex}-${rowIndex}`"
+        :key="item?.kind === 'collection' ? 'collection' : (item?.id ?? `empty-${colIndex}-${rowIndex}`)"
       >
         <button
           v-if="item"
@@ -107,11 +90,7 @@ function onItemClick(item: CategoryItem | CollectionItem) {
             {{ item.kind === 'collection' ? collectionName : categoryLabel(item.id) }}
           </span>
         </button>
-        <span
-          v-else
-          class="category-filter__placeholder"
-          aria-hidden="true"
-        />
+        <span v-else class="category-filter__placeholder" aria-hidden="true" />
       </template>
     </div>
   </div>

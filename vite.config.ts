@@ -1,9 +1,9 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import Unfonts from 'unplugin-fonts/vite'
-import { VitePWA } from 'vite-plugin-pwa'
-import { collectionName, siteTitle } from './src/data/collection'
-import { resolveLocalizedLabel } from './src/utils/localizedLabel'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import Unfonts from 'unplugin-fonts/vite';
+import { VitePWA } from 'vite-plugin-pwa';
+import { collectionName, siteTitle } from './src/data/collection';
+import { resolveLocalizedLabel } from './src/utils/localizedLabel';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -85,4 +85,4 @@ export default defineConfig({
       },
     }),
   ],
-})
+});

@@ -1,24 +1,22 @@
 <script setup lang="ts">
-import { defineAsyncComponent } from 'vue'
-import { SECTION_COLORS } from '../../theme/colors'
-import type { ProductionCountryEntry } from '../../types/element/detail'
+import { defineAsyncComponent } from 'vue';
+import { SECTION_COLORS } from '../../theme/colors';
+import type { ProductionCountryEntry } from '../../types/element/detail';
 
-const ElementProductionMap = defineAsyncComponent(() => import('./ElementProductionMap.vue'))
+const ElementProductionMap = defineAsyncComponent(() => import('./ElementProductionMap.vue'));
 
 defineProps<{
-  countries: ProductionCountryEntry[]
-  note: string
-}>()
+  countries: ProductionCountryEntry[];
+  note: string;
+}>();
 </script>
 
 <template>
   <div class="element-sidebar__mining">
-    <ElementProductionMap
-      v-if="countries.length > 0"
-      :countries="countries"
-      :accent-color="SECTION_COLORS.mining"
-    />
-    <p class="element-sidebar__mining-note" :class="{ 'element-sidebar__mining-note--only': !countries.length }">{{ note }}</p>
+    <ElementProductionMap v-if="countries.length > 0" :countries="countries" :accent-color="SECTION_COLORS.mining" />
+    <p class="element-sidebar__mining-note" :class="{ 'element-sidebar__mining-note--only': !countries.length }">
+      {{ note }}
+    </p>
   </div>
 </template>
 

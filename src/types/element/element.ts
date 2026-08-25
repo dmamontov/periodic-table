@@ -1,21 +1,21 @@
-import type { ElementCollection } from '../collection/collection'
+import type { ElementCollection } from '../collection/collection';
 
 /** Visual finish of the physical sample's swatch color (the rest render as metallic). */
-export type ElementSampleColorFinish = 'metallic' | 'glossy' | 'subtle' | 'matte'
+export type ElementSampleColorFinish = 'metallic' | 'glossy' | 'subtle' | 'matte';
 
 export interface Element {
-  number: number
-  symbol: string
-  mass: string
-  group: number | null
-  oldGroup: string
-  color: string
-  category: string
-  row: number
-  col: number
-  periodEnd: boolean
-  inCollection: boolean
-  collection?: ElementCollection | null
+  number: number;
+  symbol: string;
+  mass: string;
+  group: number | null;
+  oldGroup: string;
+  color: string;
+  category: string;
+  row: number;
+  col: number;
+  periodEnd: boolean;
+  inCollection: boolean;
+  collection?: ElementCollection | null;
 }
 
 /**
@@ -24,12 +24,12 @@ export interface Element {
  * per element.
  */
 export interface RawElement {
-  number: number
-  symbol: string
-  mass: string
-  group: number | null
-  oldGroup: string
-  row: number
-  col: number
-  periodEnd: boolean
+  number: number;
+  symbol: string;
+  mass: string;
+  group: number | null;
+  oldGroup: string;
+  row: number;
+  col: number;
+  periodEnd: boolean;
 }

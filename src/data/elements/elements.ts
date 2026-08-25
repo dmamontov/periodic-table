@@ -1,4 +1,4 @@
-import type { RawElement } from '../../types/element/element'
+import type { RawElement } from '../../types/element/element';
 
 export const elements: RawElement[] = [
   { number: 1, symbol: 'H', mass: '1,01', group: 1, oldGroup: 'I A', row: 1, col: 1, periodEnd: false },
@@ -119,4 +119,4 @@ export const elements: RawElement[] = [
   { number: 116, symbol: 'Lv', mass: '(293)', group: 16, oldGroup: 'VI A', row: 7, col: 16, periodEnd: false },
   { number: 117, symbol: 'Ts', mass: '(293)', group: 17, oldGroup: 'VII A', row: 7, col: 17, periodEnd: false },
   { number: 118, symbol: 'Og', mass: '(294)', group: 18, oldGroup: 'VIII A', row: 7, col: 18, periodEnd: true },
-]
+];

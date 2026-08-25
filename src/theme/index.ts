@@ -1,100 +1,89 @@
-import {
-  computed,
-  inject,
-  ref,
-  watch,
-  type App,
-  type InjectionKey,
-} from 'vue'
-import { readStorage, writeStorage } from '../utils/storage'
+import { computed, inject, ref, watch, type App, type InjectionKey } from 'vue';
+import { readStorage, writeStorage } from '../utils/storage';
 
-export type ThemePreference = 'light' | 'dark' | 'auto'
-export type ResolvedTheme = 'light' | 'dark'
+export type ThemePreference = 'light' | 'dark' | 'auto';
+export type ResolvedTheme = 'light' | 'dark';
 
-const STORAGE_KEY = 'periodic-table-theme'
+const STORAGE_KEY = 'periodic-table-theme';
 
-export const themeOptions: { value: ThemePreference }[] = [
-  { value: 'light' },
-  { value: 'dark' },
-  { value: 'auto' },
-]
+export const themeOptions: { value: ThemePreference }[] = [{ value: 'light' }, { value: 'dark' }, { value: 'auto' }];
 
-type ThemeContext = ReturnType<typeof createTheme>
+type ThemeContext = ReturnType<typeof createTheme>;
 
-const themeKey: InjectionKey<ThemeContext> = Symbol('theme')
+const themeKey: InjectionKey<ThemeContext> = Symbol('theme');
 
 function isThemePreference(value: string): value is ThemePreference {
-  return value === 'light' || value === 'dark' || value === 'auto'
+  return value === 'light' || value === 'dark' || value === 'auto';
 }
 
 function readStoredTheme(): ThemePreference | null {
-  return readStorage(localStorage, STORAGE_KEY, isThemePreference)
+  return readStorage(localStorage, STORAGE_KEY, isThemePreference);
 }
 
 function persistTheme(value: ThemePreference): void {
-  writeStorage(localStorage, STORAGE_KEY, value)
+  writeStorage(localStorage, STORAGE_KEY, value);
 }
 
 function resolveTheme(preference: ThemePreference): ResolvedTheme {
   if (preference === 'auto') {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
-  return preference
+  return preference;
 }
 
 function detectThemePreference(): ThemePreference {
-  return readStoredTheme() ?? 'auto'
+  return readStoredTheme() ?? 'auto';
 }
 
 function applyTheme(resolved: ResolvedTheme): void {
-  document.documentElement.dataset.theme = resolved
-  document.documentElement.style.colorScheme = resolved
+  document.documentElement.dataset.theme = resolved;
+  document.documentElement.style.colorScheme = resolved;
 
-  const meta = document.querySelector('meta[name="theme-color"]')
+  const meta = document.querySelector('meta[name="theme-color"]');
   if (meta) {
-    meta.setAttribute('content', resolved === 'dark' ? '#1a1a1a' : '#ffffff')
+    meta.setAttribute('content', resolved === 'dark' ? '#1a1a1a' : '#ffffff');
   }
 }
 
 function createTheme() {
-  const theme = ref<ThemePreference>(detectThemePreference())
-  const resolvedTheme = computed(() => resolveTheme(theme.value))
+  const theme = ref<ThemePreference>(detectThemePreference());
+  const resolvedTheme = computed(() => resolveTheme(theme.value));
 
   watch(
     resolvedTheme,
     (value) => {
-      applyTheme(value)
+      applyTheme(value);
     },
     { immediate: true },
-  )
+  );
 
   watch(theme, (value) => {
-    persistTheme(value)
-  })
+    persistTheme(value);
+  });
 
   if (typeof window !== 'undefined') {
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
       if (theme.value === 'auto') {
-        applyTheme(resolveTheme('auto'))
+        applyTheme(resolveTheme('auto'));
       }
-    })
+    });
   }
 
   function setTheme(next: ThemePreference) {
-    theme.value = next
+    theme.value = next;
   }
 
-  return { theme, resolvedTheme, setTheme }
+  return { theme, resolvedTheme, setTheme };
 }
 
 export function installTheme(app: App) {
-  const theme = createTheme()
-  app.provide(themeKey, theme)
-  return theme
+  const theme = createTheme();
+  app.provide(themeKey, theme);
+  return theme;
 }
 
 export function useTheme() {
-  const theme = inject(themeKey)
-  if (!theme) throw new Error('useTheme must be used within theme provider')
-  return theme
+  const theme = inject(themeKey);
+  if (!theme) throw new Error('useTheme must be used within theme provider');
+  return theme;
 }

@@ -1,14 +1,14 @@
-import { computed, type Ref } from 'vue'
-import type { Element } from '../types/element/element'
-import { getElementDetail } from '../data'
+import { computed, type Ref } from 'vue';
+import type { Element } from '../types/element/element';
+import { getElementDetail } from '../data';
 
 export function useElementDetail(element: Ref<Element | null>) {
   const detail = computed(() => {
-    if (!element.value) return null
-    return getElementDetail(element.value.number)
-  })
+    if (!element.value) return null;
+    return getElementDetail(element.value.number);
+  });
 
-  const error = computed(() => Boolean(element.value) && !detail.value)
+  const error = computed(() => Boolean(element.value) && !detail.value);
 
-  return { detail, error }
+  return { detail, error };
 }

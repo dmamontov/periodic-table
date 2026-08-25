@@ -1,37 +1,37 @@
 export interface CollectionSpectrumData {
-  id: string
-  device: string
-  sample: string
-  serialNumber: string
-  measurementTimeSec: number
-  startTime: string
-  endTime: string
-  channels: number
-  calibration: [number, number, number]
-  counts: number[]
+  id: string;
+  device: string;
+  sample: string;
+  serialNumber: string;
+  measurementTimeSec: number;
+  startTime: string;
+  endTime: string;
+  channels: number;
+  calibration: [number, number, number];
+  counts: number[];
 }
 
 export interface RadiacodeIsotopeRef {
-  isotope: string
-  slug: string
+  isotope: string;
+  slug: string;
 }
 
 /** UI-facing chart geometry built from `CollectionSpectrumData` by `utils/collection/spectrumChart.ts`, rendered by `GammaSpectrumChartSvg.vue`. */
 export interface GammaSpectrumChartData {
-  width: number
-  height: number
-  baseY: number
-  pad: { left: number; right: number; top: number; bottom: number }
-  plotW: number
-  plotH: number
-  displayMaxEnergy: number
-  areaPath: string
-  linePath: string
+  width: number;
+  height: number;
+  baseY: number;
+  pad: { left: number; right: number; top: number; bottom: number };
+  plotW: number;
+  plotH: number;
+  displayMaxEnergy: number;
+  areaPath: string;
+  linePath: string;
   /** Time-scaled natural-background trace, same channel grid as the main spectrum — null when no background is attached */
-  backgroundLinePath: string | null
+  backgroundLinePath: string | null;
   /** Same trace as `backgroundLinePath`, closed against the baseline for its own fill */
-  backgroundAreaPath: string | null
-  xTicks: { energy: number; x: number; label: string }[]
-  yTicks: { value: number; y: number; label: string }[]
-  markers: { x: number; label: string }[]
+  backgroundAreaPath: string | null;
+  xTicks: { energy: number; x: number; label: string }[];
+  yTicks: { value: number; y: number; label: string }[];
+  markers: { x: number; label: string }[];
 }

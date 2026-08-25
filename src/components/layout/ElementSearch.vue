@@ -1,88 +1,88 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref, useTemplateRef } from 'vue'
-import { useRouter } from 'vue-router'
-import type { Element } from '../../types/element/element'
-import { elements, getElementRouteSymbol } from '../../data'
-import { useLocale } from '../../locales'
-import { searchElements } from '../../utils/element/search'
-import { formatElementSymbol } from '../../utils/element/formatters'
-import { cyclicIndex } from '../../utils/cyclicIndex'
-import FlyoutTrigger from '../common/FlyoutTrigger.vue'
+import { computed, onBeforeUnmount, onMounted, ref, useTemplateRef } from 'vue';
+import { useRouter } from 'vue-router';
+import type { Element } from '../../types/element/element';
+import { elements, getElementRouteSymbol } from '../../data';
+import { useLocale } from '../../locales';
+import { searchElements } from '../../utils/element/search';
+import { formatElementSymbol } from '../../utils/element/formatters';
+import { cyclicIndex } from '../../utils/cyclicIndex';
+import FlyoutTrigger from '../common/FlyoutTrigger.vue';
 
-const router = useRouter()
-const { messages } = useLocale()
+const router = useRouter();
+const { messages } = useLocale();
 
-const query = ref('')
-const activeIndex = ref(0)
-const inputEl = useTemplateRef<HTMLInputElement>('inputEl')
-const flyoutRef = useTemplateRef<InstanceType<typeof FlyoutTrigger>>('flyoutRef')
+const query = ref('');
+const activeIndex = ref(0);
+const inputEl = useTemplateRef<HTMLInputElement>('inputEl');
+const flyoutRef = useTemplateRef<InstanceType<typeof FlyoutTrigger>>('flyoutRef');
 
-const results = computed(() => searchElements(query.value, elements, messages.value))
+const results = computed(() => searchElements(query.value, elements, messages.value));
 
 function onFlyoutOpen() {
-  inputEl.value?.focus()
+  inputEl.value?.focus();
 }
 
 function onFlyoutClose() {
-  query.value = ''
-  activeIndex.value = 0
+  query.value = '';
+  activeIndex.value = 0;
 }
 
 function selectElement(element: Element) {
-  void router.push({ name: 'element', params: { symbol: getElementRouteSymbol(element.symbol) } })
-  flyoutRef.value?.close()
+  void router.push({ name: 'element', params: { symbol: getElementRouteSymbol(element.symbol) } });
+  flyoutRef.value?.close();
 }
 
 function onQueryInput() {
-  activeIndex.value = 0
+  activeIndex.value = 0;
 }
 
 function moveActive(delta: number) {
-  const count = results.value.length
-  if (!count) return
-  activeIndex.value = cyclicIndex(activeIndex.value, delta, count)
+  const count = results.value.length;
+  if (!count) return;
+  activeIndex.value = cyclicIndex(activeIndex.value, delta, count);
 }
 
 function onKeydown(event: KeyboardEvent) {
   if (event.key === 'ArrowDown') {
-    event.preventDefault()
-    moveActive(1)
+    event.preventDefault();
+    moveActive(1);
   } else if (event.key === 'ArrowUp') {
-    event.preventDefault()
-    moveActive(-1)
+    event.preventDefault();
+    moveActive(-1);
   } else if (event.key === 'Enter') {
-    const active = results.value[activeIndex.value]
+    const active = results.value[activeIndex.value];
     if (active) {
-      event.preventDefault()
-      selectElement(active)
+      event.preventDefault();
+      selectElement(active);
     }
   } else if (event.key === 'Escape') {
-    event.preventDefault()
-    flyoutRef.value?.close()
-    inputEl.value?.blur()
+    event.preventDefault();
+    flyoutRef.value?.close();
+    inputEl.value?.blur();
   }
 }
 
 function isTypingTarget(target: EventTarget | null): boolean {
-  if (!(target instanceof HTMLElement)) return false
-  const tag = target.tagName
-  return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || target.isContentEditable
+  if (!(target instanceof HTMLElement)) return false;
+  const tag = target.tagName;
+  return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || target.isContentEditable;
 }
 
 function onGlobalKeydown(event: KeyboardEvent) {
-  if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return
-  if (isTypingTarget(event.target)) return
-  event.preventDefault()
-  flyoutRef.value?.open()
+  if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return;
+  if (isTypingTarget(event.target)) return;
+  event.preventDefault();
+  flyoutRef.value?.open();
 }
 
 onMounted(() => {
-  document.addEventListener('keydown', onGlobalKeydown)
-})
+  document.addEventListener('keydown', onGlobalKeydown);
+});
 
 onBeforeUnmount(() => {
-  document.removeEventListener('keydown', onGlobalKeydown)
-})
+  document.removeEventListener('keydown', onGlobalKeydown);
+});
 </script>
 
 <template>
@@ -132,7 +132,9 @@ onBeforeUnmount(() => {
         @click="selectElement(element)"
         @mouseenter="activeIndex = index"
       >
-        <span class="element-search__symbol" :style="{ color: element.color }">{{ formatElementSymbol(element.symbol) }}</span>
+        <span class="element-search__symbol" :style="{ color: element.color }">{{
+          formatElementSymbol(element.symbol)
+        }}</span>
         <span class="element-search__name">{{ messages.elements[element.symbol] }}</span>
         <span class="element-search__number">{{ element.number }}</span>
       </button>

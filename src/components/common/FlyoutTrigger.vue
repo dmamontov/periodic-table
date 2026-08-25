@@ -1,36 +1,31 @@
 <script setup lang="ts">
-import { useTemplateRef } from 'vue'
-import { useDismissibleFlyout } from '../../composables/useDismissibleFlyout'
+import { useTemplateRef } from 'vue';
+import { useDismissibleFlyout } from '../../composables/useDismissibleFlyout';
 
 const props = defineProps<{
-  toggleAriaLabel: string
-  flyoutAriaLabel?: string
+  toggleAriaLabel: string;
+  flyoutAriaLabel?: string;
   /** Element type for the flyout panel — 'nav' for a semantic menu, 'div' (default) otherwise. */
-  panelTag?: string
-}>()
+  panelTag?: string;
+}>();
 
-const emit = defineEmits<{ open: []; close: [] }>()
+const emit = defineEmits<{ open: []; close: [] }>();
 
-const rootEl = useTemplateRef<HTMLElement>('rootEl')
+const rootEl = useTemplateRef<HTMLElement>('rootEl');
 const { isOpen, flyoutStyle, open, close, toggle } = useDismissibleFlyout(rootEl, {
   onOpen: () => emit('open'),
   onClose: () => emit('close'),
-})
+});
 
 function onKeydown(event: KeyboardEvent) {
-  if (event.key === 'Escape') close()
+  if (event.key === 'Escape') close();
 }
 
-defineExpose({ isOpen, open, close, toggle })
+defineExpose({ isOpen, open, close, toggle });
 </script>
 
 <template>
-  <div
-    ref="rootEl"
-    class="flyout-trigger"
-    :class="{ 'flyout-trigger--open': isOpen }"
-    @keydown="onKeydown"
-  >
+  <div ref="rootEl" class="flyout-trigger" :class="{ 'flyout-trigger--open': isOpen }" @keydown="onKeydown">
     <button
       type="button"
       class="flyout-trigger__toggle"
@@ -77,7 +72,9 @@ defineExpose({ isOpen, open, close, toggle })
   background: transparent;
   color: var(--color-text-muted);
   cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
 }
 
 .flyout-trigger__toggle:hover {
@@ -104,7 +101,9 @@ defineExpose({ isOpen, open, close, toggle })
 
 .flyout-trigger-fade-enter-active,
 .flyout-trigger-fade-leave-active {
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
 }
 
 .flyout-trigger-fade-enter-from,

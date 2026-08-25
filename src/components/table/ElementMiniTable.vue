@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { actinides, lanthanides, mainElements } from '../../data'
-import { useLocale } from '../../locales'
+import { computed } from 'vue';
+import { actinides, lanthanides, mainElements } from '../../data';
+import { useLocale } from '../../locales';
 
 const { selectedNumber } = defineProps<{
-  selectedNumber: number
-}>()
+  selectedNumber: number;
+}>();
 
-const { tSidebar } = useLocale()
+const { tSidebar } = useLocale();
 
-const ariaLabel = computed(() => tSidebar('miniTableAria'))
+const ariaLabel = computed(() => tSidebar('miniTableAria'));
 </script>
 
 <template>

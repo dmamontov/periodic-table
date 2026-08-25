@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -36,4 +36,4 @@ export const router = createRouter({
       redirect: '/',
     },
   ],
-})
+});
