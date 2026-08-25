@@ -1089,7 +1089,7 @@ export const myElements: Record<string, ElementCollection> = {
         { energy: 596.1, label: 'Bi-214' },
       ],
       note: {
-        ru: '²¹⁰Po почти не даёт гамма-линий; видна собственная линия его предшественника ²¹⁰Pb (47 кэВ). В те годы полоний очищали не идеально, оставались следы ²¹⁰Pb и ²²⁶Ra, а ²¹⁰Pb всё это время ещё и нарастал от ²²⁶Ra.',
+        ru: '²¹⁰Po почти не даёт гамма-линий; видна собственная линия его предшественника ²¹⁰Pb (47 кэВ). В те годы полоний очищали не идеально, оставались следы ²¹⁰Pb и ²²⁶Ra, а ²¹⁰Pb всё это время ещё и нарастал из ²²⁶Ra.',
         en: "²¹⁰Po emits almost no gammas of its own; its precursor ²¹⁰Pb's own line (47 keV) is visible — polonium purification back then wasn't perfect, leaving trace ²¹⁰Pb and ²²⁶Ra behind, and the ²¹⁰Pb has kept growing in from the ²²⁶Ra ever since.",
         zh: '²¹⁰Po几乎不发出伽马射线；可见其前体²¹⁰Pb的自身特征峰（47 keV）——当年钋的提纯并不完美，残留有²¹⁰Pb和²²⁶Ra的痕迹，而²¹⁰Pb这些年来又不断从²²⁶Ra衰变生成。',
       },
