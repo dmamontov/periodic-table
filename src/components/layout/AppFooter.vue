@@ -57,7 +57,7 @@ const appVersion = __APP_VERSION__;
           </svg>
         </a>
       </p>
-      <span class="app-footer__year">{{ year }} · v{{ appVersion }}</span>
+      <span class="app-footer__year">{{ year }} · {{ appVersion }}</span>
     </div>
   </footer>
 </template>
