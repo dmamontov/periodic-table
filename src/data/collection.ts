@@ -1120,7 +1120,7 @@ export const myElements: Record<string, ElementCollection> = {
         { energy: 593.5, label: 'Bi-214' },
       ],
       note: {
-        ru: '²²²Rn гамма-неактивен; виден его родитель ²²⁶Ra и продукты его собственной цепочки распада — ²¹⁴Pb и ²¹⁴Bi.',
+        ru: '²²²Rn гамма-неактивен; видны его родитель ²²⁶Ra и продукты его собственной цепочки распада — ²¹⁴Pb и ²¹⁴Bi.',
         en: '²²²Rn itself emits no useful gammas; visible instead are its parent ²²⁶Ra and its own decay-chain products — ²¹⁴Pb and ²¹⁴Bi.',
         zh: '²²²Rn本身无有效伽马射线；可见的是其母体²²⁶Ra及其自身衰变链产物——²¹⁴Pb和²¹⁴Bi。',
       },
@@ -1238,9 +1238,9 @@ export const myElements: Record<string, ElementCollection> = {
     spectrum: {
       id: 'u-92-glass',
       filename: {
-        ru: 'U-238 (Бисер из ураносодержащего стекла).xml',
+        ru: 'U-238 (Бисер из урансодержащего стекла).xml',
         en: 'U-238 (Uranium glass beads).xml',
-        zh: 'U-238（含铀玻璃珠）.xml',
+        zh: 'U-238 (含铀玻璃珠).xml',
       },
       leadShielded: true,
       backgroundSpectrumId: 'bg-lead-shield',
