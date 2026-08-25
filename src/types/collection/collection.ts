@@ -23,6 +23,13 @@ export interface ElementCollectionWeight {
   approx?: boolean | null
 }
 
+export interface ElementCollectionPurity {
+  /** Raw digit sequence, same convention as before as a number instead of a string: 999 → 99.9%, 9999 → 99.99%, 50 → 50% (fewer than 3 digits is already a literal percentage) */
+  value: number
+  /** True if the purity is approximate rather than a manufacturer-specified figure */
+  approx?: boolean | null
+}
+
 export interface ElementCollectionPhysical {
   /** State or form of the material (gas, beads, electrodes…); a key into sampleStateLabels */
   sampleState?: string | null
@@ -32,7 +39,7 @@ export interface ElementCollectionPhysical {
   allotrope?: LocalizedLabel | null
   /** Vessel or packaging (ampoule, box…); empty — sample has no separate container */
   container?: string | null
-  purity?: string | null
+  purity?: ElementCollectionPurity | null
   weight?: ElementCollectionWeight | null
   /** ISO YYYY-MM-DD — date this specific version (this object's own sampleState/description/etc.) became current. On a later replacement, archive this whole object into a new `history` entry and set a new acquiredDate here. */
   acquiredDate?: string | null

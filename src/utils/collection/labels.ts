@@ -2,7 +2,7 @@ import { containerLabels, reasonLabels, sampleStateLabels } from '../../locales/
 import { resolveLocalizedLabel } from '../localizedLabel'
 import { localeMessages } from '../../locales'
 import type { Locale } from '../../locales/types'
-import type { ElementCollection, ElementCollectionPhysical, ElementCollectionWeight } from '../../types/collection/collection'
+import type { ElementCollection, ElementCollectionPhysical, ElementCollectionPurity, ElementCollectionWeight } from '../../types/collection/collection'
 
 const DICTS = {
   sampleStates: sampleStateLabels,
@@ -42,41 +42,16 @@ export function resolveCollectionSampleState(
   return resolvePhysicalStateLabel(entry?.physical, locale)
 }
 
-/** 999 → 99,9%; 6N → 99,9999%; ~999 → ~99,9%; values that already contain % are returned as-is */
-function formatPurityRaw(raw: string): string | null {
-  const nMatch = raw.match(/^(\d+)N$/i)
-  if (nMatch) {
-    const n = Number(nMatch[1])
-    if (n >= 3) return `99,${'9'.repeat(n - 2)}%`
-    if (n === 2) return '99%'
-    return null
-  }
-
-  if (/^\d{3,}$/.test(raw)) {
-    return `${raw.slice(0, 2)},${raw.slice(2)}%`
-  }
-
-  if (/^\d+([.,]\d+)?$/.test(raw)) {
-    return `${raw.replace('.', ',')}%`
-  }
-
-  return null
+/** 999 → 99,9%; 50 → 50% (fewer than 3 digits is already a literal percentage) */
+function formatPurityRaw(digits: string): string {
+  if (digits.length >= 3) return `${digits.slice(0, 2)},${digits.slice(2)}%`
+  return `${digits}%`
 }
 
-export function formatCollectionPurity(value: string | null | undefined): string {
-  if (!value) return ''
-  const trimmed = value.trim()
-  if (!trimmed) return ''
-
-  const approximate = trimmed.startsWith('~')
-  const raw = approximate ? trimmed.slice(1).trim() : trimmed
-  if (!raw) return trimmed
-  if (raw.includes('%')) return trimmed
-
-  const formatted = formatPurityRaw(raw)
-  if (!formatted) return trimmed
-
-  return approximate ? `~${formatted}` : formatted
+/** { value: 999 } → 99,9%; { value: 999, approx: true } → ~99,9% */
+export function formatCollectionPurity(purity: ElementCollectionPurity | null | undefined): string {
+  if (!purity) return ''
+  return `${purity.approx ? '~' : ''}${formatPurityRaw(String(purity.value))}`
 }
 
 /** '2021-05-01' → "1 мая 2021 г." (ru) / "May 1, 2021" (en) / "2021年5月1日" (zh) */

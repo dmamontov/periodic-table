@@ -17,6 +17,7 @@ import type {
   ElementCollectionDecayParent,
   ElementCollectionHistoryEntry,
   ElementCollectionPhysical,
+  ElementCollectionPurity,
   ElementCollectionRadioactive,
   ElementCollectionSpectrum,
   ElementCollectionWeight,
@@ -99,6 +100,20 @@ async function askWeight(
   if (!mgRaw) return undefined
   const approx = await askConfirm('Is this weight approximate?', currentValue?.approx ?? true)
   return { mg: Number(mgRaw), approx: approx || undefined }
+}
+
+async function askPurity(
+  currentValue: ElementCollectionPurity | null | undefined,
+): Promise<ElementCollectionPurity | undefined> {
+  const raw = await askText('Purity', currentValue?.value != null ? String(currentValue.value) : undefined, {
+    placeholder: '999 → 99.9%; 50 → 50%; 6N → 99.9999% (shorthand, converted automatically)',
+    validate: (v) => (!v.trim() || /^\d+$/.test(v.trim()) || /^\d+N$/i.test(v.trim()) ? undefined : 'Enter digits, or N-notation like 6N'),
+  })
+  if (!raw) return undefined
+  const nMatch = raw.match(/^(\d+)N$/i)
+  const value = nMatch ? Number('9'.repeat(Number(nMatch[1]))) : Number(raw)
+  const approx = await askConfirm('Is this purity approximate?', currentValue?.approx ?? false)
+  return { value, approx: approx || undefined }
 }
 
 /** Select from a project vocabulary dict (sampleState/container/sourceType), with an escape hatch for values not yet in it. */
@@ -221,9 +236,7 @@ async function askCollectionHistory(
     })
     physical.sampleState = await askEnum('Sample state', undefined, vocab.sampleStateLabels)
     physical.container = await askEnum('Container', undefined, vocab.containerLabels)
-    physical.purity = await askText('Purity', undefined, {
-      placeholder: '999 → 99.9%; 6N → 99.9999%; ~999 → ~99.9% (approximate)',
-    })
+    physical.purity = await askPurity(undefined)
     physical.weight = await askWeight(undefined)
     const wantDescription = await askConfirm('Use a ready-made description instead of sample state?', false)
     physical.description = wantDescription ? await askLocalizedLabel('Description', undefined) : undefined
@@ -276,9 +289,7 @@ async function editWizard(
   const physical: ElementCollectionPhysical = {}
   physical.sampleState = await askEnum('Sample state', existing?.physical?.sampleState, vocab.sampleStateLabels)
   physical.container = await askEnum('Container', existing?.physical?.container, vocab.containerLabels)
-  physical.purity = await askText('Purity', existing?.physical?.purity, {
-    placeholder: '999 → 99.9%; 6N → 99.9999%; ~999 → ~99.9% (approximate)',
-  })
+  physical.purity = await askPurity(existing?.physical?.purity)
   physical.weight = await askWeight(existing?.physical?.weight)
   physical.acquiredDate = await askText('Acquired date', existing?.physical?.acquiredDate, {
     placeholder: 'YYYY-MM-DD, e.g. 2021-05-01',

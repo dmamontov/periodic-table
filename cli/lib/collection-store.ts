@@ -4,6 +4,7 @@ import type {
   ElementCollection,
   ElementCollectionHistoryEntry,
   ElementCollectionPhysical,
+  ElementCollectionPurity,
   ElementCollectionRadioactive,
   ElementCollectionSpectrum,
   ElementCollectionWeight,
@@ -38,6 +39,10 @@ function serializeWeight(weight: ElementCollectionWeight): string {
   return weight.approx ? `{ mg: ${weight.mg}, approx: true }` : `{ mg: ${weight.mg} }`
 }
 
+function serializePurity(purity: ElementCollectionPurity): string {
+  return purity.approx ? `{ value: ${purity.value}, approx: true }` : `{ value: ${purity.value} }`
+}
+
 function serializePhysical(physical: ElementCollectionPhysical | null | undefined, indent: string): string | null {
   if (!physical) return null
   const fields: [string, string][] = []
@@ -45,7 +50,7 @@ function serializePhysical(physical: ElementCollectionPhysical | null | undefine
   if (physical.description) fields.push(['description', serializeLocalizedLabel(physical.description)])
   if (physical.allotrope) fields.push(['allotrope', serializeLocalizedLabel(physical.allotrope)])
   if (physical.container) fields.push(['container', quoteString(physical.container)])
-  if (physical.purity) fields.push(['purity', quoteString(physical.purity)])
+  if (physical.purity) fields.push(['purity', serializePurity(physical.purity)])
   if (physical.weight) fields.push(['weight', serializeWeight(physical.weight)])
   if (physical.acquiredDate) fields.push(['acquiredDate', quoteString(physical.acquiredDate)])
   if (fields.length === 0) return null
