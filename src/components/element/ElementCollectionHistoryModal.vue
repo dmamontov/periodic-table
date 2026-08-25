@@ -77,7 +77,7 @@ function purityLabel(entry: TimelineEntry): string {
 }
 
 function weightLabel(entry: TimelineEntry): string {
-  return formatCollectionWeight(entry.physical?.weight, messages.value.sidebar.units.gram)
+  return formatCollectionWeight(entry.physical?.weight, messages.value.sidebar.units.milligram, messages.value.sidebar.units.gram)
 }
 
 function isotopeHtml(entry: TimelineEntry): string {

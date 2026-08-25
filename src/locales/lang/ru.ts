@@ -208,7 +208,8 @@ const messages: LocaleMessages = {
       "cm3PerMol": "(см³/моль)",
       "mPerS": "(м/с)",
       "wPerMK": "(Вт/мК)",
-      "gram": "г"
+      "gram": "г",
+      "milligram": "мг"
     },
     "aggregationState": {
       "gas": "Газ",

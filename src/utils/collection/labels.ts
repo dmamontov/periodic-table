@@ -2,7 +2,7 @@ import { containerLabels, reasonLabels, sampleStateLabels } from '../../locales/
 import { resolveLocalizedLabel } from '../localizedLabel'
 import { localeMessages } from '../../locales'
 import type { Locale } from '../../locales/types'
-import type { ElementCollection, ElementCollectionPhysical } from '../../types/collection/collection'
+import type { ElementCollection, ElementCollectionPhysical, ElementCollectionWeight } from '../../types/collection/collection'
 
 const DICTS = {
   sampleStates: sampleStateLabels,
@@ -92,15 +92,17 @@ export function formatCollectionAcquiredDate(value: string | null | undefined, l
   })
 }
 
-/** 1.85 → 1.85 г; ~1.85 → ~1.85 г (approximate) */
-export function formatCollectionWeight(value: string | null | undefined, gramUnit: string): string {
-  if (!value) return ''
-  const trimmed = value.trim()
-  if (!trimmed) return ''
+/** { mg: 60 } → "60 мг"; { mg: 1850, approx: true } → "~1.85 г" — switches to grams at 1000 mg */
+export function formatCollectionWeight(
+  weight: ElementCollectionWeight | null | undefined,
+  milligramUnit: string,
+  gramUnit: string,
+): string {
+  if (!weight) return ''
 
-  const approximate = trimmed.startsWith('~')
-  const raw = approximate ? trimmed.slice(1).trim() : trimmed
-  if (!raw || Number.isNaN(Number(raw))) return trimmed
+  const prefix = weight.approx ? '~' : ''
+  if (weight.mg < 1000) return `${prefix}${weight.mg} ${milligramUnit}`
 
-  return `${approximate ? '~' : ''}${raw} ${gramUnit}`
+  const grams = (weight.mg / 1000).toFixed(2).replace(/\.?0+$/, '')
+  return `${prefix}${grams} ${gramUnit}`
 }

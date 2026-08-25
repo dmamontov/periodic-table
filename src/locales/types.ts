@@ -231,6 +231,7 @@ export interface LocaleMessages {
       mPerS: string
       wPerMK: string
       gram: string
+      milligram: string
     }
     aggregationState: Record<'gas' | 'solid' | 'liquid' | 'unknown', string>
     magneticType: Record<'none' | 'diamagnetic' | 'paramagnetic' | 'antiferromagnetic' | 'ferromagnetic', string>

@@ -48,28 +48,28 @@ export const myElements: Record<string, ElementCollection> = {
     physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '9999', acquiredDate: '2021-07-31' },
   },
   Li: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.06', acquiredDate: '2026-08-24' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: { mg: 60, approx: true }, acquiredDate: '2026-08-24' },
     history: [
       {
-        physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.06', acquiredDate: '2022-02-14' },
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: { mg: 60, approx: true }, acquiredDate: '2022-02-14' },
         retained: true,
         reason: 'betterSample',
       },
     ],
   },
   Be: {
-    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~1.85', acquiredDate: '2024-08-26' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: { mg: 1850, approx: true }, acquiredDate: '2024-08-26' },
   },
   B: {
-    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~2.34', acquiredDate: '2024-10-09' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: { mg: 2340, approx: true }, acquiredDate: '2024-10-09' },
     history: [
       {
-        physical: { sampleState: 'powder', container: 'acrylicBox', purity: '997', weight: '~1', acquiredDate: '2022-02-21' },
+        physical: { sampleState: 'powder', container: 'acrylicBox', purity: '997', weight: { mg: 1000, approx: true }, acquiredDate: '2022-02-21' },
         retained: true,
         reason: 'betterSample',
       },
       {
-        physical: { sampleState: 'powder', container: 'ampoule', purity: '999', weight: '~0.1', acquiredDate: '2024-08-26' },
+        physical: { sampleState: 'powder', container: 'ampoule', purity: '999', weight: { mg: 100, approx: true }, acquiredDate: '2024-08-26' },
         retained: true,
         reason: 'betterSample',
       },
@@ -80,7 +80,7 @@ export const myElements: Record<string, ElementCollection> = {
       sampleState: 'cubicIngot',
       allotrope: { ru: 'Графит', en: 'Graphite', zh: '石墨' },
       purity: '999',
-      weight: '~2.27',
+      weight: { mg: 2270, approx: true },
       acquiredDate: '2021-05-01',
     },
   },
@@ -113,23 +113,23 @@ export const myElements: Record<string, ElementCollection> = {
     physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '99994', acquiredDate: '2021-07-31' },
   },
   Na: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~0.04', acquiredDate: '2024-09-23' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: { mg: 50, approx: true }, acquiredDate: '2024-09-23' },
   },
   Mg: {
-    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~1.74', acquiredDate: '2021-05-01' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: { mg: 1740, approx: true }, acquiredDate: '2021-05-01' },
   },
   Al: {
-    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~2.70', acquiredDate: '2024-09-16' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: { mg: 2700, approx: true }, acquiredDate: '2024-09-16' },
     history: [
       {
-        physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~2.70', acquiredDate: '2021-05-17' },
+        physical: { sampleState: 'cubicIngot', purity: '9999', weight: { mg: 2700, approx: true }, acquiredDate: '2021-05-17' },
         retained: false,
         reason: 'betterSample',
       },
     ],
   },
   Si: {
-    physical: { sampleState: 'cubicIngot', purity: '6N', weight: '~2.33', acquiredDate: '2021-11-13' },
+    physical: { sampleState: 'cubicIngot', purity: '6N', weight: { mg: 2330, approx: true }, acquiredDate: '2021-11-13' },
   },
   P: {
     physical: {
@@ -137,7 +137,7 @@ export const myElements: Record<string, ElementCollection> = {
       allotrope: { ru: 'Красный фосфор', en: 'Red phosphorus', zh: '红磷' },
       container: 'acrylicBox',
       purity: '987',
-      weight: '~2.34',
+      weight: { mg: 2340, approx: true },
       acquiredDate: '2024-09-03',
     },
     history: [
@@ -147,7 +147,7 @@ export const myElements: Record<string, ElementCollection> = {
           allotrope: { ru: 'Красный фосфор', en: 'Red phosphorus', zh: '红磷' },
           container: 'acrylicBox',
           purity: '987',
-          weight: '~2.34',
+          weight: { mg: 2340, approx: true },
           acquiredDate: '2022-02-21',
         },
         retained: false,
@@ -161,12 +161,12 @@ export const myElements: Record<string, ElementCollection> = {
       allotrope: { ru: 'Ромбическая сера', en: 'Rhombic sulfur', zh: '斜方硫' },
       container: 'acrylicBox',
       purity: '999',
-      weight: '~2.07',
+      weight: { mg: 2070, approx: true },
       acquiredDate: '2024-08-26',
     },
     history: [
       {
-        physical: { sampleState: 'powder', container: 'acrylicBox', purity: '999', weight: '~2', acquiredDate: '2022-02-21' },
+        physical: { sampleState: 'powder', container: 'acrylicBox', purity: '999', weight: { mg: 2000, approx: true }, acquiredDate: '2022-02-21' },
         retained: true,
         reason: 'betterSample',
       },
@@ -186,107 +186,107 @@ export const myElements: Record<string, ElementCollection> = {
     physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '99998', acquiredDate: '2021-07-31' },
   },
   K: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~0.05', acquiredDate: '2026-05-23' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: { mg: 50, approx: true }, acquiredDate: '2026-05-23' },
     history: [
       {
-        physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~0.05', acquiredDate: '2024-09-23' },
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: { mg: 50, approx: true }, acquiredDate: '2024-09-23' },
         retained: true,
         reason: 'betterSample',
       },
     ],
   },
   Ca: {
-    physical: { sampleState: 'granules', container: 'ampoule', purity: '999', weight: '~0.1', acquiredDate: '2026-05-21' },
+    physical: { sampleState: 'granules', container: 'ampoule', purity: '999', weight: { mg: 100, approx: true }, acquiredDate: '2026-05-21' },
   },
   Sc: {
-    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~2.99', acquiredDate: '2024-09-16' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: { mg: 2990, approx: true }, acquiredDate: '2024-09-16' },
   },
   Ti: {
-    physical: { sampleState: 'cubicIngot', purity: '995', weight: '~4.51', acquiredDate: '2024-09-07' },
+    physical: { sampleState: 'cubicIngot', purity: '995', weight: { mg: 4510, approx: true }, acquiredDate: '2024-09-07' },
     history: [
       {
-        physical: { sampleState: 'cubicIngot', purity: '995', weight: '~4.51', acquiredDate: '2021-07-26' },
+        physical: { sampleState: 'cubicIngot', purity: '995', weight: { mg: 4510, approx: true }, acquiredDate: '2021-07-26' },
         retained: false,
         reason: 'betterSample',
       },
     ],
   },
   V: {
-    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~6.11', acquiredDate: '2022-01-02' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: { mg: 6110, approx: true }, acquiredDate: '2022-01-02' },
   },
   Cr: {
-    physical: { sampleState: 'cubicIngot', purity: '997', weight: '~7.15', acquiredDate: '2021-07-26' },
+    physical: { sampleState: 'cubicIngot', purity: '997', weight: { mg: 7150, approx: true }, acquiredDate: '2021-07-26' },
   },
   Mn: {
-    physical: { sampleState: 'cubicIngot', purity: '997', weight: '~7.21', acquiredDate: '2024-09-07' },
+    physical: { sampleState: 'cubicIngot', purity: '997', weight: { mg: 7210, approx: true }, acquiredDate: '2024-09-07' },
     history: [
       {
-        physical: { sampleState: 'metal', container: 'acrylicBox', purity: '998', weight: '5', acquiredDate: '2022-02-21' },
+        physical: { sampleState: 'metal', container: 'acrylicBox', purity: '998', weight: { mg: 5000 }, acquiredDate: '2022-02-21' },
         retained: true,
         reason: 'betterSample',
       },
     ],
   },
   Fe: {
-    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~7.87', acquiredDate: '2024-09-26' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: { mg: 7870, approx: true }, acquiredDate: '2024-09-26' },
     history: [
       {
-        physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~7.87', acquiredDate: '2021-05-01' },
+        physical: { sampleState: 'cubicIngot', purity: '9999', weight: { mg: 7870, approx: true }, acquiredDate: '2021-05-01' },
         retained: false,
         reason: 'degradedStorage',
       },
     ],
   },
   Co: {
-    physical: { sampleState: 'cubicIngot', purity: '9996', weight: '~8.90', acquiredDate: '2021-05-05' },
+    physical: { sampleState: 'cubicIngot', purity: '9996', weight: { mg: 8900, approx: true }, acquiredDate: '2021-05-05' },
   },
   Ni: {
-    physical: { sampleState: 'cubicIngot', purity: '996', weight: '~8.91', acquiredDate: '2021-05-09' },
+    physical: { sampleState: 'cubicIngot', purity: '996', weight: { mg: 8910, approx: true }, acquiredDate: '2021-05-09' },
   },
   Cu: {
-    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~8.96', acquiredDate: '2024-09-07' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: { mg: 8960, approx: true }, acquiredDate: '2024-09-07' },
     history: [
       {
-        physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~8.96', acquiredDate: '2021-05-09' },
+        physical: { sampleState: 'cubicIngot', purity: '9995', weight: { mg: 8960, approx: true }, acquiredDate: '2021-05-09' },
         retained: false,
         reason: 'degradedStorage',
       },
     ],
   },
   Zn: {
-    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~7.13', acquiredDate: '2024-09-16' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: { mg: 7130, approx: true }, acquiredDate: '2024-09-16' },
     history: [
       {
-        physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~7.13', acquiredDate: '2021-05-17' },
+        physical: { sampleState: 'cubicIngot', purity: '9999', weight: { mg: 7130, approx: true }, acquiredDate: '2021-05-17' },
         retained: false,
         reason: 'betterSample',
       },
     ],
   },
   Ga: {
-    physical: { sampleState: 'metal', container: 'acrylicBox', purity: '9999', weight: '~5.91', acquiredDate: '2022-01-09' },
+    physical: { sampleState: 'metal', container: 'acrylicBox', purity: '9999', weight: { mg: 5910, approx: true }, acquiredDate: '2022-01-09' },
   },
   Ge: {
-    physical: { sampleState: 'cubicIngot', purity: '5N', weight: '~5.32', acquiredDate: '2026-05-21' },
+    physical: { sampleState: 'cubicIngot', purity: '5N', weight: { mg: 5320, approx: true }, acquiredDate: '2026-05-21' },
   },
   As: {
-    physical: { sampleState: 'powder', container: 'ampoule', purity: '999', weight: '~0.1', acquiredDate: '2026-06-22' },
+    physical: { sampleState: 'powder', container: 'ampoule', purity: '999', weight: { mg: 100, approx: true }, acquiredDate: '2026-06-22' },
     history: [
       {
-        physical: { sampleState: 'powder', container: 'ampoule', purity: '999', weight: '~0.1', acquiredDate: '2024-08-26' },
+        physical: { sampleState: 'powder', container: 'ampoule', purity: '999', weight: { mg: 100, approx: true }, acquiredDate: '2024-08-26' },
         retained: false,
         reason: 'degradedStorage',
       },
     ],
   },
   Se: {
-    physical: { sampleState: 'cubicIngot', purity: '~999', weight: '~4.81', acquiredDate: '2024-09-03' },
+    physical: { sampleState: 'cubicIngot', purity: '~999', weight: { mg: 4810, approx: true }, acquiredDate: '2024-09-03' },
   },
   Br: {
-    physical: { sampleState: 'liquid', container: 'ampoule', purity: '99', weight: '~0.25', acquiredDate: '2024-09-23' },
+    physical: { sampleState: 'liquid', container: 'ampoule', purity: '99', weight: { mg: 250, approx: true }, acquiredDate: '2024-09-23' },
     history: [
       {
-        physical: { sampleState: 'liquid', container: 'ampoule', purity: '99', weight: '~0.25', acquiredDate: '2022-02-01' },
+        physical: { sampleState: 'liquid', container: 'ampoule', purity: '99', weight: { mg: 250, approx: true }, acquiredDate: '2022-02-01' },
         retained: true,
         reason: 'betterSample',
       },
@@ -296,228 +296,228 @@ export const myElements: Record<string, ElementCollection> = {
     physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '9999', acquiredDate: '2021-07-31' },
   },
   Rb: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~0.2', acquiredDate: '2026-08-25' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: { mg: 200, approx: true }, acquiredDate: '2026-08-25' },
     history: [
       {
-        physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~2', acquiredDate: '2024-09-23' },
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: { mg: 2000, approx: true }, acquiredDate: '2024-09-23' },
         retained: true,
         reason: 'wrongSize',
       },
       {
-        physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~0.12', acquiredDate: '2026-06-16' },
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: { mg: 120, approx: true }, acquiredDate: '2026-06-16' },
         retained: true,
         reason: 'betterSample',
       },
     ],
   },
   Sr: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.2', acquiredDate: '2026-06-22' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: { mg: 200, approx: true }, acquiredDate: '2026-06-22' },
   },
   Y: {
-    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~4.47', acquiredDate: '2022-01-09' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: { mg: 4470, approx: true }, acquiredDate: '2022-01-09' },
   },
   Zr: {
-    physical: { sampleState: 'cubicIngot', purity: '992', weight: '~6.52', acquiredDate: '2021-07-28' },
+    physical: { sampleState: 'cubicIngot', purity: '992', weight: { mg: 6520, approx: true }, acquiredDate: '2021-07-28' },
   },
   Nb: {
-    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~8.57', acquiredDate: '2021-09-01' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: { mg: 8570, approx: true }, acquiredDate: '2021-09-01' },
   },
   Mo: {
-    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~10.28', acquiredDate: '2022-01-09' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: { mg: 10280, approx: true }, acquiredDate: '2022-01-09' },
   },
   Ru: {
-    physical: { sampleState: 'bead', container: 'acrylicBox', purity: '9998', weight: '~0.5', acquiredDate: '2026-06-28' },
+    physical: { sampleState: 'bead', container: 'acrylicBox', purity: '9998', weight: { mg: 500, approx: true }, acquiredDate: '2026-06-28' },
     history: [
       {
-        physical: { sampleState: 'powder', container: 'substrate', purity: '999', weight: '~0.01', acquiredDate: '2026-05-23' },
+        physical: { sampleState: 'powder', container: 'substrate', purity: '999', weight: { mg: 10, approx: true }, acquiredDate: '2026-05-23' },
         retained: true,
         reason: 'betterSample',
       },
     ],
   },
   Rh: {
-    physical: { sampleState: 'bead', container: 'acrylicBox', purity: '9995', weight: '~0.3', acquiredDate: '2026-07-19' },
+    physical: { sampleState: 'bead', container: 'acrylicBox', purity: '9995', weight: { mg: 300, approx: true }, acquiredDate: '2026-07-19' },
     history: [
       {
-        physical: { sampleState: 'powder', container: 'substrate', purity: '9995', weight: '~0.01', acquiredDate: '2026-05-23' },
+        physical: { sampleState: 'powder', container: 'substrate', purity: '9995', weight: { mg: 10, approx: true }, acquiredDate: '2026-05-23' },
         retained: true,
         reason: 'betterSample',
       },
     ],
   },
   Pd: {
-    physical: { sampleState: 'plate', purity: '9995', weight: '~0.13', acquiredDate: '2026-06-14' },
+    physical: { sampleState: 'plate', purity: '9995', weight: { mg: 130, approx: true }, acquiredDate: '2026-06-14' },
     history: [
       {
-        physical: { sampleState: 'foil', container: 'substrate', purity: '999', weight: '~0.01', acquiredDate: '2026-05-23' },
+        physical: { sampleState: 'foil', container: 'substrate', purity: '999', weight: { mg: 10, approx: true }, acquiredDate: '2026-05-23' },
         retained: true,
         reason: 'betterSample',
       },
     ],
   },
   Ag: {
-    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~10.49', acquiredDate: '2021-09-01' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: { mg: 10490, approx: true }, acquiredDate: '2021-09-01' },
   },
   Cd: {
-    physical: { sampleState: 'cubicIngot', purity: '99995', weight: '~8.65', acquiredDate: '2024-09-03' },
+    physical: { sampleState: 'cubicIngot', purity: '99995', weight: { mg: 8650, approx: true }, acquiredDate: '2024-09-03' },
   },
   In: {
-    physical: { sampleState: 'cubicIngot', purity: '99995', weight: '~7.31', acquiredDate: '2022-02-06' },
+    physical: { sampleState: 'cubicIngot', purity: '99995', weight: { mg: 7310, approx: true }, acquiredDate: '2022-02-06' },
   },
   Sn: {
-    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~7.29', acquiredDate: '2021-05-17' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: { mg: 7290, approx: true }, acquiredDate: '2021-05-17' },
   },
   Sb: {
-    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~6.70', acquiredDate: '2021-05-09' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: { mg: 6700, approx: true }, acquiredDate: '2021-05-09' },
   },
   Te: {
-    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~6.24', acquiredDate: '2021-07-28' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: { mg: 6240, approx: true }, acquiredDate: '2021-07-28' },
   },
   I: {
-    physical: { sampleState: 'granules', container: 'ampoule', purity: '999', weight: '~0.2', acquiredDate: '2022-02-01' },
+    physical: { sampleState: 'granules', container: 'ampoule', purity: '999', weight: { mg: 200, approx: true }, acquiredDate: '2022-02-01' },
   },
   Xe: {
     physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '9999', acquiredDate: '2021-07-31' },
   },
   Cs: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~0.05', acquiredDate: '2026-05-21' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: { mg: 50, approx: true }, acquiredDate: '2026-05-21' },
     history: [
       {
-        physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~2', acquiredDate: '2024-09-23' },
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: { mg: 2000, approx: true }, acquiredDate: '2024-09-23' },
         retained: true,
         reason: 'wrongSize',
       },
     ],
   },
   Ba: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.1', acquiredDate: '2024-08-26' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: { mg: 100, approx: true }, acquiredDate: '2024-08-26' },
   },
   La: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-08-24' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: { mg: 500, approx: true }, acquiredDate: '2026-08-24' },
     history: [
       {
-        physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-05-21' },
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: { mg: 500, approx: true }, acquiredDate: '2026-05-21' },
         retained: true,
         reason: 'betterSample',
       },
     ],
   },
   Ce: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-08-24' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: { mg: 500, approx: true }, acquiredDate: '2026-08-24' },
     history: [
       {
-        physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-05-21' },
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: { mg: 500, approx: true }, acquiredDate: '2026-05-21' },
         retained: true,
         reason: 'betterSample',
       },
     ],
   },
   Pr: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-08-24' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: { mg: 500, approx: true }, acquiredDate: '2026-08-24' },
     history: [
       {
-        physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-05-21' },
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: { mg: 500, approx: true }, acquiredDate: '2026-05-21' },
         retained: true,
         reason: 'betterSample',
       },
     ],
   },
   Nd: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-08-24' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: { mg: 500, approx: true }, acquiredDate: '2026-08-24' },
     history: [
       {
-        physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: '~0.5', acquiredDate: '2026-06-05' },
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '999', weight: { mg: 500, approx: true }, acquiredDate: '2026-06-05' },
         retained: true,
         reason: 'betterSample',
       },
     ],
   },
   Sm: {
-    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~7.52', acquiredDate: '2022-01-09' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: { mg: 7520, approx: true }, acquiredDate: '2022-01-09' },
   },
   Eu: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~0.2', acquiredDate: '2026-05-21' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: { mg: 200, approx: true }, acquiredDate: '2026-05-21' },
   },
   Gd: {
-    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~7.90', acquiredDate: '2022-01-09' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: { mg: 7900, approx: true }, acquiredDate: '2022-01-09' },
   },
   Tb: {
-    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~8.23', acquiredDate: '2024-09-26' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: { mg: 8230, approx: true }, acquiredDate: '2024-09-26' },
   },
   Dy: {
-    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~8.54', acquiredDate: '2024-09-16' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: { mg: 8540, approx: true }, acquiredDate: '2024-09-16' },
   },
   Ho: {
-    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~8.79', acquiredDate: '2022-02-06' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: { mg: 8790, approx: true }, acquiredDate: '2022-02-06' },
   },
   Er: {
-    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~9.07', acquiredDate: '2022-02-06' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: { mg: 9070, approx: true }, acquiredDate: '2022-02-06' },
   },
   Tm: {
-    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~9.32', acquiredDate: '2024-09-16' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: { mg: 9320, approx: true }, acquiredDate: '2024-09-16' },
   },
   Yb: {
-    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~6.90', acquiredDate: '2024-09-16' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: { mg: 6900, approx: true }, acquiredDate: '2024-09-16' },
   },
   Lu: {
-    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~9.84', acquiredDate: '2024-09-16' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: { mg: 9840, approx: true }, acquiredDate: '2024-09-16' },
   },
   Hf: {
-    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~13.31', acquiredDate: '2024-09-03' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: { mg: 13310, approx: true }, acquiredDate: '2024-09-03' },
   },
   Ta: {
-    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~16.69', acquiredDate: '2022-10-07' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: { mg: 16690, approx: true }, acquiredDate: '2022-10-07' },
   },
   W: {
-    physical: { sampleState: 'cubicIngot', purity: '9995', weight: '~19.25', acquiredDate: '2021-09-01' },
+    physical: { sampleState: 'cubicIngot', purity: '9995', weight: { mg: 19250, approx: true }, acquiredDate: '2021-09-01' },
   },
   Re: {
-    physical: { sampleState: 'cubicIngot', purity: '999', weight: '~21.02', acquiredDate: '2024-09-03' },
+    physical: { sampleState: 'cubicIngot', purity: '999', weight: { mg: 21020, approx: true }, acquiredDate: '2024-09-03' },
   },
   Os: {
-    physical: { sampleState: 'bead', container: 'acrylicBox', purity: '9995', weight: '~1', acquiredDate: '2026-06-28' },
+    physical: { sampleState: 'bead', container: 'acrylicBox', purity: '9995', weight: { mg: 1000, approx: true }, acquiredDate: '2026-06-28' },
     history: [
       {
-        physical: { sampleState: 'powder', container: 'substrate', purity: '999', weight: '~0.01', acquiredDate: '2026-05-23' },
+        physical: { sampleState: 'powder', container: 'substrate', purity: '999', weight: { mg: 10, approx: true }, acquiredDate: '2026-05-23' },
         retained: true,
         reason: 'betterSample',
       },
     ],
   },
   Ir: {
-    physical: { sampleState: 'powder', container: 'substrate', purity: '9998', weight: '~0.01', acquiredDate: '2026-05-23' },
+    physical: { sampleState: 'powder', container: 'substrate', purity: '9998', weight: { mg: 10, approx: true }, acquiredDate: '2026-05-23' },
   },
   Pt: {
-    physical: { sampleState: 'plate', purity: '9995', weight: '~0.22', acquiredDate: '2026-06-04' },
+    physical: { sampleState: 'plate', purity: '9995', weight: { mg: 220, approx: true }, acquiredDate: '2026-06-04' },
     history: [
       {
-        physical: { sampleState: 'foil', container: 'substrate', purity: '999', weight: '~0.02', acquiredDate: '2026-05-23' },
+        physical: { sampleState: 'foil', container: 'substrate', purity: '999', weight: { mg: 20, approx: true }, acquiredDate: '2026-05-23' },
         retained: true,
         reason: 'betterSample',
       },
     ],
   },
   Au: {
-    physical: { sampleState: 'plate', purity: '9999', weight: '~0.19', acquiredDate: '2026-06-19' },
+    physical: { sampleState: 'plate', purity: '9999', weight: { mg: 190, approx: true }, acquiredDate: '2026-06-19' },
     history: [
       {
-        physical: { sampleState: 'foil', container: 'substrate', purity: '999', weight: '~0.02', acquiredDate: '2026-05-23' },
+        physical: { sampleState: 'foil', container: 'substrate', purity: '999', weight: { mg: 20, approx: true }, acquiredDate: '2026-05-23' },
         retained: true,
         reason: 'betterSample',
       },
     ],
   },
   Hg: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999995', weight: '~1', acquiredDate: '2022-02-14' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999995', weight: { mg: 1000, approx: true }, acquiredDate: '2022-02-14' },
   },
   Tl: {
     physical: { sampleState: 'metal', container: 'ampoule', purity: '~999', acquiredDate: '2026-05-25' },
   },
   Pb: {
-    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~11.34', acquiredDate: '2021-05-13' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: { mg: 11340, approx: true }, acquiredDate: '2021-05-13' },
   },
   Bi: {
-    physical: { sampleState: 'cubicIngot', purity: '9999', weight: '~9.78', acquiredDate: '2021-05-13' },
+    physical: { sampleState: 'cubicIngot', purity: '9999', weight: { mg: 9780, approx: true }, acquiredDate: '2021-05-13' },
   },
   Po: {
     physical: {

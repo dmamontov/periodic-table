@@ -16,6 +16,13 @@ export interface SpectrumAnnotation {
   label: string
 }
 
+export interface ElementCollectionWeight {
+  /** Sample weight, milligrams */
+  mg: number
+  /** True if the weight is approximate (e.g. calculated from bulk density for a hypothetical 1×1×1 cm cube) */
+  approx?: boolean | null
+}
+
 export interface ElementCollectionPhysical {
   /** State or form of the material (gas, beads, electrodes…); a key into sampleStateLabels */
   sampleState?: string | null
@@ -26,8 +33,7 @@ export interface ElementCollectionPhysical {
   /** Vessel or packaging (ampoule, box…); empty — sample has no separate container */
   container?: string | null
   purity?: string | null
-  /** Sample weight, grams; a leading "~" marks it approximate (e.g. calculated from bulk density for a hypothetical 1×1×1 cm cube) */
-  weight?: string | null
+  weight?: ElementCollectionWeight | null
   /** ISO YYYY-MM-DD — date this specific version (this object's own sampleState/description/etc.) became current. On a later replacement, archive this whole object into a new `history` entry and set a new acquiredDate here. */
   acquiredDate?: string | null
 }

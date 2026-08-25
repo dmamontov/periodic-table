@@ -208,7 +208,8 @@ const messages: LocaleMessages = {
       "cm3PerMol": "(立方厘米/摩尔)",
       "mPerS": "(米/秒)",
       "wPerMK": "(瓦/米·K)",
-      "gram": "克"
+      "gram": "克",
+      "milligram": "毫克"
     },
     "aggregationState": {
       "gas": "气态",

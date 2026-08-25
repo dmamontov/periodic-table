@@ -414,7 +414,7 @@ function buildCollectionSection(ctx: SectionBuildContext): DetailSection {
 
   const weight = prop(
     s.props.collectionWeight,
-    fmt(formatCollectionWeight(element.collection?.physical?.weight, u.gram)),
+    fmt(formatCollectionWeight(element.collection?.physical?.weight, u.milligram, u.gram)),
   )
   if (!weight.empty) collectionItems.push(weight)
 

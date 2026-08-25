@@ -6,6 +6,7 @@ import type {
   ElementCollectionPhysical,
   ElementCollectionRadioactive,
   ElementCollectionSpectrum,
+  ElementCollectionWeight,
 } from '../../src/types/collection/collection.ts'
 import type { LocalizedLabel } from '../../src/utils/localizedLabel.ts'
 import { ROOT } from './paths.ts'
@@ -33,6 +34,10 @@ function serializeLocalizedLabel(label: LocalizedLabel): string {
   return `{ ${parts.join(', ')} }`
 }
 
+function serializeWeight(weight: ElementCollectionWeight): string {
+  return weight.approx ? `{ mg: ${weight.mg}, approx: true }` : `{ mg: ${weight.mg} }`
+}
+
 function serializePhysical(physical: ElementCollectionPhysical | null | undefined, indent: string): string | null {
   if (!physical) return null
   const fields: [string, string][] = []
@@ -41,7 +46,7 @@ function serializePhysical(physical: ElementCollectionPhysical | null | undefine
   if (physical.allotrope) fields.push(['allotrope', serializeLocalizedLabel(physical.allotrope)])
   if (physical.container) fields.push(['container', quoteString(physical.container)])
   if (physical.purity) fields.push(['purity', quoteString(physical.purity)])
-  if (physical.weight) fields.push(['weight', quoteString(physical.weight)])
+  if (physical.weight) fields.push(['weight', serializeWeight(physical.weight)])
   if (physical.acquiredDate) fields.push(['acquiredDate', quoteString(physical.acquiredDate)])
   if (fields.length === 0) return null
   if (!physical.description && !physical.allotrope) {
