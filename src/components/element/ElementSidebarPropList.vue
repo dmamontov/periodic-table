@@ -16,6 +16,7 @@ defineProps<{
   displaySymbol: string;
   elementName: string;
   spectrumOriginHtml: string;
+  spectrumSampleLabel?: string;
   oxidationStates: OxidationStateRows | null;
 }>();
 
@@ -72,6 +73,7 @@ function toggleColorTooltip(event: Event, label: string | undefined) {
           :element-symbol="displaySymbol"
           :element-name="elementName"
           :origin-html="spectrumOriginHtml"
+          :sample-label="spectrumSampleLabel"
           :annotations="element.collection?.spectrum?.annotations"
           :lead-shielded="element.collection?.spectrum?.leadShielded"
           :background-spectrum-id="element.collection?.spectrum?.backgroundSpectrumId"

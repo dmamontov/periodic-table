@@ -40,6 +40,17 @@ export function resolvePhysicalStateLabel(
   return resolveCollectionLabel(locale, 'sampleStates', physical.sampleState);
 }
 
+/** "What this sample is" + its manufacture date if known, e.g. "Источник из антистатической щётки Staticmaster (июль 1951 г.)". */
+export function formatCollectionSampleLabel(
+  physical: Pick<ElementCollectionPhysical, 'description' | 'sampleState' | 'manufactureDate'> | null | undefined,
+  locale: Locale,
+): string {
+  const stateLabel = resolvePhysicalStateLabel(physical, locale);
+  const dateLabel = formatCollectionManufactureDate(physical?.manufactureDate, locale);
+  if (!stateLabel) return '';
+  return dateLabel ? `${stateLabel} (${dateLabel})` : stateLabel;
+}
+
 export function resolveCollectionSampleState(locale: Locale, entry: ElementCollection | null | undefined): string {
   return resolvePhysicalStateLabel(entry?.physical, locale);
 }

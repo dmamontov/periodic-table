@@ -3,17 +3,12 @@ import { computed, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useLocale } from '../../locales';
 import { computeCollectionStats } from '../../utils/collection/stats';
-import {
-  formatCollectionAcquiredDate,
-  formatCollectionManufactureDate,
-  resolvePhysicalStateLabel,
-} from '../../utils/collection/labels';
+import { formatCollectionAcquiredDate, formatCollectionSampleLabel } from '../../utils/collection/labels';
 import { elements, getElementRouteSymbol } from '../../data';
 import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes';
 import { wishlist } from '../../data/collection';
 import type { Element } from '../../types/element/element';
 import type { ElementCollection, ElementCollectionHistoryEntry } from '../../types/collection/collection';
-import type { LocalizedLabel } from '../../utils/localizedLabel';
 import CollapsibleSection from '../common/CollapsibleSection.vue';
 import DrawerShell from '../common/DrawerShell.vue';
 import CloseButton from '../common/CloseButton.vue';
@@ -41,20 +36,6 @@ const spectraCollapsed = ref(true);
 const historyCollapsed = ref(true);
 const wishlistCollapsed = ref(true);
 
-/** "What this sample is" + its manufacture date if known, e.g. "Источник из антистатической щётки Staticmaster (июль 1951 г.)". */
-function sampleLabelFor(
-  physical: { description?: LocalizedLabel | null; sampleState?: string | null } | null | undefined,
-  manufactureDate: string | null | undefined,
-): string {
-  const stateLabel = resolvePhysicalStateLabel(
-    { description: physical?.description, sampleState: physical?.sampleState },
-    locale.value,
-  );
-  const dateLabel = formatCollectionManufactureDate(manufactureDate, locale.value);
-  if (!stateLabel) return '';
-  return dateLabel ? `${stateLabel} (${dateLabel})` : stateLabel;
-}
-
 const spectrumElements = computed(() =>
   elements.flatMap((el) => {
     const spectrumId = el.collection?.spectrum?.id;
@@ -70,7 +51,7 @@ const spectrumElements = computed(() =>
         color: el.color,
         spectrumId,
         originHtml,
-        sampleLabel: sampleLabelFor(el.collection?.physical, el.collection?.physical?.manufactureDate),
+        sampleLabel: formatCollectionSampleLabel(el.collection?.physical, locale.value),
         annotations: el.collection?.spectrum?.annotations,
         leadShielded: el.collection?.spectrum?.leadShielded,
         backgroundSpectrumId: el.collection?.spectrum?.backgroundSpectrumId,

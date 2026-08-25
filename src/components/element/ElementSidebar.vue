@@ -15,6 +15,7 @@ import {
   isElementWeaklyRadioactive,
 } from '../../data';
 import { siteTitle, siteUrl } from '../../data/collection';
+import { formatCollectionSampleLabel } from '../../utils/collection/labels';
 import { resolveLocalizedLabel } from '../../utils/localizedLabel';
 import { buildElementSections, isSectionEmpty, parseOxidationStates } from '../../utils/element/detailSections';
 import { buildGhsDisplay, buildNfpaDisplay, formatElementSymbol } from '../../utils/element/formatters';
@@ -69,6 +70,10 @@ const spectrumOriginHtml = computed(() => {
     formatIsotopeHtml(el.symbol, radioactive?.isotope)
   );
 });
+
+const spectrumSampleLabel = computed(() =>
+  formatCollectionSampleLabel(props.element?.collection?.physical, locale.value),
+);
 
 const elementMass = computed(() => {
   if (!props.element) return '';
@@ -497,6 +502,7 @@ function toggleSection(sectionKey: string): void {
               :display-symbol="displaySymbol"
               :element-name="elementName"
               :spectrum-origin-html="spectrumOriginHtml"
+              :spectrum-sample-label="spectrumSampleLabel"
               :oxidation-states="oxidationStates"
             />
 
