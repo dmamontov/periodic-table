@@ -18,6 +18,7 @@ import type {
 import CollapsibleSection from '../common/CollapsibleSection.vue';
 import DrawerShell from '../common/DrawerShell.vue';
 import CloseButton from '../common/CloseButton.vue';
+import CollectionStatusLegend from '../common/CollectionStatusLegend.vue';
 import { COLLECTION_COLOR, WISHLIST_UPGRADE_COLOR } from '../../theme/colors';
 import CollectionGammaSpectrum from './CollectionGammaSpectrum.vue';
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue';
@@ -63,6 +64,7 @@ function buildSpectrumEntry(
     leadShielded: spectrum.leadShielded,
     backgroundSpectrumId: spectrum.backgroundSpectrumId,
     note: spectrum.note,
+    isCurrent: past === null,
     isPast: past !== null,
     retained: past?.retained,
   };
@@ -264,6 +266,8 @@ function openElement(symbol: string) {
           :title="messages.collectionPanel.spectraSectionTitle"
           :accent-color="SPECTRA_COLOR"
         >
+          <CollectionStatusLegend class="collection-panel__spectra-legend" />
+
           <div class="collection-panel__spectra-list">
             <div
               v-for="(item, index) in spectrumElements"
@@ -277,6 +281,7 @@ function openElement(symbol: string) {
                   :accent="item.color"
                   :origin-html="item.originHtml"
                   :sample-label="item.sampleLabel"
+                  :is-current="item.isCurrent"
                   :is-past="item.isPast"
                   :retained="item.retained"
                   compact
@@ -464,6 +469,10 @@ function openElement(symbol: string) {
 
 .collection-panel__row-value-total {
   color: var(--color-text-tertiary);
+}
+
+.collection-panel__spectra-legend {
+  margin-bottom: 14px;
 }
 
 .collection-panel__spectra-list {

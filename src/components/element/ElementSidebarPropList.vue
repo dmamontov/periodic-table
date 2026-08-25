@@ -74,6 +74,7 @@ function toggleColorTooltip(event: Event, label: string | undefined) {
           :element-name="elementName"
           :origin-html="spectrumOriginHtml"
           :sample-label="spectrumSampleLabel"
+          is-current
           :annotations="element.collection?.spectrum?.annotations"
           :lead-shielded="element.collection?.spectrum?.leadShielded"
           :background-spectrum-id="element.collection?.spectrum?.backgroundSpectrumId"

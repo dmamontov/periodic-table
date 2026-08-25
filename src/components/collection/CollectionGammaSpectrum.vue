@@ -26,6 +26,7 @@ interface SpectrumSibling {
   spectrumId: string;
   originHtml?: string;
   sampleLabel?: string;
+  isCurrent?: boolean;
   isPast?: boolean;
   retained?: boolean | null;
   annotations?: SpectrumAnnotation[] | null;
@@ -41,6 +42,7 @@ const props = defineProps<{
   elementName?: string;
   originHtml?: string;
   sampleLabel?: string;
+  isCurrent?: boolean;
   isPast?: boolean;
   retained?: boolean | null;
   annotations?: SpectrumAnnotation[] | null;
@@ -68,6 +70,7 @@ const activeName = computed(() => {
 // Per-field `??` would leak this card's own origin/annotations onto a sibling that simply has none of its own.
 const activeOriginHtml = computed(() => (activeSibling.value ? activeSibling.value.originHtml : props.originHtml));
 const activeSampleLabel = computed(() => (activeSibling.value ? activeSibling.value.sampleLabel : props.sampleLabel));
+const activeIsCurrent = computed(() => (activeSibling.value ? activeSibling.value.isCurrent : props.isCurrent));
 const activeIsPast = computed(() => (activeSibling.value ? activeSibling.value.isPast : props.isPast));
 const activeRetained = computed(() => (activeSibling.value ? activeSibling.value.retained : props.retained));
 const activeAnnotations = computed(() => (activeSibling.value ? activeSibling.value.annotations : props.annotations));
@@ -306,6 +309,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
               :accent="modalAccent"
               :origin-html="activeOriginHtml"
               :sample-label="activeSampleLabel"
+              :is-current="activeIsCurrent"
               :is-past="activeIsPast"
               :retained="activeRetained"
             />

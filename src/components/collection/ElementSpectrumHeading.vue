@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useLocale } from '../../locales';
-import { RETAINED_COLOR, NOT_RETAINED_COLOR } from '../../theme/colors';
+import { CURRENT_COLOR, RETAINED_COLOR, NOT_RETAINED_COLOR } from '../../theme/colors';
 
 withDefaults(
   defineProps<{
@@ -9,6 +9,8 @@ withDefaults(
     accent: string;
     originHtml?: string;
     sampleLabel?: string;
+    /** True for the live (current) sample's spectrum - draws the status dot in the collection accent color. */
+    isCurrent?: boolean;
     /** True for a spectrum from a past (history) sample rather than the current one. */
     isPast?: boolean;
     /** Only meaningful when isPast - whether that earlier physical sample is still kept. */
@@ -24,10 +26,16 @@ const { tSidebar } = useLocale();
 <template>
   <div class="element-spectrum-heading" :class="{ 'element-spectrum-heading--compact': compact }">
     <span
-      v-if="isPast"
+      v-if="isCurrent"
       class="element-spectrum-heading__retained-dot"
-      :style="{ backgroundColor: retained ? RETAINED_COLOR : NOT_RETAINED_COLOR }"
-      :title="retained ? tSidebar('collectionHistoryRetained') : tSidebar('collectionHistoryNotRetained')"
+      :style="{ backgroundColor: CURRENT_COLOR }"
+      :title="tSidebar('collectionHistoryCurrent')"
+    />
+    <span
+      v-else-if="isPast"
+      class="element-spectrum-heading__retained-dot"
+      :style="{ backgroundColor: retained === false ? NOT_RETAINED_COLOR : RETAINED_COLOR }"
+      :title="retained === false ? tSidebar('collectionHistoryNotRetained') : tSidebar('collectionHistoryRetained')"
     />
     <span class="element-spectrum-heading__symbol" :style="{ color: accent }">{{ symbol }}</span>
     <span class="element-spectrum-heading__name">{{ name }}</span>
@@ -47,6 +55,7 @@ const { tSidebar } = useLocale();
 
 .element-spectrum-heading__retained-dot {
   flex-shrink: 0;
+  align-self: center;
   width: 8px;
   height: 8px;
   border-radius: 50%;

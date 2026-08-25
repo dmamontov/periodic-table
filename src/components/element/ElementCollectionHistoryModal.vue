@@ -16,7 +16,8 @@ import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/iso
 import { resolveLocalizedLabel } from '../../utils/localizedLabel';
 import CollectionGammaSpectrum from '../collection/CollectionGammaSpectrum.vue';
 import CloseButton from '../common/CloseButton.vue';
-import { COLLECTION_COLOR, RETAINED_COLOR, NOT_RETAINED_COLOR } from '../../theme/colors';
+import CollectionStatusLegend from '../common/CollectionStatusLegend.vue';
+import { COLLECTION_COLOR, CURRENT_COLOR, RETAINED_COLOR, NOT_RETAINED_COLOR } from '../../theme/colors';
 
 const props = defineProps<{
   element: Element;
@@ -30,7 +31,7 @@ const { messages, locale, tSidebar } = useLocale();
 const accent = computed(() => props.accentColor ?? COLLECTION_COLOR);
 
 function pastMarkerColor(retained: boolean | null | undefined): string {
-  return retained ? RETAINED_COLOR : NOT_RETAINED_COLOR;
+  return retained === false ? NOT_RETAINED_COLOR : RETAINED_COLOR;
 }
 
 interface TimelineEntry extends ElementCollectionHistoryEntry {
@@ -53,7 +54,7 @@ const timeline = computed<TimelineEntry[]>(() => {
     radioactive: collection?.radioactive,
     spectrum: collection?.spectrum,
     isCurrent: true,
-    markerColor: accent.value,
+    markerColor: CURRENT_COLOR,
   };
   return [current, ...past];
 });
@@ -176,20 +177,7 @@ function onKeydown(event: KeyboardEvent): void {
           <CloseButton :aria-label="tSidebar('close')" @click="close" />
         </div>
 
-        <div class="collection-history-modal__legend">
-          <span class="collection-history-modal__legend-item">
-            <span class="collection-history-modal__legend-dot" :style="{ backgroundColor: accent }" />
-            {{ tSidebar('collectionHistoryCurrent') }}
-          </span>
-          <span class="collection-history-modal__legend-item">
-            <span class="collection-history-modal__legend-dot" :style="{ backgroundColor: RETAINED_COLOR }" />
-            {{ tSidebar('collectionHistoryRetained') }}
-          </span>
-          <span class="collection-history-modal__legend-item">
-            <span class="collection-history-modal__legend-dot" :style="{ backgroundColor: NOT_RETAINED_COLOR }" />
-            {{ tSidebar('collectionHistoryNotRetained') }}
-          </span>
-        </div>
+        <CollectionStatusLegend class="collection-history-modal__legend" />
 
         <div class="collection-history-modal__timeline">
           <div
@@ -267,9 +255,12 @@ function onKeydown(event: KeyboardEvent): void {
                 v-if="entry.spectrum?.id"
                 class="collection-history-modal__spectrum"
                 :spectrum-id="entry.spectrum.id"
-                :accent-color="accent"
+                :accent-color="element.color"
                 :element-symbol="displaySymbol"
                 :element-name="elementName"
+                :is-current="entry.isCurrent"
+                :is-past="!entry.isCurrent"
+                :retained="entry.retained"
                 :annotations="entry.spectrum.annotations"
                 :lead-shielded="entry.spectrum.leadShielded"
                 :background-spectrum-id="entry.spectrum.backgroundSpectrumId"
@@ -375,28 +366,8 @@ function onKeydown(event: KeyboardEvent): void {
 }
 
 .collection-history-modal__legend {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px 14px;
   flex-shrink: 0;
   margin-bottom: 26px;
-}
-
-.collection-history-modal__legend-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--color-text-muted);
-}
-
-.collection-history-modal__legend-dot {
-  flex-shrink: 0;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
 }
 
 .collection-history-modal__timeline {
