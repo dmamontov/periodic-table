@@ -296,12 +296,17 @@ export const myElements: Record<string, ElementCollection> = {
     physical: { sampleState: 'gas', container: 'dischargeAmpoule', purity: '9999', acquiredDate: '2021-07-31' },
   },
   Rb: {
-    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~0.12', acquiredDate: '2026-06-16' },
+    physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~0.2', acquiredDate: '2026-08-25' },
     history: [
       {
         physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~2', acquiredDate: '2024-09-23' },
         retained: true,
         reason: 'wrongSize',
+      },
+      {
+        physical: { sampleState: 'metal', container: 'ampoule', purity: '9999', weight: '~0.12', acquiredDate: '2026-06-16' },
+        retained: true,
+        reason: 'betterSample',
       },
     ],
   },
