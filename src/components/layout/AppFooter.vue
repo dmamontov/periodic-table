@@ -6,6 +6,7 @@ const currentYear = new Date().getFullYear();
 const year = currentYear > LAUNCH_YEAR ? `${LAUNCH_YEAR}–${currentYear}` : `${LAUNCH_YEAR}`;
 const email = 'd@mamontov.tech';
 const githubUrl = 'https://github.com/dmamontov/periodic-table';
+const appVersion = __APP_VERSION__;
 </script>
 
 <template>
@@ -56,7 +57,7 @@ const githubUrl = 'https://github.com/dmamontov/periodic-table';
           </svg>
         </a>
       </p>
-      <span class="app-footer__year">{{ year }}</span>
+      <span class="app-footer__year">{{ year }} · v{{ appVersion }}</span>
     </div>
   </footer>
 </template>

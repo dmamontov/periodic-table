@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import Unfonts from 'unplugin-fonts/vite';
@@ -5,8 +6,15 @@ import { VitePWA } from 'vite-plugin-pwa';
 import { collectionName, siteTitle } from './src/data/collection';
 import { resolveLocalizedLabel } from './src/utils/localizedLabel';
 
+const { version: appVersion } = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')) as {
+  version: string;
+};
+
 // https://vite.dev/config/
 export default defineConfig({
+  define: {
+    __APP_VERSION__: JSON.stringify(appVersion),
+  },
   plugins: [
     vue(),
     VitePWA({
