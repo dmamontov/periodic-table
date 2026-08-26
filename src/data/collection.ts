@@ -472,7 +472,7 @@ export const myElements: Record<string, ElementCollection> = {
           weight: { mg: 100, approx: true },
           acquiredDate: '2024-08-26',
         },
-        retained: false,
+        retained: true,
         reason: 'degradedStorage',
       },
     ],
