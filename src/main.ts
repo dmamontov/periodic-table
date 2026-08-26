@@ -11,6 +11,7 @@ import { initPwaStandalone } from './utils/pwaStandalone';
 import { scheduleElementImagePreload } from './utils/element/imageCache';
 import { scheduleElementSpectrumPreload } from './utils/element/elementSpectrumCache';
 import { scheduleGridStructurePreload } from './utils/element/gridStructureCache';
+import { scheduleCollectionSpectrumPreload } from './utils/collection/spectrumPreload';
 
 initPwaStandalone();
 initPwaUpdates();
@@ -24,3 +25,4 @@ app.mount('#app');
 scheduleElementImagePreload();
 scheduleElementSpectrumPreload();
 scheduleGridStructurePreload();
+scheduleCollectionSpectrumPreload();

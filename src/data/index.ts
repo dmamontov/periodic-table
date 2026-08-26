@@ -287,6 +287,11 @@ export async function getCollectionSpectrum(id: string | null | undefined): Prom
   return module.default;
 }
 
+/** Every known spectrum id, e.g. to warm the dynamic-import cache ahead of time. */
+export function getAllCollectionSpectrumIds(): string[] {
+  return Array.from(spectrumLoaderById.keys());
+}
+
 export function getCollectionSpectrumXmlHref(id: string | null | undefined): string | null {
   if (!id || !spectrumLoaderById.has(id)) return null;
   return `/collection-spectra/${id}.xml`;
