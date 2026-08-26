@@ -73,7 +73,13 @@ function locationAttributes(location: Location) {
   <SvgMap class="element-production-map" :map="WorldMap" :location-attributes="locationAttributes" />
   <Teleport to="body">
     <Transition name="info-tooltip-fade">
-      <div v-if="tooltip.isOpen.value" class="info-tooltip__bubble" :style="tooltip.style.value" role="tooltip">
+      <div
+        v-if="tooltip.isOpen.value"
+        :ref="tooltip.bubbleEl"
+        class="info-tooltip__bubble"
+        :style="tooltip.style.value"
+        role="tooltip"
+      >
         {{ tooltipText }}
       </div>
     </Transition>

@@ -157,6 +157,7 @@ function toggleColorTooltip(event: Event, label: string | undefined) {
     <Transition name="info-tooltip-fade">
       <div
         v-if="colorTooltip.isOpen.value"
+        :ref="colorTooltip.bubbleEl"
         class="info-tooltip__bubble"
         :style="colorTooltip.style.value"
         role="tooltip"

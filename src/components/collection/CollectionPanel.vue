@@ -35,8 +35,6 @@ const RADIOACTIVE_COLOR = 'var(--color-error)';
 const SPECTRA_COLOR = 'var(--color-link)';
 const WISHLIST_COLOR = WISHLIST_UPGRADE_COLOR;
 const HISTORY_COLOR = '#8b5cf6';
-const HISTORY_NEW_COLOR = COLLECTION_COLOR;
-const HISTORY_REPLACED_COLOR = '#64748b';
 
 const route = useRoute();
 const router = useRouter();
@@ -377,12 +375,7 @@ function openElement(symbol: string) {
                 :name="messages.elements[item.symbol] ?? ''"
                 :color="item.color"
                 :marker-color="item.markerColor"
-                :badge-color="item.type === 'new' ? HISTORY_NEW_COLOR : HISTORY_REPLACED_COLOR"
-                :badge-label="
-                  item.type === 'new'
-                    ? messages.collectionPanel.historyNewBadge
-                    : messages.collectionPanel.historyReplacedBadge
-                "
+                :type="item.type"
               />
             </div>
           </div>
@@ -555,6 +548,7 @@ function openElement(symbol: string) {
 .collection-panel__timeline {
   display: flex;
   flex-direction: column;
+  padding-top: 11px;
 }
 
 .collection-panel__timeline-group {

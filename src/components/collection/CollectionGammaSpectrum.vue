@@ -268,6 +268,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
             <Transition name="info-tooltip-fade">
               <div
                 v-if="leadTooltip.isOpen.value"
+                :ref="leadTooltip.bubbleEl"
                 class="info-tooltip__bubble"
                 :style="leadTooltip.style.value"
                 role="tooltip"
@@ -424,6 +425,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
                     <Transition name="info-tooltip-fade">
                       <div
                         v-if="modalLeadTooltip.isOpen.value"
+                        :ref="modalLeadTooltip.bubbleEl"
                         class="info-tooltip__bubble"
                         :style="modalLeadTooltip.style.value"
                         role="tooltip"
