@@ -7,6 +7,7 @@ import { useLocale } from '../../locales';
 import { searchElements } from '../../utils/element/search';
 import { formatElementSymbol } from '../../utils/element/formatters';
 import { cyclicIndex } from '../../utils/cyclicIndex';
+import AppIcon from '../common/AppIcon.vue';
 import FlyoutTrigger from '../common/FlyoutTrigger.vue';
 
 const router = useRouter();
@@ -94,17 +95,11 @@ onBeforeUnmount(() => {
     @close="onFlyoutClose"
   >
     <template #icon>
-      <svg class="element-search__icon" viewBox="0 0 16 16" aria-hidden="true">
-        <circle cx="6.75" cy="6.75" r="4.25" fill="none" stroke="currentColor" stroke-width="1.5" />
-        <path d="M10 10l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-      </svg>
+      <AppIcon class="element-search__icon" name="search" />
     </template>
 
     <div class="element-search__input-row">
-      <svg class="element-search__input-icon" viewBox="0 0 16 16" aria-hidden="true">
-        <circle cx="6.75" cy="6.75" r="4.25" fill="none" stroke="currentColor" stroke-width="1.5" />
-        <path d="M10 10l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-      </svg>
+      <AppIcon class="element-search__input-icon" name="search" />
       <input
         ref="inputEl"
         v-model="query"
@@ -145,7 +140,7 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-.element-search__icon {
+.element-search__icon :deep(svg) {
   width: var(--pill-switcher-icon-size);
   height: var(--pill-switcher-icon-size);
   display: block;
@@ -161,10 +156,13 @@ onBeforeUnmount(() => {
 }
 
 .element-search__input-icon {
+  color: var(--color-text-muted);
+}
+
+.element-search__input-icon :deep(svg) {
   width: var(--pill-switcher-icon-size);
   height: var(--pill-switcher-icon-size);
   flex-shrink: 0;
-  color: var(--color-text-muted);
 }
 
 .element-search__input {
@@ -245,8 +243,8 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 900px) {
-  .element-search__icon,
-  .element-search__input-icon {
+  .element-search__icon :deep(svg),
+  .element-search__input-icon :deep(svg) {
     width: 13px;
     height: 13px;
   }

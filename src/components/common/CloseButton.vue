@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import AppIcon from './AppIcon.vue';
+
 defineProps<{
   ariaLabel?: string;
 }>();
@@ -8,9 +10,7 @@ defineEmits<{ click: [] }>();
 
 <template>
   <button type="button" class="close-button" :aria-label="ariaLabel" @click="$emit('click')">
-    <svg viewBox="0 0 16 16" aria-hidden="true">
-      <path d="M4 4l8 8M12 4l-8 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-    </svg>
+    <AppIcon name="close" />
   </button>
 </template>
 
@@ -37,7 +37,7 @@ defineEmits<{ click: [] }>();
   color: var(--color-text);
 }
 
-.close-button svg {
+.close-button :deep(svg) {
   width: 15px;
   height: 15px;
 }

@@ -9,6 +9,7 @@ import { useDismissibleTooltip } from '../../composables/useDismissibleTooltip';
 import { COLLECTION_COLOR } from '../../theme/colors';
 import type { CollectionSpectrumData } from '../../types/collection/spectrum';
 import type { SpectrumAnnotation } from '../../types/collection/collection';
+import AppIcon from '../common/AppIcon.vue';
 import CloseButton from '../common/CloseButton.vue';
 import PillSwitcherGroup from '../common/PillSwitcherGroup.vue';
 import PillSwitcherButton from '../common/PillSwitcherButton.vue';
@@ -245,24 +246,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
             :aria-label="tSidebar('collectionSpectrumLeadShielded')"
             @click.stop="leadTooltip.toggle"
           >
-            <svg viewBox="0 0 256 256" aria-hidden="true">
-              <path
-                d="M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="16"
-              />
-              <polyline
-                points="88 136 112 160 168 104"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="16"
-              />
-            </svg>
+            <AppIcon name="shield-check" />
           </button>
           <Teleport to="body">
             <Transition name="info-tooltip-fade">
@@ -328,16 +312,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
               :aria-label="tSidebar('collectionSpectrumPrev')"
               @click="navigatePrev"
             >
-              <svg viewBox="0 0 16 16" aria-hidden="true">
-                <path
-                  d="M10 3l-5 5 5 5"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <AppIcon name="caret-left" />
             </button>
 
             <GammaSpectrumChartSvg
@@ -358,16 +333,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
               :aria-label="tSidebar('collectionSpectrumNext')"
               @click="navigateNext"
             >
-              <svg viewBox="0 0 16 16" aria-hidden="true">
-                <path
-                  d="M6 3l5 5-5 5"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <AppIcon name="caret-right" />
             </button>
           </div>
 
@@ -402,24 +368,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
                     :aria-label="tSidebar('collectionSpectrumLeadShielded')"
                     @click.stop="modalLeadTooltip.toggle"
                   >
-                    <svg viewBox="0 0 256 256" aria-hidden="true">
-                      <path
-                        d="M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="16"
-                      />
-                      <polyline
-                        points="88 136 112 160 168 104"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="16"
-                      />
-                    </svg>
+                    <AppIcon name="shield-check" />
                   </button>
                   <Teleport to="body">
                     <Transition name="info-tooltip-fade">
@@ -524,7 +473,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
   transition: color 0.15s ease;
 }
 
-.collection-gamma-spectrum__lead-icon svg {
+.collection-gamma-spectrum__lead-icon :deep(svg) {
   width: 100%;
   height: 100%;
 }
@@ -695,7 +644,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
   color: var(--color-text);
 }
 
-.gamma-spectrum-modal__nav svg {
+.gamma-spectrum-modal__nav :deep(svg) {
   width: 16px;
   height: 16px;
 }

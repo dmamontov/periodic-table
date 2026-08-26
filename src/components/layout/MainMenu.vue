@@ -2,6 +2,7 @@
 import { computed, useTemplateRef } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useLocale } from '../../locales';
+import AppIcon from '../common/AppIcon.vue';
 import FlyoutTrigger from '../common/FlyoutTrigger.vue';
 
 const route = useRoute();
@@ -27,15 +28,7 @@ function navigate(name: 'collection') {
     panel-tag="nav"
   >
     <template #icon>
-      <svg class="main-menu__icon" viewBox="0 0 16 16" aria-hidden="true">
-        <path
-          d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
-        />
-      </svg>
+      <AppIcon class="main-menu__icon" name="menu" />
     </template>
 
     <button
@@ -44,22 +37,14 @@ function navigate(name: 'collection') {
       :class="{ 'main-menu__item--active': isCollectionActive }"
       @click="navigate('collection')"
     >
-      <svg class="main-menu__item-icon" viewBox="0 0 16 16" aria-hidden="true">
-        <path
-          d="M2 14V7M7 14V2M12 14V9.5"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
-        />
-      </svg>
+      <AppIcon class="main-menu__item-icon" name="bar-chart" />
       {{ messages.menu.collection }}
     </button>
   </FlyoutTrigger>
 </template>
 
 <style scoped>
-.main-menu__icon {
+.main-menu__icon :deep(svg) {
   width: var(--pill-switcher-icon-size);
   height: var(--pill-switcher-icon-size);
   display: block;
@@ -95,14 +80,17 @@ function navigate(name: 'collection') {
 }
 
 .main-menu__item-icon {
-  width: var(--pill-switcher-icon-size);
-  height: var(--pill-switcher-icon-size);
-  flex-shrink: 0;
   color: inherit;
 }
 
+.main-menu__item-icon :deep(svg) {
+  width: var(--pill-switcher-icon-size);
+  height: var(--pill-switcher-icon-size);
+  flex-shrink: 0;
+}
+
 @media (max-width: 900px) {
-  .main-menu__icon {
+  .main-menu__icon :deep(svg) {
     width: 13px;
     height: 13px;
   }

@@ -5,6 +5,7 @@ import type { Element } from '../../types/element/element';
 import { useLocale } from '../../locales';
 import { useDismissibleTooltip } from '../../composables/useDismissibleTooltip';
 import { WISHLIST_UPGRADE_COLOR } from '../../theme/colors';
+import AppIcon from '../common/AppIcon.vue';
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue';
 
 defineProps<{
@@ -48,11 +49,7 @@ const upgradeTooltip = useDismissibleTooltip(upgradeIconEl);
           @pointerleave="upgradeTooltip.onPointerLeave"
           @click.stop="upgradeTooltip.toggle"
         >
-          <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
-            <path
-              d="M240,56v64a8,8,0,0,1-16,0V75.31l-82.34,82.35a8,8,0,0,1-11.32,0L96,123.31,29.66,189.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0L136,140.69,212.69,64H168a8,8,0,0,1,0-16h64A8,8,0,0,1,240,56Z"
-            />
-          </svg>
+          <AppIcon name="trend-up" />
           <Teleport to="body">
             <Transition name="info-tooltip-fade">
               <div
@@ -131,7 +128,7 @@ const upgradeTooltip = useDismissibleTooltip(upgradeIconEl);
   cursor: pointer;
 }
 
-.collection-history-row__upgrade-icon svg {
+.collection-history-row__upgrade-icon :deep(svg) {
   width: 100%;
   height: 100%;
 }

@@ -17,6 +17,7 @@ import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/iso
 import { resolveLocalizedLabel, type LocalizedLabel } from '../../utils/localizedLabel';
 import CollectionGammaSpectrum from '../collection/CollectionGammaSpectrum.vue';
 import ElementSpectrumHeading from '../collection/ElementSpectrumHeading.vue';
+import AppIcon from '../common/AppIcon.vue';
 import CloseButton from '../common/CloseButton.vue';
 import CollectionStatusLegend from '../common/CollectionStatusLegend.vue';
 import { COLLECTION_COLOR, CURRENT_COLOR, RETAINED_COLOR, NOT_RETAINED_COLOR } from '../../theme/colors';
@@ -197,11 +198,7 @@ function onKeydown(event: KeyboardEvent): void {
       :title="messages.sidebar.props.collectionHistory"
       @click="open"
     >
-      <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
-        <path
-          d="M136,80v43.47l36.12,21.67a8,8,0,0,1-8.24,13.72l-40-24A8,8,0,0,1,120,128V80a8,8,0,0,1,16,0Zm-8-48A95.44,95.44,0,0,0,60.08,60.15C52.81,67.51,46.35,74.59,40,82V64a8,8,0,0,0-16,0v40a8,8,0,0,0,8,8H72a8,8,0,0,0,0-16H49c7.15-8.42,14.27-16.35,22.39-24.57a80,80,0,1,1,1.66,114.75a8,8,0,1,0-11,11.64A96,96,0,1,0,128,32Z"
-        />
-      </svg>
+      <AppIcon name="history" />
     </button>
   </slot>
 
@@ -346,7 +343,7 @@ function onKeydown(event: KeyboardEvent): void {
   background: var(--color-bg-muted);
 }
 
-.element-collection-history-trigger svg {
+.element-collection-history-trigger :deep(svg) {
   width: 14px;
   height: 14px;
 }

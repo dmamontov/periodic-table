@@ -26,6 +26,7 @@ import wikiIconWhite from '../../assets/wiki-icon.svg';
 import wikiIconDark from '../../assets/wiki-icon-dark.svg';
 import youtubeIcon from '../../assets/youtube-icon.svg';
 import youtubeIconWhite from '../../assets/youtube-icon-white.svg';
+import AppIcon from '../common/AppIcon.vue';
 import CollapsibleSection from '../common/CollapsibleSection.vue';
 import DrawerShell from '../common/DrawerShell.vue';
 import Badge from '../common/Badge.vue';
@@ -338,34 +339,16 @@ function toggleSection(sectionKey: string): void {
             :aria-label="shareCopied ? tSidebar('shareCopied') : tSidebar('share')"
             @click="share"
           >
-            <svg
+            <AppIcon
               v-if="!shareCopied"
               class="element-sidebar__header-link-icon element-sidebar__header-link-icon--share"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M12 2v13" />
-              <path d="m16 6-4-4-4 4" />
-              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-            </svg>
-            <svg
+              name="share"
+            />
+            <AppIcon
               v-else
               class="element-sidebar__header-link-icon element-sidebar__header-link-icon--share"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M4 12l5 5L20 6" />
-            </svg>
+              name="check"
+            />
           </button>
         </div>
       </div>
@@ -414,36 +397,18 @@ function toggleSection(sectionKey: string): void {
                 :aria-label="shareCopied ? tSidebar('shareCopied') : tSidebar('share')"
                 @click="share"
               >
-                <svg
+                <AppIcon
                   v-if="!shareCopied"
                   class="element-sidebar__header-link-icon element-sidebar__header-link-icon--share"
-                  viewBox="0 0 24 24"
-                  fill="none"
                   :style="{ color: shareIconColor }"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M12 2v13" />
-                  <path d="m16 6-4-4-4 4" />
-                  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-                </svg>
-                <svg
+                  name="share"
+                />
+                <AppIcon
                   v-else
                   class="element-sidebar__header-link-icon element-sidebar__header-link-icon--share"
-                  viewBox="0 0 24 24"
-                  fill="none"
                   :style="{ color: shareIconColor }"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M4 12l5 5L20 6" />
-                </svg>
+                  name="check"
+                />
               </button>
             </div>
           </div>
@@ -644,6 +609,11 @@ function toggleSection(sectionKey: string): void {
   color: #fff;
 }
 
+.element-sidebar__sticky-nav .element-sidebar__header-link-icon--share :deep(svg) {
+  width: 14px;
+  height: 14px;
+}
+
 .element-sidebar__header-sentinel {
   height: 1px;
   margin: 0;
@@ -824,12 +794,23 @@ function toggleSection(sectionKey: string): void {
   height: 17px;
 }
 
+.element-sidebar__header-link-icon--share :deep(svg) {
+  width: 17px;
+  height: 17px;
+  display: block;
+}
+
 .element-sidebar__header--no-image .element-sidebar__header-link-icon--youtube {
   width: 17px;
   height: 17px;
 }
 
 .element-sidebar__header--no-image .element-sidebar__header-link-icon--share {
+  width: 15px;
+  height: 15px;
+}
+
+.element-sidebar__header--no-image .element-sidebar__header-link-icon--share :deep(svg) {
   width: 15px;
   height: 15px;
 }
