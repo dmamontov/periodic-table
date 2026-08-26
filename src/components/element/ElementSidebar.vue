@@ -22,10 +22,10 @@ import { buildGhsDisplay, buildNfpaDisplay, formatElementSymbol } from '../../ut
 import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes';
 import { getWikipediaUrl } from '../../utils/external-links/wikipedia';
 import { getYouTubeUrl } from '../../utils/external-links/youtube';
-import wikiIconWhite from '../../assets/wiki-icon.svg';
-import wikiIconDark from '../../assets/wiki-icon-dark.svg';
-import youtubeIcon from '../../assets/youtube-icon.svg';
-import youtubeIconWhite from '../../assets/youtube-icon-white.svg';
+import wikiIconWhite from '../../assets/icons/wiki-icon.svg';
+import wikiIconDark from '../../assets/icons/wiki-icon-dark.svg';
+import youtubeIcon from '../../assets/icons/youtube-icon.svg';
+import youtubeIconWhite from '../../assets/icons/youtube-icon-white.svg';
 import AppIcon from '../common/AppIcon.vue';
 import CollapsibleSection from '../common/CollapsibleSection.vue';
 import DrawerShell from '../common/DrawerShell.vue';
