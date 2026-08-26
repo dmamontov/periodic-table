@@ -19,7 +19,13 @@ import CollapsibleSection from '../common/CollapsibleSection.vue';
 import DrawerShell from '../common/DrawerShell.vue';
 import CloseButton from '../common/CloseButton.vue';
 import CollectionStatusLegend from '../common/CollectionStatusLegend.vue';
-import { COLLECTION_COLOR, WISHLIST_UPGRADE_COLOR } from '../../theme/colors';
+import {
+  COLLECTION_COLOR,
+  CURRENT_COLOR,
+  RETAINED_COLOR,
+  NOT_RETAINED_COLOR,
+  WISHLIST_UPGRADE_COLOR,
+} from '../../theme/colors';
 import CollectionGammaSpectrum from './CollectionGammaSpectrum.vue';
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue';
 import CollectionWishlistRow from './CollectionWishlistRow.vue';
@@ -95,8 +101,14 @@ interface HistoryTimelineItem {
   element: Element;
   symbol: string;
   color: string;
+  markerColor: string;
   rawDate: string;
   type: 'new' | 'replacement';
+}
+
+function timelineMarkerColor(isCurrent: boolean, retained: boolean | null | undefined): string {
+  if (isCurrent) return CURRENT_COLOR;
+  return retained === false ? NOT_RETAINED_COLOR : RETAINED_COLOR;
 }
 
 const historyTimeline: HistoryTimelineItem[] = elements
@@ -109,12 +121,15 @@ const historyTimeline: HistoryTimelineItem[] = elements
     return versions.flatMap((version, index) => {
       const rawDate = version.physical?.acquiredDate;
       if (!rawDate) return [];
+      const isCurrent = index === versions.length - 1;
+      const retained = isCurrent ? undefined : (version as ElementCollectionHistoryEntry).retained;
       return [
         {
           key: `${el.symbol}-${index}`,
           element: el,
           symbol: el.symbol,
           color: el.color,
+          markerColor: timelineMarkerColor(isCurrent, retained),
           rawDate,
           type: index === 0 ? ('new' as const) : ('replacement' as const),
         },
@@ -332,6 +347,8 @@ function openElement(symbol: string) {
           :title="messages.collectionPanel.historySectionTitle"
           :accent-color="HISTORY_COLOR"
         >
+          <CollectionStatusLegend class="collection-panel__history-legend" />
+
           <div class="collection-panel__timeline">
             <CollectionHistoryRow
               v-for="item in historyTimeline"
@@ -339,6 +356,7 @@ function openElement(symbol: string) {
               :element="item.element"
               :name="messages.elements[item.symbol] ?? ''"
               :color="item.color"
+              :marker-color="item.markerColor"
               :date="formatCollectionAcquiredDate(item.rawDate, locale)"
               :badge-color="item.type === 'new' ? HISTORY_NEW_COLOR : HISTORY_REPLACED_COLOR"
               :badge-label="
@@ -508,6 +526,10 @@ function openElement(symbol: string) {
 .collection-panel__wishlist-list {
   display: flex;
   flex-direction: column;
+}
+
+.collection-panel__history-legend {
+  margin-bottom: 14px;
 }
 
 .collection-panel__timeline {

@@ -8,6 +8,7 @@ defineProps<{
   element: Element;
   name: string;
   color: string;
+  markerColor: string;
   date: string;
   badgeColor: string;
   badgeLabel: string;
@@ -23,7 +24,7 @@ defineProps<{
   >
     <template #trigger="{ open }">
       <button type="button" class="collection-history-row" @click="open">
-        <span class="collection-history-row__marker" :style="{ backgroundColor: color }" />
+        <span class="collection-history-row__marker" :style="{ backgroundColor: markerColor }" />
         <span class="collection-history-row__date">{{ date }}</span>
         <ElementSpectrumHeading
           :symbol="element.symbol"
