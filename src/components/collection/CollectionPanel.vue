@@ -108,7 +108,8 @@ interface HistoryTimelineItem {
   color: string;
   markerColor: string;
   rawDate: string;
-  type: 'new' | 'replacement';
+  /** True when the version this row replaced was retired specifically for a better sample (reason: 'betterSample'), same concept as the wishlist's upgrade flag. */
+  upgrade: boolean;
 }
 
 function timelineMarkerColor(isCurrent: boolean, retained: boolean | null | undefined): string {
@@ -128,6 +129,7 @@ const historyTimeline: HistoryTimelineItem[] = elements
       if (!rawDate) return [];
       const isCurrent = index === versions.length - 1;
       const retained = isCurrent ? undefined : (version as ElementCollectionHistoryEntry).retained;
+      const previous = index > 0 ? (versions[index - 1] as ElementCollectionHistoryEntry) : null;
       return [
         {
           key: `${el.symbol}-${index}`,
@@ -136,7 +138,7 @@ const historyTimeline: HistoryTimelineItem[] = elements
           color: el.color,
           markerColor: timelineMarkerColor(isCurrent, retained),
           rawDate,
-          type: index === 0 ? ('new' as const) : ('replacement' as const),
+          upgrade: previous?.reason === 'betterSample',
         },
       ];
     });
@@ -400,7 +402,7 @@ function openElement(symbol: string) {
                 :name="messages.elements[item.symbol] ?? ''"
                 :color="item.color"
                 :marker-color="item.markerColor"
-                :type="item.type"
+                :upgrade="item.upgrade"
               />
             </div>
           </div>
@@ -587,6 +589,7 @@ function openElement(symbol: string) {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
+  text-align: center;
   color: var(--color-text-muted);
 }
 

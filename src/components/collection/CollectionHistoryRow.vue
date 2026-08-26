@@ -1,30 +1,25 @@
 <script setup lang="ts">
-import { computed, useTemplateRef } from 'vue';
+import { useTemplateRef } from 'vue';
 import ElementCollectionHistoryModal from '../element/ElementCollectionHistoryModal.vue';
 import type { Element } from '../../types/element/element';
 import { useLocale } from '../../locales';
 import { useDismissibleTooltip } from '../../composables/useDismissibleTooltip';
+import { WISHLIST_UPGRADE_COLOR } from '../../theme/colors';
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue';
 
-const props = defineProps<{
+defineProps<{
   element: Element;
   name: string;
   color: string;
   markerColor: string;
-  /** Whether this row is the first-ever acquisition of this element, or a later replacement of its sample. */
-  type: 'new' | 'replacement';
+  /** Whether the version this row replaced was retired specifically for a better sample - same concept and icon as the wishlist's upgrade flag. */
+  upgrade: boolean;
 }>();
 
 const { messages } = useLocale();
 
-const typeLabel = computed(() =>
-  props.type === 'new'
-    ? messages.value.collectionPanel.historyNewBadge
-    : messages.value.collectionPanel.historyReplacedBadge,
-);
-
-const typeIconEl = useTemplateRef<HTMLElement>('typeIconEl');
-const typeTooltip = useDismissibleTooltip(typeIconEl);
+const upgradeIconEl = useTemplateRef<HTMLElement>('upgradeIconEl');
+const upgradeTooltip = useDismissibleTooltip(upgradeIconEl);
 </script>
 
 <template>
@@ -45,32 +40,29 @@ const typeTooltip = useDismissibleTooltip(typeIconEl);
           class="collection-history-row__heading"
         />
         <span
-          ref="typeIconEl"
-          class="collection-history-row__type-icon"
-          @pointerenter="typeTooltip.onPointerEnter"
-          @pointerleave="typeTooltip.onPointerLeave"
-          @click.stop="typeTooltip.toggle"
+          v-if="upgrade"
+          ref="upgradeIconEl"
+          class="collection-history-row__upgrade-icon"
+          :style="{ color: WISHLIST_UPGRADE_COLOR }"
+          @pointerenter="upgradeTooltip.onPointerEnter"
+          @pointerleave="upgradeTooltip.onPointerLeave"
+          @click.stop="upgradeTooltip.toggle"
         >
-          <svg v-if="type === 'new'" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+          <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
             <path
-              d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"
-            />
-          </svg>
-          <svg v-else viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
-            <path
-              d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"
+              d="M240,56v64a8,8,0,0,1-16,0V75.31l-82.34,82.35a8,8,0,0,1-11.32,0L96,123.31,29.66,189.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0L136,140.69,212.69,64H168a8,8,0,0,1,0-16h64A8,8,0,0,1,240,56Z"
             />
           </svg>
           <Teleport to="body">
             <Transition name="info-tooltip-fade">
               <div
-                v-if="typeTooltip.isOpen.value"
-                :ref="typeTooltip.bubbleEl"
+                v-if="upgradeTooltip.isOpen.value"
+                :ref="upgradeTooltip.bubbleEl"
                 class="info-tooltip__bubble"
-                :style="typeTooltip.style.value"
+                :style="upgradeTooltip.style.value"
                 role="tooltip"
               >
-                {{ typeLabel }}
+                {{ messages.collectionPanel.wishlistUpgradeBadge }}
               </div>
             </Transition>
           </Teleport>
@@ -131,16 +123,15 @@ const typeTooltip = useDismissibleTooltip(typeIconEl);
   color: var(--color-text);
 }
 
-.collection-history-row__type-icon {
+.collection-history-row__upgrade-icon {
   display: inline-flex;
   flex-shrink: 0;
   width: 16px;
   height: 16px;
-  color: var(--color-text-muted);
   cursor: pointer;
 }
 
-.collection-history-row__type-icon svg {
+.collection-history-row__upgrade-icon svg {
   width: 100%;
   height: 100%;
 }

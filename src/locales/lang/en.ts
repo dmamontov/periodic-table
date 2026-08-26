@@ -19,8 +19,6 @@ const messages: LocaleMessages = {
     sectionTitle: 'In numbers',
     spectraSectionTitle: 'Spectra',
     historySectionTitle: 'Change history',
-    historyNewBadge: 'New',
-    historyReplacedBadge: 'Replaced',
     wishlistSectionTitle: 'Available to buy',
     wishlistUpgradeBadge: 'Upgrade',
     wishlistStatusWant: 'Want',
