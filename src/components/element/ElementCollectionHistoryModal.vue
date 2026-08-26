@@ -16,6 +16,7 @@ import {
 import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes';
 import { resolveLocalizedLabel, type LocalizedLabel } from '../../utils/localizedLabel';
 import CollectionGammaSpectrum from '../collection/CollectionGammaSpectrum.vue';
+import ElementSpectrumHeading from '../collection/ElementSpectrumHeading.vue';
 import CloseButton from '../common/CloseButton.vue';
 import CollectionStatusLegend from '../common/CollectionStatusLegend.vue';
 import { COLLECTION_COLOR, CURRENT_COLOR, RETAINED_COLOR, NOT_RETAINED_COLOR } from '../../theme/colors';
@@ -196,19 +197,10 @@ function onKeydown(event: KeyboardEvent): void {
       :title="messages.sidebar.props.collectionHistory"
       @click="open"
     >
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M10 2h4" />
-        <path d="M12 14v-4" />
-        <path d="M4 13a8 8 0 0 1 8-7 8 8 0 1 1-5.3 14L4 17.6" />
-        <path d="M9 17H4v5" />
+      <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+        <path
+          d="M136,80v43.47l36.12,21.67a8,8,0,0,1-8.24,13.72l-40-24A8,8,0,0,1,120,128V80a8,8,0,0,1,16,0Zm-8-48A95.44,95.44,0,0,0,60.08,60.15C52.81,67.51,46.35,74.59,40,82V64a8,8,0,0,0-16,0v40a8,8,0,0,0,8,8H72a8,8,0,0,0,0-16H49c7.15-8.42,14.27-16.35,22.39-24.57a80,80,0,1,1,1.66,114.75a8,8,0,1,0-11,11.64A96,96,0,1,0,128,32Z"
+        />
       </svg>
     </button>
   </slot>
@@ -226,7 +218,10 @@ function onKeydown(event: KeyboardEvent): void {
     <Transition name="collection-history-modal-panel">
       <div v-if="isOpen" class="collection-history-modal" role="dialog" aria-modal="true">
         <div class="collection-history-modal__header">
-          <h3 class="collection-history-modal__title">{{ messages.sidebar.props.collectionHistory }}</h3>
+          <div class="collection-history-modal__header-text">
+            <ElementSpectrumHeading :symbol="displaySymbol" :name="elementName" :accent="element.color" compact />
+            <h3 class="collection-history-modal__title">{{ messages.sidebar.props.collectionHistory }}</h3>
+          </div>
           <CloseButton :aria-label="tSidebar('close')" @click="close" />
         </div>
 
@@ -408,11 +403,18 @@ function onKeydown(event: KeyboardEvent): void {
 
 .collection-history-modal__header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
   flex-shrink: 0;
   margin-bottom: 14px;
+}
+
+.collection-history-modal__header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
 }
 
 .collection-history-modal__title {
