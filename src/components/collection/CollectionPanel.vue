@@ -138,6 +138,22 @@ const historyTimeline: HistoryTimelineItem[] = elements
   })
   .sort((a, b) => b.rawDate.localeCompare(a.rawDate));
 
+interface HistoryTimelineGroup {
+  rawDate: string;
+  items: HistoryTimelineItem[];
+}
+
+// historyTimeline is already sorted by rawDate, so entries sharing a date are always adjacent.
+const historyTimelineGroups: HistoryTimelineGroup[] = historyTimeline.reduce<HistoryTimelineGroup[]>((groups, item) => {
+  const lastGroup = groups[groups.length - 1];
+  if (lastGroup?.rawDate === item.rawDate) {
+    lastGroup.items.push(item);
+  } else {
+    groups.push({ rawDate: item.rawDate, items: [item] });
+  }
+  return groups;
+}, []);
+
 // Iterate in periodic-table (atomic number) order rather than object insertion order.
 const wishlistElements = elements.flatMap((el) => {
   const entry = wishlist[el.symbol];
@@ -350,21 +366,25 @@ function openElement(symbol: string) {
           <CollectionStatusLegend class="collection-panel__history-legend" />
 
           <div class="collection-panel__timeline">
-            <CollectionHistoryRow
-              v-for="item in historyTimeline"
-              :key="item.key"
-              :element="item.element"
-              :name="messages.elements[item.symbol] ?? ''"
-              :color="item.color"
-              :marker-color="item.markerColor"
-              :date="formatCollectionAcquiredDate(item.rawDate, locale)"
-              :badge-color="item.type === 'new' ? HISTORY_NEW_COLOR : HISTORY_REPLACED_COLOR"
-              :badge-label="
-                item.type === 'new'
-                  ? messages.collectionPanel.historyNewBadge
-                  : messages.collectionPanel.historyReplacedBadge
-              "
-            />
+            <div v-for="group in historyTimelineGroups" :key="group.rawDate" class="collection-panel__timeline-group">
+              <div class="collection-panel__timeline-date">
+                {{ formatCollectionAcquiredDate(group.rawDate, locale) }}
+              </div>
+              <CollectionHistoryRow
+                v-for="item in group.items"
+                :key="item.key"
+                :element="item.element"
+                :name="messages.elements[item.symbol] ?? ''"
+                :color="item.color"
+                :marker-color="item.markerColor"
+                :badge-color="item.type === 'new' ? HISTORY_NEW_COLOR : HISTORY_REPLACED_COLOR"
+                :badge-label="
+                  item.type === 'new'
+                    ? messages.collectionPanel.historyNewBadge
+                    : messages.collectionPanel.historyReplacedBadge
+                "
+              />
+            </div>
           </div>
         </CollapsibleSection>
       </div>
@@ -535,6 +555,20 @@ function openElement(symbol: string) {
 .collection-panel__timeline {
   display: flex;
   flex-direction: column;
+}
+
+.collection-panel__timeline-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.collection-panel__timeline-date {
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--color-text-muted);
 }
 
 @media (max-width: 900px) {
