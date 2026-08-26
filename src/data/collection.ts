@@ -1351,94 +1351,172 @@ export const myElements: Record<string, ElementCollection> = {
 
 /**
  * Elements you don't have yet, or already have but in a meaningfully worse state —
- * keyed by symbol, one entry each. Each WishlistEntry:
+ * keyed by symbol, an array since more than one candidate sample (different isotope,
+ * different seller, ...) can be wanted for the same element. Each WishlistEntry:
  *   - isotope — mass number(s) as sold, e.g. "227" or "242/243/244" for a mixed
  *     sample; leave '' for a stable element sold without isotope enrichment.
- *   - links — where to get it; an array, since one element may end up with more
- *     than one seller over time. Each link is `{ label, url }`.
+ *   - sampleState/description — same two fields, same precedence, as myElements'
+ *     own physical.sampleState/physical.description: sampleState is a key into
+ *     sampleStateLabels (e.g. 'bead', 'metal'); description is free-text overriding
+ *     it for a one-off sample nothing in the dictionary covers (e.g. what carrier
+ *     an actinide trace is deposited on, or "Source from Sears Early One smoke
+ *     detector"). Set one or the other — name the actual physical sample, not just
+ *     the packaging it ships in (a "Lucite cube" is decoration, not the sample).
+ *   - container — same dictionary as myElements' physical.container; optional.
+ *   - link — where to get it, plain URL string; omit if none is currently known.
+ *     One link per sample — if a second seller sells a genuinely different sample,
+ *     add another WishlistEntry rather than a second link on this one.
  *   - decayParent — only set this if the seller's own listing describes a parent
  *     isotope physically co-located in the same product, decaying into the sold
  *     isotope in situ right now — not just "this is how it was manufactured."
  *     Same shape as ElementCollectionDecayParent, most distant ancestor first.
- *   - upgrade — true if this entry replaces an existing myElements sample rather
- *     than adding a brand-new element.
+ *   - status — acquisition progress ('ordered' | 'shipping'); omit for a plain want.
+ *
+ * Whether an entry is an "upgrade" (replacing an existing myElements sample rather
+ * than filling a gap) isn't stored here — it's derived from whether the symbol
+ * already has a myElements entry, so it can never drift out of sync.
  */
-export const wishlist: Record<string, WishlistEntry> = {
-  Pm: {
-    isotope: '147',
-    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/promethium-lucite-cube-pm2x2' }],
-  },
-  Tc: {
-    isotope: '99',
-    links: [
-      {
-        label: 'Luciteria',
-        url: 'https://luciteria.com/collections/lucite/products/technetium-50mm-lucite-cube-tc2x2',
+export const wishlist: Record<string, WishlistEntry[]> = {
+  Pm: [
+    {
+      isotope: '147',
+      sampleState: 'metal',
+      container: 'substrate',
+      link: 'https://luciteria.com/products/promethium-lucite-cube-pm2x2',
+    },
+    {
+      isotope: '147',
+      description: { ru: 'Электрод разрядника Р-22', en: 'R-22 spark-gap electrode', zh: 'R-22放电管电极' },
+      status: 'shipping',
+    },
+  ],
+  Tc: [
+    {
+      isotope: '99',
+      sampleState: 'metal',
+      container: 'ampoule',
+      link: 'https://luciteria.com/collections/lucite/products/technetium-50mm-lucite-cube-tc2x2',
+    },
+  ],
+  Ac: [
+    {
+      isotope: '227',
+      sampleState: 'salt',
+      container: 'ampoule',
+      link: 'https://luciteria.com/products/actinium-50mm-lucite-cube-ac2x2',
+    },
+  ],
+  Pa: [
+    {
+      isotope: '231',
+      sampleState: 'plate',
+      link: 'https://luciteria.com/products/protactinium-50mm-lucite-cube',
+    },
+  ],
+  Fr: [
+    {
+      isotope: '223',
+      sampleState: 'salt',
+      container: 'ampoule',
+      link: 'https://luciteria.com/products/francium-50mm-lucite-cube-fr2x2',
+      decayParent: [{ symbol: 'Ac', isotope: '227' }],
+    },
+  ],
+  At: [
+    {
+      isotope: '219',
+      sampleState: 'salt',
+      container: 'ampoule',
+      link: 'https://luciteria.com/products/astatine-lucite-cube-at2x2',
+      decayParent: [
+        { symbol: 'Ac', isotope: '227' },
+        { symbol: 'Fr', isotope: '223' },
+      ],
+    },
+  ],
+  Ra: [
+    {
+      isotope: '226',
+      description: {
+        ru: 'Электрод лампы-стабилизатора Mazda 0A2',
+        en: 'Mazda 0A2 voltage-regulator tube electrode',
+        zh: 'Mazda 0A2稳压管电极',
       },
-    ],
-  },
-  Ac: {
-    isotope: '227',
-    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/actinium-50mm-lucite-cube-ac2x2' }],
-  },
-  Pa: {
-    isotope: '231',
-    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/protactinium-50mm-lucite-cube' }],
-  },
-  Fr: {
-    isotope: '223',
-    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/francium-50mm-lucite-cube-fr2x2' }],
-    decayParent: [{ symbol: 'Ac', isotope: '227' }],
-  },
-  At: {
-    isotope: '219',
-    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/astatine-lucite-cube-at2x2' }],
-    decayParent: [
-      { symbol: 'Ac', isotope: '227' },
-      { symbol: 'Fr', isotope: '223' },
-    ],
-  },
-  Cm: {
-    isotope: '242/243/244',
-    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/curium-50mm-lucite-cube-cm2x2' }],
-  },
-  Bk: {
-    isotope: '249',
-    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/berkelium-50mm-lucite-cube-bk2x2' }],
-  },
-  Cf: {
-    isotope: '249',
-    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/californium-50mm-lucite-cube-cf2x2' }],
-    decayParent: [{ symbol: 'Bk', isotope: '249' }],
-  },
-  Es: {
-    isotope: '254',
-    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/einsteinium-50mm-lucite-cube-es2x2' }],
-  },
-  Th: {
-    isotope: '232',
-    links: [{ label: 'Luciteria', url: 'https://www.luciteria.com/element-cubes/p/thorium-cube' }],
-    upgrade: true,
-  },
-  U: {
-    isotope: '238',
-    links: [{ label: 'Luciteria', url: 'https://luciteria.com/products/uranium-metal-99-9-depleted-u238' }],
-    upgrade: true,
-  },
-  Ir: {
-    isotope: '',
-    links: [
-      {
-        label: 'AliExpress',
-        url: 'https://aliexpress.ru/item/1005011884567298.html?sku_id=12000056887903501',
+      status: 'shipping',
+    },
+  ],
+  Cm: [
+    {
+      isotope: '242/243/244',
+      sampleState: 'salt',
+      container: 'substrate',
+      link: 'https://luciteria.com/products/curium-50mm-lucite-cube-cm2x2',
+    },
+  ],
+  Bk: [
+    {
+      isotope: '249',
+      sampleState: 'salt',
+      container: 'ampoule',
+      link: 'https://luciteria.com/products/berkelium-50mm-lucite-cube-bk2x2',
+    },
+  ],
+  Cf: [
+    {
+      isotope: '249',
+      sampleState: 'salt',
+      container: 'ampoule',
+      link: 'https://luciteria.com/products/californium-50mm-lucite-cube-cf2x2',
+      decayParent: [{ symbol: 'Bk', isotope: '249' }],
+    },
+  ],
+  Es: [
+    {
+      isotope: '254',
+      sampleState: 'salt',
+      container: 'substrate',
+      link: 'https://luciteria.com/products/einsteinium-50mm-lucite-cube-es2x2',
+    },
+  ],
+  Th: [
+    {
+      isotope: '232',
+      sampleState: 'plate',
+      link: 'https://luciteria.com/products/thorium-metal-99-9?variant=48090979074213',
+    },
+    {
+      isotope: '232',
+      description: { ru: 'Электрод лампы ДКсШ-200', en: 'DKsSh-200 lamp electrode', zh: 'ДКсШ-200灯管电极' },
+      status: 'shipping',
+    },
+  ],
+  U: [
+    {
+      isotope: '238',
+      sampleState: 'metal',
+      container: 'ampoule',
+      link: 'https://luciteria.com/products/uranium-metal-99-9-depleted-u238',
+    },
+  ],
+  Ir: [
+    {
+      isotope: '',
+      sampleState: 'bead',
+      link: 'https://aliexpress.ru/item/1005011884567298.html?sku_id=12000056887903501',
+      status: 'shipping',
+    },
+  ],
+  Np: [
+    {
+      isotope: '237',
+      description: {
+        ru: 'Источник из дымового извещателя Sears Early One',
+        en: 'Source from Sears Early One smoke detector',
+        zh: 'Sears Early One 烟雾探测器辐射源',
       },
-    ],
-    upgrade: true,
-  },
-  Np: {
-    isotope: '237',
-    links: [{ label: 'eBay', url: 'https://www.ebay.com/itm/227286127570' }],
-    decayParent: [{ symbol: 'Am', isotope: '241' }],
-    upgrade: true,
-  },
+      link: 'https://www.ebay.com/itm/227286127570',
+      decayParent: [{ symbol: 'Am', isotope: '241' }],
+      status: 'ordered',
+    },
+  ],
 };

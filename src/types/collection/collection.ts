@@ -91,17 +91,20 @@ export interface ElementCollection {
   history?: ElementCollectionHistoryEntry[] | null;
 }
 
-export interface WishlistLink {
-  /** Plain-text label for the link, e.g. "Luciteria" — a seller/brand name, not localized */
-  label: string;
-  url: string;
-}
+/** Acquisition progress for a wishlist candidate. Omit — the default — for a plain "want", not yet acted on. */
+export type WishlistStatus = 'ordered' | 'shipping';
 
 export interface WishlistEntry {
   /** Isotope mass number(s) as sold, e.g. "147" or "242/243/244" for a mixed sample */
   isotope: string;
-  /** Where to get it — an array since a future entry may list more than one seller */
-  links: WishlistLink[];
+  /** State or form of the sample (bead, cubicIngot…) — a key into sampleStateLabels, same dictionary as myElements' physical.sampleState. */
+  sampleState?: string | null;
+  /** Ready-made description overriding sampleState, e.g. "Acrylic cube" — same role and precedence as myElements' physical.description. Set one of sampleState/description; description wins if both are set. */
+  description?: LocalizedLabel | null;
+  /** Vessel or packaging (ampoule, acrylicBox…); same dictionary as myElements' physical.container. */
+  container?: string | null;
+  /** Where to get it — omit if no listing is currently known. One link per sample; if a second seller sells a genuinely different sample, add another WishlistEntry instead. */
+  link?: string | null;
   /**
    * Decay chain from an isotope physically co-located in the same product (per the
    * seller's own description) down to this sample's isotope, most distant ancestor
@@ -109,6 +112,5 @@ export interface WishlistEntry {
    * decay relationship is described by the seller.
    */
   decayParent?: ElementCollectionDecayParent[] | null;
-  /** True when this replaces/upgrades an existing myElements sample rather than adding a brand-new element */
-  upgrade?: boolean;
+  status?: WishlistStatus | null;
 }

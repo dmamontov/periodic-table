@@ -10,6 +10,7 @@ export const sampleStateLabels: Record<string, LocalizedLabel> = {
   pressedPowder: { ru: 'Спрессованный порошок', en: 'Pressed powder', zh: '压制粉末' },
   granules: { ru: 'Гранулы', en: 'Granules', zh: '颗粒' },
   powder: { ru: 'Порошок', en: 'Powder', zh: '粉末' },
+  salt: { ru: 'Соль', en: 'Salt', zh: '盐' },
   plate: { ru: 'Пластина', en: 'Plate', zh: '板材' },
   foil: { ru: 'Фольга', en: 'Foil', zh: '箔' },
   bead: { ru: 'Бусина', en: 'Bead', zh: '圆珠' },

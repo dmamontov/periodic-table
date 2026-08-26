@@ -38,6 +38,9 @@ export interface LocaleMessages {
     historyReplacedBadge: string;
     wishlistSectionTitle: string;
     wishlistUpgradeBadge: string;
+    wishlistStatusWant: string;
+    wishlistStatusOrdered: string;
+    wishlistStatusShipping: string;
     close: string;
     statCollected: string;
     statRadioactive: string;

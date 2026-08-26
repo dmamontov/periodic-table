@@ -3,7 +3,12 @@ import { computed, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useLocale } from '../../locales';
 import { computeCollectionStats } from '../../utils/collection/stats';
-import { formatCollectionAcquiredDate, formatCollectionSampleLabel } from '../../utils/collection/labels';
+import {
+  formatCollectionAcquiredDate,
+  formatCollectionSampleLabel,
+  resolveCollectionLabel,
+  resolvePhysicalStateLabel,
+} from '../../utils/collection/labels';
 import { elements, getElementRouteSymbol } from '../../data';
 import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes';
 import { wishlist } from '../../data/collection';
@@ -14,7 +19,9 @@ import type {
   ElementCollectionPhysical,
   ElementCollectionRadioactive,
   ElementCollectionSpectrum,
+  WishlistEntry,
 } from '../../types/collection/collection';
+import type { Locale } from '../../locales/types';
 import CollapsibleSection from '../common/CollapsibleSection.vue';
 import DrawerShell from '../common/DrawerShell.vue';
 import CloseButton from '../common/CloseButton.vue';
@@ -153,22 +160,38 @@ const historyTimelineGroups: HistoryTimelineGroup[] = historyTimeline.reduce<His
 }, []);
 
 // Iterate in periodic-table (atomic number) order rather than object insertion order.
-const wishlistElements = elements.flatMap((el) => {
-  const entry = wishlist[el.symbol];
-  if (!entry) return [];
-  const originHtml =
-    formatDecayChainHtml(el.symbol, entry.isotope, entry.decayParent) || formatIsotopeHtml(el.symbol, entry.isotope);
-  return [
-    {
-      symbol: el.symbol,
-      routeSymbol: getElementRouteSymbol(el.symbol),
-      color: el.color,
-      originHtml,
-      links: entry.links,
-      upgrade: entry.upgrade,
-    },
-  ];
-});
+// One row per wishlist entry, not per element - an element can have several candidate samples (different isotope, different seller, ...).
+// "Соль (Ампула)" - state/description plus the container in parens, same convention formatCollectionSampleLabel uses for a manufacture date.
+function formatWishlistSampleLabel(entry: WishlistEntry, entryLocale: Locale): string {
+  const stateLabel = resolvePhysicalStateLabel(entry, entryLocale);
+  const containerLabel = resolveCollectionLabel(entryLocale, 'containers', entry.container);
+  if (!stateLabel) return '';
+  return containerLabel ? `${stateLabel} (${containerLabel})` : stateLabel;
+}
+
+const wishlistElements = computed(() =>
+  elements.flatMap((el) => {
+    const entries = wishlist[el.symbol];
+    if (!entries?.length) return [];
+    return entries.map((entry, index) => {
+      const originHtml =
+        formatDecayChainHtml(el.symbol, entry.isotope, entry.decayParent) ||
+        formatIsotopeHtml(el.symbol, entry.isotope);
+      return {
+        key: `${el.symbol}-${index}`,
+        symbol: el.symbol,
+        routeSymbol: getElementRouteSymbol(el.symbol),
+        color: el.color,
+        originHtml,
+        description: formatWishlistSampleLabel(entry, locale.value),
+        link: entry.link,
+        status: entry.status,
+        // Not stored on the entry itself - derived from whether this element already has a myElements sample, so it can't drift out of sync.
+        upgrade: Boolean(el.collection),
+      };
+    });
+  }),
+);
 
 function percentOf(part: number, total: number): number {
   return total === 0 ? 0 : Math.round((part / total) * 100);
@@ -343,12 +366,14 @@ function openElement(symbol: string) {
           <div class="collection-panel__wishlist-list">
             <CollectionWishlistRow
               v-for="item in wishlistElements"
-              :key="item.symbol"
+              :key="item.key"
               :symbol="item.symbol"
               :name="messages.elements[item.symbol] ?? ''"
               :color="item.color"
               :origin-html="item.originHtml"
-              :links="item.links"
+              :description="item.description"
+              :link="item.link"
+              :status="item.status"
               :upgrade="item.upgrade"
               @open="openElement(item.routeSymbol)"
             />
