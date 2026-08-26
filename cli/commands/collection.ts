@@ -10,6 +10,7 @@ import type {
   ElementCollectionRadioactive,
   ElementCollectionSpectrum,
   ElementCollectionWeight,
+  ManufactureDateRange,
   SpectrumAnnotation,
 } from '../../src/types/collection/collection.ts';
 import type { LocalizedLabel } from '../../src/utils/localizedLabel.ts';
@@ -106,6 +107,40 @@ async function askPurity(
   const value = nMatch ? Number('9'.repeat(Number(nMatch[1]))) : Number(raw);
   const approx = await askConfirm('Is this purity approximate?', currentValue?.approx ?? false);
   return { value, approx: approx || undefined };
+}
+
+const MANUFACTURE_DATE_PLACEHOLDER = 'YYYY, YYYY-MM, or YYYY-MM-DD';
+
+function validateManufactureDatePart(v: string): string | undefined {
+  return /^\d{4}(-\d{2}(-\d{2})?)?$/.test(v.trim()) ? undefined : `Use ${MANUFACTURE_DATE_PLACEHOLDER}`;
+}
+
+async function askManufactureDate(
+  currentValue: string | ManufactureDateRange | null | undefined,
+): Promise<string | ManufactureDateRange | undefined> {
+  const isRange = await askConfirm(
+    'Is the manufacture date only known as a range?',
+    typeof currentValue === 'object' && currentValue !== null,
+  );
+  if (!isRange) {
+    return askText(
+      'Manufacture date (when the sample was made, not acquired)',
+      typeof currentValue === 'string' ? currentValue : undefined,
+      {
+        placeholder: `${MANUFACTURE_DATE_PLACEHOLDER} — whatever precision is known`,
+        validate: (v) => (!v.trim() ? undefined : validateManufactureDatePart(v)),
+      },
+    );
+  }
+  const from = await askRequiredText('Manufacture date, from', {
+    placeholder: MANUFACTURE_DATE_PLACEHOLDER,
+    validate: validateManufactureDatePart,
+  });
+  const to = await askRequiredText('Manufacture date, to', {
+    placeholder: MANUFACTURE_DATE_PLACEHOLDER,
+    validate: validateManufactureDatePart,
+  });
+  return { from, to };
 }
 
 /** Select from a project vocabulary dict (sampleState/container/sourceType), with an escape hatch for values not yet in it. */
@@ -230,11 +265,7 @@ async function askCollectionHistory(
     physical.container = await askEnum('Container', undefined, vocab.containerLabels);
     physical.purity = await askPurity(undefined);
     physical.weight = await askWeight(undefined);
-    physical.manufactureDate = await askText('Manufacture date (when the sample was made, not acquired)', undefined, {
-      placeholder: 'YYYY, YYYY-MM, or YYYY-MM-DD — whatever precision is known',
-      validate: (v) =>
-        !v.trim() || /^\d{4}(-\d{2}(-\d{2})?)?$/.test(v.trim()) ? undefined : 'Use YYYY, YYYY-MM, or YYYY-MM-DD',
-    });
+    physical.manufactureDate = await askManufactureDate(undefined);
     const wantDescription = await askConfirm('Use a ready-made description instead of sample state?', false);
     physical.description = wantDescription ? await askLocalizedLabel('Description', undefined) : undefined;
 
@@ -290,15 +321,7 @@ async function editWizard(
   physical.container = await askEnum('Container', existing?.physical?.container, vocab.containerLabels);
   physical.purity = await askPurity(existing?.physical?.purity);
   physical.weight = await askWeight(existing?.physical?.weight);
-  physical.manufactureDate = await askText(
-    'Manufacture date (when the sample was made, not acquired)',
-    existing?.physical?.manufactureDate,
-    {
-      placeholder: 'YYYY, YYYY-MM, or YYYY-MM-DD — whatever precision is known',
-      validate: (v) =>
-        !v.trim() || /^\d{4}(-\d{2}(-\d{2})?)?$/.test(v.trim()) ? undefined : 'Use YYYY, YYYY-MM, or YYYY-MM-DD',
-    },
-  );
+  physical.manufactureDate = await askManufactureDate(existing?.physical?.manufactureDate);
   physical.acquiredDate = await askText('Acquired date', existing?.physical?.acquiredDate, {
     placeholder: 'YYYY-MM-DD, e.g. 2021-05-01',
     validate: (v) => (!v.trim() || /^\d{4}-\d{2}-\d{2}$/.test(v.trim()) ? undefined : 'Use YYYY-MM-DD format'),

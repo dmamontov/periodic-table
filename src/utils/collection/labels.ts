@@ -7,6 +7,7 @@ import type {
   ElementCollectionPhysical,
   ElementCollectionPurity,
   ElementCollectionWeight,
+  ManufactureDateRange,
 } from '../../types/collection/collection';
 
 const DICTS = {
@@ -80,11 +81,8 @@ export function formatCollectionAcquiredDate(value: string | null | undefined, l
   });
 }
 
-/** Variable-precision date: "2021" → "2021"; "2021-07" → "июль 2021 г." (ru); "2021-07-31" → "31 июля 2021 г." */
-export function formatCollectionManufactureDate(value: string | null | undefined, locale: Locale): string {
-  if (!value) return '';
-  const intlLocale = locale === 'zh' ? 'zh-CN' : locale;
-
+/** Formats a single variable-precision date: "2021" → "2021"; "2021-07" → "июль 2021 г." (ru); "2021-07-31" → "31 июля 2021 г." */
+function formatManufactureDatePart(value: string, intlLocale: string): string {
   if (/^\d{4}$/.test(value)) return value;
 
   if (/^\d{4}-\d{2}$/.test(value)) {
@@ -96,6 +94,22 @@ export function formatCollectionManufactureDate(value: string | null | undefined
   const date = new Date(`${value}T00:00:00`);
   if (Number.isNaN(date.getTime())) return value;
   return date.toLocaleDateString(intlLocale, { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+/**
+ * Variable-precision date, or a { from, to } range of two such dates when the exact
+ * date isn't known: "2021" → "2021"; "2021-07" → "июль 2021 г." (ru); { from: '1950',
+ * to: '1960' } → "1950 – 1960"; each side of a range keeps its own independent precision.
+ */
+export function formatCollectionManufactureDate(
+  value: string | ManufactureDateRange | null | undefined,
+  locale: Locale,
+): string {
+  if (!value) return '';
+  const intlLocale = locale === 'zh' ? 'zh-CN' : locale;
+
+  if (typeof value === 'string') return formatManufactureDatePart(value, intlLocale);
+  return `${formatManufactureDatePart(value.from, intlLocale)} – ${formatManufactureDatePart(value.to, intlLocale)}`;
 }
 
 /** { mg: 60 } → "60 мг"; { mg: 1850, approx: true } → "~1.85 г" — switches to grams at 1000 mg */

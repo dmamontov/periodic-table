@@ -81,7 +81,7 @@ Fork 了本项目、想记录自己的元素收藏？需要修改的内容全部
 - 如果内置的 `sampleState`/`container`/`reason` 词汇表（在 [`src/locales/collection.ts`](src/locales/collection.ts) 中）不够用，你可以在那里添加新条目，也可以完全跳过词汇表，直接把现成的文字写进该元素的 `physical.description` 字段 - `collection.ts` 里的放射性元素就是这么做的，可以参考。`radioactive.sourceType` 固定取值为 `'primary'` 或 `'secondary'`。
 - `physical.weight` 是一个 `{ mg, approx? }` 对象 - `mg` 为毫克重量，`approx: true` 表示这是估算值而非实测值。前端显示时低于 1000 毫克按毫克显示，否则自动换算为克 - `{ mg: 60, approx: true }` 显示为「~60 毫克」，`{ mg: 1850, approx: true }` 显示为「~1.85 克」。
 - `physical.allotrope` 用于标明该元素若有多种同素异形体时样品的具体形态（例如磷的「红磷」、碳的「石墨」）- 作为独立一行显示在 `sampleState` 旁边，而非取代它。
-- `physical.manufactureDate` 是样品本身的制造/生产日期，而不是加入收藏的日期（后者见 `acquiredDate`）- 精度不限，知道多少写多少：`"2021"`、`"2021-07"` 或 `"2021-07-31"`。
+- `physical.manufactureDate` 是样品本身的制造/生产日期，而不是加入收藏的日期（后者见 `acquiredDate`）- 精度不限，知道多少写多少：`"2021"`、`"2021-07"` 或 `"2021-07-31"`。如果只知道大致区间，可以用 `{ from, to }` 代替字符串，两侧各写一个这样的日期，例如 `{ from: '1950', to: '1960' }` 会显示为「1950 – 1960」。
 - `physical.acquiredDate` 是 ISO `YYYY-MM-DD` 格式的日期 - 在元素卡片上显示为「收藏起始」。在 `history` 记录中则表示「这个更早的版本从何时起是当时的现状」。
 - 任何文本字段既可以写成一个普通字符串（在三种界面语言下都显示同一内容），也可以写成 `{ ru, en, zh }` 对象来分别翻译。
 
