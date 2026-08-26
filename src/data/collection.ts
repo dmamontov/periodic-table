@@ -1099,6 +1099,7 @@ export const myElements: Record<string, ElementCollection> = {
     physical: {
       description: { ru: 'Светосостав постоянного действия', en: 'Self-luminous compound', zh: '夜光涂料' },
       container: 'ampoule',
+      manufactureDate: { from: '1938', to: '1962' },
       acquiredDate: '2026-06-02',
     },
     radioactive: {
@@ -1134,6 +1135,7 @@ export const myElements: Record<string, ElementCollection> = {
         zh: '带夜光涂料的钟表指针',
       },
       container: 'ampoule',
+      manufactureDate: { from: '1938', to: '1962' },
       acquiredDate: '2026-06-02',
     },
     radioactive: {
@@ -1295,6 +1297,7 @@ export const myElements: Record<string, ElementCollection> = {
         zh: 'RID-6M 烟雾探测器辐射源',
       },
       container: 'acrylicBox',
+      manufactureDate: { from: '1982', to: '1997' },
       acquiredDate: '2026-07-11',
     },
     radioactive: {
