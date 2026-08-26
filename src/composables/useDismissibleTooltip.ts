@@ -43,6 +43,17 @@ export function useDismissibleTooltip(rootEl: Ref<HTMLElement | null>) {
     if (event.key === 'Escape') close();
   }
 
+  // Touch taps synthesize a ghost mouseenter+click pair afterward for compat; listening on mouseenter
+  // there would open the tooltip only for the click's own toggle() to immediately close it again, so a
+  // real hover-to-preview only makes sense for an actual mouse (pointerType stays 'touch'/'pen' otherwise).
+  function onPointerEnter(event: PointerEvent) {
+    if (event.pointerType === 'mouse') open();
+  }
+
+  function onPointerLeave(event: PointerEvent) {
+    if (event.pointerType === 'mouse') close();
+  }
+
   function onViewportChange() {
     if (isOpen.value) updatePosition();
   }
@@ -59,5 +70,14 @@ export function useDismissibleTooltip(rootEl: Ref<HTMLElement | null>) {
     window.removeEventListener('scroll', onViewportChange, true);
   });
 
-  return { isOpen: readonly(isOpen), style: readonly(style), open, close, toggle, onKeydown };
+  return {
+    isOpen: readonly(isOpen),
+    style: readonly(style),
+    open,
+    close,
+    toggle,
+    onKeydown,
+    onPointerEnter,
+    onPointerLeave,
+  };
 }

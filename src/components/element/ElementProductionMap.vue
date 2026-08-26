@@ -31,6 +31,16 @@ function showTooltip(event: Event, label: string) {
   tooltip.open();
 }
 
+// Touch taps synthesize a ghost mouseenter+click pair afterward for compat - only a real mouse should
+// open the tooltip on hover, or the click's own toggle() would immediately close what the ghost mouseenter just opened.
+function showTooltipOnMouseHover(event: PointerEvent, label: string) {
+  if (event.pointerType === 'mouse') showTooltip(event, label);
+}
+
+function hideTooltipOnMouseHover(event: PointerEvent) {
+  if (event.pointerType === 'mouse') tooltip.close();
+}
+
 function toggleTooltip(event: Event, label: string) {
   if (tooltip.isOpen.value && hoveredEl.value === event.currentTarget) {
     tooltip.close();
@@ -52,8 +62,8 @@ function locationAttributes(location: Location) {
     class: 'element-production-map__country element-production-map__country--active',
     style: { fillOpacity },
     'aria-label': label,
-    onMouseenter: (event: MouseEvent) => showTooltip(event, label),
-    onMouseleave: () => tooltip.close(),
+    onPointerenter: (event: PointerEvent) => showTooltipOnMouseHover(event, label),
+    onPointerleave: (event: PointerEvent) => hideTooltipOnMouseHover(event),
     onClick: (event: MouseEvent) => toggleTooltip(event, label),
   };
 }

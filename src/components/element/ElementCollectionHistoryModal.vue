@@ -7,6 +7,7 @@ import {
   formatCollectionAcquiredDate,
   formatCollectionManufactureDate,
   formatCollectionPurity,
+  formatCollectionSampleLabel,
   formatCollectionWeight,
   resolveCollectionLabel,
   resolvePhysicalStateLabel,
@@ -98,6 +99,14 @@ function sourceTypeLabel(entry: TimelineEntry): string {
 
 function decayChainHtml(entry: TimelineEntry): string {
   return formatDecayChainHtml(props.element.symbol, entry.radioactive?.isotope, entry.radioactive?.decayParent);
+}
+
+function spectrumOriginHtml(entry: TimelineEntry): string {
+  return decayChainHtml(entry) || isotopeHtml(entry);
+}
+
+function spectrumSampleLabel(entry: TimelineEntry): string {
+  return formatCollectionSampleLabel(entry.physical, locale.value);
 }
 
 function reasonLabel(entry: TimelineEntry): string {
@@ -258,6 +267,8 @@ function onKeydown(event: KeyboardEvent): void {
                 :accent-color="element.color"
                 :element-symbol="displaySymbol"
                 :element-name="elementName"
+                :origin-html="spectrumOriginHtml(entry)"
+                :sample-label="spectrumSampleLabel(entry)"
                 :is-current="entry.isCurrent"
                 :is-past="!entry.isCurrent"
                 :retained="entry.retained"

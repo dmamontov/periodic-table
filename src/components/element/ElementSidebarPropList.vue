@@ -34,6 +34,16 @@ function showColorTooltip(event: Event, label: string | undefined) {
   colorTooltip.open();
 }
 
+// Touch taps synthesize a ghost mouseenter+click pair afterward for compat - only a real mouse should
+// open the tooltip on hover, or the click's own toggle() would immediately close what the ghost mouseenter just opened.
+function showColorTooltipOnMouseHover(event: PointerEvent, label: string | undefined) {
+  if (event.pointerType === 'mouse') showColorTooltip(event, label);
+}
+
+function hideColorTooltipOnMouseHover(event: PointerEvent) {
+  if (event.pointerType === 'mouse') colorTooltip.close();
+}
+
 function toggleColorTooltip(event: Event, label: string | undefined) {
   if (!label) return;
   if (colorTooltip.isOpen.value && hoveredColorEl.value === event.currentTarget) {
@@ -97,8 +107,8 @@ function toggleColorTooltip(event: Event, label: string | undefined) {
             class="element-sidebar__color-swatch element-sidebar__color-segment"
             :class="`element-sidebar__color-swatch--${c.finish ?? 'metallic'}`"
             :style="{ backgroundColor: c.hex }"
-            @mouseenter="showColorTooltip($event, c.label)"
-            @mouseleave="colorTooltip.close()"
+            @pointerenter="showColorTooltipOnMouseHover($event, c.label)"
+            @pointerleave="hideColorTooltipOnMouseHover($event)"
             @click.stop="toggleColorTooltip($event, c.label)"
           />
         </div>

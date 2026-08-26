@@ -84,6 +84,9 @@ const activeNote = computed(() => {
   const note = activeSibling.value ? activeSibling.value.note : props.note;
   return resolveLocalizedLabel(note, locale.value);
 });
+// This card's own note, unaffected by which sibling is paged to in the zoom modal - the inline
+// (non-modal) caption must stay tied to this specific spectrum, not to the modal's navigation state.
+const ownNote = computed(() => resolveLocalizedLabel(props.note, locale.value));
 
 const leadIconEl = useTemplateRef<HTMLElement>('leadIconEl');
 const leadTooltip = useDismissibleTooltip(leadIconEl);
@@ -233,8 +236,8 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
           ref="leadIconEl"
           class="collection-gamma-spectrum__lead-icon-wrap"
           @keydown="leadTooltip.onKeydown"
-          @mouseenter="leadTooltip.open"
-          @mouseleave="leadTooltip.close"
+          @pointerenter="leadTooltip.onPointerEnter"
+          @pointerleave="leadTooltip.onPointerLeave"
         >
           <button
             type="button"
@@ -284,9 +287,9 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
         {{ tSidebar('collectionSpectrumDownload') }}
       </a>
     </div>
-    <p v-if="activeNote" class="collection-gamma-spectrum__note">
+    <p v-if="ownNote" class="collection-gamma-spectrum__note">
       <span class="collection-gamma-spectrum__note-label">{{ tSidebar('collectionSpectrumNote') }}:</span>
-      {{ activeNote }}
+      {{ ownNote }}
     </p>
 
     <Teleport to="body">
@@ -389,8 +392,8 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
                   ref="modalLeadIconEl"
                   class="collection-gamma-spectrum__lead-icon-wrap"
                   @keydown="modalLeadTooltip.onKeydown"
-                  @mouseenter="modalLeadTooltip.open"
-                  @mouseleave="modalLeadTooltip.close"
+                  @pointerenter="modalLeadTooltip.onPointerEnter"
+                  @pointerleave="modalLeadTooltip.onPointerLeave"
                 >
                   <button
                     type="button"
