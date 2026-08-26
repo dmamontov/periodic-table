@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue';
 import { useLocale } from '../../locales';
 import type { Element } from '../../types/element/element';
-import type { ElementCollectionHistoryEntry } from '../../types/collection/collection';
+import type { ElementCollectionHistoryEntry, SpectrumAnnotation } from '../../types/collection/collection';
 import {
   formatCollectionAcquiredDate,
   formatCollectionManufactureDate,
@@ -14,7 +14,7 @@ import {
   resolveSourceType,
 } from '../../utils/collection/labels';
 import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes';
-import { resolveLocalizedLabel } from '../../utils/localizedLabel';
+import { resolveLocalizedLabel, type LocalizedLabel } from '../../utils/localizedLabel';
 import CollectionGammaSpectrum from '../collection/CollectionGammaSpectrum.vue';
 import CloseButton from '../common/CloseButton.vue';
 import CollectionStatusLegend from '../common/CollectionStatusLegend.vue';
@@ -107,6 +107,50 @@ function spectrumOriginHtml(entry: TimelineEntry): string {
 
 function spectrumSampleLabel(entry: TimelineEntry): string {
   return formatCollectionSampleLabel(entry.physical, locale.value);
+}
+
+interface SpectrumSibling {
+  symbol: string;
+  color: string;
+  spectrumId: string;
+  originHtml?: string;
+  sampleLabel?: string;
+  isCurrent?: boolean;
+  isPast?: boolean;
+  retained?: boolean | null;
+  annotations?: SpectrumAnnotation[] | null;
+  leadShielded?: boolean | null;
+  backgroundSpectrumId?: string | null;
+  note?: LocalizedLabel | null;
+}
+
+// Paging in the spectrum zoom modal opened from here should only page through this element's own
+// history entries that actually have a spectrum - not the whole collection's spectra.
+const spectrumSiblings = computed<SpectrumSibling[]>(() =>
+  timeline.value.flatMap((entry) => {
+    const spectrum = entry.spectrum;
+    if (!spectrum?.id) return [];
+    return [
+      {
+        symbol: props.displaySymbol,
+        color: props.element.color,
+        spectrumId: spectrum.id,
+        originHtml: spectrumOriginHtml(entry),
+        sampleLabel: spectrumSampleLabel(entry),
+        isCurrent: entry.isCurrent,
+        isPast: !entry.isCurrent,
+        retained: entry.retained,
+        annotations: spectrum.annotations,
+        leadShielded: spectrum.leadShielded,
+        backgroundSpectrumId: spectrum.backgroundSpectrumId,
+        note: spectrum.note,
+      },
+    ];
+  }),
+);
+
+function spectrumSiblingIndex(entry: TimelineEntry): number {
+  return spectrumSiblings.value.findIndex((sibling) => sibling.spectrumId === entry.spectrum?.id);
 }
 
 function reasonLabel(entry: TimelineEntry): string {
@@ -276,6 +320,8 @@ function onKeydown(event: KeyboardEvent): void {
                 :lead-shielded="entry.spectrum.leadShielded"
                 :background-spectrum-id="entry.spectrum.backgroundSpectrumId"
                 :note="entry.spectrum.note"
+                :siblings="spectrumSiblings"
+                :sibling-index="spectrumSiblingIndex(entry)"
               />
             </div>
           </div>
