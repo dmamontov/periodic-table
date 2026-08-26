@@ -9,6 +9,8 @@ import { installTheme } from './theme';
 import { initPwaUpdates } from './pwa';
 import { initPwaStandalone } from './utils/pwaStandalone';
 import { scheduleElementImagePreload } from './utils/element/imageCache';
+import { scheduleElementSpectrumPreload } from './utils/element/elementSpectrumCache';
+import { scheduleGridStructurePreload } from './utils/element/gridStructureCache';
 
 initPwaStandalone();
 initPwaUpdates();
@@ -20,3 +22,5 @@ installLocale(app);
 installTheme(app);
 app.mount('#app');
 scheduleElementImagePreload();
+scheduleElementSpectrumPreload();
+scheduleGridStructurePreload();
