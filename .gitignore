@@ -30,7 +30,6 @@ lerna-debug.log*
 # Claude Code
 .claude/
 CLAUDE.md
-IDEAS.md
 
 # Editor / IDE
 .vscode
