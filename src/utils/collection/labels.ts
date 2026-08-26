@@ -100,6 +100,8 @@ function formatManufactureDatePart(value: string, intlLocale: string): string {
  * Variable-precision date, or a { from, to } range of two such dates when the exact
  * date isn't known: "2021" → "2021"; "2021-07" → "июль 2021 г." (ru); { from: '1950',
  * to: '1960' } → "1950 – 1960"; each side of a range keeps its own independent precision.
+ * Either side of a range can be missing when only one end is known: { from: '1938' } →
+ * "1938 –"; { to: '1962' } → "– 1962".
  */
 export function formatCollectionManufactureDate(
   value: string | ManufactureDateRange | null | undefined,
@@ -109,7 +111,12 @@ export function formatCollectionManufactureDate(
   const intlLocale = locale === 'zh' ? 'zh-CN' : locale;
 
   if (typeof value === 'string') return formatManufactureDatePart(value, intlLocale);
-  return `${formatManufactureDatePart(value.from, intlLocale)} – ${formatManufactureDatePart(value.to, intlLocale)}`;
+  const from = value.from ? formatManufactureDatePart(value.from, intlLocale) : '';
+  const to = value.to ? formatManufactureDatePart(value.to, intlLocale) : '';
+  if (from && to) return `${from} – ${to}`;
+  if (from) return `${from} –`;
+  if (to) return `– ${to}`;
+  return '';
 }
 
 /** { mg: 60 } → "60 мг"; { mg: 1850, approx: true } → "~1.85 г" — switches to grams at 1000 mg */

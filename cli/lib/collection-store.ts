@@ -45,9 +45,11 @@ function serializePurity(purity: ElementCollectionPurity): string {
 }
 
 function serializeManufactureDate(value: string | ManufactureDateRange): string {
-  return typeof value === 'string'
-    ? quoteString(value)
-    : `{ from: ${quoteString(value.from)}, to: ${quoteString(value.to)} }`;
+  if (typeof value === 'string') return quoteString(value);
+  const parts: string[] = [];
+  if (value.from) parts.push(`from: ${quoteString(value.from)}`);
+  if (value.to) parts.push(`to: ${quoteString(value.to)}`);
+  return `{ ${parts.join(', ')} }`;
 }
 
 function serializePhysical(physical: ElementCollectionPhysical | null | undefined, indent: string): string | null {

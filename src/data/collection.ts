@@ -1065,6 +1065,7 @@ export const myElements: Record<string, ElementCollection> = {
         zh: 'Staticmaster 防静电刷辐射源',
       },
       container: 'acrylicCoinCapsule',
+      manufactureDate: '1953-10',
       acquiredDate: '2026-06-27',
     },
     radioactive: {
@@ -1266,6 +1267,7 @@ export const myElements: Record<string, ElementCollection> = {
         zh: 'HIS-07 烟雾探测器辐射源',
       },
       container: 'acrylicCoinCapsule',
+      manufactureDate: { from: '2002' },
       acquiredDate: '2026-06-27',
     },
     radioactive: {
@@ -1297,7 +1299,7 @@ export const myElements: Record<string, ElementCollection> = {
         zh: 'RID-6M 烟雾探测器辐射源',
       },
       container: 'acrylicBox',
-      manufactureDate: { from: '1982', to: '1997' },
+      manufactureDate: '1990-02',
       acquiredDate: '2026-07-11',
     },
     radioactive: {
@@ -1328,6 +1330,7 @@ export const myElements: Record<string, ElementCollection> = {
         zh: 'HIS-07 烟雾探测器辐射源',
       },
       container: 'acrylicCoinCapsule',
+      manufactureDate: { from: '2002' },
       acquiredDate: '2026-06-06',
     },
     radioactive: {

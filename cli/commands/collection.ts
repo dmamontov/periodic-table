@@ -132,15 +132,16 @@ async function askManufactureDate(
       },
     );
   }
-  const from = await askRequiredText('Manufacture date, from', {
+  const currentRange = typeof currentValue === 'object' && currentValue !== null ? currentValue : undefined;
+  const from = await askText('Manufacture date, from (leave blank if only the end is known)', currentRange?.from, {
     placeholder: MANUFACTURE_DATE_PLACEHOLDER,
-    validate: validateManufactureDatePart,
+    validate: (v) => (!v.trim() ? undefined : validateManufactureDatePart(v)),
   });
-  const to = await askRequiredText('Manufacture date, to', {
+  const to = await askText('Manufacture date, to (leave blank if only the start is known)', currentRange?.to, {
     placeholder: MANUFACTURE_DATE_PLACEHOLDER,
-    validate: validateManufactureDatePart,
+    validate: (v) => (!v.trim() ? undefined : validateManufactureDatePart(v)),
   });
-  return { from, to };
+  return from || to ? { from, to } : undefined;
 }
 
 /** Select from a project vocabulary dict (sampleState/container/sourceType), with an escape hatch for values not yet in it. */

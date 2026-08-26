@@ -30,10 +30,10 @@ export interface ElementCollectionPurity {
   approx?: boolean | null;
 }
 
-/** A manufacture date known only as a range rather than a single point — each side its own independent variable-precision string ("YYYY", "YYYY-MM", or "YYYY-MM-DD"). */
+/** A manufacture date known only as a range rather than a single point — each side its own independent variable-precision string ("YYYY", "YYYY-MM", or "YYYY-MM-DD"). Either side can be omitted if only the other end of the range is known (e.g. "still made as of 1997" with no known start). */
 export interface ManufactureDateRange {
-  from: string;
-  to: string;
+  from?: string;
+  to?: string;
 }
 
 export interface ElementCollectionPhysical {
