@@ -1,7 +1,6 @@
 import type { LocalizedLabel } from '../../utils/localizedLabel';
 
 export interface ElementCollectionDecayParent {
-  /** Parent element's symbol, e.g. "Ra" */
   symbol: string;
   /** Parent isotope's mass number, e.g. "226" */
   isotope: string;
@@ -77,11 +76,15 @@ export interface ElementCollectionSpectrum {
   note?: LocalizedLabel | null;
 }
 
-/** A past version of this collection entry — same shape as ElementCollection minus its own `history`. Dated via its own `physical.acquiredDate`, same field as the live version. */
-export interface ElementCollectionHistoryEntry {
+/** The physical/radioactive/spectrum trio shared by the live `ElementCollection` entry and every other "one sample" shape below it (history, alternates). */
+export interface ElementCollectionSample {
   physical?: ElementCollectionPhysical | null;
   radioactive?: ElementCollectionRadioactive | null;
   spectrum?: ElementCollectionSpectrum | null;
+}
+
+/** A past version of this collection entry. Dated via its own `physical.acquiredDate`, same field as the live version. */
+export interface ElementCollectionHistoryEntry extends ElementCollectionSample {
   /** Whether this earlier sample is still physically kept, not consumed/merged into the replacement. Omit if unknown. */
   retained?: boolean | null;
   /** Why this version was replaced — a key into reasonLabels. Omit if unknown. */
@@ -95,19 +98,12 @@ export interface ElementCollectionHistoryEntry {
  * never "replaced" — it's just not the one chosen to display. Not surfaced anywhere
  * in the UI yet; recorded here so it isn't lost/forgotten.
  */
-export interface ElementCollectionAlternate {
-  physical?: ElementCollectionPhysical | null;
-  radioactive?: ElementCollectionRadioactive | null;
-  spectrum?: ElementCollectionSpectrum | null;
+export interface ElementCollectionAlternate extends ElementCollectionSample {
   /** Whether this alternate sample is still physically kept. Omit if unknown. */
   retained?: boolean | null;
 }
 
-export interface ElementCollection {
-  physical?: ElementCollectionPhysical | null;
-  /** Present only for radioactive samples in the collection */
-  radioactive?: ElementCollectionRadioactive | null;
-  spectrum?: ElementCollectionSpectrum | null;
+export interface ElementCollection extends ElementCollectionSample {
   /** Earlier versions of this collection entry before a physical replacement, oldest first. The live fields above always describe the *current* version. */
   history?: ElementCollectionHistoryEntry[] | null;
   /** Other owned samples of this element, not chosen as the current display one. Not shown anywhere in the UI yet. */
@@ -117,15 +113,10 @@ export interface ElementCollection {
 /** Acquisition progress for a wishlist candidate. Omit — the default — for a plain "want", not yet acted on. */
 export type WishlistStatus = 'ordered' | 'shipping';
 
-export interface WishlistEntry {
+/** `sampleState`/`description`/`container` reuse ElementCollectionPhysical's own fields — a wishlist candidate is described exactly like an owned sample, same dictionaries and precedence. */
+export interface WishlistEntry extends Pick<ElementCollectionPhysical, 'sampleState' | 'description' | 'container'> {
   /** Isotope mass number(s) as sold, e.g. "147" or "242/243/244" for a mixed sample */
   isotope: string;
-  /** State or form of the sample (bead, cubicIngot…) — a key into sampleStateLabels, same dictionary as myElements' physical.sampleState. */
-  sampleState?: string | null;
-  /** Ready-made description overriding sampleState, e.g. "Acrylic cube" — same role and precedence as myElements' physical.description. Set one of sampleState/description; description wins if both are set. */
-  description?: LocalizedLabel | null;
-  /** Vessel or packaging (ampoule, acrylicBox…); same dictionary as myElements' physical.container. */
-  container?: string | null;
   /** Where to get it — omit if no listing is currently known. One link per sample; if a second seller sells a genuinely different sample, add another WishlistEntry instead. */
   link?: string | null;
   /**
