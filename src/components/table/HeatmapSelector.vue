@@ -4,6 +4,7 @@ import {
   HEATMAP_DEFINITIONS,
   HEATMAP_GROUP_ORDER,
   formatHeatmapRangeValue,
+  formatUnitLabel,
   getHeatmapDataset,
 } from '../../utils/heatmap';
 import type { HeatmapGroupId, HeatmapId } from '../../types/heatmap';
@@ -56,11 +57,7 @@ const legendMax = computed(() => {
 
 const legendInverted = computed(() => selectedHeatmap.value === 'rarity');
 
-const unitLabel = computed(() => {
-  const def = activeDefinition.value;
-  if (!def?.unitKey) return '';
-  return messages.value.sidebar.units[def.unitKey].replace(/[():]/g, '').trim();
-});
+const unitLabel = computed(() => formatUnitLabel(activeDefinition.value?.unitKey, messages.value));
 
 function labelFor(id: HeatmapId): string {
   return messages.value.heatmap.maps[id];

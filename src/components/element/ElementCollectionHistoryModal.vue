@@ -13,7 +13,7 @@ import {
   resolvePhysicalStateLabel,
   resolveSourceType,
 } from '../../utils/collection/labels';
-import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes';
+import { formatDecayChainHtml, formatIsotopeHtml, formatSpectrumOriginHtml } from '../../utils/element/isotopes';
 import { resolveLocalizedLabel, type LocalizedLabel } from '../../utils/localizedLabel';
 import CollectionGammaSpectrum from '../collection/CollectionGammaSpectrum.vue';
 import ElementSpectrumHeading from '../collection/ElementSpectrumHeading.vue';
@@ -104,7 +104,7 @@ function decayChainHtml(entry: TimelineEntry): string {
 }
 
 function spectrumOriginHtml(entry: TimelineEntry): string {
-  return decayChainHtml(entry) || isotopeHtml(entry);
+  return formatSpectrumOriginHtml(props.element.symbol, entry.radioactive?.isotope, entry.radioactive?.decayParent);
 }
 
 function spectrumSampleLabel(entry: TimelineEntry): string {

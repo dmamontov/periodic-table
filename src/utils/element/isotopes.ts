@@ -1,6 +1,6 @@
 import type { Locale } from '../../locales/types';
 import { localeMessages } from '../../locales';
-import { getSymbolByNumber, storedElementDetails } from '../../data';
+import { getElementDecayMode, storedElementDetails } from '../../data';
 import type { ElementCollectionDecayParent } from '../../types/collection/collection';
 import { formatElementSymbol } from './formatters';
 
@@ -37,9 +37,17 @@ export function formatDecayChainHtml(
   return labels.join(' → ');
 }
 
+/** Decay chain when there's one, otherwise the bare current isotope. */
+export function formatSpectrumOriginHtml(
+  symbol: string,
+  isotope: string | null | undefined,
+  decayParent: ElementCollectionDecayParent[] | null | undefined,
+): string {
+  return formatDecayChainHtml(symbol, isotope, decayParent) || formatIsotopeHtml(symbol, isotope);
+}
+
 export function formatDecayType(number: number, locale: Locale): string {
-  const symbol = getSymbolByNumber(number);
-  const key = symbol ? storedElementDetails[symbol]?.isotopes?.decay : undefined;
+  const key = getElementDecayMode(number);
   if (!key) return '';
   return localeMessages[locale].decay[key] ?? localeMessages.ru.decay[key] ?? '';
 }

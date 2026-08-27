@@ -48,12 +48,16 @@ function nfpaSpecialLabel(locale: Locale, code: string): string {
   return nfpaLabel(locale, category as 'nfpa4', index);
 }
 
-function nfpaWhiteDiamondParts(value: string): NfpaWhiteDiamondPart[] {
-  if (!value || value === '-') return [];
-  const codes = value
+function splitPlusList(value: string): string[] {
+  return value
     .split('+')
     .map((p) => p.trim())
     .filter(Boolean);
+}
+
+function nfpaWhiteDiamondParts(value: string): NfpaWhiteDiamondPart[] {
+  if (!value || value === '-') return [];
+  const codes = splitPlusList(value);
   if (codes.includes('RAD')) return [{ type: 'rad', value: '' }];
   return codes.map((part) => ({ type: 'text' as const, value: part }));
 }
@@ -66,10 +70,7 @@ function nfpaWhiteDiamond(value: string): string {
 
 function nfpaWhiteLabel(locale: Locale, value: string): string {
   if (value === '-' || value === '') return '----';
-  const parts = value
-    .split('+')
-    .map((p) => p.trim())
-    .filter(Boolean);
+  const parts = splitPlusList(value);
   if (!parts.length) return '----';
   return parts.map((part) => nfpaSpecialLabel(locale, part)).join('; ');
 }

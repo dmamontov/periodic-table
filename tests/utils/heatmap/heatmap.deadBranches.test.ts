@@ -64,13 +64,19 @@ const MOCK_DETAILS: Record<string, StoredElementDetail> = {
 
 vi.mock('../../../src/data', async (importOriginal) => {
   const actual = await importOriginal<typeof DataModule>();
+  const getSymbolByNumber = (number: number) => {
+    if (number === 1) return null;
+    return MOCK_ELEMENTS.find((e) => e.number === number)?.symbol ?? null;
+  };
   return {
     ...actual,
     elements: MOCK_ELEMENTS,
     storedElementDetails: MOCK_DETAILS,
-    getSymbolByNumber: (number: number) => {
-      if (number === 1) return null;
-      return MOCK_ELEMENTS.find((e) => e.number === number)?.symbol ?? null;
+    getSymbolByNumber,
+    // Re-implemented here since the real one closes over data/index.ts's own unmocked internals.
+    getElementDecayMode: (number: number) => {
+      const symbol = getSymbolByNumber(number);
+      return symbol ? MOCK_DETAILS[symbol]?.isotopes?.decay : undefined;
     },
   };
 });

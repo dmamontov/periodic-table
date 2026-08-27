@@ -1,6 +1,7 @@
 import { channelToEnergy } from '../../data';
 import type { CollectionSpectrumData, GammaSpectrumChartData } from '../../types/collection/spectrum';
 import type { SpectrumAnnotation } from '../../types/collection/collection';
+import { toIntlLocale } from '../intlLocale';
 
 const CHART_WIDTH = 640;
 const CHART_HEIGHT = 260;
@@ -208,6 +209,5 @@ export function formatSpectrumCpsLabel(data: CollectionSpectrumData | null, loca
   // Same overflow-tally exclusion as the chart.
   const totalCounts = data.counts.slice(0, -1).reduce((sum, c) => sum + c, 0);
   const cps = totalCounts / data.measurementTimeSec;
-  const loc = locale === 'zh' ? 'zh-CN' : locale;
-  return `${cps.toLocaleString(loc, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} cps`;
+  return `${cps.toLocaleString(toIntlLocale(locale), { minimumFractionDigits: 2, maximumFractionDigits: 2 })} cps`;
 }

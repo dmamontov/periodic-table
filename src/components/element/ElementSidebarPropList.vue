@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import { defineAsyncComponent, ref } from 'vue';
+import { defineAsyncComponent } from 'vue';
 import { useLocale } from '../../locales';
 import type { Element } from '../../types/element/element';
 import type { DetailSection } from '../../types/element/section';
 import type { OxidationStateRows } from '../../utils/element/detailSections';
-import { useDismissibleTooltip } from '../../composables/useDismissibleTooltip';
+import { useHoverAnchoredTooltip } from '../../composables/useHoverAnchoredTooltip';
 import CollectionGammaSpectrum from '../collection/CollectionGammaSpectrum.vue';
 import ElementMiniTable from '../table/ElementMiniTable.vue';
+import TooltipBubble from '../common/TooltipBubble.vue';
 
 const ElementProductionMap = defineAsyncComponent(() => import('./ElementProductionMap.vue'));
 
@@ -22,36 +23,13 @@ defineProps<{
 
 const { tSidebar } = useLocale();
 
-// Re-anchored to whichever color segment is hovered/tapped right before each open() call - same pattern as ElementProductionMap's per-country tooltip.
-const hoveredColorEl = ref<HTMLElement | null>(null);
-const colorTooltip = useDismissibleTooltip(hoveredColorEl);
-const colorTooltipText = ref('');
-
-function showColorTooltip(event: Event, label: string | undefined) {
-  if (!label) return;
-  hoveredColorEl.value = event.currentTarget as HTMLElement;
-  colorTooltipText.value = label;
-  colorTooltip.open();
-}
-
-// Touch taps synthesize a ghost mouseenter+click pair afterward for compat - only a real mouse should
-// open the tooltip on hover, or the click's own toggle() would immediately close what the ghost mouseenter just opened.
-function showColorTooltipOnMouseHover(event: PointerEvent, label: string | undefined) {
-  if (event.pointerType === 'mouse') showColorTooltip(event, label);
-}
-
-function hideColorTooltipOnMouseHover(event: PointerEvent) {
-  if (event.pointerType === 'mouse') colorTooltip.close();
-}
-
-function toggleColorTooltip(event: Event, label: string | undefined) {
-  if (!label) return;
-  if (colorTooltip.isOpen.value && hoveredColorEl.value === event.currentTarget) {
-    colorTooltip.close();
-    return;
-  }
-  showColorTooltip(event, label);
-}
+const {
+  tooltip: colorTooltip,
+  text: colorTooltipText,
+  showOnMouseHover: showColorTooltipOnMouseHover,
+  hideOnMouseHover: hideColorTooltipOnMouseHover,
+  toggle: toggleColorTooltip,
+} = useHoverAnchoredTooltip();
 </script>
 
 <template>
@@ -153,19 +131,7 @@ function toggleColorTooltip(event: Event, label: string | undefined) {
     </li>
   </ul>
 
-  <Teleport to="body">
-    <Transition name="info-tooltip-fade">
-      <div
-        v-if="colorTooltip.isOpen.value"
-        :ref="colorTooltip.bubbleEl"
-        class="info-tooltip__bubble"
-        :style="colorTooltip.style.value"
-        role="tooltip"
-      >
-        {{ colorTooltipText }}
-      </div>
-    </Transition>
-  </Teleport>
+  <TooltipBubble :tooltip="colorTooltip">{{ colorTooltipText }}</TooltipBubble>
 </template>
 
 <style scoped>
@@ -306,32 +272,6 @@ function toggleColorTooltip(event: Event, label: string | undefined) {
   border: none;
   border-radius: 0;
   cursor: pointer;
-}
-
-.info-tooltip__bubble {
-  position: fixed;
-  z-index: 320;
-  max-width: 240px;
-  padding: 8px 10px;
-  border-radius: 6px;
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border);
-  box-shadow: 0 4px 16px var(--color-shadow-md);
-  color: var(--color-text);
-  font-size: 11px;
-  font-weight: 500;
-  line-height: 1.4;
-  transform: translateX(-50%);
-}
-
-.info-tooltip-fade-enter-active,
-.info-tooltip-fade-leave-active {
-  transition: opacity 0.12s ease;
-}
-
-.info-tooltip-fade-enter-from,
-.info-tooltip-fade-leave-to {
-  opacity: 0;
 }
 
 /* Polished metal: cylinder + top highlight, no diagonal streak */

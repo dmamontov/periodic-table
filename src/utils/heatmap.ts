@@ -1,10 +1,11 @@
 import type { Locale, LocaleMessages, DecayModeKey } from '../locales/types';
 import { localeMessages } from '../locales';
-import { elements, storedElementDetails, getSymbolByNumber } from '../data';
+import { elements, storedElementDetails, getElementDecayMode } from '../data';
 import type { StoredElementDetail } from '../types/element/detail';
 import type { HeatmapId, HeatmapGroupId, HeatmapDefinition, HeatmapDataset } from '../types/heatmap';
 import { HEATMAP_ACCENT_COLORS } from '../theme/colors';
 import { formatDecayType } from './element/isotopes';
+import { toIntlLocale } from './intlLocale';
 
 export const HEATMAP_GROUP_ORDER: HeatmapGroupId[] = ['atomic', 'trends', 'physical', 'nuclear', 'other'];
 
@@ -96,13 +97,15 @@ export const HEATMAP_DEFINITIONS: HeatmapDefinition[] = [
 const BRIGHTNESS_MIN = 0.52;
 const BRIGHTNESS_MAX = 1.02;
 
-/** Half-life units in elements/details.ts: value/unitCode */
-const HALF_LIFE_UNIT_SECONDS: Record<number, number> = {
-  1: 365.25 * 24 * 3600,
-  2: 24 * 3600,
-  3: 3600,
-  4: 60,
-  5: 1,
+type DurationUnitKey = keyof LocaleMessages['heatmap']['durationUnits'];
+
+/** Half-life/lifetime units in elements/details.ts: value/unitCode. */
+const NUCLEUS_DURATION_UNITS: Record<number, { seconds: number; key: DurationUnitKey }> = {
+  1: { seconds: 365.25 * 24 * 3600, key: 'years' },
+  2: { seconds: 24 * 3600, key: 'days' },
+  3: { seconds: 3600, key: 'hours' },
+  4: { seconds: 60, key: 'minutes' },
+  5: { seconds: 1, key: 'seconds' },
 };
 
 const elementDetails = storedElementDetails;
@@ -140,8 +143,7 @@ const DECAY_CELL_LABEL: Record<DecayModeKey, string> = {
 };
 
 function getDecayModeScore(number: number): number | null {
-  const symbol = getSymbolByNumber(number);
-  const mode = symbol ? elementDetails[symbol]?.isotopes?.decay : undefined;
+  const mode = getElementDecayMode(number);
   return mode ? (DECAY_MODE_SCORE[mode] ?? null) : null;
 }
 
@@ -185,7 +187,7 @@ export function parseHalfLifeToSeconds(raw: string | null | undefined): number |
 
   const value = Number.parseFloat(match[1]);
   const unitCode = Number.parseInt(match[2], 10);
-  const factor = HALF_LIFE_UNIT_SECONDS[unitCode];
+  const factor = NUCLEUS_DURATION_UNITS[unitCode]?.seconds;
   if (!factor || !Number.isFinite(value) || value < 0) return null;
   return value * factor;
 }
@@ -355,6 +357,15 @@ export function intensityToBrightness(intensity: number): number {
   return BRIGHTNESS_MIN + intensity * (BRIGHTNESS_MAX - BRIGHTNESS_MIN);
 }
 
+/** Strips the parenthesized/colon decoration off a unit label (e.g. "(°C)" → "°C") for inline display. */
+export function formatUnitLabel(
+  unitKey: keyof LocaleMessages['sidebar']['units'] | undefined,
+  messages: LocaleMessages,
+): string {
+  if (!unitKey) return '';
+  return messages.sidebar.units[unitKey].replace(/[():]/g, '').trim();
+}
+
 export function formatHeatmapValue(value: number, locale: string): string {
   const abs = Math.abs(value);
   if (abs >= 10000 || (abs > 0 && abs < 0.001)) {
@@ -379,7 +390,7 @@ function integerToSuperscript(value: number): string {
 }
 
 function formatNumberLocale(value: number, locale: string, options: Intl.NumberFormatOptions): string {
-  return value.toLocaleString(locale === 'zh' ? 'zh-CN' : locale, options);
+  return value.toLocaleString(toIntlLocale(locale), options);
 }
 
 /** e.g. 7.2e-8 → «7,2·10⁻⁸» (no E-notation). */
@@ -412,14 +423,12 @@ function formatPercentAbundance(value: number, locale: string): string {
   return '0%';
 }
 
-type DurationUnitKey = keyof LocaleMessages['heatmap']['durationUnits'];
-
 function formatDurationSeconds(
   seconds: number,
   locale: string,
   units: LocaleMessages['heatmap']['durationUnits'],
 ): string {
-  const loc = locale === 'zh' ? 'zh-CN' : locale;
+  const loc = toIntlLocale(locale);
   const formatNum = (value: number, digits: number) => value.toLocaleString(loc, { maximumFractionDigits: digits });
 
   const year = 365.25 * 24 * 3600;
@@ -452,17 +461,10 @@ function formatNucleusDurationRaw(raw: string, locale: string, messages: LocaleM
   const unitCode = Number.parseInt(match[2], 10);
   if (!Number.isFinite(value)) return raw;
 
-  const unitMap: Record<number, DurationUnitKey> = {
-    1: 'years',
-    2: 'days',
-    3: 'hours',
-    4: 'minutes',
-    5: 'seconds',
-  };
-  const unitKey = unitMap[unitCode];
+  const unitKey = NUCLEUS_DURATION_UNITS[unitCode]?.key;
   if (!unitKey) return raw;
 
-  const loc = locale === 'zh' ? 'zh-CN' : locale;
+  const loc = toIntlLocale(locale);
 
   if (unitKey === 'years' && Math.abs(value) >= 100_000_000) {
     return `${formatSciSuperscript(value, loc)} ${messages.heatmap.durationUnits[unitKey]}`;
@@ -502,8 +504,7 @@ export function formatHeatmapElementValue(
   }
 
   if (id === 'decayMode') {
-    const symbol = getSymbolByNumber(number);
-    const mode = symbol ? elementDetails[symbol]?.isotopes?.decay : undefined;
+    const mode = getElementDecayMode(number);
     if (!mode) return null;
     if (mode === 'stable') return messages.heatmap.stable;
     return formatDecayType(number, locale as Locale);
@@ -551,9 +552,8 @@ export function formatHeatmapCellDisplay(
   const def = HEATMAP_DEFINITIONS.find((item) => item.id === id);
   if (!def?.unitKey) {
     if (id === 'decayMode') {
-      // formatHeatmapElementValue above already returned early unless there's a real symbol and decay mode.
-      const symbol = getSymbolByNumber(number)!;
-      const mode = elementDetails[symbol]!.isotopes!.decay;
+      // formatHeatmapElementValue above already returned early unless there's a real decay mode.
+      const mode = getElementDecayMode(number)!;
       if (mode === 'stable') return messages.heatmap.stable;
       return DECAY_CELL_LABEL[mode];
     }

@@ -5,6 +5,7 @@ import { useDismissibleTooltip } from '../../composables/useDismissibleTooltip';
 import { COLLECTION_COLOR, WISHLIST_UPGRADE_COLOR } from '../../theme/colors';
 import type { WishlistStatus } from '../../types/collection/collection';
 import AppIcon from '../common/AppIcon.vue';
+import TooltipBubble from '../common/TooltipBubble.vue';
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue';
 
 const STATUS_COLORS: Record<'want' | WishlistStatus, string> = {
@@ -72,19 +73,7 @@ const upgradeTooltip = useDismissibleTooltip(upgradeIconEl);
         @click.stop="upgradeTooltip.toggle"
       >
         <AppIcon name="trend-up" />
-        <Teleport to="body">
-          <Transition name="info-tooltip-fade">
-            <div
-              v-if="upgradeTooltip.isOpen.value"
-              :ref="upgradeTooltip.bubbleEl"
-              class="info-tooltip__bubble"
-              :style="upgradeTooltip.style.value"
-              role="tooltip"
-            >
-              {{ messages.collectionPanel.wishlistUpgradeBadge }}
-            </div>
-          </Transition>
-        </Teleport>
+        <TooltipBubble :tooltip="upgradeTooltip">{{ messages.collectionPanel.wishlistUpgradeBadge }}</TooltipBubble>
       </span>
 
       <span
@@ -98,19 +87,7 @@ const upgradeTooltip = useDismissibleTooltip(upgradeIconEl);
         <AppIcon v-if="resolvedStatus === 'want'" name="star" />
         <AppIcon v-else-if="resolvedStatus === 'ordered'" name="package" />
         <AppIcon v-else name="truck" />
-        <Teleport to="body">
-          <Transition name="info-tooltip-fade">
-            <div
-              v-if="statusTooltip.isOpen.value"
-              :ref="statusTooltip.bubbleEl"
-              class="info-tooltip__bubble"
-              :style="statusTooltip.style.value"
-              role="tooltip"
-            >
-              {{ statusLabel }}
-            </div>
-          </Transition>
-        </Teleport>
+        <TooltipBubble :tooltip="statusTooltip">{{ statusLabel }}</TooltipBubble>
       </span>
     </div>
   </div>
@@ -185,32 +162,5 @@ const upgradeTooltip = useDismissibleTooltip(upgradeIconEl);
 .collection-wishlist-row__icon :deep(svg) {
   width: 100%;
   height: 100%;
-}
-
-.info-tooltip__bubble {
-  position: fixed;
-  z-index: 320;
-  max-width: 240px;
-  /* `left` is the anchor's center, computed in useDismissibleTooltip - shift back by half of this bubble's own (variable) width so it stays centered regardless of how short/long its text is. */
-  transform: translateX(-50%);
-  padding: 8px 10px;
-  border-radius: 6px;
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border);
-  box-shadow: 0 4px 16px var(--color-shadow-md);
-  color: var(--color-text);
-  font-size: 11px;
-  font-weight: 500;
-  line-height: 1.4;
-}
-
-.info-tooltip-fade-enter-active,
-.info-tooltip-fade-leave-active {
-  transition: opacity 0.12s ease;
-}
-
-.info-tooltip-fade-enter-from,
-.info-tooltip-fade-leave-to {
-  opacity: 0;
 }
 </style>

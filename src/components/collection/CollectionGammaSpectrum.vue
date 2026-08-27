@@ -6,6 +6,7 @@ import { cyclicIndex } from '../../utils/cyclicIndex';
 import { resolveLocalizedLabel, type LocalizedLabel } from '../../utils/localizedLabel';
 import { useSpectrumDisplay } from '../../composables/useSpectrumDisplay';
 import { useDismissibleTooltip } from '../../composables/useDismissibleTooltip';
+import { useModalFocusTrap } from '../../composables/useModalFocusTrap';
 import { COLLECTION_COLOR } from '../../theme/colors';
 import type { CollectionSpectrumData } from '../../types/collection/spectrum';
 import type { SpectrumAnnotation } from '../../types/collection/collection';
@@ -13,6 +14,7 @@ import AppIcon from '../common/AppIcon.vue';
 import CloseButton from '../common/CloseButton.vue';
 import PillSwitcherGroup from '../common/PillSwitcherGroup.vue';
 import PillSwitcherButton from '../common/PillSwitcherButton.vue';
+import TooltipBubble from '../common/TooltipBubble.vue';
 import {
   SPECTRUM_SMOOTHING_DEFAULT,
   SPECTRUM_SMOOTHING_MAX,
@@ -194,21 +196,26 @@ const {
 function openZoom() {
   activeIndex.value = props.siblingIndex ?? 0;
   isZoomed.value = true;
-  document.addEventListener('keydown', onKeydown);
 }
 
 function closeZoom() {
   isZoomed.value = false;
-  document.removeEventListener('keydown', onKeydown);
 }
 
-function onKeydown(event: KeyboardEvent) {
-  if (event.key === 'Escape') closeZoom();
-  else if (event.key === 'ArrowLeft') navigatePrev();
+function onArrowKeydown(event: KeyboardEvent) {
+  if (event.key === 'ArrowLeft') navigatePrev();
   else if (event.key === 'ArrowRight') navigateNext();
 }
 
-onUnmounted(() => document.removeEventListener('keydown', onKeydown));
+watch(isZoomed, (open) => {
+  if (open) document.addEventListener('keydown', onArrowKeydown);
+  else document.removeEventListener('keydown', onArrowKeydown);
+});
+
+onUnmounted(() => document.removeEventListener('keydown', onArrowKeydown));
+
+const modalPanelEl = useTemplateRef<HTMLElement>('modalPanelEl');
+useModalFocusTrap(isZoomed, modalPanelEl, closeZoom);
 </script>
 
 <template>
@@ -248,19 +255,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
           >
             <AppIcon name="shield-check" />
           </button>
-          <Teleport to="body">
-            <Transition name="info-tooltip-fade">
-              <div
-                v-if="leadTooltip.isOpen.value"
-                :ref="leadTooltip.bubbleEl"
-                class="info-tooltip__bubble"
-                :style="leadTooltip.style.value"
-                role="tooltip"
-              >
-                {{ tSidebar('collectionSpectrumLeadShielded') }}
-              </div>
-            </Transition>
-          </Teleport>
+          <TooltipBubble :tooltip="leadTooltip">{{ tSidebar('collectionSpectrumLeadShielded') }}</TooltipBubble>
         </span>
       </p>
       <a
@@ -288,7 +283,14 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
         />
       </Transition>
       <Transition name="gamma-spectrum-modal-panel">
-        <div v-if="isZoomed" class="gamma-spectrum-modal" role="dialog" aria-modal="true">
+        <div
+          v-if="isZoomed"
+          ref="modalPanelEl"
+          class="gamma-spectrum-modal"
+          role="dialog"
+          aria-modal="true"
+          tabindex="-1"
+        >
           <div class="gamma-spectrum-modal__header">
             <ElementSpectrumHeading
               v-if="activeSymbol"
@@ -370,19 +372,9 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
                   >
                     <AppIcon name="shield-check" />
                   </button>
-                  <Teleport to="body">
-                    <Transition name="info-tooltip-fade">
-                      <div
-                        v-if="modalLeadTooltip.isOpen.value"
-                        :ref="modalLeadTooltip.bubbleEl"
-                        class="info-tooltip__bubble"
-                        :style="modalLeadTooltip.style.value"
-                        role="tooltip"
-                      >
-                        {{ tSidebar('collectionSpectrumLeadShielded') }}
-                      </div>
-                    </Transition>
-                  </Teleport>
+                  <TooltipBubble :tooltip="modalLeadTooltip">{{
+                    tSidebar('collectionSpectrumLeadShielded')
+                  }}</TooltipBubble>
                 </span>
               </p>
               <PillSwitcherGroup
@@ -480,33 +472,6 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown));
 
 .collection-gamma-spectrum__lead-icon:hover {
   color: var(--color-text);
-}
-
-.info-tooltip__bubble {
-  position: fixed;
-  z-index: 320;
-  max-width: 240px;
-  /* `left` is the anchor's center, computed in useDismissibleTooltip - shift back by half of this bubble's own (variable) width so it stays centered regardless of how short/long its text is. */
-  transform: translateX(-50%);
-  padding: 8px 10px;
-  border-radius: 6px;
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border);
-  box-shadow: 0 4px 16px var(--color-shadow-md);
-  color: var(--color-text);
-  font-size: 11px;
-  font-weight: 500;
-  line-height: 1.4;
-}
-
-.info-tooltip-fade-enter-active,
-.info-tooltip-fade-leave-active {
-  transition: opacity 0.12s ease;
-}
-
-.info-tooltip-fade-enter-from,
-.info-tooltip-fade-leave-to {
-  opacity: 0;
 }
 
 .collection-gamma-spectrum__footer {

@@ -1,6 +1,7 @@
 import { containerLabels, reasonLabels, sampleStateLabels } from '../../locales/collection';
 import { resolveLocalizedLabel } from '../localizedLabel';
 import { localeMessages } from '../../locales';
+import { toIntlLocale } from '../intlLocale';
 import type { Locale } from '../../locales/types';
 import type {
   ElementCollection,
@@ -68,17 +69,16 @@ export function formatCollectionPurity(purity: ElementCollectionPurity | null | 
   return `${purity.approx ? '~' : ''}${formatPurityRaw(String(purity.value))}`;
 }
 
-/** '2021-05-01' → "1 мая 2021 г." (ru) / "May 1, 2021" (en) / "2021年5月1日" (zh) */
-export function formatCollectionAcquiredDate(value: string | null | undefined, locale: Locale): string {
-  if (!value) return '';
+/** Full-precision "YYYY-MM-DD" date, e.g. "1 мая 2021 г." (ru) / "May 1, 2021" (en) / "2021年5月1日" (zh). */
+function formatFullIsoDate(value: string, intlLocale: string): string {
   const date = new Date(`${value}T00:00:00`);
   if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleDateString(intlLocale, { day: 'numeric', month: 'long', year: 'numeric' });
+}
 
-  return date.toLocaleDateString(locale === 'zh' ? 'zh-CN' : locale, {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  });
+export function formatCollectionAcquiredDate(value: string | null | undefined, locale: Locale): string {
+  if (!value) return '';
+  return formatFullIsoDate(value, toIntlLocale(locale));
 }
 
 /** Formats a single variable-precision date: "2021" → "2021"; "2021-07" → "июль 2021 г." (ru); "2021-07-31" → "31 июля 2021 г." */
@@ -91,9 +91,7 @@ function formatManufactureDatePart(value: string, intlLocale: string): string {
     return date.toLocaleDateString(intlLocale, { month: 'long', year: 'numeric' });
   }
 
-  const date = new Date(`${value}T00:00:00`);
-  if (Number.isNaN(date.getTime())) return value;
-  return date.toLocaleDateString(intlLocale, { day: 'numeric', month: 'long', year: 'numeric' });
+  return formatFullIsoDate(value, intlLocale);
 }
 
 /**
@@ -108,7 +106,7 @@ export function formatCollectionManufactureDate(
   locale: Locale,
 ): string {
   if (!value) return '';
-  const intlLocale = locale === 'zh' ? 'zh-CN' : locale;
+  const intlLocale = toIntlLocale(locale);
 
   if (typeof value === 'string') return formatManufactureDatePart(value, intlLocale);
   const from = value.from ? formatManufactureDatePart(value.from, intlLocale) : '';

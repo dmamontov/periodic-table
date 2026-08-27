@@ -10,7 +10,7 @@ import {
   resolvePhysicalStateLabel,
 } from '../../utils/collection/labels';
 import { elements, getElementRouteSymbol } from '../../data';
-import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes';
+import { formatSpectrumOriginHtml } from '../../utils/element/isotopes';
 import { wishlist } from '../../data/collection';
 import type { Element } from '../../types/element/element';
 import type {
@@ -61,9 +61,7 @@ function buildSpectrumEntry(
   spectrum: ElementCollectionSpectrum,
   past: { retained: boolean | null | undefined } | null,
 ) {
-  const originHtml =
-    formatDecayChainHtml(el.symbol, radioactive?.isotope, radioactive?.decayParent) ||
-    formatIsotopeHtml(el.symbol, radioactive?.isotope);
+  const originHtml = formatSpectrumOriginHtml(el.symbol, radioactive?.isotope, radioactive?.decayParent);
   return {
     symbol: el.symbol,
     routeSymbol: getElementRouteSymbol(el.symbol),
@@ -185,9 +183,7 @@ const wishlistElements = computed(() =>
     const entries = wishlist[el.symbol];
     if (!entries?.length) return [];
     return entries.map((entry, index) => {
-      const originHtml =
-        formatDecayChainHtml(el.symbol, entry.isotope, entry.decayParent) ||
-        formatIsotopeHtml(el.symbol, entry.isotope);
+      const originHtml = formatSpectrumOriginHtml(el.symbol, entry.isotope, entry.decayParent);
       return {
         key: `${el.symbol}-${index}`,
         symbol: el.symbol,

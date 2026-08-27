@@ -16,6 +16,7 @@ import {
   HEATMAP_DEFINITIONS,
   formatHeatmapCellDisplay,
   formatHeatmapElementValue,
+  formatUnitLabel,
   getHeatmapIntensity,
 } from '../../utils/heatmap';
 import type { HeatmapId } from '../../types/heatmap';
@@ -215,7 +216,7 @@ function heatmapHint(number: number): string | undefined {
     return `${label}: ${messages.value.heatmap.noData}`;
   }
 
-  const unit = def?.unitKey ? messages.value.sidebar.units[def.unitKey].replace(/[():]/g, '').trim() : '';
+  const unit = formatUnitLabel(def?.unitKey, messages.value);
   return unit ? `${label}: ${formatted} ${unit}` : `${label}: ${formatted}`;
 }
 

@@ -1,5 +1,6 @@
 import type { Element } from '../types/element/element';
 import type { ElementDetail, ProductionCountryEntry, StoredElementDetail } from '../types/element/detail';
+import type { DecayModeKey } from '../locales/types';
 import type { CategoryId } from '../types/element/category';
 import type { GhsPictogramId } from '../types/element/ghs';
 import type { CollectionSpectrumData, RadiacodeIsotopeRef } from '../types/collection/spectrum';
@@ -305,6 +306,11 @@ export function getElementRadiacodeIsotope(number: number): RadiacodeIsotopeRef 
 
 export function getRadiacodeIsotopeUrl(slug: string): string {
   return `https://radiacode.com/isotope/${slug}`;
+}
+
+export function getElementDecayMode(number: number): DecayModeKey | undefined {
+  const symbol = getSymbolByNumber(number);
+  return symbol ? elementDetails[symbol]?.isotopes?.decay : undefined;
 }
 
 export function getElementGhsPictograms(number: number): GhsPictogramId[] {

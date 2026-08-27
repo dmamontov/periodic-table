@@ -19,7 +19,7 @@ import { formatCollectionSampleLabel } from '../../utils/collection/labels';
 import { resolveLocalizedLabel } from '../../utils/localizedLabel';
 import { buildElementSections, isSectionEmpty, parseOxidationStates } from '../../utils/element/detailSections';
 import { buildGhsDisplay, buildNfpaDisplay, formatElementSymbol } from '../../utils/element/formatters';
-import { formatDecayChainHtml, formatIsotopeHtml } from '../../utils/element/isotopes';
+import { formatSpectrumOriginHtml } from '../../utils/element/isotopes';
 import { getWikipediaUrl } from '../../utils/external-links/wikipedia';
 import { getYouTubeUrl } from '../../utils/external-links/youtube';
 import wikiIconWhite from '../../assets/icons/wiki-icon.svg';
@@ -66,10 +66,7 @@ const spectrumOriginHtml = computed(() => {
   const el = props.element;
   if (!el) return '';
   const radioactive = el.collection?.radioactive;
-  return (
-    formatDecayChainHtml(el.symbol, radioactive?.isotope, radioactive?.decayParent) ||
-    formatIsotopeHtml(el.symbol, radioactive?.isotope)
-  );
+  return formatSpectrumOriginHtml(el.symbol, radioactive?.isotope, radioactive?.decayParent);
 });
 
 const spectrumSampleLabel = computed(() =>

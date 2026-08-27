@@ -4,6 +4,7 @@ import {
   formatDecayType,
   formatIsotopeHtml,
   formatMainIsotopesHtml,
+  formatSpectrumOriginHtml,
 } from '../../../src/utils/element/isotopes';
 import { getSymbolByNumber, storedElementDetails } from '../../../src/data';
 import { localeMessages } from '../../../src/locales';
@@ -92,6 +93,17 @@ describe('formatDecayChainHtml', () => {
     ];
     const html = formatDecayChainHtml('Po', '210', parents);
     expect(html).toBe(`${formatIsotopeHtml('Pb', '210')} → ${formatIsotopeHtml('Po', '210')}`);
+  });
+});
+
+describe('formatSpectrumOriginHtml', () => {
+  it('prefers the decay chain when there are parents', () => {
+    const parents: ElementCollectionDecayParent[] = [{ symbol: 'Pb', isotope: '210' }];
+    expect(formatSpectrumOriginHtml('Po', '210', parents)).toBe(formatDecayChainHtml('Po', '210', parents));
+  });
+
+  it('falls back to the bare isotope when there is no decay chain', () => {
+    expect(formatSpectrumOriginHtml('Po', '210', null)).toBe(formatIsotopeHtml('Po', '210'));
   });
 });
 

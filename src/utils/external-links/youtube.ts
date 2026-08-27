@@ -2,14 +2,7 @@ import type { Locale } from '../../locales/types';
 import type { ElementDetail } from '../../types/element/detail';
 import { localeMessages } from '../../locales';
 import { getSymbolByNumber, storedElementDetails } from '../../data';
-
-/** First non-empty string, e.g. a fetched name over a blank field before falling back to a lookup table. */
-function firstNonEmpty(...values: (string | null | undefined)[]): string {
-  for (const value of values) {
-    if (value) return value;
-  }
-  return '';
-}
+import { firstNonEmpty } from './shared';
 
 function youtubeSearch(query: string): string {
   return `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;

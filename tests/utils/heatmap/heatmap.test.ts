@@ -5,6 +5,7 @@ import {
   formatHeatmapRangeValue,
   formatHeatmapValue,
   formatNucleusDurationDisplay,
+  formatUnitLabel,
   getHeatmapDataset,
   getHeatmapIntensity,
   HEATMAP_DEFINITIONS,
@@ -136,6 +137,20 @@ describe('intensityToBrightness', () => {
 
   it('interpolates linearly in between', () => {
     expect(intensityToBrightness(0.5)).toBeCloseTo(0.77);
+  });
+});
+
+describe('formatUnitLabel', () => {
+  it('returns an empty string for a missing unit key', () => {
+    expect(formatUnitLabel(undefined, messages)).toBe('');
+  });
+
+  it('strips parentheses and colons from the localized unit label', () => {
+    expect(formatUnitLabel('gPerMol', messages)).toBe('г/моль');
+  });
+
+  it('leaves a unit label with no decoration unchanged', () => {
+    expect(formatUnitLabel('celsius', messages)).toBe('°C');
   });
 });
 
