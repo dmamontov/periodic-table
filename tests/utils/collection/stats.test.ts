@@ -1,8 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import { computeCollectionStats } from '../../../src/utils/collection/stats';
-import { allCategories, elements, isElementRadioactive } from '../../../src/data';
+import { allCategories, elements, isElementRadioactive, isElementWeaklyRadioactive } from '../../../src/data';
 
 const COLLECTIBLE_MAX_NUMBER = 99;
+
+function isStrictlyRadioactive(number: number): boolean {
+  return isElementRadioactive(number) && !isElementWeaklyRadioactive(number);
+}
 
 describe('computeCollectionStats', () => {
   it('computes overall element counts matching the real data', () => {
@@ -13,16 +17,24 @@ describe('computeCollectionStats', () => {
     expect(stats.elementCounts.collectible).toBe(elements.filter((el) => el.number <= COLLECTIBLE_MAX_NUMBER).length);
   });
 
-  it('computes radioactive element counts matching the real data', () => {
+  it('computes radioactive element counts matching the real data, excluding weakly radioactive elements', () => {
     const stats = computeCollectionStats();
-    const radioactive = elements.filter((el) => isElementRadioactive(el.number));
+    const radioactive = elements.filter((el) => isStrictlyRadioactive(el.number));
 
     expect(stats.radioactiveCounts.total).toBe(radioactive.length);
     expect(stats.radioactiveCounts.collected).toBe(
-      elements.filter((el) => el.inCollection && isElementRadioactive(el.number)).length,
+      elements.filter((el) => el.inCollection && isStrictlyRadioactive(el.number)).length,
     );
     expect(stats.radioactiveCounts.collectible).toBe(
       radioactive.filter((el) => el.number <= COLLECTIBLE_MAX_NUMBER).length,
+    );
+
+    const collectedWeaklyRadioactive = elements.filter(
+      (el) => el.inCollection && isElementWeaklyRadioactive(el.number),
+    );
+    expect(collectedWeaklyRadioactive.length).toBeGreaterThan(0);
+    expect(stats.radioactiveCounts.collected).toBeLessThan(
+      elements.filter((el) => el.inCollection && isElementRadioactive(el.number)).length,
     );
   });
 

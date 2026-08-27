@@ -1,8 +1,12 @@
 import type { CategoryId } from '../../types/element/category';
-import { allCategories, elements, isElementRadioactive } from '../../data';
+import { allCategories, elements, isElementRadioactive, isElementWeaklyRadioactive } from '../../data';
 
 /** Elements past einsteinium (99) are too short-lived to ever hold a physical sample of. */
 const COLLECTIBLE_MAX_NUMBER = 99;
+
+function isStrictlyRadioactive(number: number): boolean {
+  return isElementRadioactive(number) && !isElementWeaklyRadioactive(number);
+}
 
 export interface ElementCounts {
   collected: number;
@@ -27,7 +31,7 @@ function isCollectible(number: number): boolean {
 
 export function computeCollectionStats(): CollectionStats {
   const collected = elements.filter((el) => el.inCollection);
-  const radioactiveElements = elements.filter((el) => isElementRadioactive(el.number));
+  const radioactiveElements = elements.filter((el) => isStrictlyRadioactive(el.number));
 
   const categoryCounts: CategoryCount[] = allCategories.map(({ id, color }) => {
     const inCategory = elements.filter((el) => el.category === id);
@@ -47,7 +51,7 @@ export function computeCollectionStats(): CollectionStats {
       total: elements.length,
     },
     radioactiveCounts: {
-      collected: collected.filter((el) => isElementRadioactive(el.number)).length,
+      collected: collected.filter((el) => isStrictlyRadioactive(el.number)).length,
       collectible: radioactiveElements.filter((el) => isCollectible(el.number)).length,
       total: radioactiveElements.length,
     },
