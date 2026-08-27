@@ -1170,6 +1170,7 @@ export const myElements: Record<string, ElementCollection> = {
             en: 'Mazda 0A2 voltage-regulator tube',
             zh: 'Mazda 0A2稳压管',
           },
+          acquiredDate: '2026-08-27',
         },
         radioactive: {
           isotope: '226',
@@ -1240,6 +1241,7 @@ export const myElements: Record<string, ElementCollection> = {
       {
         physical: {
           description: { ru: 'Лампа ДКсШ-200', en: 'DKsSh-200 lamp', zh: 'ДКсШ-200灯' },
+          acquiredDate: '2026-08-27',
         },
         radioactive: {
           isotope: '232',
