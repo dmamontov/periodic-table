@@ -26,10 +26,10 @@ import wikiIconWhite from '../../assets/icons/wiki-icon.svg';
 import wikiIconDark from '../../assets/icons/wiki-icon-dark.svg';
 import youtubeIcon from '../../assets/icons/youtube-icon.svg';
 import youtubeIconWhite from '../../assets/icons/youtube-icon-white.svg';
-import AppIcon from '../common/AppIcon.vue';
 import CollapsibleSection from '../common/CollapsibleSection.vue';
 import DrawerShell from '../common/DrawerShell.vue';
 import Badge from '../common/Badge.vue';
+import ElementSidebarHeaderLinks from './ElementSidebarHeaderLinks.vue';
 import ElementSidebarPropList from './ElementSidebarPropList.vue';
 import ElementSidebarGridSection from './ElementSidebarGridSection.vue';
 import ElementSidebarNfpaSection from './ElementSidebarNfpaSection.vue';
@@ -160,6 +160,7 @@ const shareUrl = computed(() => {
 });
 
 const shareCopied = ref(false);
+const shareAriaLabel = computed(() => (shareCopied.value ? tSidebar('shareCopied') : tSidebar('share')));
 let shareCopiedTimeout: ReturnType<typeof setTimeout> | undefined;
 
 async function share(): Promise<void> {
@@ -305,49 +306,18 @@ function toggleSection(sectionKey: string): void {
             <span class="element-sidebar__sticky-number">{{ element.number }}</span>
           </div>
         </div>
-        <div v-if="youtubeUrl || wikipediaUrl" class="element-sidebar__header-links element-sidebar__sticky-links">
-          <a
-            v-if="youtubeUrl"
-            :href="youtubeUrl"
-            class="element-sidebar__header-link"
-            :aria-label="tSidebar('youtube')"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              class="element-sidebar__header-link-icon element-sidebar__header-link-icon--youtube"
-              :src="youtubeIconWhite"
-              alt=""
-            />
-          </a>
-          <a
-            v-if="wikipediaUrl"
-            :href="wikipediaUrl"
-            class="element-sidebar__header-link"
-            :aria-label="tSidebar('wikipedia')"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img class="element-sidebar__header-link-icon" :src="wikiIconWhite" alt="" />
-          </a>
-          <button
-            type="button"
-            class="element-sidebar__header-link element-sidebar__header-link--share"
-            :aria-label="shareCopied ? tSidebar('shareCopied') : tSidebar('share')"
-            @click="share"
-          >
-            <AppIcon
-              v-if="!shareCopied"
-              class="element-sidebar__header-link-icon element-sidebar__header-link-icon--share"
-              name="share"
-            />
-            <AppIcon
-              v-else
-              class="element-sidebar__header-link-icon element-sidebar__header-link-icon--share"
-              name="check"
-            />
-          </button>
-        </div>
+        <ElementSidebarHeaderLinks
+          variant="sticky"
+          :youtube-url="youtubeUrl"
+          :wikipedia-url="wikipediaUrl"
+          :youtube-icon="youtubeIconWhite"
+          :wiki-icon="wikiIconWhite"
+          :youtube-label="tSidebar('youtube')"
+          :wikipedia-label="tSidebar('wikipedia')"
+          :share-aria-label="shareAriaLabel"
+          :share-copied="shareCopied"
+          @share="share"
+        />
       </div>
 
       <div class="element-sidebar__container" ref="containerRef">
@@ -363,51 +333,19 @@ function toggleSection(sectionKey: string): void {
               :aria-label="tSidebar('close')"
               @click="emit('close')"
             />
-            <div v-if="youtubeUrl || wikipediaUrl" class="element-sidebar__header-links">
-              <a
-                v-if="youtubeUrl"
-                :href="youtubeUrl"
-                class="element-sidebar__header-link element-sidebar__header-link--on-image"
-                :aria-label="tSidebar('youtube')"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  class="element-sidebar__header-link-icon element-sidebar__header-link-icon--youtube"
-                  :src="headerYoutubeIcon"
-                  alt=""
-                />
-              </a>
-              <a
-                v-if="wikipediaUrl"
-                :href="wikipediaUrl"
-                class="element-sidebar__header-link element-sidebar__header-link--on-image"
-                :aria-label="tSidebar('wikipedia')"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img class="element-sidebar__header-link-icon" :src="headerWikiIcon" alt="" />
-              </a>
-              <button
-                type="button"
-                class="element-sidebar__header-link element-sidebar__header-link--on-image element-sidebar__header-link--share"
-                :aria-label="shareCopied ? tSidebar('shareCopied') : tSidebar('share')"
-                @click="share"
-              >
-                <AppIcon
-                  v-if="!shareCopied"
-                  class="element-sidebar__header-link-icon element-sidebar__header-link-icon--share"
-                  :style="{ color: shareIconColor }"
-                  name="share"
-                />
-                <AppIcon
-                  v-else
-                  class="element-sidebar__header-link-icon element-sidebar__header-link-icon--share"
-                  :style="{ color: shareIconColor }"
-                  name="check"
-                />
-              </button>
-            </div>
+            <ElementSidebarHeaderLinks
+              variant="on-image"
+              :youtube-url="youtubeUrl"
+              :wikipedia-url="wikipediaUrl"
+              :youtube-icon="headerYoutubeIcon"
+              :wiki-icon="headerWikiIcon"
+              :youtube-label="tSidebar('youtube')"
+              :wikipedia-label="tSidebar('wikipedia')"
+              :share-aria-label="shareAriaLabel"
+              :share-copied="shareCopied"
+              :share-icon-color="shareIconColor"
+              @share="share"
+            />
           </div>
 
           <div ref="headerSentinelRef" class="element-sidebar__header-sentinel" aria-hidden="true" />
@@ -579,34 +517,34 @@ function toggleSection(sectionKey: string): void {
   background-size: 16px;
 }
 
-.element-sidebar__sticky-nav .element-sidebar__sticky-links {
+.element-sidebar__sticky-nav :deep(.element-sidebar__sticky-links) {
   position: static;
   flex-shrink: 0;
   margin-left: 0;
 }
 
-.element-sidebar__sticky-nav .element-sidebar__header-link {
+.element-sidebar__sticky-nav :deep(.element-sidebar__header-link) {
   width: 32px;
   height: 32px;
 }
 
-.element-sidebar__sticky-nav .element-sidebar__header-link-icon {
+.element-sidebar__sticky-nav :deep(.element-sidebar__header-link-icon) {
   width: 18px;
   height: 18px;
 }
 
-.element-sidebar__sticky-nav .element-sidebar__header-link-icon--youtube {
+.element-sidebar__sticky-nav :deep(.element-sidebar__header-link-icon--youtube) {
   width: 17px;
   height: 17px;
 }
 
-.element-sidebar__sticky-nav .element-sidebar__header-link-icon--share {
+.element-sidebar__sticky-nav :deep(.element-sidebar__header-link-icon--share) {
   width: 14px;
   height: 14px;
   color: #fff;
 }
 
-.element-sidebar__sticky-nav .element-sidebar__header-link-icon--share :deep(svg) {
+.element-sidebar__sticky-nav :deep(.element-sidebar__header-link-icon--share svg) {
   width: 14px;
   height: 14px;
 }
@@ -732,22 +670,22 @@ function toggleSection(sectionKey: string): void {
   background-color: var(--color-bg-elevated);
 }
 
-.element-sidebar__header--no-image .element-sidebar__header-links {
+.element-sidebar__header--no-image :deep(.element-sidebar__header-links) {
   top: 10px;
   right: 12px;
 }
 
-.element-sidebar__header--no-image .element-sidebar__header-link {
+.element-sidebar__header--no-image :deep(.element-sidebar__header-link) {
   width: 32px;
   height: 32px;
 }
 
-.element-sidebar__header--no-image .element-sidebar__header-link-icon {
+.element-sidebar__header--no-image :deep(.element-sidebar__header-link-icon) {
   width: 18px;
   height: 18px;
 }
 
-.element-sidebar__header-links {
+:deep(.element-sidebar__header-links) {
   position: absolute;
   top: 14px;
   right: 14px;
@@ -757,7 +695,7 @@ function toggleSection(sectionKey: string): void {
   gap: 8px;
 }
 
-.element-sidebar__header-link {
+:deep(.element-sidebar__header-link) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -775,53 +713,53 @@ function toggleSection(sectionKey: string): void {
     background-color 0.15s ease;
 }
 
-.element-sidebar__header-link-icon {
+:deep(.element-sidebar__header-link-icon) {
   width: 22px;
   height: 22px;
   display: block;
 }
 
-.element-sidebar__header-link-icon--youtube {
+:deep(.element-sidebar__header-link-icon--youtube) {
   width: 20px;
   height: 20px;
 }
 
-.element-sidebar__header-link-icon--share {
+:deep(.element-sidebar__header-link-icon--share) {
   width: 17px;
   height: 17px;
 }
 
-.element-sidebar__header-link-icon--share :deep(svg) {
+:deep(.element-sidebar__header-link-icon--share svg) {
   width: 17px;
   height: 17px;
   display: block;
 }
 
-.element-sidebar__header--no-image .element-sidebar__header-link-icon--youtube {
+.element-sidebar__header--no-image :deep(.element-sidebar__header-link-icon--youtube) {
   width: 17px;
   height: 17px;
 }
 
-.element-sidebar__header--no-image .element-sidebar__header-link-icon--share {
+.element-sidebar__header--no-image :deep(.element-sidebar__header-link-icon--share) {
   width: 15px;
   height: 15px;
 }
 
-.element-sidebar__header--no-image .element-sidebar__header-link-icon--share :deep(svg) {
+.element-sidebar__header--no-image :deep(.element-sidebar__header-link-icon--share svg) {
   width: 15px;
   height: 15px;
 }
 
-.element-sidebar__header-link--on-image {
+:deep(.element-sidebar__header-link--on-image) {
   background-color: var(--color-surface-on-image);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
-.element-sidebar__header-link:hover {
+:deep(.element-sidebar__header-link:hover) {
   transform: scale(1.05);
 }
 
-.element-sidebar__header-link--on-image:hover {
+:deep(.element-sidebar__header-link--on-image:hover) {
   background-color: var(--color-bg-elevated);
 }
 
