@@ -12,9 +12,9 @@ import {
   intensityToBrightness,
   parseDetailNumeric,
   parseHalfLifeToSeconds,
-} from '../../src/utils/heatmap';
-import { getSymbolByNumber } from '../../src/data';
-import { localeMessages } from '../../src/locales';
+} from '../../../src/utils/heatmap';
+import { getSymbolByNumber } from '../../../src/data';
+import { localeMessages } from '../../../src/locales';
 
 const messages = localeMessages.ru;
 

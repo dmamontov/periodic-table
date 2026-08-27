@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from 'vitest';
-import type { Element } from '../../src/types/element/element';
-import type { StoredElementDetail } from '../../src/types/element/detail';
-import type { DecayModeKey } from '../../src/locales/types';
-import type * as DataModule from '../../src/data';
+import type { Element } from '../../../src/types/element/element';
+import type { StoredElementDetail } from '../../../src/types/element/detail';
+import type { DecayModeKey } from '../../../src/locales/types';
+import type * as DataModule from '../../../src/data';
 
 function makeElement(number: number, symbol: string, mass: string): Element {
   return {
@@ -62,7 +62,7 @@ const MOCK_DETAILS: Record<string, StoredElementDetail> = {
   },
 };
 
-vi.mock('../../src/data', async (importOriginal) => {
+vi.mock('../../../src/data', async (importOriginal) => {
   const actual = await importOriginal<typeof DataModule>();
   return {
     ...actual,
@@ -77,45 +77,45 @@ vi.mock('../../src/data', async (importOriginal) => {
 
 describe('heatmap dataset construction with synthetic data', () => {
   it('treats a missing symbol lookup as no decay score', async () => {
-    const { getHeatmapDataset } = await import('../../src/utils/heatmap');
+    const { getHeatmapDataset } = await import('../../../src/utils/heatmap');
     expect(getHeatmapDataset('decayMode').values.get(1)).toBeNull();
   });
 
   it('treats a missing detail record as no data, except atomicMass (falls back to raw mass) and decayMode', async () => {
-    const { getHeatmapDataset } = await import('../../src/utils/heatmap');
+    const { getHeatmapDataset } = await import('../../../src/utils/heatmap');
     expect(getHeatmapDataset('electronegativity').values.get(2)).toBeNull();
     expect(getHeatmapDataset('atomicMass').values.get(2)).toBeCloseTo(20);
     expect(getHeatmapDataset('decayMode').values.get(2)).toBeNull();
   });
 
   it('treats an unmapped decay mode as no decay score', async () => {
-    const { getHeatmapDataset } = await import('../../src/utils/heatmap');
+    const { getHeatmapDataset } = await import('../../../src/utils/heatmap');
     expect(getHeatmapDataset('decayMode').values.get(3)).toBeNull();
   });
 
   it('treats a zero-second half-life/lifetime as no data', async () => {
-    const { getHeatmapDataset } = await import('../../src/utils/heatmap');
+    const { getHeatmapDataset } = await import('../../../src/utils/heatmap');
     expect(getHeatmapDataset('halfLife').values.get(4)).toBeNull();
     expect(getHeatmapDataset('lifetime').values.get(4)).toBeNull();
   });
 
   it('treats a missing prevalence object as no rarity value', async () => {
-    const { getHeatmapDataset } = await import('../../src/utils/heatmap');
+    const { getHeatmapDataset } = await import('../../../src/utils/heatmap');
     expect(getHeatmapDataset('rarity').values.get(5)).toBeNull();
   });
 
   it('returns null when neither properties.atomicMass nor the raw mass parse (no detail record)', async () => {
-    const { getHeatmapDataset } = await import('../../src/utils/heatmap');
+    const { getHeatmapDataset } = await import('../../../src/utils/heatmap');
     expect(getHeatmapDataset('atomicMass').values.get(7)).toBeNull();
   });
 
   it('falls back to the raw atomic mass when properties.atomicMass is unparseable', async () => {
-    const { getHeatmapDataset } = await import('../../src/utils/heatmap');
+    const { getHeatmapDataset } = await import('../../../src/utils/heatmap');
     expect(getHeatmapDataset('atomicMass').values.get(6)).toBeCloseTo(60);
   });
 
   it('falls back to a 0/0 range when no element has data for an id', async () => {
-    const { getHeatmapDataset } = await import('../../src/utils/heatmap');
+    const { getHeatmapDataset } = await import('../../../src/utils/heatmap');
     const dataset = getHeatmapDataset('electronAffinity');
     expect(dataset.withData).toBe(0);
     expect(dataset.min).toBe(0);
@@ -125,7 +125,7 @@ describe('heatmap dataset construction with synthetic data', () => {
 
 describe('valueToIntensity edge cases via direct dataset mutation', () => {
   it('returns full intensity when the dataset range collapses to a single value', async () => {
-    const { getHeatmapDataset, getHeatmapIntensity } = await import('../../src/utils/heatmap');
+    const { getHeatmapDataset, getHeatmapIntensity } = await import('../../../src/utils/heatmap');
     const dataset = getHeatmapDataset('ionizationEnergy');
     dataset.min = 42;
     dataset.max = 42;
@@ -133,7 +133,7 @@ describe('valueToIntensity edge cases via direct dataset mutation', () => {
   });
 
   it("returns zero intensity when an inverted id's dataset range collapses to a single value", async () => {
-    const { getHeatmapDataset, getHeatmapIntensity } = await import('../../src/utils/heatmap');
+    const { getHeatmapDataset, getHeatmapIntensity } = await import('../../../src/utils/heatmap');
     const dataset = getHeatmapDataset('rarity');
     dataset.min = 7;
     dataset.max = 7;
@@ -141,7 +141,7 @@ describe('valueToIntensity edge cases via direct dataset mutation', () => {
   });
 
   it('returns 0 (or 1 when inverted) for a non-positive value on a log scale', async () => {
-    const { getHeatmapDataset, getHeatmapIntensity } = await import('../../src/utils/heatmap');
+    const { getHeatmapDataset, getHeatmapIntensity } = await import('../../../src/utils/heatmap');
     const dataset = getHeatmapDataset('halfLife');
     dataset.values.set(1, -5);
     dataset.min = -5;
@@ -150,7 +150,7 @@ describe('valueToIntensity edge cases via direct dataset mutation', () => {
   });
 
   it('inverts the non-positive-value-on-log-scale result for an inverted id', async () => {
-    const { getHeatmapDataset, getHeatmapIntensity } = await import('../../src/utils/heatmap');
+    const { getHeatmapDataset, getHeatmapIntensity } = await import('../../../src/utils/heatmap');
     const dataset = getHeatmapDataset('rarity');
     dataset.values.set(1, 0);
     dataset.min = 0;
