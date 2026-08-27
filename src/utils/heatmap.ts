@@ -273,8 +273,6 @@ function extractHeatmapValue(
       return extractPrevalenceValue(detail, 'meteorites');
     case 'rarity':
       return extractGlobalRarityValue(detail);
-    default:
-      return null;
   }
 }
 
@@ -376,7 +374,7 @@ export function formatHeatmapValue(value: number, locale: string): string {
 function integerToSuperscript(value: number): string {
   if (value === 0) return '⁰';
   const sign = value < 0 ? '⁻' : '';
-  const digits = String(Math.abs(value)).replace(/\d/g, (digit) => '⁰¹²³⁴⁵⁶⁷⁸⁹'[Number(digit)] ?? digit);
+  const digits = String(Math.abs(value)).replace(/\d/g, (digit) => '⁰¹²³⁴⁵⁶⁷⁸⁹'[Number(digit)]!);
   return `${sign}${digits}`;
 }
 
@@ -445,9 +443,8 @@ function formatDurationSeconds(
   return `${formatNum(seconds, 3)} ${units.seconds}`;
 }
 
-function formatNucleusDurationRaw(raw: string, locale: string, messages: LocaleMessages): string | null {
-  if (raw === '∞') return null;
-
+/** Assumes raw has already been filtered for '∞' by the caller. */
+function formatNucleusDurationRaw(raw: string, locale: string, messages: LocaleMessages): string {
   const match = /^([+-]?\d*\.?\d+)\/(\d+)$/.exec(raw);
   if (!match?.[1] || !match[2]) return raw;
 
@@ -483,7 +480,7 @@ export function formatNucleusDurationDisplay(
 ): string {
   if (raw == null || raw === '') return '';
   if (raw === '∞') return messages.heatmap.stable;
-  return formatNucleusDurationRaw(raw, locale, messages) ?? raw;
+  return formatNucleusDurationRaw(raw, locale, messages);
 }
 
 export function formatHeatmapElementValue(
@@ -495,15 +492,13 @@ export function formatHeatmapElementValue(
   if (id === 'halfLife') {
     const raw = halfLifeRawByNumber.get(number);
     if (!raw) return null;
-    const formatted = formatNucleusDurationDisplay(raw, locale, messages);
-    return formatted || null;
+    return formatNucleusDurationDisplay(raw, locale, messages);
   }
 
   if (id === 'lifetime') {
     const raw = lifetimeRawByNumber.get(number);
     if (!raw) return null;
-    const formatted = formatNucleusDurationDisplay(raw, locale, messages);
-    return formatted || null;
+    return formatNucleusDurationDisplay(raw, locale, messages);
   }
 
   if (id === 'decayMode') {
@@ -556,11 +551,11 @@ export function formatHeatmapCellDisplay(
   const def = HEATMAP_DEFINITIONS.find((item) => item.id === id);
   if (!def?.unitKey) {
     if (id === 'decayMode') {
-      const symbol = getSymbolByNumber(number);
-      const mode = symbol ? elementDetails[symbol]?.isotopes?.decay : undefined;
-      if (!mode) return '—';
+      // formatHeatmapElementValue above already returned early unless there's a real symbol and decay mode.
+      const symbol = getSymbolByNumber(number)!;
+      const mode = elementDetails[symbol]!.isotopes!.decay;
       if (mode === 'stable') return messages.heatmap.stable;
-      return DECAY_CELL_LABEL[mode] ?? formatted;
+      return DECAY_CELL_LABEL[mode];
     }
     return formatted;
   }

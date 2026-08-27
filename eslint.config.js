@@ -10,7 +10,7 @@ import importX from 'eslint-plugin-import-x'
 
 export default tseslint.config(
   {
-    ignores: ['dist/**', 'dev-dist/**', 'node_modules/**', 'public/**', 'tmp/**', 'eslint.config.js'],
+    ignores: ['dist/**', 'dev-dist/**', 'node_modules/**', 'public/**', 'tmp/**', 'coverage/**', 'eslint.config.js'],
   },
   { ...js.configs.recommended, files: ['**/*.{ts,vue}'] },
   ...tseslint.configs.recommendedTypeChecked.map((cfg) => ({ ...cfg, files: ['**/*.{ts,vue}'] })),

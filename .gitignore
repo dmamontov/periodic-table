@@ -6,6 +6,7 @@ package-lock.json
 dist
 dist-ssr
 dev-dist
+coverage
 
 # TypeScript
 *.tsbuildinfo

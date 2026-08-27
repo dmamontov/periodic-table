@@ -95,7 +95,7 @@ export function buildSpectrumChart(
 
   for (let ch = 0; ch < smoothed.length; ch++) {
     if (channelToEnergy(ch, calibration) > displayMaxEnergy) break;
-    points.push({ ch, count: smoothed[ch] ?? 0 });
+    points.push({ ch, count: smoothed[ch]! });
   }
 
   if (points.length === 0) return null;
