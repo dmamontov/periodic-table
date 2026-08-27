@@ -3,7 +3,7 @@ import { nextTick, ref } from 'vue';
 import { createHead } from '@unhead/vue/client';
 import type { Element } from '../../src/types/element/element';
 import type { LocaleMessages } from '../../src/locales/types';
-import { withSetup } from './withSetup';
+import { withSetup } from '../helpers/withSetup';
 
 vi.mock('../../src/data/collection', () => ({
   siteTitle: 'Periodic Table',

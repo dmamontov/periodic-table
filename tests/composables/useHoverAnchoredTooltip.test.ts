@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { useHoverAnchoredTooltip } from '../../src/composables/useHoverAnchoredTooltip';
-import { withSetup } from './withSetup';
+import { withSetup } from '../helpers/withSetup';
 
 function makeEvent(currentTarget: HTMLElement, pointerType: string): PointerEvent {
   const event = new PointerEvent('pointerenter', { bubbles: true }) as PointerEvent & {

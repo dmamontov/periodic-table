@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { nextTick, ref } from 'vue';
 import { useDismissibleFlyout } from '../../src/composables/useDismissibleFlyout';
-import { withSetup } from './withSetup';
+import { withSetup } from '../helpers/withSetup';
 
 function makeRootWithParent(parentRect: Partial<DOMRect> = {}) {
   const parent = document.createElement('div');

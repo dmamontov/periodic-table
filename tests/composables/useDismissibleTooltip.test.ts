@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { ref } from 'vue';
 import { useDismissibleTooltip } from '../../src/composables/useDismissibleTooltip';
-import { withSetup } from './withSetup';
+import { withSetup } from '../helpers/withSetup';
 
 function makeRoot(rect: Partial<DOMRect> = {}) {
   const el = document.createElement('button');

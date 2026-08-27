@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { nextTick, ref } from 'vue';
 import { useModalFocusTrap } from '../../src/composables/useModalFocusTrap';
-import { withSetup } from './withSetup';
+import { withSetup } from '../helpers/withSetup';
 
 /** jsdom has no layout engine, so `offsetParent` is always null - stub it to mark an element as "visible" for the composable's focusableElements() filter. */
 function makeVisible(el: HTMLElement) {
