@@ -1162,6 +1162,20 @@ export const myElements: Record<string, ElementCollection> = {
         zh: '可见²²⁶Ra自身特征峰（184 keV）及完整衰变链。',
       },
     },
+    alternates: [
+      {
+        physical: {
+          description: {
+            ru: 'Лампа-стабилизатор Mazda 0A2',
+            en: 'Mazda 0A2 voltage-regulator tube',
+            zh: 'Mazda 0A2稳压管',
+          },
+        },
+        radioactive: {
+          isotope: '226',
+        },
+      },
+    ],
   },
   Th: {
     physical: {
@@ -1222,6 +1236,16 @@ export const myElements: Record<string, ElementCollection> = {
         zh: '可见²¹²Pb（238.6 keV）和²²⁸Ac（328 keV）——真实的²³²Th衰变链产物。',
       },
     },
+    alternates: [
+      {
+        physical: {
+          description: { ru: 'Лампа ДКсШ-200', en: 'DKsSh-200 lamp', zh: 'ДКсШ-200灯' },
+        },
+        radioactive: {
+          isotope: '232',
+        },
+      },
+    ],
   },
   U: {
     physical: {
@@ -1448,17 +1472,6 @@ export const wishlist: Record<string, WishlistEntry[]> = {
       ],
     },
   ],
-  Ra: [
-    {
-      isotope: '226',
-      description: {
-        ru: 'Электрод лампы-стабилизатора Mazda 0A2',
-        en: 'Mazda 0A2 voltage-regulator tube electrode',
-        zh: 'Mazda 0A2稳压管电极',
-      },
-      status: 'shipping',
-    },
-  ],
   Cm: [
     {
       isotope: '242/243/244',
@@ -1497,11 +1510,6 @@ export const wishlist: Record<string, WishlistEntry[]> = {
       isotope: '232',
       sampleState: 'plate',
       link: 'https://luciteria.com/products/thorium-metal-99-9?variant=48090979074213',
-    },
-    {
-      isotope: '232',
-      description: { ru: 'Электрод лампы ДКсШ-200', en: 'DKsSh-200 lamp electrode', zh: 'ДКсШ-200灯管电极' },
-      status: 'shipping',
     },
   ],
   U: [

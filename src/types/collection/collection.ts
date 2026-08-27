@@ -88,6 +88,21 @@ export interface ElementCollectionHistoryEntry {
   reason?: string | null;
 }
 
+/**
+ * Another physical sample of this element also owned, alongside the one shown as
+ * current above — e.g. the same isotope turning up in a second, unrelated item.
+ * Same shape as ElementCollectionHistoryEntry minus `reason`, since an alternate was
+ * never "replaced" — it's just not the one chosen to display. Not surfaced anywhere
+ * in the UI yet; recorded here so it isn't lost/forgotten.
+ */
+export interface ElementCollectionAlternate {
+  physical?: ElementCollectionPhysical | null;
+  radioactive?: ElementCollectionRadioactive | null;
+  spectrum?: ElementCollectionSpectrum | null;
+  /** Whether this alternate sample is still physically kept. Omit if unknown. */
+  retained?: boolean | null;
+}
+
 export interface ElementCollection {
   physical?: ElementCollectionPhysical | null;
   /** Present only for radioactive samples in the collection */
@@ -95,6 +110,8 @@ export interface ElementCollection {
   spectrum?: ElementCollectionSpectrum | null;
   /** Earlier versions of this collection entry before a physical replacement, oldest first. The live fields above always describe the *current* version. */
   history?: ElementCollectionHistoryEntry[] | null;
+  /** Other owned samples of this element, not chosen as the current display one. Not shown anywhere in the UI yet. */
+  alternates?: ElementCollectionAlternate[] | null;
 }
 
 /** Acquisition progress for a wishlist candidate. Omit — the default — for a plain "want", not yet acted on. */

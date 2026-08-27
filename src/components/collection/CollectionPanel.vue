@@ -97,6 +97,15 @@ const spectrumElements = computed(() =>
         }),
       );
     }
+    for (const alternate of el.collection?.alternates ?? []) {
+      const altSpectrum = alternate.spectrum;
+      if (!altSpectrum?.id) continue;
+      entries.push(
+        buildSpectrumEntry(el, alternate.physical, alternate.radioactive, altSpectrum, {
+          retained: alternate.retained,
+        }),
+      );
+    }
     return entries;
   }),
 );
