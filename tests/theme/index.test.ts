@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { nextTick } from 'vue';
+import { mount } from '@vue/test-utils';
 import { installTheme, useTheme } from '../../src/theme';
 import { withSetup } from '../helpers/withSetup';
 
@@ -83,6 +84,23 @@ describe('installTheme/useTheme', () => {
   });
 
   it('useTheme throws when used outside a theme provider', () => {
-    expect(() => withSetup(() => useTheme())).toThrow('useTheme must be used within theme provider');
+    // Catches the error inside setup() itself (instead of letting mount() propagate it) so
+    // setup() always returns a valid render function - Vue would otherwise log its own "missing
+    // render function" warning on top of the error we're actually asserting on here.
+    let caught: unknown;
+    const wrapper = mount({
+      setup() {
+        try {
+          useTheme();
+        } catch (error) {
+          caught = error;
+        }
+        return () => null;
+      },
+    });
+
+    expect(caught).toBeInstanceOf(Error);
+    expect((caught as Error).message).toBe('useTheme must be used within theme provider');
+    wrapper.unmount();
   });
 });

@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { nextTick } from 'vue';
+import { mount } from '@vue/test-utils';
 import { withSetup } from '../helpers/withSetup';
 
 // getSymbolByNumber (via tElement) and collectionName (via the collectionName computed) both come from
@@ -133,6 +134,23 @@ describe('installLocale/useLocale', () => {
   });
 
   it('useLocale throws when used outside a locale provider', () => {
-    expect(() => withSetup(() => useLocale())).toThrow('useLocale must be used within locale provider');
+    // Catches the error inside setup() itself (instead of letting mount() propagate it) so
+    // setup() always returns a valid render function - Vue would otherwise log its own "missing
+    // render function" warning on top of the error we're actually asserting on here.
+    let caught: unknown;
+    const wrapper = mount({
+      setup() {
+        try {
+          useLocale();
+        } catch (error) {
+          caught = error;
+        }
+        return () => null;
+      },
+    });
+
+    expect(caught).toBeInstanceOf(Error);
+    expect((caught as Error).message).toBe('useLocale must be used within locale provider');
+    wrapper.unmount();
   });
 });

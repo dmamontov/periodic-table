@@ -100,7 +100,9 @@ export function installLocale(app: App) {
 }
 
 export function useLocale() {
-  const locale = inject(localeKey);
+  // Explicit null default suppresses Vue's own "injection not found" warning - the check right
+  // below already throws a clearer, purpose-specific error for the same condition.
+  const locale = inject(localeKey, null);
   if (!locale) throw new Error('useLocale must be used within locale provider');
   return locale;
 }

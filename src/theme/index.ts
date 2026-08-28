@@ -58,7 +58,9 @@ export function installTheme(app: App) {
 }
 
 export function useTheme() {
-  const theme = inject(themeKey);
+  // Explicit null default suppresses Vue's own "injection not found" warning - the check right
+  // below already throws a clearer, purpose-specific error for the same condition.
+  const theme = inject(themeKey, null);
   if (!theme) throw new Error('useTheme must be used within theme provider');
   return theme;
 }

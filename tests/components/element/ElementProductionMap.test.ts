@@ -21,6 +21,18 @@ describe('ElementProductionMap', () => {
     expect((activePaths[0]!.element as unknown as SVGPathElement).style.fillOpacity).not.toBe('');
   });
 
+  it('falls back to the real map name for a country with no translation', () => {
+    const wrapper = mountComponent(ElementProductionMap, {
+      props: {
+        countries: [{ country: 'ad', share: null }], // Andorra - not in sidebar.countries
+        accentColor: '#ff0000',
+      },
+    });
+
+    const active = wrapper.find('path.element-production-map__country--active');
+    expect(active.attributes('aria-label')).toBe('Andorra');
+  });
+
   it('gives a country with no share full opacity and a plain name label', () => {
     const wrapper = mountComponent(ElementProductionMap, {
       props: {

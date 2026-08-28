@@ -25,6 +25,10 @@ const {
 const { messages } = useLocale();
 
 function countryName(location: Location): string {
+  /* v8 ignore next -- vue-svg-map's Location.name is typed optional, but every one of the 256 real
+     @svg-maps/world locations has a non-empty name (verified: 0 with a falsy `name`), so the
+     `?? location.id` fallback can't be exercised by the actual loaded map data; kept as a genuine
+     type-level guard against a future map swap, not dead code by this component's own logic. */
   return messages.value.sidebar.countries[location.id.toUpperCase()] ?? location.name ?? location.id;
 }
 
