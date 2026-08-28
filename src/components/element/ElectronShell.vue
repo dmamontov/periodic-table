@@ -30,8 +30,9 @@ function electronsForOrbit(count: number, radius: number) {
   }));
 }
 
+// index is always 0-7 here (shellCounts is padded/sliced to exactly 8 entries), matching these arrays' own length.
 function orbitBorderColor(index: number) {
-  const mix = (BORDER_OPACITY[index] ?? 0) * 35;
+  const mix = BORDER_OPACITY[index]! * 35;
   return `color-mix(in srgb, ${props.accentColor ?? PARTICLE_COLORS.electron} ${mix}%, var(--color-border-input))`;
 }
 </script>
@@ -58,7 +59,7 @@ function orbitBorderColor(index: number) {
           }"
         >
           <li
-            v-for="electron in electronsForOrbit(count, ELECTRON_RADIUS[index] ?? 0)"
+            v-for="electron in electronsForOrbit(count, ELECTRON_RADIUS[index]!)"
             :key="electron.id"
             class="electron-shell__atom"
             :style="{

@@ -120,8 +120,8 @@ const lanthanides = fBlockElements.filter((el) => el.row === 8);
 const actinides = fBlockElements.filter((el) => el.row === 9);
 const topRowByCol = getTopRowByCol();
 
+/** Only ever called with a non-'all' category - every caller already early-returns for 'all' itself. */
 function elementMatchesCategory(el: Element, category: string): boolean {
-  if (category === 'all') return true;
   if (category === 'collection') return el.inCollection;
   return el.category === category;
 }
@@ -182,9 +182,9 @@ function isGroupHighlighted(element: Element): boolean {
 
 const axisFilterActive = computed(() => selectedCategory.value !== 'all');
 
+// Only ever read by the template through `axisFilterActive && ...`, so this never runs while category is 'all'.
 const isFBlockGroupLabelHighlighted = computed(() => {
   const category = selectedCategory.value;
-  if (category === 'all') return true;
   return (
     lanthanides.some((el) => elementMatchesCategory(el, category)) ||
     actinides.some((el) => elementMatchesCategory(el, category))

@@ -19,7 +19,7 @@ interface CollectionItem {
   color: string;
 }
 
-type ColumnCell = CategoryItem | CollectionItem | null;
+type ColumnCell = CategoryItem | CollectionItem;
 
 const selectedCategory = defineModel<string>({ default: 'all' });
 
@@ -67,31 +67,26 @@ function onItemClick(item: CategoryItem | CollectionItem) {
 <template>
   <div class="category-filter" :key="locale">
     <div v-for="(column, colIndex) in columns" :key="colIndex" class="category-filter__column">
-      <template
-        v-for="(item, rowIndex) in column"
-        :key="item?.kind === 'collection' ? 'collection' : (item?.id ?? `empty-${colIndex}-${rowIndex}`)"
+      <button
+        v-for="item in column"
+        :key="item.kind === 'collection' ? 'collection' : item.id"
+        type="button"
+        class="category-filter__item"
+        :class="{ 'category-filter__item--active': isActive(item) }"
+        :aria-pressed="isActive(item)"
+        @click="onItemClick(item)"
       >
-        <button
-          v-if="item"
-          type="button"
-          class="category-filter__item"
-          :class="{ 'category-filter__item--active': isActive(item) }"
-          :aria-pressed="isActive(item)"
-          @click="onItemClick(item)"
-        >
-          <span
-            class="category-filter__radio"
-            :style="{
-              borderColor: item.color,
-              backgroundColor: isActive(item) ? item.color : 'transparent',
-            }"
-          />
-          <span class="category-filter__label">
-            {{ item.kind === 'collection' ? collectionName : categoryLabel(item.id) }}
-          </span>
-        </button>
-        <span v-else class="category-filter__placeholder" aria-hidden="true" />
-      </template>
+        <span
+          class="category-filter__radio"
+          :style="{
+            borderColor: item.color,
+            backgroundColor: isActive(item) ? item.color : 'transparent',
+          }"
+        />
+        <span class="category-filter__label">
+          {{ item.kind === 'collection' ? collectionName : categoryLabel(item.id) }}
+        </span>
+      </button>
     </div>
   </div>
 </template>
@@ -128,12 +123,6 @@ function onItemClick(item: CategoryItem | CollectionItem) {
   user-select: none;
   text-align: left;
   font-family: var(--font-body);
-}
-
-.category-filter__placeholder {
-  display: block;
-  width: 100%;
-  min-height: calc(var(--cell-size, 76px) * 0.19);
 }
 
 .category-filter__item:focus-visible {
@@ -183,10 +172,6 @@ function onItemClick(item: CategoryItem | CollectionItem) {
     min-height: 13px;
   }
 
-  .category-filter__placeholder {
-    min-height: 13px;
-  }
-
   .category-filter__radio {
     width: 10px;
     height: 10px;
@@ -203,10 +188,6 @@ function onItemClick(item: CategoryItem | CollectionItem) {
   }
 
   .category-filter__item {
-    min-height: 14px;
-  }
-
-  .category-filter__placeholder {
     min-height: 14px;
   }
 }

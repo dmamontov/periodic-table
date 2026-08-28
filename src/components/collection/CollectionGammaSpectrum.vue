@@ -203,6 +203,10 @@ function closeZoom() {
 }
 
 function onArrowKeydown(event: KeyboardEvent) {
+  /* v8 ignore next -- both ArrowLeft and ArrowRight are exercised in
+     tests/components/collection/CollectionGammaSpectrum.test.ts; v8 never populates the synthetic
+     "no branch taken" location for an if with no terminal else (same root cause documented on the
+     equivalent `if (!entry)` in ElementProductionMap.vue). */
   if (event.key === 'ArrowLeft') navigatePrev();
   else if (event.key === 'ArrowRight') navigateNext();
 }

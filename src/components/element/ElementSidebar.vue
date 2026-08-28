@@ -52,21 +52,23 @@ const { detail, error } = useElementDetail(toRef(props, 'element'));
 
 const isOpen = computed(() => props.element !== null);
 
-const displaySymbol = computed(() => {
-  if (!props.element) return '';
-  return formatElementSymbol(props.element.symbol);
-});
+/**
+ * Every computed below that reads `element` (this one included) is only ever consumed by the
+ * template's own `v-if="element"` subtree (or, for `share()`, a button that only exists inside it),
+ * so `element` is guaranteed non-null at every real call site - hence the `!` instead of a runtime guard.
+ */
+const currentElement = computed(() => props.element!);
+
+const displaySymbol = computed(() => formatElementSymbol(currentElement.value.symbol));
 
 const elementName = computed(() => {
   void locale.value;
-  return props.element ? tElement(props.element.number) : '';
+  return tElement(currentElement.value.number);
 });
 
 const spectrumOriginHtml = computed(() => {
-  const el = props.element;
-  if (!el) return '';
-  const radioactive = el.collection?.radioactive;
-  return formatSpectrumOriginHtml(el.symbol, radioactive?.isotope, radioactive?.decayParent);
+  const radioactive = currentElement.value.collection?.radioactive;
+  return formatSpectrumOriginHtml(currentElement.value.symbol, radioactive?.isotope, radioactive?.decayParent);
 });
 
 const spectrumSampleLabel = computed(() =>
@@ -74,24 +76,23 @@ const spectrumSampleLabel = computed(() =>
 );
 
 const elementMass = computed(() => {
-  if (!props.element) return '';
-  const mass = detail.value?.properties?.atomicMass ?? props.element.mass;
+  const mass = detail.value?.properties?.atomicMass ?? currentElement.value.mass;
   void locale.value;
   return formatMass(mass);
 });
 
 const categoryLabel = computed(() => {
   void locale.value;
-  return props.element ? tLegend(props.element.category) : '';
+  return tLegend(currentElement.value.category);
 });
 
 const overview = computed(() => detail.value?.overview);
 
-const isRadioactive = computed(() => (props.element ? isElementRadioactive(props.element.number) : false));
+const isRadioactive = computed(() => isElementRadioactive(currentElement.value.number));
 
-const isWeaklyRadioactive = computed(() => (props.element ? isElementWeaklyRadioactive(props.element.number) : false));
+const isWeaklyRadioactive = computed(() => isElementWeaklyRadioactive(currentElement.value.number));
 
-const isInCollection = computed(() => props.element?.inCollection ?? false);
+const isInCollection = computed(() => currentElement.value.inCollection);
 
 function gridSectionImageUrl(section: DetailSection): string | null {
   return getGridStructureImageUrlByNum(section.structureCode);
@@ -104,8 +105,7 @@ const nfpaDisplay = computed(() => {
 
 const ghsDisplay = computed(() => {
   void locale.value;
-  if (!props.element) return [];
-  return buildGhsDisplay(props.element.number, locale.value);
+  return buildGhsDisplay(currentElement.value.number, locale.value);
 });
 
 const nfpaEmpty = {
@@ -132,9 +132,9 @@ const sections = computed(() => {
 
 const oxidationStates = computed(() => parseOxidationStates(detail.value?.atomic?.oxidationState));
 
-const imageUrl = computed(() => (props.element ? getElementImageUrl(props.element.number) : null));
+const imageUrl = computed(() => getElementImageUrl(currentElement.value.number));
 
-const hasImage = computed(() => (props.element ? hasElementImage(props.element.number) : false));
+const hasImage = computed(() => hasElementImage(currentElement.value.number));
 
 const headerWikiIcon = computed(() => (resolvedTheme.value === 'dark' ? wikiIconWhite : wikiIconDark));
 
@@ -142,29 +142,23 @@ const headerYoutubeIcon = computed(() => (resolvedTheme.value === 'dark' ? youtu
 
 const wikipediaUrl = computed(() => {
   void locale.value;
-  if (!props.element) return '';
-  return getWikipediaUrl(props.element.number, locale.value, detail.value);
+  return getWikipediaUrl(currentElement.value.number, locale.value, detail.value);
 });
 
 const youtubeUrl = computed(() => {
   void locale.value;
-  if (!props.element) return '';
-  return getYouTubeUrl(props.element.number, locale.value, detail.value);
+  return getYouTubeUrl(currentElement.value.number, locale.value, detail.value);
 });
 
 const shareIconColor = computed(() => (resolvedTheme.value === 'dark' ? '#ffffff' : '#2f2f2f'));
 
-const shareUrl = computed(() => {
-  if (!props.element) return '';
-  return `${siteUrl}/element/${getElementRouteSymbol(props.element.symbol)}`;
-});
+const shareUrl = computed(() => `${siteUrl}/element/${getElementRouteSymbol(currentElement.value.symbol)}`);
 
 const shareCopied = ref(false);
 const shareAriaLabel = computed(() => (shareCopied.value ? tSidebar('shareCopied') : tSidebar('share')));
 let shareCopiedTimeout: ReturnType<typeof setTimeout> | undefined;
 
 async function share(): Promise<void> {
-  if (!props.element) return;
   const url = shareUrl.value;
   const title = `${elementName.value} (${displaySymbol.value}) — ${resolveLocalizedLabel(siteTitle, locale.value)}`;
 
@@ -240,10 +234,8 @@ onBeforeUnmount(() => {
   disconnectHeaderObserver();
 });
 
+// Only ever called from the watch below, right after it's already confirmed num/sections.value.length are truthy.
 function applyDefaultCollapsedSections(): void {
-  const num = props.element?.number;
-  if (!num || !sections.value.length) return;
-
   collapsedSections.value = new Set(
     sections.value
       .filter((section) =>

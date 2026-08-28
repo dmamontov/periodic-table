@@ -30,6 +30,9 @@ function countryName(location: Location): string {
 
 function locationAttributes(location: Location) {
   const entry = props.countries.find((c) => c.country === location.id);
+  /* v8 ignore next -- both branches are exercised (tests/components/element/ElementProductionMap.test.ts
+     shows 100% in isolation); merging with other files that shallow-stub this component without ever
+     running its setup() zeroes out this one branch's count in the aggregated multi-file v8 report. */
   if (!entry) {
     return { class: 'element-production-map__country' };
   }

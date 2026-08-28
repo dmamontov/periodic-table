@@ -21,43 +21,34 @@ const selectValue = computed({
   },
 });
 
-const activeDefinition = computed(() =>
-  selectedHeatmap.value ? (HEATMAP_DEFINITIONS.find((d) => d.id === selectedHeatmap.value) ?? null) : null,
-);
+/**
+ * Null when no heatmap is selected, or its id matches no known definition (e.g. a parent passing a
+ * stale/invalid id) - collapses definition+dataset+formatted range/unit into the one value the scale
+ * actually renders, so the "is there anything to show" check only has to happen in one place.
+ */
+const legend = computed(() => {
+  const id = selectedHeatmap.value;
+  if (!id) return null;
+  const definition = HEATMAP_DEFINITIONS.find((d) => d.id === id);
+  if (!definition) return null;
 
-const activeDataset = computed(() => (selectedHeatmap.value ? getHeatmapDataset(selectedHeatmap.value) : null));
+  const dataset = getHeatmapDataset(id);
+  const min = formatHeatmapRangeValue(id, dataset.min, locale.value, messages.value);
+  const max = formatHeatmapRangeValue(id, dataset.max, locale.value, messages.value);
+  const unit = formatUnitLabel(definition.unitKey, messages.value);
 
-const legendMin = computed(() => {
-  if (!activeDataset.value || !selectedHeatmap.value) return '';
-  const formatted = formatHeatmapRangeValue(
-    selectedHeatmap.value,
-    activeDataset.value.min,
-    locale.value,
-    messages.value,
-  );
-  if (selectedHeatmap.value === 'rarity') {
-    return `${formatted} · ${messages.value.heatmap.rarityLegend.rare}`;
+  if (id === 'rarity') {
+    return {
+      min: `${min} · ${messages.value.heatmap.rarityLegend.rare}`,
+      max: `${max} · ${messages.value.heatmap.rarityLegend.common}`,
+      unit,
+      accent: definition.accent,
+    };
   }
-  return formatted;
-});
-
-const legendMax = computed(() => {
-  if (!activeDataset.value || !selectedHeatmap.value) return '';
-  const formatted = formatHeatmapRangeValue(
-    selectedHeatmap.value,
-    activeDataset.value.max,
-    locale.value,
-    messages.value,
-  );
-  if (selectedHeatmap.value === 'rarity') {
-    return `${formatted} · ${messages.value.heatmap.rarityLegend.common}`;
-  }
-  return formatted;
+  return { min, max, unit, accent: definition.accent };
 });
 
 const legendInverted = computed(() => selectedHeatmap.value === 'rarity');
-
-const unitLabel = computed(() => formatUnitLabel(activeDefinition.value?.unitKey, messages.value));
 
 function labelFor(id: HeatmapId): string {
   return messages.value.heatmap.maps[id];
@@ -90,15 +81,15 @@ const heatmapGroups = computed(() =>
 
     <Transition name="heatmap-scale">
       <div
-        v-if="activeDefinition && activeDataset"
+        v-if="legend"
         class="heatmap-bar__scale"
         :class="{ 'heatmap-bar__scale--inverted': legendInverted }"
-        :style="{ '--scale-accent': activeDefinition.accent }"
+        :style="{ '--scale-accent': legend.accent }"
       >
-        <span class="heatmap-bar__bound">{{ legendMin }}</span>
+        <span class="heatmap-bar__bound">{{ legend.min }}</span>
         <span class="heatmap-bar__track" aria-hidden="true" />
         <span class="heatmap-bar__bound"
-          >{{ legendMax }}<template v-if="unitLabel">&nbsp;{{ unitLabel }}</template></span
+          >{{ legend.max }}<template v-if="legend.unit">&nbsp;{{ legend.unit }}</template></span
         >
       </div>
     </Transition>
