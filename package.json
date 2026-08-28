@@ -15,7 +15,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "vitest run",
-    "check": "npm run typecheck && npm run lint && npm run test",
+    "test:coverage": "vitest run --coverage",
+    "check": "npm run typecheck && npm run lint && npm run test:coverage",
     "cli": "tsx cli/index.ts",
     "data:spectrum:convert": "tsx cli/index.ts spectrum",
     "data:collection:edit": "tsx cli/index.ts collection"

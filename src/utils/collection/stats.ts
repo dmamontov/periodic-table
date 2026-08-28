@@ -1,5 +1,6 @@
 import type { CategoryId } from '../../types/element/category';
-import { allCategories, elements, isElementRadioactive, isElementWeaklyRadioactive } from '../../data';
+import { allCategories, elements } from '../../data';
+import { isElementRadioactive, isElementWeaklyRadioactive } from '../element/lookup';
 
 /** Elements past einsteinium (99) are too short-lived to ever hold a physical sample of. */
 const COLLECTIBLE_MAX_NUMBER = 99;

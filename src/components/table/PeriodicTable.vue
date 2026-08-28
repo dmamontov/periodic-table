@@ -2,16 +2,9 @@
 import { computed, defineAsyncComponent, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import type { Element } from '../../types/element/element';
-import {
-  allCategories,
-  fBlockElements,
-  getElementBySymbol,
-  getElementRouteSymbol,
-  getElementPeriod,
-  getTopRowByCol,
-  isColumnHead,
-  mainElements,
-} from '../../data';
+import { allCategories, fBlockElements, mainElements } from '../../data';
+import { getElementBySymbol, getElementRouteSymbol } from '../../utils/element/lookup';
+import { getElementPeriod, getTopRowByCol, isColumnHead } from '../../utils/element/layout';
 import {
   HEATMAP_DEFINITIONS,
   formatHeatmapCellDisplay,

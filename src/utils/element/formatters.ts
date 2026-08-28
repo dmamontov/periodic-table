@@ -1,7 +1,7 @@
 import type { Locale } from '../../locales/types';
 import { localeMessages } from '../../locales';
-import { getElementGhsPictograms } from '../../data';
 import type { GhsDisplayItem } from '../../types/element/ghs';
+import { getElementGhsPictograms } from './detail';
 
 export function formatElementSymbol(symbol: string): string {
   if (symbol.length < 2) return symbol;

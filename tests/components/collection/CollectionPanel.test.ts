@@ -29,15 +29,24 @@ vi.mock('../../../src/data', () => ({
     { id: 'noble-gas', color: '#8800ff' },
   ],
   elements: ELEMENTS,
+  collectionSpectrumFilenames: {},
+  storedElementDetails: {},
+}));
+
+vi.mock('../../../src/utils/element/lookup', () => ({
   getElementRouteSymbol: (symbol: string) => symbol.toLowerCase(),
   isElementRadioactive: (number: number) => number === 88 || number === 999,
   isElementWeaklyRadioactive: () => false,
-  getCollectionSpectrum: vi.fn(),
-  collectionSpectrumFilenames: {},
-  getCollectionSpectrumXmlHref: () => null,
-  getElementDecayMode: () => undefined,
-  storedElementDetails: {},
   getSymbolByNumber: (number: number) => ELEMENTS.find((el) => el.number === number)?.symbol ?? null,
+}));
+
+vi.mock('../../../src/utils/collection/spectrumLoader', () => ({
+  getCollectionSpectrum: vi.fn(),
+  getCollectionSpectrumXmlHref: () => null,
+}));
+
+vi.mock('../../../src/utils/element/detail', () => ({
+  getElementDecayMode: () => undefined,
 }));
 
 vi.mock('../../../src/data/collection', () => ({

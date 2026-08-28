@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { preloadAllElementImages, preloadElementImage } from '../../../src/utils/element/imageCache';
-import { getElementImageUrl, hasElementImage } from '../../../src/data';
+import { getElementImageUrl, hasElementImage } from '../../../src/utils/element/assets';
 
 class FakeImage {
   decoding = 'auto';

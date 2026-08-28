@@ -6,7 +6,8 @@ import {
   formatMainIsotopesHtml,
   formatSpectrumOriginHtml,
 } from '../../../src/utils/element/isotopes';
-import { getSymbolByNumber, storedElementDetails } from '../../../src/data';
+import { storedElementDetails } from '../../../src/data';
+import { getSymbolByNumber } from '../../../src/utils/element/lookup';
 import { localeMessages } from '../../../src/locales';
 import type { ElementCollectionDecayParent } from '../../../src/types/collection/collection';
 

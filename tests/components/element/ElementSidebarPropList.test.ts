@@ -6,12 +6,19 @@ import type { OxidationStateRows } from '../../../src/utils/element/detailSectio
 import { mountComponent } from '../../helpers/mountComponent';
 
 // CollectionGammaSpectrum.vue and ElementMiniTable.vue (statically imported here) both eagerly read
-// from src/data - mocked out so no test in this file ever touches the real personal collection.
+// from src/data / the moved-out utils - mocked out so no test in this file ever touches the real
+// personal collection.
 vi.mock('../../../src/data', () => ({
-  getCollectionSpectrum: vi.fn(),
   mainElements: [],
   lanthanides: [],
   actinides: [],
+}));
+
+vi.mock('../../../src/utils/collection/spectrumLoader', () => ({
+  getCollectionSpectrum: vi.fn(),
+}));
+
+vi.mock('../../../src/utils/element/lookup', () => ({
   getSymbolByNumber: () => null,
 }));
 

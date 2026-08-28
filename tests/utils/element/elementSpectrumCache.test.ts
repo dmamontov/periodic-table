@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { preloadAllElementSpectra, preloadElementSpectrum } from '../../../src/utils/element/elementSpectrumCache';
-import { getElementSpectrumUrl, hasElementSpectrum } from '../../../src/data';
+import { getElementSpectrumUrl, hasElementSpectrum } from '../../../src/utils/element/assets';
 
 class FakeImage {
   decoding = 'auto';

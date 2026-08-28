@@ -54,6 +54,10 @@ describe('ElementProductionMap', () => {
     await active.trigger('pointerenter', { pointerType: 'mouse' });
     expect(document.body.querySelector('.info-tooltip__bubble')?.textContent).toContain('40%');
 
+    await active.trigger('pointerleave', { pointerType: 'mouse' });
+    expect(document.body.querySelector('.info-tooltip__bubble')).toBeNull();
+
+    await active.trigger('pointerenter', { pointerType: 'mouse' });
     await active.trigger('click');
     expect(document.body.querySelector('.info-tooltip__bubble')).toBeNull();
   });

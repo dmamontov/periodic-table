@@ -1,8 +1,9 @@
 import { computed, inject, ref, watch, type App, type InjectionKey } from 'vue';
 import { readStorage, writeStorage } from '../utils/storage';
+import { applyTheme, detectThemePreference, isThemePreference, resolveTheme } from '../utils/theme';
+import type { ThemePreference } from '../utils/theme';
 
-export type ThemePreference = 'light' | 'dark' | 'auto';
-export type ResolvedTheme = 'light' | 'dark';
+export type { ThemePreference, ResolvedTheme } from '../utils/theme';
 
 const STORAGE_KEY = 'periodic-table-theme';
 
@@ -12,10 +13,6 @@ type ThemeContext = ReturnType<typeof createTheme>;
 
 const themeKey: InjectionKey<ThemeContext> = Symbol('theme');
 
-function isThemePreference(value: string): value is ThemePreference {
-  return value === 'light' || value === 'dark' || value === 'auto';
-}
-
 function readStoredTheme(): ThemePreference | null {
   return readStorage(localStorage, STORAGE_KEY, isThemePreference);
 }
@@ -24,29 +21,8 @@ function persistTheme(value: ThemePreference): void {
   writeStorage(localStorage, STORAGE_KEY, value);
 }
 
-function resolveTheme(preference: ThemePreference): ResolvedTheme {
-  if (preference === 'auto') {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-  return preference;
-}
-
-function detectThemePreference(): ThemePreference {
-  return readStoredTheme() ?? 'auto';
-}
-
-function applyTheme(resolved: ResolvedTheme): void {
-  document.documentElement.dataset.theme = resolved;
-  document.documentElement.style.colorScheme = resolved;
-
-  const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) {
-    meta.setAttribute('content', resolved === 'dark' ? '#1a1a1a' : '#ffffff');
-  }
-}
-
 function createTheme() {
-  const theme = ref<ThemePreference>(detectThemePreference());
+  const theme = ref<ThemePreference>(detectThemePreference(readStoredTheme()));
   const resolvedTheme = computed(() => resolveTheme(theme.value));
 
   watch(
@@ -61,13 +37,12 @@ function createTheme() {
     persistTheme(value);
   });
 
-  if (typeof window !== 'undefined') {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      if (theme.value === 'auto') {
-        applyTheme(resolveTheme('auto'));
-      }
-    });
-  }
+  // No SSR entry point in this app - createTheme() only ever runs in a real browser (or jsdom in tests).
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (theme.value === 'auto') {
+      applyTheme(resolveTheme('auto'));
+    }
+  });
 
   function setTheme(next: ThemePreference) {
     theme.value = next;

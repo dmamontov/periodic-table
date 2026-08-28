@@ -35,12 +35,26 @@ vi.mock('../../../src/data/collection', () => ({
 }));
 
 vi.mock('../../../src/data', () => ({
+  storedElementDetails: {},
+  mainElements: [],
+  lanthanides: [],
+  actinides: [],
+}));
+
+vi.mock('../../../src/utils/element/assets', () => ({
   getElementImageUrl: (number: number) => (number === 26 ? '/fe.jpg' : null),
-  getElementRouteSymbol: (symbol: string) => symbol.toLowerCase(),
   getGridStructureImageUrlByNum: () => null,
   hasElementImage: (number: number) => number === 26,
+}));
+
+vi.mock('../../../src/utils/element/lookup', () => ({
+  getElementRouteSymbol: (symbol: string) => symbol.toLowerCase(),
   isElementRadioactive: (number: number) => number === 84 || number === 75,
   isElementWeaklyRadioactive: (number: number) => number === 75,
+  getSymbolByNumber: (number: number) => (number === 26 ? 'Fe' : number === 2 ? 'He' : null),
+}));
+
+vi.mock('../../../src/utils/element/detail', () => ({
   getElementDetail: (number: number) => {
     if (number === 26) {
       return {
@@ -65,14 +79,12 @@ vi.mock('../../../src/data', () => ({
     }
     return null;
   },
-  getSymbolByNumber: (number: number) => (number === 26 ? 'Fe' : number === 2 ? 'He' : null),
-  storedElementDetails: {},
   getElementDecayMode: () => undefined,
   getElementGhsPictograms: () => [],
+}));
+
+vi.mock('../../../src/utils/collection/spectrumLoader', () => ({
   getCollectionSpectrum: vi.fn(),
-  mainElements: [],
-  lanthanides: [],
-  actinides: [],
 }));
 
 class MockIntersectionObserver implements IntersectionObserver {

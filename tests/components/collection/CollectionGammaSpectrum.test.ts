@@ -85,7 +85,7 @@ const { getCollectionSpectrumMock, failNextFetch, delayFetchFor, releaseDelayed 
   return { getCollectionSpectrumMock: mockFn, failNextFetch: fail, delayFetchFor: delay, releaseDelayed: release };
 });
 
-vi.mock('../../../src/data', () => ({
+vi.mock('../../../src/utils/collection/spectrumLoader', () => ({
   getCollectionSpectrum: getCollectionSpectrumMock,
 }));
 

@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import type { Element } from '../../src/types/element/element';
 import type { ElementDetail } from '../../src/types/element/detail';
 
-vi.mock('../../src/data', () => ({
+vi.mock('../../src/utils/element/detail', () => ({
   getElementDetail: vi.fn((number: number) => (number === 1 ? ({ symbol: 'H' } as ElementDetail) : null)),
 }));
 

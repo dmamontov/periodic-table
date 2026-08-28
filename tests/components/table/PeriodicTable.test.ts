@@ -30,8 +30,9 @@ const { H, FE, HE, MAIN_ELEMENTS, F_BLOCK_ELEMENTS, ALL_ELEMENTS } = vi.hoisted(
 });
 
 // ElementCell/CategoryFilter(via TableFilters)/HeatmapSelector are all eagerly imported by PeriodicTable
-// and touch src/data / src/utils/heatmap at module load time regardless of shallow rendering - mocked
-// out with a small synthetic layout so no test here ever touches the real personal collection.
+// and touch src/data / src/utils/heatmap / src/utils/element/* at module load time regardless of
+// shallow rendering - mocked out with a small synthetic layout so no test here ever touches the real
+// personal collection.
 vi.mock('../../../src/data', () => ({
   allCategories: [
     { id: 'nonmetal', color: '#00ccff' },
@@ -42,17 +43,23 @@ vi.mock('../../../src/data', () => ({
   ],
   mainElements: MAIN_ELEMENTS,
   fBlockElements: F_BLOCK_ELEMENTS,
+}));
+
+vi.mock('../../../src/utils/element/lookup', () => ({
   getElementBySymbol: (symbol: string) =>
     ALL_ELEMENTS.find((el) => el.symbol.toLowerCase() === symbol.toLowerCase()) ?? null,
   getElementRouteSymbol: (symbol: string) => symbol.toLowerCase(),
+  isElementRadioactive: () => false,
+  isElementWeaklyRadioactive: () => false,
+  getSymbolByNumber: (number: number) => ALL_ELEMENTS.find((el) => el.number === number)?.symbol ?? null,
+}));
+
+vi.mock('../../../src/utils/element/layout', () => ({
   getElementPeriod: (element: { row: number }) => (element.row === 8 ? 6 : element.row === 9 ? 7 : element.row),
   getTopRowByCol: () => new Map(MAIN_ELEMENTS.map((el) => [el.col, el.row])),
   isColumnHead: (element: { col: number; row: number }, topRowByCol: Map<number, number>) =>
     topRowByCol.get(element.col) === element.row,
   getCellBorderRadius: () => undefined,
-  isElementRadioactive: () => false,
-  isElementWeaklyRadioactive: () => false,
-  getSymbolByNumber: (number: number) => ALL_ELEMENTS.find((el) => el.number === number)?.symbol ?? null,
 }));
 
 vi.mock('../../../src/data/collection', () => ({

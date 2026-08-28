@@ -14,7 +14,7 @@ import {
   parseDetailNumeric,
   parseHalfLifeToSeconds,
 } from '../../../src/utils/heatmap';
-import { getSymbolByNumber } from '../../../src/data';
+import { getSymbolByNumber } from '../../../src/utils/element/lookup';
 import { localeMessages } from '../../../src/locales';
 
 const messages = localeMessages.ru;

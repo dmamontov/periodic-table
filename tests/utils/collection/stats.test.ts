@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { computeCollectionStats } from '../../../src/utils/collection/stats';
-import { allCategories, elements, isElementRadioactive, isElementWeaklyRadioactive } from '../../../src/data';
+import { allCategories, elements } from '../../../src/data';
+import { isElementRadioactive, isElementWeaklyRadioactive } from '../../../src/utils/element/lookup';
 
 const COLLECTIBLE_MAX_NUMBER = 99;
 

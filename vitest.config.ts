@@ -20,6 +20,8 @@ export default defineConfig({
       include: [
         'src/utils/**/*.ts',
         'src/composables/**/*.ts',
+        'src/locales/**/*.ts',
+        'src/theme/**/*.ts',
         'src/components/common/**/*.vue',
         'src/components/layout/**/*.vue',
         'src/components/table/**/*.vue',

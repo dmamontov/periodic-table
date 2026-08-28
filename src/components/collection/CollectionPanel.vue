@@ -9,7 +9,8 @@ import {
   resolveCollectionLabel,
   resolvePhysicalStateLabel,
 } from '../../utils/collection/labels';
-import { elements, getElementRouteSymbol } from '../../data';
+import { elements } from '../../data';
+import { getElementRouteSymbol } from '../../utils/element/lookup';
 import { formatSpectrumOriginHtml } from '../../utils/element/isotopes';
 import { wishlist } from '../../data/collection';
 import type { Element } from '../../types/element/element';

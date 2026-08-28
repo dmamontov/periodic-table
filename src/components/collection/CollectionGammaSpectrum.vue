@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onUnmounted, ref, useTemplateRef, watch } from 'vue';
-import { getCollectionSpectrum } from '../../data';
+import { getCollectionSpectrum } from '../../utils/collection/spectrumLoader';
 import { useLocale } from '../../locales';
 import { cyclicIndex } from '../../utils/cyclicIndex';
 import { resolveLocalizedLabel, type LocalizedLabel } from '../../utils/localizedLabel';

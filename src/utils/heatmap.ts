@@ -1,9 +1,10 @@
 import type { Locale, LocaleMessages, DecayModeKey } from '../locales/types';
 import { localeMessages } from '../locales';
-import { elements, storedElementDetails, getElementDecayMode } from '../data';
+import { elements, storedElementDetails } from '../data';
 import type { StoredElementDetail } from '../types/element/detail';
 import type { HeatmapId, HeatmapGroupId, HeatmapDefinition, HeatmapDataset } from '../types/heatmap';
 import { HEATMAP_ACCENT_COLORS } from '../theme/colors';
+import { getElementDecayMode } from './element/detail';
 import { formatDecayType } from './element/isotopes';
 import { toIntlLocale } from './intlLocale';
 

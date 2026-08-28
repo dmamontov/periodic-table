@@ -1,4 +1,4 @@
-import { getGridStructureImageUrlByNum } from '../../data';
+import { getGridStructureImageUrlByNum } from './assets';
 
 const preloadedUrls = new Set<string>();
 

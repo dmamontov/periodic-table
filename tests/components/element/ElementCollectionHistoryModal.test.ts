@@ -5,11 +5,21 @@ import { localeMessages } from '../../../src/locales';
 import { mountComponent } from '../../helpers/mountComponent';
 
 // CollectionGammaSpectrum.vue (statically imported here) eagerly reads getCollectionSpectrum from
-// src/data - mocked out so no test in this file ever touches the real personal collection.
+// src/utils/collection/spectrumLoader - mocked out so no test in this file ever touches the real
+// personal collection.
 vi.mock('../../../src/data', () => ({
-  getCollectionSpectrum: vi.fn(),
-  getElementDecayMode: () => undefined,
   storedElementDetails: {},
+}));
+
+vi.mock('../../../src/utils/collection/spectrumLoader', () => ({
+  getCollectionSpectrum: vi.fn(),
+}));
+
+vi.mock('../../../src/utils/element/detail', () => ({
+  getElementDecayMode: () => undefined,
+}));
+
+vi.mock('../../../src/utils/element/lookup', () => ({
   getSymbolByNumber: () => null,
 }));
 

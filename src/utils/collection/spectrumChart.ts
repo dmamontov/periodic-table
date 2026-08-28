@@ -1,10 +1,14 @@
-import { channelToEnergy } from '../../data';
 import type { CollectionSpectrumData, GammaSpectrumChartData } from '../../types/collection/spectrum';
 import type { SpectrumAnnotation } from '../../types/collection/collection';
 import { toIntlLocale } from '../intlLocale';
 
 const CHART_WIDTH = 640;
 const CHART_HEIGHT = 260;
+
+export function channelToEnergy(channel: number, calibration: CollectionSpectrumData['calibration']): number {
+  const [c0, c1, c2] = calibration;
+  return c0 + c1 * channel + c2 * channel * channel;
+}
 
 function detectDisplayMaxEnergy(counts: number[], calibration: CollectionSpectrumData['calibration']): number {
   // Last channel is the device's overflow/pileup tally, not a real count — excluded so it doesn't stretch the range.

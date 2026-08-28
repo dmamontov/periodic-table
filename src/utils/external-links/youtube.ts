@@ -1,7 +1,8 @@
 import type { Locale } from '../../locales/types';
 import type { ElementDetail } from '../../types/element/detail';
 import { localeMessages } from '../../locales';
-import { getSymbolByNumber, storedElementDetails } from '../../data';
+import { storedElementDetails } from '../../data';
+import { getSymbolByNumber } from '../element/lookup';
 import { firstNonEmpty } from './shared';
 
 function youtubeSearch(query: string): string {

@@ -3,7 +3,7 @@ import {
   preloadAllCollectionSpectra,
   scheduleCollectionSpectrumPreload,
 } from '../../../src/utils/collection/spectrumPreload';
-import * as data from '../../../src/data';
+import * as spectrumLoader from '../../../src/utils/collection/spectrumLoader';
 
 afterEach(() => {
   vi.restoreAllMocks();
@@ -12,10 +12,10 @@ afterEach(() => {
 
 describe('preloadAllCollectionSpectra', () => {
   it('calls getCollectionSpectrum once for every known spectrum id', () => {
-    const ids = data.getAllCollectionSpectrumIds();
+    const ids = spectrumLoader.getAllCollectionSpectrumIds();
     expect(ids.length).toBeGreaterThan(0);
 
-    const spy = vi.spyOn(data, 'getCollectionSpectrum');
+    const spy = vi.spyOn(spectrumLoader, 'getCollectionSpectrum');
     preloadAllCollectionSpectra();
 
     expect(spy).toHaveBeenCalledTimes(ids.length);
@@ -27,7 +27,7 @@ describe('preloadAllCollectionSpectra', () => {
 
 describe('scheduleCollectionSpectrumPreload', () => {
   it('uses requestIdleCallback when available, and it triggers a preload pass', () => {
-    const spy = vi.spyOn(data, 'getCollectionSpectrum');
+    const spy = vi.spyOn(spectrumLoader, 'getCollectionSpectrum');
     const ric = vi.fn<(callback: () => void, options: { timeout: number }) => void>();
     vi.stubGlobal('requestIdleCallback', ric);
     scheduleCollectionSpectrumPreload();
@@ -38,7 +38,7 @@ describe('scheduleCollectionSpectrumPreload', () => {
   });
 
   it('falls back to setTimeout when requestIdleCallback is unavailable, and it triggers a preload pass', () => {
-    const spy = vi.spyOn(data, 'getCollectionSpectrum');
+    const spy = vi.spyOn(spectrumLoader, 'getCollectionSpectrum');
     vi.stubGlobal('requestIdleCallback', undefined);
     const timeoutSpy = vi.spyOn(window, 'setTimeout').mockImplementation(((fn: () => void) => {
       fn();

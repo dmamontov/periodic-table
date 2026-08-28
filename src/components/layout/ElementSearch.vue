@@ -2,7 +2,8 @@
 import { computed, onBeforeUnmount, onMounted, ref, useTemplateRef } from 'vue';
 import { useRouter } from 'vue-router';
 import type { Element } from '../../types/element/element';
-import { elements, getElementRouteSymbol } from '../../data';
+import { elements } from '../../data';
+import { getElementRouteSymbol } from '../../utils/element/lookup';
 import { useLocale } from '../../locales';
 import { searchElements } from '../../utils/element/search';
 import { formatElementSymbol } from '../../utils/element/formatters';

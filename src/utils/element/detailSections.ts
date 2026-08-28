@@ -18,15 +18,7 @@ import type {
   Thermo,
 } from '../../types/element/detail';
 import type { DetailProp, DetailSection } from '../../types/element/section';
-import { getElementPeriod } from '../../data';
-import {
-  getElementProductionCountries,
-  getElementRadiacodeIsotope,
-  getElementSpectrumUrl,
-  getRadiacodeIsotopeUrl,
-  isElementRadioactive,
-  isElementWeaklyRadioactive,
-} from '../../data';
+import { getRadiacodeIsotopeUrl } from '../external-links/radiacode';
 import {
   resolveCollectionLabel,
   resolveCollectionSampleState,
@@ -41,6 +33,10 @@ import { SECTION_COLORS } from '../../theme/colors';
 import { formatNucleusDurationDisplay } from '../heatmap';
 import { collectionName } from '../../data/collection';
 import { resolveLocalizedLabel } from '../localizedLabel';
+import { isElementRadioactive, isElementWeaklyRadioactive } from './lookup';
+import { getElementSpectrumUrl } from './assets';
+import { getElementProductionCountries, getElementRadiacodeIsotope } from './detail';
+import { getElementPeriod } from './layout';
 import { formatDecayChainHtml, formatDecayType, formatIsotopeHtml, formatMainIsotopesHtml } from './isotopes';
 import { formatIonChargeHtml } from './formatters';
 

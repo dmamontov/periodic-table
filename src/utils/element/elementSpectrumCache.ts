@@ -1,4 +1,4 @@
-import { getElementSpectrumUrl, hasElementSpectrum } from '../../data';
+import { getElementSpectrumUrl, hasElementSpectrum } from './assets';
 
 const preloadedUrls = new Set<string>();
 

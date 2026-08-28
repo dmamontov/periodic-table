@@ -6,14 +6,8 @@ import { useLocale } from '../../locales';
 import { useTheme } from '../../theme';
 import { COLLECTION_COLOR, RADIOACTIVE_COLOR, WEAK_RADIOACTIVE_COLOR } from '../../theme/colors';
 import { useElementDetail } from '../../composables/useElementDetail';
-import {
-  getElementImageUrl,
-  getElementRouteSymbol,
-  getGridStructureImageUrlByNum,
-  hasElementImage,
-  isElementRadioactive,
-  isElementWeaklyRadioactive,
-} from '../../data';
+import { getElementImageUrl, getGridStructureImageUrlByNum, hasElementImage } from '../../utils/element/assets';
+import { getElementRouteSymbol, isElementRadioactive, isElementWeaklyRadioactive } from '../../utils/element/lookup';
 import { siteTitle, siteUrl } from '../../data/collection';
 import { formatCollectionSampleLabel } from '../../utils/collection/labels';
 import { resolveLocalizedLabel } from '../../utils/localizedLabel';

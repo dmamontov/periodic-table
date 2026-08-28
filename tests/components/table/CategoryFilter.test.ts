@@ -3,8 +3,11 @@ import CategoryFilter from '../../../src/components/table/CategoryFilter.vue';
 import { mountComponent } from '../../helpers/mountComponent';
 
 // Importing the real '../../src/data' would eagerly evaluate src/data/collection.ts (the personal
-// collection) even though CategoryFilter only reads allCategories - mock it out with static category data.
+// collection) even though CategoryFilter only reads allCategories - mock it out with static category
+// data. `elements: []` is only here because useLocale() (installed by mountComponent) transitively
+// imports src/utils/element/lookup.ts, which reads `elements` from this same module at import time.
 vi.mock('../../../src/data', () => ({
+  elements: [],
   allCategories: [
     { id: 'alkali', color: '#ff0000' },
     { id: 'alkaline-earth', color: '#ff8800' },

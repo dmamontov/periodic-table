@@ -5,7 +5,7 @@ import {
   formatElementSymbol,
   formatIonChargeHtml,
 } from '../../../src/utils/element/formatters';
-import { getElementGhsPictograms } from '../../../src/data';
+import { getElementGhsPictograms } from '../../../src/utils/element/detail';
 import { localeMessages } from '../../../src/locales';
 
 afterEach(() => {

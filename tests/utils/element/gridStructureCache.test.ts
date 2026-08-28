@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { preloadAllGridStructures, preloadGridStructure } from '../../../src/utils/element/gridStructureCache';
-import { getGridStructureImageUrlByNum } from '../../../src/data';
+import { getGridStructureImageUrlByNum } from '../../../src/utils/element/assets';
 
 class FakeImage {
   decoding = 'auto';

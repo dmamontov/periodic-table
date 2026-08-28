@@ -1,6 +1,6 @@
 import { computed, type Ref } from 'vue';
 import type { Element } from '../types/element/element';
-import { getElementDetail } from '../data';
+import { getElementDetail } from '../utils/element/detail';
 
 export function useElementDetail(element: Ref<Element | null>) {
   const detail = computed(() => {

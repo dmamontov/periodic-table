@@ -1,4 +1,4 @@
-import { getAllCollectionSpectrumIds, getCollectionSpectrum } from '../../data';
+import { getAllCollectionSpectrumIds, getCollectionSpectrum } from './spectrumLoader';
 
 export function preloadAllCollectionSpectra(): void {
   for (const id of getAllCollectionSpectrumIds()) {

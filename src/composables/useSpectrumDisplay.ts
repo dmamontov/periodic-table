@@ -1,5 +1,6 @@
 import { computed, type Ref } from 'vue';
-import { collectionSpectrumFilenames, getCollectionSpectrumXmlHref } from '../data';
+import { collectionSpectrumFilenames } from '../data';
+import { getCollectionSpectrumXmlHref } from '../utils/collection/spectrumLoader';
 import { useLocale } from '../locales';
 import { resolveLocalizedLabel } from '../utils/localizedLabel';
 import {

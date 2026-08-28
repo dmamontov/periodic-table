@@ -4,7 +4,10 @@ import { mountComponent } from '../../helpers/mountComponent';
 
 // mainElements/lanthanides/actinides are derived from the real elements array (personal collection
 // merged in) - mock them with a small synthetic set independent of any real element/collection data.
+// `elements: []` is only here because useLocale() (installed by mountComponent) transitively imports
+// src/utils/element/lookup.ts, which reads `elements` from this same module at import time.
 vi.mock('../../../src/data', () => ({
+  elements: [],
   mainElements: [
     { number: 1, row: 1, col: 1, color: '#4caf50' },
     { number: 26, row: 4, col: 8, color: '#8d6e63' },

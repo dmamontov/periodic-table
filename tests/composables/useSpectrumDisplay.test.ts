@@ -7,6 +7,9 @@ vi.mock('../../src/data', () => ({
   collectionSpectrumFilenames: {
     'po210-1': { ru: 'спектр.xml', en: 'spectrum.xml', zh: '光谱.xml' },
   },
+}));
+
+vi.mock('../../src/utils/collection/spectrumLoader', () => ({
   getCollectionSpectrumXmlHref: vi.fn((id: string) =>
     id === 'po210-1' || id === 'no-filename' ? `/collection-spectra/${id}.xml` : null,
   ),

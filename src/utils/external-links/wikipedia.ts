@@ -1,7 +1,7 @@
 import type { Locale } from '../../locales/types';
 import type { ElementDetail } from '../../types/element/detail';
 import { localeMessages } from '../../locales';
-import { getSymbolByNumber } from '../../data';
+import { getSymbolByNumber } from '../element/lookup';
 import { firstNonEmpty } from './shared';
 
 const WIKI_HOST: Record<Locale, string> = {

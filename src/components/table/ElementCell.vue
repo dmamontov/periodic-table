@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import type { Element } from '../../types/element/element';
-import { getCellBorderRadius, getElementPeriod, isElementRadioactive, isElementWeaklyRadioactive } from '../../data';
+import { getCellBorderRadius, getElementPeriod } from '../../utils/element/layout';
+import { isElementRadioactive, isElementWeaklyRadioactive } from '../../utils/element/lookup';
 import { intensityToBrightness } from '../../utils/heatmap';
 import { useLocale } from '../../locales';
 import { formatElementSymbol } from '../../utils/element/formatters';

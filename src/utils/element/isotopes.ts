@@ -1,7 +1,8 @@
 import type { Locale } from '../../locales/types';
 import { localeMessages } from '../../locales';
-import { getElementDecayMode, storedElementDetails } from '../../data';
+import { storedElementDetails } from '../../data';
 import type { ElementCollectionDecayParent } from '../../types/collection/collection';
+import { getElementDecayMode } from './detail';
 import { formatElementSymbol } from './formatters';
 
 /** HTML isotope notation with mass superscript before symbol. */

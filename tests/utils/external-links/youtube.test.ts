@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { getYouTubeUrl } from '../../../src/utils/external-links/youtube';
-import { getSymbolByNumber, storedElementDetails } from '../../../src/data';
+import { storedElementDetails } from '../../../src/data';
+import { getSymbolByNumber } from '../../../src/utils/element/lookup';
 import { localeMessages } from '../../../src/locales';
 import type { ElementDetail } from '../../../src/types/element/detail';
 

@@ -6,7 +6,7 @@ import {
   type SectionEmptyContext,
 } from '../../../src/utils/element/detailSections';
 import { localeMessages } from '../../../src/locales';
-import { hasElementSpectrum } from '../../../src/data';
+import { hasElementSpectrum } from '../../../src/utils/element/assets';
 import type { Element } from '../../../src/types/element/element';
 import type { ElementDetail } from '../../../src/types/element/detail';
 import type { DetailSection } from '../../../src/types/element/section';
