@@ -1418,11 +1418,6 @@ export const wishlist: Record<string, WishlistEntry[]> = {
     },
     {
       isotope: '147',
-      description: { ru: 'Электрод разрядника Р-22', en: 'R-22 spark-gap electrode', zh: 'R-22放电管电极' },
-      status: 'shipping',
-    },
-    {
-      isotope: '147',
       description: {
         ru: 'Электрод стартера люминесцентной лампы Philips',
         en: 'Philips fluorescent-lamp starter electrode',
