@@ -1424,9 +1424,9 @@ export const wishlist: Record<string, WishlistEntry[]> = {
     {
       isotope: '147',
       description: {
-        ru: 'Электрод стартера люминесцентной лампы Philips',
-        en: 'Philips fluorescent-lamp starter electrode',
-        zh: 'Philips荧光灯启辉器电极',
+        ru: 'Стартер люминесцентной лампы Philips',
+        en: 'Philips fluorescent-lamp starter',
+        zh: 'Philips荧光灯启辉器',
       },
     },
   ],
