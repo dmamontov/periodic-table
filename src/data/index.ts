@@ -35,11 +35,12 @@ export const elements: Element[] = rawElements.map((el) => {
   };
 });
 
-/** spectrumId → download filename, assembled from collection.ts */
+/** spectrumId → download filename, assembled from collection.ts — walks the live entry plus its history/alternates, not just the current sample. */
 export const collectionSpectrumFilenames: Record<string, LocalizedLabel> = Object.fromEntries(
   Object.values(myElements)
-    .filter((entry) => entry.spectrum?.filename)
-    .map((entry) => [entry.spectrum!.id, entry.spectrum!.filename!]),
+    .flatMap((entry) => [entry, ...(entry.history ?? []), ...(entry.alternates ?? [])])
+    .filter((sample) => sample.spectrum?.filename)
+    .map((sample) => [sample.spectrum!.id, sample.spectrum!.filename!]),
 );
 
 export const mainElements = elements.filter((el) => el.row <= 7);
