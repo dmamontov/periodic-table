@@ -1570,7 +1570,6 @@ export const wishlist: Record<string, WishlistEntry[]> = {
       isotope: '',
       sampleState: 'bead',
       link: 'https://aliexpress.ru/item/1005011884567298.html?sku_id=12000056887903501',
-      status: 'shipping',
     },
   ],
   Np: [
