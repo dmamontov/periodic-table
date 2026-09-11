@@ -397,6 +397,30 @@ export const myElements: Record<string, ElementCollection> = {
       weight: { mg: 8910, approx: true },
       acquiredDate: '2021-05-09',
     },
+    alternates: [
+      {
+        physical: {
+          description: { ru: 'Лампа-разрядник Р-26', en: 'R-26 spark-gap tube', zh: 'R-26放电管' },
+          manufactureDate: '1980-04',
+          acquiredDate: '2026-09-09',
+        },
+        radioactive: {
+          isotope: '63',
+          sourceType: 'primary',
+        },
+        spectrum: {
+          id: 'ni-28-r26',
+          filename: { ru: 'Ni-63 (Р-26).xml', en: 'Ni-63 (R-26).xml', zh: 'Ni-63 (R-26).xml' },
+          leadShielded: true,
+          backgroundSpectrumId: 'bg-lead-shield',
+          note: {
+            ru: 'Собственный непрерывный тормозной спектр ⁶³Ni — гамма-линий нет, край около 60 кэВ соответствует максимальной энергии его β-распада (67 кэВ).',
+            en: "⁶³Ni's own continuous bremsstrahlung spectrum — no gamma lines, the edge near 60 keV matches its β decay endpoint (67 keV).",
+            zh: '⁶³Ni自身的连续韧致辐射谱——无伽马特征峰，边缘约60 keV，与其β衰变终点能量（67 keV）相符。',
+          },
+        },
+      },
+    ],
   },
   Cu: {
     physical: {
