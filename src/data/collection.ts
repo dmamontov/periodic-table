@@ -1190,14 +1190,38 @@ export const myElements: Record<string, ElementCollection> = {
       {
         physical: {
           description: {
-            ru: 'Лампа-стабилизатор Mazda 0A2',
-            en: 'Mazda 0A2 voltage-regulator tube',
-            zh: 'Mazda 0A2稳压管',
+            ru: 'Лампа-разрядник Mazda 0A2',
+            en: 'Mazda 0A2 spark-gap tube',
+            zh: 'Mazda 0A2放电管',
           },
+          manufactureDate: { from: '1948', to: '1978' },
           acquiredDate: '2026-08-27',
         },
         radioactive: {
           isotope: '226',
+        },
+        spectrum: {
+          id: 'ra-88-mazda0a2',
+          filename: {
+            ru: 'Ra-226 (Mazda 0A2).xml',
+            en: 'Ra-226 (Mazda 0A2).xml',
+            zh: 'Ra-226 (Mazda 0A2).xml',
+          },
+          leadShielded: true,
+          backgroundSpectrumId: 'bg-lead-shield',
+          annotations: [
+            { energy: 77.5, label: 'Pb Kα/Kβ' },
+            { energy: 175.0, label: 'Ra-226' },
+            { energy: 232.3, label: 'Pb-214' },
+            { energy: 291.2, label: 'Pb-214' },
+            { energy: 344.0, label: 'Pb-214' },
+            { energy: 588.6, label: 'Bi-214' },
+          ],
+          note: {
+            ru: 'Собственная линия ²²⁶Ra и вся цепочка распада в вековом равновесии — герметичная лампа, радон из колбы не уходит.',
+            en: "²²⁶Ra's own line and the full decay chain in secular equilibrium — a sealed tube, radon stays inside.",
+            zh: '可见²²⁶Ra自身特征峰及处于长期平衡的完整衰变链——密封灯管，氡未逸出。',
+          },
         },
       },
     ],
