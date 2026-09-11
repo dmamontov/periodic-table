@@ -32,6 +32,7 @@ interface SpectrumSibling {
   isCurrent?: boolean;
   isPast?: boolean;
   retained?: boolean | null;
+  isAlternate?: boolean;
   annotations?: SpectrumAnnotation[] | null;
   leadShielded?: boolean | null;
   backgroundSpectrumId?: string | null;
@@ -48,6 +49,7 @@ const props = defineProps<{
   isCurrent?: boolean;
   isPast?: boolean;
   retained?: boolean | null;
+  isAlternate?: boolean;
   annotations?: SpectrumAnnotation[] | null;
   leadShielded?: boolean | null;
   backgroundSpectrumId?: string | null;
@@ -76,6 +78,7 @@ const activeSampleLabel = computed(() => (activeSibling.value ? activeSibling.va
 const activeIsCurrent = computed(() => (activeSibling.value ? activeSibling.value.isCurrent : props.isCurrent));
 const activeIsPast = computed(() => (activeSibling.value ? activeSibling.value.isPast : props.isPast));
 const activeRetained = computed(() => (activeSibling.value ? activeSibling.value.retained : props.retained));
+const activeIsAlternate = computed(() => (activeSibling.value ? activeSibling.value.isAlternate : props.isAlternate));
 const activeAnnotations = computed(() => (activeSibling.value ? activeSibling.value.annotations : props.annotations));
 const activeLeadShielded = computed(() =>
   activeSibling.value ? activeSibling.value.leadShielded : props.leadShielded,
@@ -306,6 +309,7 @@ useModalFocusTrap(isZoomed, modalPanelEl, closeZoom);
               :is-current="activeIsCurrent"
               :is-past="activeIsPast"
               :retained="activeRetained"
+              :is-alternate="activeIsAlternate"
             />
             <CloseButton class="gamma-spectrum-modal__close" :aria-label="tSidebar('close')" @click="closeZoom" />
           </div>

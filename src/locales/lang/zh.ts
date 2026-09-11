@@ -98,6 +98,8 @@ const messages: LocaleMessages = {
     collectionHistoryCurrent: '当前版本',
     collectionHistoryRetained: '样品仍保留',
     collectionHistoryNotRetained: '样品未保留',
+    collectionHistoryAlternate: '备用',
+    collectionHistoryArchive: '存档',
     sections: {
       overview: '概况',
       mining: '产地',

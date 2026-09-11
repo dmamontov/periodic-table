@@ -98,6 +98,8 @@ const messages: LocaleMessages = {
     collectionHistoryCurrent: 'Текущая версия',
     collectionHistoryRetained: 'Образец сохранён',
     collectionHistoryNotRetained: 'Образец не сохранился',
+    collectionHistoryAlternate: 'Альтернатива',
+    collectionHistoryArchive: 'Архив',
     sections: {
       overview: 'Общие сведения',
       mining: 'География производства',

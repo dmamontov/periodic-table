@@ -406,6 +406,17 @@ describe('CollectionGammaSpectrum', () => {
     expect(getCollectionSpectrumMock).not.toHaveBeenCalledWith('ra-88-spd');
   });
 
+  it('shows the alternate status badge in the modal header for an alternate sibling', async () => {
+    const siblings = [{ symbol: 'Ra', color: '#ff6666', spectrumId: 'ra-88-spd', isAlternate: true }];
+    const wrapper = await mountSpectrum({ siblings, siblingIndex: 0 });
+    await wrapper.find('.collection-gamma-spectrum__trigger').trigger('click');
+    await new Promise((r) => setTimeout(r, 0));
+
+    expect(document.body.querySelector('.element-spectrum-heading__badge')?.textContent?.trim()).toBe(
+      localeMessages.en.sidebar.collectionHistoryAlternate,
+    );
+  });
+
   it('navigates siblings via ArrowLeft/ArrowRight while the modal is open', async () => {
     const siblings = [
       { symbol: 'Ra', color: '#ff6666', spectrumId: 'ra-88-spd' },

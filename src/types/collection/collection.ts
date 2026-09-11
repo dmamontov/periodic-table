@@ -95,8 +95,10 @@ export interface ElementCollectionHistoryEntry extends ElementCollectionSample {
  * Another physical sample of this element also owned, alongside the one shown as
  * current above — e.g. the same isotope turning up in a second, unrelated item.
  * Same shape as ElementCollectionHistoryEntry minus `reason`, since an alternate was
- * never "replaced" — it's just not the one chosen to display. Not surfaced anywhere
- * in the UI yet; recorded here so it isn't lost/forgotten.
+ * never "replaced" — it's just not the one chosen to display. Only surfaced when it
+ * carries its own `spectrum` — CollectionPanel's spectra list is the one place
+ * alternates render, marked with their own "alternate" badge (see ElementSpectrumHeading's
+ * compact mode) rather than the retained/not-retained one used for history entries.
  */
 export interface ElementCollectionAlternate extends ElementCollectionSample {
   /** Whether this alternate sample is still physically kept. Omit if unknown. */
@@ -106,7 +108,7 @@ export interface ElementCollectionAlternate extends ElementCollectionSample {
 export interface ElementCollection extends ElementCollectionSample {
   /** Earlier versions of this collection entry before a physical replacement, oldest first. The live fields above always describe the *current* version. */
   history?: ElementCollectionHistoryEntry[] | null;
-  /** Other owned samples of this element, not chosen as the current display one. Not shown anywhere in the UI yet. */
+  /** Other owned samples of this element, not chosen as the current display one — see ElementCollectionAlternate for where/how these surface. */
   alternates?: ElementCollectionAlternate[] | null;
 }
 

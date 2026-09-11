@@ -98,6 +98,8 @@ const messages: LocaleMessages = {
     collectionHistoryCurrent: 'Current version',
     collectionHistoryRetained: 'Sample kept',
     collectionHistoryNotRetained: 'Sample not kept',
+    collectionHistoryAlternate: 'Alternate',
+    collectionHistoryArchive: 'Archive',
     sections: {
       overview: 'Overview',
       mining: 'Production geography',

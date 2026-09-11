@@ -34,8 +34,7 @@ import {
   NOT_RETAINED_COLOR,
   WISHLIST_UPGRADE_COLOR,
 } from '../../theme/colors';
-import CollectionGammaSpectrum from './CollectionGammaSpectrum.vue';
-import ElementSpectrumHeading from './ElementSpectrumHeading.vue';
+import CollectionSpectrumCard from './CollectionSpectrumCard.vue';
 import CollectionWishlistRow from './CollectionWishlistRow.vue';
 import CollectionHistoryRow from './CollectionHistoryRow.vue';
 
@@ -55,12 +54,17 @@ const spectraCollapsed = ref(true);
 const historyCollapsed = ref(true);
 const wishlistCollapsed = ref(true);
 
+type SpectrumEntryStatus =
+  | { kind: 'current' }
+  | { kind: 'history'; retained: boolean | null | undefined }
+  | { kind: 'alternate'; retained: boolean | null | undefined };
+
 function buildSpectrumEntry(
   el: Element,
   physical: ElementCollectionPhysical | null | undefined,
   radioactive: ElementCollectionRadioactive | null | undefined,
   spectrum: ElementCollectionSpectrum,
-  past: { retained: boolean | null | undefined } | null,
+  status: SpectrumEntryStatus,
 ) {
   const originHtml = formatSpectrumOriginHtml(el.symbol, radioactive?.isotope, radioactive?.decayParent);
   return {
@@ -74,40 +78,50 @@ function buildSpectrumEntry(
     leadShielded: spectrum.leadShielded,
     backgroundSpectrumId: spectrum.backgroundSpectrumId,
     note: spectrum.note,
-    isCurrent: past === null,
-    isPast: past !== null,
-    retained: past?.retained,
+    isCurrent: status.kind === 'current',
+    isPast: status.kind === 'history',
+    isAlternate: status.kind === 'alternate',
+    retained: status.kind === 'current' ? undefined : status.retained,
   };
 }
 
-const spectrumElements = computed(() =>
-  elements.flatMap((el) => {
-    const entries = [];
+// Current spectra first, then archived (history) ones, then alternates - three passes over
+// `elements` rather than one, so the kind sorts before the periodic-table order within each kind.
+const spectrumElements = computed(() => [
+  ...elements.flatMap((el) => {
     const liveSpectrum = el.collection?.spectrum;
-    if (liveSpectrum?.id) {
-      entries.push(buildSpectrumEntry(el, el.collection?.physical, el.collection?.radioactive, liveSpectrum, null));
-    }
-    for (const historyEntry of el.collection?.history ?? []) {
+    if (!liveSpectrum?.id) return [];
+    return [
+      buildSpectrumEntry(el, el.collection?.physical, el.collection?.radioactive, liveSpectrum, {
+        kind: 'current',
+      }),
+    ];
+  }),
+  ...elements.flatMap((el) =>
+    (el.collection?.history ?? []).flatMap((historyEntry) => {
       const pastSpectrum = historyEntry.spectrum;
-      if (!pastSpectrum?.id) continue;
-      entries.push(
+      if (!pastSpectrum?.id) return [];
+      return [
         buildSpectrumEntry(el, historyEntry.physical, historyEntry.radioactive, pastSpectrum, {
+          kind: 'history',
           retained: historyEntry.retained,
         }),
-      );
-    }
-    for (const alternate of el.collection?.alternates ?? []) {
+      ];
+    }),
+  ),
+  ...elements.flatMap((el) =>
+    (el.collection?.alternates ?? []).flatMap((alternate) => {
       const altSpectrum = alternate.spectrum;
-      if (!altSpectrum?.id) continue;
-      entries.push(
+      if (!altSpectrum?.id) return [];
+      return [
         buildSpectrumEntry(el, alternate.physical, alternate.radioactive, altSpectrum, {
+          kind: 'alternate',
           retained: alternate.retained,
         }),
-      );
-    }
-    return entries;
-  }),
-);
+      ];
+    }),
+  ),
+]);
 
 interface HistoryTimelineItem {
   key: string;
@@ -329,39 +343,14 @@ function openElement(symbol: string) {
           <CollectionStatusLegend class="collection-panel__spectra-legend" />
 
           <div class="collection-panel__spectra-list">
-            <div
+            <CollectionSpectrumCard
               v-for="(item, index) in spectrumElements"
               :key="item.spectrumId"
-              class="collection-panel__spectrum-card"
-            >
-              <button type="button" class="collection-panel__spectrum-header" @click="openElement(item.routeSymbol)">
-                <ElementSpectrumHeading
-                  :symbol="item.symbol"
-                  :name="messages.elements[item.symbol] ?? ''"
-                  :accent="item.color"
-                  :origin-html="item.originHtml"
-                  :sample-label="item.sampleLabel"
-                  :is-current="item.isCurrent"
-                  :is-past="item.isPast"
-                  :retained="item.retained"
-                  compact
-                />
-              </button>
-              <CollectionGammaSpectrum
-                :spectrum-id="item.spectrumId"
-                :accent-color="item.color"
-                :element-symbol="item.symbol"
-                :element-name="messages.elements[item.symbol]"
-                :origin-html="item.originHtml"
-                :sample-label="item.sampleLabel"
-                :annotations="item.annotations"
-                :lead-shielded="item.leadShielded"
-                :background-spectrum-id="item.backgroundSpectrumId"
-                :note="item.note"
-                :siblings="spectrumElements"
-                :sibling-index="index"
-              />
-            </div>
+              :item="item"
+              :siblings="spectrumElements"
+              :sibling-index="index"
+              @open="openElement"
+            />
           </div>
         </CollapsibleSection>
 
@@ -543,30 +532,6 @@ function openElement(symbol: string) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 0 16px;
-}
-
-.collection-panel__spectrum-card {
-  padding: 11px 0;
-  border-bottom: 1px solid var(--color-border-light);
-}
-
-.collection-panel__spectrum-header {
-  display: block;
-  width: 100%;
-  margin: 0 0 8px;
-  padding: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
-  text-align: left;
-}
-
-.collection-panel__spectrum-header :deep(.element-spectrum-heading__name) {
-  transition: color 0.15s ease;
-}
-
-.collection-panel__spectrum-header:hover :deep(.element-spectrum-heading__name) {
-  color: var(--color-text);
 }
 
 .collection-panel__wishlist-list {

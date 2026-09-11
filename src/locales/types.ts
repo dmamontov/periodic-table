@@ -113,6 +113,8 @@ export interface LocaleMessages {
     collectionHistoryCurrent: string;
     collectionHistoryRetained: string;
     collectionHistoryNotRetained: string;
+    collectionHistoryAlternate: string;
+    collectionHistoryArchive: string;
     sections: {
       overview: string;
       mining: string;

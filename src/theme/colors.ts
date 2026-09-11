@@ -37,11 +37,13 @@ export const WISHLIST_UPGRADE_COLOR = '#4a90a4';
 /**
  * Status dot shared by the history timeline and spectrum cards: green marks the live
  * (current) sample/spectrum, gold (the collection accent) marks a past one still kept,
- * red marks a past one no longer kept.
+ * red marks a past one no longer kept, blue marks an alternate - a second sample owned
+ * alongside the current one, never "replaced" so retained/not-retained doesn't apply.
  */
 export const CURRENT_COLOR = '#16a34a';
 export const RETAINED_COLOR = COLLECTION_COLOR;
 export const NOT_RETAINED_COLOR = '#dc2626';
+export const ALTERNATE_COLOR = '#3b82f6';
 
 /** Subatomic particle color-coding — particle labels and the electron-shell diagram's default accent. */
 export const PARTICLE_COLORS = {

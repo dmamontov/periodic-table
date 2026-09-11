@@ -3,6 +3,7 @@ import { DOMWrapper, type VueWrapper } from '@vue/test-utils';
 import CollectionPanel from '../../../src/components/collection/CollectionPanel.vue';
 import CollectionGammaSpectrum from '../../../src/components/collection/CollectionGammaSpectrum.vue';
 import CollectionHistoryRow from '../../../src/components/collection/CollectionHistoryRow.vue';
+import ElementSpectrumHeading from '../../../src/components/collection/ElementSpectrumHeading.vue';
 import type { Element } from '../../../src/types/element/element';
 import type { WishlistEntry } from '../../../src/types/collection/collection';
 import { localeMessages } from '../../../src/locales';
@@ -260,15 +261,16 @@ describe('CollectionPanel', () => {
   it('builds one spectrum card per live/history/alternate entry with an id, skipping entries without one', async () => {
     const { wrapper } = await mountPanel();
     const cards = wrapper.findAllComponents(CollectionGammaSpectrum);
-    // fe-current, fe-past, fe-alt (Fe's second alternate has no spectrum and is skipped),
-    // xx-current, xx-past (Ra's history entry has no spectrum id and contributes nothing)
+    // Sorted current-first, then archive, then alternates - each pass in periodic-table order:
+    // fe-current, xx-current, then fe-past, xx-past (Ra's history entry has no spectrum id and
+    // contributes nothing), then fe-alt (Fe's second alternate has no spectrum and is skipped).
     expect(cards).toHaveLength(5);
     expect(cards.map((c) => c.props('spectrumId'))).toEqual([
       'fe-current',
-      'fe-past',
-      'fe-alt',
       'xx-current',
+      'fe-past',
       'xx-past',
+      'fe-alt',
     ]);
 
     const first = cards[0]!;
@@ -284,10 +286,47 @@ describe('CollectionPanel', () => {
     expect(xxCard.props('elementName')).toBeUndefined();
   });
 
+  it('dots current/archive/alternate cards by kept-status, and badges only archive/alternate ones', async () => {
+    const { wrapper } = await mountPanel();
+    // Card order: fe-current, xx-current, fe-past, xx-past, fe-alt.
+    const headings = wrapper.findAllComponents(ElementSpectrumHeading);
+
+    expect(headings[0]!.find('.element-spectrum-heading__badge').exists()).toBe(false);
+    expect(headings[1]!.find('.element-spectrum-heading__badge').exists()).toBe(false);
+
+    // fe-past has retained: false.
+    expect(headings[2]!.find('.element-spectrum-heading__retained-dot').attributes('title')).toBe(
+      localeMessages.en.sidebar.collectionHistoryNotRetained,
+    );
+    expect(headings[2]!.find('.element-spectrum-heading__badge').text()).toBe(
+      localeMessages.en.sidebar.collectionHistoryArchive,
+    );
+    // xx-past has no retained field set, so it reads as kept.
+    expect(headings[3]!.find('.element-spectrum-heading__retained-dot').attributes('title')).toBe(
+      localeMessages.en.sidebar.collectionHistoryRetained,
+    );
+    expect(headings[3]!.find('.element-spectrum-heading__badge').text()).toBe(
+      localeMessages.en.sidebar.collectionHistoryArchive,
+    );
+    // fe-alt is an alternates entry (retained: false).
+    expect(headings[4]!.find('.element-spectrum-heading__retained-dot').attributes('title')).toBe(
+      localeMessages.en.sidebar.collectionHistoryNotRetained,
+    );
+    expect(headings[4]!.find('.element-spectrum-heading__badge').text()).toBe(
+      localeMessages.en.sidebar.collectionHistoryAlternate,
+    );
+  });
+
+  it('shows the status-dot legend above the spectra list', async () => {
+    await mountPanel();
+    const legendItems = body().find('.collection-panel__spectra-legend').findAll('.collection-status-legend__item');
+    expect(legendItems).toHaveLength(3);
+  });
+
   it('navigates to the element route when a spectrum card header is clicked', async () => {
     const { router } = await mountPanel();
     const pushSpy = vi.spyOn(router, 'push');
-    await body().findAll('.collection-panel__spectrum-header')[0]!.trigger('click');
+    await body().findAll('.collection-spectrum-card__header')[0]!.trigger('click');
     expect(pushSpy).toHaveBeenCalledWith({ name: 'element', params: { symbol: 'fe' } });
   });
 
