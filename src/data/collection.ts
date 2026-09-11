@@ -1466,11 +1466,6 @@ export const wishlist: Record<string, WishlistEntry[]> = {
     },
     {
       isotope: '147',
-      description: { ru: 'Разрядник Р-24', en: 'R-24 spark gap', zh: 'R-24放电管' },
-      status: 'shipping',
-    },
-    {
-      isotope: '147',
       description: {
         ru: 'Стартер люминесцентной лампы Philips',
         en: 'Philips fluorescent-lamp starter',
