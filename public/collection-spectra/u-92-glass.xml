@@ -7,7 +7,7 @@
                 <Name><![CDATA[RadiaCode-102]]></Name>
             </DeviceConfigReference>
             <SampleInfo>
-                <Name><![CDATA[U-239 (Бусины из уранового стекла)]]></Name>
+                <Name><![CDATA[U-238 (Бусины из уранового стекла)]]></Name>
                 <Note><![CDATA[]]></Note>
             </SampleInfo>
             <BackgroundSpectrumFile><![CDATA[]]></BackgroundSpectrumFile>
@@ -16,7 +16,7 @@
             <EnergySpectrum>
                 <NumberOfChannels>1024</NumberOfChannels>
                 <ChannelPitch>1.0</ChannelPitch>
-                <SpectrumName><![CDATA[U-239 (Бусины из уранового стекла)]]></SpectrumName>
+                <SpectrumName><![CDATA[U-238 (Бусины из уранового стекла)]]></SpectrumName>
                 <SerialNumber><![CDATA[RC-102-013789]]></SerialNumber>
                 <EnergyCalibration>
                     <PolynomialOrder>2</PolynomialOrder>
