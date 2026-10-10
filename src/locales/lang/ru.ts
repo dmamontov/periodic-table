@@ -367,6 +367,17 @@ const messages: LocaleMessages = {
     collectionSpectrumNote: 'Примечание',
     collectionSpectrumScaleLinear: 'lin',
     collectionSpectrumScaleLog: 'log',
+    collectionSpectrumPeaks: 'Площади пиков',
+    collectionSpectrumPeakLine: 'Линия',
+    collectionSpectrumPeakEnergy: 'кэВ',
+    collectionSpectrumPeakArea: 'Площадь, имп',
+    collectionSpectrumPeakRate: 'имп/с',
+    collectionSpectrumPeakSignificance: 'Значимость',
+    collectionSpectrumPeakMethod:
+      'Фон вычтен, каждый пик — гауссиана на квадратичном континууме, близкие линии фитятся совместно. Погрешности 1σ: статистика счёта с поправкой на качество фита.',
+    collectionSpectrumPeakBlended: 'фит совместно с соседними линиями',
+    collectionSpectrumPeakSkipped: 'у порога детектора — не оценивается',
+    collectionSpectrumPeakWeak: 'ниже 3σ — статистически не подтверждено',
     miniTableAria: 'Миниатюра периодической таблицы, выбранный элемент выделен',
     sourceTypes: {
       primary: 'Прямой источник',

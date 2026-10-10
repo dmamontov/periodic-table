@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { computed, type Ref } from 'vue';
 import CollectionGammaSpectrum from '../../../src/components/collection/CollectionGammaSpectrum.vue';
 import type { CollectionSpectrumData } from '../../../src/types/collection/spectrum';
+import type * as PeakAreaModule from '../../../src/utils/collection/peakArea';
 import { localeMessages } from '../../../src/locales';
 import { mountComponent } from '../../helpers/mountComponent';
 
@@ -92,6 +93,23 @@ vi.mock('../../../src/utils/collection/spectrumLoader', () => ({
 // buildSpectrumChart/formatSpectrumCaption/etc. (and the real GammaSpectrumChartData shape they build)
 // are fully covered by their own dedicated test files - mocked here so this file can focus purely on
 // CollectionGammaSpectrum's own sibling-navigation/caching/modal-interaction logic.
+// The fit itself is covered in tests/utils/collection/peakArea.test.ts; the 2-channel fixtures here are too short to fit.
+vi.mock('../../../src/utils/collection/peakArea', async (importOriginal) => ({
+  ...(await importOriginal<typeof PeakAreaModule>()),
+  computePeakAreas: (_data: unknown, annotations: { energy: number; label: string }[] | null | undefined) =>
+    (annotations ?? []).map((a) => ({
+      label: a.label,
+      energy: a.energy,
+      netCounts: 100,
+      sigma: 10,
+      netCps: 1,
+      sigmaCps: 0.1,
+      significance: 10,
+      blended: false,
+      reducedChiSquare: 1,
+    })),
+}));
+
 vi.mock('../../../src/composables/useSpectrumDisplay', () => ({
   useSpectrumDisplay: (
     data: Ref<CollectionSpectrumData | null>,
@@ -222,6 +240,20 @@ describe('CollectionGammaSpectrum', () => {
     expect(modal?.querySelector('.element-spectrum-heading__symbol')?.textContent).toBe('Ra');
   });
 
+  it('shows the peak-area table in the modal only for a spectrum with annotations', async () => {
+    const wrapper = await mountSpectrum({ annotations: [{ energy: 186, label: 'Ra-226' }] });
+    await wrapper.find('.collection-gamma-spectrum__trigger').trigger('click');
+    await new Promise((r) => setTimeout(r, 0));
+    expect(document.body.querySelector('.gamma-spectrum-modal .gamma-spectrum-peaks')).not.toBeNull();
+
+    document.body.innerHTML = '';
+    const bare = await mountSpectrum();
+    await bare.find('.collection-gamma-spectrum__trigger').trigger('click');
+    await new Promise((r) => setTimeout(r, 0));
+    expect(document.body.querySelector('.gamma-spectrum-modal')).not.toBeNull();
+    expect(document.body.querySelector('.gamma-spectrum-peaks')).toBeNull();
+  });
+
   it('does not show an element heading in the modal when there is no active symbol to show', async () => {
     const wrapper = await mountSpectrum({ elementSymbol: undefined, elementName: undefined });
     await wrapper.find('.collection-gamma-spectrum__trigger').trigger('click');
@@ -318,15 +350,11 @@ describe('CollectionGammaSpectrum', () => {
 
     document.body.querySelector<HTMLButtonElement>('.gamma-spectrum-modal__nav--next')?.click();
     await new Promise((r) => setTimeout(r, 0));
-    expect(
-      document.body.querySelector('.gamma-spectrum-modal .collection-gamma-spectrum__caption')?.textContent,
-    ).toContain('Caption bg-lead-shield');
+    expect(document.body.querySelector('.gamma-spectrum-modal__meta')?.textContent).toContain('Caption bg-lead-shield');
 
     releaseDelayed();
     await new Promise((r) => setTimeout(r, 0));
-    expect(
-      document.body.querySelector('.gamma-spectrum-modal .collection-gamma-spectrum__caption')?.textContent,
-    ).toContain('Caption bg-lead-shield');
+    expect(document.body.querySelector('.gamma-spectrum-modal__meta')?.textContent).toContain('Caption bg-lead-shield');
   });
 
   it('closes the modal via the close button, backdrop, and Escape', async () => {
@@ -395,9 +423,9 @@ describe('CollectionGammaSpectrum', () => {
     expect(document.body.querySelector('.element-spectrum-heading__name')?.textContent).toContain(
       localeMessages.en.elements.Ra,
     );
-    expect(
-      document.body.querySelectorAll('.gamma-spectrum-modal .collection-gamma-spectrum__caption')[0]?.textContent,
-    ).toContain('Caption ra-88-pendant');
+    expect(document.body.querySelectorAll('.gamma-spectrum-modal__meta')[0]?.textContent).toContain(
+      'Caption ra-88-pendant',
+    );
 
     // Navigating back to the already-fetched first sibling must reuse the cache, not fetch again.
     getCollectionSpectrumMock.mockClear();
@@ -428,15 +456,11 @@ describe('CollectionGammaSpectrum', () => {
 
     document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight' }));
     await new Promise((r) => setTimeout(r, 0));
-    expect(
-      document.body.querySelector('.gamma-spectrum-modal .collection-gamma-spectrum__caption')?.textContent,
-    ).toContain('Caption ra-88-pendant');
+    expect(document.body.querySelector('.gamma-spectrum-modal__meta')?.textContent).toContain('Caption ra-88-pendant');
 
     document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowLeft' }));
     await new Promise((r) => setTimeout(r, 0));
-    expect(
-      document.body.querySelector('.gamma-spectrum-modal .collection-gamma-spectrum__caption')?.textContent,
-    ).toContain('Caption ra-88-spd');
+    expect(document.body.querySelector('.gamma-spectrum-modal__meta')?.textContent).toContain('Caption ra-88-spd');
   });
 
   it('stops listening for arrow keys once unmounted', async () => {

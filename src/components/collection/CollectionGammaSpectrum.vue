@@ -22,6 +22,7 @@ import {
 } from '../../utils/collection/spectrumChart';
 import ElementSpectrumHeading from './ElementSpectrumHeading.vue';
 import GammaSpectrumChartSvg from './GammaSpectrumChartSvg.vue';
+import GammaSpectrumPeakTable from './GammaSpectrumPeakTable.vue';
 
 interface SpectrumSibling {
   symbol: string;
@@ -347,79 +348,87 @@ useModalFocusTrap(isZoomed, modalPanelEl, closeZoom);
             </button>
           </div>
 
-          <label class="gamma-spectrum-modal__filter">
-            <span class="gamma-spectrum-modal__filter-label">{{ tSidebar('collectionSpectrumFilter') }}</span>
-            <input
-              v-model.number="modalSmoothing"
-              type="range"
-              min="0"
-              :max="SPECTRUM_SMOOTHING_MAX"
-              step="1"
-              class="gamma-spectrum-modal__filter-slider"
-            />
-            <span class="gamma-spectrum-modal__filter-value">{{ modalSmoothing }}</span>
-          </label>
-
-          <div class="gamma-spectrum-modal__footer">
-            <div class="gamma-spectrum-modal__footer-left">
-              <p class="collection-gamma-spectrum__caption">
-                {{ modalCaption }}
-                <span
-                  v-if="activeLeadShielded"
-                  ref="modalLeadIconEl"
-                  class="collection-gamma-spectrum__lead-icon-wrap"
-                  @keydown="modalLeadTooltip.onKeydown"
-                  @pointerenter="modalLeadTooltip.onPointerEnter"
-                  @pointerleave="modalLeadTooltip.onPointerLeave"
-                >
-                  <button
-                    type="button"
-                    class="collection-gamma-spectrum__lead-icon"
-                    :aria-label="tSidebar('collectionSpectrumLeadShielded')"
-                    @click.stop="modalLeadTooltip.toggle"
-                  >
-                    <AppIcon name="shield-check" />
-                  </button>
-                  <TooltipBubble :tooltip="modalLeadTooltip">{{
-                    tSidebar('collectionSpectrumLeadShielded')
-                  }}</TooltipBubble>
-                </span>
-              </p>
-              <PillSwitcherGroup
-                class="gamma-spectrum-modal__scale-group"
-                :aria-label="tSidebar('collectionSpectrumScale')"
+          <div class="gamma-spectrum-modal__toolbar">
+            <PillSwitcherGroup
+              class="gamma-spectrum-modal__scale-group"
+              :aria-label="tSidebar('collectionSpectrumScale')"
+            >
+              <PillSwitcherButton
+                class="gamma-spectrum-modal__scale-btn"
+                :active="modalYScale === 'linear'"
+                :aria-label="tSidebar('collectionSpectrumScaleLinear')"
+                @click="modalYScale = 'linear'"
               >
-                <PillSwitcherButton
-                  class="gamma-spectrum-modal__scale-btn"
-                  :active="modalYScale === 'linear'"
-                  :aria-label="tSidebar('collectionSpectrumScaleLinear')"
-                  @click="modalYScale = 'linear'"
-                >
-                  {{ tSidebar('collectionSpectrumScaleLinear') }}
-                </PillSwitcherButton>
-                <PillSwitcherButton
-                  class="gamma-spectrum-modal__scale-btn"
-                  :active="modalYScale === 'log'"
-                  :aria-label="tSidebar('collectionSpectrumScaleLog')"
-                  @click="modalYScale = 'log'"
-                >
-                  {{ tSidebar('collectionSpectrumScaleLog') }}
-                </PillSwitcherButton>
-              </PillSwitcherGroup>
-            </div>
+                {{ tSidebar('collectionSpectrumScaleLinear') }}
+              </PillSwitcherButton>
+              <PillSwitcherButton
+                class="gamma-spectrum-modal__scale-btn"
+                :active="modalYScale === 'log'"
+                :aria-label="tSidebar('collectionSpectrumScaleLog')"
+                @click="modalYScale = 'log'"
+              >
+                {{ tSidebar('collectionSpectrumScaleLog') }}
+              </PillSwitcherButton>
+            </PillSwitcherGroup>
+            <label class="gamma-spectrum-modal__filter">
+              <span class="gamma-spectrum-modal__filter-label">{{ tSidebar('collectionSpectrumFilter') }}</span>
+              <input
+                v-model.number="modalSmoothing"
+                type="range"
+                min="0"
+                :max="SPECTRUM_SMOOTHING_MAX"
+                step="1"
+                class="gamma-spectrum-modal__filter-slider"
+              />
+              <span class="gamma-spectrum-modal__filter-value">{{ modalSmoothing }}</span>
+            </label>
             <a
               v-if="modalXmlDownload"
-              class="collection-gamma-spectrum__download"
+              class="collection-gamma-spectrum__download gamma-spectrum-modal__download"
               :href="modalXmlDownload.href"
               :download="modalXmlDownload.filename"
             >
               {{ tSidebar('collectionSpectrumDownload') }}
             </a>
           </div>
-          <p v-if="activeNote" class="collection-gamma-spectrum__note">
-            <span class="collection-gamma-spectrum__note-label">{{ tSidebar('collectionSpectrumNote') }}:</span>
-            {{ activeNote }}
-          </p>
+
+          <div class="gamma-spectrum-modal__info">
+            <p class="collection-gamma-spectrum__caption gamma-spectrum-modal__meta">
+              {{ modalCaption }}
+              <span
+                v-if="activeLeadShielded"
+                ref="modalLeadIconEl"
+                class="collection-gamma-spectrum__lead-icon-wrap"
+                @keydown="modalLeadTooltip.onKeydown"
+                @pointerenter="modalLeadTooltip.onPointerEnter"
+                @pointerleave="modalLeadTooltip.onPointerLeave"
+              >
+                <button
+                  type="button"
+                  class="collection-gamma-spectrum__lead-icon"
+                  :aria-label="tSidebar('collectionSpectrumLeadShielded')"
+                  @click.stop="modalLeadTooltip.toggle"
+                >
+                  <AppIcon name="shield-check" />
+                </button>
+                <TooltipBubble :tooltip="modalLeadTooltip">{{
+                  tSidebar('collectionSpectrumLeadShielded')
+                }}</TooltipBubble>
+              </span>
+            </p>
+            <p v-if="activeNote" class="collection-gamma-spectrum__note">
+              <span class="collection-gamma-spectrum__note-label">{{ tSidebar('collectionSpectrumNote') }}:</span>
+              {{ activeNote }}
+            </p>
+            <GammaSpectrumPeakTable
+              v-if="modalSpectrum && activeAnnotations?.length"
+              :key="activeSpectrumId"
+              class="gamma-spectrum-modal__peaks"
+              :spectrum="modalSpectrum"
+              :annotations="activeAnnotations"
+              :background="modalBackground"
+            />
+          </div>
         </div>
       </Transition>
     </Teleport>
@@ -541,6 +550,8 @@ useModalFocusTrap(isZoomed, modalPanelEl, closeZoom);
   left: 50%;
   z-index: 310;
   width: min(900px, 94vw);
+  max-height: calc(100dvh - 24px);
+  overflow-y: auto;
   padding: 20px;
   box-sizing: border-box;
   background: var(--color-bg-elevated);
@@ -630,11 +641,18 @@ useModalFocusTrap(isZoomed, modalPanelEl, closeZoom);
   right: 8px;
 }
 
+.gamma-spectrum-modal__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-top: 10px;
+}
+
 .gamma-spectrum-modal__filter {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 10px;
   cursor: pointer;
 }
 
@@ -646,8 +664,7 @@ useModalFocusTrap(isZoomed, modalPanelEl, closeZoom);
 }
 
 .gamma-spectrum-modal__filter-slider {
-  flex: 1 1 auto;
-  min-width: 0;
+  width: 140px;
   accent-color: v-bind(COLLECTION_COLOR);
   cursor: pointer;
 }
@@ -662,19 +679,14 @@ useModalFocusTrap(isZoomed, modalPanelEl, closeZoom);
   text-align: right;
 }
 
-.gamma-spectrum-modal__footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  margin-top: 10px;
+.gamma-spectrum-modal__download {
+  margin-left: auto;
 }
 
-.gamma-spectrum-modal__footer-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
+.gamma-spectrum-modal__info {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border-subtle);
 }
 
 .gamma-spectrum-modal__scale-group {
@@ -711,9 +723,14 @@ useModalFocusTrap(isZoomed, modalPanelEl, closeZoom);
   }
 
   .gamma-spectrum-modal__header,
-  .gamma-spectrum-modal__footer,
-  .collection-gamma-spectrum__note {
+  .gamma-spectrum-modal__toolbar {
     flex-shrink: 0;
+  }
+
+  .gamma-spectrum-modal__info {
+    flex-shrink: 0;
+    max-height: 40vh;
+    overflow-y: auto;
   }
 
   .gamma-spectrum-modal__chart-wrap {

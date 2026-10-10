@@ -367,6 +367,17 @@ const messages: LocaleMessages = {
     collectionSpectrumNote: '备注',
     collectionSpectrumScaleLinear: 'lin',
     collectionSpectrumScaleLog: 'log',
+    collectionSpectrumPeaks: '峰面积',
+    collectionSpectrumPeakLine: '谱线',
+    collectionSpectrumPeakEnergy: 'keV',
+    collectionSpectrumPeakArea: '面积（计数）',
+    collectionSpectrumPeakRate: 'cps',
+    collectionSpectrumPeakSignificance: '显著性',
+    collectionSpectrumPeakMethod:
+      '已扣除本底；每个峰拟合为二次连续谱上的高斯峰，相邻谱线联合拟合。不确定度为1σ：计数统计误差并按拟合质量修正。',
+    collectionSpectrumPeakBlended: '与相邻谱线联合拟合',
+    collectionSpectrumPeakSkipped: '接近探测器阈值——不作估算',
+    collectionSpectrumPeakWeak: '低于3σ——统计上未确认',
     miniTableAria: '元素周期表缩略图，所选元素已高亮',
     sourceTypes: {
       primary: '直接来源',

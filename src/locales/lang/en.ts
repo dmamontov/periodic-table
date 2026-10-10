@@ -367,6 +367,17 @@ const messages: LocaleMessages = {
     collectionSpectrumNote: 'Note',
     collectionSpectrumScaleLinear: 'lin',
     collectionSpectrumScaleLog: 'log',
+    collectionSpectrumPeaks: 'Peak areas',
+    collectionSpectrumPeakLine: 'Line',
+    collectionSpectrumPeakEnergy: 'keV',
+    collectionSpectrumPeakArea: 'Area, counts',
+    collectionSpectrumPeakRate: 'cps',
+    collectionSpectrumPeakSignificance: 'Significance',
+    collectionSpectrumPeakMethod:
+      'Background subtracted; each peak is a Gaussian on a quadratic continuum, with nearby lines fitted jointly. Uncertainties are 1σ: counting statistics scaled by fit quality.',
+    collectionSpectrumPeakBlended: 'fitted jointly with neighbouring lines',
+    collectionSpectrumPeakSkipped: 'at the detector threshold — not estimated',
+    collectionSpectrumPeakWeak: 'below 3σ — not statistically confirmed',
     miniTableAria: 'Mini periodic table with the selected element highlighted',
     sourceTypes: {
       primary: 'Direct source',

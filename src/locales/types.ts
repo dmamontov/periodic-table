@@ -275,6 +275,16 @@ export interface LocaleMessages {
     collectionSpectrumNote: string;
     collectionSpectrumScaleLinear: string;
     collectionSpectrumScaleLog: string;
+    collectionSpectrumPeaks: string;
+    collectionSpectrumPeakLine: string;
+    collectionSpectrumPeakEnergy: string;
+    collectionSpectrumPeakArea: string;
+    collectionSpectrumPeakRate: string;
+    collectionSpectrumPeakSignificance: string;
+    collectionSpectrumPeakMethod: string;
+    collectionSpectrumPeakBlended: string;
+    collectionSpectrumPeakSkipped: string;
+    collectionSpectrumPeakWeak: string;
     miniTableAria: string;
     sourceTypes: Record<'primary' | 'secondary', string>;
   };
