@@ -1336,32 +1336,72 @@ export const myElements: Record<string, ElementCollection> = {
   Np: {
     physical: {
       description: {
-        ru: 'Источник из дымового детектора HIS-07',
-        en: 'Source from HIS-07 smoke detector',
-        zh: 'HIS-07 烟雾探测器辐射源',
+        ru: 'Источник из дымового извещателя Sears Early One 9-57301',
+        en: 'Source from Sears Early One 9-57301 smoke detector',
+        zh: 'Sears Early One 9-57301 烟雾探测器辐射源',
       },
       container: 'acrylicCoinCapsule',
-      manufactureDate: { from: '2002' },
-      acquiredDate: '2026-06-27',
+      manufactureDate: '1979-12',
+      acquiredDate: '2026-10-08',
     },
+    history: [
+      {
+        physical: {
+          description: {
+            ru: 'Источник из дымового детектора HIS-07',
+            en: 'Source from HIS-07 smoke detector',
+            zh: 'HIS-07 烟雾探测器辐射源',
+          },
+          container: 'acrylicCoinCapsule',
+          manufactureDate: { from: '2002' },
+          acquiredDate: '2026-06-27',
+        },
+        radioactive: {
+          isotope: '237',
+          sourceType: 'secondary',
+          decayParent: [{ symbol: 'Am', isotope: '241' }],
+        },
+        spectrum: {
+          id: 'np-93-his07',
+          filename: { ru: 'Np-237 (HIS-07).xml', en: 'Np-237 (HIS-07).xml', zh: 'Np-237 (HIS-07).xml' },
+          leadShielded: true,
+          backgroundSpectrumId: 'bg-lead-shield',
+          annotations: [
+            { energy: 19.1, label: 'Np Lα (Am-241)' },
+            { energy: 61.7, label: 'Am-241' },
+          ],
+          note: {
+            ru: 'Видна только линия ²⁴¹Am (60 кэВ) — ²³⁷Np нарастает из него, но из-за огромного периода полураспада его активность ничтожна и в спектре не проявляется.',
+            en: "Only ²⁴¹Am's line (60 keV) is visible — ²³⁷Np grows in from it, but its huge half-life keeps its activity negligible, so it never shows up in the spectrum.",
+            zh: '只能看到²⁴¹Am的谱线（60 keV）——²³⁷Np由其衰变而来，但因半衰期极长，活度可忽略不计，谱图中不会显现。',
+          },
+        },
+        retained: true,
+        reason: 'betterSample',
+      },
+    ],
     radioactive: {
       isotope: '237',
       sourceType: 'secondary',
       decayParent: [{ symbol: 'Am', isotope: '241' }],
     },
     spectrum: {
-      id: 'np-93-his07',
-      filename: { ru: 'Np-237 (HIS-07).xml', en: 'Np-237 (HIS-07).xml', zh: 'Np-237 (HIS-07).xml' },
+      id: 'np-93-sears',
+      filename: {
+        ru: 'Np-237 (Sears Early One).xml',
+        en: 'Np-237 (Sears Early One).xml',
+        zh: 'Np-237 (Sears Early One).xml',
+      },
       leadShielded: true,
       backgroundSpectrumId: 'bg-lead-shield',
       annotations: [
-        { energy: 19.1, label: 'Np Lα (Am-241)' },
+        { energy: 21.5, label: 'Np L (Am-241)' },
         { energy: 61.7, label: 'Am-241' },
       ],
       note: {
-        ru: 'Видна только линия ²⁴¹Am (60 кэВ) — ²³⁷Np нарастает из него, но из-за огромного периода полураспада его активность ничтожна и в спектре не проявляется.',
-        en: "Only ²⁴¹Am's line (60 keV) is visible — ²³⁷Np grows in from it, but its huge half-life keeps its activity negligible, so it never shows up in the spectrum.",
-        zh: '只能看到²⁴¹Am的谱线（60 keV）——²³⁷Np由其衰变而来，但因半衰期极长，活度可忽略不计，谱图中不会显现。',
+        ru: 'За 45+ лет в ²³⁷Np превратилось более 7% ²⁴¹Am, но из-за огромного периода полураспада его активность в десятки тысяч раз ниже — ни его линии, ни линия 312 кэВ дочернего ²³³Pa в спектре не различимы.',
+        en: "Over 45+ years more than 7% of the ²⁴¹Am has turned into ²³⁷Np, but its huge half-life keeps its activity tens of thousands of times lower — neither its own lines nor its daughter ²³³Pa's 312 keV line are distinguishable in the spectrum.",
+        zh: '45年以上间超过7%的²⁴¹Am衰变为²³⁷Np，但因半衰期极长，其活度低数万倍——其自身谱线及子体²³³Pa的312 keV谱线在谱图中均无法分辨。',
       },
     },
   },
@@ -1570,19 +1610,6 @@ export const wishlist: Record<string, WishlistEntry[]> = {
       isotope: '',
       sampleState: 'bead',
       link: 'https://aliexpress.ru/item/1005011884567298.html?sku_id=12000056887903501',
-    },
-  ],
-  Np: [
-    {
-      isotope: '237',
-      description: {
-        ru: 'Источник из дымового извещателя Sears Early One',
-        en: 'Source from Sears Early One smoke detector',
-        zh: 'Sears Early One 烟雾探测器辐射源',
-      },
-      link: 'https://www.ebay.com/itm/227286127570',
-      decayParent: [{ symbol: 'Am', isotope: '241' }],
-      status: 'ordered',
     },
   ],
 };
